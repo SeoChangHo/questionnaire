@@ -1,5 +1,7 @@
 package com.example.zzango.questionnaire
 
+
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -21,6 +23,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button2.setOnClickListener(this)
         button3.setOnClickListener(this)
         button4.setOnClickListener(this)
+
+        listButton.setOnClickListener{
+
+            startActivity(Intent(this@MainActivity, ListActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
 
     }
 
