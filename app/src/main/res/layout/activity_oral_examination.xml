@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/oral_exam_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.Barrier
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="oral_4_radio"/>
+
+            <TextView
+                android:id="@+id/oral_questionnaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="구강검진 문진표"
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/oral_questionnaire_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="성명 : "
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/oral_questionnaire_name_input"
+                app:layout_constraintStart_toStartOf="@+id/oral_questionnaire"
+                app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire" />
+
+            <EditText
+                android:id="@+id/oral_questionnaire_name_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-1dp"
+                android:layout_marginRight="-1dp"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                android:maxWidth="100dp"
+                android:maxLength="5"
+                android:minWidth="100dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/oral_questionnaire_name"
+                app:layout_constraintEnd_toStartOf="@+id/number_text"
+                app:layout_constraintStart_toEndOf="@+id/oral_questionnaire_name"
+                app:layout_constraintTop_toTopOf="@+id/oral_questionnaire_name" />
+
+            <TextView
+                android:id="@+id/number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="주민등록번호 : "
+                android:textSize="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/first_serial"
+                app:layout_constraintStart_toEndOf="@+id/oral_questionnaire_name_input"
+                app:layout_constraintTop_toTopOf="@+id/oral_questionnaire_name" />
+
+            <EditText
+                android:id="@+id/first_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:inputType="number"
+                android:maxWidth="90dp"
+                android:maxLength="6"
+                android:minWidth="90dp"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/number_text"
+                app:layout_constraintEnd_toStartOf="@+id/number_hyphen"
+                app:layout_constraintStart_toEndOf="@+id/number_text"
+                app:layout_constraintTop_toTopOf="@+id/number_text" />
+
+            <View
+                android:id="@+id/number_hyphen"
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/first_serial"
+                app:layout_constraintEnd_toStartOf="@+id/last_serial"
+                app:layout_constraintStart_toEndOf="@+id/first_serial"
+                app:layout_constraintTop_toTopOf="@+id/first_serial" />
+
+            <EditText
+                android:id="@+id/last_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:inputType="numberPassword"
+                android:maxWidth="90dp"
+                android:maxLength="7"
+                android:minWidth="90dp"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/first_serial"
+                app:layout_constraintEnd_toEndOf="@+id/oral_questionnaire"
+                app:layout_constraintStart_toEndOf="@+id/number_hyphen"
+                app:layout_constraintTop_toTopOf="@+id/first_serial"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/oral_questionnaire_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/oral_questionnaire_section1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="※ (치과) 병력과 구강건강인식도 관련 문항"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/last_serial"
+                app:layout_constraintStart_toStartOf="@+id/oral_questionnaire_name"
+                app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_name_input" />
+
+            <TextView
+                android:id="@+id/oral_question1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="최근 1년간 구강병 치료나 관리를 목적으로 치과병(의)원에 가신 적이 있습니까?"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/oral_1_radio"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_section1" />
+
+            <RadioGroup
+                android:id="@+id/oral_1_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/oral_question1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/oral_question1"
+                app:layout_constraintTop_toTopOf="@+id/oral_question1">
+
+                <RadioButton
+                    android:id="@+id/oral_1_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/oral_1_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="아니오" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="현재 당뇨병을 앓고 계십니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question1" />
+
+            <RadioGroup
+                android:id="@+id/oral_2_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/oral_question2"
+                app:layout_constraintStart_toEndOf="@+id/oral_question2"
+                app:layout_constraintTop_toTopOf="@+id/oral_question2">
+
+                <RadioButton
+                    android:id="@+id/oral_2_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/oral_2_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="아니오" />
+
+                <RadioButton
+                    android:id="@+id/oral_2_do_not_know"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="모르겠다" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="현재 심혈관질환을 앓고 계십니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question2" />
+
+            <RadioGroup
+                android:id="@+id/oral_3_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/oral_question3"
+                app:layout_constraintStart_toEndOf="@+id/oral_question3"
+                app:layout_constraintTop_toTopOf="@+id/oral_question3">
+
+                <RadioButton
+                    android:id="@+id/oral_3_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/oral_3_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="아니오" />
+
+                <RadioButton
+                    android:id="@+id/oral_3_do_not_know"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="모르겠다" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="최근 3개월동안, 치아나 잇몸 문제로 혹은 틀니 때문에 음식을 씹는 데에 불편감을 느끼신 적이 있습니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question3" />
+
+            <RadioGroup
+                android:id="@+id/oral_4_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/oral_question4"
+                app:layout_constraintStart_toEndOf="@+id/oral_question4"
+                app:layout_constraintTop_toTopOf="@+id/oral_question4">
+
+                <RadioButton
+                    android:id="@+id/oral_4_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/oral_4_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="아니오" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="최근 3개월동안, 치아가 쑤시거나 욱신거리거나 아픈 적 있습니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question4" />
+
+            <RadioGroup
+                android:id="@+id/oral_5_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/oral_question5"
+                app:layout_constraintStart_toEndOf="@+id/oral_question5"
+                app:layout_constraintTop_toTopOf="@+id/oral_question5">
+
+                <RadioButton
+                    android:id="@+id/oral_5_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/oral_5_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="아니오" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="최근 3개월동안, 잇몸이 아프거나 피가 난 적이 있습니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question5" />
+
+            <RadioGroup
+                android:id="@+id/oral_6_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/oral_question6"
+                app:layout_constraintStart_toEndOf="@+id/oral_question6"
+                app:layout_constraintTop_toTopOf="@+id/oral_question6">
+
+                <RadioButton
+                    android:id="@+id/oral_6_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/oral_6_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="아니오" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="스스로 생각하실 때에 치아와 잇몸 등 귀하의 구강건강이 어떤 편이라고 생각하십니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question6" />
+
+            <RadioGroup
+                android:id="@+id/oral_7_radio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/oral_question7"
+                app:layout_constraintStart_toStartOf="@+id/oral_question7"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question7">
+
+                <RadioButton
+                    android:id="@+id/oral_7_very_good"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:text="매우 좋음"
+                    app:layout_constraintEnd_toStartOf="@+id/oral_7_good"
+                    app:layout_constraintStart_toStartOf="@+id/oral_question7"
+                    app:layout_constraintTop_toBottomOf="@+id/oral_question7" />
+
+                <RadioButton
+                    android:id="@+id/oral_7_good"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:text="좋음"
+                    app:layout_constraintEnd_toStartOf="@+id/oral_7_normal"
+                    app:layout_constraintStart_toEndOf="@+id/oral_7_very_good"
+                    app:layout_constraintTop_toTopOf="@+id/oral_7_very_good" />
+
+                <RadioButton
+                    android:id="@+id/oral_7_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:text="보통"
+                    app:layout_constraintEnd_toStartOf="@+id/oral_7_bad"
+                    app:layout_constraintStart_toEndOf="@+id/oral_7_good"
+                    app:layout_constraintTop_toTopOf="@+id/oral_7_very_good" />
+
+                <RadioButton
+                    android:id="@+id/oral_7_bad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:text="나쁨"
+                    app:layout_constraintEnd_toStartOf="@+id/oral_7_very_bad"
+                    app:layout_constraintStart_toEndOf="@+id/oral_7_normal"
+                    app:layout_constraintTop_toTopOf="@+id/oral_7_very_good" />
+
+                <RadioButton
+                    android:id="@+id/oral_7_very_bad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:text="매우 나쁨"
+                    app:layout_constraintEnd_toEndOf="@+id/oral_question7"
+                    app:layout_constraintStart_toEndOf="@+id/oral_7_bad"
+                    app:layout_constraintTop_toTopOf="@+id/oral_7_very_good" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_questionnaire_section2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="※ 구강건강 습관 (설탕섭취, 구강위생, 불소이용, 흡연)관련 문항"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/last_serial"
+                app:layout_constraintStart_toStartOf="@+id/oral_questionnaire_name"
+                app:layout_constraintTop_toBottomOf="@+id/oral_7_radio" />
+
+            <TextView
+                android:id="@+id/oral_question8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="치아 닦는 방법을 치과나 보건소에서 배운 적이 있습니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_section2" />
+
+            <RadioGroup
+                android:id="@+id/oral_8_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/oral_question8"
+                app:layout_constraintStart_toEndOf="@+id/oral_question8"
+                app:layout_constraintTop_toTopOf="@+id/oral_question8">
+
+                <RadioButton
+                    android:id="@+id/oral_8_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/oral_8_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="아니오" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="어제 하루동안 치아를 몇 번 닦으셨습니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question8" />
+
+            <RadioGroup
+                android:id="@+id/oral_9_radio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/oral_question9"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question9">
+
+                <RadioButton
+                    android:id="@+id/oral_9_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1회"
+                    app:layout_constraintEnd_toStartOf="@+id/oral_9_2"
+                    app:layout_constraintHorizontal_bias="0.0" />
+
+                <RadioButton
+                    android:id="@+id/oral_9_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="2회" />
+
+                <RadioButton
+                    android:id="@+id/oral_9_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="3회" />
+
+                <RadioButton
+                    android:id="@+id/oral_9_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="4회" />
+
+                <RadioButton
+                    android:id="@+id/oral_9_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="5회" />
+
+                <RadioButton
+                    android:id="@+id/oral_9_etc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="2dp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="8dp"
+                    android:text="("
+                    android:textSize="14dp" />
+
+                <EditText
+                    android:id="@+id/oral_9_count"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:background="@null"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textAlignment="center"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:text=") 회"
+                    android:textSize="14dp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="최근 일주일 동안, 잠자기 직전에 칫솔질을 얼마나 자주 하였습니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_9_radio" />
+
+            <RadioGroup
+                android:id="@+id/oral_10_radio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/oral_question9"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question10">
+
+                <RadioButton
+                    android:id="@+id/oral_10_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="항상했다(7회)"
+                    app:layout_constraintEnd_toStartOf="@+id/oral_9_2"
+                    app:layout_constraintHorizontal_bias="0.0" />
+
+                <RadioButton
+                    android:id="@+id/oral_10_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="대부분 했다(4~6회)" />
+
+                <RadioButton
+                    android:id="@+id/oral_10_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="가끔 했다(1~3회)" />
+
+                <RadioButton
+                    android:id="@+id/oral_10_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="전혀 하지 않았다(0회)" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="최근 일주일 동안, 잠자기 직전에 칫솔질을 얼마나 자주 하였습니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_10_radio" />
+
+            <RadioGroup
+                android:id="@+id/oral_11_radio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/oral_question9"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question11">
+
+                <RadioButton
+                    android:id="@+id/oral_11_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="항상했다"
+                    app:layout_constraintEnd_toStartOf="@+id/oral_9_2"
+                    app:layout_constraintHorizontal_bias="0.0" />
+
+                <RadioButton
+                    android:id="@+id/oral_11_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="대부분 했다" />
+
+                <RadioButton
+                    android:id="@+id/oral_11_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="가끔 했다" />
+
+                <RadioButton
+                    android:id="@+id/oral_11_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="전혀 하지 않았다" />
+
+                <RadioButton
+                    android:id="@+id/oral_11_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="치실 혹은 치간칫솔이 무엇인지 모른다" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="현재 사용중인 치약에 불소가 들어있습니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_11_radio" />
+
+            <RadioGroup
+                android:id="@+id/oral_12_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/oral_question12"
+                app:layout_constraintStart_toEndOf="@+id/oral_question12"
+                app:layout_constraintTop_toTopOf="@+id/oral_question12">
+
+                <RadioButton
+                    android:id="@+id/oral_12_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="예" />
+
+                <RadioButton
+                    android:id="@+id/oral_12_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="아니오" />
+
+                <RadioButton
+                    android:id="@+id/oral_12_do_not_know"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="모르겠다" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="하루에 과자, 사탕, 케이크 등 달거나 치아에 끈끈하게 달라붙는 간식을 얼마나 먹습니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_12_radio" />
+
+            <RadioGroup
+                android:id="@+id/oral_13_radio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/oral_question9"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question13">
+
+                <RadioButton
+                    android:id="@+id/oral_13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="먹지 않음"
+                    app:layout_constraintEnd_toStartOf="@+id/oral_9_2"
+                    app:layout_constraintHorizontal_bias="0.0" />
+
+                <RadioButton
+                    android:id="@+id/oral_13_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="1번" />
+
+                <RadioButton
+                    android:id="@+id/oral_13_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="2~3번" />
+
+                <RadioButton
+                    android:id="@+id/oral_13_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="4번 이상" />
+
+                <RadioButton
+                    android:id="@+id/oral_13_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="모르겠다" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="하루에 탄산 및 청량음료 (스포츠 음료, 이온음료, 과일주스 포함) 을 얼마나 마십니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_13_radio" />
+
+            <RadioGroup
+                android:id="@+id/oral_14_radio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/oral_question9"
+                app:layout_constraintTop_toBottomOf="@+id/oral_question14">
+
+                <RadioButton
+                    android:id="@+id/oral_14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="먹지 않음"
+                    app:layout_constraintEnd_toStartOf="@+id/oral_9_2"
+                    app:layout_constraintHorizontal_bias="0.0" />
+
+                <RadioButton
+                    android:id="@+id/oral_14_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="1번" />
+
+                <RadioButton
+                    android:id="@+id/oral_14_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="2~3번" />
+
+                <RadioButton
+                    android:id="@+id/oral_14_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="4번 이상" />
+
+                <RadioButton
+                    android:id="@+id/oral_14_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="모르겠다" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_question15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="담배를 피우십니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/oral_question1"
+                app:layout_constraintTop_toBottomOf="@+id/oral_14_radio" />
+
+            <RadioGroup
+                android:id="@+id/oral_15_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/oral_question15"
+                app:layout_constraintStart_toEndOf="@+id/oral_question15"
+                app:layout_constraintTop_toTopOf="@+id/oral_question15">
+
+                <RadioButton
+                    android:id="@+id/oral_15_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="전혀 피운 적이 없다" />
+
+                <RadioButton
+                    android:id="@+id/oral_15_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="현재 피우고 있다" />
+
+                <RadioButton
+                    android:id="@+id/oral_15_do_not_know"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="이전에 피웠으나 끊었다" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/oral_questionnaire_section3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="※ 특별한 증상 혹은 치과의사에게 묻고 싶은 말을 자유롭게 쓰십시오"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/last_serial"
+                app:layout_constraintStart_toStartOf="@+id/oral_questionnaire_name"
+                app:layout_constraintTop_toBottomOf="@+id/oral_15_radio" />
+
+            <EditText
+                android:id="@+id/remark_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/oral_question15"
+                app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_section3" />
+
+            <Button
+                android:id="@+id/oral_examination_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="저장"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toStartOf="@+id/oral_examination_cancel"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/remark_content"
+                app:layout_constraintTop_toBottomOf="@+id/remark_content" />
+
+            <Button
+                android:id="@+id/oral_examination_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="취소"
+                app:layout_constraintEnd_toEndOf="@+id/remark_content"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/oral_examination_save"
+                app:layout_constraintTop_toTopOf="@+id/oral_examination_save" />
+
+            <!--<Button-->
+                <!--android:id="@+id/check_local_save"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:text="로컬 저장 확인"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/remark_content"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/oral_examination_save" />-->
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
