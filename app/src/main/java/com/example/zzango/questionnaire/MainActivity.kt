@@ -2,6 +2,7 @@ package com.example.zzango.questionnaire
 
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -24,6 +25,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button3.setOnClickListener(this)
         button4.setOnClickListener(this)
 
+        button1.setBackgroundColor(Color.parseColor("#233F78"))
+
         listButton.setOnClickListener{
 
             startActivity(Intent(this@MainActivity, ListActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
@@ -35,6 +38,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     //color
     //0 : first, 1 : second, 2 : third, 3 : four
     override fun onClick(v: View?) {
+        button1.setBackgroundColor(Color.parseColor("#3760B2"))
+        button2.setBackgroundColor(Color.parseColor("#3760B2"))
+        button3.setBackgroundColor(Color.parseColor("#3760B2"))
+        button4.setBackgroundColor(Color.parseColor("#3760B2"))
+
 
         var fragment: Fragment? = null
 
@@ -56,6 +64,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 fragment = FourthFragment()
             }
         }
+
+        v.setBackgroundColor(Color.parseColor("#233F78"))
 
         if (fragment != null) {
 
