@@ -1,12 +1,58 @@
 package com.example.zzango.questionnaire
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var firstFragment = FirstFragment()
+
+        supportFragmentManager.beginTransaction()
+                .add(R.id.fragment_right, firstFragment).commit()
+
+        button1.setOnClickListener(this)
+        button2.setOnClickListener(this)
+        button3.setOnClickListener(this)
+        button4.setOnClickListener(this)
+
+    }
+
+    //color
+    //0 : first, 1 : second, 2 : third, 3 : four
+    override fun onClick(v: View?) {
+
+        var fragment: Fragment? = null
+
+        println(v!!.id)
+        when (v!!.id) {
+            R.id.button1 -> {
+                fragment = FirstFragment()
+            }
+
+            R.id.button2 -> {
+                fragment = SecondFragment()
+            }
+
+            R.id.button3 -> {
+                fragment = ThirdFragment()
+            }
+
+            R.id.button4 -> {
+                fragment = FourthFragment()
+            }
+        }
+
+        if (fragment != null) {
+
+            supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_right, fragment!!).commit()
+        }
     }
 }
