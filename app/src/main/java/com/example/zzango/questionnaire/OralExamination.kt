@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
@@ -24,7 +25,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class OralExamination : AppCompatActivity() {
+class OralExamination : AppCompatActivity(), View.OnClickListener {
 
     var exam_result : ArrayList<ExamInfo>? = null
 //    var exam_result : HashMap<String, ExamInfo>? = null
@@ -111,6 +112,12 @@ class OralExamination : AppCompatActivity() {
 //        LocalDBhelper(this).checkLocal(sql_db!!)
 //
 //    }
+
+    override fun onClick(v: View?) {
+
+
+
+    }
 
     fun oral_exam_local_insert(){
 

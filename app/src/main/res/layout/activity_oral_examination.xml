@@ -696,16 +696,13 @@
                 app:layout_constraintStart_toStartOf="@+id/oral_question1"
                 app:layout_constraintTop_toBottomOf="@+id/oral_10_radio" />
 
-            <RadioGroup
+            <android.support.constraint.ConstraintLayout
                 android:id="@+id/oral_11_radio"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="@+id/oral_question9"
                 app:layout_constraintTop_toBottomOf="@+id/oral_question11">
 
@@ -714,13 +711,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="항상했다"
-                        app:layout_constraintEnd_toStartOf="@+id/oral_9_2" />
+                        app:layout_constraintStart_toStartOf="parent"/>
 
-                    <RadioButton
-                        android:id="@+id/oral_11_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="대부분 했다" />
+                <RadioButton
+                    android:id="@+id/oral_11_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="대부분 했다"
+                    app:layout_constraintStart_toStartOf="@+id/oral_11_1" />
 
                     <RadioButton
                         android:id="@+id/oral_11_3"
@@ -740,7 +740,7 @@
                         android:layout_height="wrap_content"
                         android:text="치실 혹은 치간칫솔이 무엇인지 모른다" />
 
-            </RadioGroup>
+            </android.support.constraint.ConstraintLayout>
 
             <TextView
                 android:id="@+id/oral_question12"
