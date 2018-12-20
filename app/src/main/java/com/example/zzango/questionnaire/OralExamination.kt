@@ -8,6 +8,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.Layout
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
@@ -35,8 +36,8 @@ class OralExamination : AppCompatActivity() {
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var oral_date : Date,
                          @SerializedName("name") @Expose var name : String,
-                         @SerializedName("serial_first") @Expose var serial_first : String,
-                         @SerializedName("serial_last") @Expose var serial_last : String,
+                         @SerializedName("first_serial") @Expose var first_serial : String,
+                         @SerializedName("last_serial") @Expose var last_serial : String,
                          @SerializedName("category") @Expose var category : String,
                          @SerializedName("exam_1") @Expose var exam_1 : String,
                          @SerializedName("exam_2") @Expose var exam_2 : String,
@@ -68,15 +69,10 @@ class OralExamination : AppCompatActivity() {
 
         sql_db = LocalDBhelper(this).writableDatabase
 
-//        oral_exam_inside_scroll_layout.setOnClickListener {
-//
-//            if(){
-//
-//
-//
-//            }
-//
-//        }
+        oral_exam_inside_scroll_layout.descendantFocusability = ViewGroup.FOCUS_BEFORE_DESCENDANTS
+
+        oral_exam_inside_scroll_layout.isFocusableInTouchMode = true
+
 
         oral_9_etc.setOnCheckedChangeListener {
 
@@ -330,8 +326,8 @@ class OralExamination : AppCompatActivity() {
 
         var exam_date = Date()
         var name = ""
-        var serial_first = ""
-        var serial_last = ""
+        var first_serial_text = ""
+        var last_serial_text = ""
         var category = "oral"
         var exam_1 = ""
         var exam_2 = ""
@@ -349,6 +345,42 @@ class OralExamination : AppCompatActivity() {
         var exam_14 = ""
         var exam_15 = ""
         var exam_20 = ""
+
+        if(!oral_questionnaire_name_input.text.isNullOrEmpty()){
+
+            name = oral_questionnaire_name_input.text.toString()
+
+        }else{
+
+            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
+
+            return false
+
+        }
+
+        if(!first_serial.text.isNullOrEmpty()){
+
+            first_serial_text = first_serial.text.toString()
+
+        }else{
+
+            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
+
+            return false
+
+        }
+
+        if(!last_serial.text.isNullOrEmpty()){
+
+            last_serial_text = last_serial.text.toString()
+
+        }else{
+
+            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
+
+            return false
+
+        }
 
         if(oral_1_true.isChecked) {
 
@@ -687,7 +719,7 @@ class OralExamination : AppCompatActivity() {
         var arr = ArrayList<ExamInfo>()
 
         arr.add(ExamInfo(
-                exam_date, name, serial_first, serial_last, category, exam_1, exam_2,
+                exam_date, name, first_serial_text, last_serial_text, category, exam_1, exam_2,
                 exam_3, exam_4, exam_5, exam_6, exam_7, exam_8, exam_9, exam_10,
                 exam_11, exam_12, exam_13, exam_14, exam_15, "", "", "", "", exam_20
         ))
