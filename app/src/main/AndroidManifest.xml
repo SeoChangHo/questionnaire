@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".OralExamination"/>
-        <activity android:name=".ListActivity"/>
+        <activity android:name=".LocalList.ListActivity"/>
         <activity android:name=".CommonExaminationActivity"/>
     </application>
 
