@@ -52,13 +52,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "name," +
                 "serial_first," +
                 "serial_last," +
-                "category" +
+                "category, " +
                 "exam_1, exam_2, exam_3, exam_4, exam_5, exam_6, exam_7," +
                 "exam_8, exam_9, exam_10, exam_11, exam_12, exam_13, exam_14," +
                 "exam_15, remark)" +
                 " VALUES (" +
                 "'${columnValue.oral_date}', '${columnValue.name}', '${columnValue.serial_first}', '${columnValue.serial_last}'" +
-                ", '${columnValue.category}, '${columnValue.exam_1}', '${columnValue.exam_2}', '${columnValue.exam_3}', '${columnValue.exam_4}'" +
+                ", '${columnValue.category}', '${columnValue.exam_1}', '${columnValue.exam_2}', '${columnValue.exam_3}', '${columnValue.exam_4}'" +
                 ", '${columnValue.exam_5}', '${columnValue.exam_6}', '${columnValue.exam_7}', '${columnValue.exam_8}'," +
                 " '${columnValue.exam_9}', '${columnValue.exam_10}', '${columnValue.exam_11}', '${columnValue.exam_12}'," +
                 " '${columnValue.exam_13}', '${columnValue.exam_14}', '${columnValue.exam_15}', '${columnValue.exam_20}'"
@@ -69,7 +69,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     @SuppressLint("Recycle")
     fun checkLocal(db : SQLiteDatabase): Cursor{
 
-        var data = db.rawQuery("SELECT * FROM ORAL_EXAM;", null)
+        var data = db.rawQuery("SELECT * FROM EXAMINATION;", null)
 
 //        data.moveToFirst()
 //

@@ -23,23 +23,23 @@ class ListActivity : Activity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
-
         val papers = ArrayList<Paper>()
-
-
-
-
-
         val data = LocalDBhelper(this).checkLocal(sql_db!!)
-
-        println("*****")
-        println(data)
-        println("*****")
 
         data.moveToFirst()
 
         while(!data.isAfterLast){
-            papers.add(Paper(data.getString(data.getColumnIndex("remark"))))
+            papers.add(Paper(false,
+                             data.getString(data.getColumnIndex("category")),
+                             data.getString(data.getColumnIndex("name")),
+                             data.getString(data.getColumnIndex("serial_first")),
+                             data.getString(data.getColumnIndex("serial_last"))))
+
+            println("category:"+data.getString(data.getColumnIndex("category")))
+            println("name:"+data.getString(data.getColumnIndex("name")))
+            println("serial_first:"+data.getString(data.getColumnIndex("serial_first")))
+            println("serial_last:"+data.getString(data.getColumnIndex("serial_last")))
+
             data.moveToNext()
 
         }
