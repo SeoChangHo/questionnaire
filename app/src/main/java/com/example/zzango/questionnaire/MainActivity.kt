@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button2.setOnClickListener(this)
         button3.setOnClickListener(this)
         button4.setOnClickListener(this)
+        button5.setOnClickListener(this)
 
         button1.setBackgroundColor(Color.parseColor("#233F78"))
 
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button2.setBackgroundColor(Color.parseColor("#3760B2"))
         button3.setBackgroundColor(Color.parseColor("#3760B2"))
         button4.setBackgroundColor(Color.parseColor("#3760B2"))
+        button5.setBackgroundColor(Color.parseColor("#3760B2"))
 
 
         var fragment: Fragment? = null
@@ -62,6 +64,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             R.id.button4 -> {
                 fragment = FourthFragment()
+            }
+
+            R.id.button5 -> {
+                fragment = FiveFragment()
             }
         }
 

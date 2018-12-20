@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,25 +17,24 @@
         app:srcCompat="@drawable/logo" />
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout4"
+        android:id="@+id/constraintLayout5"
         android:layout_width="match_parent"
         android:layout_height="180dp">
 
-
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/textView13"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
             android:layout_marginTop="8dp"
-            android:text="구강검진 문진표"
+            android:text="암검진 문진표"
             android:textColor="@color/mainBlue"
             android:textSize="25dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintStart_toStartOf="@+id/imageView10"
+            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView10"
             android:layout_width="60dp"
             android:layout_height="8dp"
             android:layout_marginLeft="32dp"
@@ -49,35 +48,17 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageButton
-                android:id="@+id/fourth_imageButton1"
-                android:layout_width="200dp"
-                android:layout_height="250dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toStartOf="@+id/fourth_imageButton2"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/fourth_imageButton2"
-                android:layout_width="200dp"
-                android:layout_height="250dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/fourth_imageButton1"
-                app:layout_constraintTop_toTopOf="@+id/fourth_imageButton1" />
 
         </android.support.constraint.ConstraintLayout>
 
