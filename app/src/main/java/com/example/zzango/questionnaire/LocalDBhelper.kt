@@ -50,8 +50,12 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
                 "oral_15, remark)" +
                 " VALUES (" +
-                "'${columnValue.oral_date}', '${columnValue.oral_bun_no}', '${columnValue.oral_email_yn}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}', '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}'," +
-                " '${columnValue.oral_8}', '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}', '${columnValue.oral_13}', '${columnValue.oral_14}', '${columnValue.oral_15}', '${columnValue.oral_20}'"+");")
+                "'${columnValue.oral_date}', '${columnValue.oral_bun_no}', '${columnValue.oral_email_yn}'" +
+                ", '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
+                ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
+                " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
+                " '${columnValue.oral_13}', '${columnValue.oral_14}', '${columnValue.oral_15}', '${columnValue.oral_20}'"
+                +");")
 
     }
 
