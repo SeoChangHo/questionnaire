@@ -721,24 +721,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="대부분 했다"
-                    android:layout_marginLeft="8dp"
+                    android:buttonTint="@color/mainBlue"
                     app:layout_constraintStart_toEndOf="@+id/oral_11_1" />
 
                 <RadioButton
                     android:id="@+id/oral_11_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가끔 했다"
                     android:buttonTint="@color/mainBlue"
-                    android:layout_marginLeft="8dp" />
+                    android:text="가끔 했다" />
 
                 <RadioButton
                     android:id="@+id/oral_11_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="전혀 하지 않았다"
                     android:buttonTint="@color/mainBlue"
-                    android:layout_marginLeft="8dp" />
+                    android:text="전혀 하지 않았다"/>
 
                 <RadioButton
                     android:id="@+id/oral_11_5"
