@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import android.widget.Toast
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -25,45 +26,57 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class OralExamination : AppCompatActivity(), View.OnClickListener {
+class OralExamination : AppCompatActivity() {
 
     var exam_result : ArrayList<ExamInfo>? = null
 //    var exam_result : HashMap<String, ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
     var popup = false
 
-    data class ExamInfo (@SerializedName("oral_date") @Expose var oral_date : Date,
-                         @SerializedName("oral_bun_no") @Expose var oral_bun_no : String,
-                         @SerializedName("oral_email_yn") @Expose var oral_email_yn : String,
-                         @SerializedName("oral_1") @Expose var oral_1 : String,
-                         @SerializedName("oral_2") @Expose var oral_2 : String,
-                         @SerializedName("oral_3") @Expose var oral_3 : String,
-                         @SerializedName("oral_4") @Expose var oral_4 : String,
-                         @SerializedName("oral_5") @Expose var oral_5 : String,
-                         @SerializedName("oral_6") @Expose var oral_6 : String,
-                         @SerializedName("oral_7") @Expose var oral_7 : String,
-                         @SerializedName("oral_8") @Expose var oral_8 : String,
-                         @SerializedName("oral_9") @Expose var oral_9 : String,
-                         @SerializedName("oral_10") @Expose var oral_10 : String,
-                         @SerializedName("oral_11") @Expose var oral_11 : String,
-                         @SerializedName("oral_12") @Expose var oral_12 : String,
-                         @SerializedName("oral_13") @Expose var oral_13 : String,
-                         @SerializedName("oral_14") @Expose var oral_14 : String,
-                         @SerializedName("oral_15") @Expose var oral_15 : String,
-                         @SerializedName("oral_16") @Expose var oral_16 : String,
-                         @SerializedName("oral_17") @Expose var oral_17 : String,
-                         @SerializedName("oral_18") @Expose var oral_18 : String,
-                         @SerializedName("oral_19") @Expose var oral_19 : String,
-                         @SerializedName("oral_20") @Expose var oral_20 : String)
+    data class ExamInfo (@SerializedName("exam_date") @Expose var oral_date : Date,
+                         @SerializedName("name") @Expose var name : String,
+                         @SerializedName("serial_first") @Expose var serial_first : String,
+                         @SerializedName("serial_last") @Expose var serial_last : String,
+                         @SerializedName("category") @Expose var category : String,
+                         @SerializedName("exam_1") @Expose var exam_1 : String,
+                         @SerializedName("exam_2") @Expose var exam_2 : String,
+                         @SerializedName("exam_3") @Expose var exam_3 : String,
+                         @SerializedName("exam_4") @Expose var exam_4 : String,
+                         @SerializedName("exam_5") @Expose var exam_5 : String,
+                         @SerializedName("exam_6") @Expose var exam_6 : String,
+                         @SerializedName("exam_7") @Expose var exam_7 : String,
+                         @SerializedName("exam_8") @Expose var exam_8 : String,
+                         @SerializedName("exam_9") @Expose var exam_9 : String,
+                         @SerializedName("exam_10") @Expose var exam_10 : String,
+                         @SerializedName("exam_11") @Expose var exam_11 : String,
+                         @SerializedName("exam_12") @Expose var exam_12 : String,
+                         @SerializedName("exam_13") @Expose var exam_13 : String,
+                         @SerializedName("exam_14") @Expose var exam_14 : String,
+                         @SerializedName("exam_15") @Expose var exam_15 : String,
+                         @SerializedName("exam_16") @Expose var exam_16 : String,
+                         @SerializedName("exam_17") @Expose var exam_17 : String,
+                         @SerializedName("exam_18") @Expose var exam_18 : String,
+                         @SerializedName("exam_19") @Expose var exam_19 : String,
+                         @SerializedName("exam_20") @Expose var exam_20 : String)
 
     override fun onCreate(savedInstanceState: Bundle?){
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oral_examination)
 
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING)// edittext 키보드 올라왔을때 화면 자동조정
 
         sql_db = LocalDBhelper(this).writableDatabase
+
+//        oral_exam_inside_scroll_layout.setOnClickListener {
+//
+//            if(){
+//
+//
+//
+//            }
+//
+//        }
 
         oral_9_etc.setOnCheckedChangeListener {
 
@@ -112,12 +125,6 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 //        LocalDBhelper(this).checkLocal(sql_db!!)
 //
 //    }
-
-    override fun onClick(v: View?) {
-
-
-
-    }
 
     fun oral_exam_local_insert(){
 
@@ -321,33 +328,35 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("NewApi")
     fun check() : Boolean{
 
-        var oral_date = Date()
-        var oral_bun_no = ""
-        var oral_email_yn = ""
-        var oral_1 = ""
-        var oral_2 = ""
-        var oral_3 = ""
-        var oral_4 = ""
-        var oral_5 = ""
-        var oral_6 = ""
-        var oral_7 = ""
-        var oral_8 = ""
-        var oral_9 = ""
-        var oral_10 = ""
-        var oral_11 = ""
-        var oral_12 = ""
-        var oral_13 = ""
-        var oral_14 = ""
-        var oral_15 = ""
-        var oral_20 = ""
+        var exam_date = Date()
+        var name = ""
+        var serial_first = ""
+        var serial_last = ""
+        var category = "oral"
+        var exam_1 = ""
+        var exam_2 = ""
+        var exam_3 = ""
+        var exam_4 = ""
+        var exam_5 = ""
+        var exam_6 = ""
+        var exam_7 = ""
+        var exam_8 = ""
+        var exam_9 = ""
+        var exam_10 = ""
+        var exam_11 = ""
+        var exam_12 = ""
+        var exam_13 = ""
+        var exam_14 = ""
+        var exam_15 = ""
+        var exam_20 = ""
 
         if(oral_1_true.isChecked) {
 
-            oral_1 = "y"
+            exam_1 = "y"
 
         }else if(oral_1_false.isChecked){
 
-            oral_1 = "n"
+            exam_1 = "n"
 
         }else{
 
@@ -359,15 +368,15 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_2_true.isChecked) {
 
-            oral_2 = "y"
+            exam_2 = "y"
 
         }else if(oral_2_false.isChecked){
 
-            oral_2 = "n"
+            exam_2 = "n"
 
         }else if(oral_2_do_not_know.isChecked){
 
-            oral_2 = "d"
+            exam_2 = "d"
 
         }else{
 
@@ -379,15 +388,15 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_3_true.isChecked) {
 
-            oral_3 = "y"
+            exam_3 = "y"
 
         }else if(oral_3_false.isChecked){
 
-            oral_3 = "n"
+            exam_3 = "n"
 
         }else if(oral_3_do_not_know.isChecked){
 
-            oral_3 = "d"
+            exam_3 = "d"
 
         }else{
 
@@ -399,11 +408,11 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_4_true.isChecked) {
 
-            oral_4 = "y"
+            exam_4 = "y"
 
         }else if(oral_4_false.isChecked){
 
-            oral_4 = "n"
+            exam_4 = "n"
 
         }else{
 
@@ -415,11 +424,11 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_5_true.isChecked) {
 
-            oral_5 = "y"
+            exam_5 = "y"
 
         }else if(oral_5_false.isChecked){
 
-            oral_5 = "n"
+            exam_5 = "n"
 
         }else{
 
@@ -431,11 +440,11 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_6_true.isChecked) {
 
-            oral_6 = "y"
+            exam_6 = "y"
 
         }else if(oral_6_false.isChecked){
 
-            oral_6 = "n"
+            exam_6 = "n"
 
         }else{
 
@@ -447,23 +456,23 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_7_very_good.isChecked) {
 
-            oral_7 = "5"
+            exam_7 = "5"
 
         }else if(oral_7_good.isChecked){
 
-            oral_7 = "4"
+            exam_7 = "4"
 
         }else if(oral_7_normal.isChecked){
 
-            oral_7 = "3"
+            exam_7 = "3"
 
         }else if(oral_7_bad.isChecked){
 
-            oral_7 = "2"
+            exam_7 = "2"
 
         }else if(oral_7_very_bad.isChecked){
 
-            oral_7 = "1"
+            exam_7 = "1"
 
         }else{
 
@@ -475,11 +484,11 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_8_true.isChecked) {
 
-            oral_8 = "y"
+            exam_8 = "y"
 
         }else if(oral_8_false.isChecked){
 
-            oral_8 = "n"
+            exam_8 = "n"
 
         }else{
 
@@ -491,23 +500,23 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_9_5.isChecked) {
 
-            oral_9 = "5"
+            exam_9 = "5"
 
         }else if(oral_9_4.isChecked){
 
-            oral_9 = "4"
+            exam_9 = "4"
 
         }else if(oral_9_3.isChecked){
 
-            oral_9 = "3"
+            exam_9 = "3"
 
         }else if(oral_9_2.isChecked){
 
-            oral_9 = "2"
+            exam_9 = "2"
 
         }else if(oral_9_1.isChecked){
 
-            oral_9 = "1"
+            exam_9 = "1"
 
         }else{
 
@@ -519,19 +528,19 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_10_4.isChecked) {
 
-            oral_10 = "4"
+            exam_10 = "4"
 
         }else if(oral_10_3.isChecked){
 
-            oral_10 = "3"
+            exam_10 = "3"
 
         }else if(oral_10_2.isChecked){
 
-            oral_10 = "2"
+            exam_10 = "2"
 
         }else if(oral_10_1.isChecked){
 
-            oral_10 = "1"
+            exam_10 = "1"
 
         }else{
 
@@ -543,23 +552,23 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_11_5.isChecked) {
 
-            oral_11 = "5"
+            exam_11 = "5"
 
         }else if(oral_11_4.isChecked){
 
-            oral_11 = "4"
+            exam_11 = "4"
 
         }else if(oral_11_3.isChecked){
 
-            oral_11 = "3"
+            exam_11 = "3"
 
         }else if(oral_11_2.isChecked){
 
-            oral_11 = "2"
+            exam_11 = "2"
 
         }else if(oral_11_1.isChecked){
 
-            oral_11 = "1"
+            exam_11 = "1"
 
         }else{
 
@@ -571,15 +580,15 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_12_true.isChecked) {
 
-            oral_12 = "y"
+            exam_12 = "y"
 
         }else if(oral_12_false.isChecked){
 
-            oral_12 = "n"
+            exam_12 = "n"
 
         }else if(oral_12_do_not_know.isChecked){
 
-            oral_12 = "d"
+            exam_12 = "d"
 
         }else{
 
@@ -591,23 +600,23 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_13_5.isChecked) {
 
-            oral_13 = "5"
+            exam_13 = "5"
 
         }else if(oral_13_4.isChecked){
 
-            oral_13 = "4"
+            exam_13 = "4"
 
         }else if(oral_13_3.isChecked){
 
-            oral_13 = "3"
+            exam_13 = "3"
 
         }else if(oral_13_2.isChecked){
 
-            oral_13 = "2"
+            exam_13 = "2"
 
         }else if(oral_13_1.isChecked){
 
-            oral_13 = "1"
+            exam_13 = "1"
 
         }else{
 
@@ -619,23 +628,23 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_14_5.isChecked) {
 
-            oral_14 = "5"
+            exam_14 = "5"
 
         }else if(oral_14_4.isChecked){
 
-            oral_14 = "4"
+            exam_14 = "4"
 
         }else if(oral_14_3.isChecked){
 
-            oral_14 = "3"
+            exam_14 = "3"
 
         }else if(oral_14_2.isChecked){
 
-            oral_14 = "2"
+            exam_14 = "2"
 
         }else if(oral_14_1.isChecked){
 
-            oral_14 = "1"
+            exam_14 = "1"
 
         }else{
 
@@ -647,15 +656,15 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(oral_15_true.isChecked){
 
-            oral_15 = "y"
+            exam_15 = "y"
 
         }else if(oral_15_false.isChecked){
 
-            oral_15 = "n"
+            exam_15 = "n"
 
         }else if(oral_15_do_not_know.isChecked){
 
-            oral_15 = "d"
+            exam_15 = "d"
 
         }else{
 
@@ -667,20 +676,20 @@ class OralExamination : AppCompatActivity(), View.OnClickListener {
 
         if(!remark_content.text.toString().isNullOrEmpty()){
 
-            oral_20 = remark_content.text.toString()
+            exam_20 = remark_content.text.toString()
 
         }else{
 
-            oral_20 = ""
+            exam_20 = ""
 
         }
 
         var arr = ArrayList<ExamInfo>()
 
         arr.add(ExamInfo(
-                oral_date, oral_bun_no, oral_email_yn, oral_1, oral_2,
-                oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
-                oral_11, oral_12, oral_13, oral_14, oral_15, "", "", "", "", oral_20
+                exam_date, name, serial_first, serial_last, category, exam_1, exam_2,
+                exam_3, exam_4, exam_5, exam_6, exam_7, exam_8, exam_9, exam_10,
+                exam_11, exam_12, exam_13, exam_14, exam_15, "", "", "", "", exam_20
         ))
 
 //        arr.add(ExamInfo(
