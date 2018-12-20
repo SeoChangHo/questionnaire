@@ -60,6 +60,8 @@ class OralExamination : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oral_examination)
 
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+
         sql_db = LocalDBhelper(this).writableDatabase
 
         oral_9_etc.setOnCheckedChangeListener {

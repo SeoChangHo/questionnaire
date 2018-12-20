@@ -709,48 +709,36 @@
                 app:layout_constraintStart_toStartOf="@+id/oral_question9"
                 app:layout_constraintTop_toBottomOf="@+id/oral_question11">
 
-                <RadioButton
-                    android:id="@+id/oral_11_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="항상했다"
-                    app:layout_constraintEnd_toStartOf="@+id/oral_9_2"
-                    app:layout_constraintHorizontal_bias="0.0" />
+                    <RadioButton
+                        android:id="@+id/oral_11_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="항상했다"
+                        app:layout_constraintEnd_toStartOf="@+id/oral_9_2" />
 
-                <RadioButton
-                    android:id="@+id/oral_11_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:text="대부분 했다" />
+                    <RadioButton
+                        android:id="@+id/oral_11_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="대부분 했다" />
 
-                <RadioButton
-                    android:id="@+id/oral_11_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:text="가끔 했다" />
+                    <RadioButton
+                        android:id="@+id/oral_11_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가끔 했다" />
 
-                <RadioButton
-                    android:id="@+id/oral_11_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:text="전혀 하지 않았다" />
+                    <RadioButton
+                        android:id="@+id/oral_11_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="전혀 하지 않았다" />
 
-                <RadioButton
-                    android:id="@+id/oral_11_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:text="치실 혹은 치간칫솔이 무엇인지 모른다" />
+                    <RadioButton
+                        android:id="@+id/oral_11_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="치실 혹은 치간칫솔이 무엇인지 모른다" />
 
             </RadioGroup>
 
@@ -883,6 +871,8 @@
                 android:id="@+id/oral_14_radio"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
@@ -910,8 +900,8 @@
                     android:id="@+id/oral_14_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:text="2~3번" />
 
@@ -919,8 +909,8 @@
                     android:id="@+id/oral_14_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:text="4번 이상" />
 
@@ -928,8 +918,8 @@
                     android:id="@+id/oral_14_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:text="모르겠다" />
 
@@ -997,11 +987,19 @@
             <EditText
                 android:id="@+id/remark_content"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="24dp"
-                android:background="@null"
-                app:layout_constraintEnd_toEndOf="@+id/oral_question4"
-                app:layout_constraintStart_toStartOf="@+id/oral_question15"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/text_area"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_section3" />
 
             <Button
@@ -1009,12 +1007,14 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginBottom="50dp"
                 android:background="@color/mainBlue"
                 android:text="저장"
-                android:textSize="20dp"
                 android:textColor="@color/backGround"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/oral_examination_cancel"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -1026,12 +1026,14 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="50dp"
                 android:background="@color/mainBlue"
                 android:text="취소"
-                android:textSize="20dp"
                 android:textColor="@color/backGround"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
