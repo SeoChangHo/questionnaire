@@ -87,7 +87,6 @@ class ListActivity : Activity() {
             btnDelete.visibility = View.GONE
             txtBottomMent.text = "문진표를 선택해주세요."
         }
-
         //삭제하는거
         btnDelete.setOnClickListener{
 
