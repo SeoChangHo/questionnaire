@@ -86,8 +86,8 @@ class ListActivity : Activity() {
 
             window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-            view.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-            view.login_appbar_loading_progress.visibility = View.VISIBLE
+            login_appbar_loading_progress_bg.visibility = View.VISIBLE
+            login_appbar_loading_progress.visibility = View.VISIBLE
 
             var removeArr = ArrayList<Paper>()
 
@@ -114,8 +114,8 @@ class ListActivity : Activity() {
 
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-                            view.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                            view.login_appbar_loading_progress.visibility = View.VISIBLE
+                            login_appbar_loading_progress_bg.visibility = View.GONE
+                            login_appbar_loading_progress.visibility = View.GONE
 
                             Toast.makeText(this@ListActivity, "전송 완료", Toast.LENGTH_LONG).show()
 
@@ -157,6 +157,16 @@ class ListActivity : Activity() {
             btnSave.visibility = View.GONE
             btnDelete.visibility = View.GONE
             txtBottomMent.text = "문진표를 선택해주세요."
+        }
+
+    }
+
+    override fun onBackPressed() {
+
+        if(login_appbar_loading_progress.visibility != View.VISIBLE){
+
+            super.onBackPressed()
+
         }
 
     }
