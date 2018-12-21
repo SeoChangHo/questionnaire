@@ -72,29 +72,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         var data = db.rawQuery("SELECT * FROM EXAMINATION;", null)
 
-//        data.moveToFirst()
-//
-//        while(!data.isAfterLast){
-//
-//            println(data.getString(1))
-//            println(data.getString(2))
-//            println(data.getString(3))
-//            println(data.getString(4))
-//            println(data.getString(5))
-//            println(data.getString(6))
-//            println(data.getString(7))
-//            println(data.getString(8))
-//            println(data.getString(9))
-//            println(data.getString(10))
-//            println(data.getString(11))
-//            println(data.getString(12))
-//            println(data.getString(13))
-//            println(data.getString(14))
-//            println(data.getString(15))
-//
-//            data.moveToNext()
-//
-//        }
 
 
         return data
