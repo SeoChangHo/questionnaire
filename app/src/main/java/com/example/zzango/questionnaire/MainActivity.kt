@@ -16,16 +16,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var firstFragment = FirstFragment()
-
         supportFragmentManager.beginTransaction()
-                .add(R.id.fragment_right, firstFragment).commit()
-
-        button1.setOnClickListener(this)
-        button2.setOnClickListener(this)
-        button3.setOnClickListener(this)
-        button4.setOnClickListener(this)
-        button5.setOnClickListener(this)
+                .add(R.id.fragment_right, FirstFragment()).commit()
 
         button1.setBackgroundColor(Color.parseColor("#233F78"))
 
@@ -35,21 +27,24 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
+        button1.setOnClickListener(this)
+        button2.setOnClickListener(this)
+        button3.setOnClickListener(this)
+        button4.setOnClickListener(this)
+        button5.setOnClickListener(this)
+
     }
 
-    //color
-    //0 : first, 1 : second, 2 : third, 3 : four
     override fun onClick(v: View?) {
+
         button1.setBackgroundColor(Color.parseColor("#3760B2"))
         button2.setBackgroundColor(Color.parseColor("#3760B2"))
         button3.setBackgroundColor(Color.parseColor("#3760B2"))
         button4.setBackgroundColor(Color.parseColor("#3760B2"))
         button5.setBackgroundColor(Color.parseColor("#3760B2"))
 
-
         var fragment: Fragment? = null
 
-        println(v!!.id)
         when (v!!.id) {
             R.id.button1 -> {
                 fragment = FirstFragment()

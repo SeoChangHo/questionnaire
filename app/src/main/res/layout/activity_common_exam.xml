@@ -16,6 +16,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="60dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/mainBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
@@ -28,6 +39,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:text="※해당 항목에 체크해주시기 바랍니다."
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <TextView
                 android:id="@+id/name_text"
@@ -710,32 +737,6 @@
                     app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_wrapper" />
 
             </android.support.constraint.ConstraintLayout>
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="60dp"
-                android:layout_height="8dp"
-                android:layout_marginTop="32dp"
-                android:background="@color/mainBlue"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="32dp"
-                android:text="※해당 항목에 체크해주시기 바랍니다."
-                android:textColor="@color/mainBlue"
-                android:textSize="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <TextView
                 android:id="@+id/textView15"
@@ -1437,6 +1438,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
+                    android:enabled="false"
                     android:textSize="13dp"
                     android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_1"
@@ -1461,6 +1463,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
+                    android:enabled="false"
                     android:textSize="13dp"
                     android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_2"
@@ -1485,6 +1488,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
+                    android:enabled="false"
                     android:textSize="13dp"
                     android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_3"
@@ -1509,6 +1513,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
+                    android:enabled="false"
                     android:textSize="13dp"
                     android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_4"
@@ -1533,6 +1538,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
+                    android:enabled="false"
                     android:textSize="13dp"
                     android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_5"
@@ -1555,6 +1561,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="잔" />
 
                     <RadioButton
@@ -1562,6 +1569,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="병" />
 
                     <RadioButton
@@ -1569,6 +1577,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="캔" />
 
                     <RadioButton
@@ -1576,7 +1585,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="캔" />
+                        android:enabled="false"
+                        android:text="cc" />
 
                 </RadioGroup>
 
@@ -1596,6 +1606,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="잔" />
 
                     <RadioButton
@@ -1603,6 +1614,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="병" />
 
                     <RadioButton
@@ -1610,6 +1622,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="캔" />
 
                     <RadioButton
@@ -1617,7 +1630,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="캔" />
+                        android:enabled="false"
+                        android:text="cc" />
 
                 </RadioGroup>
 
@@ -1637,6 +1651,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="잔" />
 
                     <RadioButton
@@ -1644,6 +1659,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="병" />
 
                     <RadioButton
@@ -1651,6 +1667,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="캔" />
 
                     <RadioButton
@@ -1658,7 +1675,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="캔" />
+                        android:enabled="false"
+                        android:text="cc" />
 
                 </RadioGroup>
 
@@ -1678,6 +1696,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="잔" />
 
                     <RadioButton
@@ -1685,6 +1704,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="병" />
 
                     <RadioButton
@@ -1692,6 +1712,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="캔" />
 
                     <RadioButton
@@ -1699,7 +1720,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="캔" />
+                        android:enabled="false"
+                        android:text="cc" />
 
                 </RadioGroup>
 
@@ -1719,6 +1741,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="잔" />
 
                     <RadioButton
@@ -1726,6 +1749,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="병" />
 
                     <RadioButton
@@ -1733,6 +1757,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="캔" />
 
                     <RadioButton
@@ -1740,7 +1765,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="캔" />
+                        android:enabled="false"
+                        android:text="cc" />
 
                 </RadioGroup>
 
@@ -1843,6 +1869,7 @@
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:enabled="false"
                     android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_6"
                     app:layout_constraintStart_toEndOf="@+id/table_text_6"
@@ -1867,6 +1894,7 @@
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:enabled="false"
                     android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_7"
                     app:layout_constraintStart_toEndOf="@+id/table_text_7"
@@ -1891,6 +1919,7 @@
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:enabled="false"
                     android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_8"
                     app:layout_constraintStart_toEndOf="@+id/table_text_8"
@@ -1915,6 +1944,7 @@
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:enabled="false"
                     android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_9"
                     app:layout_constraintStart_toEndOf="@+id/table_text_9"
@@ -1939,6 +1969,7 @@
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:enabled="false"
                     android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_10"
                     app:layout_constraintStart_toEndOf="@+id/table_text_10"
@@ -1960,6 +1991,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="잔" />
 
                     <RadioButton
@@ -1967,6 +1999,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="병" />
 
                     <RadioButton
@@ -1974,6 +2007,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="캔" />
 
                     <RadioButton
@@ -1981,7 +2015,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="캔" />
+                        android:enabled="false"
+                        android:text="cc" />
 
                 </RadioGroup>
 
@@ -2001,6 +2036,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="잔" />
 
                     <RadioButton
@@ -2008,6 +2044,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="병" />
 
                     <RadioButton
@@ -2015,6 +2052,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="캔" />
 
                     <RadioButton
@@ -2022,7 +2060,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="캔" />
+                        android:enabled="false"
+                        android:text="cc" />
 
                 </RadioGroup>
 
@@ -2042,6 +2081,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="잔" />
 
                     <RadioButton
@@ -2049,6 +2089,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="병" />
 
                     <RadioButton
@@ -2056,6 +2097,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="캔" />
 
                     <RadioButton
@@ -2063,7 +2105,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="캔" />
+                        android:enabled="false"
+                        android:text="cc" />
 
                 </RadioGroup>
 
@@ -2083,6 +2126,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="잔" />
 
                     <RadioButton
@@ -2090,6 +2134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="병" />
 
                     <RadioButton
@@ -2097,6 +2142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="캔" />
 
                     <RadioButton
@@ -2104,7 +2150,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="캔" />
+                        android:enabled="false"
+                        android:text="cc" />
 
                 </RadioGroup>
 
@@ -2124,6 +2171,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="잔" />
 
                     <RadioButton
@@ -2131,6 +2179,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="병" />
 
                     <RadioButton
@@ -2138,6 +2187,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
+                        android:enabled="false"
                         android:text="캔" />
 
                     <RadioButton
@@ -2145,7 +2195,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:text="캔" />
+                        android:enabled="false"
+                        android:text="cc" />
 
                 </RadioGroup>
 
