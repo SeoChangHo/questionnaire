@@ -16,7 +16,7 @@ class FirstFragment : Fragment(){
 
         view.first_imageButton1.setOnClickListener {
 
-            startActivity(Intent(activity!!, OralExamination::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(activity!!, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 
