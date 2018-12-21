@@ -15,7 +15,6 @@ import com.example.zzango.questionnaire.LocalDBhelper
 import com.example.zzango.questionnaire.OracleUtill
 import com.example.zzango.questionnaire.R
 import kotlinx.android.synthetic.main.activity_list.*
-import kotlinx.android.synthetic.main.activity_list.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
