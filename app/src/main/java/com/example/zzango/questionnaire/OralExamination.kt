@@ -15,6 +15,7 @@ import android.util.DisplayMetrics
 import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.Toast
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -26,7 +27,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class OralExamination : AppCompatActivity(), View.OnTouchListener {
+class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
     var exam_result : ArrayList<ExamInfo>? = null
 //    var exam_result : HashMap<String, ExamInfo>? = null
@@ -68,16 +69,8 @@ class OralExamination : AppCompatActivity(), View.OnTouchListener {
 
         sql_db = LocalDBhelper(this).writableDatabase
 
-        oral_exam_inside_scroll_layout.focusable = ViewGroup.FOCUSABLE
-        oral_exam_inside_scroll_layout.isFocusableInTouchMode = true
-
-//        oral_exam_inside_scroll_layout.setOnClickListener {
-//
-//            oral_exam_inside_scroll_layout.requestFocus()
-//
-//        }
-//
-//        oral_exam_inside_scroll_layout.setOnFocusChangeListener(this)
+//        oral_exam_inside_scroll_layout.focusable = ViewGroup.FOCUSABLE
+//        oral_exam_inside_scroll_layout.isFocusableInTouchMode = true
 //
 //        oral_exam_inside_scroll_layout.setOnTouchListener {
 //
@@ -90,6 +83,22 @@ class OralExamination : AppCompatActivity(), View.OnTouchListener {
 //            true
 //
 //        }
+
+        oral_9_count.setOnFocusChangeListener {
+
+            v, hasFocus ->
+
+            if(hasFocus){
+
+                oral_9_etc.isChecked = true
+
+            }else{
+
+                oral_9_etc.isChecked = false
+
+            }
+
+        }
 
         oral_9_etc.setOnCheckedChangeListener {
 
@@ -104,6 +113,7 @@ class OralExamination : AppCompatActivity(), View.OnTouchListener {
             }else{
 
                 oral_9_count.requestFocus()
+                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).showSoftInput(oral_9_count, 0)
 
             }
 
@@ -133,39 +143,35 @@ class OralExamination : AppCompatActivity(), View.OnTouchListener {
 
     }
 
-    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
 
+        if(ev!!.action == MotionEvent.ACTION_DOWN) {
 
+            if (currentFocus!! !is EditText) {
+
+                currentFocus!!.requestFocus()
+
+                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
+
+            }
+
+        }
+
+        return super.dispatchTouchEvent(ev)
 
     }
+
+//    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+//
+//
+//
+//    }
 
 //    override fun onTouchEvent(event: MotionEvent?): Boolean {
 //
 //        println("it work")
 //
 //        return super.onTouchEvent(event)
-//
-//    }
-
-//        override fun onTouchEvent(event: MotionEvent?): Boolean {
-//
-//        if(event!!.action == MotionEvent.ACTION_DOWN){
-//
-//            println("a")
-//
-//        }
-//
-//        return super.onTouchEvent(event)
-//
-//    }
-
-//    override fun onFocusChange(v: View?, hasFocus: Boolean) {
-//
-//        if(currentFocus !is EditText){
-//
-//            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
-//
-//        }
 //
 //    }
 
