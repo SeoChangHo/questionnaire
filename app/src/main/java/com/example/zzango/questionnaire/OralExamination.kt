@@ -3,17 +3,16 @@ package com.example.zzango.questionnaire
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.IBinder
 import android.support.v7.app.AppCompatActivity
 import android.text.Layout
 import android.util.DisplayMetrics
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
@@ -27,7 +26,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class OralExamination : AppCompatActivity() {
+class OralExamination : AppCompatActivity(), View.OnTouchListener {
 
     var exam_result : ArrayList<ExamInfo>? = null
 //    var exam_result : HashMap<String, ExamInfo>? = null
@@ -65,14 +64,32 @@ class OralExamination : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oral_examination)
 
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING)// edittext 키보드 올라왔을때 화면 자동조정
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
 
         sql_db = LocalDBhelper(this).writableDatabase
 
-        oral_exam_inside_scroll_layout.descendantFocusability = ViewGroup.FOCUS_BEFORE_DESCENDANTS
-
+        oral_exam_inside_scroll_layout.focusable = ViewGroup.FOCUSABLE
         oral_exam_inside_scroll_layout.isFocusableInTouchMode = true
 
+//        oral_exam_inside_scroll_layout.setOnClickListener {
+//
+//            oral_exam_inside_scroll_layout.requestFocus()
+//
+//        }
+//
+//        oral_exam_inside_scroll_layout.setOnFocusChangeListener(this)
+//
+//        oral_exam_inside_scroll_layout.setOnTouchListener {
+//
+//            v, event ->
+//
+//            oral_exam_inside_scroll_layout.requestFocus()
+//
+//            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
+//
+//            true
+//
+//        }
 
         oral_9_etc.setOnCheckedChangeListener {
 
@@ -82,7 +99,7 @@ class OralExamination : AppCompatActivity() {
 
                 oral_9_count.text = null
                 oral_9_count.clearFocus()
-                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(oral_9_count.windowToken, 0)
+                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
 
             }else{
 
@@ -104,7 +121,7 @@ class OralExamination : AppCompatActivity() {
 
         oral_examination_cancel.setOnClickListener {
 
-//            startActivity() 메인화면으로
+            startActivity(Intent(this, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 
@@ -115,6 +132,42 @@ class OralExamination : AppCompatActivity() {
 //        }
 
     }
+
+    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+
+
+
+    }
+
+//    override fun onTouchEvent(event: MotionEvent?): Boolean {
+//
+//        println("it work")
+//
+//        return super.onTouchEvent(event)
+//
+//    }
+
+//        override fun onTouchEvent(event: MotionEvent?): Boolean {
+//
+//        if(event!!.action == MotionEvent.ACTION_DOWN){
+//
+//            println("a")
+//
+//        }
+//
+//        return super.onTouchEvent(event)
+//
+//    }
+
+//    override fun onFocusChange(v: View?, hasFocus: Boolean) {
+//
+//        if(currentFocus !is EditText){
+//
+//            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
+//
+//        }
+//
+//    }
 
 //    fun local_data_load(){
 //

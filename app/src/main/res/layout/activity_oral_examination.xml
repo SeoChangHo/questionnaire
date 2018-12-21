@@ -11,6 +11,7 @@
         android:id="@+id/oral_exam_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
         android:overScrollMode="never"
         android:fillViewport="true">
 
@@ -165,8 +166,8 @@
                     android:id="@+id/oral_1_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="예" />
 
                 <RadioButton
@@ -175,6 +176,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="아니오" />
 
             </RadioGroup>
@@ -204,8 +206,8 @@
                     android:id="@+id/oral_2_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="예"/>
 
                 <RadioButton
@@ -214,6 +216,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="아니오" />
 
                 <RadioButton
@@ -222,6 +225,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="모르겠다" />
 
             </RadioGroup>
@@ -253,8 +257,8 @@
                     android:id="@+id/oral_3_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="예"/>
 
                 <RadioButton
@@ -263,6 +267,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="아니오"/>
 
                 <RadioButton
@@ -271,6 +276,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="모르겠다"/>
 
             </RadioGroup>
@@ -300,8 +306,8 @@
                     android:id="@+id/oral_4_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="예" />
 
                 <RadioButton
@@ -310,6 +316,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="아니오"/>
 
             </RadioGroup>
@@ -341,8 +348,8 @@
                     android:id="@+id/oral_5_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="예" />
 
                 <RadioButton
@@ -351,6 +358,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="아니오" />
 
             </RadioGroup>
@@ -382,8 +390,8 @@
                     android:id="@+id/oral_6_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="예" />
 
                 <RadioButton
@@ -392,6 +400,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="아니오" />
 
             </RadioGroup>
@@ -425,8 +434,8 @@
                     android:id="@+id/oral_7_very_good"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="매우 좋음"/>
 
                 <RadioButton
@@ -435,6 +444,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="좋음" />
 
                 <RadioButton
@@ -443,6 +453,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="보통" />
 
                 <RadioButton
@@ -451,6 +462,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="나쁨" />
 
                 <RadioButton
@@ -459,6 +471,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="매우 나쁨" />
 
             </RadioGroup>
@@ -492,8 +505,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="@+id/oral_question8"
                 app:layout_constraintTop_toBottomOf="@+id/oral_question8">
@@ -502,8 +513,8 @@
                     android:id="@+id/oral_8_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="예" />
 
                 <RadioButton
@@ -512,6 +523,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="아니오" />
 
             </RadioGroup>
@@ -562,6 +574,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="3회" />
 
                 <RadioButton
@@ -572,6 +585,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="4회" />
 
                 <RadioButton
@@ -582,12 +596,15 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="5회" />
 
                 <RadioButton
                     android:id="@+id/oral_9_etc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:layout_marginEnd="2dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="2dp" />
@@ -656,6 +673,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="항상했다(7회)" />
 
                 <RadioButton
@@ -663,27 +681,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="대부분 했다(4~6회)" />
 
                 <RadioButton
                     android:id="@+id/oral_10_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
+                    android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="가끔 했다(1~3회)" />
 
                 <RadioButton
                     android:id="@+id/oral_10_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="전혀 하지 않았다(0회)" />
 
             </RadioGroup>
@@ -714,21 +731,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="항상했다" />
 
                 <RadioButton
                     android:id="@+id/oral_11_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="대부분 했다"
                     android:buttonTint="@color/mainBlue"
-                    app:layout_constraintStart_toEndOf="@+id/oral_11_1" />
+                    android:focusable="true"
+                    android:text="대부분 했다" />
 
                 <RadioButton
                     android:id="@+id/oral_11_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="가끔 했다" />
 
                 <RadioButton
@@ -736,6 +755,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="전혀 하지 않았다"/>
 
                 <RadioButton
@@ -743,6 +763,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="치실 혹은 치간칫솔이 무엇인지 모른다"/>
 
             </RadioGroup>
@@ -775,8 +796,8 @@
                     android:id="@+id/oral_12_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="예" />
 
                 <RadioButton
@@ -785,6 +806,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="아니오" />
 
                 <RadioButton
@@ -793,6 +815,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="모르겠다" />
 
             </RadioGroup>
@@ -824,6 +847,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="먹지 않음" />
 
                 <RadioButton
@@ -833,6 +857,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="1번" />
 
                 <RadioButton
@@ -843,26 +868,25 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="2~3번" />
 
                 <RadioButton
                     android:id="@+id/oral_13_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="4번 이상" />
 
                 <RadioButton
                     android:id="@+id/oral_13_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="모르겠다" />
 
             </RadioGroup>
@@ -896,6 +920,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="먹지 않음"/>
 
                 <RadioButton
@@ -903,8 +928,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="1번" />
 
                 <RadioButton
@@ -912,8 +937,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="2~3번" />
 
@@ -922,8 +945,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="4번 이상" />
 
@@ -932,9 +953,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="모르겠다" />
 
             </RadioGroup>
@@ -967,7 +987,6 @@
                     android:id="@+id/oral_15_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="전혀 피운 적이 없다" />
 
@@ -977,6 +996,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="현재 피우고 있다" />
 
                 <RadioButton
@@ -985,6 +1005,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:focusable="true"
                     android:text="이전에 피웠으나 끊었다" />
 
             </RadioGroup>
@@ -1012,10 +1033,10 @@
                 android:inputType="textMultiLine|textNoSuggestions"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
+                android:gravity="top"
                 app:layout_constraintEnd_toEndOf="@+id/oral_questionnaire_section3"
                 app:layout_constraintStart_toStartOf="@+id/oral_questionnaire_section3"
-                app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_section3"
-                app:layout_constraintWidth_percent="0.5" />
+                app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_section3" />
 
             <Button
                 android:id="@+id/oral_examination_save"

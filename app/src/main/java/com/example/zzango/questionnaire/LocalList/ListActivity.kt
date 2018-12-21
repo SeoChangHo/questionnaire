@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -83,6 +84,11 @@ class ListActivity : Activity() {
         //저장하는거
         btnSave.setOnClickListener {
 
+            window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+
+            view.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+            view.login_appbar_loading_progress.visibility = View.VISIBLE
+
             var removeArr = ArrayList<Paper>()
 
             for(item in papers)
@@ -106,6 +112,11 @@ class ListActivity : Activity() {
 
                         } else {
 
+                            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+
+                            view.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+                            view.login_appbar_loading_progress.visibility = View.VISIBLE
+
                             Toast.makeText(this@ListActivity, "전송 완료", Toast.LENGTH_LONG).show()
 
                             LocalDBhelper(this@ListActivity).deletePaper(sql_db!!, removeArr)
@@ -127,23 +138,8 @@ class ListActivity : Activity() {
 
             })
 
-            //요청을 보냄
-            //if return = s
-//            {
-//            LocalDBhelper(this).deletePaper(sql_db!!, removeArr)
-//            ListSetting()
-//            btnSave.visibility = View.GONE
-//            btnDelete.visibility = View.GONE
-//            txtBottomMent.text = "문진표를 선택해주세요."
-//            }
-//            else
-//            {
-//              println("실패")
-//            }
-
-
-//
         }
+
         //삭제하는거
         btnDelete.setOnClickListener{
 
@@ -162,7 +158,9 @@ class ListActivity : Activity() {
             btnDelete.visibility = View.GONE
             txtBottomMent.text = "문진표를 선택해주세요."
         }
+
     }
+
 }
 
 
