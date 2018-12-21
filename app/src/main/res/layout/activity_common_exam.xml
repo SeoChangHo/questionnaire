@@ -884,6 +884,132 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/textView44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="32dp"
+                android:text="총"
+                app:layout_constraintBottom_toBottomOf="@+id/common_4_1_radio"
+                app:layout_constraintStart_toEndOf="@+id/common_4_1_radio"
+                app:layout_constraintTop_toTopOf="@+id/common_4_1_radio"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <EditText
+                android:id="@+id/editText_4_1_1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView44"
+                app:layout_constraintStart_toEndOf="@+id/textView44"
+                app:layout_constraintTop_toTopOf="@+id/textView44" />
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="년    하루평균"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_1"
+                app:layout_constraintStart_toEndOf="@+id/editText_4_1_1"
+                app:layout_constraintTop_toTopOf="@+id/editText_4_1_1" />
+
+            <EditText
+                android:id="@+id/editText_4_1_2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView42"
+                app:layout_constraintStart_toEndOf="@+id/textView42"
+                app:layout_constraintTop_toTopOf="@+id/textView42" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개비"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_2"
+                app:layout_constraintStart_toEndOf="@+id/editText_4_1_2"
+                app:layout_constraintTop_toTopOf="@+id/editText_4_1_2" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="32dp"
+                android:text="총"
+                app:layout_constraintBottom_toBottomOf="@+id/common_4_1_radio"
+                app:layout_constraintStart_toEndOf="@+id/common_4_1_radio"
+                app:layout_constraintTop_toTopOf="@+id/common_4_1_radio"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <EditText
+                android:id="@+id/editText_4_1_3"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView45"
+                app:layout_constraintStart_toEndOf="@+id/textView45"
+                app:layout_constraintTop_toTopOf="@+id/textView45" />
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="년    흡연했을 때 하루평균"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_3"
+                app:layout_constraintStart_toEndOf="@+id/editText_4_1_3"
+                app:layout_constraintTop_toTopOf="@+id/editText_4_1_3" />
+
+            <EditText
+                android:id="@+id/editText_4_1_4"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView46"
+                app:layout_constraintStart_toEndOf="@+id/textView46"
+                app:layout_constraintTop_toTopOf="@+id/textView46" />
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개비    끊은지"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_4"
+                app:layout_constraintStart_toEndOf="@+id/editText_4_1_4"
+                app:layout_constraintTop_toTopOf="@+id/editText_4_1_4" />
+
+            <EditText
+                android:id="@+id/editText_4_1_5"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView47"
+                app:layout_constraintStart_toEndOf="@+id/textView47"
+                app:layout_constraintTop_toTopOf="@+id/textView47" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="년"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_5"
+                app:layout_constraintStart_toEndOf="@+id/editText_4_1_5"
+                app:layout_constraintTop_toTopOf="@+id/editText_4_1_5" />
+
+
+            <TextView
                 android:id="@+id/textView21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -970,6 +1096,132 @@
                     android:text="과거에는 피웠으나 현재 피우지 않음" />
 
             </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView49"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="32dp"
+                android:text="총"
+                app:layout_constraintBottom_toBottomOf="@+id/common_5_1_radio"
+                app:layout_constraintStart_toEndOf="@+id/common_5_1_radio"
+                app:layout_constraintTop_toTopOf="@+id/common_5_1_radio"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <EditText
+                android:id="@+id/editText_5_1_1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView49"
+                app:layout_constraintStart_toEndOf="@+id/textView49"
+                app:layout_constraintTop_toTopOf="@+id/textView49" />
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="년    하루평균"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_5_1_1"
+                app:layout_constraintStart_toEndOf="@+id/editText_5_1_1"
+                app:layout_constraintTop_toTopOf="@+id/editText_5_1_1" />
+
+            <EditText
+                android:id="@+id/editText_5_1_2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView50"
+                app:layout_constraintStart_toEndOf="@+id/textView50"
+                app:layout_constraintTop_toTopOf="@+id/textView50" />
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개비"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_5_1_2"
+                app:layout_constraintStart_toEndOf="@+id/editText_5_1_2"
+                app:layout_constraintTop_toTopOf="@+id/editText_5_1_2" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="32dp"
+                android:text="총"
+                app:layout_constraintBottom_toBottomOf="@+id/common_5_1_radio"
+                app:layout_constraintStart_toEndOf="@+id/common_5_1_radio"
+                app:layout_constraintTop_toTopOf="@+id/common_5_1_radio"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <EditText
+                android:id="@+id/editText_5_1_3"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView52"
+                app:layout_constraintStart_toEndOf="@+id/textView52"
+                app:layout_constraintTop_toTopOf="@+id/textView52" />
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="년    흡연했을 때 하루평균"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_5_1_3"
+                app:layout_constraintStart_toEndOf="@+id/editText_5_1_3"
+                app:layout_constraintTop_toTopOf="@+id/editText_5_1_3" />
+
+            <EditText
+                android:id="@+id/editText_5_1_4"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView53"
+                app:layout_constraintStart_toEndOf="@+id/textView53"
+                app:layout_constraintTop_toTopOf="@+id/textView53" />
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개비    끊은지"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_5_1_4"
+                app:layout_constraintStart_toEndOf="@+id/editText_5_1_4"
+                app:layout_constraintTop_toTopOf="@+id/editText_5_1_4" />
+
+            <EditText
+                android:id="@+id/editText_5_1_5"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView54"
+                app:layout_constraintStart_toEndOf="@+id/textView54"
+                app:layout_constraintTop_toTopOf="@+id/textView54" />
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="년"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_5_1_5"
+                app:layout_constraintStart_toEndOf="@+id/editText_5_1_5"
+                app:layout_constraintTop_toTopOf="@+id/editText_5_1_5" />
+
 
             <TextView
                 android:id="@+id/textView24"
@@ -1137,7 +1389,7 @@
                 android:id="@+id/common_subtitle_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/blue_text_top_margin"
+                android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="※술 종류는 복수응답 가능합니다."
                 android:textColor="@color/mainBlue"
                 android:textSize="15dp"
@@ -1181,10 +1433,11 @@
                 <EditText
                     android:id="@+id/table_edit_1"
                     android:layout_width="50dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
+                    android:textSize="13dp"
                     android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_1"
                     app:layout_constraintStart_toEndOf="@+id/table_text_1"
@@ -1204,10 +1457,11 @@
                 <EditText
                     android:id="@+id/table_edit_2"
                     android:layout_width="50dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
+                    android:textSize="13dp"
                     android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_2"
                     app:layout_constraintStart_toEndOf="@+id/table_text_2"
@@ -1227,10 +1481,11 @@
                 <EditText
                     android:id="@+id/table_edit_3"
                     android:layout_width="50dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
+                    android:textSize="13dp"
                     android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_3"
                     app:layout_constraintStart_toEndOf="@+id/table_text_3"
@@ -1250,10 +1505,11 @@
                 <EditText
                     android:id="@+id/table_edit_4"
                     android:layout_width="50dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
+                    android:textSize="13dp"
                     android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_4"
                     app:layout_constraintStart_toEndOf="@+id/table_text_4"
@@ -1273,10 +1529,11 @@
                 <EditText
                     android:id="@+id/table_edit_5"
                     android:layout_width="50dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
+                    android:textSize="13dp"
                     android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_5"
                     app:layout_constraintStart_toEndOf="@+id/table_text_5"
@@ -1581,11 +1838,12 @@
                 <EditText
                     android:id="@+id/table_edit_6"
                     android:layout_width="50dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_6"
                     app:layout_constraintStart_toEndOf="@+id/table_text_6"
                     app:layout_constraintTop_toTopOf="@+id/table_text_6" />
@@ -1604,11 +1862,12 @@
                 <EditText
                     android:id="@+id/table_edit_7"
                     android:layout_width="50dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_7"
                     app:layout_constraintStart_toEndOf="@+id/table_text_7"
                     app:layout_constraintTop_toTopOf="@+id/table_text_7" />
@@ -1627,11 +1886,12 @@
                 <EditText
                     android:id="@+id/table_edit_8"
                     android:layout_width="50dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_8"
                     app:layout_constraintStart_toEndOf="@+id/table_text_8"
                     app:layout_constraintTop_toTopOf="@+id/table_text_8" />
@@ -1650,11 +1910,12 @@
                 <EditText
                     android:id="@+id/table_edit_9"
                     android:layout_width="50dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_9"
                     app:layout_constraintStart_toEndOf="@+id/table_text_9"
                     app:layout_constraintTop_toTopOf="@+id/table_text_9" />
@@ -1673,11 +1934,12 @@
                 <EditText
                     android:id="@+id/table_edit_10"
                     android:layout_width="50dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:inputType="number"
+                    android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_10"
                     app:layout_constraintStart_toEndOf="@+id/table_text_10"
                     app:layout_constraintTop_toTopOf="@+id/table_text_10" />
@@ -2046,6 +2308,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
                 android:ems="10"
                 android:inputType="number"
                 android:textSize="15dp"
@@ -2199,6 +2462,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
                 android:ems="10"
                 android:inputType="number"
                 android:textSize="15dp"
@@ -2326,6 +2590,44 @@
                     android:text="7일" />
 
             </RadioGroup>
+
+            <Button
+                android:id="@+id/common_examination_save"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="50dp"
+                android:background="@color/mainBlue"
+                android:text="저장"
+                android:textColor="@color/backGround"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/common_examination_cancel"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/common_10_radio" />
+
+            <Button
+                android:id="@+id/common_examination_cancel"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="50dp"
+                android:background="@color/mainBlue"
+                android:text="취소"
+                android:textColor="@color/backGround"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/common_examination_save"
+                app:layout_constraintTop_toBottomOf="@+id/common_10_radio" />
 
         </android.support.constraint.ConstraintLayout>
 

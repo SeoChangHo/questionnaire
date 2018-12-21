@@ -46,442 +46,155 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="200dp"
+            <RadioGroup
+                android:id="@+id/common_7_1_2_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toEndOf="@+id/textView15"
-                app:layout_constraintHorizontal_bias="1.0"
+                android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="@+id/textView15"
                 app:layout_constraintTop_toBottomOf="@+id/textView15">
 
-                <TextView
-                    android:id="@+id/textView17"
+                <RadioButton
+                    android:id="@+id/common_7_1_2_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp"
-                    android:text="음주량"
-                    app:layout_constraintBottom_toBottomOf="@+id/common_7_1_1_radio"
-                    app:layout_constraintStart_toEndOf="@+id/common_7_1_1_radio"
-                    app:layout_constraintTop_toTopOf="@+id/common_7_1_1_radio" />
+                    android:text="현재피움" />
 
-                <EditText
-                    android:id="@+id/editText2"
-                    android:layout_width="50dp"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginStart="4dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView17"
-                    app:layout_constraintStart_toEndOf="@+id/textView17"
-                    app:layout_constraintTop_toTopOf="@+id/textView17" />
-
-                <TextView
-                    android:id="@+id/textView18"
+                <RadioButton
+                    android:id="@+id/common_7_1_2_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp"
-                    android:text="음주량"
-                    app:layout_constraintBottom_toBottomOf="@+id/common_7_1_2_radio"
-                    app:layout_constraintStart_toEndOf="@+id/common_7_1_2_radio"
-                    app:layout_constraintTop_toTopOf="@+id/common_7_1_2_radio" />
+                    android:text="과거에는 피웠으나 현재 피우지 않음" />
 
-                <EditText
-                    android:id="@+id/editText3"
-                    android:layout_width="50dp"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginStart="4dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView18"
-                    app:layout_constraintStart_toEndOf="@+id/textView18"
-                    app:layout_constraintTop_toTopOf="@+id/textView18" />
-
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp"
-                    android:text="음주량"
-                    app:layout_constraintBottom_toBottomOf="@+id/common_7_1_3_radio"
-                    app:layout_constraintStart_toEndOf="@+id/common_7_1_3_radio"
-                    app:layout_constraintTop_toTopOf="@+id/common_7_1_3_radio" />
-
-                <EditText
-                    android:id="@+id/editText4"
-                    android:layout_width="50dp"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginStart="4dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView19"
-                    app:layout_constraintStart_toEndOf="@+id/textView19"
-                    app:layout_constraintTop_toTopOf="@+id/textView19" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp"
-                    android:text="음주량"
-                    app:layout_constraintBottom_toBottomOf="@+id/common_7_1_4_radio"
-                    app:layout_constraintStart_toEndOf="@+id/common_7_1_4_radio"
-                    app:layout_constraintTop_toTopOf="@+id/common_7_1_4_radio" />
-
-                <EditText
-                    android:id="@+id/editText5"
-                    android:layout_width="50dp"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginStart="4dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView20"
-                    app:layout_constraintStart_toEndOf="@+id/textView20"
-                    app:layout_constraintTop_toTopOf="@+id/textView20" />
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp"
-                    android:text="음주량"
-                    app:layout_constraintBottom_toBottomOf="@+id/common_7_1_5_radio"
-                    app:layout_constraintStart_toEndOf="@+id/common_7_1_5_radio"
-                    app:layout_constraintTop_toTopOf="@+id/common_7_1_5_radio" />
-
-                <EditText
-                    android:id="@+id/editText6"
-                    android:layout_width="50dp"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginStart="4dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView21"
-                    app:layout_constraintStart_toEndOf="@+id/textView21"
-                    app:layout_constraintTop_toTopOf="@+id/textView21" />
-
-                <RadioGroup
-                    android:id="@+id/common_7_1_1_radio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@+id/checkBox1"
-                    app:layout_constraintStart_toEndOf="@+id/checkBox1"
-                    app:layout_constraintTop_toTopOf="@+id/checkBox1">
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_1_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="잔" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_1_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="병" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_1_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="캔" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_1_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="캔" />
-
-                </RadioGroup>
-
-                <RadioGroup
-                    android:id="@+id/common_7_1_2_radio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="19dp"
-                    android:layout_marginStart="19dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@+id/checkBox2"
-                    app:layout_constraintStart_toEndOf="@+id/checkBox2"
-                    app:layout_constraintTop_toTopOf="@+id/checkBox2">
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_2_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="잔" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_2_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="병" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_2_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="캔" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_2_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="캔" />
-
-                </RadioGroup>
-
-                <RadioGroup
-                    android:id="@+id/common_7_1_3_radio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@+id/checkBox3"
-                    app:layout_constraintStart_toEndOf="@+id/checkBox3"
-                    app:layout_constraintTop_toTopOf="@+id/checkBox3">
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_3_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="잔" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_3_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="병" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_3_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="캔" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_3_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="캔" />
-
-                </RadioGroup>
-
-                <RadioGroup
-                    android:id="@+id/common_7_1_4_radio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@+id/checkBox4"
-                    app:layout_constraintStart_toEndOf="@+id/checkBox4"
-                    app:layout_constraintTop_toTopOf="@+id/checkBox4">
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_4_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="잔" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_4_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="병" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_4_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="캔" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_4_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="캔" />
-
-                </RadioGroup>
-
-                <CheckBox
-                    android:id="@+id/checkBox5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:text="소주"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
-
-                <RadioGroup
-                    android:id="@+id/common_7_1_5_radio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@+id/checkBox5"
-                    app:layout_constraintStart_toEndOf="@+id/checkBox5"
-                    app:layout_constraintTop_toTopOf="@+id/checkBox5">
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_5_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="잔" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_5_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="병" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_5_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="캔" />
-
-                    <RadioButton
-                        android:id="@+id/common_7_1_5_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="캔" />
-
-                </RadioGroup>
-
-                <CheckBox
-                    android:id="@+id/checkBox4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:text="맥주"
-                    app:layout_constraintBottom_toTopOf="@+id/checkBox5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
-
-                <CheckBox
-                    android:id="@+id/checkBox3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:text="양주"
-                    app:layout_constraintBottom_toTopOf="@+id/checkBox4"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
-
-                <CheckBox
-                    android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:text="막걸리"
-                    app:layout_constraintBottom_toTopOf="@+id/checkBox3"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
-
-                <CheckBox
-                    android:id="@+id/checkBox1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="와인"
-                    app:layout_constraintBottom_toTopOf="@+id/checkBox2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="spread" />
-
-            </android.support.constraint.ConstraintLayout>
-
-            <EditText
-                android:id="@+id/editText_time"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:ems="10"
-                android:inputType="number"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="412dp" />
+            </RadioGroup>
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/textView44"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:text="시간"
-                android:textSize="15dp"
-                app:layout_constraintBottom_toBottomOf="@+id/editText_time"
-                app:layout_constraintStart_toEndOf="@+id/editText_time"
-                app:layout_constraintTop_toTopOf="@+id/editText_time" />
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp"
+                android:text="총"
+                app:layout_constraintBottom_toBottomOf="@+id/common_7_1_2_radio"
+                app:layout_constraintStart_toEndOf="@+id/common_7_1_2_radio"
+                app:layout_constraintTop_toTopOf="@+id/common_7_1_2_radio"
+                app:layout_constraintVertical_bias="0.20" />
 
             <EditText
-                android:id="@+id/editText_time2"
-                android:layout_width="100dp"
+                android:id="@+id/editText_4_1_1"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:textSize="15dp"
                 android:ems="10"
+                android:textSize="13dp"
                 android:inputType="number"
-                app:layout_constraintBottom_toBottomOf="@+id/editText_time"
-                app:layout_constraintStart_toEndOf="@+id/textView16"
-                app:layout_constraintTop_toTopOf="@+id/editText_time" />
+                app:layout_constraintBottom_toBottomOf="@+id/textView44"
+                app:layout_constraintStart_toEndOf="@+id/textView44"
+                app:layout_constraintTop_toTopOf="@+id/textView44" />
 
             <TextView
-                android:id="@+id/textView31"
+                android:id="@+id/textView42"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:text="분"
-                android:textSize="15dp"
-                app:layout_constraintBottom_toBottomOf="@+id/editText_time2"
-                app:layout_constraintStart_toEndOf="@+id/editText_time2"
-                app:layout_constraintTop_toTopOf="@+id/editText_time2" />
+                android:text="년    하루평균"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_1"
+                app:layout_constraintStart_toEndOf="@+id/editText_4_1_1"
+                app:layout_constraintTop_toTopOf="@+id/editText_4_1_1" />
+
+            <EditText
+                android:id="@+id/editText_4_1_2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView42"
+                app:layout_constraintStart_toEndOf="@+id/textView42"
+                app:layout_constraintTop_toTopOf="@+id/textView42" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개비"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_2"
+                app:layout_constraintStart_toEndOf="@+id/editText_4_1_2"
+                app:layout_constraintTop_toTopOf="@+id/editText_4_1_2" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp"
+                android:text="총"
+                app:layout_constraintBottom_toBottomOf="@+id/common_7_1_2_radio"
+                app:layout_constraintStart_toEndOf="@+id/common_7_1_2_radio"
+                app:layout_constraintTop_toTopOf="@+id/common_7_1_2_radio"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <EditText
+                android:id="@+id/editText_4_1_3"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView45"
+                app:layout_constraintStart_toEndOf="@+id/textView45"
+                app:layout_constraintTop_toTopOf="@+id/textView45" />
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="년    흡연했을 때 하루평균"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_3"
+                app:layout_constraintStart_toEndOf="@+id/editText_4_1_3"
+                app:layout_constraintTop_toTopOf="@+id/editText_4_1_3" />
+
+            <EditText
+                android:id="@+id/editText_4_1_4"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView46"
+                app:layout_constraintStart_toEndOf="@+id/textView46"
+                app:layout_constraintTop_toTopOf="@+id/textView46" />
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개비    끊은지"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_4"
+                app:layout_constraintStart_toEndOf="@+id/editText_4_1_4"
+                app:layout_constraintTop_toTopOf="@+id/editText_4_1_4" />
+
+            <EditText
+                android:id="@+id/editText_4_1_5"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="13dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/textView47"
+                app:layout_constraintStart_toEndOf="@+id/textView47"
+                app:layout_constraintTop_toTopOf="@+id/textView47" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="년"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_5"
+                app:layout_constraintStart_toEndOf="@+id/editText_4_1_5"
+                app:layout_constraintTop_toTopOf="@+id/editText_4_1_5" />
 
 
         </android.support.constraint.ConstraintLayout>
