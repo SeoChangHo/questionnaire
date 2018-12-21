@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.zzango.questionnaire.LocalList.Paper
 import java.util.*
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
@@ -95,8 +96,19 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 //
 //        }
 
+
         return data
 
+    }
+
+    fun deletePaper(db : SQLiteDatabase, Paper: ArrayList<Paper>)
+    {
+        for(i in 0..Paper.size-1)
+        {
+            db.delete("EXAMINATION", "name=?", arrayOf(Paper[i].name))
+        }
+
+        db.close()
     }
 
 }
