@@ -69,20 +69,20 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
         sql_db = LocalDBhelper(this).writableDatabase
 
-//        oral_exam_inside_scroll_layout.focusable = ViewGroup.FOCUSABLE
-//        oral_exam_inside_scroll_layout.isFocusableInTouchMode = true
-//
-//        oral_exam_inside_scroll_layout.setOnTouchListener {
-//
-//            v, event ->
-//
-//            oral_exam_inside_scroll_layout.requestFocus()
-//
-//            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
-//
-//            true
-//
-//        }
+        oral_exam_inside_scroll_layout.focusable = ViewGroup.FOCUSABLE
+        oral_exam_inside_scroll_layout.isFocusableInTouchMode = true
+
+        oral_exam_inside_scroll_layout.setOnTouchListener {
+
+            v, event ->
+
+            oral_exam_inside_scroll_layout.requestFocus()
+
+            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
+
+            true
+
+        }
 
         oral_9_count.setOnFocusChangeListener {
 

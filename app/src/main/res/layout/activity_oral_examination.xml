@@ -57,6 +57,8 @@
                 android:minWidth="100dp"
                 android:textAlignment="center"
                 android:textSize="20dp"
+                android:textCursorDrawable="@color/gray"
+                android:backgroundTint="@color/gray"
                 app:layout_constraintBottom_toBottomOf="@+id/oral_questionnaire_name"
                 app:layout_constraintEnd_toStartOf="@+id/number_text"
                 app:layout_constraintStart_toEndOf="@+id/oral_questionnaire_name"
@@ -88,6 +90,8 @@
                 android:minWidth="90dp"
                 android:textAlignment="center"
                 android:textSize="20dp"
+                android:textCursorDrawable="@color/gray"
+                android:backgroundTint="@color/gray"
                 app:layout_constraintBottom_toBottomOf="@+id/number_text"
                 app:layout_constraintEnd_toStartOf="@+id/number_hyphen"
                 app:layout_constraintStart_toEndOf="@+id/number_text"
@@ -114,6 +118,8 @@
                 android:minWidth="90dp"
                 android:textAlignment="center"
                 android:textSize="20dp"
+                android:textCursorDrawable="@color/gray"
+                android:backgroundTint="@color/gray"
                 app:layout_constraintBottom_toBottomOf="@+id/first_serial"
                 app:layout_constraintEnd_toEndOf="@+id/oral_questionnaire"
                 app:layout_constraintStart_toEndOf="@+id/number_hyphen"
@@ -631,7 +637,9 @@
                     android:inputType="number"
                     android:maxLength="3"
                     android:textAlignment="center"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:textCursorDrawable="@color/gray"
+                    android:backgroundTint="@color/gray" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -1034,6 +1042,8 @@
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:gravity="top"
+                android:textCursorDrawable="@color/gray"
+                android:backgroundTint="@color/gray"
                 app:layout_constraintEnd_toEndOf="@+id/oral_questionnaire_section3"
                 app:layout_constraintStart_toStartOf="@+id/oral_questionnaire_section3"
                 app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_section3" />
