@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backGround">
 
     <ImageView
         android:id="@+id/imageView8"
@@ -60,11 +61,12 @@
 
             <ImageButton
                 android:id="@+id/fourth_imageButton1"
-                android:layout_width="200dp"
-                android:layout_height="250dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
                 android:layout_marginTop="32dp"
+                android:background="@color/backGround"
+                android:scaleType="fitCenter"
+                android:src="@drawable/oral"
                 app:layout_constraintEnd_toStartOf="@+id/fourth_imageButton2"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -72,8 +74,10 @@
 
             <ImageButton
                 android:id="@+id/fourth_imageButton2"
-                android:layout_width="200dp"
-                android:layout_height="250dp"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:background="@color/backGround"
+                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/fourth_imageButton1"

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backGround">
 
     <ImageView
         android:id="@+id/imageView7"
@@ -57,6 +58,57 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/third_imageButton1"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/backGround"
+                android:scaleType="fitCenter"
+                android:src="@drawable/exercise"
+                app:layout_constraintEnd_toStartOf="@+id/third_imageButton2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/third_imageButton2"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:background="@color/backGround"
+                android:scaleType="fitCenter"
+                android:src="@drawable/nutrition"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/third_imageButton1"
+                app:layout_constraintTop_toTopOf="@+id/third_imageButton1" />
+
+            <ImageButton
+                android:id="@+id/third_imageButton3"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/backGround"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toStartOf="@+id/third_imageButton4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/third_imageButton1"
+                app:srcCompat="@drawable/smoking" />
+
+            <ImageButton
+                android:id="@+id/third_imageButton4"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/backGround"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/third_imageButton3"
+                app:layout_constraintTop_toBottomOf="@+id/third_imageButton2"
+                app:srcCompat="@drawable/drinking" />
+
 
         </android.support.constraint.ConstraintLayout>
 
