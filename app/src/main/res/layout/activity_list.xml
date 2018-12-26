@@ -23,6 +23,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:buttonTint="@color/mainBlue"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/textView56"
             app:layout_constraintEnd_toStartOf="@+id/select_all"
             app:layout_constraintTop_toTopOf="@+id/textView56" />
@@ -36,6 +37,7 @@
             android:text="전체 선택"
             android:textColor="@color/mainBlue"
             android:textSize="15dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/select_all_checkbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/select_all_checkbox" />
