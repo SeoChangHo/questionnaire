@@ -20,42 +20,36 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
     @SuppressLint("StaticFieldLeak")
     object myCheckBox {
-        //var chk_each :ArrayList<CheckBox>? = null
-        var chk_each = ArrayList<CheckBox>()
+        var chk_each :ArrayList<CheckBox>? = null
+        //var chk_each = ArrayList<CheckBox>()
     }
 
     fun CheckBoxInit()
     {
-//        myCheckBox.chk_each = ArrayList()
-//
-//        println("ddddd")
+        myCheckBox.chk_each = ArrayList()
     }
 
 
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
-
-
         var v : View = LayoutInflater.from(p0?.context).inflate(R.layout.list_layout, p0, false)
-
         return ContentViewHolder(v)
 
     }
 
     override fun getItemCount(): Int {
+        println(PaperList.size.toString()+"회 리턴합니다.")
 
         return PaperList.size
     }
 
 
     override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
-
-
-
-
         p0 as ContentViewHolder
 
         myCheckBox.chk_each!!.add(p0.chkbox)
+
+        println("Add 합니다.")
 
         var paper: Paper = PaperList[p1]
 
@@ -84,6 +78,8 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
             paper.isChecked = isChecked
 
 
+            println("PaperList의 갯수는 "+PaperList.size.toString()+" 입니다.")
+
             var count = 0
             for (item in PaperList) {
                 if (item.isChecked == true) {
@@ -96,11 +92,11 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
             //선택된 카운트가 0일때
             if (count == 0) {
                 //전체선택이 체크되어 있다면
-                if(Activity.select_all_checkbox.isChecked)
-                {
-                    //전체선택 체크 해제
-                    Activity.select_all_checkbox.isChecked = false
-                }
+//                if(Activity.select_all_checkbox.isChecked)
+//                {
+//                    //전체선택 체크 해제
+//                    Activity.select_all_checkbox.isChecked = false
+//                }
                 Activity.constraintLayout_bottom.visibility = View.GONE
             }
             else//선택된 카운트가 0이 아닐 때
@@ -113,19 +109,19 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                 if(count == myCheckBox.chk_each!!.size)
                 {
                     println("카운트와 체크박스의 수가 같습니다.")
-                    if(!Activity.select_all_checkbox.isChecked)
-                    {
-                        Activity.select_all_checkbox.isChecked = true
-                    }
+//                    if(!Activity.select_all_checkbox.isChecked)
+//                    {
+//                        Activity.select_all_checkbox.isChecked = true
+//                    }
                 }
                 else//전체갯수보다 적게 선택되어 있다면
                 {
                     println("카운트와 체크박스의 수가 다릅니다.")
-                    if(Activity.select_all_checkbox.isChecked)
-                    {
-                        println("zzzz")
-                        Activity.select_all_checkbox.isChecked = false
-                    }
+//                    if(Activity.select_all_checkbox.isChecked)
+//                    {
+//                        println("카운트의 수가 전체 갯수보다 작은데 전체선택이 활성화 되어있으므로 전체선택 해제")
+//                        Activity.select_all_checkbox.isChecked = false
+//                    }
                 }
                 Activity.constraintLayout_bottom.visibility = View.VISIBLE
                 Activity.txtBottomMent.text = "선택한 " + count.toString() + "개의 문진표를"
@@ -142,6 +138,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
     class ContentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener
     {
+
         val chkbox = itemView.findViewById(R.id.chk_upload) as CheckBox
         val txtCategory = itemView.findViewById(R.id.txtCategory) as TextView
         val txtName = itemView.findViewById(R.id.txtName) as TextView

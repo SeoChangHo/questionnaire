@@ -1,5 +1,6 @@
 package com.example.zzango.questionnaire.LocalList
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
@@ -7,10 +8,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.zzango.questionnaire.LocalDBhelper
 import com.example.zzango.questionnaire.OracleUtill
 import com.example.zzango.questionnaire.R
@@ -23,7 +21,6 @@ class ListActivity : Activity() {
 
     var sql_db : SQLiteDatabase? = null
     var papers = ArrayList<Paper>()
-    var isFromAdapter :Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +28,7 @@ class ListActivity : Activity() {
 
         ListSetting(false)
         btnSeeting()
-        SelectAllSetting()
+        //SelectAllSetting()
     }
 
     fun ListSetting(bool:Boolean)
@@ -161,9 +158,6 @@ class ListActivity : Activity() {
     {
         select_all_checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
 
-            //ㅁ
-            if(buttonView.isPressed)
-            {
                 //전체선택
                 if(isChecked)
                 {
@@ -197,16 +191,11 @@ class ListActivity : Activity() {
                         ListSetting(false)
                     }
 
-
-
                     btnSave.visibility = View.GONE
                     btnDelete.visibility = View.GONE
                     txtBottomMent.text = "문진표를 선택해주세요."
                 }
             }
-
-
-        }
     }
 
     override fun onBackPressed() {
