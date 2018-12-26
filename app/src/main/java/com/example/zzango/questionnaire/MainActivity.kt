@@ -15,7 +15,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Button
+import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.ListActivity
+import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.save_location.view.*
 
@@ -27,6 +30,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        popuplogin()
+
         var wfm = getApplicationContext().getSystemService(Context.WIFI_SERVICE) as WifiManager
 
         getSharedPreferences("connection_state", Context.MODE_PRIVATE)
@@ -37,17 +42,14 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             data_save_mode.setImageResource(R.drawable.ic_rss_feed)
 
-            println("와이파이")
-
         }else{
 
             getSharedPreferences("connection_state", Context.MODE_PRIVATE).edit().putString("local", "").apply()
 
             data_save_mode.setImageResource(R.drawable.ic_sd_storage)
 
-            println("와이파이 ㄴ")
-
         }
+
         supportFragmentManager.beginTransaction()
                 .add(R.id.fragment_right, FirstFragment()).commit()
 
@@ -59,6 +61,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
+        data_save_mode.setOnClickListener {
+
+            saveAlert()
+
+        }
+
         button1.setOnClickListener(this)
         button2.setOnClickListener(this)
         button3.setOnClickListener(this)
@@ -66,6 +74,42 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button5.setOnClickListener(this)
 
     }
+
+    fun popuplogin(){
+
+        var dialog = AlertDialog.Builder(this).create()
+        var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_login, null)
+
+        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        dialog.setView(dialog_view)
+        dialog.setCanceledOnTouchOutside(false)
+
+
+        val login = dialog_view.findViewById(R.id.Login) as Button
+        login.setOnClickListener{
+
+            if(dialog_view.login_id.text.toString() != ""){
+
+                if(dialog_view.login_password.text.toString() == "1111"){
+                    Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
+                    dialog.dismiss()
+                }else{
+                    Toast.makeText(applicationContext, "비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
+                }
+
+            }else{
+                Toast.makeText(applicationContext, "아이디를 입력해주세요.", Toast.LENGTH_SHORT).show()
+            }
+
+
+
+        }
+
+        dialog.show()
+
+    }
+
     fun saveAlert(){
 
         var dialog = AlertDialog.Builder(this).create()
