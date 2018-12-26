@@ -4,12 +4,10 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.support.v4.content.ContextCompat.startActivity
-import android.support.v7.widget.AppCompatCheckBox
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.CheckBox
 import android.widget.TextView
 import com.example.zzango.questionnaire.OralExamination
@@ -134,7 +132,8 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
             p0?.chkbox?.isChecked = paper.isChecked
             p0?.txtCategory?.text = paper.category
             p0?.txtName?.text = paper.name
-            p0?.txtSerial?.text = paper.serial_first + "-" + paper.serial_last
+            //p0?.txtSerial?.text = paper.serial_first + "-" + paper.serial_last
+            p0?.txtDate?.text = paper.oral_date
 
             //List Item 클릭 이벤트 설정하는 곳
             p0?.setOnClickListener(object :ItemOnClickListener{
@@ -164,9 +163,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                                 //전체선택 체크 해제
                                 myCheckBox.chk_all!!.isChecked = false
                             }
-                            Activity.txtBottomMent.text = "문진표를 선택해주세요."
-                            Activity.btnSave.visibility = View.GONE
-                            Activity.btnDelete.visibility = View.GONE
+                            Activity.constraintLayout_bottom.visibility = View.GONE
                         }
                         else//선택된 카운트가 0이 아닐 때
                         {
@@ -185,6 +182,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                                     myCheckBox.chk_all!!.isChecked = false
                                 }
                             }
+                            Activity.constraintLayout_bottom.visibility = View.VISIBLE
                             Activity.txtBottomMent.text = "선택한 " + count.toString() + "개의 문진표를"
                             Activity.btnSave.visibility = View.VISIBLE
                             Activity.btnDelete.visibility = View.VISIBLE
@@ -198,7 +196,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         val chkbox = itemView.findViewById(R.id.chk_upload) as CheckBox
         val txtCategory = itemView.findViewById(R.id.txtCategory) as TextView
         val txtName = itemView.findViewById(R.id.txtName) as TextView
-        val txtSerial = itemView.findViewById(R.id.txtSerial) as TextView
+        val txtDate = itemView.findViewById(R.id.txtDate) as TextView
 
         var CustomItemClick:ItemOnClickListener?=null
 
