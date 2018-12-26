@@ -10,6 +10,8 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
@@ -86,6 +88,46 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         dialog.setCanceledOnTouchOutside(false)
 
 
+        dialog_view.login_id.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
+                    dialog_view.Login.isClickable = true
+                    dialog_view.Login.setBackgroundColor(Color.parseColor("#233F78"))
+                }else{
+                    dialog_view.Login.isClickable = false
+                    dialog_view.Login.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
+
+        dialog_view.login_password.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
+                    dialog_view.Login.isClickable = true
+                    dialog_view.Login.setBackgroundColor(Color.parseColor("#233F78"))
+                }else{
+                    dialog_view.Login.isClickable = false
+                    dialog_view.Login.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
+
         val login = dialog_view.findViewById(R.id.Login) as Button
         login.setOnClickListener{
 
@@ -98,8 +140,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     Toast.makeText(applicationContext, "비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
                 }
 
-            }else{
-                Toast.makeText(applicationContext, "아이디를 입력해주세요.", Toast.LENGTH_SHORT).show()
             }
 
 
