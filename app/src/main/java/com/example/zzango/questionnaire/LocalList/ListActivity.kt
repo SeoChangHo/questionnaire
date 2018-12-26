@@ -23,6 +23,7 @@ class ListActivity : Activity() {
 
     var sql_db : SQLiteDatabase? = null
     var papers = ArrayList<Paper>()
+    var isFromAdapter :Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -160,52 +161,51 @@ class ListActivity : Activity() {
     {
         select_all_checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
 
-
-
-            //전체선택
-            if(isChecked)
+            //ㅁ
+            if(buttonView.isPressed)
             {
-                ListSetting(true)
-
-                var count = 0
-                for (item in papers) {
-                    if (item.isChecked == true) {
-                        count++
-                    }
-                }
-                constraintLayout_bottom.visibility = View.VISIBLE
-                txtBottomMent.text = "선택한 " + count.toString() + "개의 문진표를"
-                btnSave.visibility = View.VISIBLE
-                btnDelete.visibility = View.VISIBLE
-            }
-            else//전체선택 해제
-            {
-                var count = 0
-
-                for(item in papers)
+                //전체선택
+                if(isChecked)
                 {
-                    if(item.isChecked)
+                    ListSetting(true)
+
+                    var count = 0
+                    for (item in papers) {
+                        if (item.isChecked == true) {
+                            count++
+                        }
+                    }
+                    constraintLayout_bottom.visibility = View.VISIBLE
+                    txtBottomMent.text = "선택한 " + count.toString() + "개의 문진표를"
+                    btnSave.visibility = View.VISIBLE
+                    btnDelete.visibility = View.VISIBLE
+                }
+                else//전체선택 해제
+                {
+                    var count = 0
+
+                    for(item in papers)
                     {
-                        count++
+                        if(item.isChecked)
+                        {
+                            count++
+                        }
                     }
+
+                    if(count==papers.size)
+                    {
+                        ListSetting(false)
+                    }
+
+
+
+                    btnSave.visibility = View.GONE
+                    btnDelete.visibility = View.GONE
+                    txtBottomMent.text = "문진표를 선택해주세요."
                 }
-
-                if(count==papers.size)
-                {
-//                    println("전체선택취소")
-//                    for(item in myCheckBox.chk_each!!)
-//                    {
-//                        item.isChecked = false
-//                    }
-                    ListSetting(false)
-                }
-
-
-
-                btnSave.visibility = View.GONE
-                btnDelete.visibility = View.GONE
-                txtBottomMent.text = "문진표를 선택해주세요."
             }
+
+
         }
     }
 

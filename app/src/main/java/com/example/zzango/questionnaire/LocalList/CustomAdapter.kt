@@ -13,7 +13,6 @@ import android.widget.TextView
 import com.example.zzango.questionnaire.OralExamination
 import com.example.zzango.questionnaire.R
 import kotlinx.android.synthetic.main.activity_list.*
-import kotlinx.android.synthetic.main.list_header_layout.view.*
 
 class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
