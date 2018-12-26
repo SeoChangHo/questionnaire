@@ -174,7 +174,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             data_save_mode.setImageResource(R.drawable.ic_sd_storage)
 
-            getSharedPreferences("connection_state", Context.MODE_PRIVATE).edit().putString("local", "").apply()
+            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
 
             dialog.dismiss()
 
@@ -184,7 +184,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             data_save_mode.setImageResource(R.drawable.ic_rss_feed)
 
-            getSharedPreferences("connection_state", Context.MODE_PRIVATE).edit().putString("wifi", "").apply()
+            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
 
             dialog.dismiss()
 

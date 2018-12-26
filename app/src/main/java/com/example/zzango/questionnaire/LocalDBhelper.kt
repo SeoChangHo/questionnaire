@@ -58,7 +58,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "exam_8, exam_9, exam_10, exam_11, exam_12, exam_13, exam_14," +
                 "exam_15, remark)" +
                 " VALUES (" +
-                "'${columnValue.oral_date}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.exam_1}', '${columnValue.exam_2}', '${columnValue.exam_3}', '${columnValue.exam_4}'" +
                 ", '${columnValue.exam_5}', '${columnValue.exam_6}', '${columnValue.exam_7}', '${columnValue.exam_8}'," +
                 " '${columnValue.exam_9}', '${columnValue.exam_10}', '${columnValue.exam_11}', '${columnValue.exam_12}'," +

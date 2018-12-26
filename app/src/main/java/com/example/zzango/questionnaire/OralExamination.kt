@@ -35,7 +35,9 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
     var sql_db : SQLiteDatabase? = null
     var popup = false
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var oral_date : Date,
+    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : Date,
+                         @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
+                         @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
                          @SerializedName("name") @Expose var name : String,
                          @SerializedName("first_serial") @Expose var first_serial : String,
                          @SerializedName("last_serial") @Expose var last_serial : String,
@@ -138,7 +140,15 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
             if(check()){
 
-                saveAlert()
+                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
+
+                    oral_exam_local_insert()
+
+                }else{
+
+                    oral_exam_server_insert()
+
+                }
 
             }
 
@@ -198,13 +208,9 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
     fun oral_exam_local_insert(){
 
-        if(check()) {
+        LocalDBhelper(this).onCreate(sql_db)
 
-            LocalDBhelper(this).onCreate(sql_db)
-
-            LocalDBhelper(this).saveLocal(sql_db!!, exam_result!!)
-
-        }
+        LocalDBhelper(this).saveLocal(sql_db!!, exam_result!!)
 
     }
 
@@ -219,11 +225,11 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
                     if (!response.body()!!.equals("S")) {
 
                         println(response.body())
-//                            Toast.makeText(this@OralExamination, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@OralExamination, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
                     } else {
 
-                        Toast.makeText(this@OralExamination, "전송 완료", Toast.LENGTH_LONG).show()
+                        saveCompleteAlert()
 
                     }
 
@@ -238,88 +244,6 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
             }
 
         })
-
-    }
-
-    fun saveAlert(){
-
-        var dialog = AlertDialog.Builder(this).create()
-        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_location, null)
-
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        dialog.setView(dialog_view)
-        dialog_view.save_location_text.setText("저장할 곳을 골라주세요")
-
-        if(!popup) {
-
-            dialog.show().let {
-
-                popup = true
-
-            }
-
-        }
-
-        var displayMetrics = DisplayMetrics()
-        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-        // The absolute width of the available display size in pixels.
-        var displayWidth = displayMetrics.widthPixels
-        // The absolute height of the available display size in pixels.
-        var displayHeight = displayMetrics.heightPixels
-
-        // Initialize a new window manager layout parameters
-        var layoutParams = WindowManager.LayoutParams()
-
-        // Copy the alert dialog window attributes to new layout parameter instance
-        layoutParams.copyFrom(dialog.window.attributes)
-
-        // Set the alert dialog window width and height
-        // Set alert dialog width equal to screen width 90%
-        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-        // Set alert dialog height equal to screen height 90%
-        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-
-        // Set alert dialog width equal to screen width 70%
-        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-        // Set alert dialog height equal to screen height 70%
-        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-
-        // Set the width and height for the layout parameters
-        // This will bet the width and height of alert dialog
-        layoutParams.width = dialogWindowWidth
-        layoutParams.height = dialogWindowHeight
-
-        // Apply the newly created layout parameters to the alert dialog window
-        dialog.window.attributes = layoutParams
-
-
-        dialog.setOnDismissListener {
-
-            popup = false
-            dialog = null
-
-        }
-
-        dialog_view.local.setOnClickListener {
-
-            oral_exam_local_insert()
-
-            saveCompleteAlert()
-
-            dialog.dismiss()
-
-        }
-
-        dialog_view.server.setOnClickListener {
-
-            oral_exam_server_insert()
-
-            saveCompleteAlert()
-
-            dialog.dismiss()
-
-        }
 
     }
 
@@ -793,7 +717,7 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
         var arr = ArrayList<ExamInfo>()
 
         arr.add(ExamInfo(
-                exam_date, name, first_serial_text, last_serial_text, category, exam_1, exam_2,
+                exam_date, "", "", name, first_serial_text, last_serial_text, category, exam_1, exam_2,
                 exam_3, exam_4, exam_5, exam_6, exam_7, exam_8, exam_9, exam_10,
                 exam_11, exam_12, exam_13, exam_14, exam_15, "", "", "", "", exam_20
         ))
