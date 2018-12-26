@@ -35,6 +35,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
             v = LayoutInflater.from(p0?.context).inflate(R.layout.list_header_layout, p0, false)
             myCheckBox.chk_each = ArrayList()
+
             return HeaderViewHolder(v)
 
         }else {
@@ -47,7 +48,15 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
     }
 
     override fun getItemCount(): Int {
-        return PaperList.size + 1
+
+        if(PaperList.size!=0)
+        {
+            return PaperList.size + 1
+        }
+        else
+        {
+            return 0
+        }
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -113,10 +122,6 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         }else{
 
             p0 as ContentViewHolder
-
-
-
-
 
             myCheckBox.chk_each!!.add(p0.chkbox)
 
@@ -188,6 +193,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
     class HeaderViewHolder(view : View) : RecyclerView.ViewHolder(view){
 
         var select_all_checkbox = view.select_all_checkbox
+        var txtTitle = view.select_all
 
     }
 
