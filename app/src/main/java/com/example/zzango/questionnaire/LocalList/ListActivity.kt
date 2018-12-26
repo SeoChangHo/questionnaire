@@ -24,35 +24,28 @@ class ListActivity : Activity() {
     var sql_db : SQLiteDatabase? = null
     var papers = ArrayList<Paper>()
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        ListSetting()
+        ListSetting(false)
         btnSeeting()
-
-
-
-
+        SelectAllSetting()
     }
 
-    fun ListSetting()
+    fun ListSetting(bool:Boolean)
     {
-
         papers = ArrayList<Paper>()
         sql_db = LocalDBhelper(this).writableDatabase
         val recyclerView = findViewById(R.id.recyclertView) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
-
 
         val data = LocalDBhelper(this).checkLocal(sql_db!!)
 
         data.moveToFirst()
 
         while(!data.isAfterLast){
-            papers.add(Paper(false,
+            papers.add(Paper(bool,
                     data.getString(data.getColumnIndex("category")),
                     data.getString(data.getColumnIndex("name")),
                     data.getString(data.getColumnIndex("first_serial")),
@@ -69,6 +62,8 @@ class ListActivity : Activity() {
         }
 
         val adapter = CustomAdapter(papers, this)
+
+        adapter.CheckBoxInit()
 
         recyclerView.adapter = adapter
     }
@@ -119,7 +114,7 @@ class ListActivity : Activity() {
                             Toast.makeText(this@ListActivity, "전송 완료", Toast.LENGTH_LONG).show()
 
                             LocalDBhelper(this@ListActivity).deletePaper(sql_db!!, removeArr)
-                            ListSetting()
+                            ListSetting(false)
                             btnSave.visibility = View.GONE
                             btnDelete.visibility = View.GONE
                             txtBottomMent.text = "문진표를 선택해주세요."
@@ -152,12 +147,66 @@ class ListActivity : Activity() {
                 }
             }
             LocalDBhelper(this).deletePaper(sql_db!!, removeArr)
-            ListSetting()
+            ListSetting(false)
             btnSave.visibility = View.GONE
             btnDelete.visibility = View.GONE
             txtBottomMent.text = "문진표를 선택해주세요."
         }
 
+    }
+
+    //전체선택
+    fun SelectAllSetting()
+    {
+        select_all_checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
+
+
+
+            //전체선택
+            if(isChecked)
+            {
+                ListSetting(true)
+
+                var count = 0
+                for (item in papers) {
+                    if (item.isChecked == true) {
+                        count++
+                    }
+                }
+                constraintLayout_bottom.visibility = View.VISIBLE
+                txtBottomMent.text = "선택한 " + count.toString() + "개의 문진표를"
+                btnSave.visibility = View.VISIBLE
+                btnDelete.visibility = View.VISIBLE
+            }
+            else//전체선택 해제
+            {
+                var count = 0
+
+                for(item in papers)
+                {
+                    if(item.isChecked)
+                    {
+                        count++
+                    }
+                }
+
+                if(count==papers.size)
+                {
+//                    println("전체선택취소")
+//                    for(item in myCheckBox.chk_each!!)
+//                    {
+//                        item.isChecked = false
+//                    }
+                    ListSetting(false)
+                }
+
+
+
+                btnSave.visibility = View.GONE
+                btnDelete.visibility = View.GONE
+                txtBottomMent.text = "문진표를 선택해주세요."
+            }
+        }
     }
 
     override fun onBackPressed() {
