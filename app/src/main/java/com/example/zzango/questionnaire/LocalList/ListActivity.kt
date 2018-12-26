@@ -39,7 +39,6 @@ class ListActivity : Activity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
         val data = LocalDBhelper(this).checkLocal(sql_db!!)
-
         data.moveToFirst()
 
         while(!data.isAfterLast){
