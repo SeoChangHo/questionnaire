@@ -99,7 +99,7 @@ class ListActivity : Activity() {
                         if (!response.body()!!.equals("S")) {
 
                             println(response.body())
-//                            Toast.makeText(this@OralExamination, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@ListActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
                         } else {
 

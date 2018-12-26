@@ -57,7 +57,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         p0?.txtCategory?.text = paper.category
         p0?.txtName?.text = paper.name
         //p0?.txtSerial?.text = paper.serial_first + "-" + paper.serial_last
-        p0?.txtDate?.text = paper.oral_date
+        p0?.txtDate?.text = paper.exam_date
 
         //List Item 클릭 이벤트 설정하는 곳
         p0?.setOnClickListener(object :ItemOnClickListener{

@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         if(wfm.isWifiEnabled){
 
-            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
+            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
 
             data_save_mode_image.setImageResource(R.drawable.server_white)
 
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }else{
 
-            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
+            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
 
             data_save_mode_image.setImageResource(R.drawable.local_white)
 
