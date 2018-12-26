@@ -208,13 +208,19 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
     fun oral_exam_local_insert(){
 
+        println("로컬")
+
         LocalDBhelper(this).onCreate(sql_db)
 
         LocalDBhelper(this).saveLocal(sql_db!!, exam_result!!)
 
+        saveCompleteAlert()
+
     }
 
     fun oral_exam_server_insert(){
+
+        println("서버")
 
         OracleUtill().oral_examination().oracleServer(exam_result!!).enqueue(object : Callback<String> {
 
