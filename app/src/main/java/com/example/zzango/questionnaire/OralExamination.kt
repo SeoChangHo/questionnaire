@@ -17,6 +17,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.Paper
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_oral_examination.*
@@ -64,6 +65,20 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oral_examination)
+
+
+
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper
+            println("작성자는 "+paper.name+"입니다.")
+
+            oral_questionnaire_name_input.setText(paper.name)
+            first_serial.setText(paper.serial_first)
+            last_serial.setText(paper.serial_last)
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
 
