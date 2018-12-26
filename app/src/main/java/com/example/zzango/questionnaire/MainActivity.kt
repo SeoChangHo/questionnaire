@@ -32,7 +32,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        popuplogin()
+        if(!this.intent.hasExtra("from")) {
+
+            popuplogin()
+
+        }
 
         var wfm = getApplicationContext().getSystemService(Context.WIFI_SERVICE) as WifiManager
 
