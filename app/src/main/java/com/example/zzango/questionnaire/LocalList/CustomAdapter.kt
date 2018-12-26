@@ -2,13 +2,17 @@ package com.example.zzango.questionnaire.LocalList
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.AppCompatCheckBox
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.CheckBox
 import android.widget.TextView
+import com.example.zzango.questionnaire.OralExamination
 import com.example.zzango.questionnaire.R
 import kotlinx.android.synthetic.main.activity_list.*
 import kotlinx.android.synthetic.main.list_header_layout.view.*
@@ -132,6 +136,14 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
             p0?.txtName?.text = paper.name
             p0?.txtSerial?.text = paper.serial_first + "-" + paper.serial_last
 
+            //List Item 클릭 이벤트 설정하는 곳
+            p0?.setOnClickListener(object :ItemOnClickListener{
+                override fun onItemClickListener(view: View, post: Int) {
+                    println(paper.name)
+                    startActivity(Activity, Intent(Activity, OralExamination::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
+            })
+
 
             p0?.chkbox.setOnCheckedChangeListener { buttonView, isChecked ->
                 println(p1.toString() + "번째 의 값이 " + isChecked + "로 변경되었습니다.")
@@ -181,20 +193,36 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         }
     }
 
-    class ContentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+    class ContentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener
     {
         val chkbox = itemView.findViewById(R.id.chk_upload) as CheckBox
         val txtCategory = itemView.findViewById(R.id.txtCategory) as TextView
         val txtName = itemView.findViewById(R.id.txtName) as TextView
         val txtSerial = itemView.findViewById(R.id.txtSerial) as TextView
 
+        var CustomItemClick:ItemOnClickListener?=null
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        fun setOnClickListener(itemClickListener: ItemOnClickListener){
+            this.CustomItemClick = itemClickListener
+        }
+
+        override fun onClick(v: View?) {
+            this.CustomItemClick!!.onItemClickListener(v!!, adapterPosition)
+        }
+
     }
 
     class HeaderViewHolder(view : View) : RecyclerView.ViewHolder(view){
 
         var select_all_checkbox = view.select_all_checkbox
-        var txtTitle = view.select_all
-
     }
+
+
+
+
 
 }

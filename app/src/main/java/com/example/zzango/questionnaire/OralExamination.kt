@@ -65,6 +65,12 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oral_examination)
 
+        if(intent.hasExtra("paper")){
+
+            println(intent.getSerializableExtra("paper"))
+
+        }
+
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
 
         sql_db = LocalDBhelper(this).writableDatabase
