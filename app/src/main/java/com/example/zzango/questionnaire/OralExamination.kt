@@ -68,7 +68,6 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
         if(intent.hasExtra("paper")){
 
             println(intent.getSerializableExtra("paper"))
-
         }
 
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
