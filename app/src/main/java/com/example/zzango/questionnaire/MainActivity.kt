@@ -40,15 +40,19 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         if(wfm.isWifiEnabled){
 
-            getSharedPreferences("connection_state", Context.MODE_PRIVATE).edit().putString("wifi", "").apply()
+            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
 
-            data_save_mode.setImageResource(R.drawable.ic_rss_feed)
+            data_save_mode_image.setImageResource(R.drawable.server_white)
+
+            data_save_mode_text.setText("server")
 
         }else{
 
-            getSharedPreferences("connection_state", Context.MODE_PRIVATE).edit().putString("local", "").apply()
+            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
 
-            data_save_mode.setImageResource(R.drawable.ic_sd_storage)
+            data_save_mode_image.setImageResource(R.drawable.local_white)
+
+            data_save_mode_text.setText("local")
 
         }
 
@@ -212,7 +216,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         dialog_view.local.setOnClickListener {
 
-            data_save_mode.setImageResource(R.drawable.ic_sd_storage)
+            data_save_mode_image.setImageResource(R.drawable.local_white)
+
+            data_save_mode_text.setText("local")
 
             getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
 
@@ -222,7 +228,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         dialog_view.server.setOnClickListener {
 
-            data_save_mode.setImageResource(R.drawable.ic_rss_feed)
+            data_save_mode_image.setImageResource(R.drawable.server_white)
+
+            data_save_mode_text.setText("server")
 
             getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
 

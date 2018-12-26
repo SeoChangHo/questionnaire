@@ -140,6 +140,9 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
             if(check()){
 
+                login_appbar_loading_progress.visibility = View.VISIBLE
+                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
                 if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
 
                     oral_exam_local_insert()
@@ -254,6 +257,9 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
     }
 
     fun saveCompleteAlert(){
+
+        login_appbar_loading_progress.visibility = View.GONE
+        login_appbar_loading_progress_bg.visibility = View.GONE
 
         popup = false
 
