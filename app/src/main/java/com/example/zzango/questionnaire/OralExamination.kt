@@ -131,7 +131,7 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
         oral_examination_cancel.setOnClickListener {
 
-            startActivity(Intent(this, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            finish()
 
         }
 

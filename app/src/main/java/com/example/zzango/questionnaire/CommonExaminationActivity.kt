@@ -322,6 +322,12 @@ class CommonExaminationActivity : AppCompatActivity() {
             saveCompleteAlert()
         }
 
+        common_examination_cancel.setOnClickListener {
+
+            finish()
+
+        }
+
     }
 
     fun saveCompleteAlert() {
