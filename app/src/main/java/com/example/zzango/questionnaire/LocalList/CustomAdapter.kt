@@ -3,6 +3,7 @@ package com.example.zzango.questionnaire.LocalList
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -59,13 +60,14 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         //p0?.txtSerial?.text = paper.serial_first + "-" + paper.serial_last
         p0?.txtDate?.text = paper.exam_date
 
-        //List Item 클릭 이벤트 설정하는 곳
-        p0?.setOnClickListener(object :ItemOnClickListener{
-            override fun onItemClickListener(view: View, post: Int) {
-                println(paper.name)
-                startActivity(Activity, Intent(Activity, OralExamination::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
-            }
-        })
+
+
+        //Recyclerview Item Click
+        p0?.constraint.setOnClickListener{
+            startActivity(Activity, Intent(Activity, OralExamination::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+        }
+
+
 
 
         p0?.chkbox.setOnCheckedChangeListener { buttonView, isChecked ->
@@ -136,7 +138,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
     }
 
-    class ContentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener
+    class ContentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
     {
 
         val chkbox = itemView.findViewById(R.id.chk_upload) as CheckBox
@@ -144,20 +146,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         val txtName = itemView.findViewById(R.id.txtName) as TextView
         val txtDate = itemView.findViewById(R.id.txtDate) as TextView
 
-        var CustomItemClick:ItemOnClickListener?=null
-
-        init {
-            itemView.setOnClickListener(this)
-        }
-
-        fun setOnClickListener(itemClickListener: ItemOnClickListener){
-            this.CustomItemClick = itemClickListener
-        }
-
-        override fun onClick(v: View?) {
-            this.CustomItemClick!!.onItemClickListener(v!!, adapterPosition)
-        }
-
+        val constraint = itemView.findViewById(R.id.constraintLayoutArea) as ConstraintLayout
     }
 
 
