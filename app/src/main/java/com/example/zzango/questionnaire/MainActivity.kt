@@ -12,11 +12,8 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.ListActivity
@@ -166,7 +163,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
-        dialog_view.save_location_text.setText("저장할 곳을 골라주세요")
 
         if(!popup) {
 
@@ -178,37 +174,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
-        var displayMetrics = DisplayMetrics()
-        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-        // The absolute width of the available display size in pixels.
-        var displayWidth = displayMetrics.widthPixels
-        // The absolute height of the available display size in pixels.
-        var displayHeight = displayMetrics.heightPixels
 
-        // Initialize a new window manager layout parameters
-        var layoutParams = WindowManager.LayoutParams()
-
-        // Copy the alert dialog window attributes to new layout parameter instance
-        layoutParams.copyFrom(dialog.window.attributes)
-
-        // Set the alert dialog window width and height
-        // Set alert dialog width equal to screen width 90%
-        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-        // Set alert dialog height equal to screen height 90%
-        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-
-        // Set alert dialog width equal to screen width 70%
-        var dialogWindowWidth = (displayWidth * 0.35f).toInt()
-        // Set alert dialog height equal to screen height 70%
-        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-
-        // Set the width and height for the layout parameters
-        // This will bet the width and height of alert dialog
-        layoutParams.width = dialogWindowWidth
-        layoutParams.height = dialogWindowHeight
-
-        // Apply the newly created layout parameters to the alert dialog window
-        dialog.window.attributes = layoutParams
 
 
         dialog.setOnDismissListener {
