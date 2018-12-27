@@ -293,7 +293,7 @@
                 <View
                     android:id="@+id/diagnosis_medication_view"
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"
+                    android:layout_height="4dp"
                     android:background="#ADB5BD"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_constraint_layout" />
 
@@ -541,7 +541,7 @@
                 <View
                     android:id="@+id/diagnosis_medication_view2"
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"
+                    android:layout_height="1dp"
                     android:background="#ADB5BD"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_check_wrapper" />
 
@@ -575,7 +575,7 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/family_history_disease_wrapper"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="226dp"
                 android:layout_marginTop="32dp"
                 app:layout_constraintEnd_toEndOf="@+id/diagnosis_medication_check_wrapper"
                 app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_check_wrapper"
@@ -648,7 +648,7 @@
                 <View
                     android:id="@+id/family_history_disease_view"
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"
+                    android:layout_height="4dp"
                     android:background="#ADB5BD"
                     app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_constraintLayout" />
 
@@ -759,7 +759,7 @@
                 <View
                     android:id="@+id/view2"
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"
+                    android:layout_height="1dp"
                     android:background="#ADB5BD"
                     app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_wrapper" />
 

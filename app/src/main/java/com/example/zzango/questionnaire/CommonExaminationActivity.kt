@@ -1,5 +1,6 @@
 package com.example.zzango.questionnaire
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -10,11 +11,42 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_common_exam.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
+import java.util.*
 
 
 class CommonExaminationActivity : AppCompatActivity() {
+
+    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : Date,
+                         @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
+                         @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
+                         @SerializedName("name") @Expose var name : String,
+                         @SerializedName("first_serial") @Expose var first_serial : String,
+                         @SerializedName("last_serial") @Expose var last_serial : String,
+                         @SerializedName("category") @Expose var category : String,
+                         @SerializedName("mj1_1_1") @Expose var exam_1 : String,
+                         @SerializedName("mj1_1_2") @Expose var exam_2 : String,
+                         @SerializedName("mj1_2_1") @Expose var exam_3 : String,
+                         @SerializedName("mj1_2_2") @Expose var exam_4 : String,
+                         @SerializedName("mj1_3_1") @Expose var exam_5 : String,
+                         @SerializedName("mj1_3_2") @Expose var exam_6 : String,
+                         @SerializedName("mj1_4_1") @Expose var exam_7 : String,
+                         @SerializedName("mj1_4_2") @Expose var exam_8 : String,
+                         @SerializedName("mj1_5_1") @Expose var exam_9 : String,
+                         @SerializedName("mj1_5_2") @Expose var exam_10 : String,
+                         @SerializedName("mj1_6_1") @Expose var exam_11 : String,
+                         @SerializedName("mj1_6_2") @Expose var exam_12 : String,
+                         @SerializedName("mj1_7_1") @Expose var exam_13 : String,
+                         @SerializedName("mj1_7_2") @Expose var exam_14 : String,
+                         @SerializedName("mj1_7_etc") @Expose var exam_15 : String,
+                         @SerializedName("mj2_1") @Expose var exam_16 : String,
+                         @SerializedName("mj2_2") @Expose var exam_17 : String,
+                         @SerializedName("mj2_3") @Expose var exam_18 : String,
+                         @SerializedName("mj2_4") @Expose var exam_19 : String,
+                         @SerializedName("mj2_5") @Expose var exam_20 : String)
 
     var popup : Boolean = false
 
@@ -402,5 +434,140 @@ class CommonExaminationActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("NewApi")
+    fun check() : Boolean {
+
+        var exam_date = Date()
+        var name = ""
+        var first_serial_text = ""
+        var last_serial_text = ""
+        var category = "common"
+        var mj1_1_1 = ""
+        var mj1_1_2 = ""
+        var mj1_2_1 = ""
+        var mj1_2_2 = ""
+        var mj1_3_1 = ""
+        var mj1_3_2 = ""
+        var mj1_4_1 = ""
+        var mj1_4_2 = ""
+        var mj1_5_1 = ""
+        var mj1_5_2 = ""
+        var mj1_6_1 = ""
+        var mj1_6_2 = ""
+        var mj1_7_1 = ""
+        var mj1_7_2 = ""
+        var mj1_7_etc = ""
+        var mj2_1 = ""
+        var mj2_2 = ""
+        var mj2_3 = ""
+        var mj2_4 = ""
+        var mj2_5 = ""
+        var mj2_etc = ""
+        var mj3 = ""
+        var mj4 = ""
+        var mj4_1_1 = ""
+        var mj4_1_2 = ""
+        var mj4_2_1 = ""
+        var mj4_2_2 = ""
+        var mj5 = ""
+        var mj5_1 = ""
+        var mj61 = ""
+        var mj62 = ""
+        var mj63 = ""
+        var mj64 = ""
+        var mj6_1_11 = ""
+        var mj6_1_12 = ""
+        var mj6_1_13 = ""
+        var mj6_1_14 = ""
+        var mj6_1_21 = ""
+        var mj6_1_22 = ""
+        var mj6_1_23 = ""
+        var mj6_1_24 = ""
+        var mj6_1_31 = ""
+        var mj6_1_32 = ""
+        var mj6_1_33 = ""
+        var mj6_1_34 = ""
+        var mj6_1_41 = ""
+        var mj6_1_42 = ""
+        var mj6_1_43 = ""
+        var mj6_1_44 = ""
+        var mj6_1_51 = ""
+        var mj6_1_52 = ""
+        var mj6_1_53 = ""
+        var mj6_1_54 = ""
+        var mj6_1_etc = ""
+        var mj6_2_11 = ""
+        var mj6_2_12 = ""
+        var mj6_2_13 = ""
+        var mj6_2_14 = ""
+        var mj6_2_21 = ""
+        var mj6_2_22 = ""
+        var mj6_2_23 = ""
+        var mj6_2_24 = ""
+        var mj6_2_31 = ""
+        var mj6_2_32 = ""
+        var mj6_2_33 = ""
+        var mj6_2_34 = ""
+        var mj6_2_41 = ""
+        var mj6_2_42 = ""
+        var mj6_2_43 = ""
+        var mj6_2_44 = ""
+        var mj6_2_51 = ""
+        var mj6_2_52 = ""
+        var mj6_2_53 = ""
+        var mj6_2_54 = ""
+        var mj6_2_etc = ""
+        var mj7_1 = ""
+        var mj7_2_1 = ""
+        var mj7_2_2 = ""
+        var mj8_1 = ""
+        var mj8_2_1 = ""
+        var mj8_2_2 = ""
+        var mj9 = ""
+        var mj66_1 = ""
+        var mj66_2 = ""
+        var mj66_3_1 = ""
+        var mj66_3_2 = ""
+        var mj66_3_3 = ""
+        var mj66_3_4 = ""
+        var mj66_3_5 = ""
+        var mj66_3_6 = ""
+        var mj66_4 = ""
+        var mj66_5 = ""
+        var mj_inji_1 = ""
+        var mj_inji_2 = ""
+        var mj_inji_3 = ""
+        var mj_inji_4 = ""
+        var mj_inji_5 = ""
+        var mj_inji_6 = ""
+        var mj_inji_7 = ""
+        var mj_inji_8 = ""
+        var mj_inji_9 = ""
+        var mj_inji_10 = ""
+        var mj_inji_11 = ""
+        var mj_inji_12 = ""
+        var mj_inji_13 = ""
+        var mj_inji_14 = ""
+        var mj_inji_15 = ""
+        var mj_inji_sum = ""
+        var mj_mtl_1 = ""
+        var mj_mtl_2 = ""
+        var mj_mtl_3 = ""
+        var mj_mtl_4 = ""
+        var mj_mtl_5 = ""
+        var mj_mtl_6 = ""
+        var mj_mtl_7 = ""
+        var mj_mtl_8 = ""
+        var mj_mtl_9 = ""
+        var mj_mtl_sum = ""
+        var mj_key = ""
+        var mj_email = ""
+        var mj_email_yn = ""
+        var mj_year = ""
+        var mj_doc_no = ""
+        var mj_doc_name = ""
+
+        return true
+    }
 
 }

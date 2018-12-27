@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         supportFragmentManager.beginTransaction()
                 .add(R.id.fragment_right, FirstFragment()).commit()
 
-        button1.setBackgroundColor(Color.parseColor("#233F78"))
+        button1.setBackgroundColor(Color.parseColor("#2B53A2"))
 
         listButton.setOnClickListener{
 
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             override fun afterTextChanged(s: Editable?) {
                 if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
                     dialog_view.Login.isClickable = true
-                    dialog_view.Login.setBackgroundColor(Color.parseColor("#233F78"))
+                    dialog_view.Login.setBackgroundColor(Color.parseColor("#2B53A2"))
                 }else{
                     dialog_view.Login.isClickable = false
                     dialog_view.Login.setBackgroundColor(Color.parseColor("#b1b1b1"))
@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             override fun afterTextChanged(s: Editable?) {
                 if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
                     dialog_view.Login.isClickable = true
-                    dialog_view.Login.setBackgroundColor(Color.parseColor("#233F78"))
+                    dialog_view.Login.setBackgroundColor(Color.parseColor("#2B53A2"))
                 }else{
                     dialog_view.Login.isClickable = false
                     dialog_view.Login.setBackgroundColor(Color.parseColor("#b1b1b1"))
@@ -198,7 +198,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         // int dialogWindowHeight = (int) (displayHeight * 0.9f);
 
         // Set alert dialog width equal to screen width 70%
-        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
+        var dialogWindowWidth = (displayWidth * 0.35f).toInt()
         // Set alert dialog height equal to screen height 70%
         var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
 
@@ -246,11 +246,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     override fun onClick(v: View?) {
 
-        button1.setBackgroundColor(Color.parseColor("#3760B2"))
-        button2.setBackgroundColor(Color.parseColor("#3760B2"))
-        button3.setBackgroundColor(Color.parseColor("#3760B2"))
-        button4.setBackgroundColor(Color.parseColor("#3760B2"))
-        button5.setBackgroundColor(Color.parseColor("#3760B2"))
+        button1.setBackgroundColor(Color.parseColor("#3C6FD1"))
+        button2.setBackgroundColor(Color.parseColor("#3C6FD1"))
+        button3.setBackgroundColor(Color.parseColor("#3C6FD1"))
+        button4.setBackgroundColor(Color.parseColor("#3C6FD1"))
+        button5.setBackgroundColor(Color.parseColor("#3C6FD1"))
 
         var fragment: Fragment? = null
 
@@ -276,7 +276,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             }
         }
 
-        v.setBackgroundColor(Color.parseColor("#233F78"))
+        v.setBackgroundColor(Color.parseColor("#2B53A2"))
 
         if (fragment != null) {
 
