@@ -25,6 +25,12 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         //var chk_each = ArrayList<CheckBox>()
     }
 
+    object Category
+    {
+        var ORAL = "oral"
+    }
+
+
     fun CheckBoxInit()
     {
         myCheckBox.chk_each = ArrayList()
@@ -55,7 +61,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         var paper: Paper = PaperList[p1]
 
         p0?.chkbox?.isChecked = paper.isChecked
-        p0?.txtCategory?.text = paper.category
+        p0?.txtCategory?.text = getCategory(paper.category)
         p0?.txtName?.text = paper.name
         //p0?.txtSerial?.text = paper.serial_first + "-" + paper.serial_last
         p0?.txtDate?.text = paper.exam_date
@@ -150,6 +156,20 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
     }
 
 
+    fun getCategory(category: String):String
+    {
+
+        if(category==Category.ORAL)
+        {
+            return "구강검진"
+        }
+        else
+        {
+            return "확인불가"
+        }
+
+
+    }
 
 
 
