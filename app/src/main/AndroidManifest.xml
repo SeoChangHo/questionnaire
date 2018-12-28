@@ -23,6 +23,7 @@
         <activity android:name=".OralExamination"/>
         <activity android:name=".LocalList.ListActivity"/>
         <activity android:name=".CommonExaminationActivity"/>
+        <activity android:name=".ServerListActivity"/>
     </application>
 
 </manifest>

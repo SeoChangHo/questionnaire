@@ -80,110 +80,74 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " mj2_3 TEXT," +
                 " mj2_4 TEXT," +
                 " mj2_5 TEXT," +
-                " mj2_etc TEXT," +
                 " mj3 TEXT," +
                 " mj4 TEXT," +
                 " mj4_1_1 TEXT," +
                 " mj4_1_2 TEXT," +
                 " mj4_2_1 TEXT," +
                 " mj4_2_2 TEXT," +
+                " mj4_2_3 TEXT," +
                 " mj5 TEXT," +
-                " mj5_1 TEXT," +
-                " mj61 TEXT," +
-                " mj62 TEXT," +
-                " mj63 TEXT," +
-                " mj64 TEXT," +
-                " mj6_1_11 TEXT," +
-                " mj6_1_12 TEXT," +
-                " mj6_1_13 TEXT," +
-                " mj6_1_14 TEXT," +
-                " mj6_1_21 TEXT," +
-                " mj6_1_22 TEXT," +
-                " mj6_1_23 TEXT," +
-                " mj6_1_24 TEXT," +
-                " mj6_1_31 TEXT," +
-                " mj6_1_32 TEXT," +
-                " mj6_1_33 TEXT," +
-                " mj6_1_34 TEXT," +
-                " mj6_1_41 TEXT," +
-                " mj6_1_42 TEXT," +
-                " mj6_1_43 TEXT," +
-                " mj6_1_44 TEXT," +
-                " mj6_1_51 TEXT," +
-                " mj6_1_52 TEXT," +
-                " mj6_1_53 TEXT," +
-                " mj6_1_54 TEXT," +
-                " mj6_1_etc TEXT," +
-                " mj6_2_11 TEXT," +
-                " mj6_2_12 TEXT," +
-                " mj6_2_13 TEXT," +
-                " mj6_2_14 TEXT," +
-                " mj6_2_21 TEXT," +
-                " mj6_2_22 TEXT," +
-                " mj6_2_23 TEXT," +
-                " mj6_2_24 TEXT," +
-                " mj6_2_31 TEXT," +
-                " mj6_2_32 TEXT," +
-                " mj6_2_33 TEXT," +
-                " mj6_2_34 TEXT," +
-                " mj6_2_41 TEXT," +
-                " mj6_2_42 TEXT," +
-                " mj6_2_43 TEXT," +
-                " mj6_2_44 TEXT," +
-                " mj6_2_51 TEXT," +
-                " mj6_2_52 TEXT," +
-                " mj6_2_53 TEXT," +
-                " mj6_2_54 TEXT," +
-                " mj6_2_etc TEXT," +
-                " mj7_1 TEXT," +
-                " mj7_2_1 TEXT," +
-                " mj7_2_2 TEXT," +
+                " mj5_1_1 TEXT," +
+                " mj5_1_2 TEXT," +
+                " mj5_2_1 TEXT," +
+                " mj5_2_2 TEXT," +
+                " mj5_2_3 TEXT," +
+                " mj6 TEXT," +
+                " mj6_1 TEXT," +
+                " mj71 TEXT," +
+                " mj72 TEXT," +
+                " mj73 TEXT," +
+                " mj74 TEXT," +
+                " mj7_1_11 TEXT," +
+                " mj7_1_12 TEXT," +
+                " mj7_1_13 TEXT," +
+                " mj7_1_14 TEXT," +
+                " mj7_1_21 TEXT," +
+                " mj7_1_22 TEXT," +
+                " mj7_1_23 TEXT," +
+                " mj7_1_24 TEXT," +
+                " mj7_1_31 TEXT," +
+                " mj7_1_32 TEXT," +
+                " mj7_1_33 TEXT," +
+                " mj7_1_34 TEXT," +
+                " mj7_1_41 TEXT," +
+                " mj7_1_42 TEXT," +
+                " mj7_1_43 TEXT," +
+                " mj7_1_44 TEXT," +
+                " mj7_1_51 TEXT," +
+                " mj7_1_52 TEXT," +
+                " mj7_1_53 TEXT," +
+                " mj7_1_54 TEXT," +
+                " mj7_1_etc TEXT," +
+                " mj7_2_11 TEXT," +
+                " mj7_2_12 TEXT," +
+                " mj7_2_13 TEXT," +
+                " mj7_2_14 TEXT," +
+                " mj7_2_21 TEXT," +
+                " mj7_2_22 TEXT," +
+                " mj7_2_23 TEXT," +
+                " mj7_2_24 TEXT," +
+                " mj7_2_31 TEXT," +
+                " mj7_2_32 TEXT," +
+                " mj7_2_33 TEXT," +
+                " mj7_2_34 TEXT," +
+                " mj7_2_41 TEXT," +
+                " mj7_2_42 TEXT," +
+                " mj7_2_43 TEXT," +
+                " mj7_2_44 TEXT," +
+                " mj7_2_51 TEXT," +
+                " mj7_2_52 TEXT," +
+                " mj7_2_53 TEXT," +
+                " mj7_2_54 TEXT," +
+                " mj7_2_etc TEXT," +
                 " mj8_1 TEXT," +
                 " mj8_2_1 TEXT," +
                 " mj8_2_2 TEXT," +
-                " mj9 TEXT," +
-                " mj66_1 TEXT," +
-                " mj66_2 TEXT," +
-                " mj66_3_1 TEXT," +
-                " mj66_3_2 TEXT," +
-                " mj66_3_3 TEXT," +
-                " mj66_3_4 TEXT," +
-                " mj66_3_5 TEXT," +
-                " mj66_3_6 TEXT," +
-                " mj66_4 TEXT," +
-                " mj66_5 TEXT," +
-                " mj_inji_1 TEXT," +
-                " mj_inji_2 TEXT," +
-                " mj_inji_3 TEXT," +
-                " mj_inji_4 TEXT," +
-                " mj_inji_5 TEXT," +
-                " mj_inji_6 TEXT," +
-                " mj_inji_7 TEXT," +
-                " mj_inji_8 TEXT," +
-                " mj_inji_9 TEXT," +
-                " mj_inji_10 TEXT," +
-                " mj_inji_11 TEXT," +
-                " mj_inji_12 TEXT," +
-                " mj_inji_13 TEXT," +
-                " mj_inji_14 TEXT," +
-                " mj_inji_15 TEXT," +
-                " mj_inji_sum TEXT," +
-                " mj_mtl_1 TEXT," +
-                " mj_mtl_2 TEXT," +
-                " mj_mtl_3 TEXT," +
-                " mj_mtl_4 TEXT," +
-                " mj_mtl_5 TEXT," +
-                " mj_mtl_6 TEXT," +
-                " mj_mtl_7 TEXT," +
-                " mj_mtl_8 TEXT," +
-                " mj_mtl_9 TEXT," +
-                " mj_mtl_sum TEXT," +
-                " mj_key TEXT," +
-                " mj_email TEXT," +
-                " mj_email_yn TEXT," +
-                " mj_year TEXT," +
-                " mj_doc_no TEXT," +
-                " mj_doc_name TEXT);")
+                " mj9_1 TEXT," +
+                " mj9_2_1 TEXT," +
+                " mj9_2_2 TEXT," +
+                " mj10 TEXT);")
 
     }
 
@@ -218,22 +182,44 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
-        db.execSQL("INSERT INTO EXAMINATION" +
-                "(exam_date," +
-                "name," +
-                "first_serial," +
-                "last_serial," +
-                "category, " +
-                "exam_1, exam_2, exam_3, exam_4, exam_5, exam_6, exam_7," +
-                "exam_8, exam_9, exam_10, exam_11, exam_12, exam_13, exam_14," +
-                "exam_15, remark)" +
+        db.execSQL("INSERT INTO COMMON_EXAM" +
+                "(exam_date, name, first_serial, last_serial, category, " +
+                " mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2," +
+                " mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1," +
+                " mj2_2, mj2_3, mj2_4, mj2_5, mj3, mj4, mj4_1_1, mj4_1_2, mj4_2_1," +
+                " mj4_2_2, mj4_2_3, mj5, mj5_1_1, mj5_1_2, mj5_2_1, mj5_2_2, mj5_2_3," +
+                " mj6, mj6_1, mj71, mj72, mj73, mj74, mj7_1_11, mj7_1_12, mj7_1_13, mj7_1_14," +
+                " mj7_1_21, mj7_1_22, mj7_1_23, mj7_1_24, mj7_1_31, mj7_1_32, mj7_1_33," +
+                " mj7_1_34, mj7_1_41, mj7_1_42, mj7_1_43, mj7_1_44, mj7_1_51, mj7_1_52, mj7_1_53," +
+                " mj7_1_54, mj7_1_etc, mj7_2_11, mj7_2_12, mj7_2_13, mj7_2_14, mj7_2_21, mj7_2_22," +
+                " mj7_2_23, mj7_2_24, mj7_2_31, mj7_2_32, mj7_2_33, mj7_2_34, mj7_2_41, mj7_2_42," +
+                " mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1," +
+                " mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10)" +
                 " VALUES (" +
                 "'${columnValue.exam_date}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.exam_1}', '${columnValue.exam_2}', '${columnValue.exam_3}', '${columnValue.exam_4}'" +
-                ", '${columnValue.exam_5}', '${columnValue.exam_6}', '${columnValue.exam_7}', '${columnValue.exam_8}'," +
-                " '${columnValue.exam_9}', '${columnValue.exam_10}', '${columnValue.exam_11}', '${columnValue.exam_12}'," +
-                " '${columnValue.exam_13}', '${columnValue.exam_14}', '${columnValue.exam_15}', '${columnValue.exam_20}'"
-                +");")
+                ", '${columnValue.category}', '${columnValue.mj1_1_1}', '${columnValue.mj1_1_2}', '${columnValue.mj1_2_1}'" +
+                ", '${columnValue.mj1_2_2}', '${columnValue.mj1_3_1}', '${columnValue.mj1_3_2}', '${columnValue.mj1_4_1}'" +
+                ", '${columnValue.mj1_4_2}', '${columnValue.mj1_5_1}', '${columnValue.mj1_5_2}', '${columnValue.mj1_6_1}'" +
+                ", '${columnValue.mj1_6_2}', '${columnValue.mj1_7_1}', '${columnValue.mj1_7_2}'" +
+                ", '${columnValue.mj2_1}', '${columnValue.mj2_2}', '${columnValue.mj2_3}', '${columnValue.mj2_4}'" +
+                ", '${columnValue.mj2_5}', '${columnValue.mj3}', '${columnValue.mj4}'" +
+                ", '${columnValue.mj4_1_1}', '${columnValue.mj4_1_2}', '${columnValue.mj4_2_1}', '${columnValue.mj4_2_2}'" +
+                ", '${columnValue.mj4_2_3}', '${columnValue.mj5}', '${columnValue.mj5_1_1}'" +
+                ", '${columnValue.mj5_1_2}', '${columnValue.mj5_2_1}', '${columnValue.mj5_2_2}', '${columnValue.mj5_2_3}'" +
+                ", '${columnValue.mj6}', '${columnValue.mj6_1}', '${columnValue.mj71}', '${columnValue.mj72}'" +
+                ", '${columnValue.mj73}', '${columnValue.mj74}', '${columnValue.mj7_1_11}', '${columnValue.mj7_1_12}'" +
+                ", '${columnValue.mj7_1_13}', '${columnValue.mj7_1_14}', '${columnValue.mj7_1_21}', '${columnValue.mj7_1_22}'" +
+                ", '${columnValue.mj7_1_23}', '${columnValue.mj7_1_24}', '${columnValue.mj7_1_31}', '${columnValue.mj7_1_32}'" +
+                ", '${columnValue.mj7_1_33}', '${columnValue.mj7_1_34}', '${columnValue.mj7_1_41}', '${columnValue.mj7_1_42}'" +
+                ", '${columnValue.mj7_1_43}', '${columnValue.mj7_1_44}', '${columnValue.mj7_1_51}', '${columnValue.mj7_1_52}'" +
+                ", '${columnValue.mj7_1_53}', '${columnValue.mj7_1_54}', '${columnValue.mj7_1_etc}', '${columnValue.mj7_2_11}'" +
+                ", '${columnValue.mj7_2_12}', '${columnValue.mj7_2_13}', '${columnValue.mj7_2_14}', '${columnValue.mj7_2_21}'" +
+                ", '${columnValue.mj7_2_22}', '${columnValue.mj7_2_23}', '${columnValue.mj7_2_24}', '${columnValue.mj7_2_31}'" +
+                ", '${columnValue.mj7_2_32}', '${columnValue.mj7_2_33}', '${columnValue.mj7_2_34}', '${columnValue.mj7_2_41}'" +
+                ", '${columnValue.mj7_2_42}', '${columnValue.mj7_2_43}', '${columnValue.mj7_2_44}', '${columnValue.mj7_2_51}'" +
+                ", '${columnValue.mj7_2_52}', '${columnValue.mj7_2_53}', '${columnValue.mj7_2_54}', '${columnValue.mj7_2_etc}'" +
+                ", '${columnValue.mj8_1}', '${columnValue.mj8_2_1}', '${columnValue.mj8_2_2}', '${columnValue.mj9_1}'" +
+                ", '${columnValue.mj9_2_1}', '${columnValue.mj9_2_2}', '${columnValue.mj10}');")
 
     }
 
