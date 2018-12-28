@@ -8,30 +8,24 @@ import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.os.IBinder
 import android.support.v7.app.AppCompatActivity
-import android.text.Layout
 import android.util.DisplayMetrics
 import android.view.*
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
-import android.widget.RadioButton
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.Paper
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_oral_examination.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
-import kotlinx.android.synthetic.main.save_location.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
+class OralExamination : AppCompatActivity() {
 
     var exam_result : ArrayList<ExamInfo>? = null
-    //    var exam_result : HashMap<String, ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
     var popup = false
 
@@ -68,8 +62,6 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oral_examination)
 
-
-
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
@@ -81,22 +73,21 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
 
+
+
         sql_db = LocalDBhelper(this).writableDatabase
 
-        oral_exam_inside_scroll_layout.focusable = ViewGroup.FOCUSABLE
-        oral_exam_inside_scroll_layout.isFocusableInTouchMode = true
-
-        oral_exam_inside_scroll_layout.setOnTouchListener {
-
-            v, event ->
-
-            oral_exam_inside_scroll_layout.requestFocus()
-
-            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
-
-            true
-
-        }
+//        oral_exam_inside_scroll_layout.setOnTouchListener {
+//
+//            v, event ->
+//
+//            oral_exam_inside_scroll_layout.requestFocus()
+//
+//            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
+//
+//            true
+//
+//        }
 
         oral_9_count.setOnFocusChangeListener {
 
@@ -105,10 +96,6 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
             if(hasFocus){
 
                 oral_9_etc.isChecked = true
-
-            }else{
-
-                oral_9_etc.isChecked = false
 
             }
 
@@ -166,25 +153,19 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
         }
 
-//        check_local_save.setOnClickListener {
-//
-//            local_data_load()
-//
-//        }
+    }
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+
+        return super.onTouchEvent(event)
 
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
 
-        if(ev!!.action == MotionEvent.ACTION_DOWN) {
+        if(ev!!.action == MotionEvent.ACTION_DOWN){
 
-            if (currentFocus!! !is EditText) {
-
-                currentFocus!!.requestFocus()
-
-                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
-
-            }
+            println("aa")
 
         }
 
@@ -192,31 +173,11 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
 
     }
 
-//    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-//
-//
-//
-//    }
-
-//    override fun onTouchEvent(event: MotionEvent?): Boolean {
-//
-//        println("it work")
-//
-//        return super.onTouchEvent(event)
-//
-//    }
-
-//    fun local_data_load(){
-//
-//        LocalDBhelper(this).checkLocal(sql_db!!)
-//
-//    }
-
     fun oral_exam_local_insert(){
 
         println("로컬")
 
-        LocalDBhelper(this).onCreate(sql_db)
+        LocalDBhelper(this).oralCreate(sql_db)
 
         LocalDBhelper(this).saveLocal(sql_db!!, exam_result!!)
 
@@ -737,22 +698,7 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
                 exam_11, exam_12, exam_13, exam_14, exam_15, "", "", "", "", exam_20
         ))
 
-//        arr.add(ExamInfo(
-//                Date(), "1", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n",
-//                "n", "n", "n", "n", "n", "qwerty"
-//        ))
-
         exam_result = arr
-
-//        exam_result = HashMap()
-//
-//        exam_result!!["${oral_questionnaire_name_input.text}"] =
-//
-//                ExamInfo(
-//                oral_date, oral_bun_no, oral_email_yn, oral_1, oral_2,
-//                oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
-//                oral_11, oral_12, oral_13, oral_14, oral_15, "", "", "", "", oral_20
-//        )
 
         return true
 
@@ -1024,13 +970,6 @@ class OralExamination : AppCompatActivity()/*, View.OnTouchListener*/ {
             oral_15_do_not_know.isChecked = true
         }
 
-
-
-
-
-
-
     }
-
 
 }

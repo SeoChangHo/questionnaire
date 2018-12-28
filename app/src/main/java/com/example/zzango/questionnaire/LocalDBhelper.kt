@@ -13,6 +13,17 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     override fun onCreate(db: SQLiteDatabase?) {
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "LOCALSAVELIST" +
+                "(no INTEGER," +
+                "category TEXT," +
+                "name TEXT," +
+                "date TEXT);")
+
+    }
+
+    fun oralCreate(db : SQLiteDatabase?){
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "EXAMINATION" +
                 "(exam_date DATETIME," +
                 " name TEXT," +
