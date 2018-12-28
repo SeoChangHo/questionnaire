@@ -17,7 +17,6 @@ import android.widget.Toast
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_common_exam.*
-import kotlinx.android.synthetic.main.activity_list.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import java.util.*
 
