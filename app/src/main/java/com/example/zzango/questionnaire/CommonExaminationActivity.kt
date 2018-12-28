@@ -455,6 +455,8 @@ class CommonExaminationActivity : AppCompatActivity() {
 
     fun common_exam_local_insert(){
 
+        LocalDBhelper(this).onCreate(sql_db)
+
         LocalDBhelper(this).commonExaminationDB(sql_db)
 
         LocalDBhelper(this).commonSaveLocal(sql_db!!, exam_result!!)

@@ -182,6 +182,11 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
+        db.execSQL("INSERT INTO LOCALSAVELIST" +
+                "(no, category, name, date)" +
+                " VALUES (" +
+                " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
+
         db.execSQL("INSERT INTO COMMON_EXAM" +
                 "(exam_date, name, first_serial, last_serial, category, " +
                 " mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2," +
@@ -220,7 +225,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.mj7_2_52}', '${columnValue.mj7_2_53}', '${columnValue.mj7_2_54}', '${columnValue.mj7_2_etc}'" +
                 ", '${columnValue.mj8_1}', '${columnValue.mj8_2_1}', '${columnValue.mj8_2_2}', '${columnValue.mj9_1}'" +
                 ", '${columnValue.mj9_2_1}', '${columnValue.mj9_2_2}', '${columnValue.mj10}');")
-
     }
 
 
