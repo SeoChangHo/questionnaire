@@ -38,36 +38,15 @@ class ListActivity : Activity() {
         val recyclerView = findViewById(R.id.recyclertView) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
-        val data = LocalDBhelper(this).checkLocal(sql_db!!)
+        val data = LocalDBhelper(this).checkLocalList(sql_db!!)
         data.moveToFirst()
 
         while(!data.isAfterLast){
             papers.add(Paper(bool,
+                    data.getInt(data.getColumnIndex("no")),
                     data.getString(data.getColumnIndex("category")),
                     data.getString(data.getColumnIndex("name")),
-                    data.getString(data.getColumnIndex("first_serial")),
-                    data.getString(data.getColumnIndex("last_serial")),
-                    "2018-12-21", "", "",
-                    data.getString(data.getColumnIndex("exam_1")),
-                    data.getString(data.getColumnIndex("exam_2")),
-                    data.getString(data.getColumnIndex("exam_3")),
-                    data.getString(data.getColumnIndex("exam_4")),
-                    data.getString(data.getColumnIndex("exam_5")),
-                    data.getString(data.getColumnIndex("exam_6")),
-                    data.getString(data.getColumnIndex("exam_7")),
-                    data.getString(data.getColumnIndex("exam_8")),
-                    data.getString(data.getColumnIndex("exam_9")),
-                    data.getString(data.getColumnIndex("exam_10")),
-                    data.getString(data.getColumnIndex("exam_11")),
-                    data.getString(data.getColumnIndex("exam_12")),
-                    data.getString(data.getColumnIndex("exam_13")),
-                    data.getString(data.getColumnIndex("exam_14")),
-                    data.getString(data.getColumnIndex("exam_15")),
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""))
+                    data.getString(data.getColumnIndex("date"))))
 
             data.moveToNext()
 

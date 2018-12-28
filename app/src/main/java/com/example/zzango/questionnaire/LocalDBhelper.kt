@@ -236,6 +236,17 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    @SuppressLint("Recycle")
+    fun checkLocalList(db : SQLiteDatabase): Cursor{
+
+        var data = db.rawQuery("SELECT * FROM LOCALSAVELIST;", null)
+
+
+
+        return data
+
+    }
+
     fun deletePaper(db : SQLiteDatabase, Paper: ArrayList<Paper>)
     {
         for(i in 0..Paper.size-1)

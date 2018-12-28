@@ -28,6 +28,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
     object Category
     {
         var ORAL = "oral"
+        var COMMON = "common"
     }
 
 
@@ -64,7 +65,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         p0?.txtCategory?.text = getCategory(paper.category)
         p0?.txtName?.text = paper.name
         //p0?.txtSerial?.text = paper.serial_first + "-" + paper.serial_last
-        p0?.txtDate?.text = paper.exam_date
+        p0?.txtDate?.text = paper.date
 
 
 
@@ -162,6 +163,10 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         if(category==Category.ORAL)
         {
             return "구강검진"
+        }
+        else if(category==Category.COMMON)
+        {
+            return "건강검진(공통)"
         }
         else
         {

@@ -706,269 +706,269 @@ class OralExamination : AppCompatActivity() {
 
     fun GetPaper(paper:Paper)
     {
-        oral_questionnaire_name_input.setText(paper.name)
-        first_serial.setText(paper.serial_first)
-        last_serial.setText(paper.serial_last)
-
-        println(paper)
-
-        oral_examination_save.visibility = View.GONE
-        oral_examination_cancel.visibility = View.GONE
-        oral_edit_submit.visibility = View.VISIBLE
-
-        //1번
-        if(paper.exam_1=="y")
-        {
-            oral_1_true.isChecked = true
-        }
-        else if(paper.exam_1=="n")
-        {
-            oral_1_false.isChecked = true
-        }
-
-
-
-        //2번
-        if(paper.exam_2=="y")
-        {
-            oral_2_true.isChecked = true
-        }
-        else if(paper.exam_2=="n")
-        {
-            oral_2_false.isChecked = true
-        }
-        else if(paper.exam_2=="d")
-        {
-            oral_2_do_not_know.isChecked = true
-        }
-
-
-        //3번
-        if(paper.exam_3=="y")
-        {
-            oral_3_true.isChecked = true
-        }
-        else if(paper.exam_3=="n")
-        {
-            oral_3_false.isChecked = true
-        }
-        else if(paper.exam_3=="d")
-        {
-            oral_3_do_not_know.isChecked = true
-        }
-
-
-        //4번
-        if(paper.exam_4=="y")
-        {
-            oral_4_true.isChecked = true
-        }
-        else if(paper.exam_4=="n")
-        {
-            oral_4_false.isChecked = true
-        }
-
-        //5번
-        if(paper.exam_5=="y")
-        {
-            oral_5_true.isChecked = true
-        }
-        else if(paper.exam_5=="n")
-        {
-            oral_5_false.isChecked = true
-        }
-
-        //6번
-        if(paper.exam_6=="y")
-        {
-            oral_6_true.isChecked = true
-        }
-        else if(paper.exam_6=="n")
-        {
-            oral_6_false.isChecked = true
-        }
-
-
-        //7번
-        if(paper.exam_7=="1")
-        {
-            oral_7_very_good.isChecked = true
-        }
-        else if(paper.exam_7=="2")
-        {
-            oral_7_good.isChecked = true
-        }
-        else if(paper.exam_7=="3")
-        {
-            oral_7_normal.isChecked = true
-        }
-        else if(paper.exam_7=="4")
-        {
-            oral_7_bad.isChecked = true
-        }
-        else if(paper.exam_7=="5")
-        {
-            oral_7_very_bad.isChecked = true
-        }
-
-
-        //8번
-        if(paper.exam_8=="y")
-        {
-            oral_8_true.isChecked = true
-        }
-        else if(paper.exam_8=="n")
-        {
-            oral_8_false.isChecked = true
-        }
-
-
-        //9번
-        if(paper.exam_9=="1")
-        {
-            oral_9_1.isChecked = true
-        }
-        else if(paper.exam_9=="2")
-        {
-            oral_9_2.isChecked = true
-        }
-        else if(paper.exam_9=="3")
-        {
-            oral_9_3.isChecked = true
-        }
-        else if(paper.exam_9=="4")
-        {
-            oral_9_4.isChecked = true
-        }
-        else if(paper.exam_9=="5")
-        {
-            oral_9_5.isChecked = true
-        }
-        else if(paper.exam_9=="6")
-        {
-            oral_9_etc.isChecked = true
-        }
-
-
-        //10번
-        if(paper.exam_10=="1")
-        {
-            oral_10_1.isChecked = true
-        }
-        else if(paper.exam_10=="2")
-        {
-            oral_10_2.isChecked = true
-        }
-        else if(paper.exam_10=="3")
-        {
-            oral_10_3.isChecked = true
-        }
-        else if(paper.exam_10=="4")
-        {
-            oral_10_4.isChecked = true
-        }
-
-
-
-
-        //11번
-        if(paper.exam_11=="1")
-        {
-            oral_11_1.isChecked = true
-        }
-        else if(paper.exam_11=="2")
-        {
-            oral_11_2.isChecked = true
-        }
-        else if(paper.exam_11=="3")
-        {
-            oral_11_3.isChecked = true
-        }
-        else if(paper.exam_11=="4")
-        {
-            oral_11_4.isChecked = true
-        }
-        else if(paper.exam_11=="5")
-        {
-            oral_11_5.isChecked = true
-        }
-
-
-        //12번
-        if(paper.exam_12=="y")
-        {
-            oral_12_true.isChecked = true
-        }
-        else if(paper.exam_12=="n")
-        {
-            oral_12_false.isChecked = true
-        }
-        else if(paper.exam_12=="d")
-        {
-            oral_12_do_not_know.isChecked = true
-        }
-
-
-        //13번
-        if(paper.exam_13=="1")
-        {
-            oral_13_1.isChecked = true
-        }
-        else if(paper.exam_13=="2")
-        {
-            oral_13_2.isChecked = true
-        }
-        else if(paper.exam_13=="3")
-        {
-            oral_13_3.isChecked = true
-        }
-        else if(paper.exam_13=="4")
-        {
-            oral_13_4.isChecked = true
-        }
-        else if(paper.exam_13=="5")
-        {
-            oral_13_5.isChecked = true
-        }
-
-
-
-        //14번
-        if(paper.exam_14=="1")
-        {
-            oral_14_1.isChecked = true
-        }
-        else if(paper.exam_14=="2")
-        {
-            oral_14_2.isChecked = true
-        }
-        else if(paper.exam_14=="3")
-        {
-            oral_14_3.isChecked = true
-        }
-        else if(paper.exam_14=="4")
-        {
-            oral_14_4.isChecked = true
-        }
-        else if(paper.exam_14=="5")
-        {
-            oral_14_5.isChecked = true
-        }
-
-
-        //15번
-        if(paper.exam_15=="y")
-        {
-            oral_15_true.isChecked = true
-        }
-        else if(paper.exam_15=="n")
-        {
-            oral_15_false.isChecked = true
-        }
-        else if(paper.exam_15=="d")
-        {
-            oral_15_do_not_know.isChecked = true
-        }
+//        oral_questionnaire_name_input.setText(paper.name)
+//        first_serial.setText(paper.serial_first)
+//        last_serial.setText(paper.serial_last)
+//
+//        println(paper)
+//
+//        oral_examination_save.visibility = View.GONE
+//        oral_examination_cancel.visibility = View.GONE
+//        oral_edit_submit.visibility = View.VISIBLE
+//
+//        //1번
+//        if(paper.exam_1=="y")
+//        {
+//            oral_1_true.isChecked = true
+//        }
+//        else if(paper.exam_1=="n")
+//        {
+//            oral_1_false.isChecked = true
+//        }
+//
+//
+//
+//        //2번
+//        if(paper.exam_2=="y")
+//        {
+//            oral_2_true.isChecked = true
+//        }
+//        else if(paper.exam_2=="n")
+//        {
+//            oral_2_false.isChecked = true
+//        }
+//        else if(paper.exam_2=="d")
+//        {
+//            oral_2_do_not_know.isChecked = true
+//        }
+//
+//
+//        //3번
+//        if(paper.exam_3=="y")
+//        {
+//            oral_3_true.isChecked = true
+//        }
+//        else if(paper.exam_3=="n")
+//        {
+//            oral_3_false.isChecked = true
+//        }
+//        else if(paper.exam_3=="d")
+//        {
+//            oral_3_do_not_know.isChecked = true
+//        }
+//
+//
+//        //4번
+//        if(paper.exam_4=="y")
+//        {
+//            oral_4_true.isChecked = true
+//        }
+//        else if(paper.exam_4=="n")
+//        {
+//            oral_4_false.isChecked = true
+//        }
+//
+//        //5번
+//        if(paper.exam_5=="y")
+//        {
+//            oral_5_true.isChecked = true
+//        }
+//        else if(paper.exam_5=="n")
+//        {
+//            oral_5_false.isChecked = true
+//        }
+//
+//        //6번
+//        if(paper.exam_6=="y")
+//        {
+//            oral_6_true.isChecked = true
+//        }
+//        else if(paper.exam_6=="n")
+//        {
+//            oral_6_false.isChecked = true
+//        }
+//
+//
+//        //7번
+//        if(paper.exam_7=="1")
+//        {
+//            oral_7_very_good.isChecked = true
+//        }
+//        else if(paper.exam_7=="2")
+//        {
+//            oral_7_good.isChecked = true
+//        }
+//        else if(paper.exam_7=="3")
+//        {
+//            oral_7_normal.isChecked = true
+//        }
+//        else if(paper.exam_7=="4")
+//        {
+//            oral_7_bad.isChecked = true
+//        }
+//        else if(paper.exam_7=="5")
+//        {
+//            oral_7_very_bad.isChecked = true
+//        }
+//
+//
+//        //8번
+//        if(paper.exam_8=="y")
+//        {
+//            oral_8_true.isChecked = true
+//        }
+//        else if(paper.exam_8=="n")
+//        {
+//            oral_8_false.isChecked = true
+//        }
+//
+//
+//        //9번
+//        if(paper.exam_9=="1")
+//        {
+//            oral_9_1.isChecked = true
+//        }
+//        else if(paper.exam_9=="2")
+//        {
+//            oral_9_2.isChecked = true
+//        }
+//        else if(paper.exam_9=="3")
+//        {
+//            oral_9_3.isChecked = true
+//        }
+//        else if(paper.exam_9=="4")
+//        {
+//            oral_9_4.isChecked = true
+//        }
+//        else if(paper.exam_9=="5")
+//        {
+//            oral_9_5.isChecked = true
+//        }
+//        else if(paper.exam_9=="6")
+//        {
+//            oral_9_etc.isChecked = true
+//        }
+//
+//
+//        //10번
+//        if(paper.exam_10=="1")
+//        {
+//            oral_10_1.isChecked = true
+//        }
+//        else if(paper.exam_10=="2")
+//        {
+//            oral_10_2.isChecked = true
+//        }
+//        else if(paper.exam_10=="3")
+//        {
+//            oral_10_3.isChecked = true
+//        }
+//        else if(paper.exam_10=="4")
+//        {
+//            oral_10_4.isChecked = true
+//        }
+//
+//
+//
+//
+//        //11번
+//        if(paper.exam_11=="1")
+//        {
+//            oral_11_1.isChecked = true
+//        }
+//        else if(paper.exam_11=="2")
+//        {
+//            oral_11_2.isChecked = true
+//        }
+//        else if(paper.exam_11=="3")
+//        {
+//            oral_11_3.isChecked = true
+//        }
+//        else if(paper.exam_11=="4")
+//        {
+//            oral_11_4.isChecked = true
+//        }
+//        else if(paper.exam_11=="5")
+//        {
+//            oral_11_5.isChecked = true
+//        }
+//
+//
+//        //12번
+//        if(paper.exam_12=="y")
+//        {
+//            oral_12_true.isChecked = true
+//        }
+//        else if(paper.exam_12=="n")
+//        {
+//            oral_12_false.isChecked = true
+//        }
+//        else if(paper.exam_12=="d")
+//        {
+//            oral_12_do_not_know.isChecked = true
+//        }
+//
+//
+//        //13번
+//        if(paper.exam_13=="1")
+//        {
+//            oral_13_1.isChecked = true
+//        }
+//        else if(paper.exam_13=="2")
+//        {
+//            oral_13_2.isChecked = true
+//        }
+//        else if(paper.exam_13=="3")
+//        {
+//            oral_13_3.isChecked = true
+//        }
+//        else if(paper.exam_13=="4")
+//        {
+//            oral_13_4.isChecked = true
+//        }
+//        else if(paper.exam_13=="5")
+//        {
+//            oral_13_5.isChecked = true
+//        }
+//
+//
+//
+//        //14번
+//        if(paper.exam_14=="1")
+//        {
+//            oral_14_1.isChecked = true
+//        }
+//        else if(paper.exam_14=="2")
+//        {
+//            oral_14_2.isChecked = true
+//        }
+//        else if(paper.exam_14=="3")
+//        {
+//            oral_14_3.isChecked = true
+//        }
+//        else if(paper.exam_14=="4")
+//        {
+//            oral_14_4.isChecked = true
+//        }
+//        else if(paper.exam_14=="5")
+//        {
+//            oral_14_5.isChecked = true
+//        }
+//
+//
+//        //15번
+//        if(paper.exam_15=="y")
+//        {
+//            oral_15_true.isChecked = true
+//        }
+//        else if(paper.exam_15=="n")
+//        {
+//            oral_15_false.isChecked = true
+//        }
+//        else if(paper.exam_15=="d")
+//        {
+//            oral_15_do_not_know.isChecked = true
+//        }
 
     }
 
