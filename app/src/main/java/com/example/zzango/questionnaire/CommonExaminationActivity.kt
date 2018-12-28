@@ -2,6 +2,7 @@ package com.example.zzango.questionnaire
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -16,6 +17,7 @@ import android.widget.Toast
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_common_exam.*
+import kotlinx.android.synthetic.main.activity_list.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import java.util.*
 
@@ -422,6 +424,24 @@ class CommonExaminationActivity : AppCompatActivity() {
         }
 
         common_examination_save.setOnClickListener{
+
+            if(check()){
+
+                login_appbar_loading_progress.visibility = View.VISIBLE
+                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
+                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
+
+                    common_exam_local_insert()
+
+                }else{
+
+                    //common_exam_server_insert()
+
+                }
+
+            }
+
             saveCompleteAlert()
         }
 
@@ -445,6 +465,9 @@ class CommonExaminationActivity : AppCompatActivity() {
 
     fun saveCompleteAlert() {
 
+        login_appbar_loading_progress.visibility = View.GONE
+        login_appbar_loading_progress_bg.visibility = View.GONE
+
         popup = false
 
         var dialog = AlertDialog.Builder(this).create()
@@ -453,7 +476,7 @@ class CommonExaminationActivity : AppCompatActivity() {
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
-        dialog_view.save_complete_alert_text.setText("현재 저장되지 않습니다.")
+        dialog_view.save_complete_alert_text.setText("저장이 완료 되었습니다")
 
         if (!popup) {
 
@@ -874,7 +897,7 @@ class CommonExaminationActivity : AppCompatActivity() {
             }else if(common_7_1_1_4.isChecked){
                 mj7_1_14 = table_edit_1.text.toString()
             }else{
-                Toast.makeText(this, "7-1번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "7-1번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
             }
         }
@@ -889,7 +912,7 @@ class CommonExaminationActivity : AppCompatActivity() {
             }else if(common_7_1_2_4.isChecked){
                 mj7_1_24 = table_edit_2.text.toString()
             }else{
-                Toast.makeText(this, "7-1번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "7-1번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
             }
         }
@@ -904,7 +927,7 @@ class CommonExaminationActivity : AppCompatActivity() {
             }else if(common_7_1_3_4.isChecked){
                 mj7_1_34 = table_edit_3.text.toString()
             }else{
-                Toast.makeText(this, "7-1번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "7-1번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
             }
         }
@@ -919,7 +942,7 @@ class CommonExaminationActivity : AppCompatActivity() {
             }else if(common_7_1_4_4.isChecked){
                 mj7_1_44 = table_edit_4.text.toString()
             }else{
-                Toast.makeText(this, "7-1번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "7-1번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
             }
         }
@@ -934,16 +957,171 @@ class CommonExaminationActivity : AppCompatActivity() {
             }else if(common_7_1_5_4.isChecked){
                 mj7_1_54 = table_edit_5.text.toString()
             }else{
-                Toast.makeText(this, "7-1번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "7-1번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
             }
         }
 
 
+        if(checkBox6.isChecked){
+            if(common_7_2_1_1.isChecked){
+                mj7_2_11 = table_edit_6.text.toString()
+            }else if(common_7_2_1_2.isChecked){
+                mj7_2_12 = table_edit_6.text.toString()
+            }else if(common_7_2_1_3.isChecked){
+                mj7_2_13 = table_edit_6.text.toString()
+            }else if(common_7_2_1_4.isChecked){
+                mj7_2_14 = table_edit_6.text.toString()
+            }else{
+                Toast.makeText(this, "7-2번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }
 
+        if(checkBox7.isChecked){
+            if(common_7_2_2_1.isChecked){
+                mj7_2_21 = table_edit_7.text.toString()
+            }else if(common_7_2_2_2.isChecked){
+                mj7_2_22 = table_edit_7.text.toString()
+            }else if(common_7_2_2_3.isChecked){
+                mj7_2_23 = table_edit_7.text.toString()
+            }else if(common_7_2_2_4.isChecked){
+                mj7_2_24 = table_edit_7.text.toString()
+            }else{
+                Toast.makeText(this, "7-2번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }
 
+        if(checkBox8.isChecked){
+            if(common_7_2_3_1.isChecked){
+                mj7_2_31 = table_edit_8.text.toString()
+            }else if(common_7_2_3_2.isChecked){
+                mj7_2_32 = table_edit_8.text.toString()
+            }else if(common_7_2_3_3.isChecked){
+                mj7_2_33 = table_edit_8.text.toString()
+            }else if(common_7_2_3_4.isChecked){
+                mj7_2_34 = table_edit_8.text.toString()
+            }else{
+                Toast.makeText(this, "7-2번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }
 
+        if(checkBox9.isChecked){
+            if(common_7_2_4_1.isChecked){
+                mj7_2_41 = table_edit_9.text.toString()
+            }else if(common_7_2_4_2.isChecked){
+                mj7_2_42 = table_edit_9.text.toString()
+            }else if(common_7_2_4_3.isChecked){
+                mj7_2_43 = table_edit_9.text.toString()
+            }else if(common_7_2_4_4.isChecked){
+                mj7_2_44 = table_edit_9.text.toString()
+            }else{
+                Toast.makeText(this, "7-2번 체크 된 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }
 
+        if(checkBox10.isChecked){
+            if(common_7_2_5_1.isChecked){
+                mj7_2_51 = table_edit_10.text.toString()
+            }else if(common_7_2_5_2.isChecked){
+                mj7_2_52 = table_edit_10.text.toString()
+            }else if(common_7_2_5_3.isChecked){
+                mj7_2_53 = table_edit_10.text.toString()
+            }else if(common_7_2_5_4.isChecked){
+                mj7_2_54 = table_edit_10.text.toString()
+            }else{
+                Toast.makeText(this, "7-2번 체크 된 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }
+
+        if(common_8_1_1.isChecked){
+            mj8_1 = "1"
+        }else if(common_8_1_2.isChecked){
+            mj8_1 = "2"
+        }else if(common_8_1_3.isChecked){
+            mj8_1 = "3"
+        }else if(common_8_1_4.isChecked){
+            mj8_1 = "4"
+        }else if(common_8_1_5.isChecked){
+            mj8_1 = "5"
+        }else if(common_8_1_6.isChecked){
+            mj8_1 = "6"
+        }else if(common_8_1_7.isChecked){
+            mj8_1 = "7"
+        }else{
+            Toast.makeText(this, "8-1번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(editText_time_1.text.isNullOrEmpty()){
+            mj8_2_1 = editText_time_1.text.toString()
+        }else{
+            Toast.makeText(this, "8-2번 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(editText_minute_1.text.isNullOrEmpty()){
+            mj8_2_2 = editText_minute_1.text.toString()
+        }else{
+            Toast.makeText(this, "8-2번 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(common_9_1_1.isChecked){
+            mj9_1 = "1"
+        }else if(common_9_1_2.isChecked){
+            mj9_1 = "2"
+        }else if(common_9_1_3.isChecked){
+            mj9_1 = "3"
+        }else if(common_9_1_4.isChecked){
+            mj9_1 = "4"
+        }else if(common_9_1_5.isChecked){
+            mj9_1 = "5"
+        }else if(common_9_1_6.isChecked){
+            mj9_1 = "6"
+        }else if(common_9_1_7.isChecked){
+            mj9_1 = "7"
+        }else{
+            Toast.makeText(this, "9-1번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(editText_time_2.text.isNullOrEmpty()){
+            mj9_2_1 = editText_time_2.text.toString()
+        }else{
+            Toast.makeText(this, "9-2번 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(editText_minute_2.text.isNullOrEmpty()){
+            mj9_2_2 = editText_minute_2.text.toString()
+        }else{
+            Toast.makeText(this, "9-2번 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(common_10_1.isChecked){
+            mj10 = "1"
+        }else if(common_10_2.isChecked){
+            mj10 = "2"
+        }else if(common_10_3.isChecked){
+            mj10 = "3"
+        }else if(common_10_4.isChecked){
+            mj10 = "4"
+        }else if(common_10_5.isChecked){
+            mj10 = "5"
+        }else if(common_10_6.isChecked){
+            mj10 = "6"
+        }else if(common_10_7.isChecked){
+            mj10 = "7"
+        }else{
+            Toast.makeText(this, "10번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
+            return false
+        }
 
 
 
