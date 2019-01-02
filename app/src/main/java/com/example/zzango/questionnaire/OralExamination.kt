@@ -155,31 +155,13 @@ class OralExamination : AppCompatActivity() {
 
     }
 
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
-
-        return super.onTouchEvent(event)
-
-    }
-
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-
-        if(ev!!.action == MotionEvent.ACTION_DOWN){
-
-            println("aa")
-
-        }
-
-        return super.dispatchTouchEvent(ev)
-
-    }
-
     fun oral_exam_local_insert(){
 
         println("로컬")
 
         LocalDBhelper(this).oralCreate(sql_db)
 
-        LocalDBhelper(this).saveLocal(sql_db!!, exam_result!!)
+        LocalDBhelper(this).oralSaveLocal(sql_db!!, exam_result!!)
 
         saveCompleteAlert()
 
@@ -523,6 +505,10 @@ class OralExamination : AppCompatActivity() {
         }else if(oral_9_1.isChecked){
 
             exam_9 = "1"
+
+        }else if(oral_9_etc.isChecked) {
+
+            exam_9 = oral_9_count.text.toString()
 
         }else{
 

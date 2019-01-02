@@ -6,6 +6,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.zzango.questionnaire.LocalList.Paper
+import java.text.SimpleDateFormat
 import java.util.*
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
@@ -155,9 +156,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun saveLocal(db : SQLiteDatabase, ex : ArrayList<OralExamination.ExamInfo>){
+    fun oralSaveLocal(db : SQLiteDatabase, ex : ArrayList<OralExamination.ExamInfo>){
 
         val columnValue = ex.get(0)
+
+        db.execSQL("INSERT INTO LOCALSAVELIST" +
+                "(no, category, name, date)" +
+                " VALUES (" +
+                " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
 
         db.execSQL("INSERT INTO EXAMINATION" +
                 "(exam_date," +
