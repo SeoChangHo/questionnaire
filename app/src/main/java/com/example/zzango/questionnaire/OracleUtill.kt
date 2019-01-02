@@ -10,4 +10,12 @@ class OracleUtill {
 
     }
 
+    val common_url : String = "https://finepaperweight.herokuapp.com/InsertNormal/"
+
+    fun common_examination() : OracleInterface {
+
+        return OracleRequest().getStringResponse(common_url)!!.create(OracleInterface::class.java)
+
+    }
+
 }

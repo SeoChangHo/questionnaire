@@ -18,6 +18,9 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_common_exam.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 
@@ -125,6 +128,8 @@ class CommonExaminationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_exam)
+
+        sql_db = LocalDBhelper(this).writableDatabase
 
         diagnosis_medication_etc_examination_check.setOnCheckedChangeListener {
 
@@ -435,13 +440,12 @@ class CommonExaminationActivity : AppCompatActivity() {
 
                 }else{
 
-                    //common_exam_server_insert()
+                    common_exam_server_insert()
 
                 }
 
             }
 
-            saveCompleteAlert()
         }
 
         common_examination_cancel.setOnClickListener {
@@ -462,6 +466,41 @@ class CommonExaminationActivity : AppCompatActivity() {
         LocalDBhelper(this).commonSaveLocal(sql_db!!, exam_result!!)
 
         saveCompleteAlert()
+    }
+
+    fun common_exam_server_insert(){
+
+        println("서버")
+
+        OracleUtill().common_examination().commonServer(exam_result!!).enqueue(object : Callback<String> {
+
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+
+                if (response.isSuccessful) {
+
+                    if (!response.body()!!.equals("S")) {
+
+                        println(response.body())
+                        Toast.makeText(this@CommonExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+
+                    } else {
+
+                        saveCompleteAlert()
+
+                    }
+
+                }
+
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+
+                Toast.makeText(this@CommonExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                println(t.toString())
+            }
+
+        })
+
     }
 
     fun saveCompleteAlert() {
@@ -635,21 +674,21 @@ class CommonExaminationActivity : AppCompatActivity() {
         var mj9_2_2 = ""
         var mj10 = ""
 
-        if(name_edit.text.isNullOrEmpty()){
+        if(!name_edit.text.isNullOrEmpty()){
             name = name_edit.text.toString()
         }else{
             Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
-        if(first_serial.text.isNullOrEmpty()){
+        if(!first_serial.text.isNullOrEmpty()){
             first_serial_text = first_serial.text.toString()
         }else{
             Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
-        if(last_serial.text.isNullOrEmpty()){
+        if(!last_serial.text.isNullOrEmpty()){
             last_serial_text = last_serial.text.toString()
         }else{
             Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
@@ -787,7 +826,7 @@ class CommonExaminationActivity : AppCompatActivity() {
             mj4 = "2"
 
             if(common_4_1_true.isChecked){
-                if(editText_4_1_1.text.isNullOrEmpty() && editText_4_1_2.text.isNullOrEmpty()){
+                if(!editText_4_1_1.text.isNullOrEmpty() && !editText_4_1_2.text.isNullOrEmpty()){
                     mj4_1_1 = editText_4_1_1.text.toString()
                     mj4_1_2 = editText_4_1_2.text.toString()
                 }else{
@@ -795,7 +834,7 @@ class CommonExaminationActivity : AppCompatActivity() {
                     return false
                 }
             }else if(common_4_1_false.isChecked){
-                if(editText_4_1_3.text.isNullOrEmpty() && editText_4_1_4.text.isNullOrEmpty() && editText_4_1_5.text.isNullOrEmpty()){
+                if(!editText_4_1_3.text.isNullOrEmpty() && !editText_4_1_4.text.isNullOrEmpty() && !editText_4_1_5.text.isNullOrEmpty()){
                     mj4_2_1 = editText_4_1_3.text.toString()
                     mj4_2_2 = editText_4_1_4.text.toString()
                     mj4_2_3 = editText_4_1_5.text.toString()
@@ -821,7 +860,7 @@ class CommonExaminationActivity : AppCompatActivity() {
             mj5 = "2"
 
             if(common_5_1_true.isChecked){
-                if(editText_5_1_1.text.isNullOrEmpty() && editText_5_1_2.text.isNullOrEmpty()){
+                if(!editText_5_1_1.text.isNullOrEmpty() && !editText_5_1_2.text.isNullOrEmpty()){
                     mj5_1_1 = editText_5_1_1.text.toString()
                     mj5_1_2 = editText_5_1_2.text.toString()
                 }else{
@@ -829,7 +868,7 @@ class CommonExaminationActivity : AppCompatActivity() {
                     return false
                 }
             }else if(common_5_1_false.isChecked){
-                if(editText_5_1_3.text.isNullOrEmpty() && editText_5_1_4.text.isNullOrEmpty() && editText_5_1_5.text.isNullOrEmpty()){
+                if(!editText_5_1_3.text.isNullOrEmpty() && !editText_5_1_4.text.isNullOrEmpty() && !editText_5_1_5.text.isNullOrEmpty()){
                     mj5_2_1 = editText_5_1_3.text.toString()
                     mj5_2_2 = editText_5_1_4.text.toString()
                     mj5_2_3 = editText_5_1_5.text.toString()
@@ -1058,14 +1097,14 @@ class CommonExaminationActivity : AppCompatActivity() {
             return false
         }
 
-        if(editText_time_1.text.isNullOrEmpty()){
+        if(!editText_time_1.text.isNullOrEmpty()){
             mj8_2_1 = editText_time_1.text.toString()
         }else{
             Toast.makeText(this, "8-2번 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
             return false
         }
 
-        if(editText_minute_1.text.isNullOrEmpty()){
+        if(!editText_minute_1.text.isNullOrEmpty()){
             mj8_2_2 = editText_minute_1.text.toString()
         }else{
             Toast.makeText(this, "8-2번 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
@@ -1091,14 +1130,14 @@ class CommonExaminationActivity : AppCompatActivity() {
             return false
         }
 
-        if(editText_time_2.text.isNullOrEmpty()){
+        if(!editText_time_2.text.isNullOrEmpty()){
             mj9_2_1 = editText_time_2.text.toString()
         }else{
             Toast.makeText(this, "9-2번 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
             return false
         }
 
-        if(editText_minute_2.text.isNullOrEmpty()){
+        if(!editText_minute_2.text.isNullOrEmpty()){
             mj9_2_2 = editText_minute_2.text.toString()
         }else{
             Toast.makeText(this, "9-2번 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
