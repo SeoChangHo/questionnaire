@@ -26,6 +26,7 @@
         <activity android:name=".ServerListActivity"/>
         <activity android:name=".MentalExaminationActivity"/>
         <activity android:name=".ElderlyExaminationActivity"/>
+        <activity android:name=".CognitiveExaminationActivity"/>
 
 
     </application>
