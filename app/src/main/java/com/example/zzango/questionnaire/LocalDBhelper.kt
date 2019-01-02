@@ -6,7 +6,6 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.zzango.questionnaire.LocalList.Paper
-import java.text.SimpleDateFormat
 import java.util.*
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
@@ -152,6 +151,28 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun mentalCreate(db : SQLiteDatabase?){
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "MENTAL_EXAM" +
+                "(exam_date DATETIME," +
+                " name TEXT," +
+                " first_serial TEXT," +
+                " last_serial TEXT," +
+                " category TEXT," +
+                " mj_mtl_1 TEXT," +
+                " mj_mtl_2 TEXT," +
+                " mj_mtl_3 TEXT," +
+                " mj_mtl_4 TEXT," +
+                " mj_mtl_5 TEXT," +
+                " mj_mtl_6 TEXT," +
+                " mj_mtl_7 TEXT," +
+                " mj_mtl_8 TEXT," +
+                " mj_mtl_9 TEXT," +
+                " mj_mtl_sum TEXT);")
+
+    }
+
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
     }
@@ -165,7 +186,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " VALUES (" +
                 " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
 
-        db.execSQL("INSERT INTO EXAMINATION" +
+        db.execSQL("INSERT INTO MENTAL" +
                 "(exam_date," +
                 "name," +
                 "first_serial," +
@@ -234,6 +255,31 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
 
+    fun mentalSaveLocal(db : SQLiteDatabase, ex : ArrayList<MentalExaminationActivity.ExamInfo>){
+
+        val columnValue = ex.get(0)
+
+        db.execSQL("INSERT INTO LOCALSAVELIST" +
+                "(no, category, name, date)" +
+                " VALUES (" +
+                " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
+
+        db.execSQL("INSERT INTO MENTAL_EXAM" +
+                "(exam_date," +
+                "name," +
+                "first_serial," +
+                "last_serial," +
+                "category, " +
+                "mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7," +
+                "mj_mtl_8, mj_mtl_9, mj_mtl_sum)" +
+                " VALUES (" +
+                "'${columnValue.exam_date}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                ", '${columnValue.category}', '${columnValue.mj_mtl_1}', '${columnValue.mj_mtl_2}', '${columnValue.mj_mtl_3}', '${columnValue.mj_mtl_4}'" +
+                ", '${columnValue.mj_mtl_5}', '${columnValue.mj_mtl_6}', '${columnValue.mj_mtl_7}', '${columnValue.mj_mtl_8}'" +
+                ", '${columnValue.mj_mtl_9}', '${columnValue.mj_mtl_sum}');")
+
+    }
+
 
     @SuppressLint("Recycle")
     fun checkLocal(db : SQLiteDatabase): Cursor{
@@ -261,10 +307,9 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     {
         for(i in 0..Paper.size-1)
         {
-            db.delete("EXAMINATION", "name=?", arrayOf(Paper[i].name))
+            db.delete("LOCALSAVELIST", "name=?", arrayOf(Paper[i].name))
         }
 
         db.close()
     }
-
 }
