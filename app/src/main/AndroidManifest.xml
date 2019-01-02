@@ -24,6 +24,10 @@
         <activity android:name=".LocalList.ListActivity"/>
         <activity android:name=".CommonExaminationActivity"/>
         <activity android:name=".ServerListActivity"/>
+        <activity android:name=".MentalExaminationActivity"/>
+        <activity android:name=".ElderlyExaminationActivity"/>
+
+
     </application>
 
 </manifest>
