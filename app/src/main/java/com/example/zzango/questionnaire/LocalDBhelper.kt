@@ -16,7 +16,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "LOCALSAVELIST" +
-                "(no TEXT," +
+                "(exam_no TEXT," +
                 "category TEXT," +
                 "name TEXT);")
     }
@@ -26,7 +26,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "ORAL_EXAM" +
                 "(exam_date TEXT," +
-                " no TEXT," +
+                " exam_no TEXT," +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -57,7 +57,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "COMMON_EXAM" +
                 "(exam_date TEXT," +
-                " no TEXT," +
+                " exam_no TEXT," +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -158,7 +158,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "MENTAL_EXAM" +
                 "(exam_date TEXT," +
-                " no TEXT,"  +
+                " exam_no TEXT,"  +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -181,7 +181,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "COGNITIVE_EXAM" +
                 "(exam_date TEXT," +
-                " no TEXT,"  +
+                " exam_no TEXT,"  +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -210,7 +210,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "ELDERLY_EXAM" +
                 "(exam_date TEXT," +
-                " no TEXT,"  +
+                " exam_no TEXT,"  +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -233,7 +233,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "SMOKING_EXAM" +
                 "(exam_date TEXT," +
-                " no TEXT,"  +
+                " exam_no TEXT,"  +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -260,13 +260,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
 
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name)" +
+                "(exam_no, category, name)" +
                 " VALUES (" +
                 " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO ORAL_EXAM" +
                 "(exam_date," +
-                "no," +
+                "exam_no," +
                 "name," +
                 "first_serial," +
                 "last_serial," +
@@ -289,12 +289,12 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         val columnValue = ex.get(0)
 
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name)" +
+                "(exam_no, category, name)" +
                 " VALUES (" +
                 " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO COMMON_EXAM" +
-                "(exam_date, no, name, first_serial, last_serial, category, " +
+                "(exam_date, exam_no, name, first_serial, last_serial, category, " +
                 " mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2," +
                 " mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1," +
                 " mj2_2, mj2_3, mj2_4, mj2_5, mj3, mj4, mj4_1_1, mj4_1_2, mj4_2_1," +
@@ -340,13 +340,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
 
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name)" +
+                "(exam_no, category, name)" +
                 " VALUES (" +
                 " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO MENTAL_EXAM" +
                 "(exam_date," +
-                "no,"  +
+                "exam_no,"  +
                 "name," +
                 "first_serial," +
                 "last_serial," +
@@ -367,7 +367,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
 
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name)" +
+                "(exam_no, category, name)" +
                 " VALUES (" +
                 " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
@@ -395,13 +395,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
 
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name)" +
+                "(exam_no, category, name)" +
                 " VALUES (" +
                 " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO ELDERLY_EXAM" +
                 "(exam_date," +
-                "no,"  +
+                "exam_no,"  +
                 "name," +
                 "first_serial," +
                 "last_serial," +
@@ -421,13 +421,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
 
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name)" +
+                "(exam_no, category, name)" +
                 " VALUES (" +
                 " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO SMOKING_EXAM" +
                 "(exam_date," +
-                "no,"  +
+                "exam_no,"  +
                 "name," +
                 "first_serial," +
                 "last_serial," +
@@ -443,11 +443,11 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
 
     @SuppressLint("Recycle")
-    fun Select_Local_ORAL(db : SQLiteDatabase, getname: String): Cursor{
+    fun Select_Local_ORAL(db : SQLiteDatabase, getno: String): Cursor{
 
-        var sql = "SELECT * FROM ORAL_EXAM WHERE name =?;"
+        var sql = "SELECT * FROM ORAL_EXAM WHERE exam_no =?;"
 
-        var data = db.rawQuery(sql, arrayOf(getname))
+        var data = db.rawQuery(sql, arrayOf(getno))
 
         return data
     }
@@ -506,30 +506,30 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     {
         for(i in 0..Paper.size-1)
         {
-            db.delete("LOCALSAVELIST", "no=?", arrayOf(Paper[i].no))
+            db.delete("LOCALSAVELIST", "no=?", arrayOf(Paper[i].exam_no))
 
 
             when (Paper[i].category)
             {
                 CustomAdapter.Category.COMMON -> {
                     println("공통검진입니다.")
-                    db.delete("ORAL_EXAM", "no=?", arrayOf(Paper[i].no))
+                    db.delete("ORAL_EXAM", "no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.ORAL -> {
                     println("구강검진입니다.")
-                    db.delete("ORAL_EXAM", "no=?", arrayOf(Paper[i].no))
+                    db.delete("ORAL_EXAM", "no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.MENTAL -> {
                     println("정신건강검진입니다.")
-                    db.delete("MENTAL_EXAM", "no=?", arrayOf(Paper[i].no))
+                    db.delete("MENTAL_EXAM", "no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.COGNITIVE -> {
                     println("인지기능입니다.")
-                    db.delete("COGNITIVE_EXAM", "no=?", arrayOf(Paper[i].no))
+                    db.delete("COGNITIVE_EXAM", "no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.ELDERLY -> {
                     println("노인기능입니다.")
-                    db.delete("ELDERLY_EXAM", "no=?", arrayOf(Paper[i].no))
+                    db.delete("ELDERLY_EXAM", "no=?", arrayOf(Paper[i].exam_no))
                 }
                 else -> {
                     println("확인불가")

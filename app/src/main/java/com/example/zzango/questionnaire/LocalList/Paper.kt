@@ -3,12 +3,12 @@ package com.example.zzango.questionnaire.LocalList
 import java.io.Serializable
 
 //로컬 저장 리스트
-data class Paper(var isChecked: Boolean, var no: String, var category: String, var name: String) : Serializable
+data class Paper(var isChecked: Boolean, var exam_no: String, var category: String, var name: String) : Serializable
 
 //구강검진 리스트
 data class Paper_ORAL(
 var exam_date:String,
-var no:String,
+var exam_no:String,
 var name:String,
 var first_serial:String,
 var last_serial:String,
@@ -35,7 +35,7 @@ var remark :String
 data class Paper_COMMON(
 
 var exam_date:String,
-var no :String,
+var exam_no :String,
 var name :String,
 var first_serial:String,
 var last_serial:String,
@@ -134,7 +134,7 @@ var mj10:String
 
 data class Paper_MENTAL(
 var exam_date:String,
-var no:String,
+var exam_no:String,
 var name:String,
 var first_serial:String,
 var last_serial :String,
@@ -153,7 +153,7 @@ var mj_mtl_sum :String
 
 data class Paper_COGNITIVE(
 var exam_date :String,
-var no :String,
+var exam_no :String,
 var name :String,
 var first_serial :String,
 var last_serial :String,
@@ -179,7 +179,7 @@ var mj_inji_sum :String
 data class Paper_ELDERLY(
 
 var exam_date:String,
-var no :String,
+var exam_no :String,
 var name :String,
 var first_serial:String,
 var last_serial :String,

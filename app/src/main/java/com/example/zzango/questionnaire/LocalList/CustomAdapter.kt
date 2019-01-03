@@ -85,7 +85,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         p0?.txtName?.text = paper.name
         //p0?.txtSerial?.text = paper.serial_first + "-" + paper.serial_last
 
-        var date = SimpleDateFormat("yyyy-MM-dd").format(Date(paper.no.toLong()))
+        var date = SimpleDateFormat("yyyy-MM-dd").format(Date(paper.exam_no.toLong()))
 
 
 
@@ -103,7 +103,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
 
             sql_db = LocalDBhelper(Activity.applicationContext).writableDatabase
-            println(paper.no)
+            println(paper.exam_no)
 
             when(paper.category)
             {
