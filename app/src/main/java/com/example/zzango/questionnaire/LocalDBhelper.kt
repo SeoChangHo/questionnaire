@@ -31,23 +31,23 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " first_serial TEXT," +
                 " last_serial TEXT," +
                 " category TEXT," +
-//                " exam_bun_no INTEGER," +
-//                " exam_email_yn TEXT," +
-                " exam_1 TEXT," +
-                " exam_2 TEXT," +
-                " exam_3 TEXT," +
-                " exam_4 TEXT," +
-                " exam_5 TEXT," +
-                " exam_6 TEXT," +
-                " exam_7 TEXT," +
-                " exam_8 TEXT," +
-                " exam_9 TEXT," +
-                " exam_10 TEXT," +
-                " exam_11 TEXT," +
-                " exam_12 TEXT," +
-                " exam_13 TEXT," +
-                " exam_14 TEXT," +
-                " exam_15 TEXT," +
+//                " oral_bun_no INTEGER," +
+//                " oral_email_yn TEXT," +
+                " oral_1 TEXT," +
+                " oral_2 TEXT," +
+                " oral_3 TEXT," +
+                " oral_4 TEXT," +
+                " oral_5 TEXT," +
+                " oral_6 TEXT," +
+                " oral_7 TEXT," +
+                " oral_8 TEXT," +
+                " oral_9 TEXT," +
+                " oral_10 TEXT," +
+                " oral_11 TEXT," +
+                " oral_12 TEXT," +
+                " oral_13 TEXT," +
+                " oral_14 TEXT," +
+                " oral_15 TEXT," +
                 " remark TEXT);")
 
     }
@@ -237,21 +237,21 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " VALUES (" +
                 " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
 
-        db.execSQL("INSERT INTO EXAMINATION" +
+        db.execSQL("INSERT INTO ORAL" +
                 "(exam_date," +
                 "name," +
                 "first_serial," +
                 "last_serial," +
                 "category, " +
-                "exam_1, exam_2, exam_3, exam_4, exam_5, exam_6, exam_7," +
-                "exam_8, exam_9, exam_10, exam_11, exam_12, exam_13, exam_14," +
-                "exam_15, remark)" +
+                "oral_1, oral_2, oral_3, oral_4, oral_5, oral_6, oral_7," +
+                "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
+                "oral_15, remark)" +
                 " VALUES (" +
                 "'${columnValue.exam_date}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.exam_1}', '${columnValue.exam_2}', '${columnValue.exam_3}', '${columnValue.exam_4}'" +
-                ", '${columnValue.exam_5}', '${columnValue.exam_6}', '${columnValue.exam_7}', '${columnValue.exam_8}'," +
-                " '${columnValue.exam_9}', '${columnValue.exam_10}', '${columnValue.exam_11}', '${columnValue.exam_12}'," +
-                " '${columnValue.exam_13}', '${columnValue.exam_14}', '${columnValue.exam_15}', '${columnValue.exam_20}'"
+                ", '${columnValue.category}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
+                ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
+                " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
+                " '${columnValue.oral_13}', '${columnValue.oral_14}', '${columnValue.oral_15}', '${columnValue.oral_20}'"
                 +");")
 
     }

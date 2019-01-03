@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="60dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/mainBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="생활습관 평가도구 (운동)"
+                android:textColor="@color/mainBlue"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="-1dp"
+                android:layout_marginRight="-1dp"
+                android:text="※ 다음은 "
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView71"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView71"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="평소 일주일 동안 "
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView72"
+                app:layout_constraintStart_toEndOf="@+id/textView14"
+                app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+            <TextView
+                android:id="@+id/textView72"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="본인이 참여하고 있는 다양한"
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView71"
+                app:layout_constraintTop_toTopOf="@+id/textView71" />
+
+            <TextView
+                android:id="@+id/textView73"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="신체활동 시간과 관련된 질문입니다."
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView71" />
+
+            <TextView
+                android:id="@+id/textView74"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="신체적으로 활동적인 사람이 아니더라도 질문에 답해주세요."
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView73" />
+
+            <TextView
+                android:id="@+id/textView75"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="&quot;고강도 활동&quot;"
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView76"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <TextView
+                android:id="@+id/textView76"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text=" 은 "
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView77"
+                app:layout_constraintStart_toEndOf="@+id/textView75"
+                app:layout_constraintTop_toTopOf="@+id/textView75" />
+
+            <TextView
+                android:id="@+id/textView77"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="격렬한 신체 활동으로 숨이 많이 차거나 심장이"
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView76"
+                app:layout_constraintTop_toTopOf="@+id/textView76" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/mainBlue"
+                app:layout_constraintEnd_toEndOf="@+id/textView77"
+                app:layout_constraintStart_toStartOf="@+id/textView77"
+                app:layout_constraintTop_toBottomOf="@+id/textView77" />
+
+            <TextView
+                android:id="@+id/textView78"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="매우 빠르게 뛰는 활동"
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView79"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView75" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/mainBlue"
+                app:layout_constraintEnd_toStartOf="@+id/textView79"
+                app:layout_constraintStart_toStartOf="@+id/textView78"
+                app:layout_constraintTop_toBottomOf="@+id/textView78" />
+
+            <TextView
+                android:id="@+id/textView79"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="을,"
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView78"
+                app:layout_constraintTop_toTopOf="@+id/textView78" />
+
+            <TextView
+                android:id="@+id/textView80"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="&quot;중강도 활동&quot;"
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView81"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView78" />
+
+            <TextView
+                android:id="@+id/textView81"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text=" 은 "
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView82"
+                app:layout_constraintStart_toEndOf="@+id/textView80"
+                app:layout_constraintTop_toTopOf="@+id/textView80" />
+
+            <TextView
+                android:id="@+id/textView82"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="중간 정도의 신체 활동으로 숨이 약간 차거나"
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView81"
+                app:layout_constraintTop_toTopOf="@+id/textView81" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/mainBlue"
+                app:layout_constraintEnd_toEndOf="@+id/textView82"
+                app:layout_constraintStart_toStartOf="@+id/textView81"
+                app:layout_constraintTop_toBottomOf="@+id/textView82" />
+
+            <TextView
+                android:id="@+id/textView83"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="매우 빠르게 뛰는 활동"
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView84"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView80" />
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/mainBlue"
+                app:layout_constraintEnd_toEndOf="@+id/textView83"
+                app:layout_constraintStart_toStartOf="@+id/textView83"
+                app:layout_constraintTop_toBottomOf="@+id/textView83" />
+
+            <TextView
+                android:id="@+id/textView84"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="을 말합니다."
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView83"
+                app:layout_constraintTop_toTopOf="@+id/textView83" />
+
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="성명 : "
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/name_edit"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView83" />
+
+            <EditText
+                android:id="@+id/name_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/gray"
+                android:inputType="text"
+                android:maxWidth="100dp"
+                android:maxLength="5"
+                android:minWidth="100dp"
+                android:textAlignment="center"
+                android:textCursorDrawable="@color/gray"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/name_text"
+                app:layout_constraintEnd_toStartOf="@+id/number_text"
+                app:layout_constraintStart_toEndOf="@+id/name_text"
+                app:layout_constraintTop_toTopOf="@+id/name_text" />
+
+            <TextView
+                android:id="@+id/number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="주민등록번호 : "
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/name_text"
+                app:layout_constraintEnd_toStartOf="@+id/first_serial"
+                app:layout_constraintStart_toEndOf="@+id/name_edit" />
+
+            <EditText
+                android:id="@+id/first_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/gray"
+                android:inputType="number"
+                android:maxWidth="90dp"
+                android:maxLength="6"
+                android:minWidth="90dp"
+                android:textAlignment="center"
+                android:textCursorDrawable="@color/gray"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/number_text"
+                app:layout_constraintEnd_toStartOf="@+id/number_hyphen"
+                app:layout_constraintStart_toEndOf="@+id/number_text"
+                app:layout_constraintTop_toTopOf="@+id/number_text" />
+
+            <View
+                android:id="@+id/number_hyphen"
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/first_serial"
+                app:layout_constraintEnd_toStartOf="@+id/last_serial"
+                app:layout_constraintStart_toEndOf="@+id/first_serial"
+                app:layout_constraintTop_toTopOf="@+id/first_serial" />
+
+            <EditText
+                android:id="@+id/last_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="@color/gray"
+                android:inputType="numberPassword"
+                android:maxWidth="90dp"
+                android:maxLength="7"
+                android:minWidth="90dp"
+                android:textAlignment="center"
+                android:textCursorDrawable="@color/gray"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/first_serial"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintStart_toEndOf="@+id/number_hyphen"
+                app:layout_constraintTop_toTopOf="@+id/first_serial"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/exercise_question1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/blue_text_top_margin"
+                android:text="1.우선 본인이 일하는 시간을 생각해 보세요.일을 돈을 받는 일, 돈을 받지 않고 하는 일,"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name_text" />
+
+            <TextView
+                android:id="@+id/exercise_question1_detail1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="학교생활/교육, 집안일, 농업, 어업, 목축업, 구직과 같이 현재 하고 있는 것이라고"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/exercise_question1"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_question1" />
+
+            <TextView
+                android:id="@+id/exercise_question1_detail2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="생각하시면 됩니다"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/exercise_question1_detail1"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_question1_detail1" />
+
+            <TextView
+                android:id="@+id/exercise_question1_ex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="(예 : 직업, 학업, 집안일, 봉사활동, 학교 체육 수업 등)"
+                android:textColor="@color/mainBlue"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/exercise_question1_detail2"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_question1_detail2" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/diagnosis_medication_check_wrapper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="32dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/exercise_question1"
+                app:layout_constraintStart_toStartOf="@+id/exercise_question1"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_question1_detail2">
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/diagnosis_medication_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.471" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/diagnosis_medication_guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.615" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/diagnosis_medication_guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.77" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/diagnosis_medication_guideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.92" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/diagnosis_medication_constraint_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:background="#EDECF2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <android.support.constraint.Guideline
+                        android:id="@+id/diagnosis_medication_inside_guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.471" />
+
+                    <android.support.constraint.Guideline
+                        android:id="@+id/diagnosis_medication_inside_guideline2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.615" />
+
+                    <android.support.constraint.Guideline
+                        android:id="@+id/diagnosis_medication_inside_guideline3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.77" />
+
+                    <android.support.constraint.Guideline
+                        android:id="@+id/diagnosis_medication_inside_guideline4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.92" />
+
+                    <TextView
+                        android:id="@+id/diagnosis_medication_disease"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:text="질환명"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="진단여부"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_inside_guideline2"
+                        app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_inside_guideline"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="약물치료여부"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_inside_guideline4"
+                        app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_inside_guideline3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/diagnosis_medication_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="#ADB5BD"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_constraint_layout" />
+
+                <TextView
+                    android:id="@+id/diagnosis_medication_stroke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="뇌졸중(중풍)"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_view" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_stroke_examination_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_stroke"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_stroke" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_stroke_medication_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_stroke_examination_check"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_stroke_examination_check" />
+
+                <TextView
+                    android:id="@+id/diagnosis_medication_myocardial_infarction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="심근경색(협심증)"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_stroke" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_myocardial_examination_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_myocardial_infarction"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_myocardial_infarction" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_myocardial_medication_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_myocardial_examination_check"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_myocardial_examination_check" />
+
+                <TextView
+                    android:id="@+id/diagnosis_medication_high_blood_pressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="고혈압"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_myocardial_infarction" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_high_blood_pressure_examination_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_high_blood_pressure"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_high_blood_pressure" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_high_blood_pressure_medication_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_high_blood_pressure_examination_check"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_high_blood_pressure_examination_check" />
+
+                <TextView
+                    android:id="@+id/diagnosis_medication_diabetes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="당뇨병"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_high_blood_pressure" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_diabetes_examination_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_diabetes"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_diabetes" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_diabetes_medication_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_diabetes_examination_check"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_diabetes_examination_check" />
+
+                <TextView
+                    android:id="@+id/diagnosis_medication_dyslipidemia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="이상지질혈증"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_diabetes" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_dyslipidemia_examination_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_dyslipidemia"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_dyslipidemia" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_dyslipidemia_medication_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_dyslipidemia_examination_check"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_dyslipidemia_examination_check" />
+
+                <TextView
+                    android:id="@+id/diagnosis_medication_tuberculosis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="폐결핵"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_dyslipidemia" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_tuberculosis_examination_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_tuberculosis"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_tuberculosis" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_tuberculosis_medication_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_tuberculosis_examination_check"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_tuberculosis_examination_check" />
+
+                <TextView
+                    android:id="@+id/diagnosis_medication_etc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="기타(암포함)"
+                    app:layout_constraintBottom_toTopOf="@+id/diagnosis_medication_etc_disease_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_tuberculosis" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_etc_examination_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_etc"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc" />
+
+                <CheckBox
+                    android:id="@+id/diagnosis_medication_etc_medication_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_etc_examination_check"
+                    app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc_examination_check" />
+
+                <TextView
+                    android:id="@+id/diagnosis_medication_etc_disease_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="기타 질환명"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/diagnosis_medication_view2"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_etc"
+                    app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_etc" />
+
+                <EditText
+                    android:id="@+id/diagnosis_medication_etc_disease_name_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/gray"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_etc_disease_name"
+                    app:layout_constraintEnd_toEndOf="@+id/diagnosis_medication_etc_medication_check"
+                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_etc_examination_check"
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc_disease_name" />
+
+                <View
+                    android:id="@+id/diagnosis_medication_view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ADB5BD"
+                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_check_wrapper" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView89"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:text="1-1. "
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/exercise_question1_1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/exercise_question1"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_question1_ex" />
+
+            <TextView
+                android:id="@+id/exercise_question1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="본인의 일"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView85"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/textView89"
+                app:layout_constraintTop_toBottomOf="@+id/name_text"
+                app:layout_constraintTop_toTopOf="@+id/textView89" />
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/exercise_question1_1"
+                app:layout_constraintStart_toStartOf="@+id/exercise_question1_1"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_question1_1" />
+
+            <TextView
+                android:id="@+id/textView85"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="은 최소 10분 이상 계속 숨이 많이"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/exercise_question1_1"
+                app:layout_constraintTop_toTopOf="@+id/exercise_question1_1" />
+
+            <TextView
+                android:id="@+id/textView86"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="차거나 심장이 매우 빠르게 뛰는 "
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView87"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/textView89"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_question1_1" />
+
+            <TextView
+                android:id="@+id/textView87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고강도 신체활동"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView88"
+                app:layout_constraintStart_toEndOf="@+id/textView86"
+                app:layout_constraintTop_toTopOf="@+id/textView86" />
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/textView87"
+                app:layout_constraintStart_toStartOf="@+id/textView87"
+                app:layout_constraintTop_toBottomOf="@+id/textView87" />
+
+            <TextView
+                android:id="@+id/textView88"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="을"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView87"
+                app:layout_constraintTop_toTopOf="@+id/textView87" />
+
+            <TextView
+                android:id="@+id/textView90"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="포함하고 있습니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView87"
+                app:layout_constraintStart_toStartOf="@+id/textView86"
+                app:layout_constraintTop_toBottomOf="@+id/textView86" />
+
+            <TextView
+                android:id="@+id/exercise_question2_ex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="※ 고강도 신체활동 : 무거운 것을 들어 올리거나 나르는 일(약 20kg 이상), 땅파기, 건설 현장에서의 노동,\n계단으로 물건 나르기 등"
+                android:textColor="@color/mainBlue"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/textView90"
+                app:layout_constraintTop_toBottomOf="@+id/textView90" />
+
+            <RadioGroup
+                android:id="@+id/exercise_radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/exercise_question2_ex"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_question2_ex">
+
+                <RadioButton
+                    android:id="@+id/exercise_1_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="예"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/exercise_1_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="아니오"
+                    android:textSize="14dp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView91"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:text="1-2. "
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/exercise_question1_1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/exercise_radio1"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_radio1" />
+
+            <TextView
+                android:id="@+id/textView92"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-1dp"
+                android:layout_marginLeft="-1dp"
+                android:text="평소 "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView91"
+                app:layout_constraintTop_toBottomOf="@+id/name_text"
+                app:layout_constraintTop_toTopOf="@+id/textView91" />
+
+            <TextView
+                android:id="@+id/textView93"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="일주일"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView92"
+                app:layout_constraintTop_toTopOf="@+id/textView92" />
+
+            <TextView
+                android:id="@+id/textView94"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="동안, "
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView93"
+                app:layout_constraintTop_toTopOf="@+id/textView93" />
+
+            <TextView
+                android:id="@+id/textView95"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="일과 관련된 고강도 신체"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView94"
+                app:layout_constraintTop_toTopOf="@+id/textView94" />
+
+            <View
+                android:id="@+id/view9"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/textView95"
+                app:layout_constraintStart_toStartOf="@+id/textView95"
+                app:layout_constraintTop_toBottomOf="@+id/textView95" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/exercise_question1_1"
+                app:layout_constraintStart_toStartOf="@+id/exercise_question1_1"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_question1_1" />
+
+            <TextView
+                android:id="@+id/textView96"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="활동"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView91"
+                app:layout_constraintTop_toBottomOf="@+id/textView91" />
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/textView96"
+                app:layout_constraintStart_toStartOf="@+id/textView96"
+                app:layout_constraintTop_toBottomOf="@+id/textView96" />
+
+            <TextView
+                android:id="@+id/textView97"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="을 며칠 하십니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView96"
+                app:layout_constraintTop_toBottomOf="@+id/textView91" />
+
+            <Spinner
+                android:id="@+id/pick_time"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit_text_shape"
+                android:spinnerMode="dialog"
+                app:layout_constraintStart_toStartOf="@+id/textView91"
+                app:layout_constraintTop_toBottomOf="@+id/textView97" />
+
+            <TextView
+                android:id="@+id/textView98"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:text="1-3. "
+                android:textSize="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/pick_time"
+                app:layout_constraintStart_toStartOf="@+id/pick_time" />
+
+            <TextView
+                android:id="@+id/textView99"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-1dp"
+                android:layout_marginLeft="-1dp"
+                android:text="평소 "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView98"
+                app:layout_constraintTop_toTopOf="@+id/textView98" />
+
+            <TextView
+                android:id="@+id/textView100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="하루에"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView99"
+                app:layout_constraintTop_toTopOf="@+id/textView99" />
+
+            <TextView
+                android:id="@+id/textView101"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="일과 관련된 고강도 신체 활동"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView100"
+                app:layout_constraintTop_toTopOf="@+id/textView100" />
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/textView101"
+                app:layout_constraintStart_toStartOf="@+id/textView101"
+                app:layout_constraintTop_toBottomOf="@+id/textView101" />
+
+            <TextView
+                android:id="@+id/textView102"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="을"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView101"
+                app:layout_constraintTop_toTopOf="@+id/textView101" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/exercise_question1_1"
+                app:layout_constraintStart_toStartOf="@+id/exercise_question1_1"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_question1_1" />
+
+            <TextView
+                android:id="@+id/textView103"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="몇 시간 하십니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/textView98"
+                app:layout_constraintTop_toBottomOf="@+id/textView98" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/login_appbar_loading_progress_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:background="#000000"
+        android:visibility="gone">
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/login_appbar_loading_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="@color/mainBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
