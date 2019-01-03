@@ -15,18 +15,16 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "LOCALSAVELIST" +
-                "(no INTEGER," +
+                "(no TEXT," +
                 "category TEXT," +
-                "name TEXT," +
-                "date TEXT);")
-
+                "name TEXT);")
     }
 
     fun oralCreate(db : SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "ORAL_EXAM" +
-                "(exam_date DATETIME," +
+                "(exam_date TEXT," +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -56,7 +54,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "COMMON_EXAM" +
-                "(exam_date DATETIME," +
+                "(exam_date TEXT," +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -156,7 +154,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "MENTAL_EXAM" +
-                "(exam_date DATETIME," +
+                "(exam_date TEXT," +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -178,7 +176,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "COGNITIVE_EXAM" +
-                "(exam_date DATETIME," +
+                "(exam_date TEXT," +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -206,7 +204,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "ELDERLY_EXAM" +
-                "(exam_date DATETIME," +
+                "(exam_date TEXT," +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -232,10 +230,11 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
+
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name, date)" +
+                "(no, category, name)" +
                 " VALUES (" +
-                " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
+                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO ORAL_EXAM" +
                 "(exam_date," +
@@ -261,9 +260,9 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         val columnValue = ex.get(0)
 
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name, date)" +
+                "(no, category, name)" +
                 " VALUES (" +
-                " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
+                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO COMMON_EXAM" +
                 "(exam_date, name, first_serial, last_serial, category, " +
@@ -310,10 +309,11 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
+
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name, date)" +
+                "(no, category, name)" +
                 " VALUES (" +
-                " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
+                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO MENTAL_EXAM" +
                 "(exam_date," +
@@ -335,10 +335,11 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
+
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name, date)" +
+                "(no, category, name)" +
                 " VALUES (" +
-                " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
+                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO COGNITIVE_EXAM" +
                 "(exam_date," +
@@ -361,10 +362,11 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
+
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(no, category, name, date)" +
+                "(no, category, name)" +
                 " VALUES (" +
-                " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
+                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO ELDERLY_EXAM" +
                 "(exam_date," +

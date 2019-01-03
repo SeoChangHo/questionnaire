@@ -3,6 +3,7 @@ package com.example.zzango.questionnaire.LocalList
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.os.Build
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
@@ -14,6 +15,11 @@ import android.widget.TextView
 import com.example.zzango.questionnaire.OralExamination
 import com.example.zzango.questionnaire.R
 import kotlinx.android.synthetic.main.activity_list.*
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
+import java.util.*
 
 class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -79,8 +85,10 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         //p0?.txtSerial?.text = paper.serial_first + "-" + paper.serial_last
         p0?.txtDate?.text = paper.date
 
+        println(paper.date)
 
-        println(p1.toString()+"번째 no:"+paper.no)
+        println(System.currentTimeMillis())
+
 
 
 
