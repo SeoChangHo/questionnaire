@@ -227,6 +227,28 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun smokingCreate(db : SQLiteDatabase?){
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "SMOKING_EXAM" +
+                "(exam_date TEXT," +
+                " no TEXT,"  +
+                " name TEXT," +
+                " first_serial TEXT," +
+                " last_serial TEXT," +
+                " category TEXT," +
+                " sg2_spSmoke1 TEXT," +
+                " sg2_spSmoke2 TEXT," +
+                " sg2_spSmoke3 TEXT," +
+                " sg2_spSmoke4 TEXT," +
+                " sg2_spSmoke5 TEXT," +
+                " sg2_spSmoke6 TEXT," +
+                " sg2_spSmoke7 TEXT," +
+                " sg2_spSmoke8 TEXT," +
+                " sg2_spSmokeSum TEXT);")
+
+    }
+
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
     }
@@ -391,6 +413,33 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.mj66_3_3}', '${columnValue.mj66_3_4}', '${columnValue.mj66_3_5}', '${columnValue.mj66_3_6}'" +
                 ", '${columnValue.mj66_4}', '${columnValue.mj66_5}');")
     }
+
+    fun smokingSaveLocal(db : SQLiteDatabase, ex : ArrayList<SmokingExaminationActivity.ExamInfo>){
+
+        val columnValue = ex.get(0)
+
+
+        db.execSQL("INSERT INTO LOCALSAVELIST" +
+                "(no, category, name)" +
+                " VALUES (" +
+                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
+
+        db.execSQL("INSERT INTO SMOKING_EXAM" +
+                "(exam_date," +
+                "no,"  +
+                "name," +
+                "first_serial," +
+                "last_serial," +
+                "category, " +
+                "sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6, sg2_spSmoke7," +
+                "sg2_spSmoke8, sg2_spSmokeSum)" +
+                " VALUES (" +
+                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                ", '${columnValue.category}', '${columnValue.sg2_spSmoke1}', '${columnValue.sg2_spSmoke2}', '${columnValue.sg2_spSmoke3}', '${columnValue.sg2_spSmoke4}'" +
+                ", '${columnValue.sg2_spSmoke5}', '${columnValue.sg2_spSmoke6}', '${columnValue.sg2_spSmoke7}', '${columnValue.sg2_spSmoke8}'" +
+                ", '${columnValue.sg2_spSmokeSum}');")
+    }
+
 
 
     @SuppressLint("Recycle")

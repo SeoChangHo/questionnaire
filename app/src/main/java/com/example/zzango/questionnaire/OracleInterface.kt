@@ -32,4 +32,8 @@ interface OracleInterface {
     @Headers("Content-type: application/json")
     fun elderlyServer(@Body examInfo: ArrayList<ElderlyExaminationActivity.ExamInfo>) : Call<String>
 
+    @POST("https://finepaperweight.herokuapp.com/InsertSmoking")
+    @Headers("Content-type: application/json")
+    fun smokingServer(@Body examInfo: ArrayList<SmokingExaminationActivity.ExamInfo>) : Call<String>
+
 }

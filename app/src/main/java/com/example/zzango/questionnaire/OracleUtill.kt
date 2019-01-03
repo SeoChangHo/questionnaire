@@ -42,4 +42,12 @@ class OracleUtill {
 
     }
 
+    val smoking_url : String = "https://finepaperweight.herokuapp.com/InsertSmoking/"
+
+    fun smoking_examination() : OracleInterface {
+
+        return OracleRequest().getStringResponse(smoking_url)!!.create(OracleInterface::class.java)
+
+    }
+
 }
