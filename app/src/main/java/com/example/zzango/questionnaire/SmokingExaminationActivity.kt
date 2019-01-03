@@ -210,7 +210,7 @@ class SmokingExaminationActivity : AppCompatActivity(){
     fun check() : Boolean{
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var no = System.currentTimeMillis().toString()
+        var exam_no = System.currentTimeMillis().toString()
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -251,7 +251,7 @@ class SmokingExaminationActivity : AppCompatActivity(){
         var arr = ArrayList<SmokingExaminationActivity.ExamInfo>()
 
         arr.add(SmokingExaminationActivity.ExamInfo(
-                exam_date, no, "", name, first_serial_text, last_serial_text, category,
+                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
                 sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                 sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
         ))
