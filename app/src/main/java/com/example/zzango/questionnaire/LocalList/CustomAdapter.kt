@@ -83,9 +83,14 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         p0?.txtCategory?.text = getCategory(paper.category)
         p0?.txtName?.text = paper.name
         //p0?.txtSerial?.text = paper.serial_first + "-" + paper.serial_last
-        p0?.txtDate?.text = paper.date
 
-        println(paper.date)
+        var date = SimpleDateFormat("yyyy-MM-dd").format(Date(paper.no.toLong()))
+
+
+
+        p0?.txtDate?.text = date
+//
+//        println(paper.date)
 
         println(System.currentTimeMillis())
 

@@ -252,7 +252,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
                 "oral_15, remark)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}, '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
                 ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
                 " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
@@ -419,18 +419,18 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     {
         for(i in 0..Paper.size-1)
         {
-            db.delete("LOCALSAVELIST", "date=?", arrayOf(Paper[i].date))
+            db.delete("LOCALSAVELIST", "date=?", arrayOf(Paper[i].no))
 
 
             when (Paper[i].category)
             {
                 CustomAdapter.Category.COMMON -> {
                     println("공통검진입니다.")
-                    db.delete("EXAMINATION", "exam_date=?", arrayOf(Paper[i].date))
+                    db.delete("EXAMINATION", "exam_date=?", arrayOf(Paper[i].no))
                 }
                 CustomAdapter.Category.ORAL -> {
                     println("구강검진입니다.")
-                    db.delete("COMMON_EXAM", "exam_date=?", arrayOf(Paper[i].date))
+                    db.delete("COMMON_EXAM", "exam_date=?", arrayOf(Paper[i].no))
                 }
                 else -> {
                     println("확인불가")
