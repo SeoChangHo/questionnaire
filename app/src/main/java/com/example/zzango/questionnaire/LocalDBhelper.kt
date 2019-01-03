@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.example.zzango.questionnaire.LocalList.CustomAdapter
 import com.example.zzango.questionnaire.LocalList.Paper
 import java.util.*
+import kotlin.collections.ArrayList
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
 
@@ -441,25 +442,28 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
 
-
     @SuppressLint("Recycle")
-    fun Select_Local_ORAL(db : SQLiteDatabase): Cursor{
+    fun Select_Local_ORAL(db : SQLiteDatabase, getname: String): Cursor{
 
-        var data = db.rawQuery("SELECT * FROM ORAL_EXAM;", null)
+        var sql = "SELECT * FROM ORAL_EXAM WHERE name =?;"
+
+        var data = db.rawQuery(sql, arrayOf(getname))
 
         return data
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_COMMON(db : SQLiteDatabase): Cursor{
+    fun Select_Local_COMMON(db : SQLiteDatabase, no: String): Cursor{
 
         var data = db.rawQuery("SELECT * FROM COMMON_EXAM;", null)
 
+
+
         return data
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_COGNITIVE(db : SQLiteDatabase): Cursor{
+    fun Select_Local_COGNITIVE(db : SQLiteDatabase, no: String): Cursor{
 
         var data = db.rawQuery("SELECT * FROM COGNITIVE_EXAM;", null)
 
@@ -467,7 +471,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_ELDERLY(db : SQLiteDatabase): Cursor{
+    fun Select_Local_ELDERLY(db : SQLiteDatabase, no: String): Cursor{
 
         var data = db.rawQuery("SELECT * FROM ELDERLY_EXAM;", null)
 
@@ -475,7 +479,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_MENTAL(db : SQLiteDatabase): Cursor{
+    fun Select_Local_MENTAL(db : SQLiteDatabase, no: String): Cursor{
 
         var data = db.rawQuery("SELECT * FROM MENTAL_EXAM;", null)
 

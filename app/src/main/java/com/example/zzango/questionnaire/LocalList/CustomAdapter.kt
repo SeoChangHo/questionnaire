@@ -102,8 +102,8 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         p0?.constraint.setOnClickListener{
 
 
-            LocalDBhelper(Activity).writableDatabase
-            println(paper.name)
+            sql_db = LocalDBhelper(Activity.applicationContext).writableDatabase
+            println(paper.no)
 
             when(paper.category)
             {
@@ -111,21 +111,39 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                 {
                     var PaperArray = ArrayList<Paper_ORAL>()
 
-                    val data = LocalDBhelper(Activity).checkLocalList(sql_db!!)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_ORAL(sql_db!!, paper.name)
                     data.moveToFirst()
 
-//                    while(!data.isAfterLast){
-//                        PaperArray.add(PaperArray(
-//                                data.getString(data.getColumnIndex("no")),
-//                                data.getString(data.getColumnIndex("category")),
-//                                data.getString(data.getColumnIndex("name"))))
-//
-//                        data.moveToNext()
-//
-//                    }
+                    while(!data.isAfterLast){
+                        PaperArray.add(Paper_ORAL(
+                                data.getString(data.getColumnIndex("exam_date")),
+                                data.getString(data.getColumnIndex("no")),
+                                data.getString(data.getColumnIndex("name")),
+                                data.getString(data.getColumnIndex("first_serial")),
+                                data.getString(data.getColumnIndex("last_serial")),
+                                data.getString(data.getColumnIndex("category")),
+                                data.getString(data.getColumnIndex("oral_1")),
+                                data.getString(data.getColumnIndex("oral_2")),
+                                data.getString(data.getColumnIndex("oral_3")),
+                                data.getString(data.getColumnIndex("oral_4")),
+                                data.getString(data.getColumnIndex("oral_5")),
+                                data.getString(data.getColumnIndex("oral_6")),
+                                data.getString(data.getColumnIndex("oral_7")),
+                                data.getString(data.getColumnIndex("oral_8")),
+                                data.getString(data.getColumnIndex("oral_9")),
+                                data.getString(data.getColumnIndex("oral_10")),
+                                data.getString(data.getColumnIndex("oral_11")),
+                                data.getString(data.getColumnIndex("oral_12")),
+                                data.getString(data.getColumnIndex("oral_13")),
+                                data.getString(data.getColumnIndex("oral_14")),
+                                data.getString(data.getColumnIndex("oral_15")),
+                                data.getString(data.getColumnIndex("remark"))
+                                ))
+                        data.moveToNext()
+                    }
 
 
-                    startActivity(Activity, Intent(Activity, OralExamination::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    startActivity(Activity, Intent(Activity, OralExamination::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 Category.COMMON ->
                 {
