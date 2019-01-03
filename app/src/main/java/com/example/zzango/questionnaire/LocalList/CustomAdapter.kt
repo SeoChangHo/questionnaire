@@ -175,8 +175,6 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         {
             return "확인불가"
         }
-
-
     }
 
 

@@ -25,7 +25,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun oralCreate(db : SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
-                "EXAMINATION" +
+                "ORAL_EXAM" +
                 "(exam_date DATETIME," +
                 " name TEXT," +
                 " first_serial TEXT," +
@@ -237,7 +237,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " VALUES (" +
                 " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
 
-        db.execSQL("INSERT INTO ORAL" +
+        db.execSQL("INSERT INTO ORAL_EXAM" +
                 "(exam_date," +
                 "name," +
                 "first_serial," +
