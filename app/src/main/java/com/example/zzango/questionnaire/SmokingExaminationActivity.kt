@@ -214,7 +214,7 @@ class SmokingExaminationActivity : AppCompatActivity(){
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
-        var category = "mental"
+        var category = "smoking"
         var sg2_spSmoke1 = ""
         var sg2_spSmoke2 = ""
         var sg2_spSmoke3 = ""
@@ -225,6 +225,27 @@ class SmokingExaminationActivity : AppCompatActivity(){
         var sg2_spSmoke8 = ""
         var sg2_spSmokeSum = ""
 
+
+        if(!name_edit.text.isNullOrEmpty()){
+            name = name_edit.text.toString()
+        }else{
+            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(!first_serial.text.isNullOrEmpty()){
+            first_serial_text = first_serial.text.toString()
+        }else{
+            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(!last_serial.text.isNullOrEmpty()){
+            last_serial_text = last_serial.text.toString()
+        }else{
+            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
 
 
         var arr = ArrayList<SmokingExaminationActivity.ExamInfo>()
