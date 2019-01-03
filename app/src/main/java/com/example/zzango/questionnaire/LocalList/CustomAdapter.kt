@@ -178,23 +178,23 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         {
             Category.ORAL ->
             {
-                return "구강검진"
+                return "구강"
             }
             Category.COMMON ->
             {
-                return "건강검진(공통)"
+                return "건강(공통)"
             }
             Category.COGNITIVE ->
             {
-                return "인지기능검진"
+                return "인지기능"
             }
             Category.ELDERLY ->
             {
-                return "노인기능검진"
+                return "노인기능"
             }
             Category.MENTAL ->
             {
-                return "정신건강검진"
+                return "정신건강"
             }
             else ->
             {
