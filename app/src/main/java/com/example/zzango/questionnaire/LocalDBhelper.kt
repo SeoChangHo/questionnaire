@@ -419,18 +419,30 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     {
         for(i in 0..Paper.size-1)
         {
-            db.delete("LOCALSAVELIST", "date=?", arrayOf(Paper[i].no))
+            db.delete("LOCALSAVELIST", "no=?", arrayOf(Paper[i].no))
 
 
             when (Paper[i].category)
             {
                 CustomAdapter.Category.COMMON -> {
                     println("공통검진입니다.")
-                    db.delete("EXAMINATION", "exam_date=?", arrayOf(Paper[i].no))
+                    db.delete("ORAL_EXAM", "no=?", arrayOf(Paper[i].no))
                 }
                 CustomAdapter.Category.ORAL -> {
                     println("구강검진입니다.")
-                    db.delete("COMMON_EXAM", "exam_date=?", arrayOf(Paper[i].no))
+                    db.delete("ORAL_EXAM", "no=?", arrayOf(Paper[i].no))
+                }
+                CustomAdapter.Category.MENTAL -> {
+                    println("정신건강검진입니다.")
+                    db.delete("MENTAL_EXAM", "no=?", arrayOf(Paper[i].no))
+                }
+                CustomAdapter.Category.COGNITIVE -> {
+                    println("인지기능입니다.")
+                    db.delete("COGNITIVE_EXAM", "no=?", arrayOf(Paper[i].no))
+                }
+                CustomAdapter.Category.ELDERLY -> {
+                    println("노인기능입니다.")
+                    db.delete("ELDERLY_EXAM", "no=?", arrayOf(Paper[i].no))
                 }
                 else -> {
                     println("확인불가")
