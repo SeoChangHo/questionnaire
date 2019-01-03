@@ -27,8 +27,20 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
     object Category
     {
+        //구강검진
         var ORAL = "oral"
+
+        //공통검진
         var COMMON = "common"
+
+        //정신건강
+        var MENTAL = "mental"
+
+        //인지기능
+        var COGNITIVE = "cognitive"
+
+        //노인기능
+        var ELDERLY = "elderly"
     }
 
 
@@ -162,18 +174,32 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
     fun getCategory(category: String):String
     {
-
-        if(category==Category.ORAL)
+        when(category)
         {
-            return "구강검진"
-        }
-        else if(category==Category.COMMON)
-        {
-            return "건강검진(공통)"
-        }
-        else
-        {
-            return "확인불가"
+            Category.ORAL ->
+            {
+                return "구강검진"
+            }
+            Category.COMMON ->
+            {
+                return "건강검진(공통)"
+            }
+            Category.COGNITIVE ->
+            {
+                return "인지기능검진"
+            }
+            Category.ELDERLY ->
+            {
+                return "노인기능검진"
+            }
+            Category.MENTAL ->
+            {
+                return "정신건강검진"
+            }
+            else ->
+            {
+                return "확인불가"
+            }
         }
     }
 

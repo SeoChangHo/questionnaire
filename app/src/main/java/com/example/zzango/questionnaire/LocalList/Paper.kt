@@ -2,11 +2,11 @@ package com.example.zzango.questionnaire.LocalList
 
 import java.io.Serializable
 
-
+//로컬 저장 리스트
 data class Paper(var isChecked: Boolean, var no: Int, var category: String, var name: String, var date: String) : Serializable
 
-
-
+//구강검진 리스트
+//data class Paper_Oral()
 
 //data class Paper(var isChecked: Boolean, var category: String, var name: String, var serial_first: String, var serial_last: String,
 //                 var exam_date: String, var exam_bun_no:String , var exam_email_yn: String,
