@@ -237,7 +237,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " VALUES (" +
                 " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
 
-        db.execSQL("INSERT INTO MENTAL" +
+        db.execSQL("INSERT INTO EXAMINATION" +
                 "(exam_date," +
                 "name," +
                 "first_serial," +
