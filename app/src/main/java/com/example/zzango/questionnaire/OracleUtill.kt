@@ -50,4 +50,12 @@ class OracleUtill {
 
     }
 
+    val drinking_url : String = "https://finepaperweight.herokuapp.com/InsertDrinking/"
+
+    fun drinking_examination() : OracleInterface {
+
+        return OracleRequest().getStringResponse(drinking_url)!!.create(OracleInterface::class.java)
+
+    }
+
 }

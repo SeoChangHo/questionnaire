@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="60dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="80dp"
+                android:background="@color/mainBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView69"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="생활습관 평가도구(음주)"
+                android:textColor="@color/mainBlue"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+
+            <TextView
+                android:id="@+id/textView70"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:text="(만 40세,50세,60세,70세 해당)"
+                android:textColor="@color/mainBlue"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView69" />
+
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="성명 : "
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/name_edit"
+                app:layout_constraintStart_toStartOf="@+id/textView69"
+                app:layout_constraintTop_toBottomOf="@+id/textView70" />
+
+            <EditText
+                android:id="@+id/name_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="16dp"
+                android:inputType="text"
+                android:maxLength="5"
+                android:maxWidth="100dp"
+                android:minWidth="100dp"
+                android:textAlignment="center"
+                android:textCursorDrawable="@color/gray"
+                android:backgroundTint="@color/gray"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/name_text"
+                app:layout_constraintEnd_toStartOf="@+id/number_text"
+                app:layout_constraintStart_toEndOf="@+id/name_text"
+                app:layout_constraintTop_toTopOf="@+id/name_text" />
+
+            <TextView
+                android:id="@+id/number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="주민등록번호 : "
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/name_text"
+                app:layout_constraintEnd_toStartOf="@+id/first_serial"
+                app:layout_constraintStart_toEndOf="@+id/name_edit" />
+
+            <EditText
+                android:id="@+id/first_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:inputType="number"
+                android:maxLength="6"
+                android:maxWidth="90dp"
+                android:minWidth="90dp"
+                android:textAlignment="center"
+                android:textCursorDrawable="@color/gray"
+                android:backgroundTint="@color/gray"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/number_text"
+                app:layout_constraintEnd_toStartOf="@+id/number_hyphen"
+                app:layout_constraintStart_toEndOf="@+id/number_text"
+                app:layout_constraintTop_toTopOf="@+id/number_text" />
+
+            <View
+                android:id="@+id/number_hyphen"
+                android:layout_width="10dp"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/first_serial"
+                app:layout_constraintEnd_toStartOf="@+id/last_serial"
+                app:layout_constraintStart_toEndOf="@+id/first_serial"
+                app:layout_constraintTop_toTopOf="@+id/first_serial" />
+
+            <EditText
+                android:id="@+id/last_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:inputType="numberPassword"
+                android:maxLength="7"
+                android:maxWidth="90dp"
+                android:minWidth="90dp"
+                android:textAlignment="center"
+                android:textCursorDrawable="@color/gray"
+                android:backgroundTint="@color/gray"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/first_serial"
+                app:layout_constraintEnd_toEndOf="@+id/textView69"
+                app:layout_constraintStart_toEndOf="@+id/number_hyphen"
+                app:layout_constraintTop_toTopOf="@+id/first_serial"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/family_medical_history"
+                android:layout_width="700dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/blue_text_top_margin"
+                android:text="술을 전혀 안 마시는 비음주자는 작성하지 않습니다."
+                android:textColor="@color/mainBlue"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name_text" />
+
+
+            <TextView
+                android:id="@+id/drinking_question_1"
+                android:layout_width="700dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:text="1. 술을 마시는 횟수는 어느 정도입니까?"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/family_medical_history" />
+
+
+            <RadioGroup
+                android:id="@+id/drinking_1_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/drinking_question_1"
+                app:layout_constraintTop_toBottomOf="@+id/drinking_question_1">
+
+                <RadioButton
+                    android:id="@+id/drinking_1_1"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="70dp"
+                    android:text="한 달에 1번 이하" />
+
+                <RadioButton
+                    android:id="@+id/drinking_1_2"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="70dp"
+                    android:text="한 달에 2 ~ 4번" />
+
+                <RadioButton
+                    android:id="@+id/drinking_1_3"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="70dp"
+                    android:text="일주일에 2 ~ 3번" />
+
+                <RadioButton
+                    android:id="@+id/drinking_1_4"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="70dp"
+                    android:text="일주일에 4번 이상" />
+
+            </RadioGroup>
+
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/login_appbar_loading_progress_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:background="#000000"
+        android:visibility="gone">
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/login_appbar_loading_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="@color/mainBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
