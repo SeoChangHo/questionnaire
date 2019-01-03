@@ -520,7 +520,7 @@ class CommonExaminationActivity : AppCompatActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
-            //            startActivity(Intent(this@OralExamination, /*메인화면 클래스*/).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            //            startActivity(Intent(this@OralExaminationActivity, /*메인화면 클래스*/).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
 

@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.zzango.questionnaire.LocalList.CustomAdapter
 import com.example.zzango.questionnaire.LocalList.Paper
-import java.util.*
 import kotlin.collections.ArrayList
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
@@ -254,7 +253,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun oralSaveLocal(db : SQLiteDatabase, ex : ArrayList<OralExamination.ExamInfo>){
+    fun oralSaveLocal(db : SQLiteDatabase, ex : ArrayList<OralExaminationActivity.ExamInfo>){
 
         val columnValue = ex.get(0)
 

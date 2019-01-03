@@ -10,7 +10,7 @@ interface OracleInterface {
 
     @POST("https://finepaperweight.herokuapp.com/insertOral")
     @Headers("Content-type: application/json")
-    fun oracleServer(@Body examInfo: ArrayList<OralExamination.ExamInfo>) : Call<String>
+    fun oracleServer(@Body examInfo: ArrayList<OralExaminationActivity.ExamInfo>) : Call<String>
 
     @POST("https://finepaperweight.herokuapp.com/insertOral")
     @Headers("Content-type: application/json")

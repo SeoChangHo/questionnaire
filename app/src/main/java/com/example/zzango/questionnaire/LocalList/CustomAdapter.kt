@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.os.Build
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
@@ -16,9 +15,6 @@ import android.widget.TextView
 import com.example.zzango.questionnaire.*
 import kotlinx.android.synthetic.main.activity_list.*
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -143,7 +139,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                     }
 
 
-                    startActivity(Activity, Intent(Activity, OralExamination::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    startActivity(Activity, Intent(Activity, OralExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 Category.COMMON ->
                 {

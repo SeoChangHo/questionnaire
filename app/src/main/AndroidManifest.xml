@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OralExamination"/>
+        <activity android:name=".OralExaminationActivity"/>
         <activity android:name=".LocalList.ListActivity"/>
         <activity android:name=".CommonExaminationActivity"/>
         <activity android:name=".ServerListActivity"/>

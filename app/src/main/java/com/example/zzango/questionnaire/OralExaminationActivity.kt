@@ -13,7 +13,6 @@ import android.util.DisplayMetrics
 import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
-import com.example.zzango.questionnaire.LocalList.Paper
 import com.example.zzango.questionnaire.LocalList.Paper_ORAL
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -25,7 +24,7 @@ import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
-class OralExamination : AppCompatActivity() {
+class OralExaminationActivity : AppCompatActivity() {
 
     var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
@@ -182,7 +181,7 @@ class OralExamination : AppCompatActivity() {
                     if (!response.body()!!.equals("S")) {
 
                         println(response.body())
-                        Toast.makeText(this@OralExamination, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@OralExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
                     } else {
 
@@ -196,7 +195,7 @@ class OralExamination : AppCompatActivity() {
 
             override fun onFailure(call: Call<String>, t: Throwable) {
 
-                Toast.makeText(this@OralExamination, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                Toast.makeText(this@OralExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
                 println(t.toString())
             }
 
@@ -271,7 +270,7 @@ class OralExamination : AppCompatActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
-            startActivity(Intent(this@OralExamination, MainActivity::class.java).putExtra("from", "oral").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@OralExaminationActivity, MainActivity::class.java).putExtra("from", "oral").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
 
