@@ -173,6 +173,56 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun cognitiveCreate(db : SQLiteDatabase?){
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "COGNITIVE_EXAM" +
+                "(exam_date DATETIME," +
+                " name TEXT," +
+                " first_serial TEXT," +
+                " last_serial TEXT," +
+                " category TEXT," +
+                " mj_inji_1 TEXT," +
+                " mj_inji_2 TEXT," +
+                " mj_inji_3 TEXT," +
+                " mj_inji_4 TEXT," +
+                " mj_inji_5 TEXT," +
+                " mj_inji_6 TEXT," +
+                " mj_inji_7 TEXT," +
+                " mj_inji_8 TEXT," +
+                " mj_inji_9 TEXT," +
+                " mj_inji_10 TEXT," +
+                " mj_inji_11 TEXT," +
+                " mj_inji_12 TEXT," +
+                " mj_inji_13 TEXT," +
+                " mj_inji_14 TEXT," +
+                " mj_inji_15 TEXT," +
+                " mj_inji_sum TEXT);")
+
+    }
+
+    fun elderlyCreate(db : SQLiteDatabase?){
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "ELDERLY_EXAM" +
+                "(exam_date DATETIME," +
+                " name TEXT," +
+                " first_serial TEXT," +
+                " last_serial TEXT," +
+                " category TEXT," +
+                " mj66_1 TEXT," +
+                " mj66_2 TEXT," +
+                " mj66_3_1 TEXT," +
+                " mj66_3_2 TEXT," +
+                " mj66_3_3 TEXT," +
+                " mj66_3_4 TEXT," +
+                " mj66_3_5 TEXT," +
+                " mj66_3_6 TEXT," +
+                " mj66_4 TEXT," +
+                " mj66_5 TEXT);")
+
+    }
+
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
     }
@@ -278,6 +328,56 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.mj_mtl_5}', '${columnValue.mj_mtl_6}', '${columnValue.mj_mtl_7}', '${columnValue.mj_mtl_8}'" +
                 ", '${columnValue.mj_mtl_9}', '${columnValue.mj_mtl_sum}');")
 
+    }
+
+    fun cognitiveSaveLocal(db : SQLiteDatabase, ex : ArrayList<CognitiveExaminationActivity.ExamInfo>){
+
+        val columnValue = ex.get(0)
+
+        db.execSQL("INSERT INTO LOCALSAVELIST" +
+                "(no, category, name, date)" +
+                " VALUES (" +
+                " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
+
+        db.execSQL("INSERT INTO COGNITIVE_EXAM" +
+                "(exam_date," +
+                "name," +
+                "first_serial," +
+                "last_serial," +
+                "category, " +
+                "mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7," +
+                "mj_inji_8, mj_inji_9, mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum)" +
+                " VALUES (" +
+                "'${columnValue.exam_date}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                ", '${columnValue.category}', '${columnValue.mj_inji_1}', '${columnValue.mj_inji_2}', '${columnValue.mj_inji_3}', '${columnValue.mj_inji_4}'" +
+                ", '${columnValue.mj_inji_5}', '${columnValue.mj_inji_6}', '${columnValue.mj_inji_7}', '${columnValue.mj_inji_8}'" +
+                ", '${columnValue.mj_inji_9}', '${columnValue.mj_inji_10}', '${columnValue.mj_inji_11}', '${columnValue.mj_inji_12}'" +
+                ", '${columnValue.mj_inji_13}', '${columnValue.mj_inji_14}', '${columnValue.mj_inji_15}', '${columnValue.mj_inji_sum}');")
+
+    }
+
+    fun elderlySaveLocal(db : SQLiteDatabase, ex : ArrayList<ElderlyExaminationActivity.ExamInfo>){
+
+        val columnValue = ex.get(0)
+
+        db.execSQL("INSERT INTO LOCALSAVELIST" +
+                "(no, category, name, date)" +
+                " VALUES (" +
+                " 123, '${columnValue.category}', '${columnValue.name}', '${columnValue.exam_date}');")
+
+        db.execSQL("INSERT INTO ELDERLY_EXAM" +
+                "(exam_date," +
+                "name," +
+                "first_serial," +
+                "last_serial," +
+                "category, " +
+                "mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5," +
+                "mj66_3_6, mj66_4, mj66_5)" +
+                " VALUES (" +
+                "'${columnValue.exam_date}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                ", '${columnValue.category}', '${columnValue.mj66_1}', '${columnValue.mj66_2}', '${columnValue.mj66_3_1}', '${columnValue.mj66_3_2}'" +
+                ", '${columnValue.mj66_3_3}', '${columnValue.mj66_3_4}', '${columnValue.mj66_3_5}', '${columnValue.mj66_3_6}'" +
+                ", '${columnValue.mj66_4}', '${columnValue.mj66_5}');")
     }
 
 

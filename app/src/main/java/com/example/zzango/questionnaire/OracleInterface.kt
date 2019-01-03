@@ -20,4 +20,16 @@ interface OracleInterface {
     @Headers("Content-type: application/json")
     fun commonServer(@Body examInfo: ArrayList<CommonExaminationActivity.ExamInfo>) : Call<String>
 
+    @POST("https://finepaperweight.herokuapp.com/InsertMental")
+    @Headers("Content-type: application/json")
+    fun mentalServer(@Body examInfo: ArrayList<MentalExaminationActivity.ExamInfo>) : Call<String>
+
+    @POST("https://finepaperweight.herokuapp.com/InsertCognitive")
+    @Headers("Content-type: application/json")
+    fun cognitiveServer(@Body examInfo: ArrayList<CognitiveExaminationActivity.ExamInfo>) : Call<String>
+
+    @POST("https://finepaperweight.herokuapp.com/InsertElderly")
+    @Headers("Content-type: application/json")
+    fun elderlyServer(@Body examInfo: ArrayList<ElderlyExaminationActivity.ExamInfo>) : Call<String>
+
 }

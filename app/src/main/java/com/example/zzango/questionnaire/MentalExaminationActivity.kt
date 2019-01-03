@@ -14,10 +14,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Toast
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_mental_exam.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 
@@ -98,34 +102,34 @@ class MentalExaminationActivity : AppCompatActivity(){
 
         println("서버")
 
-//        OracleUtill().mental_examination().oracleServer(exam_result!!).enqueue(object : Callback<String> {
-//
-//            override fun onResponse(call: Call<String>, response: Response<String>) {
-//
-//                if (response.isSuccessful) {
-//
-//                    if (!response.body()!!.equals("S")) {
-//
-//                        println(response.body())
-//                        Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-//
-//                    } else {
-//
-//                        saveCompleteAlert()
-//
-//                    }
-//
-//                }
-//
-//            }
-//
-//            override fun onFailure(call: Call<String>, t: Throwable) {
-//
-//                Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-//                println(t.toString())
-//            }
-//
-//        })
+        OracleUtill().mental_examination().mentalServer(exam_result!!).enqueue(object : Callback<String> {
+
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+
+                if (response.isSuccessful) {
+
+                    if (!response.body()!!.equals("S")) {
+
+                        println(response.body())
+                        Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+
+                    } else {
+
+                        saveCompleteAlert()
+
+                    }
+
+                }
+
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+
+                Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                println(t.toString())
+            }
+
+        })
 
     }
 

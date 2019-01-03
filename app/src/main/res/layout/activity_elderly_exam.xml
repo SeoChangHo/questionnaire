@@ -661,7 +661,7 @@
 
 
             <Button
-                android:id="@+id/mental_examination_save"
+                android:id="@+id/elderly_examination_save"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -680,7 +680,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/elderly_5_radio" />
 
             <Button
-                android:id="@+id/mental_examination_cancel"
+                android:id="@+id/elderly_examination_cancel"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
