@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -31,7 +32,7 @@ class MentalExaminationActivity : AppCompatActivity(){
     var sql_db : SQLiteDatabase? = null
     var popup = false
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : Date,
+    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
                          @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
                          @SerializedName("name") @Expose var name : String,
@@ -211,7 +212,8 @@ class MentalExaminationActivity : AppCompatActivity(){
     @SuppressLint("NewApi")
     fun check() : Boolean{
 
-        var exam_date = Date()
+        var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
+        var no = System.currentTimeMillis().toString()
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -227,11 +229,149 @@ class MentalExaminationActivity : AppCompatActivity(){
         var mj_mtl_9 = ""
         var mj_mtl_sum = ""
 
+        if(!name_edit.text.isNullOrEmpty()){
+            name = name_edit.text.toString()
+        }else{
+            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(!first_serial.text.isNullOrEmpty()){
+            first_serial_text = first_serial.text.toString()
+        }else{
+            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(!last_serial.text.isNullOrEmpty()){
+            last_serial_text = last_serial.text.toString()
+        }else{
+            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(mental_1_1.isChecked){
+            mj_mtl_1 = "1"
+        }else if(mental_1_2.isChecked){
+            mj_mtl_1 = "2"
+        }else if(mental_1_3.isChecked){
+            mj_mtl_1 = "3"
+        }else if(mental_1_4.isChecked){
+            mj_mtl_1 = "4"
+        }else{
+            Toast.makeText(this, "1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(mental_2_1.isChecked){
+            mj_mtl_2 = "1"
+        }else if(mental_2_2.isChecked){
+            mj_mtl_2 = "2"
+        }else if(mental_2_3.isChecked){
+            mj_mtl_2 = "3"
+        }else if(mental_2_4.isChecked){
+            mj_mtl_2 = "4"
+        }else{
+            Toast.makeText(this, "2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(mental_3_1.isChecked){
+            mj_mtl_3 = "1"
+        }else if(mental_3_2.isChecked){
+            mj_mtl_3 = "2"
+        }else if(mental_3_3.isChecked){
+            mj_mtl_3 = "3"
+        }else if(mental_3_4.isChecked){
+            mj_mtl_3 = "4"
+        }else{
+            Toast.makeText(this, "3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(mental_4_1.isChecked){
+            mj_mtl_4 = "1"
+        }else if(mental_4_2.isChecked){
+            mj_mtl_4 = "2"
+        }else if(mental_4_3.isChecked){
+            mj_mtl_4 = "3"
+        }else if(mental_4_4.isChecked){
+            mj_mtl_4 = "4"
+        }else{
+            Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(mental_5_1.isChecked){
+            mj_mtl_5 = "1"
+        }else if(mental_5_2.isChecked){
+            mj_mtl_5 = "2"
+        }else if(mental_5_3.isChecked){
+            mj_mtl_5 = "3"
+        }else if(mental_5_4.isChecked){
+            mj_mtl_5 = "4"
+        }else{
+            Toast.makeText(this, "5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(mental_6_1.isChecked){
+            mj_mtl_6 = "1"
+        }else if(mental_6_2.isChecked){
+            mj_mtl_6 = "2"
+        }else if(mental_6_3.isChecked){
+            mj_mtl_6 = "3"
+        }else if(mental_6_4.isChecked){
+            mj_mtl_6 = "4"
+        }else{
+            Toast.makeText(this, "6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(mental_7_1.isChecked){
+            mj_mtl_7 = "1"
+        }else if(mental_7_2.isChecked){
+            mj_mtl_7 = "2"
+        }else if(mental_7_3.isChecked){
+            mj_mtl_7 = "3"
+        }else if(mental_7_4.isChecked){
+            mj_mtl_7 = "4"
+        }else{
+            Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(mental_8_1.isChecked){
+            mj_mtl_8 = "1"
+        }else if(mental_8_2.isChecked){
+            mj_mtl_8 = "2"
+        }else if(mental_8_3.isChecked){
+            mj_mtl_8 = "3"
+        }else if(mental_8_4.isChecked){
+            mj_mtl_8 = "4"
+        }else{
+            Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(mental_9_1.isChecked){
+            mj_mtl_9 = "1"
+        }else if(mental_9_2.isChecked){
+            mj_mtl_9 = "2"
+        }else if(mental_9_3.isChecked){
+            mj_mtl_9 = "3"
+        }else if(mental_9_4.isChecked){
+            mj_mtl_9 = "4"
+        }else{
+            Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
 
         var arr = ArrayList<ExamInfo>()
 
         arr.add(ExamInfo(
-                exam_date, "", "", name, first_serial_text, last_serial_text, category,
+                exam_date, no, "", name, first_serial_text, last_serial_text, category,
                 mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum
         ))
 

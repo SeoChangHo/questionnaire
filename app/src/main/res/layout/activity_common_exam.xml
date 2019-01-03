@@ -21,7 +21,7 @@
                 android:id="@+id/imageView4"
                 android:layout_width="60dp"
                 android:layout_height="8dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="80dp"
                 android:background="@color/mainBlue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -780,34 +780,44 @@
                 android:id="@+id/common_3_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="@+id/textView15"
                 app:layout_constraintTop_toBottomOf="@+id/textView15">
 
                 <RadioButton
                     android:id="@+id/common_3_true"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="예" />
 
                 <RadioButton
                     android:id="@+id/common_3_false"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="아니오" />
 
                 <RadioButton
                     android:id="@+id/common_3_do_not_know"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="모름" />
 
             </RadioGroup>
@@ -852,8 +862,6 @@
                 android:id="@+id/common_4_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="@+id/textView18"
@@ -861,18 +869,25 @@
 
                 <RadioButton
                     android:id="@+id/common_4_false"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="아니오" />
 
                 <RadioButton
                     android:id="@+id/common_4_true"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="예" />
 
             </RadioGroup>
@@ -894,8 +909,6 @@
                 android:id="@+id/common_4_1_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical"
                 android:visibility="gone"
@@ -904,18 +917,25 @@
 
                 <RadioButton
                     android:id="@+id/common_4_1_true"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="현재피움" />
 
                 <RadioButton
                     android:id="@+id/common_4_1_false"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="과거에는 피웠으나 현재 피우지 않음" />
 
             </RadioGroup>
@@ -929,6 +949,7 @@
                 android:layout_marginStart="32dp"
                 android:text="총"
                 android:visibility="gone"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/common_4_1_radio"
                 app:layout_constraintStart_toEndOf="@+id/common_4_1_radio"
                 app:layout_constraintTop_toTopOf="@+id/common_4_1_radio"
@@ -939,7 +960,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textSize="13dp"
+                android:textSize="16dp"
                 android:textCursorDrawable="@color/gray"
                 android:backgroundTint="@color/gray"
                 android:inputType="number"
@@ -954,6 +975,7 @@
                 android:layout_height="wrap_content"
                 android:text="년    하루평균"
                 android:visibility="gone"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_1"
                 app:layout_constraintStart_toEndOf="@+id/editText_4_1_1"
                 app:layout_constraintTop_toTopOf="@+id/editText_4_1_1" />
@@ -963,7 +985,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textSize="13dp"
+                android:textSize="16dp"
                 android:textCursorDrawable="@color/gray"
                 android:backgroundTint="@color/gray"
                 android:inputType="number"
@@ -978,6 +1000,7 @@
                 android:layout_height="wrap_content"
                 android:text="개비"
                 android:visibility="gone"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_2"
                 app:layout_constraintStart_toEndOf="@+id/editText_4_1_2"
                 app:layout_constraintTop_toTopOf="@+id/editText_4_1_2" />
@@ -990,6 +1013,7 @@
                 android:layout_marginStart="32dp"
                 android:text="총"
                 android:visibility="gone"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/common_4_1_radio"
                 app:layout_constraintStart_toEndOf="@+id/common_4_1_radio"
                 app:layout_constraintTop_toTopOf="@+id/common_4_1_radio"
@@ -1000,7 +1024,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textSize="13dp"
+                android:textSize="16dp"
                 android:textCursorDrawable="@color/gray"
                 android:backgroundTint="@color/gray"
                 android:inputType="number"
@@ -1015,6 +1039,7 @@
                 android:layout_height="wrap_content"
                 android:text="년    흡연했을 때 하루평균"
                 android:visibility="gone"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_3"
                 app:layout_constraintStart_toEndOf="@+id/editText_4_1_3"
                 app:layout_constraintTop_toTopOf="@+id/editText_4_1_3" />
@@ -1024,7 +1049,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textSize="13dp"
+                android:textSize="16dp"
                 android:textCursorDrawable="@color/gray"
                 android:backgroundTint="@color/gray"
                 android:inputType="number"
@@ -1039,6 +1064,7 @@
                 android:layout_height="wrap_content"
                 android:text="개비    끊은지"
                 android:visibility="gone"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_4"
                 app:layout_constraintStart_toEndOf="@+id/editText_4_1_4"
                 app:layout_constraintTop_toTopOf="@+id/editText_4_1_4" />
@@ -1048,7 +1074,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textSize="13dp"
+                android:textSize="16dp"
                 android:textCursorDrawable="@color/gray"
                 android:backgroundTint="@color/gray"
                 android:inputType="number"
@@ -1063,6 +1089,7 @@
                 android:layout_height="wrap_content"
                 android:text="년"
                 android:visibility="gone"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_5"
                 app:layout_constraintStart_toEndOf="@+id/editText_4_1_5"
                 app:layout_constraintTop_toTopOf="@+id/editText_4_1_5" />
@@ -1095,8 +1122,6 @@
                 android:id="@+id/common_5_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="@+id/textView21"
@@ -1104,18 +1129,25 @@
 
                 <RadioButton
                     android:id="@+id/common_5_false"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="아니오" />
 
                 <RadioButton
                     android:id="@+id/common_5_true"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="예" />
 
             </RadioGroup>
@@ -1135,9 +1167,7 @@
             <RadioGroup
                 android:id="@+id/common_5_1_radio"
                 android:layout_width="wrap_content"
-                android:layout_height="62dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical"
                 android:visibility="gone"
@@ -1146,18 +1176,25 @@
 
                 <RadioButton
                     android:id="@+id/common_5_1_true"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="현재피움" />
 
                 <RadioButton
                     android:id="@+id/common_5_1_false"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="과거에는 피웠으나 현재 피우지 않음" />
 
             </RadioGroup>
@@ -1325,8 +1362,6 @@
                     android:id="@+id/common_6_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginStart="24dp"
                     android:layout_marginTop="32dp"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="@+id/textView24"
@@ -1334,18 +1369,25 @@
 
                     <RadioButton
                         android:id="@+id/common_6_true"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:text="예" />
 
                     <RadioButton
                         android:id="@+id/common_6_false"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:text="아니오" />
 
 
@@ -1367,8 +1409,6 @@
                 android:id="@+id/common_6_1_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical"
                 android:visibility="gone"
@@ -1377,42 +1417,62 @@
 
                 <RadioButton
                     android:id="@+id/common_6_1_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="아니오" />
 
                 <RadioButton
                     android:id="@+id/common_6_1_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="월 1-2일" />
 
                 <RadioButton
                     android:id="@+id/common_6_1_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="월 3-9일" />
 
                 <RadioButton
                     android:id="@+id/common_6_1_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="월 10-29일" />
 
                 <RadioButton
                     android:id="@+id/common_6_1_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="매일" />
 
             </RadioGroup>
@@ -1444,8 +1504,6 @@
                 android:id="@+id/common_7_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="@+id/textView26"
@@ -1453,34 +1511,50 @@
 
                 <RadioButton
                     android:id="@+id/common_7_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="일주일에" />
 
                 <RadioButton
                     android:id="@+id/common_7_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="한 달에" />
 
                 <RadioButton
                     android:id="@+id/common_7_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="1년에" />
 
                 <RadioButton
                     android:id="@+id/common_7_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginBottom="15dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:text="술을 마시지 않는다." />
 
             </RadioGroup>
@@ -1523,7 +1597,8 @@
                     android:id="@+id/table_text_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="40dp"
+                    android:textSize="16dp"
                     android:layout_marginStart="8dp"
                     android:text="음주량"
                     android:visibility="gone"
@@ -1675,32 +1750,43 @@
                         android:id="@+id/common_7_1_1_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
                         android:text="잔" />
 
                     <RadioButton
                         android:id="@+id/common_7_1_1_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:text="병" />
 
                     <RadioButton
                         android:id="@+id/common_7_1_1_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:text="캔" />
 
                     <RadioButton
                         android:id="@+id/common_7_1_1_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:text="cc" />
 
                 </RadioGroup>

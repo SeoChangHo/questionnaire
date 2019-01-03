@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -30,7 +31,7 @@ class CommonExaminationActivity : AppCompatActivity() {
     var sql_db : SQLiteDatabase? = null
     var popup = false
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : Date,
+    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
                          @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
                          @SerializedName("name") @Expose var name : String,
@@ -581,7 +582,8 @@ class CommonExaminationActivity : AppCompatActivity() {
     @SuppressLint("NewApi")
     fun check() : Boolean {
 
-        var exam_date = Date()
+        var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
+        var no = System.currentTimeMillis().toString()
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -1169,7 +1171,7 @@ class CommonExaminationActivity : AppCompatActivity() {
         var arr = ArrayList<CommonExaminationActivity.ExamInfo>()
 
         arr.add(CommonExaminationActivity.ExamInfo(
-                exam_date, "", "", name, first_serial_text, last_serial_text, category,
+                exam_date, no, "", name, first_serial_text, last_serial_text, category,
                 mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
                 mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1,
                 mj2_2, mj2_3, mj2_4, mj2_5, mj3, mj4, mj4_1_1, mj4_1_2, mj4_2_1,
