@@ -38,6 +38,7 @@ class ListActivity : Activity() {
         val recyclerView = findViewById(R.id.recyclertView) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
+
         val data = LocalDBhelper(this).checkLocalList(sql_db!!)
         data.moveToFirst()
 
@@ -50,7 +51,6 @@ class ListActivity : Activity() {
             data.moveToNext()
 
         }
-
         val adapter = CustomAdapter(papers, this)
 
         adapter.CheckBoxInit()

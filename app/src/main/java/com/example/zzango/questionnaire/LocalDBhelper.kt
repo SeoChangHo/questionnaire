@@ -443,15 +443,49 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
 
     @SuppressLint("Recycle")
-    fun checkLocal(db : SQLiteDatabase): Cursor{
+    fun Select_Local_ORAL(db : SQLiteDatabase): Cursor{
 
-        var data = db.rawQuery("SELECT * FROM EXAMINATION;", null)
-
-
+        var data = db.rawQuery("SELECT * FROM ORAL_EXAM;", null)
 
         return data
-
     }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_COMMON(db : SQLiteDatabase): Cursor{
+
+        var data = db.rawQuery("SELECT * FROM COMMON_EXAM;", null)
+
+        return data
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_COGNITIVE(db : SQLiteDatabase): Cursor{
+
+        var data = db.rawQuery("SELECT * FROM COGNITIVE_EXAM;", null)
+
+        return data
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_ELDERLY(db : SQLiteDatabase): Cursor{
+
+        var data = db.rawQuery("SELECT * FROM ELDERLY_EXAM;", null)
+
+        return data
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_MENTAL(db : SQLiteDatabase): Cursor{
+
+        var data = db.rawQuery("SELECT * FROM MENTAL_EXAM;", null)
+
+        return data
+    }
+
+
+
+
+
 
     @SuppressLint("Recycle")
     fun checkLocalList(db : SQLiteDatabase): Cursor{
@@ -506,4 +540,5 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db.close()
     }
+
 }

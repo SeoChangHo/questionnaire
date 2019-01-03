@@ -3,6 +3,7 @@ package com.example.zzango.questionnaire.LocalList
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
 import android.os.Build
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat.startActivity
@@ -12,17 +13,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
-import com.example.zzango.questionnaire.OralExamination
-import com.example.zzango.questionnaire.R
+import com.example.zzango.questionnaire.*
 import kotlinx.android.synthetic.main.activity_list.*
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 import java.util.*
+import kotlin.collections.ArrayList
 
 class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+
+    var sql_db : SQLiteDatabase? = null
 
 
     @SuppressLint("StaticFieldLeak")
@@ -64,8 +67,6 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
     }
 
     override fun getItemCount(): Int {
-        println(PaperList.size.toString()+"회 리턴합니다.")
-
         return PaperList.size
     }
 
@@ -99,7 +100,56 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
         //Recyclerview Item Click
         p0?.constraint.setOnClickListener{
-            startActivity(Activity, Intent(Activity, OralExamination::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+
+
+            LocalDBhelper(Activity).writableDatabase
+            println(paper.name)
+
+            when(paper.category)
+            {
+                Category.ORAL ->
+                {
+                    var PaperArray = ArrayList<Paper_ORAL>()
+
+                    val data = LocalDBhelper(Activity).checkLocalList(sql_db!!)
+                    data.moveToFirst()
+
+//                    while(!data.isAfterLast){
+//                        PaperArray.add(PaperArray(
+//                                data.getString(data.getColumnIndex("no")),
+//                                data.getString(data.getColumnIndex("category")),
+//                                data.getString(data.getColumnIndex("name"))))
+//
+//                        data.moveToNext()
+//
+//                    }
+
+
+                    startActivity(Activity, Intent(Activity, OralExamination::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
+                Category.COMMON ->
+                {
+                    startActivity(Activity, Intent(Activity, CommonExaminationActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
+                Category.COGNITIVE ->
+                {
+                    startActivity(Activity, Intent(Activity, CognitiveExaminationActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
+                Category.ELDERLY ->
+                {
+                    startActivity(Activity, Intent(Activity, ElderlyExaminationActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
+                Category.MENTAL ->
+                {
+                    startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
+                else ->
+                {
+                    println("확인되지 않습니다.")
+                }
+            }
+
+
         }
 
 
