@@ -313,6 +313,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_stroke"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -323,6 +326,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_stroke_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -333,7 +339,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:text="심근경색(협심증)"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_stroke" />
@@ -343,6 +349,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_myocardial_infarction"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -353,6 +362,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_myocardial_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -363,7 +375,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:text="고혈압"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_myocardial_infarction" />
@@ -373,6 +385,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_high_blood_pressure"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -383,6 +398,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_high_blood_pressure_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -393,7 +411,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:text="당뇨병"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_high_blood_pressure" />
@@ -403,6 +421,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_diabetes"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -413,6 +434,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_diabetes_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -423,7 +447,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:text="이상지질혈증"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_diabetes" />
@@ -433,6 +457,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_dyslipidemia"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -443,6 +470,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_dyslipidemia_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -453,7 +483,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:text="폐결핵"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_dyslipidemia" />
@@ -463,6 +493,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_tuberculosis"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -473,6 +506,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_tuberculosis_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -482,9 +518,8 @@
                     android:id="@+id/diagnosis_medication_etc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:text="기타(암포함)"
                     app:layout_constraintBottom_toTopOf="@+id/diagnosis_medication_etc_disease_name"
                     app:layout_constraintStart_toStartOf="parent"
@@ -495,6 +530,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_etc"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -505,38 +543,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_etc_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
                     app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc_examination_check" />
 
-                <TextView
-                    android:id="@+id/diagnosis_medication_etc_disease_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text="기타 질환명"
-                    android:textSize="14dp"
-                    android:visibility="gone"
-                    app:layout_constraintBottom_toTopOf="@+id/diagnosis_medication_view2"
-                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_etc"
-                    app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_etc" />
-
-                <EditText
-                    android:id="@+id/diagnosis_medication_etc_disease_name_input"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:textSize="14dp"
-                    android:textCursorDrawable="@color/gray"
-                    android:backgroundTint="@color/gray"
-                    android:visibility="gone"
-                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_etc_disease_name"
-                    app:layout_constraintEnd_toEndOf="@+id/diagnosis_medication_etc_medication_check"
-                    app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_etc_examination_check"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc_disease_name" />
 
                 <View
                     android:id="@+id/diagnosis_medication_view2"
@@ -575,7 +589,7 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/family_history_disease_wrapper"
                 android:layout_width="0dp"
-                android:layout_height="226dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 app:layout_constraintEnd_toEndOf="@+id/diagnosis_medication_check_wrapper"
                 app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_check_wrapper"
@@ -668,6 +682,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_stroke"
                     app:layout_constraintEnd_toStartOf="@+id/family_history_disease_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/family_history_disease_guideline"
@@ -678,7 +695,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:text="심근경색(협심증)"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/family_history_disease_stroke" />
@@ -688,6 +705,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_myocardial_infarction"
                     app:layout_constraintEnd_toStartOf="@+id/family_history_disease_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/family_history_disease_guideline"
@@ -698,7 +718,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:text="고혈압"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/family_history_disease_myocardial_infarction" />
@@ -708,6 +728,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_high_blood_pressure"
                     app:layout_constraintEnd_toStartOf="@+id/family_history_disease_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/family_history_disease_guideline"
@@ -719,7 +742,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:text="당뇨병"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/family_history_disease_high_blood_pressure" />
@@ -729,6 +752,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_diabetes"
                     app:layout_constraintEnd_toStartOf="@+id/family_history_disease_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/family_history_disease_guideline"
@@ -740,7 +766,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:text="기타(암포함)"
                     app:layout_constraintBottom_toTopOf="@+id/view2"
                     app:layout_constraintStart_toStartOf="parent"
@@ -751,6 +777,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/family_history_etc"
                     app:layout_constraintEnd_toStartOf="@+id/family_history_disease_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/family_history_disease_guideline"
@@ -1585,9 +1614,11 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/table_view_1"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_height="250dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginLeft="24dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="@+id/textView27"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/textView27"
@@ -1613,11 +1644,11 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
                     android:ems="10"
-                    android:visibility="gone"
-                    android:textSize="13dp"
+                    android:textSize="16dp"
                     android:textCursorDrawable="@color/gray"
                     android:backgroundTint="@color/gray"
                     android:inputType="number"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_1"
                     app:layout_constraintStart_toEndOf="@+id/table_text_1"
                     app:layout_constraintTop_toTopOf="@+id/table_text_1" />
@@ -1626,7 +1657,8 @@
                     android:id="@+id/table_text_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="40dp"
+                    android:textSize="16dp"
                     android:layout_marginStart="8dp"
                     android:text="음주량"
                     android:visibility="gone"
@@ -1642,7 +1674,7 @@
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:visibility="gone"
-                    android:textSize="13dp"
+                    android:textSize="16dp"
                     android:textCursorDrawable="@color/gray"
                     android:backgroundTint="@color/gray"
                     android:inputType="number"
@@ -1654,7 +1686,8 @@
                     android:id="@+id/table_text_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="40dp"
+                    android:textSize="16dp"
                     android:layout_marginStart="8dp"
                     android:text="음주량"
                     android:visibility="gone"
@@ -1670,7 +1703,7 @@
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:visibility="gone"
-                    android:textSize="13dp"
+                    android:textSize="16dp"
                     android:textCursorDrawable="@color/gray"
                     android:backgroundTint="@color/gray"
                     android:inputType="number"
@@ -1682,7 +1715,8 @@
                     android:id="@+id/table_text_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="40dp"
+                    android:textSize="16dp"
                     android:layout_marginStart="8dp"
                     android:text="음주량"
                     android:visibility="gone"
@@ -1698,7 +1732,7 @@
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:visibility="gone"
-                    android:textSize="13dp"
+                    android:textSize="16dp"
                     android:textCursorDrawable="@color/gray"
                     android:backgroundTint="@color/gray"
                     android:inputType="number"
@@ -1710,7 +1744,8 @@
                     android:id="@+id/table_text_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="40dp"
+                    android:textSize="16dp"
                     android:layout_marginStart="8dp"
                     android:text="음주량"
                     android:visibility="gone"
@@ -1726,7 +1761,7 @@
                     android:layout_marginStart="4dp"
                     android:ems="10"
                     android:visibility="gone"
-                    android:textSize="13dp"
+                    android:textSize="16dp"
                     android:textCursorDrawable="@color/gray"
                     android:backgroundTint="@color/gray"
                     android:inputType="number"
@@ -1738,8 +1773,6 @@
                     android:id="@+id/common_7_1_1_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/checkBox1"
@@ -1780,7 +1813,7 @@
 
                     <RadioButton
                         android:id="@+id/common_7_1_1_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
@@ -1795,8 +1828,6 @@
                     android:id="@+id/common_7_1_2_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/checkBox2"
@@ -1807,7 +1838,9 @@
                         android:id="@+id/common_7_1_2_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="잔" />
 
@@ -1815,7 +1848,10 @@
                         android:id="@+id/common_7_1_2_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="병" />
 
@@ -1823,15 +1859,21 @@
                         android:id="@+id/common_7_1_2_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="캔" />
 
                     <RadioButton
                         android:id="@+id/common_7_1_2_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="cc" />
 
@@ -1841,8 +1883,6 @@
                     android:id="@+id/common_7_1_3_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/checkBox3"
@@ -1853,7 +1893,9 @@
                         android:id="@+id/common_7_1_3_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="잔" />
 
@@ -1861,7 +1903,10 @@
                         android:id="@+id/common_7_1_3_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="병" />
 
@@ -1869,15 +1914,21 @@
                         android:id="@+id/common_7_1_3_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="캔" />
 
                     <RadioButton
                         android:id="@+id/common_7_1_3_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="cc" />
 
@@ -1887,8 +1938,6 @@
                     android:id="@+id/common_7_1_4_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="19dp"
-                    android:layout_marginStart="19dp"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/checkBox4"
@@ -1899,7 +1948,9 @@
                         android:id="@+id/common_7_1_4_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="잔" />
 
@@ -1907,7 +1958,10 @@
                         android:id="@+id/common_7_1_4_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="병" />
 
@@ -1915,15 +1969,21 @@
                         android:id="@+id/common_7_1_4_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="캔" />
 
                     <RadioButton
                         android:id="@+id/common_7_1_4_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="cc" />
 
@@ -1933,8 +1993,6 @@
                     android:id="@+id/common_7_1_5_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/checkBox5"
@@ -1945,7 +2003,9 @@
                         android:id="@+id/common_7_1_5_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="잔" />
 
@@ -1953,7 +2013,10 @@
                         android:id="@+id/common_7_1_5_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="병" />
 
@@ -1961,15 +2024,21 @@
                         android:id="@+id/common_7_1_5_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="캔" />
 
                     <RadioButton
                         android:id="@+id/common_7_1_5_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
                         android:text="cc" />
 
@@ -1977,12 +2046,15 @@
 
                 <CheckBox
                     android:id="@+id/checkBox1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="소주"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     app:layout_constraintBottom_toTopOf="@+id/checkBox2"
                     app:layout_constraintStart_toStartOf="parent"
@@ -1991,10 +2063,13 @@
 
                 <CheckBox
                     android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:text="맥주"
                     android:buttonTint="@color/mainBlue"
                     app:layout_constraintBottom_toTopOf="@+id/checkBox3"
@@ -2003,10 +2078,13 @@
 
                 <CheckBox
                     android:id="@+id/checkBox3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:text="양주"
                     android:buttonTint="@color/mainBlue"
                     app:layout_constraintBottom_toTopOf="@+id/checkBox4"
@@ -2015,10 +2093,13 @@
 
                 <CheckBox
                     android:id="@+id/checkBox4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:text="막걸리"
                     android:buttonTint="@color/mainBlue"
                     app:layout_constraintBottom_toTopOf="@+id/checkBox5"
@@ -2027,10 +2108,13 @@
 
                 <CheckBox
                     android:id="@+id/checkBox5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:text="와인"
                     android:buttonTint="@color/mainBlue"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -2053,9 +2137,12 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/table_view_2"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_height="250dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginLeft="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView28"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/textView28"
                 app:layout_constraintTop_toBottomOf="@+id/textView28">
@@ -2067,6 +2154,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp"
                     android:text="음주량"
+                    android:textSize="16dp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/common_7_2_1_radio"
                     app:layout_constraintStart_toEndOf="@+id/common_7_2_1_radio"
@@ -2078,12 +2166,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
+                    android:backgroundTint="@color/gray"
                     android:ems="10"
                     android:inputType="number"
-                    android:visibility="gone"
-                    android:textSize="13dp"
                     android:textCursorDrawable="@color/gray"
-                    android:backgroundTint="@color/gray"
+                    android:textSize="16dp"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_6"
                     app:layout_constraintStart_toEndOf="@+id/table_text_6"
                     app:layout_constraintTop_toTopOf="@+id/table_text_6" />
@@ -2095,6 +2183,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp"
                     android:text="음주량"
+                    android:textSize="16dp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/common_7_2_2_radio"
                     app:layout_constraintStart_toEndOf="@+id/common_7_2_2_radio"
@@ -2106,12 +2195,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
+                    android:backgroundTint="@color/gray"
                     android:ems="10"
                     android:inputType="number"
-                    android:visibility="gone"
-                    android:textSize="13dp"
                     android:textCursorDrawable="@color/gray"
-                    android:backgroundTint="@color/gray"
+                    android:textSize="16dp"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_7"
                     app:layout_constraintStart_toEndOf="@+id/table_text_7"
                     app:layout_constraintTop_toTopOf="@+id/table_text_7" />
@@ -2123,6 +2212,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp"
                     android:text="음주량"
+                    android:textSize="16dp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/common_7_2_3_radio"
                     app:layout_constraintStart_toEndOf="@+id/common_7_2_3_radio"
@@ -2134,12 +2224,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
+                    android:backgroundTint="@color/gray"
                     android:ems="10"
                     android:inputType="number"
-                    android:visibility="gone"
-                    android:textSize="13dp"
                     android:textCursorDrawable="@color/gray"
-                    android:backgroundTint="@color/gray"
+                    android:textSize="16dp"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_8"
                     app:layout_constraintStart_toEndOf="@+id/table_text_8"
                     app:layout_constraintTop_toTopOf="@+id/table_text_8" />
@@ -2151,6 +2241,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp"
                     android:text="음주량"
+                    android:textSize="16dp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/common_7_2_4_radio"
                     app:layout_constraintStart_toEndOf="@+id/common_7_2_4_radio"
@@ -2162,12 +2253,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
+                    android:backgroundTint="@color/gray"
                     android:ems="10"
                     android:inputType="number"
-                    android:visibility="gone"
-                    android:textSize="13dp"
                     android:textCursorDrawable="@color/gray"
-                    android:backgroundTint="@color/gray"
+                    android:textSize="16dp"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_9"
                     app:layout_constraintStart_toEndOf="@+id/table_text_9"
                     app:layout_constraintTop_toTopOf="@+id/table_text_9" />
@@ -2179,6 +2270,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginStart="8dp"
                     android:text="음주량"
+                    android:textSize="16dp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/common_7_2_5_radio"
                     app:layout_constraintStart_toEndOf="@+id/common_7_2_5_radio"
@@ -2190,12 +2282,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
+                    android:backgroundTint="@color/gray"
                     android:ems="10"
                     android:inputType="number"
-                    android:visibility="gone"
-                    android:textSize="13dp"
                     android:textCursorDrawable="@color/gray"
-                    android:backgroundTint="@color/gray"
+                    android:textSize="16dp"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/table_text_10"
                     app:layout_constraintStart_toEndOf="@+id/table_text_10"
                     app:layout_constraintTop_toTopOf="@+id/table_text_10" />
@@ -2204,8 +2296,6 @@
                     android:id="@+id/common_7_2_1_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/checkBox6"
@@ -2216,33 +2306,44 @@
                         android:id="@+id/common_7_2_1_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="잔" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="잔"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_1_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="병" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="병"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_1_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="캔" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="캔"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_1_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="cc" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="cc"
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -2250,8 +2351,6 @@
                     android:id="@+id/common_7_2_2_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/checkBox7"
@@ -2262,33 +2361,44 @@
                         android:id="@+id/common_7_2_2_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="잔" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="잔"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_2_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="병" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="병"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_2_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="캔" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="캔"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_2_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="cc" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="cc"
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -2296,8 +2406,6 @@
                     android:id="@+id/common_7_2_3_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/checkBox8"
@@ -2308,33 +2416,44 @@
                         android:id="@+id/common_7_2_3_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="잔" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="잔"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_3_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="병" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="병"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_3_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="캔" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="캔"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_3_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="cc" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="cc"
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -2342,8 +2461,6 @@
                     android:id="@+id/common_7_2_4_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="19dp"
-                    android:layout_marginStart="19dp"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/checkBox9"
@@ -2354,33 +2471,44 @@
                         android:id="@+id/common_7_2_4_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="잔" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="잔"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_4_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="병" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="병"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_4_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="캔" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="캔"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_4_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="cc" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="cc"
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -2388,8 +2516,6 @@
                     android:id="@+id/common_7_2_5_radio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginStart="32dp"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/checkBox10"
@@ -2400,45 +2526,59 @@
                         android:id="@+id/common_7_2_5_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="잔" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="잔"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_5_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="병" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="병"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_5_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="캔" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="캔"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/common_7_2_5_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="40dp"
                         android:buttonTint="@color/mainBlue"
-                        android:text="cc" />
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="cc"
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
                 <CheckBox
                     android:id="@+id/checkBox6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="8dp"
-                    android:text="소주"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="소주"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="15dp"
                     app:layout_constraintBottom_toTopOf="@+id/checkBox7"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -2446,48 +2586,60 @@
 
                 <CheckBox
                     android:id="@+id/checkBox7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:text="맥주"
+                    android:layout_marginLeft="40dp"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="맥주"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="15dp"
                     app:layout_constraintBottom_toTopOf="@+id/checkBox8"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
 
                 <CheckBox
                     android:id="@+id/checkBox8"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:text="양주"
+                    android:layout_marginLeft="40dp"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="양주"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="15dp"
                     app:layout_constraintBottom_toTopOf="@+id/checkBox9"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/checkBox7" />
 
                 <CheckBox
                     android:id="@+id/checkBox9"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:text="막걸리"
+                    android:layout_marginLeft="40dp"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="막걸리"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="15dp"
                     app:layout_constraintBottom_toTopOf="@+id/checkBox10"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
 
                 <CheckBox
                     android:id="@+id/checkBox10"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:text="와인"
+                    android:layout_marginLeft="40dp"
                     android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="와인"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="15dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/checkBox9" />
@@ -2519,66 +2671,91 @@
                 android:id="@+id/common_8_1_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="@+id/textView29"
                 app:layout_constraintTop_toBottomOf="@+id/textView30">
 
                 <RadioButton
                     android:id="@+id/common_8_1_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="1일" />
 
                 <RadioButton
                     android:id="@+id/common_8_1_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="2일" />
 
                 <RadioButton
                     android:id="@+id/common_8_1_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="3일" />
 
                 <RadioButton
                     android:id="@+id/common_8_1_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="4일" />
 
                 <RadioButton
                     android:id="@+id/common_8_1_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="5일" />
 
                 <RadioButton
                     android:id="@+id/common_8_1_6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="6일" />
 
                 <RadioButton
                     android:id="@+id/common_8_1_7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="7일" />
 
@@ -2604,7 +2781,7 @@
                 android:layout_marginTop="32dp"
                 android:ems="10"
                 android:inputType="number"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 android:textCursorDrawable="@color/gray"
                 android:backgroundTint="@color/gray"
                 app:layout_constraintStart_toStartOf="@+id/textView31"
@@ -2617,7 +2794,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:text="시간"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_time_1"
                 app:layout_constraintStart_toEndOf="@+id/editText_time_1"
                 app:layout_constraintTop_toTopOf="@+id/editText_time_1" />
@@ -2628,7 +2805,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 android:textCursorDrawable="@color/gray"
                 android:backgroundTint="@color/gray"
                 android:ems="10"
@@ -2644,7 +2821,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:text="분"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_minute_1"
                 app:layout_constraintStart_toEndOf="@+id/editText_minute_1"
                 app:layout_constraintTop_toTopOf="@+id/editText_minute_1" />
@@ -2684,66 +2861,91 @@
                 android:id="@+id/common_9_1_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="@+id/textView34"
                 app:layout_constraintTop_toBottomOf="@+id/textView36">
 
                 <RadioButton
                     android:id="@+id/common_9_1_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="1일" />
 
                 <RadioButton
                     android:id="@+id/common_9_1_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="2일" />
 
                 <RadioButton
                     android:id="@+id/common_9_1_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="3일" />
 
                 <RadioButton
                     android:id="@+id/common_9_1_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="4일" />
 
                 <RadioButton
                     android:id="@+id/common_9_1_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="5일" />
 
                 <RadioButton
                     android:id="@+id/common_9_1_6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="6일" />
 
                 <RadioButton
                     android:id="@+id/common_9_1_7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="7일" />
 
@@ -2769,7 +2971,7 @@
                 android:layout_marginTop="32dp"
                 android:ems="10"
                 android:inputType="number"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 android:textCursorDrawable="@color/gray"
                 android:backgroundTint="@color/gray"
                 app:layout_constraintStart_toStartOf="@+id/textView37"
@@ -2782,7 +2984,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:text="시간"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_time_2"
                 app:layout_constraintStart_toEndOf="@+id/editText_time_2"
                 app:layout_constraintTop_toTopOf="@+id/editText_time_2" />
@@ -2793,7 +2995,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 android:textCursorDrawable="@color/gray"
                 android:backgroundTint="@color/gray"
                 android:ems="10"
@@ -2809,7 +3011,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:text="분"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_minute_2"
                 app:layout_constraintStart_toEndOf="@+id/editText_minute_2"
                 app:layout_constraintTop_toTopOf="@+id/editText_minute_2" />
@@ -2841,66 +3043,91 @@
                 android:id="@+id/common_10_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="@+id/textView40"
                 app:layout_constraintTop_toBottomOf="@+id/textView41">
 
                 <RadioButton
                     android:id="@+id/common_10_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="1일" />
 
                 <RadioButton
                     android:id="@+id/common_10_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="2일" />
 
                 <RadioButton
                     android:id="@+id/common_10_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="3일" />
 
                 <RadioButton
                     android:id="@+id/common_10_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="4일" />
 
                 <RadioButton
                     android:id="@+id/common_10_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="5일" />
 
                 <RadioButton
                     android:id="@+id/common_10_6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="6일" />
 
                 <RadioButton
                     android:id="@+id/common_10_7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="40dp"
                     android:buttonTint="@color/mainBlue"
                     android:text="7일" />
 

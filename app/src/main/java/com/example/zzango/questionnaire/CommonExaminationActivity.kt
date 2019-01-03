@@ -132,57 +132,6 @@ class CommonExaminationActivity : AppCompatActivity() {
 
         sql_db = LocalDBhelper(this).writableDatabase
 
-        diagnosis_medication_etc_examination_check.setOnCheckedChangeListener {
-
-            buttonView, isChecked ->
-
-            if(isChecked){
-
-                diagnosis_medication_etc_disease_name.visibility = View.VISIBLE
-                diagnosis_medication_etc_disease_name_input.visibility = View.VISIBLE
-
-            }else{
-
-                if(!diagnosis_medication_etc_medication_check.isChecked){
-
-                    diagnosis_medication_etc_disease_name.visibility = View.GONE
-                    diagnosis_medication_etc_disease_name_input.visibility = View.GONE
-
-                }
-
-            }
-
-        }
-
-        diagnosis_medication_etc_medication_check.setOnCheckedChangeListener {
-
-            buttonView, isChecked ->
-
-            if(isChecked){
-
-                diagnosis_medication_etc_disease_name.visibility = View.VISIBLE
-                diagnosis_medication_etc_disease_name_input.visibility = View.VISIBLE
-
-            }else{
-
-                if(!diagnosis_medication_etc_examination_check.isChecked){
-
-                    diagnosis_medication_etc_disease_name.visibility = View.GONE
-                    diagnosis_medication_etc_disease_name_input.visibility = View.GONE
-
-                }
-
-            }
-
-        }
-
-        diagnosis_medication_etc_disease_name_input.setOnFocusChangeListener {
-
-            v, hasFocus ->
-
-            v.clearFocus()
-
-        }
 
         common_4_false.setOnClickListener {
             textView20.visibility = View.GONE
