@@ -31,8 +31,8 @@ class OralExamination : AppCompatActivity() {
     var popup = false
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
-                         @SerializedName("oral_bun_no") @Expose var oral_bun_no : String,
-                         @SerializedName("oral_email_yn") @Expose var oral_email_yn : String,
+                         @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
+                         @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
                          @SerializedName("name") @Expose var name : String,
                          @SerializedName("first_serial") @Expose var first_serial : String,
                          @SerializedName("last_serial") @Expose var last_serial : String,
