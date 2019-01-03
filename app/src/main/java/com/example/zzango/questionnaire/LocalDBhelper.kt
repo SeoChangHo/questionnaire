@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.zzango.questionnaire.LocalList.CustomAdapter
 import com.example.zzango.questionnaire.LocalList.Paper
 import java.util.*
 
@@ -407,7 +408,28 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     {
         for(i in 0..Paper.size-1)
         {
-            db.delete("LOCALSAVELIST", "name=?", arrayOf(Paper[i].name))
+            db.delete("LOCALSAVELIST", "date=?", arrayOf(Paper[i].date))
+
+
+            when (Paper[i].category)
+            {
+                CustomAdapter.Category.COMMON -> {
+                    println("공통검진입니다.")
+                    db.delete("EXAMINATION", "exam_date=?", arrayOf(Paper[i].date))
+                }
+                CustomAdapter.Category.ORAL -> {
+                    println("구강검진입니다.")
+                    db.delete("COMMON_EXAM", "exam_date=?", arrayOf(Paper[i].date))
+                }
+                else -> {
+                    println("확인불가")
+                }
+            }
+
+
+
+
+
         }
 
         db.close()

@@ -68,6 +68,9 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
         p0?.txtDate?.text = paper.date
 
 
+        println(p1.toString()+"번째 no:"+paper.no)
+
+
 
         //Recyclerview Item Click
         p0?.constraint.setOnClickListener{
