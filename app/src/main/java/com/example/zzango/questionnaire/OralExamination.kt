@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
 import java.util.*
 
 class OralExamination : AppCompatActivity() {
@@ -29,7 +30,7 @@ class OralExamination : AppCompatActivity() {
     var sql_db : SQLiteDatabase? = null
     var popup = false
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : Date,
+    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("oral_bun_no") @Expose var oral_bun_no : String,
                          @SerializedName("oral_email_yn") @Expose var oral_email_yn : String,
                          @SerializedName("name") @Expose var name : String,
@@ -280,7 +281,8 @@ class OralExamination : AppCompatActivity() {
     @SuppressLint("NewApi")
     fun check() : Boolean{
 
-        var exam_date = Date()
+        var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
+        var no = System.currentTimeMillis().toString()
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -679,7 +681,7 @@ class OralExamination : AppCompatActivity() {
         var arr = ArrayList<ExamInfo>()
 
         arr.add(ExamInfo(
-                exam_date, "", "", name, first_serial_text, last_serial_text, category, oral_1, oral_2,
+                exam_date, no, "", name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
                 oral_11, oral_12, oral_13, oral_14, oral_15, "", "", "", "", oral_20
         ))

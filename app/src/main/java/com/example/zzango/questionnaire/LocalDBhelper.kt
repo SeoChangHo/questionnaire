@@ -25,6 +25,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "ORAL_EXAM" +
                 "(exam_date TEXT," +
+                " no TEXT," +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -55,6 +56,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "COMMON_EXAM" +
                 "(exam_date TEXT," +
+                " no TEXT," +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -155,6 +157,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "MENTAL_EXAM" +
                 "(exam_date TEXT," +
+                " no TEXT,"  +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -177,6 +180,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "COGNITIVE_EXAM" +
                 "(exam_date TEXT," +
+                " no TEXT,"  +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -205,6 +209,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "ELDERLY_EXAM" +
                 "(exam_date TEXT," +
+                " no TEXT,"  +
                 " name TEXT," +
                 " first_serial TEXT," +
                 " last_serial TEXT," +
@@ -238,6 +243,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db.execSQL("INSERT INTO ORAL_EXAM" +
                 "(exam_date," +
+                "no," +
                 "name," +
                 "first_serial," +
                 "last_serial," +
@@ -246,7 +252,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
                 "oral_15, remark)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', ,'${columnValue.oral_bun_no} '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
                 ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
                 " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
@@ -265,7 +271,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO COMMON_EXAM" +
-                "(exam_date, name, first_serial, last_serial, category, " +
+                "(exam_date, no, name, first_serial, last_serial, category, " +
                 " mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2," +
                 " mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1," +
                 " mj2_2, mj2_3, mj2_4, mj2_5, mj3, mj4, mj4_1_1, mj4_1_2, mj4_2_1," +
@@ -317,6 +323,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db.execSQL("INSERT INTO MENTAL_EXAM" +
                 "(exam_date," +
+                "no,"  +
                 "name," +
                 "first_serial," +
                 "last_serial," +
@@ -343,6 +350,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db.execSQL("INSERT INTO COGNITIVE_EXAM" +
                 "(exam_date," +
+                "no,"  +
                 "name," +
                 "first_serial," +
                 "last_serial," +
@@ -370,6 +378,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db.execSQL("INSERT INTO ELDERLY_EXAM" +
                 "(exam_date," +
+                "no,"  +
                 "name," +
                 "first_serial," +
                 "last_serial," +
