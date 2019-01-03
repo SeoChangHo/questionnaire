@@ -284,7 +284,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1," +
                 " mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}, '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.mj1_1_1}', '${columnValue.mj1_1_2}', '${columnValue.mj1_2_1}'" +
                 ", '${columnValue.mj1_2_2}', '${columnValue.mj1_3_1}', '${columnValue.mj1_3_2}', '${columnValue.mj1_4_1}'" +
                 ", '${columnValue.mj1_4_2}', '${columnValue.mj1_5_1}', '${columnValue.mj1_5_2}', '${columnValue.mj1_6_1}'" +
@@ -331,7 +331,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7," +
                 "mj_mtl_8, mj_mtl_9, mj_mtl_sum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}, '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.mj_mtl_1}', '${columnValue.mj_mtl_2}', '${columnValue.mj_mtl_3}', '${columnValue.mj_mtl_4}'" +
                 ", '${columnValue.mj_mtl_5}', '${columnValue.mj_mtl_6}', '${columnValue.mj_mtl_7}', '${columnValue.mj_mtl_8}'" +
                 ", '${columnValue.mj_mtl_9}', '${columnValue.mj_mtl_sum}');")
@@ -358,7 +358,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7," +
                 "mj_inji_8, mj_inji_9, mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}, '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.mj_inji_1}', '${columnValue.mj_inji_2}', '${columnValue.mj_inji_3}', '${columnValue.mj_inji_4}'" +
                 ", '${columnValue.mj_inji_5}', '${columnValue.mj_inji_6}', '${columnValue.mj_inji_7}', '${columnValue.mj_inji_8}'" +
                 ", '${columnValue.mj_inji_9}', '${columnValue.mj_inji_10}', '${columnValue.mj_inji_11}', '${columnValue.mj_inji_12}'" +
@@ -386,7 +386,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5," +
                 "mj66_3_6, mj66_4, mj66_5)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}, '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.mj66_1}', '${columnValue.mj66_2}', '${columnValue.mj66_3_1}', '${columnValue.mj66_3_2}'" +
                 ", '${columnValue.mj66_3_3}', '${columnValue.mj66_3_4}', '${columnValue.mj66_3_5}', '${columnValue.mj66_3_6}'" +
                 ", '${columnValue.mj66_4}', '${columnValue.mj66_5}');")
