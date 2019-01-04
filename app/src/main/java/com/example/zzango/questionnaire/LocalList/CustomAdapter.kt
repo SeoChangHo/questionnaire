@@ -144,41 +144,113 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                 Category.COMMON ->
                 {
 
-                    var PaperArray = ArrayList<Paper_COGNITIVE>()
+                    var PaperArray = ArrayList<Paper_COMMON>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_COGNITIVE(sql_db!!, paper.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_COMMON(sql_db!!, paper.exam_no)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
-                        PaperArray.add(Paper_COGNITIVE(
+                        PaperArray.add(Paper_COMMON(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
                                 data.getString(data.getColumnIndex("category")),
-                                data.getString(data.getColumnIndex("mj_inji_1")),
-                                data.getString(data.getColumnIndex("mj_inji_2")),
-                                data.getString(data.getColumnIndex("mj_inji_3")),
-                                data.getString(data.getColumnIndex("mj_inji_4")),
-                                data.getString(data.getColumnIndex("mj_inji_5")),
-                                data.getString(data.getColumnIndex("mj_inji_6")),
-                                data.getString(data.getColumnIndex("mj_inji_7")),
-                                data.getString(data.getColumnIndex("mj_inji_8")),
-                                data.getString(data.getColumnIndex("mj_inji_9")),
-                                data.getString(data.getColumnIndex("mj_inji_10")),
-                                data.getString(data.getColumnIndex("mj_inji_11")),
-                                data.getString(data.getColumnIndex("mj_inji_12")),
-                                data.getString(data.getColumnIndex("mj_inji_13")),
-                                data.getString(data.getColumnIndex("mj_inji_14")),
-                                data.getString(data.getColumnIndex("mj_inji_15")),
-                                data.getString(data.getColumnIndex("mj_mtl_sum"))
+                                data.getString(data.getColumnIndex("mj1_1_1")),
+                                data.getString(data.getColumnIndex("mj1_1_2")),
+                                data.getString(data.getColumnIndex("mj1_2_1")),
+                                data.getString(data.getColumnIndex("mj1_2_2")),
+                                data.getString(data.getColumnIndex("mj1_3_1")),
+                                data.getString(data.getColumnIndex("mj1_3_2")),
+                                data.getString(data.getColumnIndex("mj1_4_1")),
+                                data.getString(data.getColumnIndex("mj1_4_2")),
+                                data.getString(data.getColumnIndex("mj1_5_1")),
+                                data.getString(data.getColumnIndex("mj1_5_2")),
+                                data.getString(data.getColumnIndex("mj1_6_1")),
+                                data.getString(data.getColumnIndex("mj1_6_2")),
+                                data.getString(data.getColumnIndex("mj1_7_1")),
+                                data.getString(data.getColumnIndex("mj1_7_2")),
+                                data.getString(data.getColumnIndex("mj1_7_etc")),
+                                data.getString(data.getColumnIndex("mj2_1")),
+                                data.getString(data.getColumnIndex("mj2_2")),
+                                data.getString(data.getColumnIndex("mj2_3")),
+                                data.getString(data.getColumnIndex("mj2_4")),
+                                data.getString(data.getColumnIndex("mj2_5")),
+                                data.getString(data.getColumnIndex("mj3")),
+                                data.getString(data.getColumnIndex("mj4")),
+                                data.getString(data.getColumnIndex("mj4_1_1")),
+                                data.getString(data.getColumnIndex("mj4_1_2")),
+                                data.getString(data.getColumnIndex("mj4_2_1")),
+                                data.getString(data.getColumnIndex("mj4_2_2")),
+                                data.getString(data.getColumnIndex("mj4_2_3")),
+                                data.getString(data.getColumnIndex("mj5")),
+                                data.getString(data.getColumnIndex("mj5_1_1")),
+                                data.getString(data.getColumnIndex("mj5_1_2")),
+                                data.getString(data.getColumnIndex("mj5_2_1")),
+                                data.getString(data.getColumnIndex("mj5_2_2")),
+                                data.getString(data.getColumnIndex("mj5_2_3")),
+                                data.getString(data.getColumnIndex("mj6")),
+                                data.getString(data.getColumnIndex("mj6_1")),
+                                data.getString(data.getColumnIndex("mj71")),
+                                data.getString(data.getColumnIndex("mj72")),
+                                data.getString(data.getColumnIndex("mj73")),
+                                data.getString(data.getColumnIndex("mj74")),
+                                data.getString(data.getColumnIndex("mj7_1_11")),
+                                data.getString(data.getColumnIndex("mj7_1_12")),
+                                data.getString(data.getColumnIndex("mj7_1_13")),
+                                data.getString(data.getColumnIndex("mj7_1_14")),
+                                data.getString(data.getColumnIndex("mj7_1_21")),
+                                data.getString(data.getColumnIndex("mj7_1_22")),
+                                data.getString(data.getColumnIndex("mj7_1_23")),
+                                data.getString(data.getColumnIndex("mj7_1_24")),
+                                data.getString(data.getColumnIndex("mj7_1_31")),
+                                data.getString(data.getColumnIndex("mj7_1_32")),
+                                data.getString(data.getColumnIndex("mj7_1_33")),
+                                data.getString(data.getColumnIndex("mj7_1_34")),
+                                data.getString(data.getColumnIndex("mj7_1_41")),
+                                data.getString(data.getColumnIndex("mj7_1_42")),
+                                data.getString(data.getColumnIndex("mj7_1_43")),
+                                data.getString(data.getColumnIndex("mj7_1_44")),
+                                data.getString(data.getColumnIndex("mj7_1_51")),
+                                data.getString(data.getColumnIndex("mj7_1_52")),
+                                data.getString(data.getColumnIndex("mj7_1_53")),
+                                data.getString(data.getColumnIndex("mj7_1_54")),
+                                data.getString(data.getColumnIndex("mj7_1_etc")),
+                                data.getString(data.getColumnIndex("mj7_2_11")),
+                                data.getString(data.getColumnIndex("mj7_2_12")),
+                                data.getString(data.getColumnIndex("mj7_2_13")),
+                                data.getString(data.getColumnIndex("mj7_2_14")),
+                                data.getString(data.getColumnIndex("mj7_2_21")),
+                                data.getString(data.getColumnIndex("mj7_2_22")),
+                                data.getString(data.getColumnIndex("mj7_2_23")),
+                                data.getString(data.getColumnIndex("mj7_2_24")),
+                                data.getString(data.getColumnIndex("mj7_2_31")),
+                                data.getString(data.getColumnIndex("mj7_2_32")),
+                                data.getString(data.getColumnIndex("mj7_2_33")),
+                                data.getString(data.getColumnIndex("mj7_2_34")),
+                                data.getString(data.getColumnIndex("mj7_2_41")),
+                                data.getString(data.getColumnIndex("mj7_2_42")),
+                                data.getString(data.getColumnIndex("mj7_2_43")),
+                                data.getString(data.getColumnIndex("mj7_2_44")),
+                                data.getString(data.getColumnIndex("mj7_2_51")),
+                                data.getString(data.getColumnIndex("mj7_2_52")),
+                                data.getString(data.getColumnIndex("mj7_2_53")),
+                                data.getString(data.getColumnIndex("mj7_2_54")),
+                                data.getString(data.getColumnIndex("mj7_2_etc")),
+                                data.getString(data.getColumnIndex("mj8_1")),
+                                data.getString(data.getColumnIndex("mj8_2_1")),
+                                data.getString(data.getColumnIndex("mj8_2_2")),
+                                data.getString(data.getColumnIndex("mj9_1")),
+                                data.getString(data.getColumnIndex("mj9_2_1")),
+                                data.getString(data.getColumnIndex("mj9_2_2")),
+                                data.getString(data.getColumnIndex("mj10"))
                         ))
                         data.moveToNext()
                     }
 
 
-                    startActivity(Activity, Intent(Activity, CommonExaminationActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    startActivity(Activity, Intent(Activity, CommonExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 Category.COGNITIVE ->
                 {
