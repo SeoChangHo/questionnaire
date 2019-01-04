@@ -83,6 +83,40 @@ class ListActivity : Activity() {
                 }
             }
 
+            for(i in 0..removeArr.size-1)
+            {
+
+                when(removeArr[i].category)
+                {
+                    CustomAdapter.Category.ORAL ->
+                    {
+                        println(removeArr[i].category)
+                    }
+                    CustomAdapter.Category.MENTAL ->
+                    {
+                        println(removeArr[i].category)
+                    }
+                    CustomAdapter.Category.COGNITIVE ->
+                    {
+                        println(removeArr[i].category)
+                    }
+                    CustomAdapter.Category.ELDERLY ->
+                    {
+                        println(removeArr[i].category)
+                    }
+                    CustomAdapter.Category.COMMON ->
+                    {
+                        println(removeArr[i].category)
+                    }
+                    else ->
+                    {
+                        println("확인불가")
+                    }
+                }
+            }
+
+
+
             OracleUtill().oral_examination().oracleServer1(removeArr!!).enqueue(object : Callback<String> {
 
                 override fun onResponse(call: Call<String>, response: Response<String>) {
@@ -95,12 +129,9 @@ class ListActivity : Activity() {
                             Toast.makeText(this@ListActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
                         } else {
-
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-
                             login_appbar_loading_progress_bg.visibility = View.GONE
                             login_appbar_loading_progress.visibility = View.GONE
-
                             Toast.makeText(this@ListActivity, "전송 완료", Toast.LENGTH_LONG).show()
 
                             LocalDBhelper(this@ListActivity).deletePaper(sql_db!!, removeArr)
@@ -110,9 +141,7 @@ class ListActivity : Activity() {
                             txtBottomMent.text = "문진표를 선택해주세요."
                             constraintLayout_bottom.visibility = View.GONE
                         }
-
                     }
-
                 }
 
                 override fun onFailure(call: Call<String>, t: Throwable) {
