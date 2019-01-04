@@ -107,13 +107,13 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                 {
                     var PaperArray = ArrayList<Paper_ORAL>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_ORAL(sql_db!!, paper.name)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_ORAL(sql_db!!, paper.exam_no)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
                         PaperArray.add(Paper_ORAL(
                                 data.getString(data.getColumnIndex("exam_date")),
-                                data.getString(data.getColumnIndex("no")),
+                                data.getString(data.getColumnIndex("exam_no")),
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),

@@ -44,7 +44,7 @@ class ListActivity : Activity() {
 
         while(!data.isAfterLast){
             papers.add(Paper(bool,
-                    data.getString(data.getColumnIndex("no")),
+                    data.getString(data.getColumnIndex("exam_no")),
                     data.getString(data.getColumnIndex("category")),
                     data.getString(data.getColumnIndex("name"))))
 
