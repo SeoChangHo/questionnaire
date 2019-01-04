@@ -108,6 +108,7 @@ class ListActivity : Activity() {
                             btnSave.visibility = View.GONE
                             btnDelete.visibility = View.GONE
                             txtBottomMent.text = "문진표를 선택해주세요."
+                            constraintLayout_bottom.visibility = View.GONE
                         }
 
                     }
