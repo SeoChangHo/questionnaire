@@ -171,7 +171,6 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                                 data.getString(data.getColumnIndex("mj1_6_2")),
                                 data.getString(data.getColumnIndex("mj1_7_1")),
                                 data.getString(data.getColumnIndex("mj1_7_2")),
-                                data.getString(data.getColumnIndex("mj1_7_etc")),
                                 data.getString(data.getColumnIndex("mj2_1")),
                                 data.getString(data.getColumnIndex("mj2_2")),
                                 data.getString(data.getColumnIndex("mj2_3")),

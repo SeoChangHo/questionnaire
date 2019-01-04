@@ -74,7 +74,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " mj1_6_2 TEXT," +
                 " mj1_7_1 TEXT," +
                 " mj1_7_2 TEXT," +
-                " mj1_7_etc TEXT," +
                 " mj2_1 TEXT," +
                 " mj2_2 TEXT," +
                 " mj2_3 TEXT," +
