@@ -208,7 +208,7 @@ class CognitiveExaminationActivity : AppCompatActivity(){
 
         dialog_view.return_alert.setOnClickListener {
 
-            startActivity(Intent(this@CognitiveExaminationActivity, MainActivity::class.java).putExtra("from", "oral").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@CognitiveExaminationActivity, MainActivity::class.java).putExtra("from", "cognitive").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
 

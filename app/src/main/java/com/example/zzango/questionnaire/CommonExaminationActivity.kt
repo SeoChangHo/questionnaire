@@ -3,6 +3,7 @@ package com.example.zzango.questionnaire
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -521,7 +522,7 @@ class CommonExaminationActivity : AppCompatActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
-            //            startActivity(Intent(this@OralExaminationActivity, /*메인화면 클래스*/).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@CommonExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
 

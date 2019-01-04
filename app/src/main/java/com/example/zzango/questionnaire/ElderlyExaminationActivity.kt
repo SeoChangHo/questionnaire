@@ -203,7 +203,7 @@ class ElderlyExaminationActivity : AppCompatActivity(){
 
         dialog_view.return_alert.setOnClickListener {
 
-            startActivity(Intent(this@ElderlyExaminationActivity, MainActivity::class.java).putExtra("from", "oral").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@ElderlyExaminationActivity, MainActivity::class.java).putExtra("from", "elderly").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
 
