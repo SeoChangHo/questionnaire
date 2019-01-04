@@ -520,7 +520,7 @@ class CommonExaminationActivity : AppCompatActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
-            //            startActivity(Intent(this@OralExamination, /*메인화면 클래스*/).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            //            startActivity(Intent(this@OralExaminationActivity, /*메인화면 클래스*/).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
 
@@ -532,7 +532,7 @@ class CommonExaminationActivity : AppCompatActivity() {
     fun check() : Boolean {
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var no = System.currentTimeMillis().toString()
+        var exam_no = System.currentTimeMillis().toString()
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -1120,7 +1120,7 @@ class CommonExaminationActivity : AppCompatActivity() {
         var arr = ArrayList<CommonExaminationActivity.ExamInfo>()
 
         arr.add(CommonExaminationActivity.ExamInfo(
-                exam_date, no, "", name, first_serial_text, last_serial_text, category,
+                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
                 mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
                 mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1,
                 mj2_2, mj2_3, mj2_4, mj2_5, mj3, mj4, mj4_1_1, mj4_1_2, mj4_2_1,

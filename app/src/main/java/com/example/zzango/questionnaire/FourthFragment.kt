@@ -20,7 +20,7 @@ class FourthFragment : Fragment(){
             activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
             activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-            startActivity(Intent(activity!!, OralExamination::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(activity!!, OralExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 

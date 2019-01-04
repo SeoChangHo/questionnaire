@@ -214,7 +214,7 @@ class ElderlyExaminationActivity : AppCompatActivity(){
     fun check() : Boolean{
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var no = System.currentTimeMillis().toString()
+        var exam_no = System.currentTimeMillis().toString()
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -347,7 +347,7 @@ class ElderlyExaminationActivity : AppCompatActivity(){
         var arr = ArrayList<ElderlyExaminationActivity.ExamInfo>()
 
         arr.add(ElderlyExaminationActivity.ExamInfo(
-                exam_date, no, "", name, first_serial_text, last_serial_text, category,
+                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
                 mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5, mj66_3_6, mj66_4, mj66_5
         ))
 

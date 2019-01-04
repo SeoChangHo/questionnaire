@@ -789,7 +789,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="1dp"
                 android:background="#000000"
                 app:layout_constraintEnd_toEndOf="@+id/exercise_question1_1"
                 app:layout_constraintStart_toStartOf="@+id/exercise_question1_1"
@@ -828,7 +828,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="1dp"
                 android:background="#000000"
                 app:layout_constraintEnd_toEndOf="@+id/textView87"
                 app:layout_constraintStart_toStartOf="@+id/textView87"
@@ -895,228 +895,230 @@
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView91"
-                android:layout_width="wrap_content"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="1-2. "
-                android:textSize="20dp"
-                app:layout_constraintEnd_toStartOf="@+id/exercise_question1_1"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="@+id/exercise_radio1"
-                app:layout_constraintTop_toBottomOf="@+id/exercise_radio1" />
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView90"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_radio1">
 
-            <TextView
-                android:id="@+id/textView92"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="평소 "
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView91"
-                app:layout_constraintTop_toTopOf="@+id/textView91" />
+                <TextView
+                    android:id="@+id/textView91"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1-2. "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView93"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일주일"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView92"
-                app:layout_constraintTop_toTopOf="@+id/textView92" />
+                <TextView
+                    android:id="@+id/textView92"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="평소 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView91"
+                    app:layout_constraintTop_toTopOf="@+id/textView91" />
 
-            <TextView
-                android:id="@+id/textView94"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="동안, "
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView93"
-                app:layout_constraintTop_toTopOf="@+id/textView93" />
+                <TextView
+                    android:id="@+id/textView93"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일주일"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView92"
+                    app:layout_constraintTop_toTopOf="@+id/textView92" />
 
-            <TextView
-                android:id="@+id/textView95"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일과 관련된 고강도 신체"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView94"
-                app:layout_constraintTop_toTopOf="@+id/textView94" />
+                <TextView
+                    android:id="@+id/textView94"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="동안, "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView93"
+                    app:layout_constraintTop_toTopOf="@+id/textView93" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/textView95"
-                app:layout_constraintStart_toStartOf="@+id/textView95"
-                app:layout_constraintTop_toBottomOf="@+id/textView95" />
+                <TextView
+                    android:id="@+id/textView95"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일과 관련된 고강도 신체"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView94"
+                    app:layout_constraintTop_toTopOf="@+id/textView94" />
 
-            <TextView
-                android:id="@+id/textView96"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="활동"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/textView91"
-                app:layout_constraintTop_toBottomOf="@+id/textView91" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView95"
+                    app:layout_constraintStart_toStartOf="@+id/textView95"
+                    app:layout_constraintTop_toBottomOf="@+id/textView95" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/textView96"
-                app:layout_constraintStart_toStartOf="@+id/textView96"
-                app:layout_constraintTop_toBottomOf="@+id/textView96" />
+                <TextView
+                    android:id="@+id/textView96"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="활동"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView91"
+                    app:layout_constraintTop_toBottomOf="@+id/textView91" />
 
-            <TextView
-                android:id="@+id/textView97"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="을 며칠 하십니까?"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView96"
-                app:layout_constraintTop_toBottomOf="@+id/textView91" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView96"
+                    app:layout_constraintStart_toStartOf="@+id/textView96"
+                    app:layout_constraintTop_toBottomOf="@+id/textView96" />
 
-            <Spinner
-                android:id="@+id/pick_time"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/edit_text_shape"
-                android:spinnerMode="dialog"
-                app:layout_constraintStart_toStartOf="@+id/textView91"
-                app:layout_constraintTop_toBottomOf="@+id/textView97" />
+                <TextView
+                    android:id="@+id/textView97"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="을 며칠 하십니까?"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView96"
+                    app:layout_constraintTop_toBottomOf="@+id/textView91" />
 
-            <TextView
-                android:id="@+id/textView98"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="1-3. "
-                android:textSize="20dp"
-                app:layout_constraintTop_toBottomOf="@+id/pick_time"
-                app:layout_constraintStart_toStartOf="@+id/pick_time" />
+                <Spinner
+                    android:id="@+id/pick_time"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:spinnerMode="dialog"
+                    app:layout_constraintStart_toStartOf="@+id/textView91"
+                    app:layout_constraintTop_toBottomOf="@+id/textView97" />
 
-            <TextView
-                android:id="@+id/textView99"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="-1dp"
-                android:layout_marginLeft="-1dp"
-                android:text="평소 "
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView98"
-                app:layout_constraintTop_toTopOf="@+id/textView98" />
+                <TextView
+                    android:id="@+id/textView98"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="1-3. "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/pick_time"
+                    app:layout_constraintTop_toBottomOf="@+id/pick_time" />
 
-            <TextView
-                android:id="@+id/textView100"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="하루에"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView99"
-                app:layout_constraintTop_toTopOf="@+id/textView99" />
+                <TextView
+                    android:id="@+id/textView99"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginLeft="-1dp"
+                    android:text="평소 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView98"
+                    app:layout_constraintTop_toTopOf="@+id/textView98" />
 
-            <TextView
-                android:id="@+id/textView101"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일과 관련된 고강도 신체 활동"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView100"
-                app:layout_constraintTop_toTopOf="@+id/textView100" />
+                <TextView
+                    android:id="@+id/textView100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하루에"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView99"
+                    app:layout_constraintTop_toTopOf="@+id/textView99" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/textView101"
-                app:layout_constraintStart_toStartOf="@+id/textView101"
-                app:layout_constraintTop_toBottomOf="@+id/textView101" />
+                <TextView
+                    android:id="@+id/textView101"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일과 관련된 고강도 신체 활동"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView100"
+                    app:layout_constraintTop_toTopOf="@+id/textView100" />
 
-            <TextView
-                android:id="@+id/textView102"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="을"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView101"
-                app:layout_constraintTop_toTopOf="@+id/textView101" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView101"
+                    app:layout_constraintStart_toStartOf="@+id/textView101"
+                    app:layout_constraintTop_toBottomOf="@+id/textView101" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/exercise_question1_1"
-                app:layout_constraintStart_toStartOf="@+id/exercise_question1_1"
-                app:layout_constraintTop_toBottomOf="@+id/exercise_question1_1" />
+                <TextView
+                    android:id="@+id/textView102"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="을"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView101"
+                    app:layout_constraintTop_toTopOf="@+id/textView101" />
 
-            <TextView
-                android:id="@+id/textView103"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="몇 시간 하십니까?"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView98"
-                app:layout_constraintTop_toBottomOf="@+id/textView98" />
+                <TextView
+                    android:id="@+id/textView103"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="몇 시간 하십니까?"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView98"
+                    app:layout_constraintTop_toBottomOf="@+id/textView98" />
 
-            <EditText
-                android:id="@+id/exercise_1_3_hour"
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/text_area"
-                android:backgroundTint="@color/gray"
-                android:hint="6"
-                android:inputType="number"
-                android:maxLength="2"
-                android:textAlignment="center"
-                android:textCursorDrawable="@color/gray"
-                android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="@+id/textView103"
-                app:layout_constraintTop_toBottomOf="@+id/textView103" />
+                <EditText
+                    android:id="@+id/exercise_1_3_hour"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/text_area"
+                    android:backgroundTint="@color/gray"
+                    android:hint="6"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView103"
+                    app:layout_constraintTop_toBottomOf="@+id/textView103" />
 
-            <TextView
-                android:id="@+id/textView104"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="시간"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/exercise_1_3_hour"
-                app:layout_constraintStart_toEndOf="@+id/exercise_1_3_hour"
-                app:layout_constraintTop_toTopOf="@+id/exercise_1_3_hour" />
+                <TextView
+                    android:id="@+id/textView104"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="시간"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exercise_1_3_hour"
+                    app:layout_constraintStart_toEndOf="@+id/exercise_1_3_hour"
+                    app:layout_constraintTop_toTopOf="@+id/exercise_1_3_hour" />
 
-            <EditText
-                android:id="@+id/exercise_1_3_minute"
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/text_area"
-                android:inputType="number"
-                android:maxLength="2"
-                android:textSize="16dp"
-                android:textCursorDrawable="@color/gray"
-                android:backgroundTint="@color/gray"
-                android:hint="40"
-                android:textAlignment="center"
-                app:layout_constraintTop_toBottomOf="@+id/exercise_1_3_hour"
-                app:layout_constraintStart_toStartOf="@+id/exercise_1_3_hour"/>
+                <EditText
+                    android:id="@+id/exercise_1_3_minute"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/text_area"
+                    android:backgroundTint="@color/gray"
+                    android:hint="40"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/exercise_1_3_hour"
+                    app:layout_constraintTop_toBottomOf="@+id/exercise_1_3_hour" />
 
-            <TextView
-                android:id="@+id/textView105"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="분"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/exercise_1_3_minute"
-                app:layout_constraintStart_toEndOf="@+id/exercise_1_3_minute"
-                app:layout_constraintTop_toTopOf="@+id/exercise_1_3_minute" />
+                <TextView
+                    android:id="@+id/textView105"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="분"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exercise_1_3_minute"
+                    app:layout_constraintStart_toEndOf="@+id/exercise_1_3_minute"
+                    app:layout_constraintTop_toTopOf="@+id/exercise_1_3_minute" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView106"
@@ -1125,8 +1127,8 @@
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="1-4. "
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/exercise_1_3_minute"
-                app:layout_constraintTop_toBottomOf="@+id/exercise_1_3_minute" />
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"/>
 
             <TextView
                 android:id="@+id/textView107"
@@ -1140,7 +1142,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="1dp"
                 android:background="#000000"
                 app:layout_constraintEnd_toEndOf="@+id/textView107"
                 app:layout_constraintStart_toStartOf="@+id/textView107"
@@ -1176,7 +1178,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="1dp"
                 android:background="#000000"
                 app:layout_constraintEnd_toEndOf="@+id/textView110"
                 app:layout_constraintStart_toStartOf="@+id/textView110"
@@ -1245,217 +1247,228 @@
 
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/textView114"
-                android:layout_width="wrap_content"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="1-5. "
-                android:textSize="20dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/exercise_radio2"
-                app:layout_constraintTop_toBottomOf="@+id/exercise_radio2" />
+                app:layout_constraintTop_toBottomOf="@+id/exercise_radio2">
 
-            <TextView
-                android:id="@+id/textView115"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="평소 "
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView114"
-                app:layout_constraintTop_toTopOf="@+id/textView114" />
+                <TextView
+                    android:id="@+id/textView114"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="1-5. "
+                    android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/textView116"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일주일"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView115"
-                app:layout_constraintTop_toTopOf="@+id/textView115" />
+                <TextView
+                    android:id="@+id/textView115"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="평소 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView114"
+                    app:layout_constraintTop_toTopOf="@+id/textView114" />
 
-            <TextView
-                android:id="@+id/textView117"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="동안, "
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView116"
-                app:layout_constraintTop_toTopOf="@+id/textView116" />
+                <TextView
+                    android:id="@+id/textView116"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일주일"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView115"
+                    app:layout_constraintTop_toTopOf="@+id/textView115" />
 
-            <TextView
-                android:id="@+id/textView118"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일과 관련된 고강도 신체"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView117"
-                app:layout_constraintTop_toTopOf="@+id/textView117" />
+                <TextView
+                    android:id="@+id/textView117"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="동안, "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView116"
+                    app:layout_constraintTop_toTopOf="@+id/textView116" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/textView118"
-                app:layout_constraintStart_toStartOf="@+id/textView118"
-                app:layout_constraintTop_toBottomOf="@+id/textView118" />
+                <TextView
+                    android:id="@+id/textView118"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일과 관련된 고강도 신체"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView117"
+                    app:layout_constraintTop_toTopOf="@+id/textView117" />
 
-            <TextView
-                android:id="@+id/textView119"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="활동"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/textView114"
-                app:layout_constraintTop_toBottomOf="@+id/textView114" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView118"
+                    app:layout_constraintStart_toStartOf="@+id/textView118"
+                    app:layout_constraintTop_toBottomOf="@+id/textView118" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/textView119"
-                app:layout_constraintStart_toStartOf="@+id/textView119"
-                app:layout_constraintTop_toBottomOf="@+id/textView119" />
+                <TextView
+                    android:id="@+id/textView119"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="활동"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView114"
+                    app:layout_constraintTop_toBottomOf="@+id/textView114" />
 
-            <TextView
-                android:id="@+id/textView120"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="을 며칠 하십니까?"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView119"
-                app:layout_constraintTop_toTopOf="@+id/textView119" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView119"
+                    app:layout_constraintStart_toStartOf="@+id/textView119"
+                    app:layout_constraintTop_toBottomOf="@+id/textView119" />
 
-            <Spinner
-                android:id="@+id/pick_time2"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/edit_text_shape"
-                android:spinnerMode="dialog"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@+id/textView114"
-                app:layout_constraintTop_toBottomOf="@+id/textView120" />
+                <TextView
+                    android:id="@+id/textView120"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="을 며칠 하십니까?"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView119"
+                    app:layout_constraintTop_toTopOf="@+id/textView119" />
 
-            <TextView
-                android:id="@+id/textView121"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="1-6. "
-                android:textSize="20dp"
-                app:layout_constraintTop_toBottomOf="@+id/pick_time2"
-                app:layout_constraintStart_toStartOf="@+id/pick_time2" />
+                <Spinner
+                    android:id="@+id/pick_time2"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:spinnerMode="dialog"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="@+id/textView114"
+                    app:layout_constraintTop_toBottomOf="@+id/textView120" />
 
-            <TextView
-                android:id="@+id/textView122"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="평소 "
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView121"
-                app:layout_constraintTop_toTopOf="@+id/textView121" />
+                <TextView
+                    android:id="@+id/textView121"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="1-6. "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/pick_time2"
+                    app:layout_constraintTop_toBottomOf="@+id/pick_time2" />
 
-            <TextView
-                android:id="@+id/textView123"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="하루에"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView122"
-                app:layout_constraintTop_toTopOf="@+id/textView122" />
+                <TextView
+                    android:id="@+id/textView122"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="평소 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView121"
+                    app:layout_constraintTop_toTopOf="@+id/textView121" />
 
-            <TextView
-                android:id="@+id/textView124"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일과 관련된 중강도 신체 활동"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView123"
-                app:layout_constraintTop_toTopOf="@+id/textView123" />
+                <TextView
+                    android:id="@+id/textView123"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하루에"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView122"
+                    app:layout_constraintTop_toTopOf="@+id/textView122" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/textView124"
-                app:layout_constraintStart_toStartOf="@+id/textView124"
-                app:layout_constraintTop_toBottomOf="@+id/textView124" />
+                <TextView
+                    android:id="@+id/textView124"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일과 관련된 중강도 신체 활동"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView123"
+                    app:layout_constraintTop_toTopOf="@+id/textView123" />
 
-            <TextView
-                android:id="@+id/textView125"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="을"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView124"
-                app:layout_constraintTop_toTopOf="@+id/textView124" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView124"
+                    app:layout_constraintStart_toStartOf="@+id/textView124"
+                    app:layout_constraintTop_toBottomOf="@+id/textView124" />
 
-            <TextView
-                android:id="@+id/textView126"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="몇 시간 하십니까?"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView121"
-                app:layout_constraintTop_toBottomOf="@+id/textView121" />
+                <TextView
+                    android:id="@+id/textView125"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="을"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView124"
+                    app:layout_constraintTop_toTopOf="@+id/textView124" />
 
-            <EditText
-                android:id="@+id/exercise_1_6_hour"
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/text_area"
-                android:backgroundTint="@color/gray"
-                android:hint="6"
-                android:inputType="number"
-                android:maxLength="2"
-                android:textAlignment="center"
-                android:textCursorDrawable="@color/gray"
-                android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="@+id/textView126"
-                app:layout_constraintTop_toBottomOf="@+id/textView126"/>
+                <TextView
+                    android:id="@+id/textView126"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="몇 시간 하십니까?"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView121"
+                    app:layout_constraintTop_toBottomOf="@+id/textView121" />
 
-            <TextView
-                android:id="@+id/textView127"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="시간"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/exercise_1_6_hour"
-                app:layout_constraintStart_toEndOf="@+id/exercise_1_6_hour"
-                app:layout_constraintTop_toTopOf="@+id/exercise_1_6_hour" />
+                <EditText
+                    android:id="@+id/exercise_1_6_hour"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/text_area"
+                    android:backgroundTint="@color/gray"
+                    android:hint="6"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView126"
+                    app:layout_constraintTop_toBottomOf="@+id/textView126" />
 
-            <EditText
-                android:id="@+id/exercise_1_6_minute"
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/text_area"
-                android:inputType="number"
-                android:maxLength="2"
-                android:textSize="16dp"
-                android:textCursorDrawable="@color/gray"
-                android:backgroundTint="@color/gray"
-                android:hint="40"
-                android:textAlignment="center"
-                app:layout_constraintTop_toBottomOf="@+id/exercise_1_6_hour"
-                app:layout_constraintStart_toStartOf="@+id/exercise_1_6_hour"/>
+                <TextView
+                    android:id="@+id/textView127"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="시간"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exercise_1_6_hour"
+                    app:layout_constraintStart_toEndOf="@+id/exercise_1_6_hour"
+                    app:layout_constraintTop_toTopOf="@+id/exercise_1_6_hour" />
 
-            <TextView
-                android:id="@+id/textView128"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="분"
-                android:textSize="16dp"
-                app:layout_constraintTop_toTopOf="@+id/exercise_1_6_minute"
-                app:layout_constraintBottom_toBottomOf="@+id/exercise_1_6_minute"
-                app:layout_constraintStart_toEndOf="@+id/exercise_1_6_minute"/>
+                <EditText
+                    android:id="@+id/exercise_1_6_minute"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/text_area"
+                    android:backgroundTint="@color/gray"
+                    android:hint="40"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/exercise_1_6_hour"
+                    app:layout_constraintTop_toBottomOf="@+id/exercise_1_6_hour" />
+
+                <TextView
+                    android:id="@+id/textView128"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="분"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exercise_1_6_minute"
+                    app:layout_constraintStart_toEndOf="@+id/exercise_1_6_minute"
+                    app:layout_constraintTop_toTopOf="@+id/exercise_1_6_minute" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView129"
@@ -1464,8 +1477,8 @@
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="2. "
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/exercise_1_6_minute"
-                app:layout_constraintTop_toBottomOf="@+id/exercise_1_6_minute"/>
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"/>
 
             <TextView
                 android:id="@+id/textView130"
@@ -1479,7 +1492,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="1dp"
                 android:background="#000000"
                 app:layout_constraintEnd_toEndOf="@+id/textView130"
                 app:layout_constraintStart_toStartOf="@+id/textView130"
@@ -1522,8 +1535,8 @@
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="2-1. "
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/exercise_radio2"
-                app:layout_constraintTop_toBottomOf="@+id/exercise_radio2" />
+                app:layout_constraintStart_toStartOf="@+id/textView129"
+                app:layout_constraintTop_toBottomOf="@+id/textView133" />
 
             <TextView
                 android:id="@+id/textView135"
@@ -1537,7 +1550,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="1dp"
                 android:background="#000000"
                 app:layout_constraintEnd_toEndOf="@+id/textView135"
                 app:layout_constraintStart_toStartOf="@+id/textView135"
@@ -1550,141 +1563,1094 @@
                 android:text="최소 10분 이상 계속"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView115"
-                app:layout_constraintTop_toTopOf="@+id/textView115" />
+                app:layout_constraintStart_toEndOf="@+id/textView135"
+                app:layout_constraintTop_toTopOf="@+id/textView135" />
 
             <TextView
                 android:id="@+id/textView137"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="걷거나 자전거 이용을 하십니까? "
+                android:text="걷거나 자전거 이용을 하십니까?"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="@+id/textView134"
                 app:layout_constraintTop_toBottomOf="@+id/textView134" />
 
-            <TextView
-                android:id="@+id/textView138"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일과 관련된 고강도 신체"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView117"
-                app:layout_constraintTop_toTopOf="@+id/textView117" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/textView118"
-                app:layout_constraintStart_toStartOf="@+id/textView118"
-                app:layout_constraintTop_toBottomOf="@+id/textView118" />
-
-            <TextView
-                android:id="@+id/textView119"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="활동"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/textView114"
-                app:layout_constraintTop_toBottomOf="@+id/textView114" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/textView119"
-                app:layout_constraintStart_toStartOf="@+id/textView119"
-                app:layout_constraintTop_toBottomOf="@+id/textView119" />
-
-            <TextView
-                android:id="@+id/textView120"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="을 며칠 하십니까?"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView119"
-                app:layout_constraintTop_toTopOf="@+id/textView119" />
-
-            <Spinner
-                android:id="@+id/pick_time2"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/edit_text_shape"
-                android:spinnerMode="dialog"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@+id/textView114"
-                app:layout_constraintTop_toBottomOf="@+id/textView120" />
-
-            <TextView
-                android:id="@+id/textView121"
+            <RadioGroup
+                android:id="@+id/exercise_radio3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="1-6. "
-                android:textSize="20dp"
-                app:layout_constraintTop_toBottomOf="@+id/pick_time2"
-                app:layout_constraintStart_toStartOf="@+id/pick_time2" />
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/textView137"
+                app:layout_constraintTop_toBottomOf="@+id/textView137">
+
+                <RadioButton
+                    android:id="@+id/exercise_3_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="예"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/exercise_3_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="아니오"
+                    android:textSize="14dp" />
+
+            </RadioGroup>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/exercise_radio3"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_radio3">
+
+                <TextView
+                    android:id="@+id/textView138"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="2-2. "
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView139"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="평소 "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView138"
+                    app:layout_constraintTop_toTopOf="@+id/textView138" />
+
+                <TextView
+                    android:id="@+id/textView140"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일주일 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView139"
+                    app:layout_constraintTop_toTopOf="@+id/textView139" />
+
+                <TextView
+                    android:id="@+id/textView141"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="동안, 장소를 이동할 때 최소 10분"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView140"
+                    app:layout_constraintTop_toTopOf="@+id/textView140" />
+
+                <TextView
+                    android:id="@+id/textView142"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이상 계속 걷거나 자전거 이용을 며칠 하십니까?"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView138"
+                    app:layout_constraintTop_toBottomOf="@+id/textView138" />
+
+                <Spinner
+                    android:id="@+id/pick_time3"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:spinnerMode="dialog"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="@+id/textView142"
+                    app:layout_constraintTop_toBottomOf="@+id/textView142" />
+
+                <TextView
+                    android:id="@+id/textView143"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="2-3. "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/pick_time3"
+                    app:layout_constraintTop_toBottomOf="@+id/pick_time3" />
+
+                <TextView
+                    android:id="@+id/textView144"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="평소 "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView143"
+                    app:layout_constraintTop_toTopOf="@+id/textView143" />
+
+                <TextView
+                    android:id="@+id/textView145"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하루에 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView144"
+                    app:layout_constraintTop_toTopOf="@+id/textView144" />
+
+                <TextView
+                    android:id="@+id/textView146"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="장소를 이동할 때 걷거나 자전거"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView145"
+                    app:layout_constraintTop_toTopOf="@+id/textView145" />
+
+                <TextView
+                    android:id="@+id/textView147"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이용을 몇 시간 하십니까?"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView143"
+                    app:layout_constraintTop_toBottomOf="@+id/textView143" />
+
+                <EditText
+                    android:id="@+id/exercise_2_3_hour"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/text_area"
+                    android:backgroundTint="@color/gray"
+                    android:hint="6"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView147"
+                    app:layout_constraintTop_toBottomOf="@+id/textView147" />
+
+                <TextView
+                    android:id="@+id/textView148"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="시간"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exercise_2_3_hour"
+                    app:layout_constraintStart_toEndOf="@+id/exercise_2_3_hour"
+                    app:layout_constraintTop_toTopOf="@+id/exercise_2_3_hour" />
+
+                <EditText
+                    android:id="@+id/exercise_2_3_minute"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/text_area"
+                    android:backgroundTint="@color/gray"
+                    android:hint="40"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/exercise_2_3_hour"
+                    app:layout_constraintTop_toBottomOf="@+id/exercise_2_3_hour" />
+
+                <TextView
+                    android:id="@+id/textView149"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="분"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exercise_2_3_minute"
+                    app:layout_constraintStart_toEndOf="@+id/exercise_2_3_minute"
+                    app:layout_constraintTop_toTopOf="@+id/exercise_2_3_minute" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <TextView
-                android:id="@+id/textView122"
+                android:id="@+id/textView150"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/blue_text_top_margin"
+                android:text="3. "
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+            <TextView
+                android:id="@+id/textView151"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="앞서 말한 일과 장소 이동시 신체 활동에"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView150"
+                app:layout_constraintTop_toTopOf="@+id/textView150" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/textView151"
+                app:layout_constraintStart_toStartOf="@+id/textView151"
+                app:layout_constraintTop_toBottomOf="@+id/textView151"/>
+
+            <TextView
+                android:id="@+id/textView152"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="대해서는 제외합니다."
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView150"
+                app:layout_constraintTop_toBottomOf="@+id/textView150" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/textView152"
+                app:layout_constraintStart_toStartOf="@+id/textView152"
+                app:layout_constraintTop_toBottomOf="@+id/textView152"/>
+
+            <TextView
+                android:id="@+id/textView153"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="스포츠, 운동 및 여가활동에"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView152"
+                app:layout_constraintTop_toBottomOf="@+id/textView152" />
+
+            <TextView
+                android:id="@+id/textView154"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="대하여 묻겠습니다."
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/textView152"
+                app:layout_constraintTop_toBottomOf="@+id/textView152" />
+
+            <TextView
+                android:id="@+id/textView155"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:text="3-1. "
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/textView154"
+                app:layout_constraintTop_toBottomOf="@+id/textView154" />
+
+            <TextView
+                android:id="@+id/textView156"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="평소 최소 10분 이상 계속 숨이 많이 차거나"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView155"
+                app:layout_constraintTop_toTopOf="@+id/textView155" />
+
+            <TextView
+                android:id="@+id/textView157"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="심장이 매우 빠르게 뛰는"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/textView155"
+                app:layout_constraintTop_toBottomOf="@+id/textView155" />
+
+            <TextView
+                android:id="@+id/textView158"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고강도의 스포츠, 운동 및"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView157"
+                app:layout_constraintTop_toTopOf="@+id/textView157"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/textView158"
+                app:layout_constraintStart_toStartOf="@+id/textView158"
+                app:layout_constraintTop_toBottomOf="@+id/textView158"/>
+
+            <TextView
+                android:id="@+id/textView159"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여가활동"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView157"
+                app:layout_constraintTop_toTopOf="@+id/textView157"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/textView159"
+                app:layout_constraintStart_toStartOf="@+id/textView159"
+                app:layout_constraintTop_toBottomOf="@+id/textView159"/>
+
+            <TextView
+                android:id="@+id/textView160"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="을 하십니까?"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView159"
+                app:layout_constraintTop_toTopOf="@+id/textView159" />
+
+            <TextView
+                android:id="@+id/textView161"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="※ 예 : 달리기, 줄넘기, 등산, 농구 시합, 수영, 배드민턴 등"
+                android:textSize="16dp"
+                android:textColor="@color/mainBlue"
+                app:layout_constraintStart_toStartOf="@+id/textView159"
+                app:layout_constraintTop_toBottomOf="@+id/textView159" />
+
+            <RadioGroup
+                android:id="@+id/exercise_radio4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/textView161"
+                app:layout_constraintTop_toBottomOf="@+id/textView161">
+
+                <RadioButton
+                    android:id="@+id/exercise_4_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="예"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/exercise_4_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="아니오"
+                    android:textSize="14dp" />
+
+            </RadioGroup>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView159"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_radio4">
+
+                <TextView
+                    android:id="@+id/textView162"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3-2. "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView163"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="평소 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView162"
+                    app:layout_constraintTop_toTopOf="@+id/textView162" />
+
+                <TextView
+                    android:id="@+id/textView164"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일주일 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView163"
+                    app:layout_constraintTop_toTopOf="@+id/textView163" />
+
+                <TextView
+                    android:id="@+id/textView165"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="고강도의 스포츠, 운동 및"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView164"
+                    app:layout_constraintTop_toTopOf="@+id/textView164" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView165"
+                    app:layout_constraintStart_toStartOf="@+id/textView165"
+                    app:layout_constraintTop_toBottomOf="@+id/textView165" />
+
+                <TextView
+                    android:id="@+id/textView166"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="여가활동"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView162"
+                    app:layout_constraintTop_toBottomOf="@+id/textView162" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView166"
+                    app:layout_constraintStart_toStartOf="@+id/textView166"
+                    app:layout_constraintTop_toBottomOf="@+id/textView166" />
+
+                <TextView
+                    android:id="@+id/textView167"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="을 하십니까?"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView166"
+                    app:layout_constraintTop_toTopOf="@+id/textView166" />
+
+                <Spinner
+                    android:id="@+id/pick_time4"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:spinnerMode="dialog"
+                    app:layout_constraintStart_toStartOf="@+id/textView167"
+                    app:layout_constraintTop_toBottomOf="@+id/textView167" />
+
+                <TextView
+                    android:id="@+id/textView168"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="3-3. "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/pick_time4"
+                    app:layout_constraintTop_toBottomOf="@+id/pick_time4" />
+
+                <TextView
+                    android:id="@+id/textView169"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginLeft="-1dp"
+                    android:text="평소 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView168"
+                    app:layout_constraintTop_toTopOf="@+id/textView168" />
+
+                <TextView
+                    android:id="@+id/textView170"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하루에 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView169"
+                    app:layout_constraintTop_toTopOf="@+id/textView169" />
+
+                <TextView
+                    android:id="@+id/textView171"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="고강도의 스포츠, 운동 및 여가"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView170"
+                    app:layout_constraintTop_toTopOf="@+id/textView170" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView171"
+                    app:layout_constraintStart_toStartOf="@+id/textView171"
+                    app:layout_constraintTop_toBottomOf="@+id/textView171" />
+
+                <TextView
+                    android:id="@+id/textView172"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="활동"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView168"
+                    app:layout_constraintTop_toBottomOf="@+id/textView168" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView172"
+                    app:layout_constraintStart_toStartOf="@+id/textView172"
+                    app:layout_constraintTop_toBottomOf="@+id/textView172" />
+
+                <TextView
+                    android:id="@+id/textView173"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="을 몇 시간 하십니까?"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView172"
+                    app:layout_constraintTop_toTopOf="@+id/textView172" />
+
+                <EditText
+                    android:id="@+id/exercise_3_3_hour"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/text_area"
+                    android:backgroundTint="@color/gray"
+                    android:hint="6"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView173"
+                    app:layout_constraintTop_toBottomOf="@+id/textView173" />
+
+                <TextView
+                    android:id="@+id/textView174"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="시간"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exercise_3_3_hour"
+                    app:layout_constraintStart_toEndOf="@+id/exercise_3_3_hour"
+                    app:layout_constraintTop_toTopOf="@+id/exercise_3_3_hour" />
+
+                <EditText
+                    android:id="@+id/exercise_3_3_minute"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/text_area"
+                    android:backgroundTint="@color/gray"
+                    android:hint="40"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/exercise_3_3_hour"
+                    app:layout_constraintTop_toBottomOf="@+id/exercise_3_3_hour" />
+
+                <TextView
+                    android:id="@+id/textView175"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="분"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exercise_3_3_minute"
+                    app:layout_constraintStart_toEndOf="@+id/exercise_3_3_minute"
+                    app:layout_constraintTop_toTopOf="@+id/exercise_3_3_minute" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView176"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:text="3-4. "
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"/>
+
+            <TextView
+                android:id="@+id/textView177"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="평소 최소 10분 이상 계속 숨이 약간 차거나"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView176"
+                app:layout_constraintTop_toTopOf="@+id/textView176" />
+
+            <TextView
+                android:id="@+id/textView178"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="심장이 약간 빠르게 뛰는 "
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/textView176"
+                app:layout_constraintTop_toBottomOf="@+id/textView176" />
+
+            <TextView
+                android:id="@+id/textView179"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="중강도의 스포츠, 운동 및"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView178"
+                app:layout_constraintTop_toTopOf="@+id/textView178" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/textView179"
+                app:layout_constraintStart_toStartOf="@+id/textView179"
+                app:layout_constraintTop_toBottomOf="@+id/textView179" />
+
+            <TextView
+                android:id="@+id/textView180"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여가활동"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView176"
+                app:layout_constraintTop_toBottomOf="@+id/textView176" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/textView180"
+                app:layout_constraintStart_toStartOf="@+id/textView180"
+                app:layout_constraintTop_toBottomOf="@+id/textView180" />
+
+            <TextView
+                android:id="@+id/textView181"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="을 하십니까?"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView180"
+                app:layout_constraintTop_toTopOf="@id/textView180" />
+
+            <TextView
+                android:id="@+id/textView182"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="※ 예 : 빠르게 걷기, 가볍게 뛰기(조깅), 웨이트 트레이닝(근력 운동), 골프, 댄스스포츠, 필라테스 등"
+                android:textColor="@color/mainBlue"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/textView180"
+                app:layout_constraintTop_toBottomOf="@+id/textView180" />
+
+            <RadioGroup
+                android:id="@+id/exercise_radio5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/textView182"
+                app:layout_constraintTop_toBottomOf="@+id/textView182">
+
+                <RadioButton
+                    android:id="@+id/exercise_5_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="예"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/exercise_5_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="아니오"
+                    android:textSize="14dp" />
+
+            </RadioGroup>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/exercise_radio2"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_radio2">
+
+                <TextView
+                    android:id="@+id/textView185"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="3-5. "
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView186"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="평소 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView185"
+                    app:layout_constraintTop_toTopOf="@+id/textView185" />
+
+                <TextView
+                    android:id="@+id/textView187"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일주일 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView186"
+                    app:layout_constraintTop_toTopOf="@+id/textView186" />
+
+                <TextView
+                    android:id="@+id/textView188"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="동안, "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView187"
+                    app:layout_constraintTop_toTopOf="@+id/textView187" />
+
+                <TextView
+                    android:id="@+id/textView189"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="중강도의 스포츠, 운동 및"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView188"
+                    app:layout_constraintTop_toTopOf="@+id/textView188" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView189"
+                    app:layout_constraintStart_toStartOf="@+id/textView189"
+                    app:layout_constraintTop_toBottomOf="@+id/textView189" />
+
+                <TextView
+                    android:id="@+id/textView190"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="여가 활동"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView185"
+                    app:layout_constraintTop_toBottomOf="@+id/textView185" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView190"
+                    app:layout_constraintStart_toStartOf="@+id/textView190"
+                    app:layout_constraintTop_toBottomOf="@+id/textView190" />
+
+                <TextView
+                    android:id="@+id/textView191"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="을 며칠 하십니까?"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView190"
+                    app:layout_constraintTop_toTopOf="@+id/textView190" />
+
+                <Spinner
+                    android:id="@+id/pick_time5"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:spinnerMode="dialog"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="@+id/textView190"
+                    app:layout_constraintTop_toBottomOf="@+id/textView190" />
+
+                <TextView
+                    android:id="@+id/textView192"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="3-6. "
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@+id/pick_time5"
+                    app:layout_constraintTop_toBottomOf="@+id/pick_time5" />
+
+                <TextView
+                    android:id="@+id/textView193"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="평소 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView192"
+                    app:layout_constraintTop_toTopOf="@+id/textView192" />
+
+                <TextView
+                    android:id="@+id/textView194"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하루에 "
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView193"
+                    app:layout_constraintTop_toTopOf="@+id/textView193" />
+
+                <TextView
+                    android:id="@+id/textView195"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="중강도의 스포츠, 운동 및 여가"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView194"
+                    app:layout_constraintTop_toTopOf="@+id/textView194" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="@+id/textView195"
+                    app:layout_constraintStart_toStartOf="@+id/textView195"
+                    app:layout_constraintTop_toBottomOf="@+id/textView195" />
+
+                <TextView
+                    android:id="@+id/textView196"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="활동"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView192"
+                    app:layout_constraintTop_toBottomOf="@+id/textView192"/>
+
+                <TextView
+                    android:id="@+id/textView197"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="을 몇 시간 하십니까?"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView196"
+                    app:layout_constraintTop_toTopOf="@+id/textView196" />
+
+                <EditText
+                    android:id="@+id/exercise_3_6_hour"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/text_area"
+                    android:backgroundTint="@color/gray"
+                    android:hint="6"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView196"
+                    app:layout_constraintTop_toBottomOf="@+id/textView196" />
+
+                <TextView
+                    android:id="@+id/textView198"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="시간"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exercise_3_6_hour"
+                    app:layout_constraintStart_toEndOf="@+id/exercise_3_6_hour"
+                    app:layout_constraintTop_toTopOf="@+id/exercise_3_6_hour" />
+
+                <EditText
+                    android:id="@+id/exercise_3_6_minute"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/text_area"
+                    android:backgroundTint="@color/gray"
+                    android:hint="40"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textCursorDrawable="@color/gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/exercise_3_6_hour"
+                    app:layout_constraintTop_toBottomOf="@+id/exercise_3_6_hour" />
+
+                <TextView
+                    android:id="@+id/textView199"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="분"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/exercise_3_6_minute"
+                    app:layout_constraintStart_toEndOf="@+id/exercise_3_6_minute"
+                    app:layout_constraintTop_toTopOf="@+id/exercise_3_6_minute" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView200"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:text="4. "
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout5"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"/>
+
+            <TextView
+                android:id="@+id/textView201"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="다음은 자는 시간을 제외하고, 일할 대나 집에"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView200"
+                app:layout_constraintTop_toTopOf="@+id/textView200" />
+
+            <TextView
+                android:id="@+id/textView202"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="있을때, 장소를 이동할 때, 친구와 함께 할 때에 앉아"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/textView200"
+                app:layout_constraintTop_toBottomOf="@+id/textView200" />
+
+            <TextView
+                android:id="@+id/textView203"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="있거나 누워있는 것에 대한 질문입니다."
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/textView200"
+                app:layout_constraintTop_toBottomOf="@+id/textView202" />
+
+            <TextView
+                android:id="@+id/textView204"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="※ 예 : 책상에 앉아 있기, 친구와 앉아 있기, 자동차·버스·기차를 이용해 이동하기, 책 읽기, 글쓰기, 카드놀이"
+                android:textColor="@color/mainBlue"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/textView203"
+                app:layout_constraintTop_toBottomOf="@+id/textView203" />
+
+            <TextView
+                android:id="@+id/textView205"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="하기, 텔레비전 보기, 게임 하기(닌텐도, 컴퓨터, 플레이스테이션), 인터넷 사용, 음악감상 등"
+                android:textColor="@color/mainBlue"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/textView204"
+                app:layout_constraintTop_toBottomOf="@+id/textView204" />
+
+            <TextView
+                android:id="@+id/textView206"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:text="4-1. "
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/textView205"
+                app:layout_constraintTop_toBottomOf="@+id/textView205" />
+
+            <TextView
+                android:id="@+id/textView207"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="평소 "
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView121"
-                app:layout_constraintTop_toTopOf="@+id/textView121" />
+                app:layout_constraintStart_toEndOf="@+id/textView206"
+                app:layout_constraintTop_toTopOf="@+id/textView206" />
 
             <TextView
-                android:id="@+id/textView123"
+                android:id="@+id/textView208"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="하루에"
+                android:text="하루에 "
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView122"
-                app:layout_constraintTop_toTopOf="@+id/textView122" />
+                app:layout_constraintStart_toEndOf="@+id/textView207"
+                app:layout_constraintTop_toTopOf="@+id/textView207" />
 
             <TextView
-                android:id="@+id/textView124"
+                android:id="@+id/textView209"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="일과 관련된 중강도 신체 활동"
+                android:text="앉아 있거나, 누워 있는 시간이"
                 android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView123"
-                app:layout_constraintTop_toTopOf="@+id/textView123" />
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView208"
+                app:layout_constraintTop_toTopOf="@+id/textView208" />
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="1dp"
                 android:background="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/textView124"
-                app:layout_constraintStart_toStartOf="@+id/textView124"
-                app:layout_constraintTop_toBottomOf="@+id/textView124" />
+                app:layout_constraintEnd_toEndOf="@+id/textView209"
+                app:layout_constraintStart_toStartOf="@+id/textView209"
+                app:layout_constraintTop_toBottomOf="@+id/textView209" />
 
             <TextView
-                android:id="@+id/textView125"
+                android:id="@+id/textView210"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="을"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:text="몇"
                 android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView124"
-                app:layout_constraintTop_toTopOf="@+id/textView124" />
+                app:layout_constraintStart_toEndOf="@+id/textView209"
+                app:layout_constraintTop_toTopOf="@+id/textView209" />
 
             <TextView
-                android:id="@+id/textView126"
+                android:id="@+id/textView211"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="몇 시간 하십니까?"
+                android:text="시간입니까?"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView121"
-                app:layout_constraintTop_toBottomOf="@+id/textView121" />
+                app:layout_constraintStart_toStartOf="@+id/textView206"
+                app:layout_constraintTop_toBottomOf="@+id/textView206" />
 
             <EditText
-                android:id="@+id/exercise_1_6_hour"
+                android:id="@+id/exercise_4_1_hour"
                 android:layout_width="70dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="30dp"
@@ -1696,44 +2662,44 @@
                 android:textAlignment="center"
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="@+id/textView126"
-                app:layout_constraintTop_toBottomOf="@+id/textView126"/>
+                app:layout_constraintStart_toStartOf="@+id/textView206"
+                app:layout_constraintTop_toBottomOf="@+id/textView206" />
 
             <TextView
-                android:id="@+id/textView127"
+                android:id="@+id/textView212"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="시간"
                 android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/exercise_1_6_hour"
-                app:layout_constraintStart_toEndOf="@+id/exercise_1_6_hour"
-                app:layout_constraintTop_toTopOf="@+id/exercise_1_6_hour" />
+                app:layout_constraintBottom_toBottomOf="@+id/exercise_4_1_hour"
+                app:layout_constraintStart_toEndOf="@+id/exercise_4_1_hour"
+                app:layout_constraintTop_toTopOf="@+id/exercise_4_1_hour" />
 
             <EditText
-                android:id="@+id/exercise_1_6_minute"
+                android:id="@+id/exercise_4_1_minute"
                 android:layout_width="70dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/text_area"
-                android:inputType="number"
-                android:maxLength="2"
-                android:textSize="16dp"
-                android:textCursorDrawable="@color/gray"
                 android:backgroundTint="@color/gray"
                 android:hint="40"
+                android:inputType="number"
+                android:maxLength="2"
                 android:textAlignment="center"
-                app:layout_constraintTop_toBottomOf="@+id/exercise_1_6_hour"
-                app:layout_constraintStart_toStartOf="@+id/exercise_1_6_hour"/>
+                android:textCursorDrawable="@color/gray"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/exercise_4_1_hour"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_4_1_hour" />
 
             <TextView
-                android:id="@+id/textView128"
+                android:id="@+id/textView213"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="분"
                 android:textSize="16dp"
-                app:layout_constraintTop_toTopOf="@+id/exercise_1_6_minute"
-                app:layout_constraintBottom_toBottomOf="@+id/exercise_1_6_minute"
-                app:layout_constraintStart_toEndOf="@+id/exercise_1_6_minute"/>
+                app:layout_constraintBottom_toBottomOf="@+id/exercise_4_1_minute"
+                app:layout_constraintStart_toEndOf="@+id/exercise_4_1_minute"
+                app:layout_constraintTop_toTopOf="@+id/exercise_4_1_minute" />
 
         </android.support.constraint.ConstraintLayout>
 
