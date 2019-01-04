@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.zzango.questionnaire.LocalList.CustomAdapter
 import com.example.zzango.questionnaire.LocalList.Paper
-import kotlin.collections.ArrayList
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
 
@@ -75,7 +74,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " mj1_6_2 TEXT," +
                 " mj1_7_1 TEXT," +
                 " mj1_7_2 TEXT," +
-                " mj1_7_etc TEXT," +
                 " mj2_1 TEXT," +
                 " mj2_2 TEXT," +
                 " mj2_3 TEXT," +
@@ -290,7 +288,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO COMMON_EXAM" +
                 "(exam_date, exam_no, name, first_serial, last_serial, category, " +
@@ -341,7 +339,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO MENTAL_EXAM" +
                 "(exam_date," +
@@ -368,11 +366,11 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO COGNITIVE_EXAM" +
                 "(exam_date," +
-                "no,"  +
+                "exam_no,"  +
                 "name," +
                 "first_serial," +
                 "last_serial," +
@@ -396,7 +394,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO ELDERLY_EXAM" +
                 "(exam_date," +
@@ -422,7 +420,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO SMOKING_EXAM" +
                 "(exam_date," +

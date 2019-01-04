@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.Paper_COGNITIVE
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_cognitive_exam.*
@@ -64,6 +65,15 @@ class CognitiveExaminationActivity : AppCompatActivity(){
 
         sql_db = LocalDBhelper(this).writableDatabase
 
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper_COGNITIVE
+
+            GetPaper(paper)
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         cognitive_examination_save.setOnClickListener {
 
             if(check()){
@@ -86,6 +96,12 @@ class CognitiveExaminationActivity : AppCompatActivity(){
         }
 
         cognitive_examination_cancel.setOnClickListener {
+
+            finish()
+
+        }
+
+        cognitive_edit_submit.setOnClickListener {
 
             finish()
 
@@ -445,6 +461,156 @@ class CognitiveExaminationActivity : AppCompatActivity(){
         exam_result = arr
 
         return true
+
+    }
+
+    fun GetPaper(paper: Paper_COGNITIVE) {
+
+
+        name_edit.setText(paper.name)
+        first_serial.setText(paper.first_serial)
+        last_serial.setText(paper.last_serial)
+
+        println(paper)
+
+        cognitive_examination_save.visibility = View.GONE
+        cognitive_examination_cancel.visibility = View.GONE
+        cognitive_edit_submit.visibility = View.VISIBLE
+
+
+        if(paper.mj_inji_1 == "1"){
+            cognitive_1_1.isChecked = true
+        }else if(paper.mj_inji_1 == "2"){
+            cognitive_1_2.isChecked = true
+        }else if(paper.mj_inji_1 == "3"){
+            cognitive_1_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_2 == "1"){
+            cognitive_2_1.isChecked = true
+        }else if(paper.mj_inji_2 == "2"){
+            cognitive_2_2.isChecked = true
+        }else if(paper.mj_inji_2 == "3"){
+            cognitive_2_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_3 == "1"){
+            cognitive_3_1.isChecked = true
+        }else if(paper.mj_inji_3 == "2"){
+            cognitive_3_2.isChecked = true
+        }else if(paper.mj_inji_3 == "3"){
+            cognitive_3_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_4 == "1"){
+            cognitive_4_1.isChecked = true
+        }else if(paper.mj_inji_4 == "2"){
+            cognitive_4_2.isChecked = true
+        }else if(paper.mj_inji_4 == "3"){
+            cognitive_4_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_5 == "1"){
+            cognitive_5_1.isChecked = true
+        }else if(paper.mj_inji_5 == "2"){
+            cognitive_5_2.isChecked = true
+        }else if(paper.mj_inji_5 == "3"){
+            cognitive_5_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_6 == "1"){
+            cognitive_6_1.isChecked = true
+        }else if(paper.mj_inji_6 == "2"){
+            cognitive_6_2.isChecked = true
+        }else if(paper.mj_inji_6 == "3"){
+            cognitive_6_3.isChecked = true
+        }
+
+        if(paper.mj_inji_7 == "1"){
+            cognitive_7_1.isChecked = true
+        }else if(paper.mj_inji_7 == "2"){
+            cognitive_7_2.isChecked = true
+        }else if(paper.mj_inji_7 == "3"){
+            cognitive_7_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_8 == "1"){
+            cognitive_8_1.isChecked = true
+        }else if(paper.mj_inji_8 == "2"){
+            cognitive_8_2.isChecked = true
+        }else if(paper.mj_inji_8 == "3"){
+            cognitive_8_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_9 == "1"){
+            cognitive_9_1.isChecked = true
+        }else if(paper.mj_inji_9 == "2"){
+            cognitive_9_2.isChecked = true
+        }else if(paper.mj_inji_9 == "3"){
+            cognitive_9_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_10 == "1"){
+            cognitive_10_1.isChecked = true
+        }else if(paper.mj_inji_10 == "2"){
+            cognitive_10_2.isChecked = true
+        }else if(paper.mj_inji_10 == "3"){
+            cognitive_10_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_11 == "1"){
+            cognitive_11_1.isChecked = true
+        }else if(paper.mj_inji_11 == "2"){
+            cognitive_11_2.isChecked = true
+        }else if(paper.mj_inji_11 == "3"){
+            cognitive_11_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_12 == "1"){
+            cognitive_12_1.isChecked = true
+        }else if(paper.mj_inji_12 == "2"){
+            cognitive_12_2.isChecked = true
+        }else if(paper.mj_inji_12 == "3"){
+            cognitive_12_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_13 == "1"){
+            cognitive_13_1.isChecked = true
+        }else if(paper.mj_inji_13 == "2"){
+            cognitive_13_2.isChecked = true
+        }else if(paper.mj_inji_13 == "3"){
+            cognitive_13_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_14 == "1"){
+            cognitive_14_1.isChecked = true
+        }else if(paper.mj_inji_14 == "2"){
+            cognitive_14_2.isChecked = true
+        }else if(paper.mj_inji_14 == "3"){
+            cognitive_14_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_15 == "1"){
+            cognitive_15_1.isChecked = true
+        }else if(paper.mj_inji_15 == "2"){
+            cognitive_15_2.isChecked = true
+        }else if(paper.mj_inji_15 == "3"){
+            cognitive_15_3.isChecked = true
+        }
+
 
     }
 

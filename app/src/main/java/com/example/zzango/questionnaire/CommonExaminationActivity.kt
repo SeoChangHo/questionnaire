@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.Paper_COMMON
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_common_exam.*
@@ -133,6 +134,15 @@ class CommonExaminationActivity : AppCompatActivity() {
 
         sql_db = LocalDBhelper(this).writableDatabase
 
+
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper_COMMON
+
+            GetPaper(paper)
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         common_4_false.setOnClickListener {
             textView20.visibility = View.GONE
@@ -400,6 +410,12 @@ class CommonExaminationActivity : AppCompatActivity() {
         }
 
         common_examination_cancel.setOnClickListener {
+
+            finish()
+
+        }
+
+        common_edit_submit.setOnClickListener {
 
             finish()
 
@@ -1139,5 +1155,485 @@ class CommonExaminationActivity : AppCompatActivity() {
 
         return true
     }
+
+    fun GetPaper(paper: Paper_COMMON) {
+
+
+        name_edit.setText(paper.name)
+        first_serial.setText(paper.first_serial)
+        last_serial.setText(paper.last_serial)
+
+        println(paper)
+
+        common_examination_save.visibility = View.GONE
+        common_examination_cancel.visibility = View.GONE
+        common_edit_submit.visibility = View.VISIBLE
+
+
+        if(paper.mj1_1_1 == "2"){
+            diagnosis_medication_stroke_examination_check.isChecked = true
+        }else if(paper.mj1_1_1 == "1"){
+            diagnosis_medication_stroke_examination_check.isChecked = false
+        }
+
+
+        if(paper.mj1_1_2 == "2"){
+            diagnosis_medication_stroke_medication_check.isChecked = true
+        }else if(paper.mj1_1_2 == "1"){
+            diagnosis_medication_stroke_medication_check.isChecked = false
+        }
+
+        if(paper.mj1_2_1 == "2"){
+            diagnosis_medication_myocardial_examination_check.isChecked = true
+        }else if(paper.mj1_2_1 == "1"){
+            diagnosis_medication_myocardial_examination_check.isChecked = false
+        }
+
+
+        if(paper.mj1_2_2 == "2"){
+            diagnosis_medication_myocardial_medication_check.isChecked = true
+        }else if(paper.mj1_2_2 == "1"){
+            diagnosis_medication_myocardial_medication_check.isChecked = false
+        }
+
+
+        if(paper.mj1_3_1 == "2"){
+            diagnosis_medication_high_blood_pressure_examination_check.isChecked = true
+        }else if(paper.mj1_3_1 == "1"){
+            diagnosis_medication_high_blood_pressure_examination_check.isChecked = false
+        }
+
+
+        if(paper.mj1_3_2 == "2"){
+            diagnosis_medication_high_blood_pressure_medication_check.isChecked = true
+        }else if(paper.mj1_3_2 == "1"){
+            diagnosis_medication_high_blood_pressure_medication_check.isChecked = false
+        }
+
+
+        if(paper.mj1_4_1 == "2"){
+            diagnosis_medication_diabetes_examination_check.isChecked = true
+        }else if(paper.mj1_4_1 == "1"){
+            diagnosis_medication_diabetes_examination_check.isChecked = false
+        }
+
+        if(paper.mj1_4_2 == "2"){
+            diagnosis_medication_diabetes_medication_check.isChecked = true
+        }else if(paper.mj1_4_2 == "1"){
+            diagnosis_medication_diabetes_medication_check.isChecked = false
+        }
+
+
+        if(paper.mj1_5_1 == "2"){
+            diagnosis_medication_dyslipidemia_examination_check.isChecked = true
+        }else if(paper.mj1_5_1 == "1"){
+            diagnosis_medication_dyslipidemia_examination_check.isChecked = false
+        }
+
+        if(paper.mj1_5_2 == "2"){
+            diagnosis_medication_dyslipidemia_medication_check.isChecked = true
+        }else if(paper.mj1_5_2 == "1"){
+            diagnosis_medication_dyslipidemia_medication_check.isChecked = false
+        }
+
+
+        if(paper.mj1_6_1 == "2"){
+            diagnosis_medication_tuberculosis_examination_check.isChecked = true
+        }else if(paper.mj1_6_1 == "1"){
+            diagnosis_medication_tuberculosis_examination_check.isChecked = false
+        }
+
+
+        if(paper.mj1_6_2 == "2"){
+            diagnosis_medication_tuberculosis_medication_check.isChecked = true
+        }else if(paper.mj1_6_2 == "1"){
+            diagnosis_medication_tuberculosis_medication_check.isChecked = false
+        }
+
+
+        if(paper.mj1_7_1 == "2"){
+            diagnosis_medication_etc_examination_check.isChecked = true
+        }else if(paper.mj1_7_1 == "1"){
+            diagnosis_medication_etc_examination_check.isChecked = false
+        }
+
+
+        if(paper.mj1_7_2 == "2"){
+            diagnosis_medication_etc_medication_check.isChecked = true
+        }else if(paper.mj1_7_2 == "1"){
+            diagnosis_medication_etc_medication_check.isChecked = false
+        }
+
+
+        if(paper.mj2_1 == "2"){
+            family_history_disease_stroke_examination_check.isChecked = true
+        }else if(paper.mj2_1 == "1"){
+            family_history_disease_stroke_examination_check.isChecked = false
+        }
+
+
+        if(paper.mj2_2 == "2"){
+            family_history_disease_myocardial_examination_check.isChecked = true
+        }else if(paper.mj2_2 == "1"){
+            family_history_disease_myocardial_examination_check.isChecked = false
+        }
+
+
+
+        if(paper.mj2_3 == "2"){
+            family_history_disease_high_blood_pressure_examination_check.isChecked = true
+        }else if(paper.mj2_3 == "1"){
+            family_history_disease_high_blood_pressure_examination_check.isChecked = false
+        }
+
+
+        if(paper.mj2_4 == "2"){
+            family_history_disease_diabetes_examination_check.isChecked = true
+        }else if(paper.mj2_4 == "1"){
+            family_history_disease_diabetes_examination_check.isChecked = false
+        }
+
+
+
+        if(paper.mj2_5 == "2"){
+            family_history_etc_examination_check.isChecked = true
+        }else if(paper.mj2_5 == "1"){
+            family_history_etc_examination_check.isChecked = false
+        }
+
+
+        if(paper.mj3 == "1"){
+            common_3_true.isChecked = true
+        }else if(paper.mj3 == "2"){
+            common_3_false.isChecked = true
+        }else if(paper.mj3 == "3"){
+            common_3_do_not_know.isChecked = true
+        }
+
+
+        if(paper.mj4 == "2"){
+            common_4_true.isChecked = true
+
+            if(!paper.mj4_1_1.isNullOrEmpty()){
+                editText_4_1_1.setText(paper.mj4_1_1)
+                editText_4_1_2.setText(paper.mj4_1_2)
+            }else if(!paper.mj4_2_1.isNullOrEmpty()){
+                editText_4_1_3.setText(paper.mj4_2_1)
+                editText_4_1_4.setText(paper.mj4_2_2)
+                editText_4_1_5.setText(paper.mj4_2_3)
+            }
+        }else if(paper.mj4 == "1"){
+            common_4_false.isChecked = true
+        }
+
+
+        if(paper.mj5 == "2"){
+            common_5_true.isChecked = true
+
+            if(!paper.mj5_1_1.isNullOrEmpty()){
+                editText_5_1_1.setText(paper.mj5_1_1)
+                editText_5_1_2.setText(paper.mj5_1_2)
+            }else if(!paper.mj5_2_1.isNullOrEmpty()){
+                editText_5_1_3.setText(paper.mj5_2_1)
+                editText_5_1_4.setText(paper.mj5_2_2)
+                editText_5_1_5.setText(paper.mj5_2_3)
+            }
+        }else if(paper.mj5 == "1"){
+            common_5_false.isChecked = true
+        }
+
+
+        if(paper.mj6 == "2"){
+            common_6_true.isChecked = true
+
+            if(paper.mj6_1 == "1"){
+                common_6_1_1.isChecked = true
+            }else if(paper.mj6_1 == "2"){
+                common_6_1_2.isChecked = true
+            }else if(paper.mj6_1 == "3"){
+                common_6_1_3.isChecked = true
+            }else if(paper.mj6_1 == "4"){
+                common_6_1_4.isChecked = true
+            }else if(paper.mj6_1 == "5"){
+                common_6_1_5.isChecked = true
+            }
+
+        }else if(paper.mj6 == "1"){
+            common_6_false.isChecked = true
+        }
+
+
+        if(paper.mj71 == "2"){
+            common_7_1.isChecked = true
+        }else if(paper.mj72 == "2"){
+            common_7_2.isChecked = true
+        }else if(paper.mj73 == "2"){
+            common_7_3.isChecked = true
+        }else if(paper.mj74 == "2"){
+            common_7_4.isChecked = true
+        }
+
+
+        if(!paper.mj7_1_11.isNullOrEmpty()){
+            checkBox1.isChecked = true
+            common_7_1_1_1.isChecked = true
+            table_edit_1.setText(paper.mj7_1_11)
+        }else if(!paper.mj7_1_12.isNullOrEmpty()){
+            checkBox1.isChecked = true
+            common_7_1_1_2.isChecked = true
+            table_edit_1.setText(paper.mj7_1_12)
+        }else if(!paper.mj7_1_13.isNullOrEmpty()){
+            checkBox1.isChecked = true
+            common_7_1_1_3.isChecked = true
+            table_edit_1.setText(paper.mj7_1_13)
+        }else if(!paper.mj7_1_14.isNullOrEmpty()){
+            checkBox1.isChecked = true
+            common_7_1_1_4.isChecked = true
+            table_edit_1.setText(paper.mj7_1_14)
+        }
+
+
+        if(!paper.mj7_1_21.isNullOrEmpty()){
+            checkBox2.isChecked = true
+            common_7_1_2_1.isChecked = true
+            table_edit_2.setText(paper.mj7_1_21)
+        }else if(!paper.mj7_1_22.isNullOrEmpty()){
+            checkBox2.isChecked = true
+            common_7_1_2_2.isChecked = true
+            table_edit_2.setText(paper.mj7_1_22)
+        }else if(!paper.mj7_1_23.isNullOrEmpty()){
+            checkBox2.isChecked = true
+            common_7_1_2_3.isChecked = true
+            table_edit_2.setText(paper.mj7_1_23)
+        }else if(!paper.mj7_1_24.isNullOrEmpty()){
+            checkBox2.isChecked = true
+            common_7_1_2_4.isChecked = true
+            table_edit_2.setText(paper.mj7_1_24)
+        }
+
+
+        if(!paper.mj7_1_31.isNullOrEmpty()){
+            checkBox3.isChecked = true
+            common_7_1_3_1.isChecked = true
+            table_edit_3.setText(paper.mj7_1_31)
+        }else if(!paper.mj7_1_32.isNullOrEmpty()){
+            checkBox3.isChecked = true
+            common_7_1_3_2.isChecked = true
+            table_edit_3.setText(paper.mj7_1_32)
+        }else if(!paper.mj7_1_33.isNullOrEmpty()){
+            checkBox3.isChecked = true
+            common_7_1_3_3.isChecked = true
+            table_edit_3.setText(paper.mj7_1_33)
+        }else if(!paper.mj7_1_34.isNullOrEmpty()){
+            checkBox3.isChecked = true
+            common_7_1_3_4.isChecked = true
+            table_edit_3.setText(paper.mj7_1_34)
+        }
+
+
+        if(!paper.mj7_1_41.isNullOrEmpty()){
+            checkBox4.isChecked = true
+            common_7_1_4_1.isChecked = true
+            table_edit_4.setText(paper.mj7_1_41)
+        }else if(!paper.mj7_1_42.isNullOrEmpty()){
+            checkBox4.isChecked = true
+            common_7_1_4_2.isChecked = true
+            table_edit_4.setText(paper.mj7_1_42)
+        }else if(!paper.mj7_1_43.isNullOrEmpty()){
+            checkBox4.isChecked = true
+            common_7_1_4_3.isChecked = true
+            table_edit_4.setText(paper.mj7_1_43)
+        }else if(!paper.mj7_1_44.isNullOrEmpty()){
+            checkBox4.isChecked = true
+            common_7_1_4_4.isChecked = true
+            table_edit_4.setText(paper.mj7_1_44)
+        }
+
+
+
+        if(!paper.mj7_1_51.isNullOrEmpty()){
+            checkBox5.isChecked = true
+            common_7_1_5_1.isChecked = true
+            table_edit_5.setText(paper.mj7_1_51)
+        }else if(!paper.mj7_1_52.isNullOrEmpty()){
+            checkBox5.isChecked = true
+            common_7_1_5_2.isChecked = true
+            table_edit_5.setText(paper.mj7_1_52)
+        }else if(!paper.mj7_1_53.isNullOrEmpty()){
+            checkBox5.isChecked = true
+            common_7_1_5_3.isChecked = true
+            table_edit_5.setText(paper.mj7_1_53)
+        }else if(!paper.mj7_1_54.isNullOrEmpty()){
+            checkBox5.isChecked = true
+            common_7_1_5_4.isChecked = true
+            table_edit_5.setText(paper.mj7_1_54)
+        }
+
+
+        if(!paper.mj7_2_11.isNullOrEmpty()){
+            checkBox6.isChecked = true
+            common_7_2_1_1.isChecked = true
+            table_edit_6.setText(paper.mj7_2_11)
+        }else if(!paper.mj7_2_12.isNullOrEmpty()){
+            checkBox6.isChecked = true
+            common_7_2_1_2.isChecked = true
+            table_edit_6.setText(paper.mj7_2_12)
+        }else if(!paper.mj7_2_13.isNullOrEmpty()){
+            checkBox6.isChecked = true
+            common_7_2_1_3.isChecked = true
+            table_edit_6.setText(paper.mj7_2_13)
+        }else if(!paper.mj7_2_14.isNullOrEmpty()){
+            checkBox6.isChecked = true
+            common_7_2_1_4.isChecked = true
+            table_edit_6.setText(paper.mj7_2_14)
+        }
+
+
+        if(!paper.mj7_2_21.isNullOrEmpty()){
+            checkBox7.isChecked = true
+            common_7_2_2_1.isChecked = true
+            table_edit_7.setText(paper.mj7_2_21)
+        }else if(!paper.mj7_2_22.isNullOrEmpty()){
+            checkBox7.isChecked = true
+            common_7_2_2_2.isChecked = true
+            table_edit_7.setText(paper.mj7_2_22)
+        }else if(!paper.mj7_2_23.isNullOrEmpty()){
+            checkBox7.isChecked = true
+            common_7_2_2_3.isChecked = true
+            table_edit_7.setText(paper.mj7_2_23)
+        }else if(!paper.mj7_2_24.isNullOrEmpty()){
+            checkBox7.isChecked = true
+            common_7_2_2_4.isChecked = true
+            table_edit_7.setText(paper.mj7_2_24)
+        }
+
+
+        if(!paper.mj7_2_31.isNullOrEmpty()){
+            checkBox8.isChecked = true
+            common_7_2_3_1.isChecked = true
+            table_edit_8.setText(paper.mj7_2_31)
+        }else if(!paper.mj7_2_32.isNullOrEmpty()){
+            checkBox8.isChecked = true
+            common_7_2_3_2.isChecked = true
+            table_edit_8.setText(paper.mj7_2_32)
+        }else if(!paper.mj7_2_33.isNullOrEmpty()){
+            checkBox8.isChecked = true
+            common_7_2_3_3.isChecked = true
+            table_edit_8.setText(paper.mj7_2_33)
+        }else if(!paper.mj7_2_34.isNullOrEmpty()){
+            checkBox8.isChecked = true
+            common_7_2_3_4.isChecked = true
+            table_edit_8.setText(paper.mj7_2_34)
+        }
+
+
+        if(!paper.mj7_2_41.isNullOrEmpty()){
+            checkBox9.isChecked = true
+            common_7_2_4_1.isChecked = true
+            table_edit_9.setText(paper.mj7_2_41)
+        }else if(!paper.mj7_2_42.isNullOrEmpty()){
+            checkBox9.isChecked = true
+            common_7_2_4_2.isChecked = true
+            table_edit_9.setText(paper.mj7_2_42)
+        }else if(!paper.mj7_2_43.isNullOrEmpty()){
+            checkBox9.isChecked = true
+            common_7_2_4_3.isChecked = true
+            table_edit_9.setText(paper.mj7_2_43)
+        }else if(!paper.mj7_2_44.isNullOrEmpty()){
+            checkBox9.isChecked = true
+            common_7_2_4_4.isChecked = true
+            table_edit_9.setText(paper.mj7_2_44)
+        }
+
+
+        if(!paper.mj7_2_51.isNullOrEmpty()){
+            checkBox10.isChecked = true
+            common_7_2_5_1.isChecked = true
+            table_edit_10.setText(paper.mj7_2_51)
+        }else if(!paper.mj7_2_52.isNullOrEmpty()){
+            checkBox10.isChecked = true
+            common_7_2_5_2.isChecked = true
+            table_edit_10.setText(paper.mj7_2_52)
+        }else if(!paper.mj7_2_53.isNullOrEmpty()){
+            checkBox10.isChecked = true
+            common_7_2_5_3.isChecked = true
+            table_edit_10.setText(paper.mj7_2_53)
+        }else if(!paper.mj7_2_54.isNullOrEmpty()){
+            checkBox10.isChecked = true
+            common_7_2_5_4.isChecked = true
+            table_edit_10.setText(paper.mj7_2_54)
+        }
+
+
+        if(paper.mj8_1 == "1"){
+            common_8_1_1.isChecked = true
+        }else if(paper.mj8_1 == "2"){
+            common_8_1_2.isChecked = true
+        }else if(paper.mj8_1 == "3"){
+            common_8_1_3.isChecked = true
+        }else if(paper.mj8_1 == "4"){
+            common_8_1_4.isChecked = true
+        }else if(paper.mj8_1 == "5"){
+            common_8_1_5.isChecked = true
+        }else if(paper.mj8_1 == "6"){
+            common_8_1_6.isChecked = true
+        }else if(paper.mj8_1 == "7"){
+            common_8_1_7.isChecked = true
+        }
+
+
+        if(!paper.mj8_2_1.isNullOrEmpty()){
+            editText_time_1.setText(paper.mj8_2_1)
+        }
+
+        if(!paper.mj8_2_2.isNullOrEmpty()){
+            editText_minute_1.setText(paper.mj8_2_2)
+        }
+
+
+        if(paper.mj9_1 == "1"){
+            common_9_1_1.isChecked = true
+        }else if(paper.mj9_1 == "2"){
+            common_9_1_2.isChecked = true
+        }else if(paper.mj9_1 == "3"){
+            common_9_1_3.isChecked = true
+        }else if(paper.mj9_1 == "4"){
+            common_9_1_4.isChecked = true
+        }else if(paper.mj9_1 == "5"){
+            common_9_1_5.isChecked = true
+        }else if(paper.mj9_1 == "6"){
+            common_9_1_6.isChecked = true
+        }else if(paper.mj9_1 == "7"){
+            common_9_1_7.isChecked = true
+        }
+
+
+        if(!paper.mj9_2_1.isNullOrEmpty()){
+            editText_time_2.setText(paper.mj9_2_1)
+        }
+
+        if(!paper.mj9_2_2.isNullOrEmpty()){
+            editText_minute_2.setText(paper.mj9_2_2)
+        }
+
+        if(paper.mj10 == "1"){
+            common_10_1.isChecked = true
+        }else if(paper.mj10 == "2"){
+            common_10_2.isChecked = true
+        }else if(paper.mj10 == "3"){
+            common_10_3.isChecked = true
+        }else if(paper.mj10 == "4"){
+            common_10_4.isChecked = true
+        }else if(paper.mj10 == "5"){
+            common_10_5.isChecked = true
+        }else if(paper.mj10 == "6"){
+            common_10_6.isChecked = true
+        }else if(paper.mj10 == "7"){
+            common_10_7.isChecked = true
+        }
+
+
+    }
+
 
 }
