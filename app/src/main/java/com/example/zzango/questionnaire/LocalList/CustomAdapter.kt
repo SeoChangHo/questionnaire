@@ -143,19 +143,142 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                 }
                 Category.COMMON ->
                 {
+
+                    var PaperArray = ArrayList<Paper_COGNITIVE>()
+
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_COGNITIVE(sql_db!!, paper.exam_no)
+                    data.moveToFirst()
+
+                    while(!data.isAfterLast){
+                        PaperArray.add(Paper_COGNITIVE(
+                                data.getString(data.getColumnIndex("exam_date")),
+                                data.getString(data.getColumnIndex("exam_no")),
+                                data.getString(data.getColumnIndex("name")),
+                                data.getString(data.getColumnIndex("first_serial")),
+                                data.getString(data.getColumnIndex("last_serial")),
+                                data.getString(data.getColumnIndex("category")),
+                                data.getString(data.getColumnIndex("mj_inji_1")),
+                                data.getString(data.getColumnIndex("mj_inji_2")),
+                                data.getString(data.getColumnIndex("mj_inji_3")),
+                                data.getString(data.getColumnIndex("mj_inji_4")),
+                                data.getString(data.getColumnIndex("mj_inji_5")),
+                                data.getString(data.getColumnIndex("mj_inji_6")),
+                                data.getString(data.getColumnIndex("mj_inji_7")),
+                                data.getString(data.getColumnIndex("mj_inji_8")),
+                                data.getString(data.getColumnIndex("mj_inji_9")),
+                                data.getString(data.getColumnIndex("mj_inji_10")),
+                                data.getString(data.getColumnIndex("mj_inji_11")),
+                                data.getString(data.getColumnIndex("mj_inji_12")),
+                                data.getString(data.getColumnIndex("mj_inji_13")),
+                                data.getString(data.getColumnIndex("mj_inji_14")),
+                                data.getString(data.getColumnIndex("mj_inji_15")),
+                                data.getString(data.getColumnIndex("mj_mtl_sum"))
+                        ))
+                        data.moveToNext()
+                    }
+
+
                     startActivity(Activity, Intent(Activity, CommonExaminationActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 Category.COGNITIVE ->
                 {
-                    startActivity(Activity, Intent(Activity, CognitiveExaminationActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+
+                    var PaperArray = ArrayList<Paper_COGNITIVE>()
+
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_COGNITIVE(sql_db!!, paper.exam_no)
+                    data.moveToFirst()
+
+                    while(!data.isAfterLast){
+                        PaperArray.add(Paper_COGNITIVE(
+                                data.getString(data.getColumnIndex("exam_date")),
+                                data.getString(data.getColumnIndex("exam_no")),
+                                data.getString(data.getColumnIndex("name")),
+                                data.getString(data.getColumnIndex("first_serial")),
+                                data.getString(data.getColumnIndex("last_serial")),
+                                data.getString(data.getColumnIndex("category")),
+                                data.getString(data.getColumnIndex("mj_inji_1")),
+                                data.getString(data.getColumnIndex("mj_inji_2")),
+                                data.getString(data.getColumnIndex("mj_inji_3")),
+                                data.getString(data.getColumnIndex("mj_inji_4")),
+                                data.getString(data.getColumnIndex("mj_inji_5")),
+                                data.getString(data.getColumnIndex("mj_inji_6")),
+                                data.getString(data.getColumnIndex("mj_inji_7")),
+                                data.getString(data.getColumnIndex("mj_inji_8")),
+                                data.getString(data.getColumnIndex("mj_inji_9")),
+                                data.getString(data.getColumnIndex("mj_inji_10")),
+                                data.getString(data.getColumnIndex("mj_inji_11")),
+                                data.getString(data.getColumnIndex("mj_inji_12")),
+                                data.getString(data.getColumnIndex("mj_inji_13")),
+                                data.getString(data.getColumnIndex("mj_inji_14")),
+                                data.getString(data.getColumnIndex("mj_inji_15")),
+                                data.getString(data.getColumnIndex("mj_mtl_sum"))
+                        ))
+                        data.moveToNext()
+                    }
+
+                    startActivity(Activity, Intent(Activity, CognitiveExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 Category.ELDERLY ->
                 {
-                    startActivity(Activity, Intent(Activity, ElderlyExaminationActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    var PaperArray = ArrayList<Paper_ELDERLY>()
+
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_ELDERLY(sql_db!!, paper.exam_no)
+                    data.moveToFirst()
+
+                    while(!data.isAfterLast){
+                        PaperArray.add(Paper_ELDERLY(
+                                data.getString(data.getColumnIndex("exam_date")),
+                                data.getString(data.getColumnIndex("exam_no")),
+                                data.getString(data.getColumnIndex("name")),
+                                data.getString(data.getColumnIndex("first_serial")),
+                                data.getString(data.getColumnIndex("last_serial")),
+                                data.getString(data.getColumnIndex("category")),
+                                data.getString(data.getColumnIndex("mj66_1")),
+                                data.getString(data.getColumnIndex("mj66_2")),
+                                data.getString(data.getColumnIndex("mj66_3_1")),
+                                data.getString(data.getColumnIndex("mj66_3_2")),
+                                data.getString(data.getColumnIndex("mj66_3_3")),
+                                data.getString(data.getColumnIndex("mj66_3_4")),
+                                data.getString(data.getColumnIndex("mj66_3_5")),
+                                data.getString(data.getColumnIndex("mj66_3_6")),
+                                data.getString(data.getColumnIndex("mj66_4")),
+                                data.getString(data.getColumnIndex("mj66_5"))
+                        ))
+                        data.moveToNext()
+                    }
+
+                    startActivity(Activity, Intent(Activity, ElderlyExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 Category.MENTAL ->
                 {
-                    startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+
+                    var PaperArray = ArrayList<Paper_MENTAL>()
+
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_MENTAL(sql_db!!, paper.exam_no)
+                    data.moveToFirst()
+
+                    while(!data.isAfterLast){
+                        PaperArray.add(Paper_MENTAL(
+                                data.getString(data.getColumnIndex("exam_date")),
+                                data.getString(data.getColumnIndex("exam_no")),
+                                data.getString(data.getColumnIndex("name")),
+                                data.getString(data.getColumnIndex("first_serial")),
+                                data.getString(data.getColumnIndex("last_serial")),
+                                data.getString(data.getColumnIndex("category")),
+                                data.getString(data.getColumnIndex("mj_mtl_1")),
+                                data.getString(data.getColumnIndex("mj_mtl_2")),
+                                data.getString(data.getColumnIndex("mj_mtl_3")),
+                                data.getString(data.getColumnIndex("mj_mtl_4")),
+                                data.getString(data.getColumnIndex("mj_mtl_5")),
+                                data.getString(data.getColumnIndex("mj_mtl_6")),
+                                data.getString(data.getColumnIndex("mj_mtl_7")),
+                                data.getString(data.getColumnIndex("mj_mtl_8")),
+                                data.getString(data.getColumnIndex("mj_mtl_9")),
+                                data.getString(data.getColumnIndex("mj_mtl_sum"))
+                        ))
+                        data.moveToNext()
+                    }
+                    startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 else ->
                 {
