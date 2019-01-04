@@ -111,7 +111,8 @@ class MentalExaminationActivity : AppCompatActivity(){
 
                     if (!response.body()!!.equals("S")) {
 
-                        println(response.body())
+                        login_appbar_loading_progress.visibility = View.GONE
+                        login_appbar_loading_progress_bg.visibility = View.GONE
                         Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
                     } else {
