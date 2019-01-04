@@ -209,8 +209,10 @@ class OralExaminationActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<String>, t: Throwable) {
 
+                login_appbar_loading_progress.visibility = View.GONE
+                login_appbar_loading_progress_bg.visibility = View.GONE
+                this@OralExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                 Toast.makeText(this@OralExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                Toast.makeText(this@OralExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
                 println(t.toString())
             }
 
@@ -222,7 +224,7 @@ class OralExaminationActivity : AppCompatActivity() {
 
         login_appbar_loading_progress.visibility = View.GONE
         login_appbar_loading_progress_bg.visibility = View.GONE
-        Toast.makeText(this@OralExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+        this@OralExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
         popup = false
 
