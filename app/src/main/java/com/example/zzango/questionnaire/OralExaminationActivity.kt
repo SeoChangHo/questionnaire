@@ -959,6 +959,8 @@ class OralExaminationActivity : AppCompatActivity() {
             oral_15_do_not_know.isChecked = true
         }
 
+        remark_content.setText(paper.remark)
+
     }
 
 }

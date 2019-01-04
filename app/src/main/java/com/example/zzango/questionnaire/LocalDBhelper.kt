@@ -507,30 +507,30 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     {
         for(i in 0..Paper.size-1)
         {
-            db.delete("LOCALSAVELIST", "no=?", arrayOf(Paper[i].exam_no))
+            db.delete("LOCALSAVELIST", "exam_no=?", arrayOf(Paper[i].exam_no))
 
 
             when (Paper[i].category)
             {
                 CustomAdapter.Category.COMMON -> {
                     println("공통검진입니다.")
-                    db.delete("ORAL_EXAM", "no=?", arrayOf(Paper[i].exam_no))
+                    db.delete("ORAL_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.ORAL -> {
                     println("구강검진입니다.")
-                    db.delete("ORAL_EXAM", "no=?", arrayOf(Paper[i].exam_no))
+                    db.delete("ORAL_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.MENTAL -> {
                     println("정신건강검진입니다.")
-                    db.delete("MENTAL_EXAM", "no=?", arrayOf(Paper[i].exam_no))
+                    db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.COGNITIVE -> {
                     println("인지기능입니다.")
-                    db.delete("COGNITIVE_EXAM", "no=?", arrayOf(Paper[i].exam_no))
+                    db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.ELDERLY -> {
                     println("노인기능입니다.")
-                    db.delete("ELDERLY_EXAM", "no=?", arrayOf(Paper[i].exam_no))
+                    db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 else -> {
                     println("확인불가")
