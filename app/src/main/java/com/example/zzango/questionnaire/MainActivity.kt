@@ -4,21 +4,27 @@ package com.example.zzango.questionnaire
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.net.wifi.WifiManager
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.ListActivity
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_location.view.*
 
 class MainActivity : AppCompatActivity() , View.OnClickListener {
@@ -29,31 +35,29 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var wfm = getApplicationContext().getSystemService(Context.WIFI_SERVICE) as WifiManager
+
         if(!this.intent.hasExtra("from")) {
 
             popuplogin()
 
-        }
+            if (wfm.isWifiEnabled) {
 
-        var wfm = getApplicationContext().getSystemService(Context.WIFI_SERVICE) as WifiManager
+                getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
 
-        getSharedPreferences("connection_state", Context.MODE_PRIVATE)
+                data_save_mode_image.setImageResource(R.drawable.server_white)
 
-        if(wfm.isWifiEnabled){
+                data_save_mode_text.setText("server")
 
-            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
+            } else {
 
-            data_save_mode_image.setImageResource(R.drawable.server_white)
+                getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
 
-            data_save_mode_text.setText("server")
+                data_save_mode_image.setImageResource(R.drawable.local_white)
 
-        }else{
+                data_save_mode_text.setText("local")
 
-            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
-
-            data_save_mode_image.setImageResource(R.drawable.local_white)
-
-            data_save_mode_text.setText("local")
+            }
 
         }
 
@@ -70,7 +74,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         data_save_mode.setOnClickListener {
 
-            saveAlert()
+            dataSaveLocationAlert()
 
         }
 
@@ -155,7 +159,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     }
 
-    fun saveAlert(){
+    fun dataSaveLocationAlert(){
 
         var dialog = AlertDialog.Builder(this).create()
         var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_location, null)
@@ -249,5 +253,85 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_right, fragment!!).commit()
         }
+
     }
+
+    override fun onBackPressed() {
+
+        var dialog = android.app.AlertDialog.Builder(this).create()
+        var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
+
+        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        dialog.setView(dialog_view)
+        dialog_view.notice.setText("앱을 종료하시겠습니까?")
+
+        if(!popup) {
+
+            dialog.show().let {
+
+                popup = true
+
+            }
+
+        }
+
+        var displayMetrics = DisplayMetrics()
+        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
+        // The absolute width of the available display size in pixels.
+        var displayWidth = displayMetrics.widthPixels
+        // The absolute height of the available display size in pixels.
+        var displayHeight = displayMetrics.heightPixels
+
+        // Initialize a new window manager layout parameters
+        var layoutParams = WindowManager.LayoutParams()
+
+        // Copy the alert dialog window attributes to new layout parameter instance
+        layoutParams.copyFrom(dialog.window.attributes)
+
+        // Set the alert dialog window width and height
+        // Set alert dialog width equal to screen width 90%
+        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
+        // Set alert dialog height equal to screen height 90%
+        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
+
+        // Set alert dialog width equal to screen width 70%
+        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
+        // Set alert dialog height equal to screen height 70%
+        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
+
+        // Set the width and height for the layout parameters
+        // This will bet the width and height of alert dialog
+        layoutParams.width = dialogWindowWidth
+        layoutParams.height = dialogWindowHeight
+
+        // Apply the newly created layout parameters to the alert dialog window
+        dialog.window.attributes = layoutParams
+
+
+        dialog.setOnDismissListener {
+
+            popup = false
+            dialog = null
+
+        }
+
+        dialog_view.cancel.setOnClickListener {
+
+            dialog.dismiss()
+
+        }
+
+        dialog_view.finish.setOnClickListener {
+
+            ActivityCompat.finishAffinity(this)
+
+            System.runFinalization()
+            System.exit(0)
+            dialog.dismiss()
+
+        }
+
+    }
+
 }
