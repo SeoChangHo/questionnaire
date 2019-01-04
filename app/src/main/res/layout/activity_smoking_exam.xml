@@ -391,7 +391,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/smoking_question_3">
 
                 <RadioButton
-                    android:id="@+id/msmoking_3_1"
+                    android:id="@+id/smoking_3_1"
                     android:layout_width="500dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
@@ -467,7 +467,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/smoking_question_4">
 
                 <RadioButton
-                    android:id="@+id/msmoking_4_1"
+                    android:id="@+id/smoking_4_1"
                     android:layout_width="500dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
@@ -519,7 +519,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/smoking_question_5">
 
                 <RadioButton
-                    android:id="@+id/msmoking_5_1"
+                    android:id="@+id/smoking_5_1"
                     android:layout_width="500dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
@@ -571,7 +571,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/smoking_question_6">
 
                 <RadioButton
-                    android:id="@+id/msmoking_6_1"
+                    android:id="@+id/smoking_6_1"
                     android:layout_width="500dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
@@ -648,7 +648,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/smoking_question_7">
 
                 <RadioButton
-                    android:id="@+id/msmoking_7_1"
+                    android:id="@+id/smoking_7_1"
                     android:layout_width="500dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
@@ -700,7 +700,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/smoking_question_8">
 
                 <RadioButton
-                    android:id="@+id/msmoking_8_1"
+                    android:id="@+id/smoking_8_1"
                     android:layout_width="500dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
@@ -761,6 +761,27 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/smoking_examination_save"
+                app:layout_constraintTop_toBottomOf="@+id/smoking_8_radio" />
+
+            <Button
+                android:id="@+id/smoking_edit_submit"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="100dp"
+                android:background="@color/mainBlue"
+                android:text="확인"
+                android:textColor="@color/backGround"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/smoking_8_radio" />
 
         </android.support.constraint.ConstraintLayout>

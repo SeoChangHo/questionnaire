@@ -81,6 +81,12 @@ class SmokingExaminationActivity : AppCompatActivity(){
 
         }
 
+        smoking_edit_submit.setOnClickListener {
+
+            finish()
+
+        }
+
     }
 
     override fun onBackPressed() {
@@ -264,6 +270,80 @@ class SmokingExaminationActivity : AppCompatActivity(){
             Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
             return false
         }
+
+        if(smoking_1_1.isChecked){
+            sg2_spSmoke1 = "1"
+        }else if(smoking_1_2.isChecked){
+            sg2_spSmoke1 = "2"
+        }else if(smoking_1_3.isChecked){
+            sg2_spSmoke1 = "3"
+        }else if(smoking_1_4.isChecked){
+            sg2_spSmoke1 = "4"
+        }
+
+        if(smoking_2_1.isChecked){
+            sg2_spSmoke2 = "1"
+        }else if(smoking_2_2.isChecked){
+            sg2_spSmoke2 = "2"
+        }else if(smoking_2_3.isChecked){
+            sg2_spSmoke2 = "3"
+        }else if(smoking_2_4.isChecked){
+            sg2_spSmoke2 = "4"
+        }else if(smoking_2_5.isChecked){
+            sg2_spSmoke2 = "5"
+        }else if(smoking_2_6.isChecked){
+            sg2_spSmoke2 = "6"
+        }else if(smoking_2_7.isChecked){
+            sg2_spSmoke2 = "7"
+        }else if(smoking_2_8.isChecked){
+            sg2_spSmoke2 = "8"
+        }
+
+        if(smoking_3_1.isChecked){
+            sg2_spSmoke3 = "1"
+        }else if(smoking_3_2.isChecked){
+            sg2_spSmoke3 = "2"
+        }else if(smoking_3_3.isChecked){
+            sg2_spSmoke3 = "3"
+        }else if(smoking_3_4.isChecked){
+            sg2_spSmoke3 = "4"
+        }
+
+
+        if(smoking_4_1.isChecked){
+            sg2_spSmoke4 = "1"
+        }else if(smoking_4_2.isChecked){
+            sg2_spSmoke4 = "2"
+        }
+
+        if(smoking_5_1.isChecked){
+            sg2_spSmoke5 = "1"
+        }else if(smoking_5_2.isChecked){
+            sg2_spSmoke5 = "2"
+        }
+
+        if(smoking_6_1.isChecked){
+            sg2_spSmoke6 = "1"
+        }else if(smoking_6_2.isChecked){
+            sg2_spSmoke6 = "2"
+        }else if(smoking_6_3.isChecked){
+            sg2_spSmoke6 = "3"
+        }else if(smoking_6_4.isChecked){
+            sg2_spSmoke6 = "4"
+        }
+
+        if(smoking_7_1.isChecked){
+            sg2_spSmoke7 = "1"
+        }else if(smoking_7_2.isChecked){
+            sg2_spSmoke7 = "2"
+        }
+
+        if(smoking_8_1.isChecked){
+            sg2_spSmoke8 = "1"
+        }else if(smoking_8_2.isChecked){
+            sg2_spSmoke8 = "2"
+        }
+
 
 
         var arr = ArrayList<SmokingExaminationActivity.ExamInfo>()
