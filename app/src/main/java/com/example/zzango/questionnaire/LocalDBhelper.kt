@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.zzango.questionnaire.LocalList.CustomAdapter
 import com.example.zzango.questionnaire.LocalList.Paper
-import kotlin.collections.ArrayList
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
 
@@ -372,7 +371,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         db.execSQL("INSERT INTO COGNITIVE_EXAM" +
                 "(exam_date," +
-                "no,"  +
+                "exam_no,"  +
                 "name," +
                 "first_serial," +
                 "last_serial," +

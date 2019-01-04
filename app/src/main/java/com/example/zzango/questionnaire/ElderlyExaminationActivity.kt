@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.Paper_ELDERLY
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_elderly_exam.*
@@ -57,6 +58,16 @@ class ElderlyExaminationActivity : AppCompatActivity(){
 
         sql_db = LocalDBhelper(this).writableDatabase
 
+
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper_ELDERLY
+
+            GetPaper(paper)
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         elderly_examination_save.setOnClickListener {
 
             if(check()){
@@ -79,6 +90,12 @@ class ElderlyExaminationActivity : AppCompatActivity(){
         }
 
         elderly_examination_cancel.setOnClickListener {
+
+            finish()
+
+        }
+
+        elderly_edit_submit.setOnClickListener {
 
             finish()
 
@@ -357,4 +374,91 @@ class ElderlyExaminationActivity : AppCompatActivity(){
         return true
 
     }
+
+    fun GetPaper(paper:Paper_ELDERLY) {
+
+
+        name_edit.setText(paper.name)
+        first_serial.setText(paper.first_serial)
+        last_serial.setText(paper.last_serial)
+
+        println(paper)
+
+        elderly_examination_save.visibility = View.GONE
+        elderly_examination_cancel.visibility = View.GONE
+        elderly_edit_submit.visibility = View.VISIBLE
+
+
+
+        if(paper.mj66_1 == "1"){
+            elderly_1_true.isChecked = true
+        }else if(paper.mj66_1 == "2"){
+            elderly_1_false.isChecked = true
+        }
+
+
+        if(paper.mj66_2 == "1"){
+            elderly_2_true.isChecked = true
+        }else if(paper.mj66_2 == "2"){
+            elderly_2_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_1 == "1"){
+            elderly_3_1_true.isChecked = true
+        }else if(paper.mj66_3_1 == "2"){
+            elderly_3_1_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_2 == "1"){
+            elderly_3_2_true.isChecked = true
+        }else if(paper.mj66_3_2 == "2"){
+            elderly_3_2_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_3 == "1"){
+            elderly_3_3_true.isChecked = true
+        }else if(paper.mj66_3_3 == "2"){
+            elderly_3_3_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_4 == "1"){
+            elderly_3_4_true.isChecked = true
+        }else if(paper.mj66_3_4 == "2"){
+            elderly_3_4_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_5 == "1"){
+            elderly_3_5_true.isChecked = true
+        }else if(paper.mj66_3_5 == "2"){
+            elderly_3_5_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_6 == "1"){
+            elderly_3_6_true.isChecked = true
+        }else if(paper.mj66_3_6 == "2"){
+            elderly_3_6_false.isChecked = true
+        }
+
+
+        if(paper.mj66_4 == "1"){
+            elderly_4_true.isChecked = true
+        }else if(paper.mj66_4 == "2"){
+            elderly_4_false.isChecked = true
+        }
+
+
+        if(paper.mj66_5 == "1"){
+            elderly_5_true.isChecked = true
+        }else if(paper.mj66_5 == "2"){
+            elderly_5_false.isChecked = true
+        }
+
+    }
+
 }

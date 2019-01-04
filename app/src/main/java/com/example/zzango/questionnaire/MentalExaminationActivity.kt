@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.Paper_MENTAL
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_mental_exam.*
@@ -57,6 +58,15 @@ class MentalExaminationActivity : AppCompatActivity(){
 
         sql_db = LocalDBhelper(this).writableDatabase
 
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper_MENTAL
+
+            GetPaper(paper)
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         mental_examination_save.setOnClickListener {
 
             if(check()){
@@ -79,6 +89,12 @@ class MentalExaminationActivity : AppCompatActivity(){
         }
 
         mental_examination_cancel.setOnClickListener {
+
+            finish()
+
+        }
+
+        mental_edit_submit.setOnClickListener {
 
             finish()
 
@@ -379,6 +395,122 @@ class MentalExaminationActivity : AppCompatActivity(){
         exam_result = arr
 
         return true
+
+    }
+
+
+    fun GetPaper(paper:Paper_MENTAL){
+
+
+        name_edit.setText(paper.name)
+        first_serial.setText(paper.first_serial)
+        last_serial.setText(paper.last_serial)
+
+        println(paper)
+
+        mental_examination_save.visibility = View.GONE
+        mental_examination_cancel.visibility = View.GONE
+        mental_edit_submit.visibility = View.VISIBLE
+
+
+        if(paper.mj_mtl_1 == "1"){
+            mental_1_1.isChecked = true
+        }else if(paper.mj_mtl_1 == "2"){
+            mental_1_2.isChecked = true
+        }else if(paper.mj_mtl_1 == "3"){
+            mental_1_3.isChecked = true
+        }else if(paper.mj_mtl_1 == "4"){
+            mental_1_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_2 == "1"){
+            mental_2_1.isChecked = true
+        }else if(paper.mj_mtl_2 == "2"){
+            mental_2_2.isChecked = true
+        }else if(paper.mj_mtl_2 == "3"){
+            mental_2_3.isChecked = true
+        }else if(paper.mj_mtl_2 == "4"){
+            mental_2_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_3 == "1"){
+            mental_3_1.isChecked = true
+        }else if(paper.mj_mtl_3 == "2"){
+            mental_3_2.isChecked = true
+        }else if(paper.mj_mtl_3 == "3"){
+            mental_3_3.isChecked = true
+        }else if(paper.mj_mtl_3 == "4"){
+            mental_3_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_4 == "1"){
+            mental_4_1.isChecked = true
+        }else if(paper.mj_mtl_4 == "2"){
+            mental_4_2.isChecked = true
+        }else if(paper.mj_mtl_4 == "3"){
+            mental_4_3.isChecked = true
+        }else if(paper.mj_mtl_4 == "4"){
+            mental_4_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_5 == "1"){
+            mental_5_1.isChecked = true
+        }else if(paper.mj_mtl_5 == "2"){
+            mental_5_2.isChecked = true
+        }else if(paper.mj_mtl_5 == "3"){
+            mental_5_3.isChecked = true
+        }else if(paper.mj_mtl_5 == "4"){
+            mental_5_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_6 == "1"){
+            mental_6_1.isChecked = true
+        }else if(paper.mj_mtl_6 == "2"){
+            mental_6_2.isChecked = true
+        }else if(paper.mj_mtl_6 == "3"){
+            mental_6_3.isChecked = true
+        }else if(paper.mj_mtl_6 == "4"){
+            mental_6_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_7 == "1"){
+            mental_7_1.isChecked = true
+        }else if(paper.mj_mtl_7 == "2"){
+            mental_7_2.isChecked = true
+        }else if(paper.mj_mtl_7 == "3"){
+            mental_7_3.isChecked = true
+        }else if(paper.mj_mtl_7 == "4"){
+            mental_7_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_8 == "1"){
+            mental_8_1.isChecked = true
+        }else if(paper.mj_mtl_8 == "2"){
+            mental_8_2.isChecked = true
+        }else if(paper.mj_mtl_8 == "3"){
+            mental_8_3.isChecked = true
+        }else if(paper.mj_mtl_8 == "4"){
+            mental_8_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_9 == "1"){
+            mental_9_1.isChecked = true
+        }else if(paper.mj_mtl_9 == "2"){
+            mental_9_2.isChecked = true
+        }else if(paper.mj_mtl_9 == "3"){
+            mental_9_3.isChecked = true
+        }else if(paper.mj_mtl_9 == "4"){
+            mental_9_4.isChecked = true
+        }
+
 
     }
 
