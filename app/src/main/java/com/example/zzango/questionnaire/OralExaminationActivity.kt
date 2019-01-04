@@ -156,6 +156,16 @@ class OralExaminationActivity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+
+        if(login_appbar_loading_progress.visibility != View.VISIBLE){
+
+            super.onBackPressed()
+
+        }
+
+    }
+
     fun oral_exam_local_insert(){
 
         println("로컬")
@@ -172,6 +182,8 @@ class OralExaminationActivity : AppCompatActivity() {
 
         println("서버")
 
+        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+
         OracleUtill().oral_examination().oracleServer(exam_result!!).enqueue(object : Callback<String> {
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
@@ -182,6 +194,7 @@ class OralExaminationActivity : AppCompatActivity() {
 
                         login_appbar_loading_progress.visibility = View.GONE
                         login_appbar_loading_progress_bg.visibility = View.GONE
+                        this@OralExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         Toast.makeText(this@OralExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
                     } else {
@@ -197,6 +210,7 @@ class OralExaminationActivity : AppCompatActivity() {
             override fun onFailure(call: Call<String>, t: Throwable) {
 
                 Toast.makeText(this@OralExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                Toast.makeText(this@OralExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
                 println(t.toString())
             }
 
@@ -208,6 +222,7 @@ class OralExaminationActivity : AppCompatActivity() {
 
         login_appbar_loading_progress.visibility = View.GONE
         login_appbar_loading_progress_bg.visibility = View.GONE
+        Toast.makeText(this@OralExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
         popup = false
 

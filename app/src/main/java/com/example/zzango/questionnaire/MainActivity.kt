@@ -41,23 +41,23 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             popuplogin()
 
-            if (wfm.isWifiEnabled) {
+        }
 
-                getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
+        if (wfm.isWifiEnabled) {
 
-                data_save_mode_image.setImageResource(R.drawable.server_white)
+            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
 
-                data_save_mode_text.setText("server")
+            data_save_mode_image.setImageResource(R.drawable.server_white)
 
-            } else {
+            data_save_mode_text.setText("server")
 
-                getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
+        } else {
 
-                data_save_mode_image.setImageResource(R.drawable.local_white)
+            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
 
-                data_save_mode_text.setText("local")
+            data_save_mode_image.setImageResource(R.drawable.local_white)
 
-            }
+            data_save_mode_text.setText("local")
 
         }
 
