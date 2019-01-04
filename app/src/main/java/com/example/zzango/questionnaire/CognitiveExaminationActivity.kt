@@ -109,6 +109,16 @@ class CognitiveExaminationActivity : AppCompatActivity(){
 
     }
 
+    override fun onBackPressed() {
+
+        if(login_appbar_loading_progress.visibility != View.VISIBLE){
+
+            super.onBackPressed()
+
+        }
+
+    }
+
     fun cognitive_exam_local_insert(){
 
         println("로컬")
@@ -125,6 +135,8 @@ class CognitiveExaminationActivity : AppCompatActivity(){
 
         println("서버")
 
+        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+
         OracleUtill().cognitive_examination().cognitiveServer(exam_result!!).enqueue(object : Callback<String> {
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
@@ -135,6 +147,7 @@ class CognitiveExaminationActivity : AppCompatActivity(){
 
                         login_appbar_loading_progress.visibility = View.GONE
                         login_appbar_loading_progress_bg.visibility = View.GONE
+                        this@CognitiveExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         Toast.makeText(this@CognitiveExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
                     } else {
@@ -149,6 +162,9 @@ class CognitiveExaminationActivity : AppCompatActivity(){
 
             override fun onFailure(call: Call<String>, t: Throwable) {
 
+                login_appbar_loading_progress.visibility = View.GONE
+                login_appbar_loading_progress_bg.visibility = View.GONE
+                this@CognitiveExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                 Toast.makeText(this@CognitiveExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
                 println(t.toString())
             }
@@ -161,6 +177,7 @@ class CognitiveExaminationActivity : AppCompatActivity(){
 
         login_appbar_loading_progress.visibility = View.GONE
         login_appbar_loading_progress_bg.visibility = View.GONE
+        this@CognitiveExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
         popup = false
 
