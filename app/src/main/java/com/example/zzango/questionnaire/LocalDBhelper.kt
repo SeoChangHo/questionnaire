@@ -262,7 +262,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " "+System.currentTimeMillis() +", '${columnValue.category}', '${columnValue.name}');")
+                " '${columnValue.exam_bun_no}', '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO ORAL_EXAM" +
                 "(exam_date," +
@@ -448,6 +448,8 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         var sql = "SELECT * FROM ORAL_EXAM WHERE exam_no =?;"
 
         var data = db.rawQuery(sql, arrayOf(getno))
+
+
 
         return data
     }
