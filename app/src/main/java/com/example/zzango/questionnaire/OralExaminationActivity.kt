@@ -168,8 +168,6 @@ class OralExaminationActivity : AppCompatActivity() {
 
     fun oral_exam_local_insert(){
 
-        println("로컬")
-
         LocalDBhelper(this).oralCreate(sql_db)
 
         LocalDBhelper(this).oralSaveLocal(sql_db!!, exam_result!!)
@@ -179,8 +177,6 @@ class OralExaminationActivity : AppCompatActivity() {
     }
 
     fun oral_exam_server_insert(){
-
-        println("서버")
 
         this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 

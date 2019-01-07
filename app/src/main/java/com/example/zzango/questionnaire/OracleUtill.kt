@@ -66,4 +66,12 @@ class OracleUtill {
 
     }
 
+    val exercise_url : String = "https://finepaperweight.herokuapp.com/InsertExercise/"
+
+    fun exercise_examination() : OracleInterface {
+
+        return OracleRequest().getStringResponse(exercise_url)!!.create(OracleInterface::class.java)
+
+    }
+
 }

@@ -272,6 +272,31 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun exerciseCreate(db : SQLiteDatabase?){
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "EXERCISE_EXAM" +
+                "(exam_date TEXT," +
+                " exam_no TEXT,"  +
+                " name TEXT," +
+                " first_serial TEXT," +
+                " last_serial TEXT," +
+                " category TEXT," +
+                " sg2_spSports1 TEXT," +
+                " sg2_spSports2_1 TEXT," +
+                " sg2_spSports2_2 TEXT," +
+                " sg2_spSports3 TEXT," +
+                " sg2_spSports4 TEXT," +
+                " sg2_spSports5 TEXT," +
+                " sg2_spSports6 TEXT," +
+                " sg2_spSports7 TEXT," +
+                " sg2_spSports8 TEXT," +
+                " sg2_spSports9 TEXT," +
+                " sg2_spSports10 TEXT," +
+                " sg2_spSportsSum TEXT);")
+
+    }
+
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
     }
@@ -488,6 +513,40 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.category}', '${columnValue.sg2_spDrink1}', '${columnValue.sg2_spDrink2_1}', '${columnValue.sg2_spDrink2_2}', '${columnValue.sg2_spDrink3}'" +
                 ", '${columnValue.sg2_spDrink4}', '${columnValue.sg2_spDrink5}', '${columnValue.sg2_spDrink6}', '${columnValue.sg2_spDrink7}'" +
                 ", '${columnValue.sg2_spDrink8}', '${columnValue.sg2_spDrink9}', '${columnValue.sg2_spDrink10}', '${columnValue.sg2_spDrinkSum}');")
+    }
+
+    fun exerciseSaveLocal(db: SQLiteDatabase, ex : ArrayList<ExerciseExaminationActivity.ExamInfo>){
+
+        val columnValue = ex.get(0)
+
+        db.execSQL("INSERT INTO LOCALSAVELIST" +
+                "(exam_no, category, name)" +
+                " VALUES (" +
+                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+
+        db.execSQL("INSERT INTO EXERCISE_EXAM" +
+                "(exam_date," +
+                "exam_no,"  +
+                "name," +
+                "first_serial," +
+                "last_serial," +
+                "category, " +
+                "sg2_spSports1_1, sg2_spSports1_2, sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5," +
+                " sg2_spSports1_6_1, sg2_spSports1_6_2, sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2," +
+                " )" +
+                " VALUES (" +
+                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                ", '${columnValue.category}', '${columnValue.sg2_spSports1_1}', '${columnValue.sg2_spSports1_2}', '${columnValue.sg2_spSports1_3_1}'" +
+                ", '${columnValue.sg2_spSports1_3_2}', '${columnValue.sg2_spSports1_4}', '${columnValue.sg2_spSports1_5}'" +
+                ", '${columnValue.sg2_spSports1_6_1}', '${columnValue.sg2_spSports1_6_2}', '${columnValue.sg2_spSports2_1}'" +
+                ", '${columnValue.sg2_spSports2_2}', '${columnValue.sg2_spSports2_3_1}', '${columnValue.sg2_spSports2_3_2}'" +
+                ", '${columnValue.sg2_spSports3_1}', '${columnValue.sg2_spSports3_2}', '${columnValue.sg2_spSports3_3_1}'" +
+                ", '${columnValue.sg2_spSports3_3_2}', '${columnValue.sg2_spSports3_4}', '${columnValue.sg2_spSports3_5}'" +
+                ", '${columnValue.sg2_spSports3_6_1}', '${columnValue.sg2_spSports3_6_2}', '${columnValue.sg2_spSports4_1_1}'" +
+                ", '${columnValue.sg2_spSports4_1_2}', '${columnValue.sg2_spSports5}', '${columnValue.sg2_spSports6}'" +
+                ", '${columnValue.sg2_spSports7}', '${columnValue.sg2_spSports8}', '${columnValue.sg2_spSports9}'" +
+                ", '${columnValue.sg2_spSports10}', '${columnValue.sg2_spSports11}', '${columnValue.sg2_spSports12}');")
+
     }
 
     @SuppressLint("Recycle")

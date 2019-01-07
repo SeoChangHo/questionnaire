@@ -509,6 +509,7 @@
                     android:id="@+id/exercise_1_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="예"
@@ -518,6 +519,7 @@
                     android:id="@+id/exercise_1_false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -626,7 +628,8 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/edit_text_shape"
-                    android:spinnerMode="dialog"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="center"
                     app:layout_constraintStart_toStartOf="@+id/textView91"
                     app:layout_constraintTop_toBottomOf="@+id/textView97" />
 
@@ -859,6 +862,7 @@
                     android:id="@+id/exercise_2_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="예"
@@ -868,6 +872,7 @@
                     android:id="@+id/exercise_2_false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -975,8 +980,9 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/edit_text_shape"
-                    android:spinnerMode="dialog"
+                    android:spinnerMode="dropdown"
                     android:textAlignment="center"
+                    android:autofillHints="운동일자"
                     app:layout_constraintStart_toStartOf="@+id/textView114"
                     app:layout_constraintTop_toBottomOf="@+id/textView120" />
 
@@ -1217,6 +1223,7 @@
                     android:id="@+id/exercise_3_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="예"
@@ -1226,6 +1233,7 @@
                     android:id="@+id/exercise_3_false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -1296,8 +1304,9 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/edit_text_shape"
-                    android:spinnerMode="dialog"
+                    android:spinnerMode="dropdown"
                     android:textAlignment="center"
+                    android:autofillHints="운동일자"
                     app:layout_constraintStart_toStartOf="@+id/textView142"
                     app:layout_constraintTop_toBottomOf="@+id/textView142" />
 
@@ -1565,6 +1574,7 @@
                     android:id="@+id/exercise_4_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="예"
@@ -1574,6 +1584,7 @@
                     android:id="@+id/exercise_4_false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -1673,9 +1684,11 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/edit_text_shape"
-                    android:spinnerMode="dialog"
-                    app:layout_constraintStart_toStartOf="@+id/textView167"
-                    app:layout_constraintTop_toBottomOf="@+id/textView167" />
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="center"
+                    android:autofillHints="운동일자"
+                    app:layout_constraintStart_toStartOf="@+id/textView166"
+                    app:layout_constraintTop_toBottomOf="@+id/textView166" />
 
                 <TextView
                     android:id="@+id/textView168"
@@ -1767,8 +1780,8 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
-                    app:layout_constraintStart_toStartOf="@+id/textView173"
-                    app:layout_constraintTop_toBottomOf="@+id/textView173" />
+                    app:layout_constraintStart_toStartOf="@+id/textView172"
+                    app:layout_constraintTop_toBottomOf="@+id/textView172" />
 
                 <TextView
                     android:id="@+id/textView174"
@@ -1908,6 +1921,7 @@
                     android:id="@+id/exercise_5_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="예"
@@ -1917,6 +1931,7 @@
                     android:id="@+id/exercise_5_false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -2024,8 +2039,9 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/edit_text_shape"
-                    android:spinnerMode="dialog"
+                    android:spinnerMode="dropdown"
                     android:textAlignment="center"
+                    android:autofillHints="운동일자"
                     app:layout_constraintStart_toStartOf="@+id/textView190"
                     app:layout_constraintTop_toBottomOf="@+id/textView190" />
 
@@ -2359,6 +2375,7 @@
                     android:id="@+id/exercise_6_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -2369,6 +2386,7 @@
                     android:id="@+id/exercise_6_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -2379,6 +2397,7 @@
                     android:id="@+id/exercise_6_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -2389,6 +2408,7 @@
                     android:id="@+id/exercise_6_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -2399,6 +2419,7 @@
                     android:id="@+id/exercise_6_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -2409,6 +2430,7 @@
                     android:id="@+id/exercise_6_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue"
                     android:layout_marginLeft="40dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
@@ -2560,12 +2582,14 @@
                         android:id="@+id/exercise_7_true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                     <RadioButton
                         android:id="@+id/exercise_7_false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2594,12 +2618,14 @@
                         android:id="@+id/exercise_8_true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                     <RadioButton
                         android:id="@+id/exercise_8_false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2638,12 +2664,14 @@
                         android:id="@+id/exercise_9_true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                     <RadioButton
                         android:id="@+id/exercise_9_false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2682,12 +2710,14 @@
                         android:id="@+id/exercise_10_true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                     <RadioButton
                         android:id="@+id/exercise_10_false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2726,12 +2756,14 @@
                         android:id="@+id/exercise_11_true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                     <RadioButton
                         android:id="@+id/exercise_11_false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2770,12 +2802,14 @@
                         android:id="@+id/exercise_12_true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                     <RadioButton
                         android:id="@+id/exercise_12_false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2804,12 +2838,14 @@
                         android:id="@+id/exercise_13_true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                     <RadioButton
                         android:id="@+id/exercise_13_false"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2822,6 +2858,63 @@
                     app:layout_constraintBottom_toBottomOf="@+id/exercise_check_wrapper" />
 
             </android.support.constraint.ConstraintLayout>
+
+            <Button
+                android:id="@+id/exercise_examination_save"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="50dp"
+                android:background="@color/mainBlue"
+                android:text="저장"
+                android:textColor="@color/backGround"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/exercise_examination_cancel"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_check_wrapper" />
+
+            <Button
+                android:id="@+id/exercise_examination_cancel"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="50dp"
+                android:background="@color/mainBlue"
+                android:text="취소"
+                android:textColor="@color/backGround"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/exercise_examination_save" />
+
+            <Button
+                android:id="@+id/exercise_edit_submit"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="50dp"
+                android:background="@color/mainBlue"
+                android:text="확인"
+                android:textColor="@color/backGround"
+                android:textSize="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/exercise_check_wrapper" />
 
         </android.support.constraint.ConstraintLayout>
 
