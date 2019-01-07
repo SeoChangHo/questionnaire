@@ -121,17 +121,22 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         exercise_examination_save.setOnClickListener {
 
+            //check function 리턴하는 boolean 값에 따라 진행
             if(check()){
 
+                //진행상태 표시
                 login_appbar_loading_progress.visibility = View.VISIBLE
                 login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
+                //메인 액티비티에서 네트워크 연결상태가 문자열로 저장돼있다 그걸로 구분한다.
                 if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
 
+                    //로컬 저장
                     exercise_exam_local_insert()
 
                 }else{
 
+                    //서버 저장
                     exercise_exam_server_insert()
 
                 }
@@ -152,6 +157,7 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         }
 
+        //spinner에 값을 넣는 adapter들
         pick_time.adapter =
                 ArrayAdapter(this,
                         android.R.layout.simple_list_item_1,
@@ -179,6 +185,7 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
     }
 
+    //radio button check change listener와 연동 bool은 라디오 버튼 체크 값, view는 라디오 버튼과 연계된 wrapper view
     fun checkCondition(bool: Boolean, view : View){
 
         if(bool){
@@ -362,7 +369,7 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         if (!name_text.text.isNullOrEmpty()) {
 
-            name = name_text.text.toString()
+            name = name_edit.text.toString()
 
         } else {
 
@@ -384,27 +391,23 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         }
 
-        if (exercise_1_true.isChecked) {
+        sg2_spSports1_1 = when {
+            exercise_1_true.isChecked -> "y"
+            exercise_1_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports1_1 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if(exercise_1_false.isChecked){
+                return false
 
-            sg2_spSports1_1 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
         if (pick_time.selectedItem != null) {
 
             sg2_spSports1_2 = pick_time.selectedItem.toString()
 
-        }else{
+        } else {
 
             Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
@@ -412,23 +415,15 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         }
 
-        if (exercise_1_3_hour.text !=null) {
+        sg2_spSports1_3_1 = if (!exercise_1_3_hour.text.isNullOrEmpty()) {
 
-            sg2_spSports1_3_1 = exercise_1_3_hour.text.toString()
+            exercise_1_3_hour.text.toString()
 
-        }else{
+        } else if(exercise_1_3_hour.text.isEmpty()) {
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            "0"
 
-            return false
-
-        }
-
-        if (exercise_1_3_minute.text !=null) {
-
-            sg2_spSports1_3_2 = exercise_1_3_minute.text.toString()
-
-        }else{
+        } else {
 
             Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
@@ -436,27 +431,35 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         }
 
-        if (exercise_2_true.isChecked) {
+        sg2_spSports1_3_2 = when {
+            exercise_1_3_minute.text != null -> exercise_1_3_minute.text.toString()
+            exercise_1_3_minute.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports1_4 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if(exercise_2_false.isChecked){
+                return false
 
-            sg2_spSports1_4 = "n"
+            }
+        }
 
-        }else{
+        sg2_spSports1_4 = when {
+            exercise_2_true.isChecked -> "y"
+            exercise_2_false.isChecked -> "n"
+            else -> {
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-            return false
+                return false
 
+            }
         }
 
         if (pick_time2.selectedItem != null) {
 
             sg2_spSports1_5 = pick_time2.selectedItem.toString()
 
-        }else{
+        } else {
 
             Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
@@ -464,51 +467,47 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         }
 
-        if (exercise_2_3_hour.text !=null) {
+        sg2_spSports1_6_1 = when {
+            !exercise_2_3_hour.text.isNullOrEmpty() -> exercise_2_3_hour.text.toString()
+            exercise_2_3_hour.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports1_6_1 = exercise_2_3_hour.text.toString()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else{
+                return false
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if (exercise_2_3_minute.text !=null) {
+        sg2_spSports1_6_2 = when {
+            !exercise_2_3_minute.text.isNullOrEmpty() -> exercise_2_3_minute.text.toString()
+            exercise_2_3_minute.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports1_6_2 = exercise_2_3_minute.text.toString()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else{
+                return false
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if (exercise_3_true.isChecked) {
+        sg2_spSports2_1 = when {
+            exercise_3_true.isChecked -> "y"
+            exercise_3_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports2_1 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if(exercise_3_false.isChecked){
+                return false
 
-            sg2_spSports2_1 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
         if (pick_time3.selectedItem != null) {
 
             sg2_spSports2_2 = pick_time3.selectedItem.toString()
 
-        }else{
+        } else {
 
             Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
@@ -516,51 +515,47 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         }
 
-        if (exercise_3_3_hour.text !=null) {
+        sg2_spSports2_3_1 = when {
+            !exercise_3_3_hour.text.isNullOrEmpty() -> exercise_3_3_hour.text.toString()
+            exercise_3_3_hour.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports2_3_1 = exercise_3_3_hour.text.toString()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else{
+                return false
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if (exercise_3_3_minute.text !=null) {
+        sg2_spSports2_3_2 = when {
+            !exercise_3_3_minute.text.isNullOrEmpty() -> exercise_3_3_minute.text.toString()
+            exercise_3_3_minute.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports2_3_2 = exercise_3_3_minute.text.toString()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else{
+                return false
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if (exercise_4_true.isChecked) {
+        sg2_spSports3_1 = when {
+            exercise_4_true.isChecked -> "y"
+            exercise_4_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports3_1 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if(exercise_4_false.isChecked){
+                return false
 
-            sg2_spSports3_1 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
         if (pick_time4.selectedItem != null) {
 
             sg2_spSports3_2 = pick_time4.selectedItem.toString()
 
-        }else{
+        } else {
 
             Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
@@ -568,51 +563,47 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         }
 
-        if (exercise_4_1_hour.text !=null) {
+        sg2_spSports3_3_1 = when {
+            !exercise_4_1_hour.text.isNullOrEmpty() -> exercise_4_1_hour.text.toString()
+            exercise_4_1_hour.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports3_3_1 = exercise_4_1_hour.text.toString()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else{
+                return false
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if (exercise_4_1_minute.text !=null) {
+        sg2_spSports3_3_2 = when {
+            !exercise_4_1_minute.text.isNullOrEmpty() -> exercise_4_1_minute.text.toString()
+            exercise_4_1_minute.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports3_3_2 = exercise_4_1_minute.text.toString()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else{
+                return false
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if (exercise_5_true.isChecked) {
+        sg2_spSports3_4 = when {
+            exercise_5_true.isChecked -> "y"
+            exercise_5_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports3_4 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if(exercise_5_false.isChecked){
+                return false
 
-            sg2_spSports3_4 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
         if (pick_time5.selectedItem != null) {
 
             sg2_spSports3_5 = pick_time5.selectedItem.toString()
 
-        }else{
+        } else {
 
             Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
@@ -620,196 +611,152 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         }
 
-        if (exercise_3_6_hour.text !=null) {
+        sg2_spSports3_6_1 = when {
+            !exercise_3_6_hour.text.isNullOrEmpty() -> exercise_3_6_hour.text.toString()
+            exercise_3_6_hour.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports3_6_1 = exercise_3_6_hour.text.toString()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else{
+                return false
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if (exercise_3_6_minute.text !=null) {
+        sg2_spSports3_6_2 = when {
+            !exercise_3_6_minute.text.isNullOrEmpty() -> exercise_3_6_minute.text.toString()
+            exercise_3_6_minute.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports3_6_2 = exercise_3_6_minute.text.toString()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else{
+                return false
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if (exercise_4_1_hour.text !=null) {
+        sg2_spSports4_1_1 = when {
+            !exercise_4_1_hour.text.isNullOrEmpty() -> exercise_4_1_hour.text.toString()
+            exercise_4_1_hour.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports4_1_1 = exercise_4_1_hour.text.toString()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else{
+                return false
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if (exercise_4_1_minute.text !=null) {
+        sg2_spSports4_1_2 = when {
+            exercise_4_1_minute.text !=null -> exercise_4_1_minute.text.toString()
+            exercise_4_1_minute.text.isEmpty() -> "0"
+            else -> {
 
-            sg2_spSports4_1_2 = exercise_4_1_minute.text.toString()
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else{
+                return false
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if(exercise_6_no.isChecked){
+        sg2_spSports5 = when {
+            exercise_6_no.isChecked -> "1"
+            exercise_6_1.isChecked -> "2"
+            exercise_6_2.isChecked -> "3"
+            exercise_6_3.isChecked -> "4"
+            exercise_6_4.isChecked -> "5"
+            exercise_6_5.isChecked -> "6"
+            else -> {
 
-            sg2_spSports5 = "1"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if (exercise_6_1.isChecked) {
+                return false
 
-            sg2_spSports5 = "2"
-
-        }else if(exercise_6_2.isChecked){
-
-            sg2_spSports5 = "3"
-
-        }else if(exercise_6_3.isChecked){
-
-            sg2_spSports5 = "4"
-
-        }else if(exercise_6_4.isChecked){
-
-            sg2_spSports5 = "5"
-
-        }else if(exercise_6_5.isChecked){
-
-            sg2_spSports5 = "6"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if(exercise_7_true.isChecked){
+        sg2_spSports6 = when {
+            exercise_7_true.isChecked -> "y"
+            exercise_7_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports6 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if (exercise_7_false.isChecked) {
+                return false
 
-            sg2_spSports6 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if(exercise_8_true.isChecked){
+        sg2_spSports7 = when {
+            exercise_8_true.isChecked -> "y"
+            exercise_8_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports7 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if (exercise_8_false.isChecked) {
+                return false
 
-            sg2_spSports7 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if(exercise_9_true.isChecked){
+        sg2_spSports8 = when {
+            exercise_9_true.isChecked -> "y"
+            exercise_9_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports8 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if (exercise_9_false.isChecked) {
+                return false
 
-            sg2_spSports8 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if(exercise_10_true.isChecked){
+        sg2_spSports9 = when {
+            exercise_10_true.isChecked -> "y"
+            exercise_10_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports9 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if (exercise_10_false.isChecked) {
+                return false
 
-            sg2_spSports9 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if(exercise_11_true.isChecked){
+        sg2_spSports10 = when {
+            exercise_11_true.isChecked -> "y"
+            exercise_11_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports10 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if (exercise_11_false.isChecked) {
+                return false
 
-            sg2_spSports10 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if(exercise_12_true.isChecked){
+        sg2_spSports11 = when {
+            exercise_12_true.isChecked -> "y"
+            exercise_12_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports11 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if (exercise_12_false.isChecked) {
+                return false
 
-            sg2_spSports11 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
-        if(exercise_13_true.isChecked){
+        sg2_spSports12 = when {
+            exercise_13_true.isChecked -> "y"
+            exercise_13_false.isChecked -> "n"
+            else -> {
 
-            sg2_spSports12 = "y"
+                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
 
-        }else if (exercise_13_false.isChecked) {
+                return false
 
-            sg2_spSports12 = "n"
-
-        }else{
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+            }
         }
 
         var arr = ArrayList<ExamInfo>()

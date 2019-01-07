@@ -282,17 +282,36 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " first_serial TEXT," +
                 " last_serial TEXT," +
                 " category TEXT," +
-                " sg2_spSports1 TEXT," +
+                " sg2_spSports1_1 TEXT," +
+                " sg2_spSports1_2 TEXT," +
+                " sg2_spSports1_3_1 TEXT," +
+                " sg2_spSports1_3_2 TEXT," +
+                " sg2_spSports1_4 TEXT," +
+                " sg2_spSports1_5 TEXT," +
+                " sg2_spSports1_6_1 TEXT," +
+                " sg2_spSports1_6_2 TEXT," +
                 " sg2_spSports2_1 TEXT," +
                 " sg2_spSports2_2 TEXT," +
-                " sg2_spSports3 TEXT," +
-                " sg2_spSports4 TEXT," +
+                " sg2_spSports2_3_1 TEXT," +
+                " sg2_spSports2_3_2 TEXT," +
+                " sg2_spSports3_1 TEXT," +
+                " sg2_spSports3_2 TEXT," +
+                " sg2_spSports3_3_1 TEXT," +
+                " sg2_spSports3_3_2 TEXT," +
+                " sg2_spSports3_4 TEXT," +
+                " sg2_spSports3_5 TEXT," +
+                " sg2_spSports3_6_1 TEXT," +
+                " sg2_spSports3_6_2 TEXT," +
+                " sg2_spSports4_1_1 TEXT," +
+                " sg2_spSports4_1_2 TEXT," +
                 " sg2_spSports5 TEXT," +
                 " sg2_spSports6 TEXT," +
                 " sg2_spSports7 TEXT," +
                 " sg2_spSports8 TEXT," +
                 " sg2_spSports9 TEXT," +
                 " sg2_spSports10 TEXT," +
+                " sg2_spSports11 TEXT," +
+                " sg2_spSports12 TEXT," +
                 " sg2_spSportsSum TEXT);")
 
     }
@@ -530,10 +549,12 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "name," +
                 "first_serial," +
                 "last_serial," +
-                "category, " +
-                "sg2_spSports1_1, sg2_spSports1_2, sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5," +
-                " sg2_spSports1_6_1, sg2_spSports1_6_2, sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2," +
-                " )" +
+                "category," +
+                "sg2_spSports1_1,sg2_spSports1_2,sg2_spSports1_3_1,sg2_spSports1_3_2,sg2_spSports1_4,sg2_spSports1_5," +
+                "sg2_spSports1_6_1,sg2_spSports1_6_2,sg2_spSports2_1,sg2_spSports2_2,sg2_spSports2_3_1,sg2_spSports2_3_2," +
+                "sg2_spSports3_1,sg2_spSports3_2,sg2_spSports3_3_1,sg2_spSports3_3_2,sg2_spSports3_4,sg2_spSports3_5," +
+                "sg2_spSports3_6_1,sg2_spSports3_6_2,sg2_spSports4_1_1,sg2_spSports4_1_2,sg2_spSports5,sg2_spSports6," +
+                "sg2_spSports7,sg2_spSports8,sg2_spSports9,sg2_spSports10,sg2_spSports11,sg2_spSports12)" +
                 " VALUES (" +
                 "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.sg2_spSports1_1}', '${columnValue.sg2_spSports1_2}', '${columnValue.sg2_spSports1_3_1}'" +
@@ -595,10 +616,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         return data
     }
 
+    fun Select_Local_Exercise(db : SQLiteDatabase, no: String): Cursor{
 
+        var data = db.rawQuery("SELECT * FROM EXERCISE_EXAM;", null)
 
+        return data
 
-
+    }
 
     @SuppressLint("Recycle")
     fun checkLocalList(db : SQLiteDatabase): Cursor{
