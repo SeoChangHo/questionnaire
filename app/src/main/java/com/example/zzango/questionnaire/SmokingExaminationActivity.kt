@@ -279,6 +279,9 @@ class SmokingExaminationActivity : AppCompatActivity(){
             sg2_spSmoke1 = "3"
         }else if(smoking_1_4.isChecked){
             sg2_spSmoke1 = "4"
+        }else{
+            Toast.makeText(this, "1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(smoking_2_1.isChecked){
@@ -297,6 +300,9 @@ class SmokingExaminationActivity : AppCompatActivity(){
             sg2_spSmoke2 = "7"
         }else if(smoking_2_8.isChecked){
             sg2_spSmoke2 = "8"
+        }else{
+            Toast.makeText(this, "2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(smoking_3_1.isChecked){
@@ -307,6 +313,9 @@ class SmokingExaminationActivity : AppCompatActivity(){
             sg2_spSmoke3 = "3"
         }else if(smoking_3_4.isChecked){
             sg2_spSmoke3 = "4"
+        }else{
+            Toast.makeText(this, "3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
 
@@ -314,12 +323,18 @@ class SmokingExaminationActivity : AppCompatActivity(){
             sg2_spSmoke4 = "1"
         }else if(smoking_4_2.isChecked){
             sg2_spSmoke4 = "2"
+        }else{
+            Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(smoking_5_1.isChecked){
             sg2_spSmoke5 = "1"
         }else if(smoking_5_2.isChecked){
             sg2_spSmoke5 = "2"
+        }else{
+            Toast.makeText(this, "5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(smoking_6_1.isChecked){
@@ -330,18 +345,27 @@ class SmokingExaminationActivity : AppCompatActivity(){
             sg2_spSmoke6 = "3"
         }else if(smoking_6_4.isChecked){
             sg2_spSmoke6 = "4"
+        }else{
+            Toast.makeText(this, "6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(smoking_7_1.isChecked){
             sg2_spSmoke7 = "1"
         }else if(smoking_7_2.isChecked){
             sg2_spSmoke7 = "2"
+        }else{
+            Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(smoking_8_1.isChecked){
             sg2_spSmoke8 = "1"
         }else if(smoking_8_2.isChecked){
             sg2_spSmoke8 = "2"
+        }else{
+            Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
 
