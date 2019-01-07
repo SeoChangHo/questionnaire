@@ -13,21 +13,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OralExaminationActivity"/>
-        <activity android:name=".LocalList.ListActivity"/>
-        <activity android:name=".CommonExaminationActivity"/>
-        <activity android:name=".ServerListActivity"/>
-        <activity android:name=".MentalExaminationActivity"/>
-        <activity android:name=".ElderlyExaminationActivity"/>
-        <activity android:name=".CognitiveExaminationActivity"/>
-        <activity android:name=".SmokingExaminationActivity"/>
+        <activity android:name=".OralExaminationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".LocalList.ListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".CommonExaminationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ServerListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MentalExaminationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ElderlyExaminationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".CognitiveExaminationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SmokingExaminationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ExerciseExaminationActivity" android:screenOrientation="portrait"/>
 
 
     </application>
