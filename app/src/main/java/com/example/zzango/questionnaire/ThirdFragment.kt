@@ -34,6 +34,15 @@ class ThirdFragment : Fragment(){
 
         }
 
+        view.third_imageButton4.setOnClickListener {
+
+            activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
+            activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
+            startActivity(Intent(activity!!, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
+
         return view
     }
 
