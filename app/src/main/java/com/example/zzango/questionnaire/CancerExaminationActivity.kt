@@ -357,6 +357,469 @@ class CancerExaminationActivity : AppCompatActivity(){
             return false
         }
 
+        if(cancer_1_1.isChecked){
+            ck1 = "1"
+            if(!cancer_editText1.text.isNullOrEmpty()){
+                ck1_1 = cancer_editText1.text.toString()
+            }else{
+                Toast.makeText(this, "1번 증상을 작성해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }else if(cancer_1_2.isChecked){
+            ck1 = "2"
+        }else{
+            Toast.makeText(this, "1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_2_1.isChecked){
+            ck1 = "1"
+        }else if(cancer_2_2.isChecked){
+            ck1 = "2"
+            if(!cancer_editText2.text.isNullOrEmpty()){
+                ck2_1 = cancer_editText2.text.toString()
+            }else{
+                Toast.makeText(this, "2번 증상을 작성해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }else{
+            Toast.makeText(this, "2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_3_1_1.isChecked){
+            c_fam_can1 = "1"
+        }else if(cancer_3_1_2.isChecked){
+            c_fam_can1 = "2"
+        }else if(cancer_3_1_3.isChecked){
+            c_fam_can1 = "3"
+            if(cancer_3_1_checkBox1.isChecked){
+                c_fam_can1_rel1 = "1"
+            }else if(cancer_3_1_checkBox2.isChecked){
+                c_fam_can1_rel1 = "2"
+            }else if(cancer_3_1_checkBox3.isChecked){
+                c_fam_can1_rel1 = "3"
+            }else if(cancer_3_1_checkBox4.isChecked){
+                c_fam_can1_rel1 = "4"
+            }else if(cancer_3_1_checkBox5.isChecked){
+                c_fam_can1_rel1 = "5"
+            }else{
+                Toast.makeText(this, "3-1번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }else{
+            Toast.makeText(this, "3-1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_3_2_1.isChecked){
+            c_fam_can2 = "1"
+        }else if(cancer_3_2_2.isChecked){
+            c_fam_can2 = "2"
+        }else if(cancer_3_2_3.isChecked){
+            c_fam_can2 = "3"
+            if(cancer_3_2_checkBox1.isChecked){
+                c_fam_can1_rel2 = "1"
+            }else if(cancer_3_2_checkBox2.isChecked){
+                c_fam_can1_rel2 = "2"
+            }else if(cancer_3_2_checkBox3.isChecked){
+                c_fam_can1_rel2 = "3"
+            }else if(cancer_3_2_checkBox4.isChecked){
+                c_fam_can1_rel2 = "4"
+            }else if(cancer_3_2_checkBox5.isChecked){
+                c_fam_can1_rel2 = "5"
+            }else{
+                Toast.makeText(this, "3-2번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }else{
+            Toast.makeText(this, "3-2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_3_3_1.isChecked){
+            c_fam_can3 = "1"
+        }else if(cancer_3_3_2.isChecked){
+            c_fam_can3 = "2"
+        }else if(cancer_3_3_3.isChecked){
+            c_fam_can3 = "3"
+            if(cancer_3_3_checkBox1.isChecked){
+                c_fam_can1_rel3 = "1"
+            }else if(cancer_3_3_checkBox2.isChecked){
+                c_fam_can1_rel3 = "2"
+            }else if(cancer_3_3_checkBox3.isChecked){
+                c_fam_can1_rel3 = "3"
+            }else if(cancer_3_3_checkBox4.isChecked){
+                c_fam_can1_rel3 = "4"
+            }else if(cancer_3_3_checkBox5.isChecked){
+                c_fam_can1_rel3 = "5"
+            }else{
+                Toast.makeText(this, "3-3번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }else{
+            Toast.makeText(this, "3-3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+
+        if(cancer_3_4_1.isChecked){
+            c_fam_can4 = "1"
+        }else if(cancer_3_4_2.isChecked){
+            c_fam_can4 = "2"
+        }else if(cancer_3_4_3.isChecked){
+            c_fam_can4 = "3"
+            if(cancer_3_4_checkBox1.isChecked){
+                c_fam_can1_rel4 = "1"
+            }else if(cancer_3_4_checkBox2.isChecked){
+                c_fam_can1_rel4 = "2"
+            }else if(cancer_3_4_checkBox3.isChecked){
+                c_fam_can1_rel4 = "3"
+            }else if(cancer_3_4_checkBox4.isChecked){
+                c_fam_can1_rel4 = "4"
+            }else if(cancer_3_4_checkBox5.isChecked){
+                c_fam_can1_rel4 = "5"
+            }else{
+                Toast.makeText(this, "3-4번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }else{
+            Toast.makeText(this, "3-4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_3_5_1.isChecked){
+            c_fam_can5 = "1"
+        }else if(cancer_3_5_2.isChecked){
+            c_fam_can5 = "2"
+        }else if(cancer_3_5_3.isChecked){
+            c_fam_can5 = "3"
+            if(cancer_3_5_checkBox1.isChecked){
+                c_fam_can1_rel5 = "1"
+            }else if(cancer_3_5_checkBox2.isChecked){
+                c_fam_can1_rel5 = "2"
+            }else if(cancer_3_5_checkBox3.isChecked){
+                c_fam_can1_rel5 = "3"
+            }else if(cancer_3_5_checkBox4.isChecked){
+                c_fam_can1_rel5 = "4"
+            }else if(cancer_3_5_checkBox5.isChecked){
+                c_fam_can1_rel5 = "5"
+            }else{
+                Toast.makeText(this, "3-5번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }else{
+            Toast.makeText(this, "3-5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_3_6_1.isChecked){
+            c_fam_can6 = "1"
+        }else if(cancer_3_6_2.isChecked){
+            c_fam_can6 = "2"
+        }else if(cancer_3_6_3.isChecked){
+            c_fam_can6 = "3"
+            if(cancer_3_6_checkBox1.isChecked){
+                c_fam_can1_rel6 = "1"
+            }else if(cancer_3_6_checkBox2.isChecked){
+                c_fam_can1_rel6 = "2"
+            }else if(cancer_3_6_checkBox3.isChecked){
+                c_fam_can1_rel6 = "3"
+            }else if(cancer_3_6_checkBox4.isChecked){
+                c_fam_can1_rel6 = "4"
+            }else if(cancer_3_6_checkBox5.isChecked){
+                c_fam_can1_rel6 = "5"
+            }else{
+                Toast.makeText(this, "3-6번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }else{
+            Toast.makeText(this, "3-6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_4_1_1.isChecked){
+            ck4_1_1 = "1"
+        }else if(cancer_4_1_2.isChecked){
+            ck4_1_1 = "2"
+        }else if(cancer_4_1_3.isChecked){
+            ck4_1_1 = "3"
+        }else if(cancer_4_1_4.isChecked){
+            ck4_1_1 = "4"
+        }
+
+        if(cancer_4_2_1.isChecked){
+            ck4_1_2 = "1"
+        }else if(cancer_4_2_2.isChecked){
+            ck4_1_2 = "2"
+        }else if(cancer_4_2_3.isChecked){
+            ck4_1_2 = "3"
+        }else if(cancer_4_2_4.isChecked){
+            ck4_1_2 = "4"
+        }
+
+        if(cancer_4_3_1.isChecked){
+            ck4_2_1 = "1"
+        }else if(cancer_4_3_2.isChecked){
+            ck4_2_1 = "2"
+        }else if(cancer_4_3_3.isChecked){
+            ck4_2_1 = "3"
+        }else if(cancer_4_3_4.isChecked){
+            ck4_2_1 = "4"
+        }
+
+        if(cancer_4_4_1.isChecked){
+            ck4_3_1 = "1"
+        }else if(cancer_4_4_2.isChecked){
+            ck4_3_1 = "2"
+        }else if(cancer_4_4_3.isChecked){
+            ck4_3_1 = "3"
+        }else if(cancer_4_4_4.isChecked){
+            ck4_3_1 = "4"
+        }
+
+        if(cancer_4_5_1.isChecked){
+            ck4_3_2 = "1"
+        }else if(cancer_4_5_2.isChecked){
+            ck4_3_2 = "2"
+        }else if(cancer_4_5_3.isChecked){
+            ck4_3_2 = "3"
+        }else if(cancer_4_5_4.isChecked){
+            ck4_3_2 = "4"
+        }
+
+
+        if(cancer_4_6_1.isChecked){
+            ck4_3_3 = "1"
+        }else if(cancer_4_6_2.isChecked){
+            ck4_3_3 = "2"
+        }else if(cancer_4_6_3.isChecked){
+            ck4_3_3 = "3"
+        }else if(cancer_4_6_4.isChecked){
+            ck4_3_3 = "4"
+        }
+
+        if(cancer_4_7_1.isChecked){
+            ck4_4_1 = "1"
+        }else if(cancer_4_7_2.isChecked){
+            ck4_4_1 = "2"
+        }else if(cancer_4_7_3.isChecked){
+            ck4_4_1 = "3"
+        }else if(cancer_4_7_4.isChecked){
+            ck4_4_1 = "4"
+        }
+
+        if(cancer_4_8_1.isChecked){
+            ck4_5_1 = "1"
+        }else if(cancer_4_8_2.isChecked){
+            ck4_5_1 = "2"
+        }else if(cancer_4_8_3.isChecked){
+            ck4_5_1 = "3"
+        }else if(cancer_4_8_4.isChecked){
+            ck4_5_1 = "4"
+        }
+
+        if(cancer_5_1_checkBox.isChecked){
+            ck5_1 = "2"
+        }else{
+            ck5_1 = "1"
+        }
+
+        if(cancer_5_2_checkBox.isChecked){
+            ck5_2 = "2"
+        }else{
+            ck5_2 = "1"
+        }
+
+        if(cancer_5_3_checkBox.isChecked){
+            ck5_3 = "2"
+        }else{
+            ck5_3 = "1"
+        }
+
+        if(cancer_5_4_checkBox.isChecked){
+            ck5_4 = "2"
+        }else{
+            ck5_4 = "1"
+        }
+
+        if(cancer_5_5_checkBox.isChecked){
+            ck5_5 = "2"
+        }else{
+            ck5_5 = "1"
+        }
+
+        if(cancer_5_6_checkBox.isChecked){
+            ck5_6 = "2"
+        }else{
+            ck5_6 = "1"
+        }
+
+        if(cancer_6_1_checkBox.isChecked){
+            ck6_1 = "2"
+        }else{
+            ck6_1 = "1"
+        }
+
+        if(cancer_6_2_checkBox.isChecked){
+            ck6_2 = "2"
+        }else{
+            ck6_2 = "1"
+        }
+
+        if(cancer_6_3_checkBox.isChecked){
+            ck6_3 = "2"
+        }else{
+            ck6_3 = "1"
+        }
+
+        if(cancer_6_4_checkBox.isChecked){
+            ck6_4 = "2"
+        }else{
+            ck6_4 = "1"
+        }
+
+        if(cancer_6_5_checkBox.isChecked){
+            ck6_5 = "2"
+        }else{
+            ck6_5 = "1"
+        }
+
+        if(cancer_6_6_checkBox.isChecked){
+            ck6_6 = "2"
+        }else{
+            ck6_6 = "1"
+        }
+
+        if(cancer_7_1_checkBox.isChecked){
+            ck7_1 = "2"
+        }else{
+            ck7_1 = "1"
+        }
+
+        if(cancer_7_2_checkBox.isChecked){
+            ck7_2 = "2"
+        }else{
+            ck7_2 = "1"
+        }
+
+        if(cancer_7_3_checkBox.isChecked){
+            ck7_3 = "2"
+        }else{
+            ck7_3 = "1"
+        }
+
+        if(cancer_7_4_checkBox.isChecked){
+            ck7_4 = "2"
+        }else{
+            ck7_4 = "1"
+        }
+
+        if(cancer_7_5_checkBox.isChecked){
+            ck7_5 = "2"
+        }else{
+            ck7_5 = "1"
+        }
+
+        if(cancer_7_6_checkBox.isChecked){
+            ck7_6 = "2"
+        }else{
+            ck7_6 = "1"
+        }
+
+        if(cancer_8_1.isChecked){
+            ck8 = "1"
+            if(!cancer_editText3.text.isNullOrEmpty()){
+                ck8_1 = cancer_editText3.text.toString()
+            }else{
+                Toast.makeText(this, "8번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }else if(cancer_8_2.isChecked){
+            ck8 = "2"
+        }else{
+            Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_9_1.isChecked){
+            ck9 = "1"
+        }else if(cancer_9_2.isChecked){
+            ck9 = "2"
+        }else if(cancer_9_3.isChecked){
+            ck9 = "3"
+            if(!cancer_editText4.text.isNullOrEmpty()){
+                ck9_1 = cancer_editText4.text.toString()
+            }else{
+                Toast.makeText(this, "9번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }else{
+            Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_10_1.isChecked){
+            ck10 = "1"
+        }else if(cancer_10_2.isChecked){
+            ck10 = "2"
+        }else if(cancer_10_3.isChecked){
+            ck10 = "3"
+        }else if(cancer_10_4.isChecked){
+            ck10 = "4"
+        }else if(cancer_10_5.isChecked){
+            ck10 = "5"
+        }else{
+            Toast.makeText(this, "10번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_11_1.isChecked){
+            ck11 = "1"
+        }else if(cancer_11_2.isChecked){
+            ck11 = "2"
+        }else if(cancer_11_3.isChecked){
+            ck11 = "3"
+        }else{
+            Toast.makeText(this, "11번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_12_1.isChecked){
+            ck12 = "1"
+        }else if(cancer_12_2.isChecked){
+            ck12 = "2"
+        }else if(cancer_12_3.isChecked){
+            ck12 = "3"
+        }else if(cancer_12_4.isChecked){
+            ck12 = "4"
+        }else{
+            Toast.makeText(this, "12번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_13_1.isChecked){
+            ck13 = "1"
+        }else if(cancer_13_2.isChecked){
+            ck13 = "2"
+        }else if(cancer_13_3.isChecked){
+            ck13 = "3"
+        }else{
+            Toast.makeText(this, "13번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if(cancer_14_1.isChecked){
+            ck14 = "1"
+        }else if(cancer_14_2.isChecked){
+            ck14 = "2"
+        }else if(cancer_14_3.isChecked){
+            ck14 = "3"
+        }else{
+            Toast.makeText(this, "14번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
 
         var arr = ArrayList<CancerExaminationActivity.ExamInfo>()
 
