@@ -39,18 +39,57 @@ class CancerExaminationActivity : AppCompatActivity(){
                          @SerializedName("first_serial") @Expose var first_serial : String,
                          @SerializedName("last_serial") @Expose var last_serial : String,
                          @SerializedName("category") @Expose var category : String,
-                         @SerializedName("sg2_spDrink1") @Expose var sg2_spDrink1 : String,
-                         @SerializedName("sg2_spDrink2_1") @Expose var sg2_spDrink2_1 : String,
-                         @SerializedName("sg2_spDrink2_2") @Expose var sg2_spDrink2_2 : String,
-                         @SerializedName("sg2_spDrink3") @Expose var sg2_spDrink3 : String,
-                         @SerializedName("sg2_spDrink4") @Expose var sg2_spDrink4 : String,
-                         @SerializedName("sg2_spDrink5") @Expose var sg2_spDrink5 : String,
-                         @SerializedName("sg2_spDrink6") @Expose var sg2_spDrink6 : String,
-                         @SerializedName("sg2_spDrink7") @Expose var sg2_spDrink7 : String,
-                         @SerializedName("sg2_spDrink8") @Expose var sg2_spDrink8 : String,
-                         @SerializedName("sg2_spDrink9") @Expose var sg2_spDrink9 : String,
-                         @SerializedName("sg2_spDrink10") @Expose var sg2_spDrink10 : String,
-                         @SerializedName("sg2_spDrinkSum") @Expose var sg2_spDrinkSum : String)
+                         @SerializedName("ck1") @Expose var ck1 : String,
+                         @SerializedName("ck1_1") @Expose var ck1_1 : String,
+                         @SerializedName("ck2") @Expose var ck2 : String,
+                         @SerializedName("ck2_1") @Expose var ck2_1 : String,
+                         @SerializedName("c_fam_can1") @Expose var c_fam_can1 : String,
+                         @SerializedName("c_fam_can1_rel1") @Expose var c_fam_can1_rel1 : String,
+                         @SerializedName("c_fam_can2") @Expose var c_fam_can2 : String,
+                         @SerializedName("c_fam_can1_rel2") @Expose var c_fam_can1_rel2 : String,
+                         @SerializedName("c_fam_can3") @Expose var c_fam_can3 : String,
+                         @SerializedName("c_fam_can1_rel3") @Expose var c_fam_can1_rel3 : String,
+                         @SerializedName("c_fam_can4") @Expose var c_fam_can4 : String,
+                         @SerializedName("c_fam_can1_rel4") @Expose var c_fam_can1_rel4 : String,
+                         @SerializedName("c_fam_can5") @Expose var c_fam_can5 : String,
+                         @SerializedName("c_fam_can1_rel5") @Expose var c_fam_can1_rel5 : String,
+                         @SerializedName("c_fam_can6") @Expose var c_fam_can6 : String,
+                         @SerializedName("c_fam_can1_rel6") @Expose var c_fam_can1_rel6 : String,
+                         @SerializedName("ck4_1_1") @Expose var ck4_1_1 : String,
+                         @SerializedName("ck4_1_2") @Expose var ck4_1_2 : String,
+                         @SerializedName("ck4_2_1") @Expose var ck4_2_1 : String,
+                         @SerializedName("ck4_3_1") @Expose var ck4_3_1 : String,
+                         @SerializedName("ck4_3_2") @Expose var ck4_3_2 : String,
+                         @SerializedName("ck4_3_3") @Expose var ck4_3_3 : String,
+                         @SerializedName("ck4_4_1") @Expose var ck4_4_1 : String,
+                         @SerializedName("ck4_5_1") @Expose var ck4_5_1 : String,
+                         @SerializedName("ck5_1") @Expose var ck5_1 : String,
+                         @SerializedName("ck5_2") @Expose var ck5_2 : String,
+                         @SerializedName("ck5_3") @Expose var ck5_3 : String,
+                         @SerializedName("ck5_4") @Expose var ck5_4 : String,
+                         @SerializedName("ck5_5") @Expose var ck5_5 : String,
+                         @SerializedName("ck5_6") @Expose var ck5_6 : String,
+                         @SerializedName("ck6_1") @Expose var ck6_1 : String,
+                         @SerializedName("ck6_2") @Expose var ck6_2 : String,
+                         @SerializedName("ck6_3") @Expose var ck6_3 : String,
+                         @SerializedName("ck6_4") @Expose var ck6_4 : String,
+                         @SerializedName("ck6_5") @Expose var ck6_5 : String,
+                         @SerializedName("ck6_6") @Expose var ck6_6 : String,
+                         @SerializedName("ck7_1") @Expose var ck7_1 : String,
+                         @SerializedName("ck7_2") @Expose var ck7_2 : String,
+                         @SerializedName("ck7_3") @Expose var ck7_3 : String,
+                         @SerializedName("ck7_4") @Expose var ck7_4 : String,
+                         @SerializedName("ck7_5") @Expose var ck7_5 : String,
+                         @SerializedName("ck7_6") @Expose var ck7_6 : String,
+                         @SerializedName("ck8") @Expose var ck8 : String,
+                         @SerializedName("ck8_1") @Expose var ck8_1 : String,
+                         @SerializedName("ck9") @Expose var ck9 : String,
+                         @SerializedName("ck9_1") @Expose var ck9_1 : String,
+                         @SerializedName("ck10") @Expose var ck10 : String,
+                         @SerializedName("ck11") @Expose var ck11 : String,
+                         @SerializedName("ck12") @Expose var ck12 : String,
+                         @SerializedName("ck13") @Expose var ck13 : String,
+                         @SerializedName("ck14") @Expose var ck14 : String)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -244,18 +283,58 @@ class CancerExaminationActivity : AppCompatActivity(){
         var first_serial_text = ""
         var last_serial_text = ""
         var category = "cancer"
-        var sg2_spDrink1 = ""
-        var sg2_spDrink2_1 = ""
-        var sg2_spDrink2_2 = ""
-        var sg2_spDrink3 = ""
-        var sg2_spDrink4 = ""
-        var sg2_spDrink5 = ""
-        var sg2_spDrink6 = ""
-        var sg2_spDrink7 = ""
-        var sg2_spDrink8 = ""
-        var sg2_spDrink9 = ""
-        var sg2_spDrink10 = ""
-        var sg2_spDrinkSum = ""
+        var ck1 = ""
+        var ck1_1 = ""
+        var ck2 = ""
+        var ck2_1 = ""
+        var c_fam_can1 = ""
+        var c_fam_can1_rel1 = ""
+        var c_fam_can2 = ""
+        var c_fam_can1_rel2 = ""
+        var c_fam_can3 = ""
+        var c_fam_can1_rel3 = ""
+        var c_fam_can4 = ""
+        var c_fam_can1_rel4 = ""
+        var c_fam_can5 = ""
+        var c_fam_can1_rel5 = ""
+        var c_fam_can6 = ""
+        var c_fam_can1_rel6 = ""
+        var ck4_1_1 = ""
+        var ck4_1_2 = ""
+        var ck4_2_1 = ""
+        var ck4_3_1 = ""
+        var ck4_3_2 = ""
+        var ck4_3_3 = ""
+        var ck4_4_1 = ""
+        var ck4_5_1 = ""
+        var ck5_1 = ""
+        var ck5_2 = ""
+        var ck5_3 = ""
+        var ck5_4 = ""
+        var ck5_5 = ""
+        var ck5_6 = ""
+        var ck6_1 = ""
+        var ck6_2 = ""
+        var ck6_3 = ""
+        var ck6_4 = ""
+        var ck6_5 = ""
+        var ck6_6 = ""
+        var ck7_1 = ""
+        var ck7_2 = ""
+        var ck7_3 = ""
+        var ck7_4 = ""
+        var ck7_5 = ""
+        var ck7_6 = ""
+        var ck8 = ""
+        var ck8_1 = ""
+        var ck9 = ""
+        var ck9_1 = ""
+        var ck10 = ""
+        var ck11 = ""
+        var ck12 = ""
+        var ck13 = ""
+        var ck14 = ""
+
 
         if (!name_edit.text.isNullOrEmpty()) {
             name = name_edit.text.toString()
@@ -283,8 +362,12 @@ class CancerExaminationActivity : AppCompatActivity(){
 
         arr.add(CancerExaminationActivity.ExamInfo(
                 exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
-                sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
-                sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
+                ck1, ck1_1, ck2, ck2_1, c_fam_can1, c_fam_can1_rel1, c_fam_can2, c_fam_can1_rel2,
+                c_fam_can3, c_fam_can1_rel3, c_fam_can4, c_fam_can1_rel4, c_fam_can5, c_fam_can1_rel5,
+                c_fam_can6, c_fam_can1_rel6, ck4_1_1, ck4_1_2, ck4_2_1, ck4_3_1, ck4_3_2, ck4_3_3,
+                ck4_4_1, ck4_5_1, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck5_6, ck6_1, ck6_2, ck6_3, ck6_4,
+                ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8, ck8_1, ck9, ck9_1,
+                ck10, ck11, ck12, ck13, ck14
         ))
 
         exam_result = arr

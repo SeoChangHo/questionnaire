@@ -316,6 +316,71 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun cancerCreate(db : SQLiteDatabase?){
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "CANCER_EXAM" +
+                "(exam_date TEXT," +
+                " exam_no TEXT,"  +
+                " name TEXT," +
+                " first_serial TEXT," +
+                " last_serial TEXT," +
+                " category TEXT," +
+                " ck1 TEXT," +
+                " ck1_1 TEXT," +
+                " ck2 TEXT," +
+                " ck2_1 TEXT," +
+                " c_fam_can1 TEXT," +
+                " c_fam_can1_rel1 TEXT," +
+                " c_fam_can2 TEXT," +
+                " c_fam_can1_rel2 TEXT," +
+                " c_fam_can3 TEXT," +
+                " c_fam_can1_rel3 TEXT," +
+                " c_fam_can4 TEXT," +
+                " c_fam_can1_rel4 TEXT," +
+                " c_fam_can5 TEXT," +
+                " c_fam_can1_rel5 TEXT," +
+                " c_fam_can6 TEXT," +
+                " c_fam_can1_rel6 TEXT," +
+                " ck4_1_1 TEXT," +
+                " ck4_1_2 TEXT," +
+                " ck4_2_1 TEXT," +
+                " ck4_3_1 TEXT," +
+                " ck4_3_2 TEXT," +
+                " ck4_3_3 TEXT," +
+                " ck4_4_1 TEXT," +
+                " ck4_5_1 TEXT," +
+                " ck5_1 TEXT," +
+                " ck5_2 TEXT," +
+                " ck5_3 TEXT," +
+                " ck5_4 TEXT," +
+                " ck5_5 TEXT," +
+                " ck5_6 TEXT," +
+                " ck6_1 TEXT," +
+                " ck6_2 TEXT," +
+                " ck6_3 TEXT," +
+                " ck6_4 TEXT," +
+                " ck6_5 TEXT," +
+                " ck6_6 TEXT," +
+                " ck7_1 TEXT," +
+                " ck7_2 TEXT," +
+                " ck7_3 TEXT," +
+                " ck7_4 TEXT," +
+                " ck7_5 TEXT," +
+                " ck7_6 TEXT," +
+                " ck8 TEXT," +
+                " ck8_1 TEXT," +
+                " ck9 TEXT," +
+                " ck9_1 TEXT," +
+                " ck10 TEXT," +
+                " ck11 TEXT," +
+                " ck12 TEXT," +
+                " ck13 TEXT," +
+                " ck14 TEXT);")
+
+    }
+
+
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
     }
@@ -568,6 +633,45 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.sg2_spSports7}', '${columnValue.sg2_spSports8}', '${columnValue.sg2_spSports9}'" +
                 ", '${columnValue.sg2_spSports10}', '${columnValue.sg2_spSports11}', '${columnValue.sg2_spSports12}');")
 
+    }
+
+    fun cancerSaveLocal(db : SQLiteDatabase, ex : ArrayList<CancerExaminationActivity.ExamInfo>){
+
+        val columnValue = ex.get(0)
+
+
+        db.execSQL("INSERT INTO LOCALSAVELIST" +
+                "(exam_no, category, name)" +
+                " VALUES (" +
+                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+
+        db.execSQL("INSERT INTO CANCER_EXAM" +
+                "(exam_date," +
+                "exam_no,"  +
+                "name," +
+                "first_serial," +
+                "last_serial," +
+                "category, " +
+                "ck1, ck1_1, ck2, ck2_1, c_fam_can1, c_fam_can1_rel1, c_fam_can2, c_fam_can1_rel2, c_fam_can3, c_fam_can1_rel3," +
+                "c_fam_can4, c_fam_can1_rel4, c_fam_can5, c_fam_can1_rel5, c_fam_can6, c_fam_can1_rel6," +
+                "ck4_1_1, ck4_1_2, ck4_2_1, ck4_3_1, ck4_3_2, ck4_3_3, ck4_4_1, ck4_5_1, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5," +
+                "ck5_6, ck6_1, ck6_2, ck6_3, ck6_4, ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8, ck8_1," +
+                "ck9, ck9_1, ck10, ck11, ck12, ck13, ck14)" +
+                " VALUES (" +
+                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                ", '${columnValue.category}', '${columnValue.ck1}', '${columnValue.ck1_1}', '${columnValue.ck2}', '${columnValue.ck2_1}'" +
+                ", '${columnValue.c_fam_can1}', '${columnValue.c_fam_can1_rel1}', '${columnValue.c_fam_can2}', '${columnValue.c_fam_can1_rel2}'" +
+                ", '${columnValue.c_fam_can3}', '${columnValue.c_fam_can1_rel3}', '${columnValue.c_fam_can4}', '${columnValue.c_fam_can1_rel4}'" +
+                ", '${columnValue.c_fam_can5}', '${columnValue.c_fam_can1_rel5}', '${columnValue.c_fam_can6}', '${columnValue.c_fam_can1_rel6}'" +
+                ", '${columnValue.ck4_1_1}', '${columnValue.ck4_1_2}', '${columnValue.ck4_2_1}', '${columnValue.ck4_3_1}'" +
+                ", '${columnValue.ck4_3_2}', '${columnValue.ck4_3_3}', '${columnValue.ck4_4_1}', '${columnValue.ck4_5_1}'" +
+                ", '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck5_1}'" +
+                ", '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}'" +
+                ", '${columnValue.ck6_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}'" +
+                ", '${columnValue.ck7_1}', '${columnValue.ck7_1}', '${columnValue.ck7_1}', '${columnValue.ck7_1}'" +
+                ", '${columnValue.ck7_1}', '${columnValue.ck7_1}', '${columnValue.ck8}', '${columnValue.ck8_1}'" +
+                ", '${columnValue.ck9}', '${columnValue.ck9_1}', '${columnValue.ck10}', '${columnValue.ck11}'" +
+                ", '${columnValue.ck12}', '${columnValue.ck13}', '${columnValue.ck14}');")
     }
 
     @SuppressLint("Recycle")
