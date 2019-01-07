@@ -250,7 +250,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun drinkingCreate(db : SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
-                "SMOKING_EXAM" +
+                "DRINKING_EXAM" +
                 "(exam_date TEXT," +
                 " exam_no TEXT,"  +
                 " name TEXT," +
@@ -583,7 +583,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " VALUES (" +
                 " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
 
-        db.execSQL("INSERT INTO SMOKING_EXAM" +
+        db.execSQL("INSERT INTO DRINKING_EXAM" +
                 "(exam_date," +
                 "exam_no,"  +
                 "name," +
@@ -720,9 +720,28 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         return data
     }
 
+    @SuppressLint("Recycle")
     fun Select_Local_Exercise(db : SQLiteDatabase, no: String): Cursor{
 
         var data = db.rawQuery("SELECT * FROM EXERCISE_EXAM;", null)
+
+        return data
+
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_Smoking(db : SQLiteDatabase, no: String): Cursor{
+
+        var data = db.rawQuery("SELECT * FROM SMOKING_EXAM;", null)
+
+        return data
+
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_Drinking(db : SQLiteDatabase, no: String): Cursor{
+
+        var data = db.rawQuery("SELECT * FROM DRINKING_EXAM;", null)
 
         return data
 
@@ -767,6 +786,18 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 CustomAdapter.Category.ELDERLY -> {
                     println("노인기능입니다.")
                     db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+                }
+                CustomAdapter.Category.DRINKING -> {
+                    println("음주입니다..")
+                    db.delete("DRINKING", "exam_no=?", arrayOf(Paper[i].exam_no))
+                }
+                CustomAdapter.Category.SMOKING -> {
+                    println("흡연입니다..")
+                    db.delete("SMOKING", "exam_no=?", arrayOf(Paper[i].exam_no))
+                }
+                CustomAdapter.Category.CANCER -> {
+                    println("암입니다..")
+                    db.delete("CANCER", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 else -> {
                     println("확인불가")

@@ -31,7 +31,7 @@ var oral_15:String,
 var remark :String
 ): Serializable
 
-
+//공통 리스트
 data class Paper_COMMON(
 
 var exam_date:String,
@@ -130,7 +130,7 @@ var mj10:String
 ):Serializable
 
 
-
+//정신건강
 data class Paper_MENTAL(
 var exam_date:String,
 var exam_no:String,
@@ -150,6 +150,8 @@ var mj_mtl_9 :String,
 var mj_mtl_sum :String
 ):Serializable
 
+
+//인지기능
 data class Paper_COGNITIVE(
 var exam_date :String,
 var exam_no :String,
@@ -175,8 +177,8 @@ var mj_inji_15 :String,
 var mj_inji_sum :String
 ):Serializable
 
+//노인기능
 data class Paper_ELDERLY(
-
 var exam_date:String,
 var exam_no :String,
 var name :String,
@@ -193,4 +195,67 @@ var mj66_3_5:String,
 var mj66_3_6:String,
 var mj66_4 :String,
 var mj66_5 :String
+):Serializable
+
+//흡연
+data class Paper_SMOKING(
+        var exam_date:String,
+        var exam_no :String,
+        var name :String,
+        var first_serial:String,
+        var last_serial :String,
+        var category :String,
+        var sg2_spSmoke1 :String,
+        var sg2_spSmoke2 :String,
+        var sg2_spSmoke3:String,
+        var sg2_spSmoke4:String,
+        var sg2_spSmoke5:String,
+        var sg2_spSmoke6:String,
+        var sg2_spSmoke7:String,
+        var sg2_spSmoke8:String,
+        var sg2_spSmokeSum :String
+):Serializable
+
+//음주
+data class Paper_DRINKING(
+        var exam_date:String,
+        var exam_no :String,
+        var name :String,
+        var first_serial:String,
+        var last_serial :String,
+        var category :String,
+        var sg2_spDrink1 :String,
+        var sg2_spDrink2_1 :String,
+        var sg2_spDrink2_2:String,
+        var sg2_spDrink3:String,
+        var sg2_spDrink4:String,
+        var sg2_spDrink5:String,
+        var sg2_spDrink6:String,
+        var sg2_spDrink7:String,
+        var sg2_spDrink8 :String,
+        var sg2_spDrink9 :String,
+        var sg2_spDrink10 :String,
+        var sg2_spDrinkSum :String
+):Serializable
+
+//암
+data class Paper_CANCER(
+        var exam_date:String,
+        var exam_no :String,
+        var name :String,
+        var first_serial:String,
+        var last_serial :String,
+        var category :String,
+        var sg2_spDrink1 :String,
+        var sg2_spDrink2_1 :String,
+        var sg2_spDrink2_2:String,
+        var sg2_spDrink3:String,
+        var sg2_spDrink4:String,
+        var sg2_spDrink5:String,
+        var sg2_spDrink6:String,
+        var sg2_spDrink7:String,
+        var sg2_spDrink8 :String,
+        var sg2_spDrink9 :String,
+        var sg2_spDrink10 :String,
+        var sg2_spDrinkSum :String
 ):Serializable

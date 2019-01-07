@@ -1,6 +1,5 @@
 package com.example.zzango.questionnaire.LocalList
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
@@ -8,7 +7,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.WindowManager
-import android.widget.*
+import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import com.example.zzango.questionnaire.LocalDBhelper
 import com.example.zzango.questionnaire.OracleUtill
 import com.example.zzango.questionnaire.R
@@ -105,6 +107,18 @@ class ListActivity : Activity() {
                         println(removeArr[i].category)
                     }
                     CustomAdapter.Category.COMMON ->
+                    {
+                        println(removeArr[i].category)
+                    }
+                    CustomAdapter.Category.DRINKING ->
+                    {
+                        println(removeArr[i].category)
+                    }
+                    CustomAdapter.Category.SMOKING ->
+                    {
+                        println(removeArr[i].category)
+                    }
+                    CustomAdapter.Category.CANCER ->
                     {
                         println(removeArr[i].category)
                     }

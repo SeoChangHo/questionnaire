@@ -46,6 +46,15 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
         //노인기능
         var ELDERLY = "elderly"
+
+        //흡연
+        var SMOKING = "smoking"
+
+        //음주
+        var DRINKING = "drinking"
+
+        //암
+        var CANCER = "cancer"
     }
 
 
@@ -466,6 +475,18 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
             Category.MENTAL ->
             {
                 return "정신건강"
+            }
+            Category.DRINKING ->
+            {
+                return "음주"
+            }
+            Category.SMOKING ->
+            {
+                return "흡연"
+            }
+            Category.CANCER ->
+            {
+                return "암"
             }
             else ->
             {
