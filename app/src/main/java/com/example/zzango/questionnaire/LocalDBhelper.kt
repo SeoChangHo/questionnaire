@@ -247,6 +247,31 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun drinkingCreate(db : SQLiteDatabase?){
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "SMOKING_EXAM" +
+                "(exam_date TEXT," +
+                " exam_no TEXT,"  +
+                " name TEXT," +
+                " first_serial TEXT," +
+                " last_serial TEXT," +
+                " category TEXT," +
+                " sg2_spDrink1 TEXT," +
+                " sg2_spDrink2_1 TEXT," +
+                " sg2_spDrink2_2 TEXT," +
+                " sg2_spDrink3 TEXT," +
+                " sg2_spDrink4 TEXT," +
+                " sg2_spDrink5 TEXT," +
+                " sg2_spDrink6 TEXT," +
+                " sg2_spDrink7 TEXT," +
+                " sg2_spDrink8 TEXT," +
+                " sg2_spDrink9 TEXT," +
+                " sg2_spDrink10 TEXT," +
+                " sg2_spDrinkSum TEXT);")
+
+    }
+
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
     }
@@ -438,6 +463,32 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.sg2_spSmokeSum}');")
     }
 
+
+    fun drinkingSaveLocal(db : SQLiteDatabase, ex : ArrayList<DrinkingExaminationActivity.ExamInfo>){
+
+        val columnValue = ex.get(0)
+
+
+        db.execSQL("INSERT INTO LOCALSAVELIST" +
+                "(exam_no, category, name)" +
+                " VALUES (" +
+                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+
+        db.execSQL("INSERT INTO SMOKING_EXAM" +
+                "(exam_date," +
+                "exam_no,"  +
+                "name," +
+                "first_serial," +
+                "last_serial," +
+                "category, " +
+                "sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5, sg2_spDrink6," +
+                "sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum)" +
+                " VALUES (" +
+                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                ", '${columnValue.category}', '${columnValue.sg2_spDrink1}', '${columnValue.sg2_spDrink2_1}', '${columnValue.sg2_spDrink2_2}', '${columnValue.sg2_spDrink3}'" +
+                ", '${columnValue.sg2_spDrink4}', '${columnValue.sg2_spDrink5}', '${columnValue.sg2_spDrink6}', '${columnValue.sg2_spDrink7}'" +
+                ", '${columnValue.sg2_spDrink8}', '${columnValue.sg2_spDrink9}', '${columnValue.sg2_spDrink10}', '${columnValue.sg2_spDrinkSum}');")
+    }
 
     @SuppressLint("Recycle")
     fun Select_Local_ORAL(db : SQLiteDatabase, getno: String): Cursor{

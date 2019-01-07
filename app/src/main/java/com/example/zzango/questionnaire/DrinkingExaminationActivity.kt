@@ -246,15 +246,18 @@ class DrinkingExaminationActivity : AppCompatActivity(){
         var first_serial_text = ""
         var last_serial_text = ""
         var category = "smoking"
-        var sg2_spSmoke1 = ""
-        var sg2_spSmoke2 = ""
-        var sg2_spSmoke3 = ""
-        var sg2_spSmoke4 = ""
-        var sg2_spSmoke5 = ""
-        var sg2_spSmoke6 = ""
-        var sg2_spSmoke7 = ""
-        var sg2_spSmoke8 = ""
-        var sg2_spSmokeSum = ""
+        var sg2_spDrink1 = ""
+        var sg2_spDrink2_1 = ""
+        var sg2_spDrink2_2 = ""
+        var sg2_spDrink3 = ""
+        var sg2_spDrink4 = ""
+        var sg2_spDrink5 = ""
+        var sg2_spDrink6 = ""
+        var sg2_spDrink7 = ""
+        var sg2_spDrink8 = ""
+        var sg2_spDrink9 = ""
+        var sg2_spDrink10 = ""
+        var sg2_spDrinkSum = ""
 
 
         if (!name_edit.text.isNullOrEmpty()) {
@@ -282,15 +285,12 @@ class DrinkingExaminationActivity : AppCompatActivity(){
 
 
 
+        var arr = ArrayList<DrinkingExaminationActivity.ExamInfo>()
 
-
-
-        var arr = ArrayList<SmokingExaminationActivity.ExamInfo>()
-
-        arr.add(SmokingExaminationActivity.ExamInfo(
+        arr.add(DrinkingExaminationActivity.ExamInfo(
                 exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
-                sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
+                sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
+                sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
         ))
 
         exam_result = arr
