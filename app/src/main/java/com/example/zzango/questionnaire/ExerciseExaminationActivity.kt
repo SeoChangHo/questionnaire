@@ -10,6 +10,8 @@ class ExerciseExaminationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise_exam)
 
+
+
     }
 
 }

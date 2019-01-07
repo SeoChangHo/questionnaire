@@ -16,6 +16,15 @@ class ThirdFragment : Fragment(){
         var view : View = inflater.inflate(R.layout.fragment_third, container, false)
 
 
+        view.third_imageButton1.setOnClickListener {
+
+            activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
+            activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
+            startActivity(Intent(activity!!, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
+
         view.third_imageButton3.setOnClickListener {
 
             activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
