@@ -721,7 +721,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_Exercise(db : SQLiteDatabase, no: String): Cursor{
+    fun Select_Local_EXERCISE(db : SQLiteDatabase, no: String): Cursor{
 
         var data = db.rawQuery("SELECT * FROM EXERCISE_EXAM;", null)
 
@@ -730,7 +730,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_Smoking(db : SQLiteDatabase, no: String): Cursor{
+    fun Select_Local_SMOKING(db : SQLiteDatabase, no: String): Cursor{
 
         var data = db.rawQuery("SELECT * FROM SMOKING_EXAM;", null)
 
@@ -739,9 +739,27 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_Drinking(db : SQLiteDatabase, no: String): Cursor{
+    fun Select_Local_DRINKING(db : SQLiteDatabase, no: String): Cursor{
 
         var data = db.rawQuery("SELECT * FROM DRINKING_EXAM;", null)
+
+        return data
+
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_CANCER(db : SQLiteDatabase, no: String): Cursor{
+
+        var data = db.rawQuery("SELECT * FROM CANCER_EXAM;", null)
+
+        return data
+
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_NUTRITION(db : SQLiteDatabase, no: String): Cursor{
+
+        var data = db.rawQuery("SELECT * FROM NUTRITION_EXAM;", null)
 
         return data
 

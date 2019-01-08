@@ -118,6 +118,14 @@ class ListActivity : Activity() {
                     {
                         println(removeArr[i].category)
                     }
+                    CustomAdapter.Category.EXERCISE ->
+                    {
+                        println(removeArr[i].category)
+                    }
+                    CustomAdapter.Category.NUTRITION ->
+                    {
+                        println(removeArr[i].category)
+                    }
                     CustomAdapter.Category.CANCER ->
                     {
                         println(removeArr[i].category)

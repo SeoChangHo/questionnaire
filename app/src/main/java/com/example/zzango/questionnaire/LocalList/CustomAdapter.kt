@@ -55,6 +55,12 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
         //암
         var CANCER = "cancer"
+
+        //운동
+        var EXERCISE = "exercise"
+
+        //영양
+        var NUTRITION = "nutrition"
     }
 
 
@@ -360,6 +366,141 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                     }
                     startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
+                Category.SMOKING ->
+                {
+
+                    var PaperArray = ArrayList<Paper_SMOKING>()
+
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_SMOKING(sql_db!!, paper.exam_no)
+                    data.moveToFirst()
+
+                    while(!data.isAfterLast){
+                        PaperArray.add(Paper_SMOKING(
+                                data.getString(data.getColumnIndex("exam_date")),
+                                data.getString(data.getColumnIndex("exam_no")),
+                                data.getString(data.getColumnIndex("name")),
+                                data.getString(data.getColumnIndex("first_serial")),
+                                data.getString(data.getColumnIndex("last_serial")),
+                                data.getString(data.getColumnIndex("category")),
+                                data.getString(data.getColumnIndex("sg2_spSmoke1")),
+                                data.getString(data.getColumnIndex("sg2_spSmoke2")),
+                                data.getString(data.getColumnIndex("sg2_spSmoke3")),
+                                data.getString(data.getColumnIndex("sg2_spSmoke4")),
+                                data.getString(data.getColumnIndex("sg2_spSmoke5")),
+                                data.getString(data.getColumnIndex("sg2_spSmoke6")),
+                                data.getString(data.getColumnIndex("sg2_spSmoke7")),
+                                data.getString(data.getColumnIndex("sg2_spSmoke8")),
+                                data.getString(data.getColumnIndex("sg2_spSmokeSum"))
+                        ))
+                        data.moveToNext()
+                    }
+                    startActivity(Activity, Intent(Activity, SmokingExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
+                Category.DRINKING ->
+                {
+
+                    var PaperArray = ArrayList<Paper_DRINKING>()
+
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_DRINKING(sql_db!!, paper.exam_no)
+                    data.moveToFirst()
+
+                    while(!data.isAfterLast){
+                        PaperArray.add(Paper_DRINKING(
+                                data.getString(data.getColumnIndex("exam_date")),
+                                data.getString(data.getColumnIndex("exam_no")),
+                                data.getString(data.getColumnIndex("name")),
+                                data.getString(data.getColumnIndex("first_serial")),
+                                data.getString(data.getColumnIndex("last_serial")),
+                                data.getString(data.getColumnIndex("category")),
+                                data.getString(data.getColumnIndex("sg2_spDrink1")),
+                                data.getString(data.getColumnIndex("sg2_spDrink2_1")),
+                                data.getString(data.getColumnIndex("sg2_spDrink2_2")),
+                                data.getString(data.getColumnIndex("sg2_spDrink3")),
+                                data.getString(data.getColumnIndex("sg2_spDrink4")),
+                                data.getString(data.getColumnIndex("sg2_spDrink5")),
+                                data.getString(data.getColumnIndex("sg2_spDrink6")),
+                                data.getString(data.getColumnIndex("sg2_spDrink7")),
+                                data.getString(data.getColumnIndex("sg2_spDrink8")),
+                                data.getString(data.getColumnIndex("sg2_spDrink9")),
+                                data.getString(data.getColumnIndex("sg2_spDrink10")),
+                                data.getString(data.getColumnIndex("sg2_spDrinkSum"))
+                        ))
+                        data.moveToNext()
+                    }
+                    startActivity(Activity, Intent(Activity, DrinkingExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
+                Category.CANCER ->
+                {
+
+                    var PaperArray = ArrayList<Paper_CANCER>()
+
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_CANCER(sql_db!!, paper.exam_no)
+                    data.moveToFirst()
+
+                    while(!data.isAfterLast){
+                        PaperArray.add(Paper_CANCER(
+                                data.getString(data.getColumnIndex("exam_date")),
+                                data.getString(data.getColumnIndex("exam_no")),
+                                data.getString(data.getColumnIndex("name")),
+                                data.getString(data.getColumnIndex("first_serial")),
+                                data.getString(data.getColumnIndex("last_serial")),
+                                data.getString(data.getColumnIndex("category")),
+                                data.getString(data.getColumnIndex("ck1")),
+                                data.getString(data.getColumnIndex("ck1_1")),
+                                data.getString(data.getColumnIndex("ck2")),
+                                data.getString(data.getColumnIndex("ck2_1")),
+                                data.getString(data.getColumnIndex("c_fam_can1")),
+                                data.getString(data.getColumnIndex("c_fam_can1_rel1")),
+                                data.getString(data.getColumnIndex("c_fam_can2")),
+                                data.getString(data.getColumnIndex("c_fam_can1_rel2")),
+                                data.getString(data.getColumnIndex("c_fam_can3")),
+                                data.getString(data.getColumnIndex("c_fam_can1_rel3")),
+                                data.getString(data.getColumnIndex("c_fam_can4")),
+                                data.getString(data.getColumnIndex("c_fam_can1_rel4")),
+                                data.getString(data.getColumnIndex("c_fam_can5")),
+                                data.getString(data.getColumnIndex("c_fam_can1_rel5")),
+                                data.getString(data.getColumnIndex("c_fam_can6")),
+                                data.getString(data.getColumnIndex("c_fam_can1_rel6")),
+                                data.getString(data.getColumnIndex("ck4_1_1")),
+                                data.getString(data.getColumnIndex("ck4_1_2")),
+                                data.getString(data.getColumnIndex("ck4_2_1")),
+                                data.getString(data.getColumnIndex("ck4_3_1")),
+                                data.getString(data.getColumnIndex("ck4_3_2")),
+                                data.getString(data.getColumnIndex("ck4_3_3")),
+                                data.getString(data.getColumnIndex("ck4_4_1")),
+                                data.getString(data.getColumnIndex("ck4_5_1")),
+                                data.getString(data.getColumnIndex("ck5_1")),
+                                data.getString(data.getColumnIndex("ck5_2")),
+                                data.getString(data.getColumnIndex("ck5_3")),
+                                data.getString(data.getColumnIndex("ck5_4")),
+                                data.getString(data.getColumnIndex("ck5_5")),
+                                data.getString(data.getColumnIndex("ck5_6")),
+                                data.getString(data.getColumnIndex("ck6_1")),
+                                data.getString(data.getColumnIndex("ck6_2")),
+                                data.getString(data.getColumnIndex("ck6_3")),
+                                data.getString(data.getColumnIndex("ck6_4")),
+                                data.getString(data.getColumnIndex("ck6_5")),
+                                data.getString(data.getColumnIndex("ck6_6")),
+                                data.getString(data.getColumnIndex("ck7_1")),
+                                data.getString(data.getColumnIndex("ck7_2")),
+                                data.getString(data.getColumnIndex("ck7_3")),
+                                data.getString(data.getColumnIndex("ck7_4")),
+                                data.getString(data.getColumnIndex("ck7_5")),
+                                data.getString(data.getColumnIndex("ck7_6")),
+                                data.getString(data.getColumnIndex("ck8")),
+                                data.getString(data.getColumnIndex("ck8_1")),
+                                data.getString(data.getColumnIndex("ck9")),
+                                data.getString(data.getColumnIndex("ck9_1")),
+                                data.getString(data.getColumnIndex("ck10")),
+                                data.getString(data.getColumnIndex("ck11")),
+                                data.getString(data.getColumnIndex("ck12")),
+                                data.getString(data.getColumnIndex("ck13")),
+                                data.getString(data.getColumnIndex("ck14"))
+                        ))
+                        data.moveToNext()
+                    }
+                    startActivity(Activity, Intent(Activity, CancerExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
                 else ->
                 {
                     println("확인되지 않습니다.")
@@ -487,6 +628,14 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
             Category.CANCER ->
             {
                 return "암"
+            }
+            Category.EXERCISE ->
+            {
+                return "운동"
+            }
+            Category.NUTRITION ->
+            {
+                return "영양/비만"
             }
             else ->
             {
