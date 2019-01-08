@@ -74,12 +74,13 @@ class OralExaminationActivity : AppCompatActivity() {
             var paper = intent.getSerializableExtra("paper") as Paper_ORAL
 
             GetPaper(paper)
+        }else{
+            oral_questionnaire_name_input.setText(MainActivity.login_user_name)
+            first_serial.setText(MainActivity.user_first_serial)
+            last_serial.setText(MainActivity.user_last_serial)
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        oral_questionnaire_name_input.setText(MainActivity.login_user_name)
-        first_serial.setText(MainActivity.user_first_serial)
-        last_serial.setText(MainActivity.user_last_serial)
 
 
         sql_db = LocalDBhelper(this).writableDatabase

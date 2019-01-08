@@ -64,12 +64,13 @@ class MentalExaminationActivity : AppCompatActivity(){
             var paper = intent.getSerializableExtra("paper") as Paper_MENTAL
 
             GetPaper(paper)
+        }else{
+            name_edit.setText(MainActivity.login_user_name)
+            first_serial.setText(MainActivity.user_first_serial)
+            last_serial.setText(MainActivity.user_last_serial)
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        name_edit.setText(MainActivity.login_user_name)
-        first_serial.setText(MainActivity.user_first_serial)
-        last_serial.setText(MainActivity.user_last_serial)
 
         mental_examination_save.setOnClickListener {
 

@@ -79,9 +79,20 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         sql_db = LocalDBhelper(this).writableDatabase
 
-        name_edit.setText(MainActivity.login_user_name)
-        first_serial.setText(MainActivity.user_first_serial)
-        last_serial.setText(MainActivity.user_last_serial)
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+//            var paper = intent.getSerializableExtra("paper") as Paper_EXERCISE
+//
+//            GetPaper(paper)
+        }else{
+            name_edit.setText(MainActivity.login_user_name)
+            first_serial.setText(MainActivity.user_first_serial)
+            last_serial.setText(MainActivity.user_last_serial)
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
         exercise_1_true.setOnCheckedChangeListener {
 
