@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.Paper_CANCER
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_cancer_exam.*
@@ -97,6 +98,16 @@ class CancerExaminationActivity : AppCompatActivity(){
         setContentView(R.layout.activity_cancer_exam)
 
         sql_db = LocalDBhelper(this).writableDatabase
+
+
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper_CANCER
+
+            GetPaper(paper)
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         cancer_examination_save.setOnClickListener {
 
@@ -373,9 +384,9 @@ class CancerExaminationActivity : AppCompatActivity(){
         }
 
         if(cancer_2_1.isChecked){
-            ck1 = "1"
+            ck2 = "1"
         }else if(cancer_2_2.isChecked){
-            ck1 = "2"
+            ck2 = "2"
             if(!cancer_editText2.text.isNullOrEmpty()){
                 ck2_1 = cancer_editText2.text.toString()
             }else{
@@ -839,5 +850,432 @@ class CancerExaminationActivity : AppCompatActivity(){
 
     }
 
+
+    fun GetPaper(paper: Paper_CANCER) {
+
+
+        name_edit.setText(paper.name)
+        first_serial.setText(paper.first_serial)
+        last_serial.setText(paper.last_serial)
+
+        println(paper)
+
+        cancer_examination_save.visibility = View.GONE
+        cancer_examination_cancel.visibility = View.GONE
+        cancer_edit_submit.visibility = View.VISIBLE
+
+
+        if(paper.ck1 == "1"){
+            cancer_1_1.isChecked = true
+            if(paper.ck1_1.isNullOrEmpty()){
+                cancer_editText1.setText(paper.ck1_1)
+            }
+        }else if(paper.ck1 == "2"){
+            cancer_1_2.isChecked = true
+        }
+
+
+        if(paper.ck2 == "1"){
+            cancer_2_1.isChecked = true
+
+        }else if(paper.ck2 == "2"){
+            cancer_2_2.isChecked = true
+
+            if(paper.ck2_1.isNullOrEmpty()){
+                cancer_editText2.setText(paper.ck2_1)
+            }
+        }
+
+
+        if(paper.c_fam_can1 == "1"){
+            cancer_3_1_1.isChecked = true
+
+        }else if(paper.c_fam_can1 == "2"){
+            cancer_3_1_2.isChecked = true
+
+        }else if(paper.c_fam_can1 == "3"){
+            cancer_3_1_3.isChecked = true
+
+            cancer_3_1_checkBox1.visibility = View.VISIBLE
+            cancer_3_1_checkBox2.visibility = View.VISIBLE
+            cancer_3_1_checkBox3.visibility = View.VISIBLE
+            cancer_3_1_checkBox4.visibility = View.VISIBLE
+            cancer_3_1_checkBox5.visibility = View.VISIBLE
+
+            if(paper.c_fam_can1_rel1 == "1"){
+                cancer_3_1_checkBox1.isChecked = true
+            }else if(paper.c_fam_can1_rel1 == "2"){
+                cancer_3_1_checkBox2.isChecked = true
+            }else if(paper.c_fam_can1_rel1 == "3"){
+                cancer_3_1_checkBox3.isChecked = true
+            }else if(paper.c_fam_can1_rel1 == "4"){
+                cancer_3_1_checkBox4.isChecked = true
+            }else if(paper.c_fam_can1_rel1 == "5"){
+                cancer_3_1_checkBox5.isChecked = true
+            }
+
+        }
+
+        if(paper.c_fam_can2 == "1"){
+            cancer_3_2_1.isChecked = true
+
+        }else if(paper.c_fam_can2 == "2"){
+            cancer_3_2_2.isChecked = true
+
+        }else if(paper.c_fam_can2 == "3"){
+            cancer_3_2_3.isChecked = true
+
+            cancer_3_2_checkBox1.visibility = View.VISIBLE
+            cancer_3_2_checkBox2.visibility = View.VISIBLE
+            cancer_3_2_checkBox3.visibility = View.VISIBLE
+            cancer_3_2_checkBox4.visibility = View.VISIBLE
+            cancer_3_2_checkBox5.visibility = View.VISIBLE
+
+            if(paper.c_fam_can1_rel2 == "1"){
+                cancer_3_2_checkBox1.isChecked = true
+            }else if(paper.c_fam_can1_rel2 == "2"){
+                cancer_3_2_checkBox2.isChecked = true
+            }else if(paper.c_fam_can1_rel2 == "3"){
+                cancer_3_2_checkBox3.isChecked = true
+            }else if(paper.c_fam_can1_rel2 == "4"){
+                cancer_3_2_checkBox4.isChecked = true
+            }else if(paper.c_fam_can1_rel2 == "5"){
+                cancer_3_2_checkBox5.isChecked = true
+            }
+
+        }
+
+        if(paper.c_fam_can3 == "1"){
+            cancer_3_3_1.isChecked = true
+
+        }else if(paper.c_fam_can3 == "2"){
+            cancer_3_3_2.isChecked = true
+
+        }else if(paper.c_fam_can3 == "3"){
+            cancer_3_3_3.isChecked = true
+
+            cancer_3_3_checkBox1.visibility = View.VISIBLE
+            cancer_3_3_checkBox2.visibility = View.VISIBLE
+            cancer_3_3_checkBox3.visibility = View.VISIBLE
+            cancer_3_3_checkBox4.visibility = View.VISIBLE
+            cancer_3_3_checkBox5.visibility = View.VISIBLE
+
+            if(paper.c_fam_can1_rel3 == "1"){
+                cancer_3_3_checkBox1.isChecked = true
+            }else if(paper.c_fam_can1_rel3 == "2"){
+                cancer_3_3_checkBox2.isChecked = true
+            }else if(paper.c_fam_can1_rel3 == "3"){
+                cancer_3_3_checkBox3.isChecked = true
+            }else if(paper.c_fam_can1_rel3 == "4"){
+                cancer_3_3_checkBox4.isChecked = true
+            }else if(paper.c_fam_can1_rel3 == "5"){
+                cancer_3_3_checkBox5.isChecked = true
+            }
+
+        }
+
+        if(paper.c_fam_can4 == "1"){
+            cancer_3_4_1.isChecked = true
+
+        }else if(paper.c_fam_can4 == "2"){
+            cancer_3_4_2.isChecked = true
+
+        }else if(paper.c_fam_can4 == "3"){
+            cancer_3_4_3.isChecked = true
+
+            cancer_3_4_checkBox1.visibility = View.VISIBLE
+            cancer_3_4_checkBox2.visibility = View.VISIBLE
+            cancer_3_4_checkBox3.visibility = View.VISIBLE
+            cancer_3_4_checkBox4.visibility = View.VISIBLE
+            cancer_3_4_checkBox5.visibility = View.VISIBLE
+
+            if(paper.c_fam_can1_rel4 == "1"){
+                cancer_3_4_checkBox1.isChecked = true
+            }else if(paper.c_fam_can1_rel4 == "2"){
+                cancer_3_4_checkBox2.isChecked = true
+            }else if(paper.c_fam_can1_rel4 == "3"){
+                cancer_3_4_checkBox3.isChecked = true
+            }else if(paper.c_fam_can1_rel4 == "4"){
+                cancer_3_4_checkBox4.isChecked = true
+            }else if(paper.c_fam_can1_rel4 == "5"){
+                cancer_3_4_checkBox5.isChecked = true
+            }
+
+        }
+
+        if(paper.c_fam_can5 == "1"){
+            cancer_3_5_1.isChecked = true
+
+        }else if(paper.c_fam_can5 == "2"){
+            cancer_3_5_2.isChecked = true
+
+        }else if(paper.c_fam_can5 == "3"){
+            cancer_3_5_3.isChecked = true
+
+            cancer_3_5_checkBox1.visibility = View.VISIBLE
+            cancer_3_5_checkBox2.visibility = View.VISIBLE
+            cancer_3_5_checkBox3.visibility = View.VISIBLE
+            cancer_3_5_checkBox4.visibility = View.VISIBLE
+            cancer_3_5_checkBox5.visibility = View.VISIBLE
+
+            if(paper.c_fam_can1_rel5 == "1"){
+                cancer_3_5_checkBox1.isChecked = true
+            }else if(paper.c_fam_can1_rel5 == "2"){
+                cancer_3_5_checkBox2.isChecked = true
+            }else if(paper.c_fam_can1_rel5 == "3"){
+                cancer_3_5_checkBox3.isChecked = true
+            }else if(paper.c_fam_can1_rel5 == "4"){
+                cancer_3_5_checkBox4.isChecked = true
+            }else if(paper.c_fam_can1_rel5 == "5"){
+                cancer_3_5_checkBox5.isChecked = true
+            }
+
+        }
+
+
+        if(paper.c_fam_can6 == "1"){
+            cancer_3_6_1.isChecked = true
+
+        }else if(paper.c_fam_can6 == "2"){
+            cancer_3_6_2.isChecked = true
+
+        }else if(paper.c_fam_can6 == "3"){
+            cancer_3_6_3.isChecked = true
+
+            cancer_3_6_checkBox1.visibility = View.VISIBLE
+            cancer_3_6_checkBox2.visibility = View.VISIBLE
+            cancer_3_6_checkBox3.visibility = View.VISIBLE
+            cancer_3_6_checkBox4.visibility = View.VISIBLE
+            cancer_3_6_checkBox5.visibility = View.VISIBLE
+
+            if(paper.c_fam_can1_rel6 == "1"){
+                cancer_3_6_checkBox1.isChecked = true
+            }else if(paper.c_fam_can1_rel6 == "2"){
+                cancer_3_6_checkBox2.isChecked = true
+            }else if(paper.c_fam_can1_rel6 == "3"){
+                cancer_3_6_checkBox3.isChecked = true
+            }else if(paper.c_fam_can1_rel6 == "4"){
+                cancer_3_6_checkBox4.isChecked = true
+            }else if(paper.c_fam_can1_rel6 == "5"){
+                cancer_3_6_checkBox5.isChecked = true
+            }
+
+        }
+
+
+        if(paper.ck4_1_1 == "1"){
+            cancer_4_1_1.isChecked = true
+        }else if(paper.ck4_1_1 == "2"){
+            cancer_4_1_2.isChecked = true
+        }else if(paper.ck4_1_1 == "3"){
+            cancer_4_1_3.isChecked = true
+        }else if(paper.ck4_1_1 == "4"){
+            cancer_4_1_4.isChecked = true
+        }
+
+
+        if(paper.ck4_1_2 == "1"){
+            cancer_4_2_1.isChecked = true
+        }else if(paper.ck4_1_2 == "2"){
+            cancer_4_2_2.isChecked = true
+        }else if(paper.ck4_1_2 == "3"){
+            cancer_4_2_3.isChecked = true
+        }else if(paper.ck4_1_2 == "4"){
+            cancer_4_2_4.isChecked = true
+        }
+
+
+        if(paper.ck4_2_1 == "1"){
+            cancer_4_3_1.isChecked = true
+        }else if(paper.ck4_2_1 == "2"){
+            cancer_4_3_2.isChecked = true
+        }else if(paper.ck4_2_1 == "3"){
+            cancer_4_3_3.isChecked = true
+        }else if(paper.ck4_2_1 == "4"){
+            cancer_4_3_4.isChecked = true
+        }
+
+        if(paper.ck4_3_1 == "1"){
+            cancer_4_4_1.isChecked = true
+        }else if(paper.ck4_3_1 == "2"){
+            cancer_4_4_2.isChecked = true
+        }else if(paper.ck4_3_1 == "3"){
+            cancer_4_4_3.isChecked = true
+        }else if(paper.ck4_3_1 == "4"){
+            cancer_4_4_4.isChecked = true
+        }
+
+
+        if(paper.ck4_3_2 == "1"){
+            cancer_4_5_1.isChecked = true
+        }else if(paper.ck4_3_2 == "2"){
+            cancer_4_5_2.isChecked = true
+        }else if(paper.ck4_3_2 == "3"){
+            cancer_4_5_3.isChecked = true
+        }else if(paper.ck4_3_2 == "4"){
+            cancer_4_5_4.isChecked = true
+        }
+
+
+        if(paper.ck4_3_3 == "1"){
+            cancer_4_6_1.isChecked = true
+        }else if(paper.ck4_3_3 == "2"){
+            cancer_4_6_2.isChecked = true
+        }else if(paper.ck4_3_3 == "3"){
+            cancer_4_6_3.isChecked = true
+        }else if(paper.ck4_3_3 == "4"){
+            cancer_4_6_4.isChecked = true
+        }
+
+        if(paper.ck4_4_1 == "1"){
+            cancer_4_7_1.isChecked = true
+        }else if(paper.ck4_4_1 == "2"){
+            cancer_4_7_2.isChecked = true
+        }else if(paper.ck4_4_1 == "3"){
+            cancer_4_7_3.isChecked = true
+        }else if(paper.ck4_4_1 == "4"){
+            cancer_4_7_4.isChecked = true
+        }
+
+
+        if(paper.ck4_5_1 == "1"){
+            cancer_4_8_1.isChecked = true
+        }else if(paper.ck4_5_1 == "2"){
+            cancer_4_8_2.isChecked = true
+        }else if(paper.ck4_5_1 == "3"){
+            cancer_4_8_3.isChecked = true
+        }else if(paper.ck4_5_1 == "4"){
+            cancer_4_8_4.isChecked = true
+        }
+
+        if(paper.ck5_1 == "2"){
+            cancer_5_1_checkBox.isChecked
+        }
+        if(paper.ck5_2 == "2"){
+            cancer_5_2_checkBox.isChecked
+        }
+        if(paper.ck5_3 == "2"){
+            cancer_5_3_checkBox.isChecked
+        }
+        if(paper.ck5_4 == "2"){
+            cancer_5_4_checkBox.isChecked
+        }
+        if(paper.ck5_5 == "2"){
+            cancer_5_5_checkBox.isChecked
+        }
+        if(paper.ck5_6 == "2"){
+            cancer_5_6_checkBox.isChecked
+        }
+
+
+        if(paper.ck6_1 == "2"){
+            cancer_6_1_checkBox.isChecked
+        }
+        if(paper.ck6_2 == "2"){
+            cancer_6_2_checkBox.isChecked
+        }
+        if(paper.ck6_3 == "2"){
+            cancer_6_3_checkBox.isChecked
+        }
+        if(paper.ck6_4 == "2"){
+            cancer_6_4_checkBox.isChecked
+        }
+        if(paper.ck6_5 == "2"){
+            cancer_6_5_checkBox.isChecked
+        }
+        if(paper.ck6_6 == "2"){
+            cancer_6_6_checkBox.isChecked
+        }
+
+        if(paper.ck7_1 == "2"){
+            cancer_7_1_checkBox.isChecked
+        }
+        if(paper.ck7_2 == "2"){
+            cancer_7_2_checkBox.isChecked
+        }
+        if(paper.ck7_3 == "2"){
+            cancer_7_3_checkBox.isChecked
+        }
+        if(paper.ck7_4 == "2"){
+            cancer_7_4_checkBox.isChecked
+        }
+        if(paper.ck7_5 == "2"){
+            cancer_7_5_checkBox.isChecked
+        }
+        if(paper.ck7_6 == "2"){
+            cancer_7_6_checkBox.isChecked
+        }
+
+
+
+        if(paper.ck8 == "1"){
+            cancer_8_1.isChecked = true
+            if(paper.ck8_1.isNullOrEmpty()){
+                cancer_editText3.setText(paper.ck8_1)
+            }
+        }else if(paper.ck8 == "2"){
+            cancer_8_2.isChecked = true
+        }
+
+        if(paper.ck9 == "1"){
+            cancer_9_1.isChecked = true
+        }else if(paper.ck9 == "2"){
+            cancer_9_2.isChecked = true
+        }else if(paper.ck9 == "3"){
+            cancer_9_3.isChecked = true
+            if(paper.ck9_1.isNullOrEmpty()){
+                cancer_editText4.setText(paper.ck9_1)
+            }
+        }
+
+        if(paper.ck10 == "1"){
+            cancer_10_1.isChecked = true
+        }else if(paper.ck10 == "2"){
+            cancer_10_2.isChecked = true
+        }else if(paper.ck10 == "3"){
+            cancer_10_3.isChecked = true
+        }else if(paper.ck10 == "4"){
+            cancer_10_4.isChecked = true
+        }else if(paper.ck10 == "5"){
+            cancer_10_5.isChecked = true
+        }
+
+
+        if(paper.ck11 == "1"){
+            cancer_11_1.isChecked = true
+        }else if(paper.ck11 == "2"){
+            cancer_11_2.isChecked = true
+        }else if(paper.ck11 == "3"){
+            cancer_11_3.isChecked = true
+        }
+
+
+        if(paper.ck12 == "1"){
+            cancer_12_1.isChecked = true
+        }else if(paper.ck12 == "2"){
+            cancer_12_2.isChecked = true
+        }else if(paper.ck12 == "3"){
+            cancer_12_3.isChecked = true
+        }else if(paper.ck12 == "4"){
+            cancer_12_4.isChecked = true
+        }
+
+        if(paper.ck13 == "1"){
+            cancer_13_1.isChecked = true
+        }else if(paper.ck13 == "2"){
+            cancer_13_2.isChecked = true
+        }else if(paper.ck13 == "3"){
+            cancer_13_3.isChecked = true
+        }
+
+        if(paper.ck14 == "1"){
+            cancer_14_1.isChecked = true
+        }else if(paper.ck14 == "2"){
+            cancer_14_2.isChecked = true
+        }else if(paper.ck14 == "3"){
+            cancer_14_3.isChecked = true
+        }
+
+    }
 
 }

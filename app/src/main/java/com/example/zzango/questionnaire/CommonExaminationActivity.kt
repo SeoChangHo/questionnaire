@@ -1330,10 +1330,30 @@ class CommonExaminationActivity : AppCompatActivity() {
         if(paper.mj4 == "2"){
             common_4_true.isChecked = true
 
+            textView20.visibility = View.VISIBLE
+            common_4_1_radio.visibility = View.VISIBLE
+
             if(!paper.mj4_1_1.isNullOrEmpty()){
+
+                textView42.visibility = View.VISIBLE
+                textView43.visibility = View.VISIBLE
+                textView44.visibility = View.VISIBLE
+                editText_4_1_1.visibility = View.VISIBLE
+                editText_4_1_2.visibility = View.VISIBLE
+
                 editText_4_1_1.setText(paper.mj4_1_1)
                 editText_4_1_2.setText(paper.mj4_1_2)
             }else if(!paper.mj4_2_1.isNullOrEmpty()){
+
+                textView45.visibility = View.VISIBLE
+                textView46.visibility = View.VISIBLE
+                textView47.visibility = View.VISIBLE
+                textView48.visibility = View.VISIBLE
+                editText_4_1_3.visibility = View.VISIBLE
+                editText_4_1_4.visibility = View.VISIBLE
+                editText_4_1_5.visibility = View.VISIBLE
+
+
                 editText_4_1_3.setText(paper.mj4_2_1)
                 editText_4_1_4.setText(paper.mj4_2_2)
                 editText_4_1_5.setText(paper.mj4_2_3)
@@ -1346,10 +1366,29 @@ class CommonExaminationActivity : AppCompatActivity() {
         if(paper.mj5 == "2"){
             common_5_true.isChecked = true
 
+            textView23.visibility = View.VISIBLE
+            common_5_1_radio.visibility = View.VISIBLE
+
+
             if(!paper.mj5_1_1.isNullOrEmpty()){
+                textView49.visibility = View.VISIBLE
+                textView50.visibility = View.VISIBLE
+                textView51.visibility = View.VISIBLE
+                editText_5_1_1.visibility = View.VISIBLE
+                editText_5_1_2.visibility = View.VISIBLE
+
                 editText_5_1_1.setText(paper.mj5_1_1)
                 editText_5_1_2.setText(paper.mj5_1_2)
             }else if(!paper.mj5_2_1.isNullOrEmpty()){
+
+                textView52.visibility = View.VISIBLE
+                textView53.visibility = View.VISIBLE
+                textView54.visibility = View.VISIBLE
+                textView55.visibility = View.VISIBLE
+                editText_5_1_3.visibility = View.VISIBLE
+                editText_5_1_4.visibility = View.VISIBLE
+                editText_5_1_5.visibility = View.VISIBLE
+
                 editText_5_1_3.setText(paper.mj5_2_1)
                 editText_5_1_4.setText(paper.mj5_2_2)
                 editText_5_1_5.setText(paper.mj5_2_3)
@@ -1361,6 +1400,10 @@ class CommonExaminationActivity : AppCompatActivity() {
 
         if(paper.mj6 == "2"){
             common_6_true.isChecked = true
+
+            textView25.visibility = View.VISIBLE
+            common_6_1_radio.visibility = View.VISIBLE
+
 
             if(paper.mj6_1 == "1"){
                 common_6_1_1.isChecked = true
@@ -1388,6 +1431,37 @@ class CommonExaminationActivity : AppCompatActivity() {
         }else if(paper.mj74 == "2"){
             common_7_4.isChecked = true
         }
+
+        common_7_1_1_radio.visibility = View.VISIBLE
+        table_edit_1.visibility = View.VISIBLE
+        table_text_1.visibility = View.VISIBLE
+        common_7_1_2_radio.visibility = View.VISIBLE
+        table_edit_2.visibility = View.VISIBLE
+        table_text_2.visibility = View.VISIBLE
+        common_7_1_3_radio.visibility = View.VISIBLE
+        table_edit_3.visibility = View.VISIBLE
+        table_text_3.visibility = View.VISIBLE
+        common_7_1_4_radio.visibility = View.VISIBLE
+        table_edit_4.visibility = View.VISIBLE
+        table_text_4.visibility = View.VISIBLE
+        common_7_1_5_radio.visibility = View.VISIBLE
+        table_edit_5.visibility = View.VISIBLE
+        table_text_5.visibility = View.VISIBLE
+        common_7_2_1_radio.visibility = View.VISIBLE
+        table_edit_6.visibility = View.VISIBLE
+        table_text_6.visibility = View.VISIBLE
+        common_7_2_2_radio.visibility = View.VISIBLE
+        table_edit_7.visibility = View.VISIBLE
+        table_text_7.visibility = View.VISIBLE
+        common_7_2_3_radio.visibility = View.VISIBLE
+        table_edit_8.visibility = View.VISIBLE
+        table_text_8.visibility = View.VISIBLE
+        common_7_2_4_radio.visibility = View.VISIBLE
+        table_edit_9.visibility = View.VISIBLE
+        table_text_9.visibility = View.VISIBLE
+        common_7_2_5_radio.visibility = View.VISIBLE
+        table_edit_10.visibility = View.VISIBLE
+        table_text_10.visibility = View.VISIBLE
 
 
         if(!paper.mj7_1_11.isNullOrEmpty()){

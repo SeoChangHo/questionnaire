@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.Paper_SMOKING
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_smoking_exam.*
@@ -53,6 +54,15 @@ class SmokingExaminationActivity : AppCompatActivity(){
         setContentView(R.layout.activity_smoking_exam)
 
         sql_db = LocalDBhelper(this).writableDatabase
+
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper_SMOKING
+
+            GetPaper(paper)
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         smoking_examination_save.setOnClickListener {
 
@@ -381,6 +391,99 @@ class SmokingExaminationActivity : AppCompatActivity(){
         exam_result = arr
 
         return true
+
+    }
+
+    fun GetPaper(paper: Paper_SMOKING) {
+
+
+        name_edit.setText(paper.name)
+        first_serial.setText(paper.first_serial)
+        last_serial.setText(paper.last_serial)
+
+        println(paper)
+
+        smoking_examination_save.visibility = View.GONE
+        smoking_examination_cancel.visibility = View.GONE
+        smoking_edit_submit.visibility = View.VISIBLE
+
+
+        if(paper.sg2_spSmoke1 == "1"){
+            smoking_1_1.isChecked = true
+        }else if(paper.sg2_spSmoke1 == "2"){
+            smoking_1_2.isChecked = true
+        }else if(paper.sg2_spSmoke1 == "3"){
+            smoking_1_3.isChecked = true
+        }else if(paper.sg2_spSmoke1 == "4"){
+            smoking_1_4.isChecked = true
+        }
+
+        if(paper.sg2_spSmoke2 == "1"){
+            smoking_2_1.isChecked = true
+        }else if(paper.sg2_spSmoke2 == "2"){
+            smoking_2_2.isChecked = true
+        }else if(paper.sg2_spSmoke2 == "3"){
+            smoking_2_3.isChecked = true
+        }else if(paper.sg2_spSmoke2 == "4"){
+            smoking_2_4.isChecked = true
+        }else if(paper.sg2_spSmoke2 == "5"){
+            smoking_2_5.isChecked = true
+        }else if(paper.sg2_spSmoke2 == "6"){
+            smoking_2_6.isChecked = true
+        }else if(paper.sg2_spSmoke2 == "7"){
+            smoking_2_7.isChecked = true
+        }else if(paper.sg2_spSmoke2 == "8"){
+            smoking_2_8.isChecked = true
+        }
+
+        if(paper.sg2_spSmoke3 == "1"){
+            smoking_3_1.isChecked = true
+        }else if(paper.sg2_spSmoke3 == "2"){
+            smoking_3_2.isChecked = true
+        }else if(paper.sg2_spSmoke3 == "3"){
+            smoking_3_3.isChecked = true
+        }else if(paper.sg2_spSmoke3 == "4"){
+            smoking_3_4.isChecked = true
+        }
+
+        if(paper.sg2_spSmoke4 == "1"){
+            smoking_4_1.isChecked = true
+        }else if(paper.sg2_spSmoke4 == "2"){
+            smoking_4_2.isChecked = true
+        }
+
+
+        if(paper.sg2_spSmoke5 == "1"){
+            smoking_5_1.isChecked = true
+        }else if(paper.sg2_spSmoke5 == "2"){
+            smoking_5_2.isChecked = true
+        }
+
+
+        if(paper.sg2_spSmoke6 == "1"){
+            smoking_6_1.isChecked = true
+        }else if(paper.sg2_spSmoke6 == "2"){
+            smoking_6_2.isChecked = true
+        }else if(paper.sg2_spSmoke6 == "3"){
+            smoking_6_3.isChecked = true
+        }else if(paper.sg2_spSmoke6 == "4"){
+            smoking_6_4.isChecked = true
+        }
+
+
+        if(paper.sg2_spSmoke7 == "1"){
+            smoking_7_1.isChecked = true
+        }else if(paper.sg2_spSmoke7 == "2"){
+            smoking_7_2.isChecked = true
+        }
+
+
+        if(paper.sg2_spSmoke8 == "1"){
+            smoking_8_1.isChecked = true
+        }else if(paper.sg2_spSmoke8 == "2"){
+            smoking_8_2.isChecked = true
+        }
+
 
     }
 
