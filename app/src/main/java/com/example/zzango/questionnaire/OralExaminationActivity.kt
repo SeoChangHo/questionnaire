@@ -284,7 +284,7 @@ class OralExaminationActivity : AppCompatActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
-            startActivity(Intent(this@OralExaminationActivity, MainActivity::class.java).putExtra("from", "oral").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@OralExaminationActivity, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
 

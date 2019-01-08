@@ -318,7 +318,7 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
-            startActivity(Intent(this@ExerciseExaminationActivity, MainActivity::class.java).putExtra("from", "oral").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@ExerciseExaminationActivity, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
 
@@ -384,6 +384,18 @@ class ExerciseExaminationActivity : AppCompatActivity() {
             first_serial_text = first_serial.text.toString()
 
         } else {
+
+            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
+
+            return false
+
+        }
+
+        if(!last_serial.text.isNullOrEmpty()){
+
+            last_serial_text = last_serial.text.toString()
+
+        }else{
 
             Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
 
