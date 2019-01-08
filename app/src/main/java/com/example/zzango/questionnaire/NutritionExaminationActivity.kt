@@ -10,8 +10,6 @@ class NutritionExaminationActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nutrition_exam)
 
-
-
     }
 
 }
