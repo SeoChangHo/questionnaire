@@ -319,7 +319,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun nutritionCreate(db : SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
-                "Nutrition_EXAM" +
+                "NUTRITION_EXAM" +
                 "(exam_date TEXT," +
                 " exam_no TEXT,"  +
                 " name TEXT," +
@@ -674,7 +674,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " VALUES (" +
                 " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
 
-        db.execSQL("INSERT INTO EXERCISE_EXAM" +
+        db.execSQL("INSERT INTO NUTRITION_EXAM" +
                 "(exam_date," +
                 "exam_no,"  +
                 "name," +
@@ -683,14 +683,15 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "category," +
                 "sg2_spFood1,sg2_spFood2,sg2_spFood3,sg2_spFood4,sg2_spFood5,sg2_spFood6," +
                 "sg2_spFood7,sg2_spFood8,sg2_spFood9,sg2_spFood10,sg2_spFood11,sg2_spFoodSum," +
-                "sg2_spFat1,sg2_spFat2,sg2_spFat3)" +
+                "sg2_spHeight,sg2_spWeight,sg2_spWaistSize,sg2_spBmi,sg2_spFat1,sg2_spFat2,sg2_spFat3)" +
                 " VALUES (" +
                 "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.sg2_spFood1}', '${columnValue.sg2_spFood2}', '${columnValue.sg2_spFood3}'" +
                 ", '${columnValue.sg2_spFood4}', '${columnValue.sg2_spFood5}', '${columnValue.sg2_spFood6}'" +
                 ", '${columnValue.sg2_spFood7}', '${columnValue.sg2_spFood8}', '${columnValue.sg2_spFood9}'" +
                 ", '${columnValue.sg2_spFood10}', '${columnValue.sg2_spFood11}', '${columnValue.sg2_spFoodSum}'" +
-                ", '${columnValue.sg2_spFat1}', '${columnValue.sg2_spFat2}', '${columnValue.sg2_spFat3}');")
+                ", '${columnValue.sg2_spFatHeight}', '${columnValue.sg2_spFatWeight}', '${columnValue.sg2_spFatWaistSize}'" +
+                ", '${columnValue.sg2_spFatBmi}', '${columnValue.sg2_spFat1}', '${columnValue.sg2_spFat2}', '${columnValue.sg2_spFat3}');")
 
     }
 

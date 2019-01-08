@@ -16,6 +16,8 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.Paper_EXERCISE
+import com.example.zzango.questionnaire.LocalList.Paper_ORAL
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_exercise_exam.*
@@ -71,7 +73,7 @@ class ExerciseExaminationActivity : AppCompatActivity() {
                          @SerializedName("sg2_spSports11") @Expose var sg2_spSports11 : String,
                          @SerializedName("sg2_spSports12") @Expose var sg2_spSports12 : String,
                          @SerializedName("sg2_spSportsSum") @Expose var sg2_spSportsSum : String)
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -82,17 +84,15 @@ class ExerciseExaminationActivity : AppCompatActivity() {
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
-//            var paper = intent.getSerializableExtra("paper") as Paper_EXERCISE
-//
-//            GetPaper(paper)
-        }else{
-            name_edit.setText(MainActivity.login_user_name)
-            first_serial.setText(MainActivity.user_first_serial)
-            last_serial.setText(MainActivity.user_last_serial)
+            var paper = intent.getSerializableExtra("paper") as Paper_EXERCISE
+
+            GetPaper(paper)
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+        name_edit.setText(MainActivity.login_user_name)
+        first_serial.setText(MainActivity.user_first_serial)
+        last_serial.setText(MainActivity.user_last_serial)
 
         exercise_1_true.setOnCheckedChangeListener {
 
@@ -532,7 +532,7 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         if (pick_time3.selectedItem != null) {
 
-            sg2_spSports2_2 = pick_time3.selectedItem.toString()
+            sg2_spSports2_2 = pick_time3.selectedItemPosition.toString()
 
         } else {
 
@@ -800,6 +800,180 @@ class ExerciseExaminationActivity : AppCompatActivity() {
         exam_result = arr
 
         return true
+
+    }
+
+    fun GetPaper(paper:Paper_EXERCISE)
+    {
+        name_edit.setText(paper.name)
+        first_serial.setText(paper.first_serial)
+        last_serial.setText(paper.last_serial)
+
+        println(paper)
+
+        exercise_examination_save.visibility = View.GONE
+        exercise_examination_cancel.visibility = View.GONE
+        exercise_edit_submit.visibility = View.VISIBLE
+
+        if(paper.sg2_spSports1_1=="y")
+        {
+            exercise_1_true.isChecked = true
+        }
+        else{
+            exercise_1_false.isChecked = true
+        }
+
+        pick_time.setSelection(paper.sg2_spSports1_2.toInt())
+
+        exercise_1_3_hour.setText(paper.sg2_spSports1_3_1)
+        exercise_1_3_minute.setText(paper.sg2_spSports1_3_2)
+
+        if(paper.sg2_spSports1_4=="y")
+        {
+            exercise_2_true.isChecked = true
+        }
+        else{
+            exercise_2_false.isChecked = true
+        }
+
+        pick_time2.setSelection(paper.sg2_spSports1_5.toInt())
+
+        exercise_1_6_hour.setText(paper.sg2_spSports1_6_1)
+        exercise_1_6_minute.setText(paper.sg2_spSports1_6_2)
+
+        if(paper.sg2_spSports2_1=="y"){
+
+            exercise_3_true.isChecked = true
+
+        }else{
+
+            exercise_3_false.isChecked = true
+
+        }
+
+        pick_time3.setSelection(paper.sg2_spSports2_2.toInt())
+
+        exercise_2_3_hour.setText(paper.sg2_spSports2_3_1)
+        exercise_2_3_minute.setText(paper.sg2_spSports2_3_2)
+
+        if(paper.sg2_spSports3_1=="y")
+        {
+            exercise_3_true.isChecked = true
+        }
+        else{
+            exercise_3_false.isChecked = true
+        }
+
+        pick_time4.setSelection(paper.sg2_spSports3_2.toInt())
+
+        exercise_3_3_hour.setText(paper.sg2_spSports3_3_1)
+        exercise_3_3_minute.setText(paper.sg2_spSports3_3_2)
+
+        if(paper.sg2_spSports3_4=="y")
+        {
+            exercise_4_true.isChecked = true
+        }
+        else
+        {
+            exercise_4_false.isChecked = true
+        }
+
+        pick_time5.setSelection(paper.sg2_spSports3_5.toInt())
+
+        exercise_3_6_hour.setText(paper.sg2_spSports3_6_1)
+        exercise_3_6_minute.setText(paper.sg2_spSports3_6_2)
+
+        exercise_4_1_hour.setText(paper.sg2_spSports4_1_1)
+        exercise_4_1_minute.setText(paper.sg2_spSports4_1_2)
+
+        if(paper.sg2_spSports5=="1") {
+
+            exercise_6_no.isChecked = true
+
+        }else if(paper.sg2_spSports5=="2") {
+
+            exercise_6_1.isChecked = true
+
+        }else if(paper.sg2_spSports5=="3") {
+
+            exercise_6_2.isChecked = true
+
+        }else if(paper.sg2_spSports5=="4") {
+
+            exercise_6_3.isChecked = true
+
+        }else if(paper.sg2_spSports5=="5") {
+
+            exercise_6_4.isChecked = true
+
+        }else{
+
+            exercise_6_5.isChecked = true
+
+        }
+
+        if(paper.sg2_spSports6=="y")
+        {
+            exercise_7_true.isChecked = true
+        }
+        else
+        {
+            exercise_7_false.isChecked = true
+        }
+
+        if(paper.sg2_spSports7=="y")
+        {
+            exercise_8_true.isChecked = true
+        }
+        else
+        {
+            exercise_8_false.isChecked = true
+        }
+
+        if(paper.sg2_spSports8=="y")
+        {
+            exercise_9_true.isChecked = true
+        }
+        else{
+            exercise_9_false.isChecked = true
+        }
+
+        if(paper.sg2_spSports9=="y")
+        {
+            exercise_10_true.isChecked = true
+        }
+        else
+        {
+            exercise_10_false.isChecked = true
+        }
+
+        if(paper.sg2_spSports10=="y")
+        {
+            exercise_11_true.isChecked = true
+        }
+        else
+        {
+            exercise_11_false.isChecked = true
+        }
+
+        if(paper.sg2_spSports11=="y")
+        {
+            exercise_12_true.isChecked = true
+        }
+        else
+        {
+            exercise_12_false.isChecked = true
+        }
+
+        if(paper.sg2_spSports12=="y"){
+
+            exercise_13_true.isChecked = true
+
+        }else{
+
+            exercise_13_false.isChecked = true
+
+        }
 
     }
 

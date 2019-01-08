@@ -335,6 +335,94 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
                     startActivity(Activity, Intent(Activity, ElderlyExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
+                Category.EXERCISE ->
+                {
+
+                    var PaperArray = ArrayList<Paper_EXERCISE>()
+
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_MENTAL(sql_db!!, paper.exam_no)
+                    data.moveToFirst()
+
+                    while(!data.isAfterLast){
+                        PaperArray.add(Paper_EXERCISE(
+                                data.getString(data.getColumnIndex("exam_date")),
+                                data.getString(data.getColumnIndex("exam_no")),
+                                data.getString(data.getColumnIndex("name")),
+                                data.getString(data.getColumnIndex("first_serial")),
+                                data.getString(data.getColumnIndex("last_serial")),
+                                data.getString(data.getColumnIndex("category")),
+                                data.getString(data.getColumnIndex("sg2_spSports1_1")),
+                                data.getString(data.getColumnIndex("sg2_spSports1_2")),
+                                data.getString(data.getColumnIndex("sg2_spSports1_3_1")),
+                                data.getString(data.getColumnIndex("sg2_spSports1_3_2")),
+                                data.getString(data.getColumnIndex("sg2_spSports1_4")),
+                                data.getString(data.getColumnIndex("sg2_spSports1_5")),
+                                data.getString(data.getColumnIndex("sg2_spSports1_6_1")),
+                                data.getString(data.getColumnIndex("sg2_spSports1_6_2")),
+                                data.getString(data.getColumnIndex("sg2_spSports2_1")),
+                                data.getString(data.getColumnIndex("sg2_spSports2_2")),
+                                data.getString(data.getColumnIndex("sg2_spSports2_3_1")),
+                                data.getString(data.getColumnIndex("sg2_spSports2_3_2")),
+                                data.getString(data.getColumnIndex("sg2_spSports3_1")),
+                                data.getString(data.getColumnIndex("sg2_spSports3_2")),
+                                data.getString(data.getColumnIndex("sg2_spSports3_3_1")),
+                                data.getString(data.getColumnIndex("sg2_spSports3_3_2")),
+                                data.getString(data.getColumnIndex("sg2_spSports3_4")),
+                                data.getString(data.getColumnIndex("sg2_spSports3_5")),
+                                data.getString(data.getColumnIndex("sg2_spSports3_6_1")),
+                                data.getString(data.getColumnIndex("sg2_spSports3_6_2")),
+                                data.getString(data.getColumnIndex("sg2_spSports4_1_1")),
+                                data.getString(data.getColumnIndex("sg2_spSports4_1_2")),
+                                data.getString(data.getColumnIndex("sg2_spSports5")),
+                                data.getString(data.getColumnIndex("sg2_spSports6")),
+                                data.getString(data.getColumnIndex("sg2_spSports7")),
+                                data.getString(data.getColumnIndex("sg2_spSports8")),
+                                data.getString(data.getColumnIndex("sg2_spSports9")),
+                                data.getString(data.getColumnIndex("sg2_spSports10")),
+                                data.getString(data.getColumnIndex("sg2_spSports11")),
+                                data.getString(data.getColumnIndex("sg2_spSports12")),
+                                data.getString(data.getColumnIndex("sg2_spSportsSum"))
+                        ))
+                        data.moveToNext()
+                    }
+                    startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
+                Category.NUTRITION ->
+                {
+
+                    var PaperArray = ArrayList<Paper_NUTRITION>()
+
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_MENTAL(sql_db!!, paper.exam_no)
+                    data.moveToFirst()
+
+                    while(!data.isAfterLast){
+                        PaperArray.add(Paper_NUTRITION(
+                                data.getString(data.getColumnIndex("exam_date")),
+                                data.getString(data.getColumnIndex("exam_no")),
+                                data.getString(data.getColumnIndex("name")),
+                                data.getString(data.getColumnIndex("first_serial")),
+                                data.getString(data.getColumnIndex("last_serial")),
+                                data.getString(data.getColumnIndex("category")),
+                                data.getString(data.getColumnIndex("sg2_spFood1")),
+                                data.getString(data.getColumnIndex("sg2_spFood2")),
+                                data.getString(data.getColumnIndex("sg2_spFood3")),
+                                data.getString(data.getColumnIndex("sg2_spFood4")),
+                                data.getString(data.getColumnIndex("sg2_spFood5")),
+                                data.getString(data.getColumnIndex("sg2_spFood6")),
+                                data.getString(data.getColumnIndex("sg2_spFood7")),
+                                data.getString(data.getColumnIndex("sg2_spFood8")),
+                                data.getString(data.getColumnIndex("sg2_spFood9")),
+                                data.getString(data.getColumnIndex("sg2_spFood10")),
+                                data.getString(data.getColumnIndex("sg2_spFood11")),
+                                data.getString(data.getColumnIndex("sg2_spFoodSum")),
+                                data.getString(data.getColumnIndex("sg2_spFat1")),
+                                data.getString(data.getColumnIndex("sg2_spFat2")),
+                                data.getString(data.getColumnIndex("sg2_spFat3"))
+                        ))
+                        data.moveToNext()
+                    }
+                    startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                }
                 Category.MENTAL ->
                 {
 
@@ -501,6 +589,8 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                     }
                     startActivity(Activity, Intent(Activity, CancerExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
+
+
                 else ->
                 {
                     println("확인되지 않습니다.")
