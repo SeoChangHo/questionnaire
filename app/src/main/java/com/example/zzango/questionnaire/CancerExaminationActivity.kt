@@ -1154,61 +1154,61 @@ class CancerExaminationActivity : AppCompatActivity(){
         }
 
         if(paper.ck5_1 == "2"){
-            cancer_5_1_checkBox.isChecked
+            cancer_5_1_checkBox.isChecked = true
         }
         if(paper.ck5_2 == "2"){
-            cancer_5_2_checkBox.isChecked
+            cancer_5_2_checkBox.isChecked = true
         }
         if(paper.ck5_3 == "2"){
-            cancer_5_3_checkBox.isChecked
+            cancer_5_3_checkBox.isChecked = true
         }
         if(paper.ck5_4 == "2"){
-            cancer_5_4_checkBox.isChecked
+            cancer_5_4_checkBox.isChecked = true
         }
         if(paper.ck5_5 == "2"){
-            cancer_5_5_checkBox.isChecked
+            cancer_5_5_checkBox.isChecked = true
         }
         if(paper.ck5_6 == "2"){
-            cancer_5_6_checkBox.isChecked
+            cancer_5_6_checkBox.isChecked = true
         }
 
 
         if(paper.ck6_1 == "2"){
-            cancer_6_1_checkBox.isChecked
+            cancer_6_1_checkBox.isChecked = true
         }
         if(paper.ck6_2 == "2"){
-            cancer_6_2_checkBox.isChecked
+            cancer_6_2_checkBox.isChecked = true
         }
         if(paper.ck6_3 == "2"){
-            cancer_6_3_checkBox.isChecked
+            cancer_6_3_checkBox.isChecked = true
         }
         if(paper.ck6_4 == "2"){
-            cancer_6_4_checkBox.isChecked
+            cancer_6_4_checkBox.isChecked = true
         }
         if(paper.ck6_5 == "2"){
-            cancer_6_5_checkBox.isChecked
+            cancer_6_5_checkBox.isChecked = true
         }
         if(paper.ck6_6 == "2"){
-            cancer_6_6_checkBox.isChecked
+            cancer_6_6_checkBox.isChecked = true
         }
 
         if(paper.ck7_1 == "2"){
-            cancer_7_1_checkBox.isChecked
+            cancer_7_1_checkBox.isChecked = true
         }
         if(paper.ck7_2 == "2"){
-            cancer_7_2_checkBox.isChecked
+            cancer_7_2_checkBox.isChecked = true
         }
         if(paper.ck7_3 == "2"){
-            cancer_7_3_checkBox.isChecked
+            cancer_7_3_checkBox.isChecked = true
         }
         if(paper.ck7_4 == "2"){
-            cancer_7_4_checkBox.isChecked
+            cancer_7_4_checkBox.isChecked = true
         }
         if(paper.ck7_5 == "2"){
-            cancer_7_5_checkBox.isChecked
+            cancer_7_5_checkBox.isChecked = true
         }
         if(paper.ck7_6 == "2"){
-            cancer_7_6_checkBox.isChecked
+            cancer_7_6_checkBox.isChecked = true
         }
 
 

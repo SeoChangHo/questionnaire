@@ -88,6 +88,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             userlogin()
         }
 
+        if(MainActivity.login_user_name != ""){
+            user_login.setText(MainActivity.login_user_name+"님")
+            user_image.setImageResource(R.drawable.exit)
+        }
+
     }
 
     fun popuplogin(){
@@ -165,7 +170,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     fun userlogin(){
 
-        if(user_login.text == "사용자등록"){
+        if(user_login.text == "검진자 등록하기"){
             var dialog = AlertDialog.Builder(this).create()
             var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_user_login, null)
 
@@ -244,6 +249,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 Toast.makeText(applicationContext, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
                 user_login.setText(MainActivity.login_user_name+"님")
+                user_image.setImageResource(R.drawable.exit)
                 dialog.dismiss()
 
             }
@@ -258,7 +264,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             MainActivity.user_last_serial = ""
 
             Toast.makeText(applicationContext, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
-            user_login.setText("사용자등록")
+            user_login.setText("검진자 등록하기")
+            user_image.setImageResource(R.drawable.regi)
         }
 
     }

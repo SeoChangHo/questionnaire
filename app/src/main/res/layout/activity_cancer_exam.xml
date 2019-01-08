@@ -299,7 +299,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/cancer_2_radio"
                 app:layout_constraintStart_toEndOf="@+id/cancer_2_radio" />

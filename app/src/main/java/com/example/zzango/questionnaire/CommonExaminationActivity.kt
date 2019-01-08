@@ -1341,6 +1341,7 @@ class CommonExaminationActivity : AppCompatActivity() {
 
             if(!paper.mj4_1_1.isNullOrEmpty()){
 
+                common_4_1_true.isChecked = true
                 textView42.visibility = View.VISIBLE
                 textView43.visibility = View.VISIBLE
                 textView44.visibility = View.VISIBLE
@@ -1351,6 +1352,7 @@ class CommonExaminationActivity : AppCompatActivity() {
                 editText_4_1_2.setText(paper.mj4_1_2)
             }else if(!paper.mj4_2_1.isNullOrEmpty()){
 
+                common_4_1_false.isChecked = true
                 textView45.visibility = View.VISIBLE
                 textView46.visibility = View.VISIBLE
                 textView47.visibility = View.VISIBLE
@@ -1377,6 +1379,7 @@ class CommonExaminationActivity : AppCompatActivity() {
 
 
             if(!paper.mj5_1_1.isNullOrEmpty()){
+                common_5_1_true.isChecked = true
                 textView49.visibility = View.VISIBLE
                 textView50.visibility = View.VISIBLE
                 textView51.visibility = View.VISIBLE
@@ -1386,7 +1389,7 @@ class CommonExaminationActivity : AppCompatActivity() {
                 editText_5_1_1.setText(paper.mj5_1_1)
                 editText_5_1_2.setText(paper.mj5_1_2)
             }else if(!paper.mj5_2_1.isNullOrEmpty()){
-
+                common_5_1_false.isChecked = true
                 textView52.visibility = View.VISIBLE
                 textView53.visibility = View.VISIBLE
                 textView54.visibility = View.VISIBLE

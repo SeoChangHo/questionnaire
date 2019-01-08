@@ -117,21 +117,34 @@
             <Button
                 android:id="@+id/user_login"
                 style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="사용자등록"
-                android:background="@color/mainBlue"
+                android:layout_marginEnd="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="36dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="15dp"
+                android:background="@drawable/user_login_border"
+                android:text="검진자 등록하기"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
+                android:gravity="left"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/user_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:layout_constraintBottom_toBottomOf="@+id/user_login"
+                app:layout_constraintEnd_toEndOf="@+id/user_login"
+                app:layout_constraintTop_toTopOf="@+id/user_login"
+                app:srcCompat="@drawable/regi" />
+
 
         </android.support.constraint.ConstraintLayout>
 
