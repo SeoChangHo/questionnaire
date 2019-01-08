@@ -432,7 +432,7 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         if (pick_time.selectedItem != null) {
 
-            sg2_spSports1_2 = pick_time.selectedItem.toString()
+            sg2_spSports1_2 = pick_time.selectedItemPosition.toString()
 
         } else {
 
@@ -484,7 +484,7 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         if (pick_time2.selectedItem != null) {
 
-            sg2_spSports1_5 = pick_time2.selectedItem.toString()
+            sg2_spSports1_5 = pick_time2.selectedItemPosition.toString()
 
         } else {
 
@@ -580,7 +580,7 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         if (pick_time4.selectedItem != null) {
 
-            sg2_spSports3_2 = pick_time4.selectedItem.toString()
+            sg2_spSports3_2 = pick_time4.selectedItemPosition.toString()
 
         } else {
 
@@ -628,7 +628,7 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         if (pick_time5.selectedItem != null) {
 
-            sg2_spSports3_5 = pick_time5.selectedItem.toString()
+            sg2_spSports3_5 = pick_time5.selectedItemPosition.toString()
 
         } else {
 
@@ -858,10 +858,10 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         if(paper.sg2_spSports3_1=="y")
         {
-            exercise_3_true.isChecked = true
+            exercise_4_true.isChecked = true
         }
         else{
-            exercise_3_false.isChecked = true
+            exercise_4_false.isChecked = true
         }
 
         pick_time4.setSelection(paper.sg2_spSports3_2.toInt())
@@ -871,12 +871,14 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         if(paper.sg2_spSports3_4=="y")
         {
-            exercise_4_true.isChecked = true
+            exercise_5_true.isChecked = true
         }
         else
         {
-            exercise_4_false.isChecked = true
+            exercise_5_false.isChecked = true
         }
+
+
 
         pick_time5.setSelection(paper.sg2_spSports3_5.toInt())
 

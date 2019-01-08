@@ -2180,7 +2180,7 @@
                 android:id="@+id/textView201"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="다음은 자는 시간을 제외하고, 일할 대나 집에"
+                android:text="다음은 자는 시간을 제외하고, 일할 때나 집에"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView200"

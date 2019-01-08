@@ -340,7 +340,7 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
                     var PaperArray = ArrayList<Paper_EXERCISE>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_MENTAL(sql_db!!, paper.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_EXERCISE(sql_db!!, paper.exam_no)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -385,14 +385,14 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         ))
                         data.moveToNext()
                     }
-                    startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    startActivity(Activity, Intent(Activity, ExerciseExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 Category.NUTRITION ->
                 {
 
                     var PaperArray = ArrayList<Paper_NUTRITION>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_MENTAL(sql_db!!, paper.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_NUTRITION(sql_db!!, paper.exam_no)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -415,17 +415,17 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                                 data.getString(data.getColumnIndex("sg2_spFood10")),
                                 data.getString(data.getColumnIndex("sg2_spFood11")),
                                 data.getString(data.getColumnIndex("sg2_spFoodSum")),
-                                data.getString(data.getColumnIndex("sg2_spHeight")),
-                                data.getString(data.getColumnIndex("sg2_spWeight")),
-                                data.getString(data.getColumnIndex("sg2_spWaistSize")),
-                                data.getString(data.getColumnIndex("sg2_spBmi")),
+                                data.getString(data.getColumnIndex("sg2_spFatHeight")),
+                                data.getString(data.getColumnIndex("sg2_spFatWeight")),
+                                data.getString(data.getColumnIndex("sg2_spFatWaistSize")),
+                                data.getString(data.getColumnIndex("sg2_spFatBmi")),
                                 data.getString(data.getColumnIndex("sg2_spFat1")),
                                 data.getString(data.getColumnIndex("sg2_spFat2")),
                                 data.getString(data.getColumnIndex("sg2_spFat3"))
                         ))
                         data.moveToNext()
                     }
-                    startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    startActivity(Activity, Intent(Activity, NutritionExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 Category.MENTAL ->
                 {

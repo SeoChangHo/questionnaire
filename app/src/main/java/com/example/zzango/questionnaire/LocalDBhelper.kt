@@ -330,7 +330,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " sg2_spFood2 TEXT," +
                 " sg2_spFood3 TEXT," +
                 " sg2_spFood4 TEXT," +
-                " sg2_spFood4 TEXT," +
                 " sg2_spFood5 TEXT," +
                 " sg2_spFood6 TEXT," +
                 " sg2_spFood7 TEXT," +
@@ -339,6 +338,10 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " sg2_spFood10 TEXT," +
                 " sg2_spFood11 TEXT," +
                 " sg2_spFoodSum TEXT," +
+                " sg2_spFatHeight TEXT," +
+                " sg2_spFatWeight TEXT," +
+                " sg2_spFatWaistSize TEXT," +
+                " sg2_spFatBmi TEXT," +
                 " sg2_spFat1 TEXT," +
                 " sg2_spFat2 TEXT," +
                 " sg2_spFat3 TEXT," +
@@ -649,7 +652,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "sg2_spSports1_6_1,sg2_spSports1_6_2,sg2_spSports2_1,sg2_spSports2_2,sg2_spSports2_3_1,sg2_spSports2_3_2," +
                 "sg2_spSports3_1,sg2_spSports3_2,sg2_spSports3_3_1,sg2_spSports3_3_2,sg2_spSports3_4,sg2_spSports3_5," +
                 "sg2_spSports3_6_1,sg2_spSports3_6_2,sg2_spSports4_1_1,sg2_spSports4_1_2,sg2_spSports5,sg2_spSports6," +
-                "sg2_spSports7,sg2_spSports8,sg2_spSports9,sg2_spSports10,sg2_spSports11,sg2_spSports12)" +
+                "sg2_spSports7,sg2_spSports8,sg2_spSports9,sg2_spSports10,sg2_spSports11,sg2_spSports12,sg2_spSportsSum)" +
                 " VALUES (" +
                 "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.sg2_spSports1_1}', '${columnValue.sg2_spSports1_2}', '${columnValue.sg2_spSports1_3_1}'" +
@@ -661,7 +664,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.sg2_spSports3_6_1}', '${columnValue.sg2_spSports3_6_2}', '${columnValue.sg2_spSports4_1_1}'" +
                 ", '${columnValue.sg2_spSports4_1_2}', '${columnValue.sg2_spSports5}', '${columnValue.sg2_spSports6}'" +
                 ", '${columnValue.sg2_spSports7}', '${columnValue.sg2_spSports8}', '${columnValue.sg2_spSports9}'" +
-                ", '${columnValue.sg2_spSports10}', '${columnValue.sg2_spSports11}', '${columnValue.sg2_spSports12}');")
+                ", '${columnValue.sg2_spSports10}', '${columnValue.sg2_spSports11}', '${columnValue.sg2_spSports12}', '${columnValue.sg2_spSportsSum}');")
 
     }
 
@@ -683,7 +686,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "category," +
                 "sg2_spFood1,sg2_spFood2,sg2_spFood3,sg2_spFood4,sg2_spFood5,sg2_spFood6," +
                 "sg2_spFood7,sg2_spFood8,sg2_spFood9,sg2_spFood10,sg2_spFood11,sg2_spFoodSum," +
-                "sg2_spHeight,sg2_spWeight,sg2_spWaistSize,sg2_spBmi,sg2_spFat1,sg2_spFat2,sg2_spFat3)" +
+                "sg2_spFatHeight,sg2_spFatWeight,sg2_spFatWaistSize,sg2_spFatBmi,sg2_spFat1,sg2_spFat2,sg2_spFat3)" +
                 " VALUES (" +
                 "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.sg2_spFood1}', '${columnValue.sg2_spFood2}', '${columnValue.sg2_spFood3}'" +
@@ -864,6 +867,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 CustomAdapter.Category.ELDERLY -> {
                     println("노인기능입니다.")
                     db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+                }
+                CustomAdapter.Category.EXERCISE -> {
+                    println("운동입니다..")
+                    db.delete("EXERCISE_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+                }
+                CustomAdapter.Category.NUTRITION -> {
+                    println("영양입니다..")
+                    db.delete("NUTRITION_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.DRINKING -> {
                     println("음주입니다..")
