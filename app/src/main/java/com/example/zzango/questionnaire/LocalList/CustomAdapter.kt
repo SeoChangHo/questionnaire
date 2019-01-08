@@ -415,6 +415,10 @@ class CustomAdapter(val PaperList: ArrayList<Paper>, var Activity: Activity): Re
                                 data.getString(data.getColumnIndex("sg2_spFood10")),
                                 data.getString(data.getColumnIndex("sg2_spFood11")),
                                 data.getString(data.getColumnIndex("sg2_spFoodSum")),
+                                data.getString(data.getColumnIndex("sg2_spHeight")),
+                                data.getString(data.getColumnIndex("sg2_spWeight")),
+                                data.getString(data.getColumnIndex("sg2_spWaistSize")),
+                                data.getString(data.getColumnIndex("sg2_spBmi")),
                                 data.getString(data.getColumnIndex("sg2_spFat1")),
                                 data.getString(data.getColumnIndex("sg2_spFat2")),
                                 data.getString(data.getColumnIndex("sg2_spFat3"))
