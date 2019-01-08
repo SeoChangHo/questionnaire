@@ -74,4 +74,12 @@ class OracleUtill {
 
     }
 
+    val nutrition_url : String = "https://finepaperweight.herokuapp.com/InsertNutrition/"
+
+    fun nutrition_examination() : OracleInterface {
+
+        return OracleRequest().getStringResponse(nutrition_url)!!.create(OracleInterface::class.java)
+
+    }
+
 }

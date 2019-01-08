@@ -316,6 +316,36 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun nutritionCreate(db : SQLiteDatabase?){
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "Nutrition_EXAM" +
+                "(exam_date TEXT," +
+                " exam_no TEXT,"  +
+                " name TEXT," +
+                " first_serial TEXT," +
+                " last_serial TEXT," +
+                " category TEXT," +
+                " sg2_spFood1 TEXT," +
+                " sg2_spFood2 TEXT," +
+                " sg2_spFood3 TEXT," +
+                " sg2_spFood4 TEXT," +
+                " sg2_spFood4 TEXT," +
+                " sg2_spFood5 TEXT," +
+                " sg2_spFood6 TEXT," +
+                " sg2_spFood7 TEXT," +
+                " sg2_spFood8 TEXT," +
+                " sg2_spFood9 TEXT," +
+                " sg2_spFood10 TEXT," +
+                " sg2_spFood11 TEXT," +
+                " sg2_spFoodSum TEXT," +
+                " sg2_spFat1 TEXT," +
+                " sg2_spFat2 TEXT," +
+                " sg2_spFat3 TEXT," +
+                " sg2_spFatSum TEXT);")
+
+    }
+
     fun cancerCreate(db : SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
@@ -632,6 +662,35 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.sg2_spSports4_1_2}', '${columnValue.sg2_spSports5}', '${columnValue.sg2_spSports6}'" +
                 ", '${columnValue.sg2_spSports7}', '${columnValue.sg2_spSports8}', '${columnValue.sg2_spSports9}'" +
                 ", '${columnValue.sg2_spSports10}', '${columnValue.sg2_spSports11}', '${columnValue.sg2_spSports12}');")
+
+    }
+
+    fun nutritionSaveLocal(db: SQLiteDatabase, ex : ArrayList<NutritionExaminationActivity.ExamInfo>){
+
+        val columnValue = ex.get(0)
+
+        db.execSQL("INSERT INTO LOCALSAVELIST" +
+                "(exam_no, category, name)" +
+                " VALUES (" +
+                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+
+        db.execSQL("INSERT INTO EXERCISE_EXAM" +
+                "(exam_date," +
+                "exam_no,"  +
+                "name," +
+                "first_serial," +
+                "last_serial," +
+                "category," +
+                "sg2_spFood1,sg2_spFood2,sg2_spFood3,sg2_spFood4,sg2_spFood5,sg2_spFood6," +
+                "sg2_spFood7,sg2_spFood8,sg2_spFood9,sg2_spFood10,sg2_spFood11,sg2_spFoodSum," +
+                "sg2_spFat1,sg2_spFat2,sg2_spFat3)" +
+                " VALUES (" +
+                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                ", '${columnValue.category}', '${columnValue.sg2_spFood1}', '${columnValue.sg2_spFood2}', '${columnValue.sg2_spFood3}'" +
+                ", '${columnValue.sg2_spFood4}', '${columnValue.sg2_spFood5}', '${columnValue.sg2_spFood6}'" +
+                ", '${columnValue.sg2_spFood7}', '${columnValue.sg2_spFood8}', '${columnValue.sg2_spFood9}'" +
+                ", '${columnValue.sg2_spFood10}', '${columnValue.sg2_spFood11}', '${columnValue.sg2_spFoodSum}'" +
+                ", '${columnValue.sg2_spFat1}', '${columnValue.sg2_spFat2}', '${columnValue.sg2_spFat3}');")
 
     }
 

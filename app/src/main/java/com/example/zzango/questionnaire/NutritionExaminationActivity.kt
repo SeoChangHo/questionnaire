@@ -2,6 +2,7 @@ package com.example.zzango.questionnaire
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
@@ -18,8 +19,12 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_nutrition_exam.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class NutritionExaminationActivity :AppCompatActivity() {
 
@@ -34,11 +39,11 @@ class NutritionExaminationActivity :AppCompatActivity() {
                          @SerializedName("first_serial") @Expose var first_serial : String,
                          @SerializedName("last_serial") @Expose var last_serial : String,
                          @SerializedName("category") @Expose var category : String,
-                         @SerializedName("sg2_spFood1") @Expose var sg2_spFood1_1 : String,
-                         @SerializedName("sg2_spFood2") @Expose var sg2_spFood1_2 : String,
-                         @SerializedName("sg2_spFood3") @Expose var sg2_spFood1_4 : String,
-                         @SerializedName("sg2_spFood4") @Expose var sg2_spFood1_5 : String,
-                         @SerializedName("sg2_spFood5") @Expose var sg2_spFood2_1 : String,
+                         @SerializedName("sg2_spFood1") @Expose var sg2_spFood1 : String,
+                         @SerializedName("sg2_spFood2") @Expose var sg2_spFood2 : String,
+                         @SerializedName("sg2_spFood3") @Expose var sg2_spFood3 : String,
+                         @SerializedName("sg2_spFood4") @Expose var sg2_spFood4 : String,
+                         @SerializedName("sg2_spFood5") @Expose var sg2_spFood5 : String,
                          @SerializedName("sg2_spFood6") @Expose var sg2_spFood6 : String,
                          @SerializedName("sg2_spFood7") @Expose var sg2_spFood7 : String,
                          @SerializedName("sg2_spFood8") @Expose var sg2_spFood8 : String,
@@ -55,6 +60,34 @@ class NutritionExaminationActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nutrition_exam)
 
+        sql_db = LocalDBhelper(this).writableDatabase
+
+        nutrition_examination_save.setOnClickListener {
+
+            //check function 리턴하는 boolean 값에 따라 진행
+            if(check()){
+
+                //진행상태 표시
+                login_appbar_loading_progress.visibility = View.VISIBLE
+                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
+                //메인 액티비티에서 네트워크 연결상태가 문자열로 저장돼있다 그걸로 구분한다.
+                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
+
+                    //로컬 저장
+                    nutrition_exam_local_insert()
+
+                }else{
+
+                    //서버 저장
+                    nutrition_exam_server_insert()
+
+                }
+
+            }
+
+        }
+
         nutrition_examination_cancel.setOnClickListener {
 
             finish()
@@ -69,56 +102,56 @@ class NutritionExaminationActivity :AppCompatActivity() {
 
     }
 
-//    fun exercise_exam_local_insert(){
-//
-//        LocalDBhelper(this).exerciseCreate(sql_db)
-//
-//        LocalDBhelper(this).exerciseSaveLocal(sql_db!!, exam_result!!)
-//
-//        saveCompleteAlert()
-//
-//    }
-//
-//    fun exercise_exam_server_insert(){
-//
-//        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//
-//        OracleUtill().exercise_examination().exerciseServer(exam_result!!).enqueue(object : Callback<String> {
-//
-//            override fun onResponse(call: Call<String>, response: Response<String>) {
-//
-//                if (response.isSuccessful) {
-//
-//                    if (!response.body()!!.equals("S")) {
-//
-//                        login_appbar_loading_progress.visibility = View.GONE
-//                        login_appbar_loading_progress_bg.visibility = View.GONE
-//                        this@ExerciseExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//                        Toast.makeText(this@ExerciseExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-//
-//                    } else {
-//
-//                        saveCompleteAlert()
-//
-//                    }
-//
-//                }
-//
-//            }
-//
-//            override fun onFailure(call: Call<String>, t: Throwable) {
-//
-//                login_appbar_loading_progress.visibility = View.GONE
-//                login_appbar_loading_progress_bg.visibility = View.GONE
-//                this@ExerciseExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//                Toast.makeText(this@ExerciseExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-//                println(t.toString())
-//            }
-//
-//        })
-//
-//    }
-//
+    fun nutrition_exam_local_insert(){
+
+        LocalDBhelper(this).nutritionCreate(sql_db)
+
+        LocalDBhelper(this).nutritionSaveLocal(sql_db!!, exam_result!!)
+
+        saveCompleteAlert()
+
+    }
+
+    fun nutrition_exam_server_insert(){
+
+        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+
+        OracleUtill().nutrition_examination().nutritionServer(exam_result!!).enqueue(object : Callback<String> {
+
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+
+                if (response.isSuccessful) {
+
+                    if (!response.body()!!.equals("S")) {
+
+                        login_appbar_loading_progress.visibility = View.GONE
+                        login_appbar_loading_progress_bg.visibility = View.GONE
+                        this@NutritionExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Toast.makeText(this@NutritionExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+
+                    } else {
+
+                        saveCompleteAlert()
+
+                    }
+
+                }
+
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+
+                login_appbar_loading_progress.visibility = View.GONE
+                login_appbar_loading_progress_bg.visibility = View.GONE
+                this@NutritionExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                Toast.makeText(this@NutritionExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                println(t.toString())
+            }
+
+        })
+
+    }
+
     fun saveCompleteAlert(){
 
         login_appbar_loading_progress.visibility = View.GONE
@@ -437,6 +470,16 @@ class NutritionExaminationActivity :AppCompatActivity() {
 
             }
         }
+
+        var arr = ArrayList<ExamInfo>()
+
+        arr.add(ExamInfo(
+                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+                sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
+                sg2_spFood11, sg2_spFoodSum, sg2_spFat1, sg2_spFat2, sg2_spFat3
+        ))
+
+        exam_result = arr
 
         return true
 
