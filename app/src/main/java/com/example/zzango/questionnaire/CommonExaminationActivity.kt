@@ -144,6 +144,12 @@ class CommonExaminationActivity : AppCompatActivity() {
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+        name_edit.setText(MainActivity.login_user_name)
+        first_serial.setText(MainActivity.user_first_serial)
+        last_serial.setText(MainActivity.user_last_serial)
+
+
         common_4_false.setOnClickListener {
             textView20.visibility = View.GONE
             common_4_1_radio.visibility = View.GONE

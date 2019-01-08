@@ -133,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:inputType="numberPassword"
-                android:maxLength="7"
+                android:maxLength="1"
                 android:maxWidth="90dp"
                 android:minWidth="90dp"
                 android:textAlignment="center"
@@ -521,7 +521,6 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="기타(암포함)"
-                    app:layout_constraintBottom_toTopOf="@+id/diagnosis_medication_etc_disease_name"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_tuberculosis" />
 

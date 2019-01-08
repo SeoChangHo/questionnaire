@@ -341,7 +341,7 @@
                 android:backgroundTint="@color/gray"
                 android:inputType="numberPassword"
                 android:maxWidth="90dp"
-                android:maxLength="7"
+                android:maxLength="1"
                 android:minWidth="90dp"
                 android:textAlignment="center"
                 android:textCursorDrawable="@color/gray"

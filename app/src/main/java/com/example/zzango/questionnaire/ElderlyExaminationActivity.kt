@@ -68,6 +68,10 @@ class ElderlyExaminationActivity : AppCompatActivity(){
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        name_edit.setText(MainActivity.login_user_name)
+        first_serial.setText(MainActivity.user_first_serial)
+        last_serial.setText(MainActivity.user_last_serial)
+
         elderly_examination_save.setOnClickListener {
 
             if(check()){

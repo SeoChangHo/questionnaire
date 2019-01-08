@@ -4,7 +4,6 @@ package com.example.zzango.questionnaire
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.net.wifi.WifiManager
 import android.os.Bundle
@@ -24,6 +23,7 @@ import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.ListActivity
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_user_login.view.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_location.view.*
 
@@ -83,6 +83,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button3.setOnClickListener(this)
         button4.setOnClickListener(this)
         button5.setOnClickListener(this)
+
+        user_login.setOnClickListener{
+            userlogin()
+        }
 
     }
 
@@ -158,6 +162,107 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         dialog.show()
 
     }
+
+    fun userlogin(){
+
+        if(user_login.text == "사용자등록"){
+            var dialog = AlertDialog.Builder(this).create()
+            var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_user_login, null)
+
+            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            dialog.setView(dialog_view)
+            dialog.setCanceledOnTouchOutside(false)
+
+
+            dialog_view.user_name.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {
+                    if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
+                        dialog_view.user_login_button.isClickable = true
+                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                    }else{
+                        dialog_view.user_login_button.isClickable = false
+                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                    }
+                }
+
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+                }
+            })
+
+            dialog_view.first_serial.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {
+                    if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
+                        dialog_view.user_login_button.isClickable = true
+                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                    }else{
+                        dialog_view.user_login_button.isClickable = false
+                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                    }
+                }
+
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+                }
+            })
+
+            dialog_view.last_serial.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {
+                    if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
+                        dialog_view.user_login_button.isClickable = true
+                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                    }else{
+                        dialog_view.user_login_button.isClickable = false
+                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                    }
+                }
+
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+                }
+            })
+
+            val login = dialog_view.findViewById(R.id.user_login_button) as Button
+            login.setOnClickListener{
+
+                MainActivity.login_user_name = dialog_view.user_name.text.toString()
+                MainActivity.user_first_serial = dialog_view.first_serial.text.toString()
+                MainActivity.user_last_serial = dialog_view.last_serial.text.toString()
+
+                Toast.makeText(applicationContext, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
+                user_login.setText(MainActivity.login_user_name+"님")
+                dialog.dismiss()
+
+            }
+
+            dialog.show()
+        }
+
+        if(user_login.text == MainActivity.login_user_name+"님"){
+
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
+
+            Toast.makeText(applicationContext, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
+            user_login.setText("사용자등록")
+        }
+
+    }
+
 
     fun dataSaveLocationAlert(){
 
@@ -332,6 +437,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
+    }
+
+    companion object {
+        var login_user_name = ""
+        var user_first_serial = ""
+        var user_last_serial = ""
     }
 
 }

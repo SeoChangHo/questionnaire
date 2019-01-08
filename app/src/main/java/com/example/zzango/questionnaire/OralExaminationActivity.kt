@@ -10,7 +10,10 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.Paper_ORAL
@@ -63,6 +66,8 @@ class OralExaminationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oral_exam)
 
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
+
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
@@ -72,8 +77,9 @@ class OralExaminationActivity : AppCompatActivity() {
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
-
+        oral_questionnaire_name_input.setText(MainActivity.login_user_name)
+        first_serial.setText(MainActivity.user_first_serial)
+        last_serial.setText(MainActivity.user_last_serial)
 
 
         sql_db = LocalDBhelper(this).writableDatabase
