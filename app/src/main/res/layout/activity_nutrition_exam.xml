@@ -85,7 +85,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView236">
 
                 <android.support.constraint.ConstraintLayout
-                    android:id="@+id/exercise_constraint_layout"
+                    android:id="@+id/nutrition_constraint_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#EDECF2"
@@ -171,7 +171,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
                     android:background="#ADB5BD"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_constraint_layout" />
+                    app:layout_constraintBottom_toBottomOf="@+id/nutrition_constraint_layout" />
 
                 <android.support.constraint.Guideline
                     android:id="@+id/guideline"
@@ -452,8 +452,10 @@
                     android:id="@+id/textView259"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
                     android:text="(갈아먹는 형태 포함)"
                     android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textView256"
                     app:layout_constraintTop_toBottomOf="@+id/textView256" />
 
@@ -493,13 +495,1455 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#ADB5BD"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_check_wrapper" />
-
+                    app:layout_constraintBottom_toBottomOf="@+id/nutrition_check_wrapper" />
 
             </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+            android:id="@+id/nutrition_check_wrapper2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/nutrition_check_wrapper"
+            app:layout_constraintTop_toBottomOf="@+id/nutrition_check_wrapper">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/nutrition_constraint_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EDECF2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/textView260"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="주 4회"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView261"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/textView261"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="이상"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView260"
+                    app:layout_constraintStart_toStartOf="@+id/textView260"
+                    app:layout_constraintTop_toBottomOf="@+id/textView260" />
+
+                <TextView
+                    android:id="@+id/textView262"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView263"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.35"
+                    app:layout_constraintStart_toEndOf="@+id/textView260"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/textView263"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2~3회"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView262"
+                    app:layout_constraintStart_toStartOf="@+id/textView262"
+                    app:layout_constraintTop_toBottomOf="@+id/textView262" />
+
+                <TextView
+                    android:id="@+id/textView264"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="주 1회"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView265"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.57"
+                    app:layout_constraintStart_toEndOf="@+id/textView262"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/textView265"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이하"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView264"
+                    app:layout_constraintStart_toStartOf="@+id/textView264"
+                    app:layout_constraintTop_toBottomOf="@+id/textView264" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:id="@+id/nutrition_view3"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="#ADB5BD"
+                app:layout_constraintBottom_toBottomOf="@+id/nutrition_constraint_layout2" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.672" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.943" />
+
+            <TextView
+                android:id="@+id/textView266"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="5. "
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nutrition_view3" />
+
+            <TextView
+                android:id="@+id/textView267"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="튀김이나 볶음 요리를"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView266"
+                app:layout_constraintTop_toTopOf="@+id/textView266" />
+
+            <TextView
+                android:id="@+id/textView268"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="얼마나 자주 먹습니까?"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@+id/textView267"
+                app:layout_constraintTop_toBottomOf="@+id/textView267" />
+
+            <RadioGroup
+                android:id="@+id/nutrition_radio5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="@+id/textView266">
+
+                <RadioButton
+                    android:id="@+id/nutrition_5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue" />
+
+                <RadioButton
+                    android:id="@+id/nutrition_5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:buttonTint="@color/mainBlue" />
+
+                <RadioButton
+                    android:id="@+id/nutrition_5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:buttonTint="@color/mainBlue" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView269"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="6. "
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView266"
+                app:layout_constraintTop_toBottomOf="@+id/textView268" />
+
+            <TextView
+                android:id="@+id/textView270"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="콜레스트롤이 많은 식품"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView269"
+                app:layout_constraintTop_toTopOf="@+id/textView269" />
+
+            <TextView
+                android:id="@+id/textView271"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="(삼겹살, 달걀노른자, 오징어 등)을 얼마나 자주 먹습니까?"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView270"
+                app:layout_constraintTop_toBottomOf="@+id/textView270" />
+
+            <RadioGroup
+                android:id="@+id/nutrition_radio6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="@+id/textView269">
+
+                <RadioButton
+                    android:id="@+id/nutrition_6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainBlue" />
+
+                <RadioButton
+                    android:id="@+id/nutrition_6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:buttonTint="@color/mainBlue" />
+
+                <RadioButton
+                    android:id="@+id/nutrition_6_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:buttonTint="@color/mainBlue" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/nutrition_view4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ADB5BD"
+                app:layout_constraintBottom_toBottomOf="@+id/nutrition_check_wrapper2" />
+
+        </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/nutrition_check_wrapper3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/nutrition_check_wrapper2"
+                app:layout_constraintTop_toBottomOf="@+id/nutrition_check_wrapper2">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/nutrition_constraint_layout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#EDECF2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/textView272"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="항상"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView273"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.7"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView273"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="그런"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView274"
+                        app:layout_constraintEnd_toEndOf="@+id/textView272"
+                        app:layout_constraintStart_toStartOf="@+id/textView272"
+                        app:layout_constraintTop_toBottomOf="@+id/textView272" />
+
+                    <TextView
+                        android:id="@+id/textView274"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="편이다"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/textView273"
+                        app:layout_constraintStart_toStartOf="@+id/textView273"
+                        app:layout_constraintTop_toBottomOf="@+id/textView273" />
+
+                    <TextView
+                        android:id="@+id/textView275"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="보통이다"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.322"
+                        app:layout_constraintStart_toEndOf="@+id/textView274"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView276"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="아닌"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView277"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView275"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/textView277"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="편이다"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView275"
+                        app:layout_constraintTop_toBottomOf="@+id/textView276" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/nutrition_view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="#ADB5BD"
+                    app:layout_constraintBottom_toBottomOf="@+id/nutrition_constraint_layout3" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.672" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.943" />
+
+                <TextView
+                    android:id="@+id/textView278"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="7. "
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nutrition_view5" />
+
+                <TextView
+                    android:id="@+id/textView279"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아이스크림, 케이크, 과자, 음료수"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView278"
+                    app:layout_constraintTop_toTopOf="@+id/textView278" />
+
+                <TextView
+                    android:id="@+id/textView280"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(믹스커피, 콜라, 식혜 등) 중"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView279"
+                    app:layout_constraintTop_toBottomOf="@+id/textView279" />
+
+                <TextView
+                    android:id="@+id/textView281"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1가지를 "
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView280"
+                    app:layout_constraintTop_toBottomOf="@+id/textView280" />
+
+                <TextView
+                    android:id="@+id/textView282"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="매일 "
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView281"
+                    app:layout_constraintTop_toTopOf="@+id/textView281" />
+
+                <TextView
+                    android:id="@+id/textView283"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="먹는다."
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView282"
+                    app:layout_constraintTop_toTopOf="@+id/textView281" />
+
+                <RadioGroup
+                    android:id="@+id/nutrition_radio7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                    app:layout_constraintStart_toStartOf="@+id/guideline6"
+                    app:layout_constraintTop_toTopOf="@+id/textView278">
+
+                    <RadioButton
+                        android:id="@+id/nutrition_7_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue" />
+
+                    <RadioButton
+                        android:id="@+id/nutrition_7_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:buttonTint="@color/mainBlue" />
+
+                    <RadioButton
+                        android:id="@+id/nutrition_7_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:buttonTint="@color/mainBlue" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView284"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="8. "
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView278"
+                    app:layout_constraintTop_toBottomOf="@+id/textView281" />
+
+                <TextView
+                    android:id="@+id/textView285"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="젓갈, 장아찌, 자반 등을 "
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView284"
+                    app:layout_constraintTop_toTopOf="@+id/textView284" />
+
+                <TextView
+                    android:id="@+id/textView286"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="매일 "
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView285"
+                    app:layout_constraintTop_toTopOf="@+id/textView284" />
+
+                <TextView
+                    android:id="@+id/textView287"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="먹는다."
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView286"
+                    app:layout_constraintTop_toTopOf="@+id/textView284" />
+
+                <RadioGroup
+                    android:id="@+id/nutrition_radio8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/textView284">
+
+                    <RadioButton
+                        android:id="@+id/nutrition_8_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue" />
+
+                    <RadioButton
+                        android:id="@+id/nutrition_8_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:buttonTint="@color/mainBlue" />
+
+                    <RadioButton
+                        android:id="@+id/nutrition_8_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:buttonTint="@color/mainBlue" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView288"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="9. "
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView284"
+                    app:layout_constraintTop_toBottomOf="@+id/textView287" />
+
+                <TextView
+                    android:id="@+id/textView289"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="식사를 "
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView288"
+                    app:layout_constraintTop_toTopOf="@+id/textView288" />
+
+                <TextView
+                    android:id="@+id/textView290"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="매일 정해진 시간에 "
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView289"
+                    app:layout_constraintTop_toTopOf="@+id/textView288" />
+
+                <TextView
+                    android:id="@+id/textView291"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="한다."
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView290"
+                    app:layout_constraintTop_toTopOf="@+id/textView288" />
+
+                <RadioGroup
+                    android:id="@+id/nutrition_radio9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/textView288">
+
+                    <RadioButton
+                        android:id="@+id/nutrition_9_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue" />
+
+                    <RadioButton
+                        android:id="@+id/nutrition_9_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:buttonTint="@color/mainBlue" />
+
+                    <RadioButton
+                        android:id="@+id/nutrition_9_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:buttonTint="@color/mainBlue" />
+
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/nutrition_view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ADB5BD"
+                    app:layout_constraintBottom_toBottomOf="@+id/nutrition_check_wrapper3" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/nutrition_check_wrapper4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/nutrition_check_wrapper3"
+                app:layout_constraintTop_toBottomOf="@+id/nutrition_check_wrapper3">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/nutrition_constraint_layout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#EDECF2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/textView292"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="5종류"
+                        android:textSize="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.7"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView293"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4종류"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.322"
+                        app:layout_constraintStart_toEndOf="@+id/textView292"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView294"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3종류"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView295"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView293"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/textView295"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이하"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textView294"
+                        app:layout_constraintEnd_toEndOf="@+id/textView294"
+                        app:layout_constraintTop_toBottomOf="@+id/textView294" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/nutrition_view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="#ADB5BD"
+                    app:layout_constraintBottom_toBottomOf="@+id/nutrition_constraint_layout4" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.672" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.943" />
+
+                <TextView
+                    android:id="@+id/textView296"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="10. "
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nutrition_view7" />
+
+                <TextView
+                    android:id="@+id/textView297"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="곡류(밥·빵류), 고기 · 생선 · 달걀"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView296"
+                    app:layout_constraintTop_toTopOf="@+id/textView296" />
+
+                <TextView
+                    android:id="@+id/textView298"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="콩류, 채소류, 과일류, 우유루 등"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView297"
+                    app:layout_constraintTop_toBottomOf="@+id/textView297" />
+
+                <TextView
+                    android:id="@+id/textView299"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="총 5종류 식품 중에서 "
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView298"
+                    app:layout_constraintTop_toBottomOf="@+id/textView298" />
+
+                <TextView
+                    android:id="@+id/textView300"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하루에 보통"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView299"
+                    app:layout_constraintTop_toTopOf="@+id/textView299" />
+
+                <TextView
+                    android:id="@+id/textView301"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="몇 종류의 식품을 "
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView299"
+                    app:layout_constraintTop_toBottomOf="@+id/textView299" />
+
+                <TextView
+                    android:id="@+id/textView302"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="드십니까?"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView301"
+                    app:layout_constraintTop_toTopOf="@+id/textView301" />
+
+                <RadioGroup
+                    android:id="@+id/nutrition_radio10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                    app:layout_constraintStart_toStartOf="@+id/guideline8"
+                    app:layout_constraintTop_toTopOf="@+id/textView296">
+
+                    <RadioButton
+                        android:id="@+id/nutrition_10_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue" />
+
+                    <RadioButton
+                        android:id="@+id/nutrition_10_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:buttonTint="@color/mainBlue" />
+
+                    <RadioButton
+                        android:id="@+id/nutrition_10_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:buttonTint="@color/mainBlue" />
+
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/nutrition_view8"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ADB5BD"
+                    app:layout_constraintBottom_toBottomOf="@+id/nutrition_check_wrapper4" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/nutrition_check_wrapper5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/nutrition_check_wrapper4"
+                app:layout_constraintTop_toBottomOf="@+id/nutrition_check_wrapper4">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/nutrition_constraint_layout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#EDECF2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/textView303"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="주 5회"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView304"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.7"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/textView304"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="이상"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/textView303"
+                        app:layout_constraintStart_toStartOf="@+id/textView303"
+                        app:layout_constraintTop_toBottomOf="@+id/textView303" />
+
+                    <TextView
+                        android:id="@+id/textView305"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="주"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView306"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.35"
+                        app:layout_constraintStart_toEndOf="@+id/textView303"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/textView306"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2~4회"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/textView305"
+                        app:layout_constraintStart_toStartOf="@+id/textView305"
+                        app:layout_constraintTop_toBottomOf="@+id/textView305" />
+
+                    <TextView
+                        android:id="@+id/textView307"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="주 1회"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView308"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.57"
+                        app:layout_constraintStart_toEndOf="@+id/textView305"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/textView308"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이하"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/textView307"
+                        app:layout_constraintStart_toStartOf="@+id/textView307"
+                        app:layout_constraintTop_toBottomOf="@+id/textView307" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/nutrition_view9"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="#ADB5BD"
+                    app:layout_constraintBottom_toBottomOf="@+id/nutrition_constraint_layout5" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.672" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.943" />
+
+                <TextView
+                    android:id="@+id/textView309"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="11. "
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nutrition_view9" />
+
+                <TextView
+                    android:id="@+id/textView310"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="외식(직장에서 제공되는 식사 제외)을"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView309"
+                    app:layout_constraintTop_toTopOf="@+id/textView309" />
+
+                <TextView
+                    android:id="@+id/textView311"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="얼마나 자주 "
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView310"
+                    app:layout_constraintTop_toBottomOf="@+id/textView310" />
+
+                <TextView
+                    android:id="@+id/textView312"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하십니까?"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/textView311"
+                    app:layout_constraintTop_toTopOf="@+id/textView311" />
+
+                <RadioGroup
+                    android:id="@+id/nutrition_radio11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                    app:layout_constraintStart_toStartOf="@+id/guideline9"
+                    app:layout_constraintTop_toTopOf="@+id/textView309">
+
+                    <RadioButton
+                        android:id="@+id/nutrition_11_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue" />
+
+                    <RadioButton
+                        android:id="@+id/nutrition_11_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:buttonTint="@color/mainBlue" />
+
+                    <RadioButton
+                        android:id="@+id/nutrition_11_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:buttonTint="@color/mainBlue" />
+
+                </RadioGroup>
+
+                <View
+                    android:id="@+id/nutrition_view10"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ADB5BD"
+                    app:layout_constraintBottom_toBottomOf="@+id/nutrition_check_wrapper5" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView313"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/blue_text_top_margin"
+                android:text="※ 비만 생활습관 평가도구"
+                android:textColor="@color/mainBlue"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView236"
+                app:layout_constraintTop_toBottomOf="@+id/nutrition_check_wrapper5" />
+
+            <TextView
+                android:id="@+id/textView314"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="※ 신장"
+                android:textSize="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView313"
+                app:layout_constraintStart_toStartOf="@+id/textView313"/>
+
+            <EditText
+                android:id="@+id/height"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/bmi"
+                app:layout_constraintEnd_toEndOf="@+id/bmi"
+                app:layout_constraintTop_toTopOf="@+id/textView314"
+                app:layout_constraintBottom_toBottomOf="@+id/textView314"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="cm"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/height"
+                app:layout_constraintTop_toTopOf="@+id/textView314"/>
+
+            <TextView
+                android:id="@+id/textView315"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="※ 체중"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView314"
+                app:layout_constraintStart_toStartOf="@+id/textView314"/>
+
+            <EditText
+                android:id="@+id/weight"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/bmi"
+                app:layout_constraintEnd_toEndOf="@+id/bmi"
+                app:layout_constraintTop_toTopOf="@+id/textView315"
+                app:layout_constraintBottom_toBottomOf="@+id/textView315"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="kg"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/weight"
+                app:layout_constraintTop_toTopOf="@+id/textView315"/>
+
+            <TextView
+                android:id="@+id/textView316"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="※ 허리둘레"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView315"
+                app:layout_constraintStart_toStartOf="@+id/textView314"/>
+
+            <EditText
+                android:id="@+id/waist_size"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/bmi"
+                app:layout_constraintEnd_toEndOf="@+id/bmi"
+                app:layout_constraintTop_toTopOf="@+id/textView316"
+                app:layout_constraintBottom_toBottomOf="@+id/textView316"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="cm"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/waist_size"
+                app:layout_constraintTop_toTopOf="@+id/textView316"/>
+
+            <TextView
+                android:id="@+id/textView317"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="※ 체질량지수"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView316"
+                app:layout_constraintStart_toStartOf="@+id/textView314"/>
+
+            <EditText
+                android:id="@+id/bmi"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView317"
+                app:layout_constraintTop_toTopOf="@+id/textView317"
+                app:layout_constraintBottom_toBottomOf="@+id/textView317"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="kg/㎡"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/bmi"
+                app:layout_constraintTop_toTopOf="@+id/textView317"/>
+
+            <TextView
+                android:id="@+id/textView318"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:text="1."
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@+id/textView313"
+                app:layout_constraintTop_toBottomOf="@id/textView317" />
+
+            <TextView
+                android:id="@+id/textView319"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="현재 체중이 10대 후반이나 20대 초반이었을 때와 비교하여 "
+                android:textSize="14dp"
+                app:layout_constraintTop_toTopOf="@+id/textView318"
+                app:layout_constraintStart_toEndOf="@+id/textView318"/>
+
+            <TextView
+                android:id="@+id/textView320"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10kg 이상 늘었습니까?"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@+id/textView318"
+                app:layout_constraintStart_toEndOf="@+id/textView319" />
+
+            <RadioGroup
+                android:id="@+id/nutrition_radio12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/textView319"
+                app:layout_constraintStart_toStartOf="@id/textView319"
+                app:layout_constraintEnd_toEndOf="@id/textView319">
+
+                <RadioButton
+                    android:id="@+id/nutrition_12_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="예"
+                    android:textSize="14dp"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/nutrition_12_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아니오"
+                    android:textSize="14dp"
+                    android:layout_weight="1"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView321"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="2."
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@+id/textView318"
+                app:layout_constraintTop_toBottomOf="@id/nutrition_radio12" />
+
+            <TextView
+                android:id="@+id/textView322"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="당신은 현재까지 "
+                android:textSize="14dp"
+                app:layout_constraintTop_toTopOf="@+id/textView321"
+                app:layout_constraintStart_toEndOf="@+id/textView321"/>
+
+            <TextView
+                android:id="@+id/textView323"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="체중감량을 "
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView322"
+                app:layout_constraintTop_toTopOf="@+id/textView321" />
+
+            <TextView
+                android:id="@+id/textView324"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="몇 차례나 "
+                android:textSize="14dp"
+                app:layout_constraintStart_toEndOf="@+id/textView323"
+                app:layout_constraintTop_toTopOf="@+id/textView321" />
+
+            <TextView
+                android:id="@+id/textView325"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시도 "
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView324"
+                app:layout_constraintTop_toTopOf="@+id/textView321" />
+
+            <TextView
+                android:id="@+id/textView326"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="해 보았습니까?"
+                android:textSize="14dp"
+                app:layout_constraintStart_toEndOf="@+id/textView325"
+                app:layout_constraintTop_toTopOf="@+id/textView321" />
+
+            <RadioGroup
+                android:id="@+id/nutrition_radio13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textView326"
+                app:layout_constraintStart_toStartOf="@id/textView322"
+                app:layout_constraintTop_toBottomOf="@id/textView322">
+
+                <RadioButton
+                    android:id="@+id/nutrition_13_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전혀 해 본 적이 없다,"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/nutrition_13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1~3 회"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/nutrition_13_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4회 이상"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/nutrition_13_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="항상 노력하고 있다."
+                    android:textSize="14dp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView327"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="3."
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@+id/textView321"
+                app:layout_constraintTop_toBottomOf="@id/nutrition_radio13" />
+
+            <TextView
+                android:id="@+id/textView328"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="당신은 체중감량을 통해 "
+                android:textSize="14dp"
+                app:layout_constraintTop_toTopOf="@+id/textView327"
+                app:layout_constraintStart_toEndOf="@+id/textView327"/>
+
+            <TextView
+                android:id="@+id/textView329"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="정상 체중을 지속적으로 유지 "
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@+id/textView327"
+                app:layout_constraintStart_toEndOf="@+id/textView328" />
+
+            <TextView
+                android:id="@+id/textView330"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="하는데 관심이 있습니까? "
+                android:textSize="14dp"
+                app:layout_constraintTop_toTopOf="@+id/textView327"
+                app:layout_constraintStart_toEndOf="@+id/textView329" />
+
+            <RadioGroup
+                android:id="@+id/nutrition_radio14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/textView330"
+                app:layout_constraintStart_toStartOf="@id/textView328"
+                app:layout_constraintEnd_toEndOf="@id/textView330">
+
+                <RadioButton
+                    android:id="@+id/nutrition_14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="별로 관심이 없다."
+                    android:textSize="14dp"/>
+
+                <RadioButton
+                    android:id="@+id/nutrition_14_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="어느 정도 관심이 있다."
+                    android:textSize="14dp"/>
+
+                <RadioButton
+                    android:id="@+id/nutrition_14_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="매우 관심이 있다."
+                    android:textSize="14dp"/>
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/nutrition_examination_save"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="50dp"
+                android:background="@color/mainBlue"
+                android:text="저장"
+                android:textColor="@color/backGround"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/exercise_examination_cancel"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nutrition_radio14" />
+
+            <Button
+                android:id="@+id/nutrition_examination_cancel"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="50dp"
+                android:background="@color/mainBlue"
+                android:text="취소"
+                android:textColor="@color/backGround"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/nutrition_examination_save" />
+
+            <Button
+                android:id="@+id/nutrition_edit_submit"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="50dp"
+                android:background="@color/mainBlue"
+                android:text="확인"
+                android:textColor="@color/backGround"
+                android:textSize="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nutrition_radio14" />
 
         </android.support.constraint.ConstraintLayout>
 
     </ScrollView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/login_appbar_loading_progress_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:background="#000000"
+        android:visibility="gone">
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/login_appbar_loading_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="@color/mainBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

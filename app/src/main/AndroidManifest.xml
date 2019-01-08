@@ -32,6 +32,7 @@
         <activity android:name=".ExerciseExaminationActivity" android:screenOrientation="portrait"/>
         <activity android:name=".DrinkingExaminationActivity" android:screenOrientation="portrait"/>
         <activity android:name=".CancerExaminationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".NutritionExaminationActivity" android:screenOrientation="portrait"/>
 
     </application>
 
