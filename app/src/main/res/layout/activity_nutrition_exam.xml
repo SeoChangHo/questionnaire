@@ -189,46 +189,36 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="항상"
-                        android:textSize="12dp"
-                        app:layout_constraintBottom_toTopOf="@+id/textView237"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView238"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.7"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/textView237"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="그런"
-                        android:textSize="12dp"
-                        app:layout_constraintBottom_toTopOf="@+id/textView238"
-                        app:layout_constraintEnd_toEndOf="@+id/textView183"
-                        app:layout_constraintStart_toStartOf="@+id/textView183"
-                        app:layout_constraintTop_toBottomOf="@+id/textView183" />
 
                     <TextView
                         android:id="@+id/textView238"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="편이다"
-                        android:textSize="12dp"
+                        android:text="그런 편이다"
+                        android:textSize="15dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/textView237"
-                        app:layout_constraintStart_toStartOf="@+id/textView237"
-                        app:layout_constraintTop_toBottomOf="@+id/textView237" />
+                        app:layout_constraintEnd_toEndOf="@+id/textView183"
+                        app:layout_constraintStart_toStartOf="@+id/textView183"
+                        app:layout_constraintTop_toBottomOf="@+id/textView183" />
 
                     <TextView
                         android:id="@+id/textView239"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="보통이다"
-                        android:textSize="12dp"
+                        android:textSize="15dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.322"
-                        app:layout_constraintStart_toEndOf="@+id/textView237"
+                        app:layout_constraintHorizontal_bias="0.2"
+                        app:layout_constraintStart_toEndOf="@+id/textView238"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -236,7 +226,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="아닌"
-                        android:textSize="12dp"
+                        android:textSize="15dp"
                         app:layout_constraintBottom_toTopOf="@+id/textView241"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textView239"
@@ -248,7 +238,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="편이다"
-                        android:textSize="12dp"
+                        android:textSize="15dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textView239"
@@ -285,7 +275,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
                     android:text="1. "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/nutrition_view" />
@@ -295,7 +285,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="우유나 칼슘강화두유, 기타 유제품(요구르트 등)을"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView242"
                     app:layout_constraintTop_toTopOf="@+id/textView242" />
 
@@ -304,7 +294,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매일 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/textView243"
                     app:layout_constraintTop_toBottomOf="@+id/textView243" />
@@ -314,7 +304,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1컵(200ml) 이상 마신다."
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView244"
                     app:layout_constraintTop_toTopOf="@+id/textView244" />
 
@@ -331,21 +321,30 @@
                         android:id="@+id/nutrition_1_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_1_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_1_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                 </RadioGroup>
 
@@ -355,7 +354,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="2. "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/textView242"
                     app:layout_constraintTop_toBottomOf="@+id/textView245" />
@@ -365,7 +364,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="육류, 생선, 달걀, 콩, 두부 등으로"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView246"
                     app:layout_constraintTop_toTopOf="@+id/textView246" />
 
@@ -374,7 +373,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="된 음식을 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="@+id/textView247"
                     app:layout_constraintTop_toBottomOf="@+id/textView247" />
 
@@ -383,7 +382,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매일 3회 이상 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView248"
                     app:layout_constraintTop_toTopOf="@+id/textView248" />
@@ -393,7 +392,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="먹는다."
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView249"
                     app:layout_constraintTop_toTopOf="@+id/textView249" />
 
@@ -410,21 +409,30 @@
                         android:id="@+id/nutrition_2_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_2_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_2_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                 </RadioGroup>
 
@@ -434,7 +442,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="3. "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/textView246"
                     app:layout_constraintTop_toBottomOf="@+id/textView248" />
@@ -444,7 +452,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="김치 이외의 채소를"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView251"
                     app:layout_constraintTop_toTopOf="@+id/textView251" />
@@ -454,7 +462,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="식사할 때마다 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/textView252"
                     app:layout_constraintTop_toBottomOf="@+id/textView252" />
@@ -464,7 +472,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="먹는다."
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView253"
                     app:layout_constraintTop_toTopOf="@+id/textView253" />
 
@@ -481,21 +489,30 @@
                         android:id="@+id/nutrition_3_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_3_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_3_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                 </RadioGroup>
 
@@ -505,7 +522,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="4. "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/textView251"
                     app:layout_constraintTop_toBottomOf="@+id/textView253" />
@@ -515,7 +532,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="과일(1개)을"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView255"
                     app:layout_constraintTop_toTopOf="@+id/textView255" />
 
@@ -524,7 +541,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매일"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView256"
                     app:layout_constraintTop_toTopOf="@+id/textView255" />
@@ -534,7 +551,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="먹는다."
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView257"
                     app:layout_constraintTop_toTopOf="@+id/textView257" />
 
@@ -544,7 +561,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:text="(갈아먹는 형태 포함)"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textView256"
                     app:layout_constraintTop_toBottomOf="@+id/textView256" />
@@ -562,21 +579,30 @@
                         android:id="@+id/nutrition_4_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_4_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_4_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                 </RadioGroup>
 
@@ -615,7 +641,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="주 4회"
-                    android:textSize="12dp"
+                    android:textSize="16dp"
                     app:layout_constraintBottom_toTopOf="@+id/textView261"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.7"
@@ -629,7 +655,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="이상"
-                    android:textSize="12dp"
+                    android:textSize="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView260"
                     app:layout_constraintStart_toStartOf="@+id/textView260"
@@ -640,7 +666,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="주"
-                    android:textSize="12dp"
+                    android:textSize="16dp"
                     app:layout_constraintBottom_toTopOf="@+id/textView263"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.35"
@@ -653,7 +679,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2~3회"
-                    android:textSize="12dp"
+                    android:textSize="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView262"
                     app:layout_constraintStart_toStartOf="@+id/textView262"
@@ -666,7 +692,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:text="주 1회"
-                    android:textSize="12dp"
+                    android:textSize="16dp"
                     app:layout_constraintBottom_toTopOf="@+id/textView265"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.57"
@@ -679,7 +705,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="이하"
-                    android:textSize="12dp"
+                    android:textSize="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView264"
                     app:layout_constraintStart_toStartOf="@+id/textView264"
@@ -716,7 +742,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
                 android:text="5. "
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nutrition_view3" />
@@ -726,7 +752,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="튀김이나 볶음 요리를"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView266"
                 app:layout_constraintTop_toTopOf="@+id/textView266" />
@@ -736,7 +762,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="얼마나 자주 먹습니까?"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="@+id/textView267"
                 app:layout_constraintTop_toBottomOf="@+id/textView267" />
 
@@ -753,21 +779,30 @@
                     android:id="@+id/nutrition_5_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue" />
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"/>
 
                 <RadioButton
                     android:id="@+id/nutrition_5_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="60dp"
-                    android:buttonTint="@color/mainBlue" />
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp" />
 
                 <RadioButton
                     android:id="@+id/nutrition_5_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:buttonTint="@color/mainBlue" />
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp" />
 
             </RadioGroup>
 
@@ -777,7 +812,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="6. "
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/textView266"
                 app:layout_constraintTop_toBottomOf="@+id/textView268" />
@@ -787,7 +822,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="콜레스트롤이 많은 식품"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView269"
                 app:layout_constraintTop_toTopOf="@+id/textView269" />
@@ -798,7 +833,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:text="(삼겹살, 달걀노른자, 오징어 등)을 얼마나 자주 먹습니까?"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView270"
                 app:layout_constraintTop_toBottomOf="@+id/textView270" />
@@ -816,21 +851,30 @@
                     android:id="@+id/nutrition_6_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue" />
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"/>
 
                 <RadioButton
                     android:id="@+id/nutrition_6_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="60dp"
-                    android:buttonTint="@color/mainBlue" />
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"/>
 
                 <RadioButton
                     android:id="@+id/nutrition_6_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:buttonTint="@color/mainBlue" />
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"/>
 
             </RadioGroup>
 
@@ -869,45 +913,34 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="항상"
-                        android:textSize="12dp"
-                        app:layout_constraintBottom_toTopOf="@+id/textView273"
+                        android:textSize="16dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView274"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.7"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView273"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="그런"
-                        android:textSize="12dp"
-                        app:layout_constraintBottom_toTopOf="@+id/textView274"
-                        app:layout_constraintEnd_toEndOf="@+id/textView272"
-                        app:layout_constraintStart_toStartOf="@+id/textView272"
-                        app:layout_constraintTop_toBottomOf="@+id/textView272" />
-
-                    <TextView
                         android:id="@+id/textView274"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="편이다"
-                        android:textSize="12dp"
+                        android:text="그런 편이다"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/textView273"
-                        app:layout_constraintStart_toStartOf="@+id/textView273"
-                        app:layout_constraintTop_toBottomOf="@+id/textView273" />
+                        app:layout_constraintEnd_toEndOf="@+id/textView272"
+                        app:layout_constraintStart_toStartOf="@+id/textView272"
+                        app:layout_constraintTop_toBottomOf="@+id/textView272" />
 
                     <TextView
                         android:id="@+id/textView275"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="보통이다"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.322"
+                        app:layout_constraintHorizontal_bias="0.2"
                         app:layout_constraintStart_toEndOf="@+id/textView274"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -916,7 +949,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="아닌"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toTopOf="@+id/textView277"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textView275"
@@ -928,7 +961,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="편이다"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textView275"
@@ -965,7 +998,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
                     android:text="7. "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/nutrition_view5" />
@@ -975,7 +1008,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="아이스크림, 케이크, 과자, 음료수"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView278"
                     app:layout_constraintTop_toTopOf="@+id/textView278" />
 
@@ -984,7 +1017,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="(믹스커피, 콜라, 식혜 등) 중"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="@+id/textView279"
                     app:layout_constraintTop_toBottomOf="@+id/textView279" />
 
@@ -993,7 +1026,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1가지를 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="@+id/textView280"
                     app:layout_constraintTop_toBottomOf="@+id/textView280" />
 
@@ -1002,7 +1035,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매일 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView281"
                     app:layout_constraintTop_toTopOf="@+id/textView281" />
@@ -1012,7 +1045,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="먹는다."
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView282"
                     app:layout_constraintTop_toTopOf="@+id/textView281" />
 
@@ -1030,21 +1063,30 @@
                         android:id="@+id/nutrition_7_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_7_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_7_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                 </RadioGroup>
 
@@ -1054,7 +1096,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="8. "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/textView278"
                     app:layout_constraintTop_toBottomOf="@+id/textView281" />
@@ -1064,7 +1106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="젓갈, 장아찌, 자반 등을 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView284"
                     app:layout_constraintTop_toTopOf="@+id/textView284" />
 
@@ -1073,7 +1115,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매일 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView285"
                     app:layout_constraintTop_toTopOf="@+id/textView284" />
@@ -1083,7 +1125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="먹는다."
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView286"
                     app:layout_constraintTop_toTopOf="@+id/textView284" />
 
@@ -1092,6 +1134,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView285"
                     app:layout_constraintEnd_toStartOf="@+id/guideline6"
                     app:layout_constraintStart_toStartOf="@+id/guideline5"
                     app:layout_constraintTop_toTopOf="@+id/textView284">
@@ -1100,21 +1143,30 @@
                         android:id="@+id/nutrition_8_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/nutrition_8_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/nutrition_8_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -1124,7 +1176,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="9. "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/textView284"
                     app:layout_constraintTop_toBottomOf="@+id/textView287" />
@@ -1134,7 +1186,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="식사를 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView288"
                     app:layout_constraintTop_toTopOf="@+id/textView288" />
 
@@ -1143,7 +1195,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="매일 정해진 시간에 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView289"
                     app:layout_constraintTop_toTopOf="@+id/textView288" />
@@ -1153,7 +1205,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="한다."
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView290"
                     app:layout_constraintTop_toTopOf="@+id/textView288" />
 
@@ -1162,6 +1214,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView290"
                     app:layout_constraintEnd_toStartOf="@+id/guideline6"
                     app:layout_constraintStart_toStartOf="@+id/guideline5"
                     app:layout_constraintTop_toTopOf="@+id/textView288">
@@ -1170,21 +1223,30 @@
                         android:id="@+id/nutrition_9_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/nutrition_9_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/nutrition_9_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -1224,7 +1286,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:text="5종류"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.7"
@@ -1236,7 +1298,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="4종류"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.322"
@@ -1249,7 +1311,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="3종류"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toTopOf="@+id/textView295"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textView293"
@@ -1262,7 +1324,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:text="이하"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/textView294"
                         app:layout_constraintEnd_toEndOf="@+id/textView294"
@@ -1299,7 +1361,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
                     android:text="10. "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/nutrition_view7" />
@@ -1309,7 +1371,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="곡류(밥·빵류), 고기 · 생선 · 달걀"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView296"
                     app:layout_constraintTop_toTopOf="@+id/textView296" />
 
@@ -1318,7 +1380,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="콩류, 채소류, 과일류, 우유루 등"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="@+id/textView297"
                     app:layout_constraintTop_toBottomOf="@+id/textView297" />
 
@@ -1327,7 +1389,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="총 5종류 식품 중에서 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="@+id/textView298"
                     app:layout_constraintTop_toBottomOf="@+id/textView298" />
 
@@ -1336,7 +1398,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="하루에 보통"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView299"
                     app:layout_constraintTop_toTopOf="@+id/textView299" />
@@ -1347,7 +1409,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:text="몇 종류의 식품을 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textView299"
@@ -1358,7 +1420,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="드십니까?"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView301"
                     app:layout_constraintTop_toTopOf="@+id/textView301" />
 
@@ -1376,21 +1438,30 @@
                         android:id="@+id/nutrition_10_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_10_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_10_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                 </RadioGroup>
 
@@ -1429,7 +1500,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="주 5회"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toTopOf="@+id/textView304"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.7"
@@ -1443,7 +1514,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:text="이상"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/textView303"
                         app:layout_constraintStart_toStartOf="@+id/textView303"
@@ -1454,7 +1525,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="주"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toTopOf="@+id/textView306"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.35"
@@ -1467,7 +1538,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2~4회"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/textView305"
                         app:layout_constraintStart_toStartOf="@+id/textView305"
@@ -1480,7 +1551,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginLeft="8dp"
                         android:text="주 1회"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toTopOf="@+id/textView308"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.57"
@@ -1493,7 +1564,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="이하"
-                        android:textSize="12dp"
+                        android:textSize="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/textView307"
                         app:layout_constraintStart_toStartOf="@+id/textView307"
@@ -1530,7 +1601,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
                     android:text="11. "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/nutrition_view9" />
@@ -1540,7 +1611,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="외식(직장에서 제공되는 식사 제외)을"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView309"
                     app:layout_constraintTop_toTopOf="@+id/textView309" />
 
@@ -1550,7 +1621,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:text="얼마나 자주 "
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textView310"
@@ -1561,7 +1632,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="하십니까?"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView311"
                     app:layout_constraintTop_toTopOf="@+id/textView311" />
 
@@ -1578,21 +1649,30 @@
                         android:id="@+id/nutrition_11_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_11_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                     <RadioButton
                         android:id="@+id/nutrition_11_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:buttonTint="@color/mainBlue" />
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"/>
 
                 </RadioGroup>
 
@@ -1774,7 +1854,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="1."
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="@+id/textView313"
                 app:layout_constraintTop_toBottomOf="@id/textView317" />
 
@@ -1783,7 +1863,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="현재 체중이 10대 후반이나 20대 초반이었을 때와 비교하여 "
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintTop_toTopOf="@+id/textView318"
                 app:layout_constraintStart_toEndOf="@+id/textView318"/>
 
@@ -1792,7 +1872,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10kg 이상 늘었습니까?"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="@+id/textView318"
                 app:layout_constraintStart_toEndOf="@+id/textView319" />
@@ -1809,21 +1889,25 @@
 
                 <RadioButton
                     android:id="@+id/fat_1_true"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginLeft="50dp"
                     android:text="예"
-                    android:textSize="14dp"
-                    android:layout_weight="1"/>
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp" />
 
                 <RadioButton
                     android:id="@+id/fat_1_false"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginLeft="50dp"
                     android:text="아니오"
-                    android:textSize="14dp"
-                    android:layout_weight="1"/>
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp" />
 
             </RadioGroup>
 
@@ -1833,7 +1917,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="2."
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="@+id/textView318"
                 app:layout_constraintTop_toBottomOf="@id/fat_radio1" />
 
@@ -1842,7 +1926,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="당신은 현재까지 "
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintTop_toTopOf="@+id/textView321"
                 app:layout_constraintStart_toEndOf="@+id/textView321"/>
 
@@ -1851,7 +1935,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="체중감량을 "
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView322"
                 app:layout_constraintTop_toTopOf="@+id/textView321" />
@@ -1861,7 +1945,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="몇 차례나 "
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintStart_toEndOf="@+id/textView323"
                 app:layout_constraintTop_toTopOf="@+id/textView321" />
 
@@ -1870,7 +1954,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="시도 "
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView324"
                 app:layout_constraintTop_toTopOf="@+id/textView321" />
@@ -1880,7 +1964,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="해 보았습니까?"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintStart_toEndOf="@+id/textView325"
                 app:layout_constraintTop_toTopOf="@+id/textView321" />
 
@@ -1895,35 +1979,47 @@
 
                 <RadioButton
                     android:id="@+id/fat_2_no"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginLeft="50dp"
                     android:text="전혀 해 본 적이 없다"
-                    android:textSize="14dp" />
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"/>
 
                 <RadioButton
                     android:id="@+id/fat_2_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginLeft="50dp"
                     android:text="1~3 회"
-                    android:textSize="14dp" />
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"/>
 
                 <RadioButton
                     android:id="@+id/fat_2_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginLeft="50dp"
                     android:text="4회 이상"
-                    android:textSize="14dp" />
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp" />
 
                 <RadioButton
                     android:id="@+id/fat_2_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:layout_marginLeft="50dp"
                     android:text="항상 노력하고 있다."
-                    android:textSize="14dp" />
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp" />
 
             </RadioGroup>
 
@@ -1933,7 +2029,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="3."
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="@+id/textView321"
                 app:layout_constraintTop_toBottomOf="@id/fat_radio2" />
 
@@ -1942,7 +2038,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="당신은 체중감량을 통해 "
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintTop_toTopOf="@+id/textView327"
                 app:layout_constraintStart_toEndOf="@+id/textView327"/>
 
@@ -1951,7 +2047,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="정상 체중을 지속적으로 유지 "
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="@+id/textView327"
                 app:layout_constraintStart_toEndOf="@+id/textView328" />
@@ -1961,7 +2057,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="하는데 관심이 있습니까? "
-                android:textSize="14dp"
+                android:textSize="16dp"
                 app:layout_constraintTop_toTopOf="@+id/textView327"
                 app:layout_constraintStart_toEndOf="@+id/textView329" />
 
@@ -1976,27 +2072,36 @@
 
                 <RadioButton
                     android:id="@+id/fat_3_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
                     android:text="별로 관심이 없다."
-                    android:textSize="14dp"/>
+                    android:layout_marginLeft="50dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"/>
 
                 <RadioButton
                     android:id="@+id/fat_3_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
                     android:text="어느 정도 관심이 있다."
-                    android:textSize="14dp"/>
+                    android:layout_marginLeft="50dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"/>
 
                 <RadioButton
                     android:id="@+id/fat_3_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
                     android:text="매우 관심이 있다."
-                    android:textSize="14dp"/>
+                    android:layout_marginLeft="50dp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:textSize="15dp"/>
 
             </RadioGroup>
 

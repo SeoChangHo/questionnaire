@@ -850,7 +850,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 CustomAdapter.Category.COMMON -> {
                     println("공통검진입니다.")
-                    db.delete("ORAL_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+                    db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.ORAL -> {
                     println("구강검진입니다.")
@@ -878,15 +878,15 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 }
                 CustomAdapter.Category.DRINKING -> {
                     println("음주입니다..")
-                    db.delete("DRINKING", "exam_no=?", arrayOf(Paper[i].exam_no))
+                    db.delete("DRINKING_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.SMOKING -> {
                     println("흡연입니다..")
-                    db.delete("SMOKING", "exam_no=?", arrayOf(Paper[i].exam_no))
+                    db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 CustomAdapter.Category.CANCER -> {
                     println("암입니다..")
-                    db.delete("CANCER", "exam_no=?", arrayOf(Paper[i].exam_no))
+                    db.delete("CANCER_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
                 }
                 else -> {
                     println("확인불가")
