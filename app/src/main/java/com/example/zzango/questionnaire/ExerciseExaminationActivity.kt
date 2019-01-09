@@ -81,15 +81,6 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         sql_db = LocalDBhelper(this).writableDatabase
 
-        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
-        if(intent.hasExtra("paper")){
-
-            var paper = intent.getSerializableExtra("paper") as Paper_EXERCISE
-
-            GetPaper(paper)
-        }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         name_edit.setText(MainActivity.login_user_name)
         first_serial.setText(MainActivity.user_first_serial)
         last_serial.setText(MainActivity.user_last_serial)
@@ -197,6 +188,24 @@ class ExerciseExaminationActivity : AppCompatActivity() {
                 ArrayAdapter(this,
                         android.R.layout.simple_list_item_1,
                         arrayListOf("0일", "1일", "2일", "3일", "4일", "5일", "6일", "7일"))
+
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            exercise_actual_root_view.isFocusableInTouchMode = true
+
+            exercise_actual_root_view.requestFocus()
+
+            var paper = intent.getSerializableExtra("paper") as Paper_EXERCISE
+
+            GetPaper(paper)
+
+        }else{
+
+            exercise_actual_root_view.isFocusableInTouchMode = false
+
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
 

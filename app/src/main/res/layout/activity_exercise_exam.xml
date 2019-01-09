@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,6 +13,7 @@
         android:fillViewport="true">
 
         <android.support.constraint.ConstraintLayout
+            android:id="@+id/exercise_actual_root_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -441,10 +443,9 @@
                 android:layout_height="wrap_content"
                 android:text="차거나 심장이 매우 빠르게 뛰는 "
                 android:textSize="20dp"
-                app:layout_constraintEnd_toStartOf="@+id/textView87"
                 app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="@+id/textView89"
-                app:layout_constraintTop_toBottomOf="@+id/exercise_question1_1" />
+                app:layout_constraintStart_toEndOf="@+id/textView85"
+                app:layout_constraintTop_toTopOf="@+id/exercise_question1_1" />
 
             <TextView
                 android:id="@+id/textView87"
@@ -454,10 +455,11 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/textView88"
-                app:layout_constraintStart_toEndOf="@+id/textView86"
-                app:layout_constraintTop_toTopOf="@+id/textView86" />
+                app:layout_constraintStart_toStartOf="@+id/textView89"
+                app:layout_constraintTop_toBottomOf="@+id/textView86" />
 
             <View
+                android:id="@+id/view4"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:background="#000000"
@@ -480,20 +482,19 @@
                 android:layout_height="wrap_content"
                 android:text="포함하고 있습니까?"
                 android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/textView87"
-                app:layout_constraintStart_toStartOf="@+id/textView86"
-                app:layout_constraintTop_toBottomOf="@+id/textView86" />
+                app:layout_constraintStart_toEndOf="@+id/textView88"
+                app:layout_constraintTop_toTopOf="@+id/textView87" />
 
             <TextView
                 android:id="@+id/exercise_question2_ex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
                 android:text="※ 고강도 신체활동 : 무거운 것을 들어 올리거나 나르는 일(약 20kg 이상), 땅파기, 건설 현장에서의 노동,\n계단으로 물건 나르기 등"
                 android:textColor="@color/mainBlue"
                 android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="@+id/textView90"
+                app:layout_constraintStart_toStartOf="@+id/textView87"
                 app:layout_constraintTop_toBottomOf="@+id/textView90" />
 
             <RadioGroup
@@ -530,13 +531,13 @@
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView90"
+                app:layout_constraintStart_toStartOf="@+id/textView89"
                 app:layout_constraintTop_toBottomOf="@+id/exercise_radio1">
 
                 <TextView
@@ -602,8 +603,8 @@
                     android:text="활동"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/textView91"
-                    app:layout_constraintTop_toBottomOf="@+id/textView91" />
+                    app:layout_constraintStart_toEndOf="@+id/textView95"
+                    app:layout_constraintTop_toTopOf="@+id/textView91" />
 
                 <View
                     android:layout_width="0dp"
@@ -620,7 +621,7 @@
                     android:text="을 며칠 하십니까?"
                     android:textSize="20dp"
                     app:layout_constraintStart_toEndOf="@+id/textView96"
-                    app:layout_constraintTop_toBottomOf="@+id/textView91" />
+                    app:layout_constraintTop_toTopOf="@+id/textView91" />
 
                 <Spinner
                     android:id="@+id/pick_time"
@@ -697,8 +698,8 @@
                     android:layout_height="wrap_content"
                     android:text="몇 시간 하십니까?"
                     android:textSize="20dp"
-                    app:layout_constraintStart_toStartOf="@+id/textView98"
-                    app:layout_constraintTop_toBottomOf="@+id/textView98" />
+                    app:layout_constraintStart_toEndOf="@+id/textView102"
+                    app:layout_constraintTop_toTopOf="@+id/textView98" />
 
                 <EditText
                     android:id="@+id/exercise_1_3_hour"
@@ -707,24 +708,14 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/text_area"
                     android:backgroundTint="@color/gray"
-                    android:hint="6"
+                    android:hint="시간"
                     android:inputType="number"
                     android:maxLength="2"
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
-                    app:layout_constraintStart_toStartOf="@+id/textView103"
+                    app:layout_constraintStart_toStartOf="@+id/textView98"
                     app:layout_constraintTop_toBottomOf="@+id/textView103" />
-
-                <TextView
-                    android:id="@+id/textView104"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="시간"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_1_3_hour"
-                    app:layout_constraintStart_toEndOf="@+id/exercise_1_3_hour"
-                    app:layout_constraintTop_toTopOf="@+id/exercise_1_3_hour" />
 
                 <EditText
                     android:id="@+id/exercise_1_3_minute"
@@ -733,7 +724,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text_area"
                     android:backgroundTint="@color/gray"
-                    android:hint="40"
+                    android:hint="분"
                     android:inputType="number"
                     android:maxLength="2"
                     android:textAlignment="center"
@@ -741,16 +732,6 @@
                     android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="@+id/exercise_1_3_hour"
                     app:layout_constraintTop_toBottomOf="@+id/exercise_1_3_hour" />
-
-                <TextView
-                    android:id="@+id/textView105"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="분"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_1_3_minute"
-                    app:layout_constraintStart_toEndOf="@+id/exercise_1_3_minute"
-                    app:layout_constraintTop_toTopOf="@+id/exercise_1_3_minute" />
 
             </android.support.constraint.ConstraintLayout>
 
@@ -797,8 +778,8 @@
                 android:layout_height="wrap_content"
                 android:text="차거나 심장이 약간 빠르게 뛰는 "
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView106"
-                app:layout_constraintTop_toBottomOf="@+id/textView106" />
+                app:layout_constraintStart_toEndOf="@+id/textView108"
+                app:layout_constraintTop_toTopOf="@+id/textView106" />
 
             <TextView
                 android:id="@+id/textView110"
@@ -807,8 +788,8 @@
                 android:text="중강도 신체활동"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView109"
-                app:layout_constraintTop_toTopOf="@+id/textView109" />
+                app:layout_constraintStart_toStartOf="@+id/textView106"
+                app:layout_constraintTop_toBottomOf="@+id/textView106" />
 
             <View
                 android:layout_width="0dp"
@@ -825,7 +806,7 @@
                 android:text="을"
                 android:textSize="20dp"
                 app:layout_constraintStart_toEndOf="@+id/textView110"
-                app:layout_constraintTop_toTopOf="@id/textView109" />
+                app:layout_constraintTop_toTopOf="@id/textView110" />
 
             <TextView
                 android:id="@+id/textView112"
@@ -833,8 +814,8 @@
                 android:layout_height="wrap_content"
                 android:text="포함하고 있습니까?"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView109"
-                app:layout_constraintTop_toBottomOf="@+id/textView111" />
+                app:layout_constraintStart_toEndOf="@+id/textView111"
+                app:layout_constraintTop_toTopOf="@+id/textView110" />
 
             <TextView
                 android:id="@+id/textView113"
@@ -846,8 +827,8 @@
                 android:text="※ 중강도 신체활동 : 빠르게 걷기(일하는 중에), 가벼운 물건 나르기, 청소, 육아(목욕시키기, 아이 안아주기 등)"
                 android:textColor="@color/mainBlue"
                 android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="@+id/textView112"
-                app:layout_constraintTop_toBottomOf="@+id/textView112" />
+                app:layout_constraintStart_toStartOf="@+id/textView110"
+                app:layout_constraintTop_toBottomOf="@+id/textView110" />
 
             <RadioGroup
                 android:id="@+id/exercise_radio2"
@@ -883,7 +864,7 @@
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout2"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:visibility="gone"
@@ -918,7 +899,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView115"
-                    app:layout_constraintTop_toTopOf="@+id/textView115" />
+                    app:layout_constraintTop_toTopOf="@+id/textView114" />
 
                 <TextView
                     android:id="@+id/textView117"
@@ -927,7 +908,7 @@
                     android:text="동안, "
                     android:textSize="20dp"
                     app:layout_constraintStart_toEndOf="@+id/textView116"
-                    app:layout_constraintTop_toTopOf="@+id/textView116" />
+                    app:layout_constraintTop_toTopOf="@+id/textView114" />
 
                 <TextView
                     android:id="@+id/textView118"
@@ -937,7 +918,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView117"
-                    app:layout_constraintTop_toTopOf="@+id/textView117" />
+                    app:layout_constraintTop_toTopOf="@+id/textView114" />
 
                 <View
                     android:layout_width="0dp"
@@ -954,8 +935,8 @@
                     android:text="활동"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/textView114"
-                    app:layout_constraintTop_toBottomOf="@+id/textView114" />
+                    app:layout_constraintStart_toEndOf="@+id/textView118"
+                    app:layout_constraintTop_toTopOf="@+id/textView114" />
 
                 <View
                     android:layout_width="0dp"
@@ -1014,7 +995,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView122"
-                    app:layout_constraintTop_toTopOf="@+id/textView122" />
+                    app:layout_constraintTop_toTopOf="@+id/textView121" />
 
                 <TextView
                     android:id="@+id/textView124"
@@ -1023,7 +1004,7 @@
                     android:text="일과 관련된 중강도 신체 활동"
                     android:textSize="20dp"
                     app:layout_constraintStart_toEndOf="@+id/textView123"
-                    app:layout_constraintTop_toTopOf="@+id/textView123" />
+                    app:layout_constraintTop_toTopOf="@+id/textView121" />
 
                 <View
                     android:layout_width="0dp"
@@ -1040,7 +1021,7 @@
                     android:text="을"
                     android:textSize="20dp"
                     app:layout_constraintStart_toEndOf="@+id/textView124"
-                    app:layout_constraintTop_toTopOf="@+id/textView124" />
+                    app:layout_constraintTop_toTopOf="@+id/textView121" />
 
                 <TextView
                     android:id="@+id/textView126"
@@ -1048,8 +1029,8 @@
                     android:layout_height="wrap_content"
                     android:text="몇 시간 하십니까?"
                     android:textSize="20dp"
-                    app:layout_constraintStart_toStartOf="@+id/textView121"
-                    app:layout_constraintTop_toBottomOf="@+id/textView121" />
+                    app:layout_constraintStart_toEndOf="@+id/textView125"
+                    app:layout_constraintTop_toTopOf="@+id/textView121" />
 
                 <EditText
                     android:id="@+id/exercise_1_6_hour"
@@ -1058,24 +1039,14 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/text_area"
                     android:backgroundTint="@color/gray"
-                    android:hint="6"
+                    android:hint="시간"
                     android:inputType="number"
                     android:maxLength="2"
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
-                    app:layout_constraintStart_toStartOf="@+id/textView126"
-                    app:layout_constraintTop_toBottomOf="@+id/textView126" />
-
-                <TextView
-                    android:id="@+id/textView127"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="시간"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_1_6_hour"
-                    app:layout_constraintStart_toEndOf="@+id/exercise_1_6_hour"
-                    app:layout_constraintTop_toTopOf="@+id/exercise_1_6_hour" />
+                    app:layout_constraintStart_toStartOf="@+id/textView121"
+                    app:layout_constraintTop_toBottomOf="@+id/textView121" />
 
                 <EditText
                     android:id="@+id/exercise_1_6_minute"
@@ -1084,7 +1055,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text_area"
                     android:backgroundTint="@color/gray"
-                    android:hint="40"
+                    android:hint="분"
                     android:inputType="number"
                     android:maxLength="2"
                     android:textAlignment="center"
@@ -1092,16 +1063,6 @@
                     android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="@+id/exercise_1_6_hour"
                     app:layout_constraintTop_toBottomOf="@+id/exercise_1_6_hour" />
-
-                <TextView
-                    android:id="@+id/textView128"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="분"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_1_6_minute"
-                    app:layout_constraintStart_toEndOf="@+id/exercise_1_6_minute"
-                    app:layout_constraintTop_toTopOf="@+id/exercise_1_6_minute" />
 
             </android.support.constraint.ConstraintLayout>
 
@@ -1137,16 +1098,16 @@
                 android:id="@+id/textView131"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="본인이 장소를 이동할 때, 어떻게 하시는지에 대해"
+                android:text="본인이 장소를 이동할 때, 어떻게"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView129"
-                app:layout_constraintTop_toBottomOf="@+id/textView129" />
+                app:layout_constraintStart_toEndOf="@+id/textView130"
+                app:layout_constraintTop_toTopOf="@+id/textView129" />
 
             <TextView
                 android:id="@+id/textView132"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="묻겠습니다."
+                android:text="하시는지에 대해 묻겠습니다."
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="@+id/textView129"
                 app:layout_constraintTop_toBottomOf="@+id/textView131" />
@@ -1199,7 +1160,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView135"
-                app:layout_constraintTop_toTopOf="@+id/textView135" />
+                app:layout_constraintTop_toTopOf="@+id/textView134" />
 
             <TextView
                 android:id="@+id/textView137"
@@ -1207,8 +1168,8 @@
                 android:layout_height="wrap_content"
                 android:text="걷거나 자전거 이용을 하십니까?"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView134"
-                app:layout_constraintTop_toBottomOf="@+id/textView134" />
+                app:layout_constraintStart_toEndOf="@+id/textView136"
+                app:layout_constraintTop_toTopOf="@+id/textView134" />
 
             <RadioGroup
                 android:id="@+id/exercise_radio3"
@@ -1216,7 +1177,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="@+id/textView137"
+                app:layout_constraintStart_toStartOf="@+id/textView134"
                 app:layout_constraintTop_toBottomOf="@+id/textView137">
 
                 <RadioButton
@@ -1244,7 +1205,7 @@
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout3"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:visibility="gone"
@@ -1364,7 +1325,7 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/text_area"
                     android:backgroundTint="@color/gray"
-                    android:hint="6"
+                    android:hint="시간"
                     android:inputType="number"
                     android:maxLength="2"
                     android:textAlignment="center"
@@ -1373,16 +1334,6 @@
                     app:layout_constraintStart_toStartOf="@+id/textView147"
                     app:layout_constraintTop_toBottomOf="@+id/textView147" />
 
-                <TextView
-                    android:id="@+id/textView148"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="시간"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_2_3_hour"
-                    app:layout_constraintStart_toEndOf="@+id/exercise_2_3_hour"
-                    app:layout_constraintTop_toTopOf="@+id/exercise_2_3_hour" />
-
                 <EditText
                     android:id="@+id/exercise_2_3_minute"
                     android:layout_width="70dp"
@@ -1390,7 +1341,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text_area"
                     android:backgroundTint="@color/gray"
-                    android:hint="40"
+                    android:hint="분"
                     android:inputType="number"
                     android:maxLength="2"
                     android:textAlignment="center"
@@ -1398,16 +1349,6 @@
                     android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="@+id/exercise_2_3_hour"
                     app:layout_constraintTop_toBottomOf="@+id/exercise_2_3_hour" />
-
-                <TextView
-                    android:id="@+id/textView149"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="분"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_2_3_minute"
-                    app:layout_constraintStart_toEndOf="@+id/exercise_2_3_minute"
-                    app:layout_constraintTop_toTopOf="@+id/exercise_2_3_minute" />
 
             </android.support.constraint.ConstraintLayout>
 
@@ -1446,8 +1387,8 @@
                 android:text="대해서는 제외합니다."
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/textView150"
-                app:layout_constraintTop_toBottomOf="@+id/textView150" />
+                app:layout_constraintStart_toEndOf="@+id/textView151"
+                app:layout_constraintTop_toTopOf="@+id/textView150" />
 
             <View
                 android:layout_width="0dp"
@@ -1463,8 +1404,8 @@
                 android:layout_height="wrap_content"
                 android:text="스포츠, 운동 및 여가활동에"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView152"
-                app:layout_constraintTop_toBottomOf="@+id/textView152" />
+                app:layout_constraintStart_toStartOf="@+id/textView150"
+                app:layout_constraintTop_toBottomOf="@+id/textView150" />
 
             <TextView
                 android:id="@+id/textView154"
@@ -1500,8 +1441,8 @@
                 android:layout_height="wrap_content"
                 android:text="심장이 매우 빠르게 뛰는"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView155"
-                app:layout_constraintTop_toBottomOf="@+id/textView155" />
+                app:layout_constraintStart_toEndOf="@+id/textView156"
+                app:layout_constraintTop_toTopOf="@+id/textView155" />
 
             <TextView
                 android:id="@+id/textView158"
@@ -1510,8 +1451,8 @@
                 android:text="고강도의 스포츠, 운동 및"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView157"
-                app:layout_constraintTop_toTopOf="@+id/textView157"/>
+                app:layout_constraintStart_toStartOf="@+id/textView155"
+                app:layout_constraintTop_toBottomOf="@+id/textView155"/>
 
             <View
                 android:layout_width="0dp"
@@ -1528,8 +1469,8 @@
                 android:text="여가활동"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/textView155"
-                app:layout_constraintTop_toBottomOf="@+id/textView157"/>
+                app:layout_constraintStart_toEndOf="@+id/textView158"
+                app:layout_constraintTop_toTopOf="@+id/textView158"/>
 
             <View
                 android:layout_width="0dp"
@@ -1553,13 +1494,13 @@
                 android:id="@+id/textView161"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
                 android:text="※ 예 : 달리기, 줄넘기, 등산, 농구 시합, 수영, 배드민턴 등"
                 android:textColor="@color/mainBlue"
                 android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="@+id/textView159"
-                app:layout_constraintTop_toBottomOf="@+id/textView159" />
+                app:layout_constraintStart_toStartOf="@+id/textView158"
+                app:layout_constraintTop_toBottomOf="@+id/textView158" />
 
             <RadioGroup
                 android:id="@+id/exercise_radio4"
@@ -1595,13 +1536,13 @@
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout4"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView159"
+                app:layout_constraintStart_toStartOf="@+id/textView158"
                 app:layout_constraintTop_toBottomOf="@+id/exercise_radio4">
 
                 <TextView
@@ -1657,8 +1598,8 @@
                     android:text="여가활동"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/textView162"
-                    app:layout_constraintTop_toBottomOf="@+id/textView162" />
+                    app:layout_constraintStart_toEndOf="@+id/textView165"
+                    app:layout_constraintTop_toTopOf="@+id/textView162" />
 
                 <View
                     android:layout_width="0dp"
@@ -1676,7 +1617,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView166"
-                    app:layout_constraintTop_toTopOf="@+id/textView166" />
+                    app:layout_constraintTop_toTopOf="@+id/textView162" />
 
                 <Spinner
                     android:id="@+id/pick_time4"
@@ -1687,8 +1628,8 @@
                     android:spinnerMode="dropdown"
                     android:textAlignment="center"
                     android:autofillHints="운동일자"
-                    app:layout_constraintStart_toStartOf="@+id/textView166"
-                    app:layout_constraintTop_toBottomOf="@+id/textView166" />
+                    app:layout_constraintStart_toStartOf="@+id/textView162"
+                    app:layout_constraintTop_toBottomOf="@+id/textView162" />
 
                 <TextView
                     android:id="@+id/textView168"
@@ -1704,8 +1645,6 @@
                     android:id="@+id/textView169"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="-1dp"
-                    android:layout_marginLeft="-1dp"
                     android:text="평소 "
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -1747,8 +1686,8 @@
                     android:text="활동"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/textView168"
-                    app:layout_constraintTop_toBottomOf="@+id/textView168" />
+                    app:layout_constraintStart_toEndOf="@+id/textView171"
+                    app:layout_constraintTop_toTopOf="@+id/textView168" />
 
                 <View
                     android:layout_width="0dp"
@@ -1765,7 +1704,7 @@
                     android:text="을 몇 시간 하십니까?"
                     android:textSize="20dp"
                     app:layout_constraintStart_toEndOf="@+id/textView172"
-                    app:layout_constraintTop_toTopOf="@+id/textView172" />
+                    app:layout_constraintTop_toTopOf="@+id/textView168" />
 
                 <EditText
                     android:id="@+id/exercise_3_3_hour"
@@ -1774,24 +1713,14 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/text_area"
                     android:backgroundTint="@color/gray"
-                    android:hint="6"
+                    android:hint="시간"
                     android:inputType="number"
                     android:maxLength="2"
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
-                    app:layout_constraintStart_toStartOf="@+id/textView172"
-                    app:layout_constraintTop_toBottomOf="@+id/textView172" />
-
-                <TextView
-                    android:id="@+id/textView174"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="시간"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_3_3_hour"
-                    app:layout_constraintStart_toEndOf="@+id/exercise_3_3_hour"
-                    app:layout_constraintTop_toTopOf="@+id/exercise_3_3_hour" />
+                    app:layout_constraintStart_toStartOf="@+id/textView168"
+                    app:layout_constraintTop_toBottomOf="@+id/textView168" />
 
                 <EditText
                     android:id="@+id/exercise_3_3_minute"
@@ -1800,7 +1729,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text_area"
                     android:backgroundTint="@color/gray"
-                    android:hint="40"
+                    android:hint="분"
                     android:inputType="number"
                     android:maxLength="2"
                     android:textAlignment="center"
@@ -1808,16 +1737,6 @@
                     android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="@+id/exercise_3_3_hour"
                     app:layout_constraintTop_toBottomOf="@+id/exercise_3_3_hour" />
-
-                <TextView
-                    android:id="@+id/textView175"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="분"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_3_3_minute"
-                    app:layout_constraintStart_toEndOf="@+id/exercise_3_3_minute"
-                    app:layout_constraintTop_toTopOf="@+id/exercise_3_3_minute" />
 
             </android.support.constraint.ConstraintLayout>
 
@@ -1847,8 +1766,8 @@
                 android:layout_height="wrap_content"
                 android:text="심장이 약간 빠르게 뛰는 "
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView176"
-                app:layout_constraintTop_toBottomOf="@+id/textView176" />
+                app:layout_constraintStart_toEndOf="@+id/textView177"
+                app:layout_constraintTop_toTopOf="@+id/textView176" />
 
             <TextView
                 android:id="@+id/textView179"
@@ -1857,8 +1776,8 @@
                 android:text="중강도의 스포츠, 운동 및"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/textView178"
-                app:layout_constraintTop_toTopOf="@+id/textView178" />
+                app:layout_constraintStart_toStartOf="@+id/textView176"
+                app:layout_constraintTop_toBottomOf="@+id/textView176" />
 
             <View
                 android:layout_width="0dp"
@@ -1875,8 +1794,8 @@
                 android:text="여가활동"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/textView178"
-                app:layout_constraintTop_toBottomOf="@+id/textView178" />
+                app:layout_constraintStart_toEndOf="@+id/textView179"
+                app:layout_constraintTop_toTopOf="@+id/textView179" />
 
             <View
                 android:layout_width="0dp"
@@ -1893,20 +1812,19 @@
                 android:text="을 하십니까?"
                 android:textSize="20dp"
                 app:layout_constraintStart_toEndOf="@+id/textView180"
-                app:layout_constraintTop_toTopOf="@id/textView180" />
+                app:layout_constraintTop_toTopOf="@id/textView179" />
 
             <TextView
                 android:id="@+id/textView182"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:text="※ 예 : 빠르게 걷기, 가볍게 뛰기(조깅), 웨이트 트레이닝(근력 운동), 골프, 댄스스포츠, 필라테스 등"
                 android:textColor="@color/mainBlue"
                 android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="@+id/textView180"
-                app:layout_constraintTop_toBottomOf="@+id/textView180" />
+                app:layout_constraintStart_toStartOf="@+id/textView176"
+                app:layout_constraintTop_toBottomOf="@+id/textView179" />
 
             <RadioGroup
                 android:id="@+id/exercise_radio5"
@@ -1942,7 +1860,7 @@
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout5"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:visibility="gone"
@@ -2119,7 +2037,7 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/text_area"
                     android:backgroundTint="@color/gray"
-                    android:hint="6"
+                    android:hint="시간"
                     android:inputType="number"
                     android:maxLength="2"
                     android:textAlignment="center"
@@ -2128,16 +2046,6 @@
                     app:layout_constraintStart_toStartOf="@+id/textView196"
                     app:layout_constraintTop_toBottomOf="@+id/textView196" />
 
-                <TextView
-                    android:id="@+id/textView198"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="시간"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_3_6_hour"
-                    app:layout_constraintStart_toEndOf="@+id/exercise_3_6_hour"
-                    app:layout_constraintTop_toTopOf="@+id/exercise_3_6_hour" />
-
                 <EditText
                     android:id="@+id/exercise_3_6_minute"
                     android:layout_width="70dp"
@@ -2145,7 +2053,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text_area"
                     android:backgroundTint="@color/gray"
-                    android:hint="40"
+                    android:hint="분"
                     android:inputType="number"
                     android:maxLength="2"
                     android:textAlignment="center"
@@ -2153,16 +2061,6 @@
                     android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="@+id/exercise_3_6_hour"
                     app:layout_constraintTop_toBottomOf="@+id/exercise_3_6_hour" />
-
-                <TextView
-                    android:id="@+id/textView199"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="분"
-                    android:textSize="16dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/exercise_3_6_minute"
-                    app:layout_constraintStart_toEndOf="@+id/exercise_3_6_minute"
-                    app:layout_constraintTop_toTopOf="@+id/exercise_3_6_minute" />
 
             </android.support.constraint.ConstraintLayout>
 
@@ -2190,19 +2088,19 @@
                 android:id="@+id/textView202"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="있을때, 장소를 이동할 때, 친구와 함께 할 때에 앉아"
+                android:text="있을때, 장소를 이동할 때, 친구와"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView200"
-                app:layout_constraintTop_toBottomOf="@+id/textView200" />
+                app:layout_constraintStart_toEndOf="@+id/textView201"
+                app:layout_constraintTop_toTopOf="@+id/textView200" />
 
             <TextView
                 android:id="@+id/textView203"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="있거나 누워있는 것에 대한 질문입니다."
+                android:text="함께 할 때에 앉아있거나 누워있는 것에 대한 질문입니다."
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="@+id/textView200"
-                app:layout_constraintTop_toBottomOf="@+id/textView202" />
+                app:layout_constraintTop_toBottomOf="@+id/textView200" />
 
             <TextView
                 android:id="@+id/textView204"
@@ -2260,7 +2158,7 @@
                 android:id="@+id/textView209"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="앉아 있거나, 누워 있는 시간이"
+                android:text="앉아 있거나, 누워 있는 시간이 "
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView208"
@@ -2278,10 +2176,10 @@
                 android:id="@+id/textView210"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="몇"
+                android:text="몇 "
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView206"
-                app:layout_constraintTop_toBottomOf="@+id/textView206" />
+                app:layout_constraintStart_toEndOf="@+id/textView209"
+                app:layout_constraintTop_toTopOf="@+id/textView206" />
 
             <TextView
                 android:id="@+id/textView211"
@@ -2290,7 +2188,7 @@
                 android:text="시간입니까?"
                 android:textSize="20dp"
                 app:layout_constraintStart_toEndOf="@+id/textView210"
-                app:layout_constraintTop_toTopOf="@+id/textView210" />
+                app:layout_constraintTop_toTopOf="@+id/textView209" />
 
             <EditText
                 android:id="@+id/exercise_4_1_hour"
@@ -2299,24 +2197,14 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/text_area"
                 android:backgroundTint="@color/gray"
-                android:hint="6"
+                android:hint="시간"
                 android:inputType="number"
                 android:maxLength="2"
                 android:textAlignment="center"
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="@+id/textView206"
-                app:layout_constraintTop_toBottomOf="@+id/textView206" />
-
-            <TextView
-                android:id="@+id/textView212"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="시간"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/exercise_4_1_hour"
-                app:layout_constraintStart_toEndOf="@+id/exercise_4_1_hour"
-                app:layout_constraintTop_toTopOf="@+id/exercise_4_1_hour" />
+                app:layout_constraintTop_toBottomOf="@+id/textView209" />
 
             <EditText
                 android:id="@+id/exercise_4_1_minute"
@@ -2325,7 +2213,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/text_area"
                 android:backgroundTint="@color/gray"
-                android:hint="40"
+                android:hint="분"
                 android:inputType="number"
                 android:maxLength="2"
                 android:textAlignment="center"
@@ -2333,16 +2221,6 @@
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="@+id/exercise_4_1_hour"
                 app:layout_constraintTop_toBottomOf="@+id/exercise_4_1_hour" />
-
-            <TextView
-                android:id="@+id/textView213"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="분"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/exercise_4_1_minute"
-                app:layout_constraintStart_toEndOf="@+id/exercise_4_1_minute"
-                app:layout_constraintTop_toTopOf="@+id/exercise_4_1_minute" />
 
             <TextView
                 android:id="@+id/textView214"
@@ -2358,25 +2236,34 @@
                 android:id="@+id/textView215"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="역기, 철봉 등의 근력운동을 한 날은 며칠입니까?"
+                android:text="역기, 철봉 등의 근력운동을"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@id/textView214"
+                app:layout_constraintTop_toTopOf="@id/textView214"/>
+
+            <TextView
+                android:id="@+id/textView331"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="한 날은 며칠입니까?"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="@id/textView214"
-                app:layout_constraintTop_toBottomOf="@id/textView214"/>
+                app:layout_constraintTop_toBottomOf="@id/textView214" />
 
             <RadioGroup
                 android:id="@+id/exercise_radio6"
-                android:layout_width="300dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 app:layout_constraintStart_toStartOf="@id/textView214"
-                app:layout_constraintTop_toBottomOf="@id/textView214">
+                app:layout_constraintTop_toBottomOf="@id/textView331">
 
                 <RadioButton
                     android:id="@+id/exercise_6_no"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="전혀 하지 않음"
@@ -2384,10 +2271,10 @@
 
                 <RadioButton
                     android:id="@+id/exercise_6_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1일"
@@ -2395,10 +2282,10 @@
 
                 <RadioButton
                     android:id="@+id/exercise_6_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2일"
@@ -2406,10 +2293,10 @@
 
                 <RadioButton
                     android:id="@+id/exercise_6_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="3일"
@@ -2417,10 +2304,10 @@
 
                 <RadioButton
                     android:id="@+id/exercise_6_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="4일"
@@ -2428,10 +2315,10 @@
 
                 <RadioButton
                     android:id="@+id/exercise_6_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="5일 이상"
@@ -2584,6 +2471,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                     <RadioButton
@@ -2592,6 +2481,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2622,6 +2513,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                     <RadioButton
@@ -2630,6 +2523,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2670,6 +2565,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                     <RadioButton
@@ -2678,6 +2575,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2718,6 +2617,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                     <RadioButton
@@ -2726,6 +2627,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2766,6 +2669,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                     <RadioButton
@@ -2774,6 +2679,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2814,6 +2721,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                     <RadioButton
@@ -2822,6 +2731,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                 </RadioGroup>
@@ -2852,6 +2763,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                     <RadioButton
@@ -2860,6 +2773,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
                         android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
                         android:layout_weight="1" />
 
                 </RadioGroup>

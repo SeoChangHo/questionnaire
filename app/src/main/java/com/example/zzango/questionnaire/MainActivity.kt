@@ -43,21 +43,53 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
-        if (wfm.isWifiEnabled) {
+//        if (wfm.isWifiEnabled) {
+//
+//            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
+//
+//            data_save_mode_image.setImageResource(R.drawable.server_white)
+//
+//            data_save_mode_text.setText("server")
+//
+//        } else {
+//
+//            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
+//
+//            data_save_mode_image.setImageResource(R.drawable.local_white)
+//
+//            data_save_mode_text.setText("local")
+//
+//        }
 
-            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
-
-            data_save_mode_image.setImageResource(R.drawable.server_white)
-
-            data_save_mode_text.setText("server")
-
-        } else {
+        if(getSharedPreferences("connection", Context.MODE_PRIVATE) == null) {
 
             getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
 
             data_save_mode_image.setImageResource(R.drawable.local_white)
 
             data_save_mode_text.setText("local")
+
+        }else{
+
+            when(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")){
+
+                "local" -> {
+
+                    data_save_mode_image.setImageResource(R.drawable.local_white)
+
+                    data_save_mode_text.setText("local")
+
+                }
+
+                "wifi" -> {
+
+                    data_save_mode_image.setImageResource(R.drawable.server_white)
+
+                    data_save_mode_text.setText("server")
+
+                }
+
+            }
 
         }
 
@@ -270,7 +302,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     }
 
-
     fun dataSaveLocationAlert(){
 
         var dialog = AlertDialog.Builder(this).create()
@@ -445,6 +476,34 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         }
 
     }
+
+//    override fun onDestroy() {
+//
+//        if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "") == null){
+//
+//            println("aaaaaa")
+//
+//        }else{
+//
+//            println("bbbbbbb")
+//
+//        }
+//
+//        getSharedPreferences("connection", Context.MODE_PRIVATE).edit().remove("state").apply()
+//
+//        if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "") == null){
+//
+//            println("cccccccc")
+//
+//        }else{
+//
+//            println("dddddddd")
+//
+//        }
+//
+//        super.onDestroy()
+//
+//    }
 
     companion object {
         var login_user_name = ""
