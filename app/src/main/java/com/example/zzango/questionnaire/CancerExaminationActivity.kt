@@ -831,6 +831,8 @@ class CancerExaminationActivity : AppCompatActivity(){
             ck14 = "2"
         }else if(cancer_14_3.isChecked){
             ck14 = "3"
+        }else if(cancer_14_4.isChecked){
+            ck14 = "4"
         }else{
             Toast.makeText(this, "14번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
