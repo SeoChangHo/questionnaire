@@ -61,9 +61,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 //
 //        }
 
-        if(getSharedPreferences("connection", Context.MODE_PRIVATE) == null) {
+        if(getSharedPreferences("connection", 0).getString("state", "").isNullOrEmpty()) {
 
-            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
+            getSharedPreferences("connection", 0).edit().putString("state", "local").apply()
 
             data_save_mode_image.setImageResource(R.drawable.local_white)
 
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }else{
 
-            when(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")){
+            when(getSharedPreferences("connection", 0).getString("state", "")){
 
                 "local" -> {
 
@@ -202,7 +202,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     fun userlogin(){
 
-        if(user_login.text == "검진자 등록하기"){
+        if(user_login.text == "사용자 등록하기"){
             var dialog = AlertDialog.Builder(this).create()
             var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_user_login, null)
 
@@ -296,8 +296,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             MainActivity.user_last_serial = ""
 
             Toast.makeText(applicationContext, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
-            user_login.setText("검진자 등록하기")
+            user_login.setText("사용자 등록하기")
             user_image.setImageResource(R.drawable.regi)
+
         }
 
     }
@@ -476,34 +477,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         }
 
     }
-
-//    override fun onDestroy() {
-//
-//        if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "") == null){
-//
-//            println("aaaaaa")
-//
-//        }else{
-//
-//            println("bbbbbbb")
-//
-//        }
-//
-//        getSharedPreferences("connection", Context.MODE_PRIVATE).edit().remove("state").apply()
-//
-//        if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "") == null){
-//
-//            println("cccccccc")
-//
-//        }else{
-//
-//            println("dddddddd")
-//
-//        }
-//
-//        super.onDestroy()
-//
-//    }
 
     companion object {
         var login_user_name = ""
