@@ -17,7 +17,8 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/oral_exam_inside_scroll_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:onClick="focusControl" >
 
             <TextView
                 android:id="@+id/oral_questionnaire"
@@ -61,7 +62,8 @@
                 app:layout_constraintBottom_toBottomOf="@+id/oral_questionnaire_name"
                 app:layout_constraintEnd_toStartOf="@+id/number_text"
                 app:layout_constraintStart_toEndOf="@+id/oral_questionnaire_name"
-                app:layout_constraintTop_toTopOf="@+id/oral_questionnaire_name" />
+                app:layout_constraintTop_toTopOf="@+id/oral_questionnaire_name"
+                android:onClick="focusControl" />
 
             <TextView
                 android:id="@+id/number_text"
@@ -94,7 +96,8 @@
                 app:layout_constraintBottom_toBottomOf="@+id/number_text"
                 app:layout_constraintEnd_toStartOf="@+id/number_hyphen"
                 app:layout_constraintStart_toEndOf="@+id/number_text"
-                app:layout_constraintTop_toTopOf="@+id/number_text" />
+                app:layout_constraintTop_toTopOf="@+id/number_text"
+                android:onClick="focusControl" />
 
             <View
                 android:id="@+id/number_hyphen"
@@ -123,7 +126,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/oral_questionnaire"
                 app:layout_constraintStart_toEndOf="@+id/number_hyphen"
                 app:layout_constraintTop_toTopOf="@+id/first_serial"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                android:onClick="focusControl" />
 
             <TextView
                 android:id="@+id/oral_questionnaire_"
@@ -176,6 +180,7 @@
                     android:scaleY="1.3"
                     android:text="예"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                     />
 
                 <RadioButton
@@ -188,6 +193,7 @@
                     android:scaleY="1.3"
                     android:text="아니오"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -222,6 +228,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="예"
+                    android:onClick="focusControl"
                     />
 
                 <RadioButton
@@ -234,6 +241,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="아니오"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -246,6 +254,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="모르겠다"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -280,6 +289,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="예"
+                    android:onClick="focusControl"
                     />
 
                 <RadioButton
@@ -292,6 +302,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="아니오"
+                    android:onClick="focusControl"
                     />
 
                 <RadioButton
@@ -304,6 +315,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="모르겠다"
+                    android:onClick="focusControl"
                     />
 
             </RadioGroup>
@@ -338,6 +350,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="예"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -350,6 +363,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="아니오"
+                    android:onClick="focusControl"
                     />
 
             </RadioGroup>
@@ -384,6 +398,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="예"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -396,6 +411,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="아니오"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -430,6 +446,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="예"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -442,6 +459,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="아니오"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -476,6 +494,7 @@
                     android:scaleY="1.3"
                     android:text="매우 좋음"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -488,6 +507,7 @@
                     android:scaleY="1.3"
                     android:text="좋음"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -500,6 +520,7 @@
                     android:scaleY="1.3"
                     android:text="보통"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -512,6 +533,7 @@
                     android:scaleY="1.3"
                     android:text="나쁨"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -524,6 +546,7 @@
                     android:scaleY="1.3"
                     android:text="매우 나쁨"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -570,6 +593,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="예"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -582,6 +606,7 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:text="아니오"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -617,7 +642,7 @@
                     android:scaleY="1.3"
                     android:text="1회"
                     android:textSize="15dp"
-                     />
+                    android:onClick="focusControl"/>
 
                 <RadioButton
                     android:id="@+id/oral_9_2"
@@ -629,6 +654,7 @@
                     android:scaleY="1.3"
                     android:text="2회"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -641,6 +667,7 @@
                     android:scaleY="1.3"
                     android:text="3회"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -653,6 +680,7 @@
                     android:scaleY="1.3"
                     android:text="4회"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -665,6 +693,7 @@
                     android:scaleY="1.3"
                     android:text="5회"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -676,6 +705,7 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <TextView
@@ -698,7 +728,8 @@
                     android:maxLength="3"
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:onClick="focusControl" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -742,6 +773,7 @@
                     android:scaleY="1.3"
                     android:text="항상했다(7회)"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -754,6 +786,7 @@
                     android:scaleY="1.3"
                     android:text="대부분 했다(4~6회)"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -766,6 +799,7 @@
                     android:scaleY="1.3"
                     android:text="가끔 했다(1~3회)"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -778,6 +812,7 @@
                     android:scaleY="1.3"
                     android:text="전혀 하지 않았다(0회)"
                     android:textSize="15dp"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -813,6 +848,7 @@
                     android:scaleY="1.3"
                     android:text="항상했다"
                     android:textSize="16dp"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -825,6 +861,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="대부분 했다"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -837,6 +874,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="가끔 했다"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -849,6 +887,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="전혀 하지 않았다"
+                    android:onClick="focusControl"
                     />
 
                 <RadioButton
@@ -861,6 +900,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="치실 혹은 치간칫솔이 무엇인지 모른다"
+                    android:onClick="focusControl"
                     />
 
             </RadioGroup>
@@ -896,6 +936,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="예"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -908,6 +949,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="아니오"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -920,6 +962,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="모르겠다"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -956,6 +999,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="먹지 않음"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -968,7 +1012,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="16dp"
-                    android:text="1번" />
+                    android:text="1번"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/oral_13_3"
@@ -980,6 +1025,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="2~3번"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -992,6 +1038,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="4번 이상"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -1004,6 +1051,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="모르겠다"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -1041,6 +1089,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="먹지 않음"
+                    android:onClick="focusControl"
                     />
 
                 <RadioButton
@@ -1053,6 +1102,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="1번"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -1065,6 +1115,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="2~3번"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -1077,6 +1128,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="4번 이상"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -1089,6 +1141,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="모르겠다"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -1125,6 +1178,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="전혀 피운 적이 없다"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -1137,6 +1191,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="현재 피우고 있다"
+                    android:onClick="focusControl"
                      />
 
                 <RadioButton
@@ -1149,6 +1204,7 @@
                     android:scaleY="1.3"
                     android:textSize="16dp"
                     android:text="이전에 피웠으나 끊었다"
+                    android:onClick="focusControl"
                      />
 
             </RadioGroup>
@@ -1182,7 +1238,8 @@
                 android:backgroundTint="@color/gray"
                 app:layout_constraintEnd_toEndOf="@+id/oral_questionnaire_section3"
                 app:layout_constraintStart_toStartOf="@+id/oral_questionnaire_section3"
-                app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_section3" />
+                app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_section3"
+                android:onClick="focusControl" />
 
             <Button
                 android:id="@+id/oral_examination_save"

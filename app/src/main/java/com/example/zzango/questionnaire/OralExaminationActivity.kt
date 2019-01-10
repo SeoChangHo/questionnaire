@@ -10,11 +10,10 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.Paper_ORAL
 import com.google.gson.annotations.Expose
@@ -68,34 +67,7 @@ class OralExaminationActivity : AppCompatActivity() {
 
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
 
-        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
-        if(intent.hasExtra("paper")){
-
-            var paper = intent.getSerializableExtra("paper") as Paper_ORAL
-
-            GetPaper(paper)
-        }else{
-            oral_questionnaire_name_input.setText(MainActivity.login_user_name)
-            first_serial.setText(MainActivity.user_first_serial)
-            last_serial.setText(MainActivity.user_last_serial)
-        }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
         sql_db = LocalDBhelper(this).writableDatabase
-
-//        oral_exam_inside_scroll_layout.setOnTouchListener {
-//
-//            v, event ->
-//
-//            oral_exam_inside_scroll_layout.requestFocus()
-//
-//            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
-//
-//            true
-//
-//        }
 
         oral_9_count.setOnFocusChangeListener {
 
@@ -104,25 +76,6 @@ class OralExaminationActivity : AppCompatActivity() {
             if(hasFocus){
 
                 oral_9_etc.isChecked = true
-
-            }
-
-        }
-
-        oral_9_etc.setOnCheckedChangeListener {
-
-            buttonView, isChecked ->
-
-            if(!isChecked){
-
-                oral_9_count.text = null
-                oral_9_count.clearFocus()
-                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
-
-            }else{
-
-                oral_9_count.requestFocus()
-                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).showSoftInput(oral_9_count, 0)
 
             }
 
@@ -158,6 +111,49 @@ class OralExaminationActivity : AppCompatActivity() {
         oral_edit_submit.setOnClickListener {
 
             finish()
+
+        }
+
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper_ORAL
+
+            GetPaper(paper)
+        }else{
+            oral_questionnaire_name_input.setText(MainActivity.login_user_name)
+            first_serial.setText(MainActivity.user_first_serial)
+            last_serial.setText(MainActivity.user_last_serial)
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    }
+
+    //뷰에 포커스를 총괄하는 메서드
+    fun focusControl(view : View){
+
+        if(view !is EditText){
+
+            if(view != oral_9_etc) {
+
+                oral_exam_inside_scroll_layout.isFocusableInTouchMode = true
+                oral_exam_inside_scroll_layout.requestFocus()
+                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
+
+                oral_exam_inside_scroll_layout.isFocusableInTouchMode = false
+
+                if(view == oral_9_1 || view == oral_9_2 || view == oral_9_3 || view == oral_9_4 || view == oral_9_5){
+
+                    oral_9_count.setText("")
+
+                }
+
+            }else{
+
+                oral_9_count.requestFocus()
+                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).showSoftInput(oral_9_count, 0)
+
+            }
 
         }
 
