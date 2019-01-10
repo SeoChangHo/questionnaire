@@ -132,6 +132,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var dialog = AlertDialog.Builder(this).create()
         var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_login, null)
 
+        //다이얼로그 뒤로가기 버튼 막기
+        dialog.setCancelable(false)
+
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
