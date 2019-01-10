@@ -136,12 +136,16 @@ class OralExaminationActivity : AppCompatActivity() {
 
             if(view != oral_9_etc) {
 
+                //실질적인 root view에 일시적으로 focusableintouchmode를 true로 부여했다가 다시 false로 만듦
+                //포커스 이동을 강제로 만들기 위함
                 oral_exam_inside_scroll_layout.isFocusableInTouchMode = true
                 oral_exam_inside_scroll_layout.requestFocus()
                 (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
 
                 oral_exam_inside_scroll_layout.isFocusableInTouchMode = false
 
+                //9번 라디오 그룹은 예외이기 때문에 9번 라디오 버튼들을 조건으로 놓음
+                //횟수를 입력하는 마지막 에디트텍스트를 초기화 시킴
                 if(view == oral_9_1 || view == oral_9_2 || view == oral_9_3 || view == oral_9_4 || view == oral_9_5){
 
                     oral_9_count.setText("")
