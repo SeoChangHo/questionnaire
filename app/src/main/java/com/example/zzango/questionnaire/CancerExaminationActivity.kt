@@ -27,7 +27,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class CancerExaminationActivity : AppCompatActivity(){
+class CancerExaminationActivity : RootActivity(){
 
     var exam_result : ArrayList<CancerExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null

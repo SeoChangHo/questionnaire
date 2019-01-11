@@ -14,6 +14,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.Paper_COMMON
 import com.google.gson.annotations.Expose
@@ -27,7 +29,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class CommonExaminationActivity : AppCompatActivity() {
+class CommonExaminationActivity : RootActivity() {
 
     var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
@@ -318,25 +320,25 @@ class CommonExaminationActivity : AppCompatActivity() {
 
     }
 
-    fun checkCondition(bool: Boolean, view : View){
-
-        if(bool){
-
-            view.visibility = View.VISIBLE
-
-        }else{
-
-            view.visibility = View.GONE
-
-        }
-
-    }
-
     override fun onBackPressed() {
 
         if(login_appbar_loading_progress.visibility != View.VISIBLE){
 
             super.onBackPressed()
+
+        }
+
+    }
+
+    fun focusControlCommon(view : View){
+
+        if(view !is EditText){
+
+            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
+
+        }else{
+
+            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).showSoftInput(view, 0)
 
         }
 

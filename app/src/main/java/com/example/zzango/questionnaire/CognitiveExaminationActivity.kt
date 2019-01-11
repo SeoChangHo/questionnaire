@@ -27,7 +27,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class CognitiveExaminationActivity : AppCompatActivity(){
+class CognitiveExaminationActivity : RootActivity(){
 
     var exam_result : ArrayList<CognitiveExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null

@@ -26,7 +26,7 @@ import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
-class OralExaminationActivity : AppCompatActivity() {
+class OralExaminationActivity : RootActivity() {
 
     var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
@@ -130,7 +130,7 @@ class OralExaminationActivity : AppCompatActivity() {
     }
 
     //뷰에 포커스를 총괄하는 메서드
-    fun focusControl(view : View){
+    override fun focusControl(view : View){
 
         if(view !is EditText){
 

@@ -26,7 +26,7 @@ import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
-class SmokingExaminationActivity : AppCompatActivity(){
+class SmokingExaminationActivity : RootActivity(){
 
     var exam_result : ArrayList<SmokingExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null

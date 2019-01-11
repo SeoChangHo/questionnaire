@@ -29,7 +29,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ExerciseExaminationActivity : AppCompatActivity() {
+class ExerciseExaminationActivity : RootActivity() {
 
     var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
@@ -206,21 +206,6 @@ class ExerciseExaminationActivity : AppCompatActivity() {
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    }
-
-    //radio button check change listener와 연동 bool은 라디오 버튼 체크 값, view는 라디오 버튼과 연계된 wrapper view
-    fun checkCondition(bool: Boolean, view : View){
-
-        if(bool){
-
-            view.visibility = View.VISIBLE
-
-        }else{
-
-            view.visibility = View.GONE
-
-        }
 
     }
 

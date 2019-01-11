@@ -27,7 +27,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class NutritionExaminationActivity :AppCompatActivity() {
+class NutritionExaminationActivity :RootActivity() {
 
     var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
