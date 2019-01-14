@@ -127,7 +127,7 @@
                 android:paddingTop="10dp"
                 android:paddingLeft="15dp"
                 android:background="@drawable/user_login_border"
-                android:text="검진자 등록하기"
+                android:text="사용자 등록하기"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
                 android:gravity="left"

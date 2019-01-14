@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.RadioButton
 
 open class RootActivity : AppCompatActivity() {
 
@@ -27,6 +28,16 @@ open class RootActivity : AppCompatActivity() {
     open fun focusControl(view : View){
 
         if(view !is EditText){
+
+            if(view !is RadioButton){
+
+                (view.parent as View).requestFocus()
+
+            }else{
+
+                (view.parent.parent as View).requestFocus()
+
+            }
 
             (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
 
