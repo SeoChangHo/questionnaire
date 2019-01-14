@@ -12,7 +12,9 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:onClick="focusControl" >
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -71,19 +73,15 @@
                 app:layout_constraintStart_toStartOf="@+id/textView233"
                 app:layout_constraintTop_toBottomOf="@+id/textView235" />
 
-            <EditText
+            <TextView
                 android:id="@+id/name_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="8dp"
-                android:backgroundTint="@color/gray"
-                android:inputType="text"
                 android:maxWidth="100dp"
-                android:maxLength="5"
                 android:minWidth="100dp"
                 android:textAlignment="center"
-                android:textCursorDrawable="@color/gray"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/name_text"
                 app:layout_constraintEnd_toStartOf="@+id/number_text"
@@ -101,20 +99,16 @@
                 app:layout_constraintEnd_toStartOf="@+id/first_serial"
                 app:layout_constraintStart_toEndOf="@+id/name_edit" />
 
-            <EditText
+            <TextView
                 android:id="@+id/first_serial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:backgroundTint="@color/gray"
-                android:inputType="number"
                 android:maxWidth="90dp"
-                android:maxLength="6"
                 android:minWidth="90dp"
                 android:textAlignment="center"
-                android:textCursorDrawable="@color/gray"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/number_text"
                 app:layout_constraintEnd_toStartOf="@+id/number_hyphen"
@@ -131,18 +125,14 @@
                 app:layout_constraintStart_toEndOf="@+id/first_serial"
                 app:layout_constraintTop_toTopOf="@+id/first_serial" />
 
-            <EditText
+            <TextView
                 android:id="@+id/last_serial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:backgroundTint="@color/gray"
-                android:inputType="numberPassword"
                 android:maxWidth="90dp"
-                android:maxLength="1"
                 android:minWidth="90dp"
                 android:textAlignment="center"
-                android:textCursorDrawable="@color/gray"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/first_serial"
                 app:layout_constraintEnd_toEndOf="@+id/textView233"
@@ -170,6 +160,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="20dp"
                 android:visibility="visible"
+                android:focusableInTouchMode="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView236"
                 app:layout_constraintTop_toBottomOf="@+id/textView236">
@@ -324,7 +315,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_1_2"
@@ -334,7 +326,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_1_3"
@@ -344,7 +337,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                 </RadioGroup>
 
@@ -412,7 +406,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_2_2"
@@ -422,7 +417,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_2_3"
@@ -432,7 +428,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                 </RadioGroup>
 
@@ -492,7 +489,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_3_2"
@@ -502,7 +500,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_3_3"
@@ -512,7 +511,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                 </RadioGroup>
 
@@ -582,7 +582,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_4_2"
@@ -592,7 +593,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_4_3"
@@ -602,7 +604,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                 </RadioGroup>
 
@@ -622,6 +625,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
             android:visibility="visible"
+                android:focusableInTouchMode="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/nutrition_check_wrapper"
             app:layout_constraintTop_toBottomOf="@+id/nutrition_check_wrapper">
@@ -782,7 +786,8 @@
                     android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/nutrition_5_2"
@@ -792,7 +797,8 @@
                     android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/nutrition_5_3"
@@ -802,7 +808,8 @@
                     android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -854,7 +861,8 @@
                     android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/nutrition_6_2"
@@ -864,7 +872,8 @@
                     android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/nutrition_6_3"
@@ -874,7 +883,8 @@
                     android:buttonTint="@color/mainBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -894,6 +904,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="20dp"
                 android:visibility="visible"
+                android:focusableInTouchMode="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/nutrition_check_wrapper2"
                 app:layout_constraintTop_toBottomOf="@+id/nutrition_check_wrapper2">
@@ -1066,7 +1077,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_7_2"
@@ -1076,7 +1088,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_7_3"
@@ -1086,7 +1099,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                 </RadioGroup>
 
@@ -1146,7 +1160,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_8_2"
@@ -1156,7 +1171,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_8_3"
@@ -1166,7 +1182,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                 </RadioGroup>
 
@@ -1226,7 +1243,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_9_2"
@@ -1236,7 +1254,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_9_3"
@@ -1246,7 +1265,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                 </RadioGroup>
 
@@ -1266,6 +1286,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="20dp"
                 android:visibility="visible"
+                android:focusableInTouchMode="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/nutrition_check_wrapper3"
                 app:layout_constraintTop_toBottomOf="@+id/nutrition_check_wrapper3">
@@ -1441,7 +1462,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_10_2"
@@ -1451,7 +1473,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_10_3"
@@ -1461,7 +1484,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                 </RadioGroup>
 
@@ -1481,6 +1505,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="20dp"
                 android:visibility="visible"
+                android:focusableInTouchMode="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/nutrition_check_wrapper4"
                 app:layout_constraintTop_toBottomOf="@+id/nutrition_check_wrapper4">
@@ -1652,7 +1677,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_11_2"
@@ -1662,7 +1688,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                     <RadioButton
                         android:id="@+id/nutrition_11_3"
@@ -1672,7 +1699,8 @@
                         android:buttonTint="@color/mainBlue"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp"
+                        android:onClick="focusControl" />
 
                 </RadioGroup>
 
@@ -1724,7 +1752,8 @@
                 app:layout_constraintStart_toStartOf="@+id/bmi"
                 app:layout_constraintEnd_toEndOf="@+id/bmi"
                 app:layout_constraintTop_toTopOf="@+id/textView314"
-                app:layout_constraintBottom_toBottomOf="@+id/textView314"/>
+                app:layout_constraintBottom_toBottomOf="@+id/textView314"
+                android:onClick="focusControl" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1761,7 +1790,8 @@
                 app:layout_constraintStart_toStartOf="@+id/bmi"
                 app:layout_constraintEnd_toEndOf="@+id/bmi"
                 app:layout_constraintTop_toTopOf="@+id/textView315"
-                app:layout_constraintBottom_toBottomOf="@+id/textView315"/>
+                app:layout_constraintBottom_toBottomOf="@+id/textView315"
+                android:onClick="focusControl" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1798,7 +1828,8 @@
                 app:layout_constraintStart_toStartOf="@+id/bmi"
                 app:layout_constraintEnd_toEndOf="@+id/bmi"
                 app:layout_constraintTop_toTopOf="@+id/textView316"
-                app:layout_constraintBottom_toBottomOf="@+id/textView316"/>
+                app:layout_constraintBottom_toBottomOf="@+id/textView316"
+                android:onClick="focusControl" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1835,7 +1866,8 @@
                 android:inputType="number"
                 app:layout_constraintStart_toEndOf="@+id/textView317"
                 app:layout_constraintTop_toTopOf="@+id/textView317"
-                app:layout_constraintBottom_toBottomOf="@+id/textView317"/>
+                app:layout_constraintBottom_toBottomOf="@+id/textView317"
+                android:onClick="focusControl" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1896,7 +1928,8 @@
                     android:text="예"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/fat_1_false"
@@ -1907,7 +1940,8 @@
                     android:text="아니오"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -1986,7 +2020,8 @@
                     android:text="전혀 해 본 적이 없다"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/fat_2_1"
@@ -1997,7 +2032,8 @@
                     android:text="1~3 회"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/fat_2_2"
@@ -2008,7 +2044,8 @@
                     android:text="4회 이상"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/fat_2_3"
@@ -2019,7 +2056,8 @@
                     android:text="항상 노력하고 있다."
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -2079,7 +2117,8 @@
                     android:layout_marginLeft="50dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/fat_3_2"
@@ -2090,7 +2129,8 @@
                     android:layout_marginLeft="50dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/fat_3_3"
@@ -2101,7 +2141,8 @@
                     android:layout_marginLeft="50dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"/>
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 

@@ -330,20 +330,6 @@ class CommonExaminationActivity : RootActivity() {
 
     }
 
-    fun focusControlCommon(view : View){
-
-        if(view !is EditText){
-
-            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
-
-        }else{
-
-            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).showSoftInput(view, 0)
-
-        }
-
-    }
-
     fun common_exam_local_insert(){
 
         LocalDBhelper(this).onCreate(sql_db)

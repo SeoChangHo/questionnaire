@@ -12,7 +12,9 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:onClick="focusControl" >
 
 
             <ImageView
@@ -65,19 +67,15 @@
                 app:layout_constraintStart_toStartOf="@+id/textView69"
                 app:layout_constraintTop_toBottomOf="@+id/textView70" />
 
-            <EditText
+            <TextView
                 android:id="@+id/name_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginRight="16dp"
-                android:inputType="text"
-                android:maxLength="5"
                 android:maxWidth="100dp"
                 android:minWidth="100dp"
                 android:textAlignment="center"
-                android:textCursorDrawable="@color/gray"
-                android:backgroundTint="@color/gray"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/name_text"
                 app:layout_constraintEnd_toStartOf="@+id/number_text"
@@ -95,20 +93,16 @@
                 app:layout_constraintEnd_toStartOf="@+id/first_serial"
                 app:layout_constraintStart_toEndOf="@+id/name_edit" />
 
-            <EditText
+            <TextView
                 android:id="@+id/first_serial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:inputType="number"
-                android:maxLength="6"
                 android:maxWidth="90dp"
                 android:minWidth="90dp"
                 android:textAlignment="center"
-                android:textCursorDrawable="@color/gray"
-                android:backgroundTint="@color/gray"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/number_text"
                 app:layout_constraintEnd_toStartOf="@+id/number_hyphen"
@@ -125,25 +119,21 @@
                 app:layout_constraintStart_toEndOf="@+id/first_serial"
                 app:layout_constraintTop_toTopOf="@+id/first_serial" />
 
-            <EditText
+            <TextView
                 android:id="@+id/last_serial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:inputType="numberPassword"
                 android:maxLength="1"
                 android:maxWidth="90dp"
                 android:minWidth="90dp"
                 android:textAlignment="center"
-                android:textCursorDrawable="@color/gray"
-                android:backgroundTint="@color/gray"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/first_serial"
                 app:layout_constraintEnd_toEndOf="@+id/textView69"
                 app:layout_constraintStart_toEndOf="@+id/number_hyphen"
                 app:layout_constraintTop_toTopOf="@+id/first_serial"
                 app:layout_constraintVertical_bias="0.0" />
-
 
             <TextView
                 android:id="@+id/elderly_question_1"
@@ -182,7 +172,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    android:text="예" />
+                    android:text="예"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/elderly_1_false"
@@ -193,7 +184,8 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:layout_marginLeft="40dp"
-                    android:text="아니오" />
+                    android:text="아니오"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
@@ -235,7 +227,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    android:text="예" />
+                    android:text="예"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/elderly_2_false"
@@ -246,7 +239,8 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:layout_marginLeft="40dp"
-                    android:text="아니오" />
+                    android:text="아니오"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
@@ -301,7 +295,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    android:text="예" />
+                    android:text="예"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/elderly_3_1_false"
@@ -312,7 +307,8 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:layout_marginLeft="40dp"
-                    android:text="아니오" />
+                    android:text="아니오"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
@@ -351,7 +347,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    android:text="예" />
+                    android:text="예"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/elderly_3_2_false"
@@ -362,7 +359,8 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:layout_marginLeft="40dp"
-                    android:text="아니오" />
+                    android:text="아니오"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
@@ -402,7 +400,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    android:text="예" />
+                    android:text="예"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/elderly_3_3_false"
@@ -413,8 +412,8 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:layout_marginLeft="40dp"
-                    android:text="아니오" />
-
+                    android:text="아니오"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -453,7 +452,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    android:text="예" />
+                    android:text="예"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/elderly_3_4_false"
@@ -464,8 +464,8 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:layout_marginLeft="40dp"
-                    android:text="아니오" />
-
+                    android:text="아니오"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -504,7 +504,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    android:text="예" />
+                    android:text="예"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/elderly_3_5_false"
@@ -515,7 +516,8 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:layout_marginLeft="40dp"
-                    android:text="아니오" />
+                    android:text="아니오"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
@@ -555,7 +557,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    android:text="예" />
+                    android:text="예"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/elderly_3_6_false"
@@ -566,7 +569,8 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:layout_marginLeft="40dp"
-                    android:text="아니오" />
+                    android:text="아니오"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
@@ -604,7 +608,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    android:text="예" />
+                    android:text="예"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/elderly_4_false"
@@ -615,7 +620,8 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:layout_marginLeft="40dp"
-                    android:text="아니오" />
+                    android:text="아니오"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
@@ -653,7 +659,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    android:text="예" />
+                    android:text="예"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/elderly_5_false"
@@ -664,7 +671,8 @@
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     android:layout_marginLeft="40dp"
-                    android:text="아니오" />
+                    android:text="아니오"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>

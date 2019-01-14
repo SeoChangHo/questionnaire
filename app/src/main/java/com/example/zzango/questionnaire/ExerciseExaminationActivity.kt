@@ -192,17 +192,9 @@ class ExerciseExaminationActivity : RootActivity() {
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
-            exercise_actual_root_view.isFocusableInTouchMode = true
-
-            exercise_actual_root_view.requestFocus()
-
             var paper = intent.getSerializableExtra("paper") as Paper_EXERCISE
 
             GetPaper(paper)
-
-        }else{
-
-            exercise_actual_root_view.isFocusableInTouchMode = false
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
