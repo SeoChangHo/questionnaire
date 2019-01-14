@@ -20,7 +20,6 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
-import com.example.zzango.questionnaire.LocalList.ListActivity
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_user_login.view.*
@@ -100,7 +99,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         listButton.setOnClickListener{
 
-            startActivity(Intent(this@MainActivity, ListActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@MainActivity, SettingActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 
