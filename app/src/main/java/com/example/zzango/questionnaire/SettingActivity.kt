@@ -20,7 +20,6 @@ class SettingActivity : AppCompatActivity() {
 
             startActivity(Intent(this@SettingActivity, ListActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
-
         }
 
         local_button.setOnClickListener {
@@ -49,12 +48,6 @@ class SettingActivity : AppCompatActivity() {
             server_button.setBackgroundColor(Color.parseColor("#3C6FD1"))
             server_imageView.setImageResource(R.drawable.server)
             server_textView.setTextColor(Color.parseColor("#FFFFFF"))
-
-        }
-
-        back_button.setOnClickListener {
-
-            startActivity(Intent(this@SettingActivity, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 
