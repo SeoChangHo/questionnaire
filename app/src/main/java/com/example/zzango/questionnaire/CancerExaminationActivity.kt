@@ -99,6 +99,88 @@ class CancerExaminationActivity : RootActivity(){
 
         sql_db = LocalDBhelper(this).writableDatabase
 
+        cancer_1_1.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_1_true_detail)
+
+        }
+
+        cancer_2_2.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_2_false_detail)
+
+        }
+
+        cancer_3_1_3.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_3_1_wrapper)
+
+        }
+
+        cancer_3_2_3.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_3_2_wrapper)
+
+        }
+
+        cancer_3_3_3.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_3_3_wrapper)
+
+        }
+
+        cancer_3_4_3.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_3_4_wrapper)
+
+        }
+
+        cancer_3_5_3.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_3_5_wrapper)
+
+        }
+
+        cancer_3_6_3.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_3_6_wrapper)
+
+            checkCondition(isChecked, cancer_3_6_1_editText)
+
+        }
+
+        cancer_8_1.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_8_detail)
+
+        }
+
+        cancer_9_3.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_9_detail)
+
+        }
+
         cancer_examination_save.setOnClickListener {
 
             if(check()){

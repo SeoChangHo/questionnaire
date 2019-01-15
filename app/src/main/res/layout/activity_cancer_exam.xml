@@ -206,35 +206,42 @@
 
             </RadioGroup>
 
-
-
-            <TextView
-                android:id="@+id/textView184"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cancer_1_true_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
-                android:text="증상"
-                android:textSize="16dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@+id/cancer_1_radio"
-                app:layout_constraintTop_toTopOf="@+id/cancer_1_radio" />
+                app:layout_constraintTop_toTopOf="@+id/cancer_1_radio">
 
-            <EditText
-                android:id="@+id/cancer_editText1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:ems="10"
-                android:inputType="text"
-                android:textSize="16dp"
-                android:backgroundTint="@color/gray"
-                android:textCursorDrawable="@color/gray"
-                app:layout_constraintBottom_toBottomOf="@+id/textView184"
-                app:layout_constraintStart_toEndOf="@+id/textView184"
-                app:layout_constraintTop_toTopOf="@+id/textView184"
-                android:onClick="focusControl" />
+                <TextView
+                    android:id="@+id/textView184"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="증상"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <EditText
+                    android:id="@+id/cancer_editText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="16dp"
+                    android:backgroundTint="@color/gray"
+                    android:textCursorDrawable="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView184"
+                    app:layout_constraintStart_toEndOf="@+id/textView184"
+                    app:layout_constraintTop_toTopOf="@+id/textView184"
+                    android:onClick="focusControl" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <TextView
                 android:id="@+id/cancer_question_2"
@@ -291,32 +298,40 @@
 
             </RadioGroup>
 
-            <EditText
-                android:id="@+id/cancer_editText2"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cancer_2_false_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
-                android:ems="10"
-                android:inputType="number"
-                android:textSize="16dp"
-                android:backgroundTint="@color/gray"
-                android:textCursorDrawable="@color/gray"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/cancer_2_radio"
-                app:layout_constraintStart_toEndOf="@+id/cancer_2_radio"
-                android:onClick="focusControl" />
+                app:layout_constraintStart_toEndOf="@+id/cancer_2_radio">
 
-            <TextView
-                android:id="@+id/textView230"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:text="kg"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/cancer_editText2"
-                app:layout_constraintStart_toEndOf="@+id/cancer_editText2"
-                app:layout_constraintTop_toTopOf="@+id/cancer_editText2" />
+                <EditText
+                    android:id="@+id/cancer_editText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textSize="16dp"
+                    android:backgroundTint="@color/gray"
+                    android:textCursorDrawable="@color/gray"
+                    android:onClick="focusControl" />
+
+                <TextView
+                    android:id="@+id/textView230"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="kg"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cancer_editText2"
+                    app:layout_constraintStart_toEndOf="@+id/cancer_editText2"
+                    app:layout_constraintTop_toTopOf="@+id/cancer_editText2" />
+
+            </android.support.constraint.ConstraintLayout>
 
 
             <TextView
@@ -424,7 +439,6 @@
                     android:scaleY="1.3"
                     android:text="본인"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -440,7 +454,6 @@
                     android:scaleY="1.3"
                     android:text="부모"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_1_checkBox1"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_1_checkBox1"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_1_checkBox1"
@@ -457,7 +470,6 @@
                     android:scaleY="1.3"
                     android:text="형제"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_1_checkBox2"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_1_checkBox2"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_1_checkBox2"
@@ -474,7 +486,6 @@
                     android:scaleY="1.3"
                     android:text="자매"
                     android:textSize="15dp"
-                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_1_checkBox3"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_1_checkBox3"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_1_checkBox3"
@@ -491,7 +502,6 @@
                     android:scaleY="1.3"
                     android:text="자녀"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_1_checkBox4"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_1_checkBox4"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_1_checkBox4"
@@ -588,7 +598,6 @@
                     android:scaleY="1.3"
                     android:text="본인"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -604,7 +613,6 @@
                     android:scaleY="1.3"
                     android:text="부모"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_2_checkBox1"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_2_checkBox1"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_2_checkBox1"
@@ -621,7 +629,6 @@
                     android:scaleY="1.3"
                     android:text="형제"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_2_checkBox2"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_2_checkBox2"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_2_checkBox2"
@@ -638,7 +645,6 @@
                     android:scaleY="1.3"
                     android:text="자매"
                     android:textSize="15dp"
-                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_2_checkBox3"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_2_checkBox3"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_2_checkBox3"
@@ -655,7 +661,6 @@
                     android:scaleY="1.3"
                     android:text="자녀"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_2_checkBox4"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_2_checkBox4"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_2_checkBox4"
@@ -752,7 +757,6 @@
                     android:scaleY="1.3"
                     android:text="본인"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -768,7 +772,6 @@
                     android:scaleY="1.3"
                     android:text="부모"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_3_checkBox1"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_3_checkBox1"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_3_checkBox1"
@@ -785,7 +788,6 @@
                     android:scaleY="1.3"
                     android:text="형제"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_3_checkBox2"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_3_checkBox2"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_3_checkBox2"
@@ -802,7 +804,6 @@
                     android:scaleY="1.3"
                     android:text="자매"
                     android:textSize="15dp"
-                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_3_checkBox3"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_3_checkBox3"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_3_checkBox3"
@@ -819,7 +820,6 @@
                     android:scaleY="1.3"
                     android:text="자녀"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_3_checkBox4"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_3_checkBox4"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_3_checkBox4"
@@ -917,7 +917,6 @@
                     android:scaleY="1.3"
                     android:text="본인"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -933,7 +932,6 @@
                     android:scaleY="1.3"
                     android:text="부모"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_4_checkBox1"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_4_checkBox1"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_4_checkBox1"
@@ -950,7 +948,6 @@
                     android:scaleY="1.3"
                     android:text="형제"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_4_checkBox2"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_4_checkBox2"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_4_checkBox2"
@@ -967,7 +964,6 @@
                     android:scaleY="1.3"
                     android:text="자매"
                     android:textSize="15dp"
-                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_4_checkBox3"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_4_checkBox3"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_4_checkBox3"
@@ -984,7 +980,6 @@
                     android:scaleY="1.3"
                     android:text="자녀"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_4_checkBox4"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_4_checkBox4"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_4_checkBox4"
@@ -1081,7 +1076,6 @@
                     android:scaleY="1.3"
                     android:text="본인"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -1097,7 +1091,6 @@
                     android:scaleY="1.3"
                     android:text="부모"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_5_checkBox1"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_5_checkBox1"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_5_checkBox1"
@@ -1114,7 +1107,6 @@
                     android:scaleY="1.3"
                     android:text="형제"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_5_checkBox2"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_5_checkBox2"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_5_checkBox2"
@@ -1131,7 +1123,6 @@
                     android:scaleY="1.3"
                     android:text="자매"
                     android:textSize="15dp"
-                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_5_checkBox3"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_5_checkBox3"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_5_checkBox3"
@@ -1148,7 +1139,6 @@
                     android:scaleY="1.3"
                     android:text="자녀"
                     android:textSize="15dp"
-                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/cancer_3_5_checkBox4"
                     app:layout_constraintStart_toEndOf="@+id/cancer_3_5_checkBox4"
                     app:layout_constraintTop_toTopOf="@+id/cancer_3_5_checkBox4"
@@ -1192,7 +1182,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="없다"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_3_6_2"
@@ -1203,7 +1194,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="모르겠다"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_3_6_3"
@@ -1214,89 +1206,105 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="있다(복수선택 가능)"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
 
-            <CheckBox
-                android:id="@+id/cancer_3_6_checkBox1"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:buttonTint="@color/mainBlue"
-                android:scaleX="1.3"
-                android:scaleY="1.3"
-                android:text="본인"
-                android:textSize="15dp"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cancer_3_6_wrapper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="@+id/cancer_3_6_radio"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_3_6_radio" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_3_6_radio"
+                app:layout_constraintEnd_toEndOf="@id/cancer_3_6_radio"
+                app:layout_constraintHorizontal_bias="0.0"
+                >
 
-            <CheckBox
-                android:id="@+id/cancer_3_6_checkBox2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:text="부모"
-                android:buttonTint="@color/mainBlue"
-                android:scaleX="1.3"
-                android:scaleY="1.3"
-                android:textSize="15dp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/cancer_3_6_checkBox1"
-                app:layout_constraintStart_toEndOf="@+id/cancer_3_6_checkBox1"
-                app:layout_constraintTop_toTopOf="@+id/cancer_3_6_checkBox1" />
+                <CheckBox
+                    android:id="@+id/cancer_3_6_checkBox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="본인"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <CheckBox
-                android:id="@+id/cancer_3_6_checkBox3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:text="형제"
-                android:buttonTint="@color/mainBlue"
-                android:scaleX="1.3"
-                android:scaleY="1.3"
-                android:textSize="15dp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/cancer_3_6_checkBox2"
-                app:layout_constraintStart_toEndOf="@+id/cancer_3_6_checkBox2"
-                app:layout_constraintTop_toTopOf="@+id/cancer_3_6_checkBox2" />
+                <CheckBox
+                    android:id="@+id/cancer_3_6_checkBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="부모"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cancer_3_6_checkBox1"
+                    app:layout_constraintStart_toEndOf="@+id/cancer_3_6_checkBox1"
+                    app:layout_constraintTop_toTopOf="@+id/cancer_3_6_checkBox1"
+                    android:onClick="focusControl" />
 
-            <CheckBox
-                android:id="@+id/cancer_3_6_checkBox4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:text="자매"
-                android:buttonTint="@color/mainBlue"
-                android:scaleX="1.3"
-                android:scaleY="1.3"
-                android:textSize="15dp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/cancer_3_6_checkBox3"
-                app:layout_constraintStart_toEndOf="@+id/cancer_3_6_checkBox3"
-                app:layout_constraintTop_toTopOf="@+id/cancer_3_6_checkBox3" />
+                <CheckBox
+                    android:id="@+id/cancer_3_6_checkBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="형제"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cancer_3_6_checkBox2"
+                    app:layout_constraintStart_toEndOf="@+id/cancer_3_6_checkBox2"
+                    app:layout_constraintTop_toTopOf="@+id/cancer_3_6_checkBox2"
+                    android:onClick="focusControl" />
 
-            <CheckBox
-                android:id="@+id/cancer_3_6_checkBox5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:buttonTint="@color/mainBlue"
-                android:scaleX="1.3"
-                android:scaleY="1.3"
-                android:text="자녀"
-                android:textSize="15dp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/cancer_3_6_checkBox4"
-                app:layout_constraintStart_toEndOf="@+id/cancer_3_6_checkBox4"
-                app:layout_constraintTop_toTopOf="@+id/cancer_3_6_checkBox4" />
+                <CheckBox
+                    android:id="@+id/cancer_3_6_checkBox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="자매"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cancer_3_6_checkBox3"
+                    app:layout_constraintStart_toEndOf="@+id/cancer_3_6_checkBox3"
+                    app:layout_constraintTop_toTopOf="@+id/cancer_3_6_checkBox3"
+                    android:onClick="focusControl" />
+
+                <CheckBox
+                    android:id="@+id/cancer_3_6_checkBox5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
+                    android:buttonTint="@color/mainBlue"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="자녀"
+                    android:textSize="15dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/cancer_3_6_checkBox4"
+                    app:layout_constraintStart_toEndOf="@+id/cancer_3_6_checkBox4"
+                    app:layout_constraintTop_toTopOf="@+id/cancer_3_6_checkBox4"
+                    android:onClick="focusControl" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <EditText
                 android:id="@+id/cancer_3_6_1_editText"
@@ -1310,8 +1318,11 @@
                 android:hint="기타암종류 작성"
                 android:visibility="gone"
                 android:inputType="textPersonName"
+                android:backgroundTint="@color/gray"
+                android:textCursorDrawable="@color/gray"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_3_6"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_question_3_6" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_question_3_6"
+                android:onClick="focusControl" />
 
             <TextView
                 android:id="@+id/cancer_question_4"
@@ -1362,7 +1373,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="10년 이상 / 한적없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
                 <RadioButton
@@ -1375,7 +1387,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_1_3"
@@ -1387,7 +1400,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 이상 ~ 2년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_1_4"
@@ -1398,7 +1412,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2년 이상 ~ 10년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -1435,7 +1450,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="10년 이상 / 한적없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
                 <RadioButton
@@ -1448,7 +1464,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_2_3"
@@ -1460,7 +1477,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 이상 ~ 2년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_2_4"
@@ -1471,7 +1489,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2년 이상 ~ 10년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -1508,7 +1527,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="10년 이상 / 한적없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
                 <RadioButton
@@ -1521,7 +1541,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_3_3"
@@ -1533,7 +1554,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 이상 ~ 2년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_3_4"
@@ -1544,7 +1566,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2년 이상 ~ 10년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -1581,7 +1604,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="10년 이상 / 한적없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
                 <RadioButton
@@ -1594,7 +1618,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_4_3"
@@ -1606,7 +1631,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 이상 ~ 2년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_4_4"
@@ -1617,7 +1643,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2년 이상 ~ 10년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -1654,7 +1681,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="10년 이상 / 한적없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
                 <RadioButton
@@ -1667,7 +1695,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_5_3"
@@ -1679,7 +1708,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 이상 ~ 2년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_5_4"
@@ -1690,7 +1720,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2년 이상 ~ 10년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -1727,7 +1758,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="10년 이상 / 한적없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
                 <RadioButton
@@ -1740,7 +1772,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_6_3"
@@ -1752,7 +1785,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 이상 ~ 2년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_6_4"
@@ -1763,7 +1797,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2년 이상 ~ 10년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -1800,7 +1835,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="10년 이상 / 한적없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
                 <RadioButton
@@ -1813,7 +1849,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_7_3"
@@ -1825,7 +1862,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 이상 ~ 2년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_7_4"
@@ -1836,7 +1874,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2년 이상 ~ 10년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -1873,7 +1912,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="한적없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
                 <RadioButton
@@ -1886,7 +1926,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="6개월 이내"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_8_3"
@@ -1898,7 +1939,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="6개월 ~ 1년"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_4_8_4"
@@ -1909,7 +1951,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년보다 오래전"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -1960,7 +2003,8 @@
                 android:text="없음"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_question_5" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_question_5"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_5_2_checkBox"
@@ -1975,7 +2019,8 @@
                 android:text="위궤양"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_5_1_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_5_1_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_5_3_checkBox"
@@ -1990,7 +2035,8 @@
                 android:text="위축성 위염"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_5_2_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_5_2_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_5_4_checkBox"
@@ -2005,7 +2051,8 @@
                 android:text="장상피화생"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_5_3_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_5_3_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_5_5_checkBox"
@@ -2020,7 +2067,8 @@
                 android:text="위용종"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_5_4_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_5_4_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_5_6_checkBox"
@@ -2035,7 +2083,8 @@
                 android:text="기타"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_5_5_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_5_5_checkBox"
+                android:onClick="focusControl" />
 
 
             <TextView
@@ -2067,7 +2116,8 @@
                 android:text="없음"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_question_6" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_question_6"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_6_2_checkBox"
@@ -2082,7 +2132,8 @@
                 android:text="대장용종(폴립)"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_6_1_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_6_1_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_6_3_checkBox"
@@ -2097,7 +2148,8 @@
                 android:text="궤양성 대장염"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_6_2_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_6_2_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_6_4_checkBox"
@@ -2112,7 +2164,8 @@
                 android:text="크론병"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_6_3_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_6_3_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_6_5_checkBox"
@@ -2127,7 +2180,8 @@
                 android:text="치질(치핵, 치열)"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_6_4_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_6_4_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_6_6_checkBox"
@@ -2142,7 +2196,8 @@
                 android:text="기타"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_6_5_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_6_5_checkBox"
+                android:onClick="focusControl" />
 
 
             <TextView
@@ -2174,7 +2229,8 @@
                 android:text="없음"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_question_7" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_question_7"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_7_2_checkBox"
@@ -2189,7 +2245,8 @@
                 android:text="B형간염바이러스 보유자"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_7_1_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_7_1_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_7_3_checkBox"
@@ -2204,7 +2261,8 @@
                 android:text="만성 B형간염"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_7_2_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_7_2_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_7_4_checkBox"
@@ -2219,7 +2277,8 @@
                 android:text="만성 C형간염"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_7_3_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_7_3_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_7_5_checkBox"
@@ -2234,7 +2293,8 @@
                 android:text="간경변"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_7_4_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_7_4_checkBox"
+                android:onClick="focusControl" />
 
             <CheckBox
                 android:id="@+id/cancer_7_6_checkBox"
@@ -2249,7 +2309,8 @@
                 android:text="기타"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_7_5_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_7_5_checkBox"
+                android:onClick="focusControl" />
 
             <TextView
                 android:id="@+id/family_medical_history3"
@@ -2304,7 +2365,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="월경 시작연령"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_8_2"
@@ -2315,35 +2377,47 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="초경이 없었음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
 
-            <EditText
-                android:id="@+id/cancer_editText3"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cancer_8_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
-                android:ems="10"
-                android:hint="만나이 입력"
-                android:inputType="number"
-                android:textSize="16dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@+id/cancer_8_radio"
-                app:layout_constraintTop_toTopOf="@+id/cancer_8_radio" />
+                app:layout_constraintTop_toTopOf="@+id/cancer_8_radio">
 
-            <TextView
-                android:id="@+id/textView231"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:text="세"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/cancer_editText3"
-                app:layout_constraintStart_toEndOf="@+id/cancer_editText3"
-                app:layout_constraintTop_toTopOf="@+id/cancer_editText3" />
+                <EditText
+                    android:id="@+id/cancer_editText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="만나이 입력"
+                    android:inputType="number"
+                    android:textSize="16dp"
+                    android:backgroundTint="@color/gray"
+                    android:textCursorDrawable="@color/gray"
+                    android:onClick="focusControl" />
+
+                <TextView
+                    android:id="@+id/textView231"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="세"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cancer_editText3"
+                    app:layout_constraintStart_toEndOf="@+id/cancer_editText3"
+                    app:layout_constraintTop_toTopOf="@+id/cancer_editText3" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <TextView
                 android:id="@+id/cancer_question_9"
@@ -2382,7 +2456,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="아직 월경이 있음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_9_2"
@@ -2394,7 +2469,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="자궁적출술을 하였음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_9_3"
@@ -2405,35 +2481,47 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="폐경 되었음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
 
-            <EditText
-                android:id="@+id/cancer_editText4"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cancer_9_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
-                android:ems="10"
-                android:hint="만나이 입력"
-                android:inputType="number"
-                android:textSize="16dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@+id/cancer_9_radio"
-                app:layout_constraintBottom_toBottomOf="@+id/cancer_9_radio" />
+                app:layout_constraintBottom_toBottomOf="@+id/cancer_9_radio">
 
-            <TextView
-                android:id="@+id/textView232"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:text="세"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/cancer_editText4"
-                app:layout_constraintStart_toEndOf="@+id/cancer_editText4"
-                app:layout_constraintTop_toTopOf="@+id/cancer_editText4" />
+                <EditText
+                    android:id="@+id/cancer_editText4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="만나이 입력"
+                    android:inputType="number"
+                    android:textSize="16dp"
+                    android:backgroundTint="@color/gray"
+                    android:textCursorDrawable="@color/gray"
+                    android:onClick="focusControl" />
+
+                <TextView
+                    android:id="@+id/textView232"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="세"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cancer_editText4"
+                    app:layout_constraintStart_toEndOf="@+id/cancer_editText4"
+                    app:layout_constraintTop_toTopOf="@+id/cancer_editText4" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <TextView
                 android:id="@+id/cancer_question_10"
@@ -2473,7 +2561,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="복용한 적 없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_10_2"
@@ -2485,7 +2574,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_10_3"
@@ -2497,7 +2587,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2년 ~ 5년"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_10_4"
@@ -2520,7 +2611,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="있다(복수선택 가능)"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
 
             </RadioGroup>
@@ -2563,7 +2655,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1명"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_11_2"
@@ -2575,7 +2668,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="2명 이상"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_11_3"
@@ -2586,7 +2680,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="출산한 적 없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -2628,7 +2723,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="6개월 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_12_2"
@@ -2640,7 +2736,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="6개월 ~ 1년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_12_3"
@@ -2652,7 +2749,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 이상"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_12_4"
@@ -2663,7 +2761,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="수유한 적 없음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -2705,7 +2804,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="예"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_13_2"
@@ -2717,7 +2817,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="아니오"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_13_3"
@@ -2728,7 +2829,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="모르겠음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
@@ -2770,7 +2872,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="복용 안함"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_14_2"
@@ -2782,7 +2885,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 미만"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_14_3"
@@ -2794,7 +2898,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="1년 이상"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
                 <RadioButton
                     android:id="@+id/cancer_14_4"
@@ -2805,7 +2910,8 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="모르겠음"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:onClick="focusControl" />
 
             </RadioGroup>
 
