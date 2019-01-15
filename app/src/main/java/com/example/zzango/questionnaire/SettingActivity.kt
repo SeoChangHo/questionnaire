@@ -33,7 +33,7 @@ class SettingActivity : AppCompatActivity() {
 
             server_button.setBackgroundResource(R.drawable.border_top)
             server_imageView.setImageResource(R.drawable.server_blue)
-            server_textView.setTextColor(Color.parseColor("#3C6FD1"))
+            server_textView.setTextColor(Color.parseColor("#2B53A2"))
 
 
         }
@@ -44,7 +44,7 @@ class SettingActivity : AppCompatActivity() {
 
             local_button.setBackgroundResource(R.drawable.border_top)
             local_imageView.setImageResource(R.drawable.local_blue)
-            local_textView.setTextColor(Color.parseColor("#3C6FD1"))
+            local_textView.setTextColor(Color.parseColor("#2B53A2"))
 
             server_button.setBackgroundColor(Color.parseColor("#3C6FD1"))
             server_imageView.setImageResource(R.drawable.server)
