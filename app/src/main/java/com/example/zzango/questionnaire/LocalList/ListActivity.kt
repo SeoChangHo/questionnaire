@@ -56,7 +56,7 @@ class ListActivity : Activity() {
         }
         val adapter = CustomAdapter(papers, this)
 
-        adapter.CheckBoxInit()
+        //adapter.CheckBoxInit(papers.size)
 
         recyclerView.adapter = adapter
     }
@@ -673,7 +673,9 @@ class ListActivity : Activity() {
             ListSetting(false)
             btnSave.visibility = View.GONE
             btnDelete.visibility = View.GONE
+            constraintLayout_bottom.visibility = View.GONE
             txtBottomMent.text = "문진표를 선택해주세요."
+            select_all_checkbox.isChecked = false
         }
 
     }
@@ -725,15 +727,10 @@ class ListActivity : Activity() {
     }
 
     override fun onBackPressed() {
-
         if(login_appbar_loading_progress.visibility != View.VISIBLE){
-
             super.onBackPressed()
-
         }
-
     }
-
 }
 
 

@@ -21,6 +21,8 @@ import kotlin.collections.ArrayList
 class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var sql_db : SQLiteDatabase? = null
+    var isFirstTime:Boolean = true
+
 
 
 
@@ -64,9 +66,10 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
     }
 
 
-    fun CheckBoxInit()
+    fun CheckBoxInit(count:Int)
     {
-        myCheckBox.chk_each = ArrayList()
+        println("[CheckBox Init] Count:"+count.toString())
+        myCheckBox.chk_each = ArrayList<CheckBox>(PaperList.size)
     }
 
 
@@ -77,22 +80,29 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
         var v : View = LayoutInflater.from(p0?.context).inflate(R.layout.list_layout, p0, false)
         return ContentViewHolder(v)
-
     }
     override fun getItemCount(): Int {
         return PaperList.size
     }
     override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
-
-
         p0 as ContentViewHolder
+
+
+        if(isFirstTime)
+        {
+            isFirstTime=false
+            CheckBoxInit(PaperList.size)
+        }
+
+
 
         p0.chkbox.isChecked = PaperList[p1].isChecked
 
         if(PaperList.size!=myCheckBox.chk_each!!.size)
         {
-            myCheckBox.chk_each!!.add(p0.chkbox)
-            println("Add 합니다.")
+            //myCheckBox.chk_each!!.add(p0.chkbox)
+            println(p1.toString()+"번째 자리에 Add 합니다.")
+            myCheckBox.chk_each!![p1] = p0.chkbox
         }
 
 

@@ -20,8 +20,10 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
+import com.example.zzango.questionnaire.Signature.CanvasView
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_user_login.*
 import kotlinx.android.synthetic.main.activity_user_login.view.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_location.view.*
@@ -29,6 +31,7 @@ import kotlinx.android.synthetic.main.save_location.view.*
 class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     var popup = false
+    lateinit var canvasView: CanvasView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -174,6 +177,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     fun userlogin(){
 
         if(user_login.text == "사용자 등록하기"){
+
+
+
             var dialog = AlertDialog.Builder(this).create()
             var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_user_login, null)
 
@@ -181,6 +187,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             dialog.setView(dialog_view)
             dialog.setCanceledOnTouchOutside(false)
+
+            canvasView = dialog_view.canvas
 
 
             dialog_view.user_name.addTextChangedListener(object : TextWatcher {
@@ -256,6 +264,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 dialog.dismiss()
 
             }
+
+
 
             dialog.show()
         }
