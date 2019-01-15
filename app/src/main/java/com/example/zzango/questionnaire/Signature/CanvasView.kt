@@ -10,8 +10,8 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
 
 
 
-    private var mbitmap : Bitmap? = null
-    private var mCanvas : Canvas? = null
+    var mbitmap : Bitmap? = null
+    var mCanvas : Canvas? = null
     private var mPath : Path = Path()
     private var mPaint: Paint = Paint()
     private var mX : Float = 0.toFloat()
@@ -19,7 +19,7 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
 
     init {
         mPaint.isAntiAlias = true
-        mPaint.color = Color.rgb(0,0,0)
+        mPaint.color = Color.rgb(255,94,0)
         mPaint.style = Paint.Style.STROKE
         mPaint.strokeJoin = Paint.Join.ROUND
         mPaint.strokeWidth = 4f

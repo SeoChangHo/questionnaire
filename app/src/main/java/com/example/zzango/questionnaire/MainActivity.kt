@@ -27,6 +27,17 @@ import kotlinx.android.synthetic.main.activity_user_login.*
 import kotlinx.android.synthetic.main.activity_user_login.view.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_location.view.*
+import android.content.ContextWrapper
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.net.Uri
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.OutputStream
+import java.util.*
+
 
 class MainActivity : AppCompatActivity() , View.OnClickListener {
 
@@ -188,7 +199,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog.setView(dialog_view)
             dialog.setCanceledOnTouchOutside(false)
 
+
+            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+            //////////😎😎😎서명을 위한 공간😎😎😎//////////
             canvasView = dialog_view.canvas
+            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
 
             dialog_view.user_name.addTextChangedListener(object : TextWatcher {
@@ -255,6 +271,30 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             val login = dialog_view.findViewById(R.id.user_login_button) as Button
             login.setOnClickListener{
+
+
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+                var canvas: Canvas? = dialog_view.canvas.mCanvas
+                var bitmap:Bitmap? = dialog_view.canvas.mbitmap
+
+                if(bitmap!=null){
+                    // Save the bitmap to a file and display it into image view
+                    val uri = bitmapToFile(bitmap)
+                    //testimg.setImageURI(uri)
+
+                    // Display the saved bitmap's uri in text view
+                    println(uri.toString())
+
+                    // Show a toast message
+                    println("Bitmap saved in a file.")
+                }else{
+                    println("bitmap not found.")
+                }
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+
+
 
                 MainActivity.login_user_name = dialog_view.user_name.text.toString()
                 MainActivity.user_first_serial = dialog_view.first_serial.text.toString()
@@ -458,5 +498,37 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var user_first_serial = ""
         var user_last_serial = ""
     }
+
+    fun assetsToBitmap(fileName:String):Bitmap?{
+        return try{
+            val stream = assets.open(fileName)
+            BitmapFactory.decodeStream(stream)
+        }catch (e:IOException){
+            e.printStackTrace()
+            null
+        }
+    }
+
+
+    fun bitmapToFile(bitmap:Bitmap): Uri {
+        // Get the context wrapper
+        val wrapper = ContextWrapper(applicationContext)
+
+        // Initialize a new file instance to save bitmap object
+        var file = wrapper.getDir("Images", Context.MODE_PRIVATE)
+        file = File(file, "${UUID.randomUUID()}.jpg")
+
+        try {
+            // Compress the bitmap and save in jpg format
+            val stream: OutputStream = FileOutputStream(file)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+            stream.flush()
+            stream.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return Uri.parse(file.absolutePath)
+    }
+
 
 }
