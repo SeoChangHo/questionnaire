@@ -64,32 +64,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             getSharedPreferences("connection", 0).edit().putString("state", "local").apply()
 
-            data_save_mode_image.setImageResource(R.drawable.local_white)
-
-            data_save_mode_text.setText("local")
-
-        }else{
-
-            when(getSharedPreferences("connection", 0).getString("state", "")){
-
-                "local" -> {
-
-                    data_save_mode_image.setImageResource(R.drawable.local_white)
-
-                    data_save_mode_text.setText("local")
-
-                }
-
-                "wifi" -> {
-
-                    data_save_mode_image.setImageResource(R.drawable.server_white)
-
-                    data_save_mode_text.setText("server")
-
-                }
-
-            }
-
         }
 
         supportFragmentManager.beginTransaction()
@@ -103,11 +77,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
-        data_save_mode.setOnClickListener {
-
-            dataSaveLocationAlert()
-
-        }
 
         button1.setOnClickListener(this)
         button2.setOnClickListener(this)
@@ -336,10 +305,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         dialog_view.local.setOnClickListener {
 
-            data_save_mode_image.setImageResource(R.drawable.local_white)
-
-            data_save_mode_text.setText("local")
-
             getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
 
             dialog.dismiss()
@@ -347,10 +312,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         }
 
         dialog_view.server.setOnClickListener {
-
-            data_save_mode_image.setImageResource(R.drawable.server_white)
-
-            data_save_mode_text.setText("server")
 
             getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
 
