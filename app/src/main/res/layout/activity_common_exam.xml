@@ -264,7 +264,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:text="질환명"
-                        android:textSize="14dp"
+                        android:textSize="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -276,7 +276,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="진단여부"
-                        android:textSize="14dp"
+                        android:textSize="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_inside_guideline2"
                         app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_inside_guideline"
@@ -286,7 +286,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="약물치료여부"
-                        android:textSize="14dp"
+                        android:textSize="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_inside_guideline4"
                         app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_inside_guideline3"
@@ -309,6 +309,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="뇌졸중(중풍)"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_view" />
 
@@ -347,6 +348,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="심근경색(협심증)"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_stroke" />
 
@@ -385,6 +387,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="고혈압"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_myocardial_infarction" />
 
@@ -423,6 +426,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="당뇨병"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_high_blood_pressure" />
 
@@ -461,6 +465,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="이상지질혈증"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_diabetes" />
 
@@ -499,6 +504,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="폐결핵"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_dyslipidemia" />
 
@@ -537,6 +543,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="기타(암포함)"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_tuberculosis" />
 
@@ -656,7 +663,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:text="질환명"
-                        android:textSize="14dp"
+                        android:textSize="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -667,7 +674,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="유무"
-                        android:textSize="14dp"
+                        android:textSize="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/family_history_disease_inside_guideline2"
                         app:layout_constraintHorizontal_bias="0.55"
@@ -691,6 +698,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="뇌졸중(중풍)"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/family_history_disease_view" />
 
@@ -715,6 +723,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="심근경색(협심증)"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/family_history_disease_stroke" />
 
@@ -739,6 +748,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="고혈압"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/family_history_disease_myocardial_infarction" />
 
@@ -764,6 +774,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="당뇨병"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/family_history_disease_high_blood_pressure" />
 
@@ -789,6 +800,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="32dp"
                     android:text="기타(암포함)"
+                    android:textSize="18dp"
                     app:layout_constraintBottom_toTopOf="@+id/view2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/family_history_disease_diabetes" />
