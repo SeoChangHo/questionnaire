@@ -227,7 +227,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
+                    if(s!!.length==6){
+                        dialog_view.last_serial.requestFocus()
+                    }
                 }
             })
 
