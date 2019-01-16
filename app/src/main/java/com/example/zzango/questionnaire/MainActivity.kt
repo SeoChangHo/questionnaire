@@ -33,11 +33,9 @@ import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.net.Uri
 import android.widget.ImageView
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-import java.io.OutputStream
+import java.io.*
 import java.util.*
+import java.util.stream.Stream
 
 
 class MainActivity : AppCompatActivity() , View.OnClickListener {
@@ -280,7 +278,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 var canvas:Canvas = Canvas(bitmap)
                 canvasView.draw(canvas)
 
-                MainActivity.user_signature = bitmap
+                var stream = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                //MainActivity.user_signature = bitmap
+
+                MainActivity.user_stream = stream.toByteArray()
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
@@ -487,7 +489,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var login_user_name = ""
         var user_first_serial = ""
         var user_last_serial = ""
-        var user_signature:Bitmap? = null
+        var user_stream:ByteArray? = null
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{

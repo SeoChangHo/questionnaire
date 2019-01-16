@@ -5,6 +5,8 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -95,15 +97,13 @@ class CancerExaminationActivity : RootActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-
         setContentView(R.layout.activity_cancer_exam)
 
         //서명정보 가져오는거
-        if(MainActivity.user_signature!=null)
+        if(MainActivity.user_stream!=null)
         {
-            Signature.setImageBitmap(MainActivity.user_signature)
+            var bmp:Bitmap = BitmapFactory.decodeByteArray(MainActivity.user_stream,0,MainActivity.user_stream!!.size)
+            Signature.setImageBitmap(bmp)
         }
 
         sql_db = LocalDBhelper(this).writableDatabase
