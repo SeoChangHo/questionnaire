@@ -33,6 +33,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.net.Uri
 import android.widget.ImageView
+import kotlinx.android.synthetic.main.activity_common_exam.*
 import java.io.*
 import java.util.*
 import java.util.stream.Stream
@@ -122,6 +123,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         dialog.setCanceledOnTouchOutside(false)
 
 
+
+
         dialog_view.login_id.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
@@ -199,6 +202,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog.setCanceledOnTouchOutside(false)
 
 
+
+
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
             canvasView = dialog_view.canvas
@@ -226,11 +231,21 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 }
             })
 
+            var ValidationBool:Boolean = false
+
             dialog_view.first_serial.addTextChangedListener(object : TextWatcher {
+
+
+
                 override fun afterTextChanged(s: Editable?) {
                     if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
-                        dialog_view.user_login_button.isClickable = true
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+
+                        if(ValidationBool)
+                        {
+                            dialog_view.user_login_button.isClickable = true
+                            dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                        }
+
                     }else{
                         dialog_view.user_login_button.isClickable = false
                         dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
@@ -243,7 +258,27 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     if(s!!.length==6){
-                        dialog_view.last_serial.requestFocus()
+
+                        var Jumin = dialog_view.first_serial.text.toString()
+
+                        ValidationBool = JuminValidation(Jumin)
+
+                        if(ValidationBool)
+                        {
+                            dialog_view.last_serial.requestFocus()
+                        }
+                        else
+                        {
+                            dialog_view.user_login_button.isClickable = false
+                            dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                        }
+
+                    }
+                    else if(s!!.length<6)
+                    {
+                        ValidationBool = false
+                        dialog_view.user_login_button.isClickable = false
+                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
                     }
                 }
             })
@@ -251,8 +286,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog_view.last_serial.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
                     if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
-                        dialog_view.user_login_button.isClickable = true
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                        if(ValidationBool) {
+                            dialog_view.user_login_button.isClickable = true
+                            dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                        }
                     }else{
                         dialog_view.user_login_button.isClickable = false
                         dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
@@ -521,6 +558,64 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             e.printStackTrace()
         }
         return Uri.parse(file.absolutePath)
+    }
+
+    fun JuminValidation(Jumin:String): Boolean
+    {
+
+        var yy = Jumin.substring(0,2)
+        var mm = Jumin.substring(2,4)
+        var dd = Jumin.substring(4,6)
+
+        println(yy+" "+mm+" "+dd)
+
+        if(mm.toInt()==0)
+        {
+            Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        else if(12<mm.toInt())
+        {
+            Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        if(dd.toInt()==0)
+        {
+            Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        //1 3 5 7 9 10  12
+        //   4 6 8    11
+        // 2
+
+        //31일까지 있는 달일 때
+        if(mm.toInt()==1 || mm.toInt()==3 ||mm.toInt()==5 ||mm.toInt()==7 ||mm.toInt()==9 ||mm.toInt()==10 ||mm.toInt()==12)
+        {
+            if(31<dd.toInt())
+            {
+                Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+                return false
+            }
+        }//30일까지 있는 달일 때
+        else if(mm.toInt()==4 || mm.toInt()==6 ||mm.toInt()==8 ||mm.toInt()==11)
+        {
+            if(30<dd.toInt())
+            {
+                Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+                return false
+            }
+        }//2월일때 (윤달 미포함)
+        else if(mm.toInt()==2)
+        {
+            if(29<dd.toInt())
+            {
+                Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+                return false
+            }
+        }
+
+        return true
     }
 
 
