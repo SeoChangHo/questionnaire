@@ -25,6 +25,7 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
         mPaint.strokeWidth = 8f
     }
 
+
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas!!.drawPath(mPath, mPaint)
