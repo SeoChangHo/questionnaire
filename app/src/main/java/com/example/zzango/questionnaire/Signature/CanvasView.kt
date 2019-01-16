@@ -10,8 +10,8 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
 
 
 
-    var mbitmap : Bitmap? = null
-    var mCanvas : Canvas? = null
+    private var mbitmap : Bitmap? = null
+    private var mCanvas : Canvas? = null
     private var mPath : Path = Path()
     private var mPaint: Paint = Paint()
     private var mX : Float = 0.toFloat()
@@ -24,7 +24,6 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
         mPaint.strokeJoin = Paint.Join.ROUND
         mPaint.strokeWidth = 8f
     }
-
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
