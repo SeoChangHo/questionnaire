@@ -1,5 +1,6 @@
 package com.example.zzango.questionnaire
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -17,28 +18,52 @@ class SecondFragment : Fragment(){
 
         view.second_imageButton1.setOnClickListener {
 
-            activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
-            activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+            if(activity!!.user_login.text != "사용자 등록하기") {
 
-            startActivity(Intent(activity!!, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
+                activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
+                startActivity(Intent(activity!!, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+            }else{
+
+                MainActivity().userlogin(activity!!.user_login, activity!!.user_image, activity as Context)
+
+            }
 
         }
 
         view.second_imageButton2.setOnClickListener {
 
-            activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
-            activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+            if(activity!!.user_login.text != "사용자 등록하기") {
 
-            startActivity(Intent(activity!!, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
+                activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
+                startActivity(Intent(activity!!, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+            }else{
+
+                MainActivity().userlogin(activity!!.user_login, activity!!.user_image, activity as Context)
+
+            }
 
         }
 
         view.second_imageButton3.setOnClickListener {
 
-            activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
-            activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+            if(activity!!.user_login.text != "사용자 등록하기") {
 
-            startActivity(Intent(activity!!, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
+                activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
+                startActivity(Intent(activity!!, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+            }else{
+
+                MainActivity().userlogin(activity!!.user_login, activity!!.user_image, activity as Context)
+
+            }
 
         }
 

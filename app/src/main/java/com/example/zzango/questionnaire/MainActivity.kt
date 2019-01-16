@@ -32,6 +32,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.net.Uri
+import android.widget.ImageView
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -99,7 +100,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button5.setOnClickListener(this)
 
         user_login.setOnClickListener{
-            userlogin()
+            userlogin(user_login, user_image,this@MainActivity)
         }
 
         if(MainActivity.login_user_name != ""){
@@ -185,14 +186,14 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     }
 
-    fun userlogin(){
+    fun userlogin(view : Button, view2 : ImageView, context : Context){
 
-        if(user_login.text == "사용자 등록하기"){
+        if(view.text == "사용자 등록하기"){
 
 
 
-            var dialog = AlertDialog.Builder(this).create()
-            var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_user_login, null)
+            var dialog = AlertDialog.Builder(context).create()
+            var dialog_view = LayoutInflater.from(context).inflate(R.layout.activity_user_login, null)
 
             dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
@@ -200,11 +201,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog.setCanceledOnTouchOutside(false)
 
 
-            //////////😎😎😎서명을 위한 공간😎😎😎//////////
-            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
             canvasView = dialog_view.canvas
-            //////////😎😎😎서명을 위한 공간😎😎😎//////////
-            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
 
             dialog_view.user_name.addTextChangedListener(object : TextWatcher {
@@ -300,9 +301,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 MainActivity.user_first_serial = dialog_view.first_serial.text.toString()
                 MainActivity.user_last_serial = dialog_view.last_serial.text.toString()
 
-                Toast.makeText(applicationContext, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
-                user_login.setText(MainActivity.login_user_name+"님")
-                user_image.setImageResource(R.drawable.exit)
+                Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
+                view.setText(MainActivity.login_user_name+"님")
+                view2.setImageResource(R.drawable.exit)
                 dialog.dismiss()
 
             }
@@ -312,15 +313,15 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog.show()
         }
 
-        if(user_login.text == MainActivity.login_user_name+"님"){
+        if(view.text == MainActivity.login_user_name+"님"){
 
             MainActivity.login_user_name = ""
             MainActivity.user_first_serial = ""
             MainActivity.user_last_serial = ""
 
-            Toast.makeText(applicationContext, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
-            user_login.setText("사용자 등록하기")
-            user_image.setImageResource(R.drawable.regi)
+            Toast.makeText(context, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
+            view.setText("사용자 등록하기")
+            view2.setImageResource(R.drawable.regi)
 
         }
 
