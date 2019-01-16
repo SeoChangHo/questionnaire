@@ -276,22 +276,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
-                var canvas: Canvas? = dialog_view.canvas.mCanvas
-                var bitmap:Bitmap? = dialog_view.canvas.mbitmap
+                var bitmap:Bitmap = Bitmap.createBitmap(canvasView.width, canvasView.height, Bitmap.Config.ARGB_8888)
+                var canvas:Canvas = Canvas(bitmap)
+                canvasView.draw(canvas)
 
-                if(bitmap!=null){
-                    // Save the bitmap to a file and display it into image view
-                    val uri = bitmapToFile(bitmap)
-                    //testimg.setImageURI(uri)
-
-                    // Display the saved bitmap's uri in text view
-                    println(uri.toString())
-
-                    // Show a toast message
-                    println("Bitmap saved in a file.")
-                }else{
-                    println("bitmap not found.")
-                }
+                MainActivity.user_signature = bitmap
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
@@ -498,6 +487,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var login_user_name = ""
         var user_first_serial = ""
         var user_last_serial = ""
+        var user_signature:Bitmap? = null
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{

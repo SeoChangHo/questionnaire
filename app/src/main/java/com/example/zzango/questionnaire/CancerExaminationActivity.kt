@@ -95,7 +95,16 @@ class CancerExaminationActivity : RootActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
         setContentView(R.layout.activity_cancer_exam)
+
+        //서명정보 가져오는거
+        if(MainActivity.user_signature!=null)
+        {
+            Signature.setImageBitmap(MainActivity.user_signature)
+        }
 
         sql_db = LocalDBhelper(this).writableDatabase
 

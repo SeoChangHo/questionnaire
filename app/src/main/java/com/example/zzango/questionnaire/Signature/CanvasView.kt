@@ -19,10 +19,10 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
 
     init {
         mPaint.isAntiAlias = true
-        mPaint.color = Color.rgb(255,94,0)
+        mPaint.color = Color.rgb(0,0,0)
         mPaint.style = Paint.Style.STROKE
         mPaint.strokeJoin = Paint.Join.ROUND
-        mPaint.strokeWidth = 4f
+        mPaint.strokeWidth = 8f
     }
 
     override fun onDraw(canvas: Canvas?) {
