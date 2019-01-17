@@ -8,12 +8,13 @@ import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import android.widget.RadioButton
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.Paper_ORAL
 import com.google.gson.annotations.Expose
@@ -59,6 +60,8 @@ class OralExaminationActivity : RootActivity() {
                          @SerializedName("oral_18") @Expose var oral_18 : String,
                          @SerializedName("oral_19") @Expose var oral_19 : String,
                          @SerializedName("oral_20") @Expose var oral_20 : String)
+
+
 
     override fun onCreate(savedInstanceState: Bundle?){
 

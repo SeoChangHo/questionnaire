@@ -2,9 +2,14 @@ package com.example.zzango.questionnaire
 
 
 import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
@@ -19,24 +24,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import com.example.zzango.questionnaire.Signature.CanvasView
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_user_login.*
 import kotlinx.android.synthetic.main.activity_user_login.view.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_location.view.*
-import android.content.ContextWrapper
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Canvas
-import android.net.Uri
-import android.widget.ImageView
-import kotlinx.android.synthetic.main.activity_common_exam.*
 import java.io.*
 import java.util.*
-import java.util.stream.Stream
 
 
 class MainActivity : AppCompatActivity() , View.OnClickListener {
@@ -129,10 +126,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             override fun afterTextChanged(s: Editable?) {
                 if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
                     dialog_view.Login.isClickable = true
-                    dialog_view.Login.setBackgroundColor(Color.parseColor("#2B53A2"))
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button_blue)
                 }else{
                     dialog_view.Login.isClickable = false
-                    dialog_view.Login.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button)
                 }
             }
 
@@ -149,10 +146,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             override fun afterTextChanged(s: Editable?) {
                 if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
                     dialog_view.Login.isClickable = true
-                    dialog_view.Login.setBackgroundColor(Color.parseColor("#2B53A2"))
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button_blue)
                 }else{
                     dialog_view.Login.isClickable = false
-                    dialog_view.Login.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button)
                 }
             }
 
@@ -215,10 +212,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 override fun afterTextChanged(s: Editable?) {
                     if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
                         dialog_view.user_login_button.isClickable = true
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
                         dialog_view.user_login_button.isClickable = false
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
 
@@ -243,12 +240,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                         if(ValidationBool)
                         {
                             dialog_view.user_login_button.isClickable = true
-                            dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                         }
 
                     }else{
                         dialog_view.user_login_button.isClickable = false
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
 
@@ -270,7 +267,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                         else
                         {
                             dialog_view.user_login_button.isClickable = false
-                            dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                         }
 
                     }
@@ -278,7 +275,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     {
                         ValidationBool = false
                         dialog_view.user_login_button.isClickable = false
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
             })
@@ -288,11 +285,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
                         if(ValidationBool) {
                             dialog_view.user_login_button.isClickable = true
-                            dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                         }
                     }else{
                         dialog_view.user_login_button.isClickable = false
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
 
