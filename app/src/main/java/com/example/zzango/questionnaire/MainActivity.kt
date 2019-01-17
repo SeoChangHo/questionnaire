@@ -197,7 +197,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             dialog.setView(dialog_view)
             dialog.setCanceledOnTouchOutside(false)
-
+            dialog_view.user_login_button.isClickable = false
 
 
 
