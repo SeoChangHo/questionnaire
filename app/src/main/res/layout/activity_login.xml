@@ -9,7 +9,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout7"
         android:layout_width="500dp"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -39,7 +39,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout8"
         android:layout_width="500dp"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -95,7 +95,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="500dp"
-        android:layout_height="150dp"
+        android:layout_height="160dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -108,20 +108,18 @@
         <Button
             android:id="@+id/Login"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/lightGray"
-            android:text="확인"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/user_login_button"
             android:clickable="false"
+            android:text="확인"
             android:textColor="@color/backGround"
             android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

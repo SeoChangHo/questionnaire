@@ -2,13 +2,14 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout11"
         android:layout_width="500dp"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -29,7 +30,7 @@
             android:layout_marginStart="60dp"
             android:text="사용자 등록"
             android:textColor="@color/navy"
-            android:textSize="25dp"
+            android:textSize="30dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -62,13 +63,13 @@
             android:ems="10"
             android:hint="이름"
             android:inputType="text"
+            android:textSize="20dp"
             android:textCursorDrawable="@color/mainBlue"
             app:layout_constraintBottom_toTopOf="@+id/first_serial"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.238" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/first_serial"
@@ -83,6 +84,7 @@
             android:hint="주민번호 앞자리"
             android:maxLength="6"
             android:inputType="number"
+            android:textSize="20dp"
             android:textCursorDrawable="@color/mainBlue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -116,6 +118,7 @@
             android:hint="뒤에1자리"
             android:maxLength="1"
             android:inputType="number"
+            android:textSize="20dp"
             android:textCursorDrawable="@color/mainBlue"
             app:layout_constraintBottom_toBottomOf="@+id/first_serial"
             app:layout_constraintEnd_toEndOf="parent"
@@ -125,20 +128,57 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout16"
-        android:background="@color/lightGray"
         android:layout_width="500dp"
-        android:layout_height="200dp"
+        android:layout_height="240dp"
+        android:background="@color/backGround"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout12">
 
-        <com.example.zzango.questionnaire.Signature.CanvasView
-            android:id = "@+id/canvas"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            />
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout17"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@color/backGround"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView72"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginStart="62dp"
+                android:text="아래에 서명해주세요."
+                android:textColor="@color/navy"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:layout_marginEnd="62dp"
+            android:layout_marginLeft="62dp"
+            android:layout_marginRight="62dp"
+            android:layout_marginStart="62dp"
+            android:background="@drawable/user_sign_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout17">
+
+            <com.example.zzango.questionnaire.Signature.CanvasView
+                android:id="@+id/canvas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+        </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>
 
@@ -157,20 +197,18 @@
         <Button
             android:id="@+id/user_login_button"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/lightGray"
-            android:text="확인"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/user_login_button"
             android:clickable="false"
+            android:text="확인"
             android:textColor="@color/backGround"
             android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

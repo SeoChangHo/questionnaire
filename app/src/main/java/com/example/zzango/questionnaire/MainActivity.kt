@@ -2,9 +2,14 @@ package com.example.zzango.questionnaire
 
 
 import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
@@ -19,24 +24,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import com.example.zzango.questionnaire.Signature.CanvasView
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_user_login.*
 import kotlinx.android.synthetic.main.activity_user_login.view.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_location.view.*
-import android.content.ContextWrapper
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Canvas
-import android.net.Uri
-import android.widget.ImageView
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-import java.io.OutputStream
+import java.io.*
 import java.util.*
 
 
@@ -124,14 +120,16 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         dialog.setCanceledOnTouchOutside(false)
 
 
+
+
         dialog_view.login_id.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
                     dialog_view.Login.isClickable = true
-                    dialog_view.Login.setBackgroundColor(Color.parseColor("#2B53A2"))
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button_blue)
                 }else{
                     dialog_view.Login.isClickable = false
-                    dialog_view.Login.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button)
                 }
             }
 
@@ -148,10 +146,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             override fun afterTextChanged(s: Editable?) {
                 if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
                     dialog_view.Login.isClickable = true
-                    dialog_view.Login.setBackgroundColor(Color.parseColor("#2B53A2"))
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button_blue)
                 }else{
                     dialog_view.Login.isClickable = false
-                    dialog_view.Login.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button)
                 }
             }
 
@@ -199,6 +197,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             dialog.setView(dialog_view)
             dialog.setCanceledOnTouchOutside(false)
+            dialog_view.user_login_button.isClickable = false
+
 
 
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
@@ -212,10 +212,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 override fun afterTextChanged(s: Editable?) {
                     if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
                         dialog_view.user_login_button.isClickable = true
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
                         dialog_view.user_login_button.isClickable = false
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
 
@@ -228,14 +228,24 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 }
             })
 
+            var ValidationBool:Boolean = false
+
             dialog_view.first_serial.addTextChangedListener(object : TextWatcher {
+
+
+
                 override fun afterTextChanged(s: Editable?) {
                     if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
-                        dialog_view.user_login_button.isClickable = true
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+
+                        if(ValidationBool)
+                        {
+                            dialog_view.user_login_button.isClickable = true
+                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                        }
+
                     }else{
                         dialog_view.user_login_button.isClickable = false
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
 
@@ -245,7 +255,27 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     if(s!!.length==6){
-                        dialog_view.last_serial.requestFocus()
+
+                        var Jumin = dialog_view.first_serial.text.toString()
+
+                        ValidationBool = JuminValidation(Jumin)
+
+                        if(ValidationBool)
+                        {
+                            dialog_view.last_serial.requestFocus()
+                        }
+                        else
+                        {
+                            dialog_view.user_login_button.isClickable = false
+                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                        }
+
+                    }
+                    else if(s!!.length<6)
+                    {
+                        ValidationBool = false
+                        dialog_view.user_login_button.isClickable = false
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
             })
@@ -253,11 +283,13 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog_view.last_serial.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
                     if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
-                        dialog_view.user_login_button.isClickable = true
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#2B53A2"))
+                        if(ValidationBool) {
+                            dialog_view.user_login_button.isClickable = true
+                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                        }
                     }else{
                         dialog_view.user_login_button.isClickable = false
-                        dialog_view.user_login_button.setBackgroundColor(Color.parseColor("#b1b1b1"))
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
 
@@ -280,7 +312,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 var canvas:Canvas = Canvas(bitmap)
                 canvasView.draw(canvas)
 
-                MainActivity.user_signature = bitmap
+                var stream = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                //MainActivity.user_signature = bitmap
+
+                MainActivity.user_stream = stream.toByteArray()
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
@@ -487,7 +523,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var login_user_name = ""
         var user_first_serial = ""
         var user_last_serial = ""
-        var user_signature:Bitmap? = null
+        var user_stream:ByteArray? = null
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{
@@ -519,6 +555,64 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             e.printStackTrace()
         }
         return Uri.parse(file.absolutePath)
+    }
+
+    fun JuminValidation(Jumin:String): Boolean
+    {
+
+        var yy = Jumin.substring(0,2)
+        var mm = Jumin.substring(2,4)
+        var dd = Jumin.substring(4,6)
+
+        println(yy+" "+mm+" "+dd)
+
+        if(mm.toInt()==0)
+        {
+            Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        else if(12<mm.toInt())
+        {
+            Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        if(dd.toInt()==0)
+        {
+            Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        //1 3 5 7 9 10  12
+        //   4 6 8    11
+        // 2
+
+        //31일까지 있는 달일 때
+        if(mm.toInt()==1 || mm.toInt()==3 ||mm.toInt()==5 ||mm.toInt()==7 ||mm.toInt()==9 ||mm.toInt()==10 ||mm.toInt()==12)
+        {
+            if(31<dd.toInt())
+            {
+                Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+                return false
+            }
+        }//30일까지 있는 달일 때
+        else if(mm.toInt()==4 || mm.toInt()==6 ||mm.toInt()==8 ||mm.toInt()==11)
+        {
+            if(30<dd.toInt())
+            {
+                Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+                return false
+            }
+        }//2월일때 (윤달 미포함)
+        else if(mm.toInt()==2)
+        {
+            if(29<dd.toInt())
+            {
+                Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+                return false
+            }
+        }
+
+        return true
     }
 
 
