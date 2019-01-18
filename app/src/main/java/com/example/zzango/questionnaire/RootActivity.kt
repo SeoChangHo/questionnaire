@@ -31,11 +31,19 @@ open class RootActivity : AppCompatActivity() {
 
             if(view !is RadioButton){
 
+                (view.parent as View).isFocusableInTouchMode = true
+
                 (view.parent as View).requestFocus()
+
+                (view.parent as View).isFocusableInTouchMode = false
 
             }else{
 
+                (view.parent.parent as View).isFocusableInTouchMode = true
+
                 (view.parent.parent as View).requestFocus()
+
+                (view.parent.parent as View).isFocusableInTouchMode = false
 
             }
 

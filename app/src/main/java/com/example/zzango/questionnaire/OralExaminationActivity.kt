@@ -136,6 +136,8 @@ class OralExaminationActivity : RootActivity() {
 
             if(view != oral_9_etc) {
 
+                oral_exam_inside_scroll_layout.isFocusableInTouchMode = true
+
                 //포커스 이동을 강제로 만들기 위함
                 oral_exam_inside_scroll_layout.requestFocus()
                 (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(window.decorView.windowToken, 0)
@@ -147,6 +149,8 @@ class OralExaminationActivity : RootActivity() {
                     oral_9_count.setText("")
 
                 }
+
+                oral_exam_inside_scroll_layout.isFocusableInTouchMode = false
 
             }else{
 
