@@ -114,6 +114,8 @@ class CancerExaminationActivity : RootActivity(){
 
             checkCondition(isChecked, cancer_1_true_detail)
 
+            editTextCondition(isChecked, cancer_editText1)
+
         }
 
         cancer_2_2.setOnCheckedChangeListener {
@@ -121,6 +123,8 @@ class CancerExaminationActivity : RootActivity(){
             buttonView, isChecked ->
 
             checkCondition(isChecked, cancer_2_false_detail)
+
+            editTextCondition(isChecked, cancer_editText2)
 
         }
 
@@ -172,6 +176,8 @@ class CancerExaminationActivity : RootActivity(){
 
             checkCondition(isChecked, cancer_3_6_1_editText)
 
+            editTextCondition(isChecked, cancer_3_6_1_editText)
+
         }
 
         cancer_8_1.setOnCheckedChangeListener {
@@ -180,6 +186,8 @@ class CancerExaminationActivity : RootActivity(){
 
             checkCondition(isChecked, cancer_8_detail)
 
+            editTextCondition(isChecked, cancer_editText3)
+
         }
 
         cancer_9_3.setOnCheckedChangeListener {
@@ -187,6 +195,8 @@ class CancerExaminationActivity : RootActivity(){
             buttonView, isChecked ->
 
             checkCondition(isChecked, cancer_9_detail)
+
+            editTextCondition(isChecked, cancer_editText4)
 
         }
 

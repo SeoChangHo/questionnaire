@@ -24,6 +24,16 @@ open class RootActivity : AppCompatActivity() {
 
     }
 
+    fun editTextCondition(bool: Boolean, editText: EditText){
+
+        if(!bool){
+
+            editText.setText("")
+
+        }
+
+    }
+
     //뷰에 포커스를 총괄하는 메서드
     open fun focusControl(view : View){
 

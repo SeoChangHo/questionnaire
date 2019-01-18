@@ -258,7 +258,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                         var Jumin = dialog_view.first_serial.text.toString()
 
-                        ValidationBool = JuminValidation(Jumin)
+                        ValidationBool = JuminValidation(Jumin, context)
 
                         if(ValidationBool)
                         {
@@ -557,7 +557,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         return Uri.parse(file.absolutePath)
     }
 
-    fun JuminValidation(Jumin:String): Boolean
+    fun JuminValidation(Jumin : String, context : Context): Boolean
     {
 
         var yy = Jumin.substring(0,2)
@@ -568,18 +568,18 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         if(mm.toInt()==0)
         {
-            Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
             return false
         }
         else if(12<mm.toInt())
         {
-            Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
             return false
         }
 
         if(dd.toInt()==0)
         {
-            Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
             return false
         }
         //1 3 5 7 9 10  12
@@ -591,7 +591,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         {
             if(31<dd.toInt())
             {
-                Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
                 return false
             }
         }//30일까지 있는 달일 때
@@ -599,7 +599,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         {
             if(30<dd.toInt())
             {
-                Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
                 return false
             }
         }//2월일때 (윤달 미포함)
@@ -607,7 +607,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         {
             if(29<dd.toInt())
             {
-                Toast.makeText(applicationContext, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "주민번호 앞자리 형식을 확인해주세요.", Toast.LENGTH_SHORT).show()
                 return false
             }
         }
