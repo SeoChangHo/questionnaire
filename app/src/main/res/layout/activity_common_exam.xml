@@ -62,38 +62,48 @@
                 android:id="@+id/name_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="성명 : "
                 android:textSize="20dp"
-                app:layout_constraintEnd_toStartOf="@+id/name_edit"
-                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
             <TextView
                 android:id="@+id/name_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:maxWidth="100dp"
                 android:minWidth="100dp"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/name_text"
-                app:layout_constraintEnd_toStartOf="@+id/number_text"
                 app:layout_constraintStart_toEndOf="@+id/name_text"
                 app:layout_constraintTop_toTopOf="@+id/name_text" />
+
+            <ImageView
+                android:id="@+id/Signature"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp"
+                android:background="@drawable/user_sign_background"
+                app:layout_constraintBottom_toBottomOf="@+id/name_edit"
+                app:layout_constraintStart_toEndOf="@+id/name_edit"
+                app:layout_constraintTop_toTopOf="@+id/name_edit" />
 
             <TextView
                 android:id="@+id/number_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginTop="32dp"
                 android:text="주민등록번호 : "
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/name_text"
-                app:layout_constraintEnd_toStartOf="@+id/first_serial"
-                app:layout_constraintStart_toEndOf="@+id/name_edit" />
+                app:layout_constraintStart_toStartOf="@+id/name_text"
+                app:layout_constraintTop_toBottomOf="@+id/name_text" />
 
             <TextView
                 android:id="@+id/first_serial"
@@ -115,9 +125,10 @@
                 android:id="@+id/number_hyphen"
                 android:layout_width="10dp"
                 android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:background="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/first_serial"
-                app:layout_constraintEnd_toStartOf="@+id/last_serial"
                 app:layout_constraintStart_toEndOf="@+id/first_serial"
                 app:layout_constraintTop_toTopOf="@+id/first_serial" />
 
@@ -126,15 +137,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:maxWidth="90dp"
                 android:minWidth="90dp"
                 android:textAlignment="center"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/first_serial"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintBottom_toBottomOf="@+id/number_hyphen"
                 app:layout_constraintStart_toEndOf="@+id/number_hyphen"
-                app:layout_constraintTop_toTopOf="@+id/first_serial"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="@+id/number_hyphen" />
 
             <TextView
                 android:id="@+id/family_medical_history"
@@ -148,7 +158,7 @@
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/family_medical_history_question1"
-                app:layout_constraintTop_toBottomOf="@+id/name_text" />
+                app:layout_constraintTop_toBottomOf="@+id/number_text" />
 
             <TextView
                 android:id="@+id/family_medical_history_question1"
@@ -172,9 +182,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="32dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="@+id/last_serial"
+                app:layout_constraintEnd_toEndOf="@+id/family_medical_history_question1"
                 app:layout_constraintStart_toStartOf="@+id/family_medical_history_question1"
                 app:layout_constraintTop_toBottomOf="@+id/family_medical_history_question1">
 
@@ -209,7 +221,7 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/diagnosis_medication_constraint_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="47dp"
+                    android:layout_height="50dp"
                     android:background="#EDECF2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -304,28 +316,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_stroke"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_stroke"
-                    android:onClick="focusControl"/>
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_stroke" />
 
                 <CheckBox
                     android:id="@+id/diagnosis_medication_stroke_medication_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_stroke_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_stroke_examination_check"
-                    android:onClick="focusControl"/>
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_stroke_examination_check" />
 
                 <TextView
                     android:id="@+id/diagnosis_medication_myocardial_infarction"
@@ -343,28 +355,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_myocardial_infarction"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_myocardial_infarction"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_myocardial_infarction" />
 
                 <CheckBox
                     android:id="@+id/diagnosis_medication_myocardial_medication_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_myocardial_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_myocardial_examination_check"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_myocardial_examination_check" />
 
                 <TextView
                     android:id="@+id/diagnosis_medication_high_blood_pressure"
@@ -382,28 +394,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_high_blood_pressure"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_high_blood_pressure"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_high_blood_pressure" />
 
                 <CheckBox
                     android:id="@+id/diagnosis_medication_high_blood_pressure_medication_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_high_blood_pressure_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_high_blood_pressure_examination_check"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_high_blood_pressure_examination_check" />
 
                 <TextView
                     android:id="@+id/diagnosis_medication_diabetes"
@@ -421,28 +433,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_diabetes"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_diabetes"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_diabetes" />
 
                 <CheckBox
                     android:id="@+id/diagnosis_medication_diabetes_medication_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_diabetes_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_diabetes_examination_check"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_diabetes_examination_check" />
 
                 <TextView
                     android:id="@+id/diagnosis_medication_dyslipidemia"
@@ -460,28 +472,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_dyslipidemia"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_dyslipidemia"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_dyslipidemia" />
 
                 <CheckBox
                     android:id="@+id/diagnosis_medication_dyslipidemia_medication_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_dyslipidemia_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_dyslipidemia_examination_check"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_dyslipidemia_examination_check" />
 
                 <TextView
                     android:id="@+id/diagnosis_medication_tuberculosis"
@@ -499,28 +511,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_tuberculosis"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_tuberculosis"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_tuberculosis" />
 
                 <CheckBox
                     android:id="@+id/diagnosis_medication_tuberculosis_medication_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_tuberculosis_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_tuberculosis_examination_check"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_tuberculosis_examination_check" />
 
                 <TextView
                     android:id="@+id/diagnosis_medication_etc"
@@ -538,28 +550,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_etc"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc" />
 
                 <CheckBox
                     android:id="@+id/diagnosis_medication_etc_medication_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_etc_examination_check"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
-                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc_examination_check"
-                    android:onClick="focusControl" />
+                    app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc_examination_check" />
 
 
                 <View
@@ -3373,7 +3385,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginBottom="50dp"
-                android:background="@color/mainBlue"
+                android:background="@drawable/button_main_blue"
                 android:text="저장"
                 android:textColor="@color/backGround"
                 android:textSize="20dp"
@@ -3392,7 +3404,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="50dp"
-                android:background="@color/mainBlue"
+                android:background="@drawable/button_main_blue"
                 android:text="취소"
                 android:textColor="@color/backGround"
                 android:textSize="20dp"
