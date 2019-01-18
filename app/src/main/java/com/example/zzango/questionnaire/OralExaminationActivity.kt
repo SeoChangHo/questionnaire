@@ -124,7 +124,7 @@ class OralExaminationActivity : RootActivity() {
 
             GetPaper(paper)
         }else{
-            oral_questionnaire_name_input.setText(MainActivity.login_user_name)
+            name_edit.setText(MainActivity.login_user_name)
             first_serial.setText(MainActivity.user_first_serial)
             last_serial.setText(MainActivity.user_last_serial)
         }
@@ -328,9 +328,9 @@ class OralExaminationActivity : RootActivity() {
         var oral_15 = ""
         var oral_20 = ""
 
-        if(!oral_questionnaire_name_input.text.isNullOrEmpty()){
+        if(!name_edit.text.isNullOrEmpty()){
 
-            name = oral_questionnaire_name_input.text.toString()
+            name = name_edit.text.toString()
 
         }else{
 
@@ -718,7 +718,7 @@ class OralExaminationActivity : RootActivity() {
 
     fun GetPaper(paper:Paper_ORAL)
     {
-        oral_questionnaire_name_input.setText(paper.name)
+        name_edit.setText(paper.name)
         first_serial.setText(paper.first_serial)
         last_serial.setText(paper.last_serial)
 
