@@ -5,10 +5,11 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +18,6 @@ import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.Paper_EXERCISE
-import com.example.zzango.questionnaire.LocalList.Paper_ORAL
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_exercise_exam.*
@@ -78,6 +78,14 @@ class ExerciseExaminationActivity : RootActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise_exam)
+
+
+        //서명정보 가져오는거
+        if(MainActivity.user_stream!=null)
+        {
+            var bmp: Bitmap = BitmapFactory.decodeByteArray(MainActivity.user_stream,0,MainActivity.user_stream!!.size)
+            Signature.setImageBitmap(bmp)
+        }
 
         sql_db = LocalDBhelper(this).writableDatabase
 
