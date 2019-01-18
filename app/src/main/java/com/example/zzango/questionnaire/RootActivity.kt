@@ -1,6 +1,7 @@
 package com.example.zzango.questionnaire
 
 import android.content.Context
+import android.support.constraint.ConstraintLayout
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -41,11 +42,23 @@ open class RootActivity : AppCompatActivity() {
 
             if(view !is RadioButton){
 
-                (view.parent as View).isFocusableInTouchMode = true
+                if(view is ConstraintLayout) {
 
-                (view.parent as View).requestFocus()
+                    (view as View).isFocusableInTouchMode = true
 
-                (view.parent as View).isFocusableInTouchMode = false
+                    view.requestFocus()
+
+                    (view as View).isFocusableInTouchMode = false
+
+                }else {
+
+                    (view.parent as View).isFocusableInTouchMode = true
+
+                    (view.parent as View).requestFocus()
+
+                    (view.parent as View).isFocusableInTouchMode = false
+
+                }
 
             }else{
 
