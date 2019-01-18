@@ -199,7 +199,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog.setCanceledOnTouchOutside(false)
             dialog_view.user_login_button.isClickable = false
 
-
+            var ValidationBool:Boolean = false
 
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
@@ -210,9 +210,13 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             dialog_view.user_name.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
-                    if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
-                        dialog_view.user_login_button.isClickable = true
-                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                    if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != "")
+                    {
+                        if(ValidationBool)
+                        {
+                            dialog_view.user_login_button.isClickable = true
+                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                        }
                     }else{
                         dialog_view.user_login_button.isClickable = false
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
@@ -228,7 +232,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 }
             })
 
-            var ValidationBool:Boolean = false
 
             dialog_view.first_serial.addTextChangedListener(object : TextWatcher {
 
