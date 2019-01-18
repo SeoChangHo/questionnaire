@@ -227,6 +227,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 }
 
+
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
                 }
