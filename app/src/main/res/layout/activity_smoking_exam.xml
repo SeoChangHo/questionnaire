@@ -755,7 +755,7 @@
             </RadioGroup>
 
             <Button
-                android:id="@+id/smoking_examination_save"
+                android:id="@+id/smoking_examination_next"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -764,7 +764,7 @@
                 android:layout_marginTop="100dp"
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/button_main_blue"
-                android:text="저장"
+                android:text="다음"
                 android:textColor="@color/backGround"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -790,7 +790,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/smoking_examination_save"
+                app:layout_constraintStart_toEndOf="@+id/smoking_examination_next"
                 app:layout_constraintTop_toBottomOf="@+id/smoking_8_radio" />
 
             <Button

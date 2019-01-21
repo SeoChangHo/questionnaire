@@ -25,15 +25,17 @@ import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class DrinkingExaminationActivity : RootActivity(){
 
+    var set_result : ArrayList<Any>? = null
     var exam_result : ArrayList<DrinkingExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
-    var popup = false
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -53,13 +55,18 @@ class DrinkingExaminationActivity : RootActivity(){
                          @SerializedName("sg2_spDrink8") @Expose var sg2_spDrink8 : String,
                          @SerializedName("sg2_spDrink9") @Expose var sg2_spDrink9 : String,
                          @SerializedName("sg2_spDrink10") @Expose var sg2_spDrink10 : String,
-                         @SerializedName("sg2_spDrinkSum") @Expose var sg2_spDrinkSum : String)
+                         @SerializedName("sg2_spDrinkSum") @Expose var sg2_spDrinkSum : String) :Serializable
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drinking_exam)
 
+        if(intent.hasExtra("set")){
+
+            set_result = intent.getSerializableExtra("set") as ArrayList<Any>?
+
+        }
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
@@ -84,22 +91,24 @@ class DrinkingExaminationActivity : RootActivity(){
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-        drinking_examination_save.setOnClickListener {
+        drinking_examination_next.setOnClickListener {
 
             if(check()){
 
-                login_appbar_loading_progress.visibility = View.VISIBLE
-                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                login_appbar_loading_progress.visibility = View.VISIBLE
+//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//
+//                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
+//
+//                    drinking_exam_local_insert()
+//
+//                }else{
+//
+//                    drinking_exam_server_insert()
+//
+//                }
 
-                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
-
-                    drinking_exam_local_insert()
-
-                }else{
-
-                    drinking_exam_server_insert()
-
-                }
+                startActivity(Intent(this@DrinkingExaminationActivity, ExerciseExaminationActivity::class.java).putExtra("set", set_result).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             }
 
@@ -107,7 +116,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
         drinking_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 
@@ -479,6 +488,8 @@ class DrinkingExaminationActivity : RootActivity(){
 
         exam_result = arr
 
+        set_result!!.add(exam_result!!)
+
         return true
 
     }
@@ -492,7 +503,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
         println(paper)
 
-        drinking_examination_save.visibility = View.GONE
+        drinking_examination_next.visibility = View.GONE
         drinking_examination_cancel.visibility = View.GONE
         drinking_edit_submit.visibility = View.VISIBLE
 

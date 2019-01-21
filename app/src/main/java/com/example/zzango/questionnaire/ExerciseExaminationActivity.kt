@@ -31,9 +31,9 @@ import kotlin.collections.ArrayList
 
 class ExerciseExaminationActivity : RootActivity() {
 
+    var set_result : ArrayList<Any>? = null
     var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
-    var popup = false
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -79,6 +79,11 @@ class ExerciseExaminationActivity : RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise_exam)
 
+        if(intent.hasExtra("set")){
+
+            set_result = intent.getSerializableExtra("set") as ArrayList<Any>?
+
+        }
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
@@ -133,27 +138,29 @@ class ExerciseExaminationActivity : RootActivity() {
 
         }
 
-        exercise_examination_save.setOnClickListener {
+        exercise_examination_next.setOnClickListener {
 
             //check function 리턴하는 boolean 값에 따라 진행
             if(check()){
 
-                //진행상태 표시
-                login_appbar_loading_progress.visibility = View.VISIBLE
-                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                //진행상태 표시
+//                login_appbar_loading_progress.visibility = View.VISIBLE
+//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//
+//                //메인 액티비티에서 네트워크 연결상태가 문자열로 저장돼있다 그걸로 구분한다.
+//                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
+//
+//                    //로컬 저장
+//                    exercise_exam_local_insert()
+//
+//                }else{
+//
+//                    //서버 저장
+//                    exercise_exam_server_insert()
+//
+//                }
 
-                //메인 액티비티에서 네트워크 연결상태가 문자열로 저장돼있다 그걸로 구분한다.
-                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
-
-                    //로컬 저장
-                    exercise_exam_local_insert()
-
-                }else{
-
-                    //서버 저장
-                    exercise_exam_server_insert()
-
-                }
+                startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).putExtra("set", set_result).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             }
 
@@ -161,7 +168,7 @@ class ExerciseExaminationActivity : RootActivity() {
 
         exercise_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 
@@ -327,7 +334,7 @@ class ExerciseExaminationActivity : RootActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
-            startActivity(Intent(this@ExerciseExaminationActivity, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).putExtra("set", set_result).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
 
@@ -793,6 +800,8 @@ class ExerciseExaminationActivity : RootActivity() {
 
         exam_result = arr
 
+        set_result!!.add(exam_result!!)
+
         return true
 
     }
@@ -805,7 +814,7 @@ class ExerciseExaminationActivity : RootActivity() {
 
         println(paper)
 
-        exercise_examination_save.visibility = View.GONE
+        exercise_examination_next.visibility = View.GONE
         exercise_examination_cancel.visibility = View.GONE
         exercise_edit_submit.visibility = View.VISIBLE
 

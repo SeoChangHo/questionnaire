@@ -24,14 +24,16 @@ import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class SmokingExaminationActivity : RootActivity(){
 
+    var set_result : ArrayList<Any>? = null
     var exam_result : ArrayList<SmokingExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
-    var popup = false
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -48,12 +50,11 @@ class SmokingExaminationActivity : RootActivity(){
                          @SerializedName("sg2_spSmoke6") @Expose var sg2_spSmoke6 : String,
                          @SerializedName("sg2_spSmoke7") @Expose var sg2_spSmoke7 : String,
                          @SerializedName("sg2_spSmoke8") @Expose var sg2_spSmoke8 : String,
-                         @SerializedName("sg2_spSmokeSum") @Expose var sg2_spSmokeSum : String)
+                         @SerializedName("sg2_spSmokeSum") @Expose var sg2_spSmokeSum : String) : Serializable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_smoking_exam)
-
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
@@ -77,22 +78,24 @@ class SmokingExaminationActivity : RootActivity(){
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        smoking_examination_save.setOnClickListener {
+        smoking_examination_next.setOnClickListener {
 
             if(check()){
 
-                login_appbar_loading_progress.visibility = View.VISIBLE
-                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                login_appbar_loading_progress.visibility = View.VISIBLE
+//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//
+//                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
+//
+//                    smoking_exam_local_insert()
+//
+//                }else{
+//
+//                    smoking_exam_server_insert()
+//
+//                }
 
-                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
-
-                    smoking_exam_local_insert()
-
-                }else{
-
-                    smoking_exam_server_insert()
-
-                }
+                startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).putExtra("set", set_result).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             }
 
@@ -100,7 +103,7 @@ class SmokingExaminationActivity : RootActivity(){
 
         smoking_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 
@@ -403,6 +406,10 @@ class SmokingExaminationActivity : RootActivity(){
 
         exam_result = arr
 
+        set_result = ArrayList<Any>()
+
+        set_result!!.add(exam_result!!)
+
         return true
 
     }
@@ -416,7 +423,8 @@ class SmokingExaminationActivity : RootActivity(){
 
         println(paper)
 
-        smoking_examination_save.visibility = View.GONE
+//        smoking_examination_save.visibility = View.GONE
+        smoking_examination_next.visibility = View.GONE
         smoking_examination_cancel.visibility = View.GONE
         smoking_edit_submit.visibility = View.VISIBLE
 
