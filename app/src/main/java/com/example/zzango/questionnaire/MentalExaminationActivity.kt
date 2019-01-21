@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_MENTAL
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -128,13 +129,22 @@ class MentalExaminationActivity : RootActivity(){
 
     fun mental_exam_local_insert(){
 
-        println("로컬")
+        if(MainActivity.chart == "2") {
+            println("로컬")
+            LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).commonExaminationDB(sql_db)
+            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
 
-        LocalDBhelper(this).mentalCreate(sql_db)
 
-        LocalDBhelper(this).mentalSaveLocal(sql_db!!, exam_result!!)
+            LocalDBhelper(this).mentalCreate(sql_db)
+            LocalDBhelper(this).mentalSaveLocal(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
+            saveCompleteAlert()
 
-        saveCompleteAlert()
+        }else if(MainActivity.chart == "3"){
+
+        }else if(MainActivity.chart == "6"){
+
+        }
 
     }
 
@@ -142,41 +152,80 @@ class MentalExaminationActivity : RootActivity(){
 
         println("서버")
 
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        if(MainActivity.chart == "2") {
 
-        OracleUtill().mental_examination().mentalServer(exam_result!!).enqueue(object : Callback<String> {
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
+            OracleUtill().common_examination().commonServer(PaperArray.PaperList.Arr_COMMON!!).enqueue(object : Callback<String> {
 
-                if (response.isSuccessful) {
+                override fun onResponse(call: Call<String>, response: Response<String>) {
 
-                    if (!response.body()!!.equals("S")) {
+                    if (response.isSuccessful) {
 
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                        if (!response.body()!!.equals("S")) {
 
-                    } else {
+                            login_appbar_loading_progress.visibility = View.GONE
+                            login_appbar_loading_progress_bg.visibility = View.GONE
+                            this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
-                        saveCompleteAlert()
+                        } else {
+
+                            OracleUtill().mental_examination().mentalServer(PaperArray.PaperList.Arr_MENTAL!!).enqueue(object : Callback<String> {
+
+                                override fun onResponse(call: Call<String>, response: Response<String>) {
+
+                                    if (response.isSuccessful) {
+
+                                        if (!response.body()!!.equals("S")) {
+
+                                            login_appbar_loading_progress.visibility = View.GONE
+                                            login_appbar_loading_progress_bg.visibility = View.GONE
+                                            this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                            Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+
+                                        } else {
+
+                                            saveCompleteAlert()
+
+                                        }
+
+                                    }
+
+                                }
+
+                                override fun onFailure(call: Call<String>, t: Throwable) {
+
+                                    login_appbar_loading_progress.visibility = View.GONE
+                                    login_appbar_loading_progress_bg.visibility = View.GONE
+                                    this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                    Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                                    println(t.toString())
+                                }
+
+                            })
+
+                        }
 
                     }
 
                 }
 
-            }
+                override fun onFailure(call: Call<String>, t: Throwable) {
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+                    login_appbar_loading_progress.visibility = View.GONE
+                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                    println(t.toString())
+                }
+            })
 
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
-                this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                println(t.toString())
-            }
+        }else if(MainActivity.chart == "3"){
 
-        })
+        }else if(MainActivity.chart == "6"){
+
+        }
 
     }
 
@@ -421,6 +470,10 @@ class MentalExaminationActivity : RootActivity(){
                 exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
                 mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum
         ))
+
+        PaperArray.PaperList.Arr_MENTAL!!.add(Paper_MENTAL(exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum))
+
 
         exam_result = arr
 

@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.zzango.questionnaire.LocalList.CustomAdapter
 import com.example.zzango.questionnaire.LocalList.Paper
+import com.example.zzango.questionnaire.LocalList.Paper_COMMON
+import com.example.zzango.questionnaire.LocalList.Paper_MENTAL
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
 
@@ -476,14 +478,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun commonSaveLocal(db : SQLiteDatabase, ex : ArrayList<CommonExaminationActivity.ExamInfo>){
+    fun commonSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_COMMON>){
 
         val columnValue = ex.get(0)
 
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO COMMON_EXAM" +
                 "(exam_date, exam_no, name, first_serial, last_serial, category, " +
@@ -499,7 +501,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1," +
                 " mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.mj1_1_1}', '${columnValue.mj1_1_2}', '${columnValue.mj1_2_1}'" +
                 ", '${columnValue.mj1_2_2}', '${columnValue.mj1_3_1}', '${columnValue.mj1_3_2}', '${columnValue.mj1_4_1}'" +
                 ", '${columnValue.mj1_4_2}', '${columnValue.mj1_5_1}', '${columnValue.mj1_5_2}', '${columnValue.mj1_6_1}'" +
@@ -526,7 +528,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
 
-    fun mentalSaveLocal(db : SQLiteDatabase, ex : ArrayList<MentalExaminationActivity.ExamInfo>){
+    fun mentalSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_MENTAL>){
 
         val columnValue = ex.get(0)
 
@@ -534,7 +536,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO MENTAL_EXAM" +
                 "(exam_date," +
@@ -546,7 +548,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7," +
                 "mj_mtl_8, mj_mtl_9, mj_mtl_sum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.mj_mtl_1}', '${columnValue.mj_mtl_2}', '${columnValue.mj_mtl_3}', '${columnValue.mj_mtl_4}'" +
                 ", '${columnValue.mj_mtl_5}', '${columnValue.mj_mtl_6}', '${columnValue.mj_mtl_7}', '${columnValue.mj_mtl_8}'" +
                 ", '${columnValue.mj_mtl_9}', '${columnValue.mj_mtl_sum}');")

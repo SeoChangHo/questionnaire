@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_COMMON
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -362,54 +363,72 @@ class CommonExaminationActivity : RootActivity() {
 
     fun common_exam_local_insert(){
 
-        LocalDBhelper(this).onCreate(sql_db)
+        if(MainActivity.chart == "1"){
 
-        LocalDBhelper(this).commonExaminationDB(sql_db)
+            LocalDBhelper(this).onCreate(sql_db)
 
-        LocalDBhelper(this).commonSaveLocal(sql_db!!, exam_result!!)
+            LocalDBhelper(this).commonExaminationDB(sql_db)
 
-        saveCompleteAlert()
+            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!! )
+
+            saveCompleteAlert()
+
+        }else if(MainActivity.chart == "2"){
+
+            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
+
     }
 
     fun common_exam_server_insert(){
 
         println("서버")
 
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        if(MainActivity.chart == "1"){
 
-        OracleUtill().common_examination().commonServer(exam_result!!).enqueue(object : Callback<String> {
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
+            OracleUtill().common_examination().commonServer(PaperArray.PaperList.Arr_COMMON!!).enqueue(object : Callback<String> {
 
-                if (response.isSuccessful) {
+                override fun onResponse(call: Call<String>, response: Response<String>) {
 
-                    if (!response.body()!!.equals("S")) {
+                    if (response.isSuccessful) {
 
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        this@CommonExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(this@CommonExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                        if (!response.body()!!.equals("S")) {
 
-                    } else {
+                            login_appbar_loading_progress.visibility = View.GONE
+                            login_appbar_loading_progress_bg.visibility = View.GONE
+                            this@CommonExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            Toast.makeText(this@CommonExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
-                        saveCompleteAlert()
+                        } else {
+
+                            saveCompleteAlert()
+
+                        }
 
                     }
 
                 }
 
-            }
+                override fun onFailure(call: Call<String>, t: Throwable) {
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+                    login_appbar_loading_progress.visibility = View.GONE
+                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    this@CommonExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(this@CommonExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                    println(t.toString())
+                }
 
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
-                this@CommonExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                Toast.makeText(this@CommonExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                println(t.toString())
-            }
+            })
 
-        })
+        }else if(MainActivity.chart == "2"){
+
+            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
+
 
     }
 
@@ -1110,6 +1129,22 @@ class CommonExaminationActivity : RootActivity() {
                 mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10 ))
 
         exam_result = arr
+
+        PaperArray.PaperArrFunction.ArrayListInit() //<--처음 이닛
+
+        PaperArray.PaperList.Arr_COMMON!!.add(Paper_COMMON(exam_date, exam_no, name,
+                first_serial_text, last_serial_text, category,
+                mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
+                mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1,
+                mj2_2, mj2_3, mj2_4, mj2_5, mj3, mj4, mj4_1_1, mj4_1_2, mj4_2_1,
+                mj4_2_2, mj4_2_3, mj5, mj5_1_1, mj5_1_2, mj5_2_1, mj5_2_2,
+                mj5_2_3, mj6, mj6_1, mj71, mj72, mj73, mj74, mj7_1_11, mj7_1_12, mj7_1_13, mj7_1_14,
+                mj7_1_21, mj7_1_22, mj7_1_23, mj7_1_24, mj7_1_31, mj7_1_32, mj7_1_33,
+                mj7_1_34, mj7_1_41, mj7_1_42, mj7_1_43, mj7_1_44, mj7_1_51, mj7_1_52, mj7_1_53,
+                mj7_1_54, mj7_1_etc, mj7_2_11, mj7_2_12, mj7_2_13, mj7_2_14, mj7_2_21, mj7_2_22,
+                mj7_2_23, mj7_2_24, mj7_2_31, mj7_2_32, mj7_2_33, mj7_2_34, mj7_2_41, mj7_2_42,
+                mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1,
+                mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10))
 
         return true
     }

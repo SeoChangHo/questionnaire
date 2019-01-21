@@ -1,6 +1,7 @@
 package com.example.zzango.questionnaire
 
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
@@ -33,6 +34,7 @@ import kotlinx.android.synthetic.main.activity_user_login.view.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_location.view.*
 import java.io.*
+import java.time.LocalDateTime
 import java.util.*
 
 
@@ -330,10 +332,17 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 MainActivity.user_first_serial = dialog_view.first_serial.text.toString()
                 MainActivity.user_last_serial = dialog_view.last_serial.text.toString()
 
+                chart(user_first_serial)
+
                 Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
                 view.setText(MainActivity.login_user_name+"님")
                 view2.setImageResource(R.drawable.exit)
                 dialog.dismiss()
+
+                //login_appbar_loading_progress.visibility = View.VISIBLE
+                //login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
+                startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             }
 
@@ -528,6 +537,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var user_first_serial = ""
         var user_last_serial = ""
         var user_stream:ByteArray? = null
+        var chart = ""
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{
@@ -619,5 +629,59 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         return true
     }
 
+    @SuppressLint("NewApi")
+    fun chart(Jumin : String){
+
+        var yy = Jumin.substring(0,2)
+
+        var currentDateTime = LocalDateTime.now()
+        var currentYear = currentDateTime.year
+
+        //만 20세, 30세
+        var two = (currentYear - 20).toString().substring(2,4)
+        var two2 = (currentYear - 30).toString().substring(2,4)
+        //만 40세, 50세, 60세
+        var three = (currentYear - 40).toString().substring(2,4)
+        var three2 = (currentYear - 50).toString().substring(2,4)
+        var three3 = (currentYear - 60).toString().substring(2,4)
+        //만 66세, 80세
+        var four = (currentYear - 66).toString().substring(2,4)
+        var four2 = (currentYear - 80).toString().substring(2,4)
+        //만 68세, 72세, 74세, 76세, 77세, 82세, 84세, 86세
+        var five = (currentYear - 68).toString().substring(2,4)
+        var five2 = (currentYear - 72).toString().substring(2,4)
+        var five3 = (currentYear - 74).toString().substring(2,4)
+        var five4 = (currentYear - 76).toString().substring(2,4)
+        var five5 = (currentYear - 77).toString().substring(2,4)
+        var five6 = (currentYear - 82).toString().substring(2,4)
+        var five7= (currentYear - 84).toString().substring(2,4)
+        var five8 = (currentYear - 86).toString().substring(2,4)
+        //만 70세
+        var six = (currentYear - 70).toString().substring(2,4)
+
+        println(two + two2)
+
+
+        if(yy == two || yy == two2){
+            //우울증 포함
+            MainActivity.chart = "2"
+        }else if(yy == three || yy == three2 || yy == three3 ){
+            //우울증 생활습관 포함
+            MainActivity.chart = "3"
+        }else if(yy == four || yy == four2){
+            //인지기능 노인신체기능검사 포함
+            MainActivity.chart = "4"
+        }else if(yy == five || yy == five2 || yy == five3 || yy == five4 || yy == five5 || yy == five6 || yy == five7 || yy == five8){
+            //인지기능 포함
+            MainActivity.chart = "5"
+        }else if(yy == six){
+            //인지기능 우울증 생활습관 노인신체기능검사 포함
+            MainActivity.chart = "6"
+        }else{
+            //기본검사
+            MainActivity.chart = "1"
+        }
+
+    }
 
 }
