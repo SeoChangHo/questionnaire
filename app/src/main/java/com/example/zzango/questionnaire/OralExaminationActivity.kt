@@ -382,11 +382,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_1_true.isChecked) {
 
-            oral_1 = "y"
+            oral_1 = "1"
 
         }else if(oral_1_false.isChecked){
 
-            oral_1 = "n"
+            oral_1 = "2"
 
         }else{
 
@@ -398,15 +398,15 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_2_true.isChecked) {
 
-            oral_2 = "y"
+            oral_2 = "1"
 
         }else if(oral_2_false.isChecked){
 
-            oral_2 = "n"
+            oral_2 = "2"
 
         }else if(oral_2_do_not_know.isChecked){
 
-            oral_2 = "d"
+            oral_2 = "3"
 
         }else{
 
@@ -418,15 +418,15 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_3_true.isChecked) {
 
-            oral_3 = "y"
+            oral_3 = "1"
 
         }else if(oral_3_false.isChecked){
 
-            oral_3 = "n"
+            oral_3 = "2"
 
         }else if(oral_3_do_not_know.isChecked){
 
-            oral_3 = "d"
+            oral_3 = "3"
 
         }else{
 
@@ -438,11 +438,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_4_true.isChecked) {
 
-            oral_4 = "y"
+            oral_4 = "1"
 
         }else if(oral_4_false.isChecked){
 
-            oral_4 = "n"
+            oral_4 = "2"
 
         }else{
 
@@ -454,11 +454,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_5_true.isChecked) {
 
-            oral_5 = "y"
+            oral_5 = "1"
 
         }else if(oral_5_false.isChecked){
 
-            oral_5 = "n"
+            oral_5 = "2"
 
         }else{
 
@@ -470,11 +470,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_6_true.isChecked) {
 
-            oral_6 = "y"
+            oral_6 = "1"
 
         }else if(oral_6_false.isChecked){
 
-            oral_6 = "n"
+            oral_6 = "2"
 
         }else{
 
@@ -486,11 +486,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_7_very_good.isChecked) {
 
-            oral_7 = "5"
+            oral_7 = "1"
 
         }else if(oral_7_good.isChecked){
 
-            oral_7 = "4"
+            oral_7 = "2"
 
         }else if(oral_7_normal.isChecked){
 
@@ -498,11 +498,11 @@ class OralExaminationActivity : RootActivity() {
 
         }else if(oral_7_bad.isChecked){
 
-            oral_7 = "2"
+            oral_7 = "4"
 
         }else if(oral_7_very_bad.isChecked){
 
-            oral_7 = "1"
+            oral_7 = "5"
 
         }else{
 
@@ -514,11 +514,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_8_true.isChecked) {
 
-            oral_8 = "y"
+            oral_8 = "1"
 
         }else if(oral_8_false.isChecked){
 
-            oral_8 = "n"
+            oral_8 = "2"
 
         }else{
 
@@ -530,11 +530,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_9_5.isChecked) {
 
-            oral_9 = "5"
+            oral_9 = "1"
 
         }else if(oral_9_4.isChecked){
 
-            oral_9 = "4"
+            oral_9 = "2"
 
         }else if(oral_9_3.isChecked){
 
@@ -542,11 +542,11 @@ class OralExaminationActivity : RootActivity() {
 
         }else if(oral_9_2.isChecked){
 
-            oral_9 = "2"
+            oral_9 = "4"
 
         }else if(oral_9_1.isChecked){
 
-            oral_9 = "1"
+            oral_9 = "5"
 
         }else if(oral_9_etc.isChecked) {
 
@@ -562,19 +562,19 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_10_4.isChecked) {
 
-            oral_10 = "4"
+            oral_10 = "1"
 
         }else if(oral_10_3.isChecked){
 
-            oral_10 = "3"
+            oral_10 = "2"
 
         }else if(oral_10_2.isChecked){
 
-            oral_10 = "2"
+            oral_10 = "3"
 
         }else if(oral_10_1.isChecked){
 
-            oral_10 = "1"
+            oral_10 = "4"
 
         }else{
 
@@ -586,11 +586,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_11_5.isChecked) {
 
-            oral_11 = "5"
+            oral_11 = "1"
 
         }else if(oral_11_4.isChecked){
 
-            oral_11 = "4"
+            oral_11 = "2"
 
         }else if(oral_11_3.isChecked){
 
@@ -598,11 +598,11 @@ class OralExaminationActivity : RootActivity() {
 
         }else if(oral_11_2.isChecked){
 
-            oral_11 = "2"
+            oral_11 = "4"
 
         }else if(oral_11_1.isChecked){
 
-            oral_11 = "1"
+            oral_11 = "5"
 
         }else{
 
@@ -614,15 +614,15 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_12_true.isChecked) {
 
-            oral_12 = "y"
+            oral_12 = "1"
 
         }else if(oral_12_false.isChecked){
 
-            oral_12 = "n"
+            oral_12 = "2"
 
         }else if(oral_12_do_not_know.isChecked){
 
-            oral_12 = "d"
+            oral_12 = "3"
 
         }else{
 
@@ -634,11 +634,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_13_5.isChecked) {
 
-            oral_13 = "5"
+            oral_13 = "1"
 
         }else if(oral_13_4.isChecked){
 
-            oral_13 = "4"
+            oral_13 = "2"
 
         }else if(oral_13_3.isChecked){
 
@@ -646,11 +646,11 @@ class OralExaminationActivity : RootActivity() {
 
         }else if(oral_13_2.isChecked){
 
-            oral_13 = "2"
+            oral_13 = "4"
 
         }else if(oral_13_1.isChecked){
 
-            oral_13 = "1"
+            oral_13 = "5"
 
         }else{
 
@@ -662,11 +662,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_14_5.isChecked) {
 
-            oral_14 = "5"
+            oral_14 = "1"
 
         }else if(oral_14_4.isChecked){
 
-            oral_14 = "4"
+            oral_14 = "2"
 
         }else if(oral_14_3.isChecked){
 
@@ -674,11 +674,11 @@ class OralExaminationActivity : RootActivity() {
 
         }else if(oral_14_2.isChecked){
 
-            oral_14 = "2"
+            oral_14 = "4"
 
         }else if(oral_14_1.isChecked){
 
-            oral_14 = "1"
+            oral_14 = "5"
 
         }else{
 
@@ -690,15 +690,15 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_15_true.isChecked){
 
-            oral_15 = "y"
+            oral_15 = "1"
 
         }else if(oral_15_false.isChecked){
 
-            oral_15 = "n"
+            oral_15 = "2"
 
         }else if(oral_15_do_not_know.isChecked){
 
-            oral_15 = "d"
+            oral_15 = "3"
 
         }else{
 
@@ -745,11 +745,11 @@ class OralExaminationActivity : RootActivity() {
         oral_edit_submit.visibility = View.VISIBLE
 
         //1번
-        if(paper.oral_1=="y")
+        if(paper.oral_1=="1")
         {
             oral_1_true.isChecked = true
         }
-        else if(paper.oral_1=="n")
+        else if(paper.oral_1=="2")
         {
             oral_1_false.isChecked = true
         }
@@ -757,61 +757,61 @@ class OralExaminationActivity : RootActivity() {
 
 
         //2번
-        if(paper.oral_2=="y")
+        if(paper.oral_2=="1")
         {
             oral_2_true.isChecked = true
         }
-        else if(paper.oral_2=="n")
+        else if(paper.oral_2=="2")
         {
             oral_2_false.isChecked = true
         }
-        else if(paper.oral_2=="d")
+        else if(paper.oral_2=="3")
         {
             oral_2_do_not_know.isChecked = true
         }
 
 
         //3번
-        if(paper.oral_3=="y")
+        if(paper.oral_3=="1")
         {
             oral_3_true.isChecked = true
         }
-        else if(paper.oral_3=="n")
+        else if(paper.oral_3=="2")
         {
             oral_3_false.isChecked = true
         }
-        else if(paper.oral_3=="d")
+        else if(paper.oral_3=="3")
         {
             oral_3_do_not_know.isChecked = true
         }
 
 
         //4번
-        if(paper.oral_4=="y")
+        if(paper.oral_4=="1")
         {
             oral_4_true.isChecked = true
         }
-        else if(paper.oral_4=="n")
+        else if(paper.oral_4=="2")
         {
             oral_4_false.isChecked = true
         }
 
         //5번
-        if(paper.oral_5=="y")
+        if(paper.oral_5=="1")
         {
             oral_5_true.isChecked = true
         }
-        else if(paper.oral_5=="n")
+        else if(paper.oral_5=="2")
         {
             oral_5_false.isChecked = true
         }
 
         //6번
-        if(paper.oral_6=="y")
+        if(paper.oral_6=="1")
         {
             oral_6_true.isChecked = true
         }
-        else if(paper.oral_6=="n")
+        else if(paper.oral_6=="2")
         {
             oral_6_false.isChecked = true
         }
@@ -841,11 +841,11 @@ class OralExaminationActivity : RootActivity() {
 
 
         //8번
-        if(paper.oral_8=="y")
+        if(paper.oral_8=="1")
         {
             oral_8_true.isChecked = true
         }
-        else if(paper.oral_8=="n")
+        else if(paper.oral_8=="2")
         {
             oral_8_false.isChecked = true
         }
@@ -872,9 +872,10 @@ class OralExaminationActivity : RootActivity() {
         {
             oral_9_5.isChecked = true
         }
-        else if(paper.oral_9=="6")
+        else if(!paper.oral_9.isNullOrEmpty())
         {
             oral_9_etc.isChecked = true
+            oral_9_count.setText(paper.oral_9.toString())
         }
 
 
@@ -923,15 +924,15 @@ class OralExaminationActivity : RootActivity() {
 
 
         //12번
-        if(paper.oral_12=="y")
+        if(paper.oral_12=="1")
         {
             oral_12_true.isChecked = true
         }
-        else if(paper.oral_12=="n")
+        else if(paper.oral_12=="2")
         {
             oral_12_false.isChecked = true
         }
-        else if(paper.oral_12=="d")
+        else if(paper.oral_12=="3")
         {
             oral_12_do_not_know.isChecked = true
         }
@@ -985,15 +986,15 @@ class OralExaminationActivity : RootActivity() {
 
 
         //15번
-        if(paper.oral_15=="y")
+        if(paper.oral_15=="1")
         {
             oral_15_true.isChecked = true
         }
-        else if(paper.oral_15=="n")
+        else if(paper.oral_15=="2")
         {
             oral_15_false.isChecked = true
         }
-        else if(paper.oral_15=="d")
+        else if(paper.oral_15=="3")
         {
             oral_15_do_not_know.isChecked = true
         }
