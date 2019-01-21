@@ -726,15 +726,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun habbitSetSaveLocal(db : SQLiteDatabase, ex : ArrayList<Any>){
-
-        smokingSaveLocal(db, ex[0] as ArrayList<SmokingExaminationActivity.ExamInfo>)
-        drinkingSaveLocal(db, ex[1] as ArrayList<DrinkingExaminationActivity.ExamInfo>)
-        exerciseSaveLocal(db, ex[2] as ArrayList<ExerciseExaminationActivity.ExamInfo>)
-        nutritionSaveLocal(db, ex[3] as ArrayList<NutritionExaminationActivity.ExamInfo>)
-
-    }
-
     fun cancerSaveLocal(db : SQLiteDatabase, ex : ArrayList<CancerExaminationActivity.ExamInfo>){
 
         val columnValue = ex.get(0)

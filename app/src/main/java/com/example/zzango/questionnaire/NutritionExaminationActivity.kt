@@ -24,6 +24,7 @@ import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -59,7 +60,7 @@ class NutritionExaminationActivity :RootActivity() {
                          @SerializedName("sg2_spFatBmi") @Expose var sg2_spFatBmi : String,
                          @SerializedName("sg2_spFat1") @Expose var sg2_spFat1 : String,
                          @SerializedName("sg2_spFat2") @Expose var sg2_spFat2 : String,
-                         @SerializedName("sg2_spFat3") @Expose var sg2_spFat3 : String)
+                         @SerializedName("sg2_spFat3") @Expose var sg2_spFat3 : String) : Serializable
     
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -110,12 +111,12 @@ class NutritionExaminationActivity :RootActivity() {
                     nutrition_exam_local_insert()
 
                 }
-//                else{
-//
-//                    //서버 저장
-//                    nutrition_exam_server_insert()
-//
-//                }
+                else{
+
+                    //서버 저장
+                    nutrition_exam_server_insert()
+
+                }
 
             }
 
@@ -139,7 +140,7 @@ class NutritionExaminationActivity :RootActivity() {
 
         LocalDBhelper(this).nutritionCreate(sql_db)
 
-        LocalDBhelper(this).habbitSetSaveLocal(sql_db!!, set_result!!)
+        LocalDBhelper(this).nutritionSaveLocal(sql_db!!, exam_result!!)
 
         saveCompleteAlert()
 

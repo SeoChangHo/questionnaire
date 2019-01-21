@@ -31,7 +31,6 @@ import kotlin.collections.ArrayList
 
 class SmokingExaminationActivity : RootActivity(){
 
-    var set_result : ArrayList<Any>? = null
     var exam_result : ArrayList<SmokingExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
 
@@ -78,24 +77,22 @@ class SmokingExaminationActivity : RootActivity(){
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        smoking_examination_next.setOnClickListener {
+        smoking_examination_save.setOnClickListener {
 
             if(check()){
 
-//                login_appbar_loading_progress.visibility = View.VISIBLE
-//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
-//
-//                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
-//
-//                    smoking_exam_local_insert()
-//
-//                }else{
-//
-//                    smoking_exam_server_insert()
-//
-//                }
+                login_appbar_loading_progress.visibility = View.VISIBLE
+                login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).putExtra("set", set_result).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
+
+                    smoking_exam_local_insert()
+
+                }else{
+
+                    smoking_exam_server_insert()
+
+                }
 
             }
 
@@ -406,10 +403,6 @@ class SmokingExaminationActivity : RootActivity(){
 
         exam_result = arr
 
-        set_result = ArrayList<Any>()
-
-        set_result!!.add(exam_result!!)
-
         return true
 
     }
@@ -423,8 +416,7 @@ class SmokingExaminationActivity : RootActivity(){
 
         println(paper)
 
-//        smoking_examination_save.visibility = View.GONE
-        smoking_examination_next.visibility = View.GONE
+        smoking_examination_save.visibility = View.GONE
         smoking_examination_cancel.visibility = View.GONE
         smoking_edit_submit.visibility = View.VISIBLE
 
