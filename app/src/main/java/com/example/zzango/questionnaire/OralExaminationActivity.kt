@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -60,11 +59,7 @@ class OralExaminationActivity : RootActivity() {
                          @SerializedName("oral_13") @Expose var oral_13 : String,
                          @SerializedName("oral_14") @Expose var oral_14 : String,
                          @SerializedName("oral_15") @Expose var oral_15 : String,
-                         @SerializedName("oral_16") @Expose var oral_16 : String,
-                         @SerializedName("oral_17") @Expose var oral_17 : String,
-                         @SerializedName("oral_18") @Expose var oral_18 : String,
-                         @SerializedName("oral_19") @Expose var oral_19 : String,
-                         @SerializedName("oral_20") @Expose var oral_20 : String)
+                         @SerializedName("oral_16") @Expose var oral_16 : String)
 
 
 
@@ -347,7 +342,7 @@ class OralExaminationActivity : RootActivity() {
         var oral_13 = ""
         var oral_14 = ""
         var oral_15 = ""
-        var oral_20 = ""
+        var oral_16 = ""
 
         if(!name_edit.text.isNullOrEmpty()){
 
@@ -715,11 +710,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(!remark_content.text.toString().isNullOrEmpty()){
 
-            oral_20 = remark_content.text.toString()
+            oral_16 = remark_content.text.toString()
 
         }else{
 
-            oral_20 = ""
+            oral_16 = ""
 
         }
 
@@ -728,7 +723,7 @@ class OralExaminationActivity : RootActivity() {
         arr.add(ExamInfo(
                 exam_date, exam_no, "", signature, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
-                oral_11, oral_12, oral_13, oral_14, oral_15, "", "", "", "", oral_20
+                oral_11, oral_12, oral_13, oral_14, oral_15, oral_16
         ))
 
         exam_result = arr
@@ -1003,7 +998,7 @@ class OralExaminationActivity : RootActivity() {
             oral_15_do_not_know.isChecked = true
         }
 
-        remark_content.setText(paper.remark)
+        remark_content.setText(paper.oral_16)
 
     }
 

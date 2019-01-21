@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
@@ -17,7 +15,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.zzango.questionnaire.*
 import kotlinx.android.synthetic.main.activity_list.*
-import kotlinx.android.synthetic.main.activity_oral_exam.*
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -194,7 +191,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                                 data.getString(data.getColumnIndex("oral_13")),
                                 data.getString(data.getColumnIndex("oral_14")),
                                 data.getString(data.getColumnIndex("oral_15")),
-                                data.getString(data.getColumnIndex("remark"))
+                                data.getString(data.getColumnIndex("oral_16"))
                                 ))
                         data.moveToNext()
                     }
