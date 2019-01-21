@@ -38,6 +38,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() , View.OnClickListener {
 
+    var popup = false
     lateinit var canvasView: CanvasView
 
     override fun onCreate(savedInstanceState: Bundle?) {
