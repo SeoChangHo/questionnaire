@@ -134,15 +134,19 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
             println("paper.signature = ")
             println(paper.signature)
             println(paper.signature.size)
-
-
-
         }
 
+        try {
+            var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature!!.size)
 
-//        var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature!!.size)
-//
-//        p0?.ImgTest.setImageBitmap(bmp)
+            p0?.ImgTest.setImageBitmap(bmp)
+
+        }
+        catch (e:Exception)
+        {
+            println(e.message)
+        }
+
 
 
 

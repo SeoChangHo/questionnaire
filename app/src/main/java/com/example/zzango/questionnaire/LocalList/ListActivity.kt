@@ -14,6 +14,7 @@ import android.widget.Toast
 import com.example.zzango.questionnaire.LocalDBhelper
 import com.example.zzango.questionnaire.OracleUtill
 import com.example.zzango.questionnaire.R
+import com.example.zzango.questionnaire.Signature.BitmapFun
 import kotlinx.android.synthetic.main.activity_list.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -35,8 +36,17 @@ class ListActivity : Activity() {
 
     fun ListSetting(bool:Boolean)
     {
+
+
+
+
+
+
+
         papers = ArrayList<Paper>()
         sql_db = LocalDBhelper(this).writableDatabase
+
+
         val recyclerView = findViewById(R.id.recyclertView) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
@@ -50,7 +60,6 @@ class ListActivity : Activity() {
                         data.getString(data.getColumnIndex("category")),
                         data.getBlob(data.getColumnIndex("signature")),
                         data.getString(data.getColumnIndex("name"))))
-
 
             data.moveToNext()
 
