@@ -48,6 +48,7 @@ class ListActivity : Activity() {
                 papers.add(Paper(bool,
                         data.getString(data.getColumnIndex("exam_no")),
                         data.getString(data.getColumnIndex("category")),
+                        data.getBlob(data.getColumnIndex("signature")),
                         data.getString(data.getColumnIndex("name"))))
 
 

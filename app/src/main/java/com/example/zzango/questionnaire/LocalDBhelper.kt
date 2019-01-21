@@ -16,6 +16,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "LOCALSAVELIST" +
                 "(exam_no TEXT," +
                 "category TEXT," +
+                "signature BLOB," +
                 "name TEXT);")
     }
 
@@ -424,9 +425,9 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
 
         db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, name)" +
+                "(exam_no, category, signature, name)" +
                 " VALUES (" +
-                " '${columnValue.exam_bun_no}', '${columnValue.category}', '${columnValue.name}');")
+                " '${columnValue.exam_bun_no}', '${columnValue.category}', '${columnValue.signature}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO ORAL_EXAM" +
                 "(exam_date," +

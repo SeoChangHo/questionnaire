@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
@@ -11,9 +13,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.zzango.questionnaire.*
 import kotlinx.android.synthetic.main.activity_list.*
+import kotlinx.android.synthetic.main.activity_oral_exam.*
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -98,12 +102,12 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
         p0.chkbox.isChecked = PaperList[p1].isChecked
 
-        if(PaperList.size!=myCheckBox.chk_each!!.size)
-        {
-            //myCheckBox.chk_each!!.add(p0.chkbox)
-            println(p1.toString()+"번째 자리에 Add 합니다.")
-            myCheckBox.chk_each!![p1] = p0.chkbox
-        }
+//        if(PaperList.size!=myCheckBox.chk_each!!.size)
+//        {
+//            //myCheckBox.chk_each!!.add(p0.chkbox)
+//            println(p1.toString()+"번째 자리에 Add 합니다.")
+//            myCheckBox.chk_each!![p1] = p0.chkbox
+//        }
 
 
 
@@ -115,6 +119,27 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
         p0?.chkbox?.isChecked = paper.isChecked
         p0?.txtCategory?.text = getCategory(paper.category)
         p0?.txtName?.text = paper.name
+
+
+
+        if(MainActivity.user_stream==paper.signature)
+        {
+            println("같다.")
+        }
+        else
+        {
+            println("다르다.")
+
+            println("MainActivity.user_stream")
+        }
+
+
+//        var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature!!.size)
+//
+//        p0?.ImgTest.setImageBitmap(bmp)
+
+
+
 
         var date = SimpleDateFormat("yyyy-MM-dd").format(Date(paper.exam_no.toLong()))
 
@@ -693,6 +718,8 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
         val txtCategory = itemView.findViewById(R.id.txtCategory) as TextView
         val txtName = itemView.findViewById(R.id.txtName) as TextView
         val txtDate = itemView.findViewById(R.id.txtDate) as TextView
+
+        var ImgTest = itemView.findViewById(R.id.imageView12) as ImageView
 
         val constraint = itemView.findViewById(R.id.constraintLayoutArea) as ConstraintLayout
     }
