@@ -25,6 +25,7 @@ import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -33,7 +34,6 @@ class ExerciseExaminationActivity : RootActivity() {
 
     var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
-    var popup = false
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -72,13 +72,12 @@ class ExerciseExaminationActivity : RootActivity() {
                          @SerializedName("sg2_spSports10") @Expose var sg2_spSports10 : String,
                          @SerializedName("sg2_spSports11") @Expose var sg2_spSports11 : String,
                          @SerializedName("sg2_spSports12") @Expose var sg2_spSports12 : String,
-                         @SerializedName("sg2_spSportsSum") @Expose var sg2_spSportsSum : String)
+                         @SerializedName("sg2_spSportsSum") @Expose var sg2_spSportsSum : String) : Serializable
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise_exam)
-
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
@@ -161,7 +160,7 @@ class ExerciseExaminationActivity : RootActivity() {
 
         exercise_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 

@@ -47,7 +47,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " oral_13 TEXT," +
                 " oral_14 TEXT," +
                 " oral_15 TEXT," +
-                " remark TEXT);")
+                " oral_16 TEXT);")
 
     }
 
@@ -465,13 +465,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "category, " +
                 "oral_1, oral_2, oral_3, oral_4, oral_5, oral_6, oral_7," +
                 "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
-                "oral_15, remark)" +
+                "oral_15, oral_16)" +
                 " VALUES (" +
                 "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
                 ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
                 " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
-                " '${columnValue.oral_13}', '${columnValue.oral_14}', '${columnValue.oral_15}', '${columnValue.oral_20}'"
+                " '${columnValue.oral_13}', '${columnValue.oral_14}', '${columnValue.oral_15}', '${columnValue.oral_16}'"
                 +");")
 
     }

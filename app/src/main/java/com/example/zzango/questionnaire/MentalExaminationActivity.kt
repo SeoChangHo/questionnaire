@@ -32,7 +32,6 @@ class MentalExaminationActivity : RootActivity(){
 
     var exam_result : ArrayList<MentalExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
-    var popup = false
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,

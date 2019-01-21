@@ -24,15 +24,16 @@ import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
 class NutritionExaminationActivity :RootActivity() {
 
+    var set_result : ArrayList<Any>? = null
     var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
-    var popup = false
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -59,13 +60,18 @@ class NutritionExaminationActivity :RootActivity() {
                          @SerializedName("sg2_spFatBmi") @Expose var sg2_spFatBmi : String,
                          @SerializedName("sg2_spFat1") @Expose var sg2_spFat1 : String,
                          @SerializedName("sg2_spFat2") @Expose var sg2_spFat2 : String,
-                         @SerializedName("sg2_spFat3") @Expose var sg2_spFat3 : String)
+                         @SerializedName("sg2_spFat3") @Expose var sg2_spFat3 : String) : Serializable
     
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nutrition_exam)
 
+        if(intent.hasExtra("set")){
+
+            set_result = intent.getSerializableExtra("set") as ArrayList<Any>?
+
+        }
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
@@ -104,7 +110,8 @@ class NutritionExaminationActivity :RootActivity() {
                     //로컬 저장
                     nutrition_exam_local_insert()
 
-                }else{
+                }
+                else{
 
                     //서버 저장
                     nutrition_exam_server_insert()
@@ -117,7 +124,7 @@ class NutritionExaminationActivity :RootActivity() {
 
         nutrition_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 
@@ -559,6 +566,8 @@ class NutritionExaminationActivity :RootActivity() {
         ))
 
         exam_result = arr
+
+        set_result!!.add(exam_result!!)
 
         return true
 

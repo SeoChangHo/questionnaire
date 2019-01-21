@@ -134,7 +134,7 @@ class ListActivity : Activity() {
                                     data.getString(data.getColumnIndex("oral_13")),
                                     data.getString(data.getColumnIndex("oral_14")),
                                     data.getString(data.getColumnIndex("oral_15")),
-                                    data.getString(data.getColumnIndex("remark"))
+                                    data.getString(data.getColumnIndex("oral_16"))
                             ))
                             data.moveToNext()
                         }
