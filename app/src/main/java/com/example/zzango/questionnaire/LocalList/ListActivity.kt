@@ -40,9 +40,6 @@ class ListActivity : Activity() {
 
 
 
-
-
-
         papers = ArrayList<Paper>()
         sql_db = LocalDBhelper(this).writableDatabase
 
