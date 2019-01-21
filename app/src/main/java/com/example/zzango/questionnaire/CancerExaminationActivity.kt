@@ -45,18 +45,43 @@ class CancerExaminationActivity : RootActivity(){
                          @SerializedName("ck1_1") @Expose var ck1_1 : String,
                          @SerializedName("ck2") @Expose var ck2 : String,
                          @SerializedName("ck2_1") @Expose var ck2_1 : String,
-                         @SerializedName("c_fam_can1") @Expose var c_fam_can1 : String,
-                         @SerializedName("c_fam_can1_rel1") @Expose var c_fam_can1_rel1 : String,
-                         @SerializedName("c_fam_can2") @Expose var c_fam_can2 : String,
-                         @SerializedName("c_fam_can1_rel2") @Expose var c_fam_can1_rel2 : String,
-                         @SerializedName("c_fam_can3") @Expose var c_fam_can3 : String,
-                         @SerializedName("c_fam_can1_rel3") @Expose var c_fam_can1_rel3 : String,
-                         @SerializedName("c_fam_can4") @Expose var c_fam_can4 : String,
-                         @SerializedName("c_fam_can1_rel4") @Expose var c_fam_can1_rel4 : String,
-                         @SerializedName("c_fam_can5") @Expose var c_fam_can5 : String,
-                         @SerializedName("c_fam_can1_rel5") @Expose var c_fam_can1_rel5 : String,
-                         @SerializedName("c_fam_can6") @Expose var c_fam_can6 : String,
-                         @SerializedName("c_fam_can1_rel6") @Expose var c_fam_can1_rel6 : String,
+                         @SerializedName("ck3_1") @Expose var ck3_1 : String,
+                         @SerializedName("ck3_1_1") @Expose var ck3_1_1 : String,
+                         @SerializedName("ck3_1_2") @Expose var ck3_1_2 : String,
+                         @SerializedName("ck3_1_3") @Expose var ck3_1_3 : String,
+                         @SerializedName("ck3_1_4") @Expose var ck3_1_4 : String,
+                         @SerializedName("ck3_1_5") @Expose var ck3_1_5 : String,
+                         @SerializedName("ck3_2") @Expose var ck3_2 : String,
+                         @SerializedName("ck3_2_1") @Expose var ck3_2_1 : String,
+                         @SerializedName("ck3_2_2") @Expose var ck3_2_2 : String,
+                         @SerializedName("ck3_2_3") @Expose var ck3_2_3 : String,
+                         @SerializedName("ck3_2_4") @Expose var ck3_2_4 : String,
+                         @SerializedName("ck3_2_5") @Expose var ck3_2_5 : String,
+                         @SerializedName("ck3_3") @Expose var ck3_3 : String,
+                         @SerializedName("ck3_3_1") @Expose var ck3_3_1 : String,
+                         @SerializedName("ck3_3_2") @Expose var ck3_3_2 : String,
+                         @SerializedName("ck3_3_3") @Expose var ck3_3_3 : String,
+                         @SerializedName("ck3_3_4") @Expose var ck3_3_4 : String,
+                         @SerializedName("ck3_3_5") @Expose var ck3_3_5 : String,
+                         @SerializedName("ck3_4") @Expose var ck3_4 : String,
+                         @SerializedName("ck3_4_1") @Expose var ck3_4_1 : String,
+                         @SerializedName("ck3_4_2") @Expose var ck3_4_2 : String,
+                         @SerializedName("ck3_4_3") @Expose var ck3_4_3 : String,
+                         @SerializedName("ck3_4_4") @Expose var ck3_4_4 : String,
+                         @SerializedName("ck3_4_5") @Expose var ck3_4_5 : String,
+                         @SerializedName("ck3_5") @Expose var ck3_5 : String,
+                         @SerializedName("ck3_5_1") @Expose var ck3_5_1 : String,
+                         @SerializedName("ck3_5_2") @Expose var ck3_5_2 : String,
+                         @SerializedName("ck3_5_3") @Expose var ck3_5_3 : String,
+                         @SerializedName("ck3_5_4") @Expose var ck3_5_4 : String,
+                         @SerializedName("ck3_5_5") @Expose var ck3_5_5 : String,
+                         @SerializedName("ck3_6") @Expose var ck3_6 : String,
+                         @SerializedName("ck3_6_1") @Expose var ck3_6_1 : String,
+                         @SerializedName("ck3_6_2") @Expose var ck3_6_2 : String,
+                         @SerializedName("ck3_6_3") @Expose var ck3_6_3 : String,
+                         @SerializedName("ck3_6_4") @Expose var ck3_6_4 : String,
+                         @SerializedName("ck3_6_5") @Expose var ck3_6_5 : String,
+                         @SerializedName("ck3_6_kita") @Expose var ck3_6_kita : String,
                          @SerializedName("ck4_1") @Expose var ck4_1 : String,
                          @SerializedName("ck4_2") @Expose var ck4_2 : String,
                          @SerializedName("ck4_3") @Expose var ck4_3 : String,
@@ -83,10 +108,10 @@ class CancerExaminationActivity : RootActivity(){
                          @SerializedName("ck7_4") @Expose var ck7_4 : String,
                          @SerializedName("ck7_5") @Expose var ck7_5 : String,
                          @SerializedName("ck7_6") @Expose var ck7_6 : String,
-                         @SerializedName("ck8") @Expose var ck8 : String,
                          @SerializedName("ck8_1") @Expose var ck8_1 : String,
-                         @SerializedName("ck9") @Expose var ck9 : String,
+                         @SerializedName("ck8_2") @Expose var ck8_2 : String,
                          @SerializedName("ck9_1") @Expose var ck9_1 : String,
+                         @SerializedName("ck9_2") @Expose var ck9_2 : String,
                          @SerializedName("ck10") @Expose var ck10 : String,
                          @SerializedName("ck11") @Expose var ck11 : String,
                          @SerializedName("ck12") @Expose var ck12 : String,
@@ -401,18 +426,43 @@ class CancerExaminationActivity : RootActivity(){
         var ck1_1 = ""
         var ck2 = ""
         var ck2_1 = ""
-        var c_fam_can1 = ""
-        var c_fam_can1_rel1 = ""
-        var c_fam_can2 = ""
-        var c_fam_can1_rel2 = ""
-        var c_fam_can3 = ""
-        var c_fam_can1_rel3 = ""
-        var c_fam_can4 = ""
-        var c_fam_can1_rel4 = ""
-        var c_fam_can5 = ""
-        var c_fam_can1_rel5 = ""
-        var c_fam_can6 = ""
-        var c_fam_can1_rel6 = ""
+        var ck3_1 = ""
+        var ck3_1_1 = ""
+        var ck3_1_2 = ""
+        var ck3_1_3 = ""
+        var ck3_1_4 = ""
+        var ck3_1_5 = ""
+        var ck3_2 = ""
+        var ck3_2_1 = ""
+        var ck3_2_2 = ""
+        var ck3_2_3 = ""
+        var ck3_2_4 = ""
+        var ck3_2_5 = ""
+        var ck3_3 = ""
+        var ck3_3_1 = ""
+        var ck3_3_2 = ""
+        var ck3_3_3 = ""
+        var ck3_3_4 = ""
+        var ck3_3_5 = ""
+        var ck3_4 = ""
+        var ck3_4_1 = ""
+        var ck3_4_2 = ""
+        var ck3_4_3 = ""
+        var ck3_4_4 = ""
+        var ck3_4_5 = ""
+        var ck3_5 = ""
+        var ck3_5_1 = ""
+        var ck3_5_2 = ""
+        var ck3_5_3 = ""
+        var ck3_5_4 = ""
+        var ck3_5_5 = ""
+        var ck3_6 = ""
+        var ck3_6_1 = ""
+        var ck3_6_2 = ""
+        var ck3_6_3 = ""
+        var ck3_6_4 = ""
+        var ck3_6_5 = ""
+        var ck3_6_kita = ""
         var ck4_1 = ""
         var ck4_2 = ""
         var ck4_3 = ""
@@ -439,10 +489,10 @@ class CancerExaminationActivity : RootActivity(){
         var ck7_4 = ""
         var ck7_5 = ""
         var ck7_6 = ""
-        var ck8 = ""
         var ck8_1 = ""
-        var ck9 = ""
+        var ck8_2 = ""
         var ck9_1 = ""
+        var ck9_2 = ""
         var ck10 = ""
         var ck11 = ""
         var ck12 = ""
@@ -502,21 +552,21 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_3_1_1.isChecked){
-            c_fam_can1 = "1"
+            ck3_1 = "0"
         }else if(cancer_3_1_2.isChecked){
-            c_fam_can1 = "2"
+            ck3_1 = "1"
         }else if(cancer_3_1_3.isChecked){
-            c_fam_can1 = "3"
+            ck3_1 = "2"
             if(cancer_3_1_checkBox1.isChecked){
-                c_fam_can1_rel1 = "1"
+                ck3_1_1 = "1"
             }else if(cancer_3_1_checkBox2.isChecked){
-                c_fam_can1_rel1 = "2"
+                ck3_1_2 = "2"
             }else if(cancer_3_1_checkBox3.isChecked){
-                c_fam_can1_rel1 = "3"
+                ck3_1_3 = "3"
             }else if(cancer_3_1_checkBox4.isChecked){
-                c_fam_can1_rel1 = "4"
+                ck3_1_4 = "4"
             }else if(cancer_3_1_checkBox5.isChecked){
-                c_fam_can1_rel1 = "5"
+                ck3_1_5 = "5"
             }else{
                 Toast.makeText(this, "3-1번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
@@ -527,21 +577,21 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_3_2_1.isChecked){
-            c_fam_can2 = "1"
+            ck3_2 = "0"
         }else if(cancer_3_2_2.isChecked){
-            c_fam_can2 = "2"
+            ck3_2 = "1"
         }else if(cancer_3_2_3.isChecked){
-            c_fam_can2 = "3"
+            ck3_2 = "2"
             if(cancer_3_2_checkBox1.isChecked){
-                c_fam_can1_rel2 = "1"
+                ck3_2_1 = "1"
             }else if(cancer_3_2_checkBox2.isChecked){
-                c_fam_can1_rel2 = "2"
+                ck3_2_2 = "2"
             }else if(cancer_3_2_checkBox3.isChecked){
-                c_fam_can1_rel2 = "3"
+                ck3_2_3 = "3"
             }else if(cancer_3_2_checkBox4.isChecked){
-                c_fam_can1_rel2 = "4"
+                ck3_2_4 = "4"
             }else if(cancer_3_2_checkBox5.isChecked){
-                c_fam_can1_rel2 = "5"
+                ck3_2_5 = "5"
             }else{
                 Toast.makeText(this, "3-2번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
@@ -552,21 +602,21 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_3_3_1.isChecked){
-            c_fam_can3 = "1"
+            ck3_3 = "0"
         }else if(cancer_3_3_2.isChecked){
-            c_fam_can3 = "2"
+            ck3_3 = "1"
         }else if(cancer_3_3_3.isChecked){
-            c_fam_can3 = "3"
+            ck3_3 = "2"
             if(cancer_3_3_checkBox1.isChecked){
-                c_fam_can1_rel3 = "1"
+                ck3_3_1 = "1"
             }else if(cancer_3_3_checkBox2.isChecked){
-                c_fam_can1_rel3 = "2"
+                ck3_3_2 = "2"
             }else if(cancer_3_3_checkBox3.isChecked){
-                c_fam_can1_rel3 = "3"
+                ck3_3_3 = "3"
             }else if(cancer_3_3_checkBox4.isChecked){
-                c_fam_can1_rel3 = "4"
+                ck3_3_4 = "4"
             }else if(cancer_3_3_checkBox5.isChecked){
-                c_fam_can1_rel3 = "5"
+                ck3_3_5 = "5"
             }else{
                 Toast.makeText(this, "3-3번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
@@ -578,21 +628,21 @@ class CancerExaminationActivity : RootActivity(){
 
 
         if(cancer_3_4_1.isChecked){
-            c_fam_can4 = "1"
+            ck3_4 = "0"
         }else if(cancer_3_4_2.isChecked){
-            c_fam_can4 = "2"
+            ck3_4 = "1"
         }else if(cancer_3_4_3.isChecked){
-            c_fam_can4 = "3"
+            ck3_4 = "2"
             if(cancer_3_4_checkBox1.isChecked){
-                c_fam_can1_rel4 = "1"
+                ck3_4_1 = "1"
             }else if(cancer_3_4_checkBox2.isChecked){
-                c_fam_can1_rel4 = "2"
+                ck3_4_2 = "2"
             }else if(cancer_3_4_checkBox3.isChecked){
-                c_fam_can1_rel4 = "3"
+                ck3_4_3 = "3"
             }else if(cancer_3_4_checkBox4.isChecked){
-                c_fam_can1_rel4 = "4"
+                ck3_4_4 = "4"
             }else if(cancer_3_4_checkBox5.isChecked){
-                c_fam_can1_rel4 = "5"
+                ck3_4_5 = "5"
             }else{
                 Toast.makeText(this, "3-4번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
@@ -603,21 +653,21 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_3_5_1.isChecked){
-            c_fam_can5 = "1"
+            ck3_5 = "0"
         }else if(cancer_3_5_2.isChecked){
-            c_fam_can5 = "2"
+            ck3_5 = "1"
         }else if(cancer_3_5_3.isChecked){
-            c_fam_can5 = "3"
+            ck3_5 = "2"
             if(cancer_3_5_checkBox1.isChecked){
-                c_fam_can1_rel5 = "1"
+                ck3_5_1 = "1"
             }else if(cancer_3_5_checkBox2.isChecked){
-                c_fam_can1_rel5 = "2"
+                ck3_5_2 = "2"
             }else if(cancer_3_5_checkBox3.isChecked){
-                c_fam_can1_rel5 = "3"
+                ck3_5_3 = "3"
             }else if(cancer_3_5_checkBox4.isChecked){
-                c_fam_can1_rel5 = "4"
+                ck3_5_4 = "4"
             }else if(cancer_3_5_checkBox5.isChecked){
-                c_fam_can1_rel5 = "5"
+                ck3_5_5 = "5"
             }else{
                 Toast.makeText(this, "3-5번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
@@ -628,21 +678,21 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_3_6_1.isChecked){
-            c_fam_can6 = "1"
+            ck3_6 = "0"
         }else if(cancer_3_6_2.isChecked){
-            c_fam_can6 = "2"
+            ck3_6 = "1"
         }else if(cancer_3_6_3.isChecked){
-            c_fam_can6 = "3"
+            ck3_6 = "2"
             if(cancer_3_6_checkBox1.isChecked){
-                c_fam_can1_rel6 = "1"
+                ck3_6_1 = "1"
             }else if(cancer_3_6_checkBox2.isChecked){
-                c_fam_can1_rel6 = "2"
+                ck3_6_2 = "2"
             }else if(cancer_3_6_checkBox3.isChecked){
-                c_fam_can1_rel6 = "3"
+                ck3_6_3 = "3"
             }else if(cancer_3_6_checkBox4.isChecked){
-                c_fam_can1_rel6 = "4"
+                ck3_6_4 = "4"
             }else if(cancer_3_6_checkBox5.isChecked){
-                c_fam_can1_rel6 = "5"
+                ck3_6_5 = "5"
             }else{
                 Toast.makeText(this, "3-6번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
@@ -842,28 +892,28 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_8_1.isChecked){
-            ck8 = "1"
+            ck8_1 = "1"
             if(!cancer_editText3.text.isNullOrEmpty()){
-                ck8_1 = cancer_editText3.text.toString()
+                ck8_2 = cancer_editText3.text.toString()
             }else{
                 Toast.makeText(this, "8번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
         }else if(cancer_8_2.isChecked){
-            ck8 = "2"
+            ck8_1 = "2"
         }else{
             Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cancer_9_1.isChecked){
-            ck9 = "1"
+            ck9_1 = "1"
         }else if(cancer_9_2.isChecked){
-            ck9 = "2"
+            ck9_1 = "2"
         }else if(cancer_9_3.isChecked){
-            ck9 = "3"
+            ck9_1 = "3"
             if(!cancer_editText4.text.isNullOrEmpty()){
-                ck9_1 = cancer_editText4.text.toString()
+                ck9_2 = cancer_editText4.text.toString()
             }else{
                 Toast.makeText(this, "9번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
                 return false
@@ -941,11 +991,16 @@ class CancerExaminationActivity : RootActivity(){
 
         arr.add(CancerExaminationActivity.ExamInfo(
                 exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
-                ck1, ck1_1, ck2, ck2_1, c_fam_can1, c_fam_can1_rel1, c_fam_can2, c_fam_can1_rel2,
-                c_fam_can3, c_fam_can1_rel3, c_fam_can4, c_fam_can1_rel4, c_fam_can5, c_fam_can1_rel5,
-                c_fam_can6, c_fam_can1_rel6, ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6,
+                ck1, ck1_1, ck2, ck2_1,
+                ck3_1, ck3_1_1, ck3_1_2, ck3_1_3, ck3_1_4, ck3_1_5,
+                ck3_2, ck3_2_1, ck3_2_2, ck3_2_3, ck3_2_4, ck3_2_5,
+                ck3_3, ck3_3_1, ck3_3_2, ck3_3_3, ck3_3_4, ck3_3_5,
+                ck3_4, ck3_4_1, ck3_4_2, ck3_4_3, ck3_4_4, ck3_4_5,
+                ck3_5, ck3_5_1, ck3_5_2, ck3_5_3, ck3_5_4, ck3_5_5,
+                ck3_6, ck3_6_1, ck3_6_2, ck3_6_3, ck3_6_4, ck3_6_5, ck3_6_kita,
+                ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6,
                 ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck5_6, ck6_1, ck6_2, ck6_3, ck6_4,
-                ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8, ck8_1, ck9, ck9_1,
+                ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2, ck9_1, ck9_2,
                 ck10, ck11, ck12, ck13, ck14
         ))
 
@@ -992,13 +1047,13 @@ class CancerExaminationActivity : RootActivity(){
         }
 
 
-        if(paper.c_fam_can1 == "1"){
+        if(paper.ck3_1 == "0"){
             cancer_3_1_1.isChecked = true
 
-        }else if(paper.c_fam_can1 == "2"){
+        }else if(paper.ck3_1 == "1"){
             cancer_3_1_2.isChecked = true
 
-        }else if(paper.c_fam_can1 == "3"){
+        }else if(paper.ck3_1 == "2"){
             cancer_3_1_3.isChecked = true
 
             cancer_3_1_checkBox1.visibility = View.VISIBLE
@@ -1007,27 +1062,27 @@ class CancerExaminationActivity : RootActivity(){
             cancer_3_1_checkBox4.visibility = View.VISIBLE
             cancer_3_1_checkBox5.visibility = View.VISIBLE
 
-            if(paper.c_fam_can1_rel1 == "1"){
+            if(paper.ck3_1_1 == "1"){
                 cancer_3_1_checkBox1.isChecked = true
-            }else if(paper.c_fam_can1_rel1 == "2"){
+            }else if(paper.ck3_1_2 == "2"){
                 cancer_3_1_checkBox2.isChecked = true
-            }else if(paper.c_fam_can1_rel1 == "3"){
+            }else if(paper.ck3_1_3 == "3"){
                 cancer_3_1_checkBox3.isChecked = true
-            }else if(paper.c_fam_can1_rel1 == "4"){
+            }else if(paper.ck3_1_4 == "4"){
                 cancer_3_1_checkBox4.isChecked = true
-            }else if(paper.c_fam_can1_rel1 == "5"){
+            }else if(paper.ck3_1_5 == "5"){
                 cancer_3_1_checkBox5.isChecked = true
             }
 
         }
 
-        if(paper.c_fam_can2 == "1"){
+        if(paper.ck3_2 == "0"){
             cancer_3_2_1.isChecked = true
 
-        }else if(paper.c_fam_can2 == "2"){
+        }else if(paper.ck3_2 == "1"){
             cancer_3_2_2.isChecked = true
 
-        }else if(paper.c_fam_can2 == "3"){
+        }else if(paper.ck3_2 == "2"){
             cancer_3_2_3.isChecked = true
 
             cancer_3_2_checkBox1.visibility = View.VISIBLE
@@ -1036,27 +1091,27 @@ class CancerExaminationActivity : RootActivity(){
             cancer_3_2_checkBox4.visibility = View.VISIBLE
             cancer_3_2_checkBox5.visibility = View.VISIBLE
 
-            if(paper.c_fam_can1_rel2 == "1"){
+            if(paper.ck3_2_1 == "1"){
                 cancer_3_2_checkBox1.isChecked = true
-            }else if(paper.c_fam_can1_rel2 == "2"){
+            }else if(paper.ck3_2_2 == "2"){
                 cancer_3_2_checkBox2.isChecked = true
-            }else if(paper.c_fam_can1_rel2 == "3"){
+            }else if(paper.ck3_2_3 == "3"){
                 cancer_3_2_checkBox3.isChecked = true
-            }else if(paper.c_fam_can1_rel2 == "4"){
+            }else if(paper.ck3_2_4 == "4"){
                 cancer_3_2_checkBox4.isChecked = true
-            }else if(paper.c_fam_can1_rel2 == "5"){
+            }else if(paper.ck3_2_5 == "5"){
                 cancer_3_2_checkBox5.isChecked = true
             }
 
         }
 
-        if(paper.c_fam_can3 == "1"){
+        if(paper.ck3_3 == "0"){
             cancer_3_3_1.isChecked = true
 
-        }else if(paper.c_fam_can3 == "2"){
+        }else if(paper.ck3_3 == "1"){
             cancer_3_3_2.isChecked = true
 
-        }else if(paper.c_fam_can3 == "3"){
+        }else if(paper.ck3_3 == "2"){
             cancer_3_3_3.isChecked = true
 
             cancer_3_3_checkBox1.visibility = View.VISIBLE
@@ -1065,27 +1120,27 @@ class CancerExaminationActivity : RootActivity(){
             cancer_3_3_checkBox4.visibility = View.VISIBLE
             cancer_3_3_checkBox5.visibility = View.VISIBLE
 
-            if(paper.c_fam_can1_rel3 == "1"){
+            if(paper.ck3_3_1 == "1"){
                 cancer_3_3_checkBox1.isChecked = true
-            }else if(paper.c_fam_can1_rel3 == "2"){
+            }else if(paper.ck3_3_2 == "2"){
                 cancer_3_3_checkBox2.isChecked = true
-            }else if(paper.c_fam_can1_rel3 == "3"){
+            }else if(paper.ck3_3_3 == "3"){
                 cancer_3_3_checkBox3.isChecked = true
-            }else if(paper.c_fam_can1_rel3 == "4"){
+            }else if(paper.ck3_3_4 == "4"){
                 cancer_3_3_checkBox4.isChecked = true
-            }else if(paper.c_fam_can1_rel3 == "5"){
+            }else if(paper.ck3_3_5 == "5"){
                 cancer_3_3_checkBox5.isChecked = true
             }
 
         }
 
-        if(paper.c_fam_can4 == "1"){
+        if(paper.ck3_4 == "0"){
             cancer_3_4_1.isChecked = true
 
-        }else if(paper.c_fam_can4 == "2"){
+        }else if(paper.ck3_4 == "1"){
             cancer_3_4_2.isChecked = true
 
-        }else if(paper.c_fam_can4 == "3"){
+        }else if(paper.ck3_4 == "2"){
             cancer_3_4_3.isChecked = true
 
             cancer_3_4_checkBox1.visibility = View.VISIBLE
@@ -1094,27 +1149,27 @@ class CancerExaminationActivity : RootActivity(){
             cancer_3_4_checkBox4.visibility = View.VISIBLE
             cancer_3_4_checkBox5.visibility = View.VISIBLE
 
-            if(paper.c_fam_can1_rel4 == "1"){
+            if(paper.ck3_4_1 == "1"){
                 cancer_3_4_checkBox1.isChecked = true
-            }else if(paper.c_fam_can1_rel4 == "2"){
+            }else if(paper.ck3_4_2 == "2"){
                 cancer_3_4_checkBox2.isChecked = true
-            }else if(paper.c_fam_can1_rel4 == "3"){
+            }else if(paper.ck3_4_3 == "3"){
                 cancer_3_4_checkBox3.isChecked = true
-            }else if(paper.c_fam_can1_rel4 == "4"){
+            }else if(paper.ck3_4_4 == "4"){
                 cancer_3_4_checkBox4.isChecked = true
-            }else if(paper.c_fam_can1_rel4 == "5"){
+            }else if(paper.ck3_4_5 == "5"){
                 cancer_3_4_checkBox5.isChecked = true
             }
 
         }
 
-        if(paper.c_fam_can5 == "1"){
+        if(paper.ck3_5 == "0"){
             cancer_3_5_1.isChecked = true
 
-        }else if(paper.c_fam_can5 == "2"){
+        }else if(paper.ck3_5 == "1"){
             cancer_3_5_2.isChecked = true
 
-        }else if(paper.c_fam_can5 == "3"){
+        }else if(paper.ck3_5 == "2"){
             cancer_3_5_3.isChecked = true
 
             cancer_3_5_checkBox1.visibility = View.VISIBLE
@@ -1123,28 +1178,28 @@ class CancerExaminationActivity : RootActivity(){
             cancer_3_5_checkBox4.visibility = View.VISIBLE
             cancer_3_5_checkBox5.visibility = View.VISIBLE
 
-            if(paper.c_fam_can1_rel5 == "1"){
+            if(paper.ck3_5_1 == "1"){
                 cancer_3_5_checkBox1.isChecked = true
-            }else if(paper.c_fam_can1_rel5 == "2"){
+            }else if(paper.ck3_5_2 == "2"){
                 cancer_3_5_checkBox2.isChecked = true
-            }else if(paper.c_fam_can1_rel5 == "3"){
+            }else if(paper.ck3_5_3 == "3"){
                 cancer_3_5_checkBox3.isChecked = true
-            }else if(paper.c_fam_can1_rel5 == "4"){
+            }else if(paper.ck3_5_4 == "4"){
                 cancer_3_5_checkBox4.isChecked = true
-            }else if(paper.c_fam_can1_rel5 == "5"){
+            }else if(paper.ck3_5_5 == "5"){
                 cancer_3_5_checkBox5.isChecked = true
             }
 
         }
 
 
-        if(paper.c_fam_can6 == "1"){
+        if(paper.ck3_6 == "0"){
             cancer_3_6_1.isChecked = true
 
-        }else if(paper.c_fam_can6 == "2"){
+        }else if(paper.ck3_6 == "1"){
             cancer_3_6_2.isChecked = true
 
-        }else if(paper.c_fam_can6 == "3"){
+        }else if(paper.ck3_6 == "2"){
             cancer_3_6_3.isChecked = true
 
             cancer_3_6_checkBox1.visibility = View.VISIBLE
@@ -1153,15 +1208,15 @@ class CancerExaminationActivity : RootActivity(){
             cancer_3_6_checkBox4.visibility = View.VISIBLE
             cancer_3_6_checkBox5.visibility = View.VISIBLE
 
-            if(paper.c_fam_can1_rel6 == "1"){
+            if(paper.ck3_6_1 == "1"){
                 cancer_3_6_checkBox1.isChecked = true
-            }else if(paper.c_fam_can1_rel6 == "2"){
+            }else if(paper.ck3_6_2 == "2"){
                 cancer_3_6_checkBox2.isChecked = true
-            }else if(paper.c_fam_can1_rel6 == "3"){
+            }else if(paper.ck3_6_3 == "3"){
                 cancer_3_6_checkBox3.isChecked = true
-            }else if(paper.c_fam_can1_rel6 == "4"){
+            }else if(paper.ck3_6_4 == "4"){
                 cancer_3_6_checkBox4.isChecked = true
-            }else if(paper.c_fam_can1_rel6 == "5"){
+            }else if(paper.ck3_6_5 == "5"){
                 cancer_3_6_checkBox5.isChecked = true
             }
 
@@ -1200,6 +1255,7 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_3_4.isChecked = true
         }
 
+
         if(paper.ck4_4 == "1"){
             cancer_4_4_1.isChecked = true
         }else if(paper.ck4_4 == "2"){
@@ -1231,6 +1287,7 @@ class CancerExaminationActivity : RootActivity(){
         }else if(paper.ck4_6 == "4"){
             cancer_4_6_4.isChecked = true
         }
+
 
         if(paper.ck4_7 == "1"){
             cancer_4_7_1.isChecked = true
@@ -1313,23 +1370,23 @@ class CancerExaminationActivity : RootActivity(){
 
 
 
-        if(paper.ck8 == "1"){
+        if(paper.ck8_1 == "1"){
             cancer_8_1.isChecked = true
-            if(paper.ck8_1.isNullOrEmpty()){
-                cancer_editText3.setText(paper.ck8_1)
+            if(paper.ck8_2.isNullOrEmpty()){
+                cancer_editText3.setText(paper.ck8_2)
             }
-        }else if(paper.ck8 == "2"){
+        }else if(paper.ck8_1 == "2"){
             cancer_8_2.isChecked = true
         }
 
-        if(paper.ck9 == "1"){
+        if(paper.ck9_1 == "1"){
             cancer_9_1.isChecked = true
-        }else if(paper.ck9 == "2"){
+        }else if(paper.ck9_1 == "2"){
             cancer_9_2.isChecked = true
-        }else if(paper.ck9 == "3"){
+        }else if(paper.ck9_1 == "3"){
             cancer_9_3.isChecked = true
-            if(paper.ck9_1.isNullOrEmpty()){
-                cancer_editText4.setText(paper.ck9_1)
+            if(paper.ck9_2.isNullOrEmpty()){
+                cancer_editText4.setText(paper.ck9_2)
             }
         }
 
