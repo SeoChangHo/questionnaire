@@ -448,6 +448,8 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
+        println("&&&&&&&")
+        println(columnValue.signature.size)
 
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, signature, name)" +

@@ -19,6 +19,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.Paper_ORAL
+import com.example.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_oral_exam.*
@@ -81,9 +82,11 @@ class OralExaminationActivity : RootActivity() {
             println(MainActivity.user_stream)
             println("*****")
 
-            var bmp: Bitmap = BitmapFactory.decodeByteArray(MainActivity.user_stream,0,MainActivity.user_stream!!.size)
+            //var bmp: Bitmap = BitmapFactory.decodeByteArray(MainActivity.user_stream,0,MainActivity.user_stream!!.size)
+
+            var bmp: Bitmap = BitmapFun.Fuc.getImage(MainActivity.user_stream!!)
             Signature.setImageBitmap(bmp)
-            signature = MainActivity.user_stream!!
+            signature = BitmapFun.Fuc.getBytes(bmp)
         }
 
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
