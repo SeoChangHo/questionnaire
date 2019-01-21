@@ -10,7 +10,6 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
@@ -312,11 +311,11 @@ class CognitiveExaminationActivity : RootActivity(){
         }
 
         if(cognitive_1_1.isChecked){
-            mj_inji_1 = "1"
+            mj_inji_1 = "0"
         }else if(cognitive_1_2.isChecked){
-            mj_inji_1 = "2"
+            mj_inji_1 = "1"
         }else if(cognitive_1_3.isChecked){
-            mj_inji_1 = "3"
+            mj_inji_1 = "2"
         }else{
             Toast.makeText(this, "1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -324,99 +323,99 @@ class CognitiveExaminationActivity : RootActivity(){
 
 
         if(cognitive_2_1.isChecked){
-            mj_inji_2 = "1"
+            mj_inji_2 = "0"
         }else if(cognitive_2_2.isChecked){
-            mj_inji_2 = "2"
+            mj_inji_2 = "1"
         }else if(cognitive_2_3.isChecked){
-            mj_inji_2 = "3"
+            mj_inji_2 = "2"
         }else{
             Toast.makeText(this, "2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cognitive_3_1.isChecked){
-            mj_inji_3 = "1"
+            mj_inji_3 = "0"
         }else if(cognitive_3_2.isChecked){
-            mj_inji_3 = "2"
+            mj_inji_3 = "1"
         }else if(cognitive_3_3.isChecked){
-            mj_inji_3 = "3"
+            mj_inji_3 = "2"
         }else{
             Toast.makeText(this, "3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cognitive_4_1.isChecked){
-            mj_inji_4 = "1"
+            mj_inji_4 = "0"
         }else if(cognitive_4_2.isChecked){
-            mj_inji_4 = "2"
+            mj_inji_4 = "1"
         }else if(cognitive_4_3.isChecked){
-            mj_inji_4 = "3"
+            mj_inji_4 = "2"
         }else{
             Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cognitive_5_1.isChecked){
-            mj_inji_5 = "1"
+            mj_inji_5 = "0"
         }else if(cognitive_5_2.isChecked){
-            mj_inji_5 = "2"
+            mj_inji_5 = "1"
         }else if(cognitive_5_3.isChecked){
-            mj_inji_5 = "3"
+            mj_inji_5 = "2"
         }else{
             Toast.makeText(this, "5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cognitive_6_1.isChecked){
-            mj_inji_6 = "1"
+            mj_inji_6 = "0"
         }else if(cognitive_6_2.isChecked){
-            mj_inji_6 = "2"
+            mj_inji_6 = "1"
         }else if(cognitive_6_3.isChecked){
-            mj_inji_6 = "3"
+            mj_inji_6 = "2"
         }else{
             Toast.makeText(this, "6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cognitive_7_1.isChecked){
-            mj_inji_7 = "1"
+            mj_inji_7 = "0"
         }else if(cognitive_7_2.isChecked){
-            mj_inji_7 = "2"
+            mj_inji_7 = "1"
         }else if(cognitive_7_3.isChecked){
-            mj_inji_7 = "3"
+            mj_inji_7 = "2"
         }else{
             Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cognitive_8_1.isChecked){
-            mj_inji_8 = "1"
+            mj_inji_8 = "0"
         }else if(cognitive_8_2.isChecked){
-            mj_inji_8 = "2"
+            mj_inji_8 = "1"
         }else if(cognitive_8_3.isChecked){
-            mj_inji_8 = "3"
+            mj_inji_8 = "2"
         }else{
             Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cognitive_9_1.isChecked){
-            mj_inji_9 = "1"
+            mj_inji_9 = "0"
         }else if(cognitive_9_2.isChecked){
-            mj_inji_9 = "2"
+            mj_inji_9 = "1"
         }else if(cognitive_9_3.isChecked){
-            mj_inji_9 = "3"
+            mj_inji_9 = "2"
         }else{
             Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cognitive_10_1.isChecked){
-            mj_inji_10 = "1"
+            mj_inji_10 = "0"
         }else if(cognitive_10_2.isChecked){
-            mj_inji_10 = "2"
+            mj_inji_10 = "1"
         }else if(cognitive_10_3.isChecked){
-            mj_inji_10 = "3"
+            mj_inji_10 = "2"
         }else{
             Toast.makeText(this, "10번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -424,22 +423,22 @@ class CognitiveExaminationActivity : RootActivity(){
 
 
         if(cognitive_11_1.isChecked){
-            mj_inji_11 = "1"
+            mj_inji_11 = "0"
         }else if(cognitive_11_2.isChecked){
-            mj_inji_11 = "2"
+            mj_inji_11 = "1"
         }else if(cognitive_11_3.isChecked){
-            mj_inji_11 = "3"
+            mj_inji_11 = "2"
         }else{
             Toast.makeText(this, "11번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cognitive_12_1.isChecked){
-            mj_inji_12 = "1"
+            mj_inji_12 = "0"
         }else if(cognitive_12_2.isChecked){
-            mj_inji_12 = "2"
+            mj_inji_12 = "1"
         }else if(cognitive_12_3.isChecked){
-            mj_inji_12 = "3"
+            mj_inji_12 = "2"
         }else{
             Toast.makeText(this, "12번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -447,22 +446,22 @@ class CognitiveExaminationActivity : RootActivity(){
 
 
         if(cognitive_13_1.isChecked){
-            mj_inji_13 = "1"
+            mj_inji_13 = "0"
         }else if(cognitive_13_2.isChecked){
-            mj_inji_13 = "2"
+            mj_inji_13 = "1"
         }else if(cognitive_13_3.isChecked){
-            mj_inji_13 = "3"
+            mj_inji_13 = "2"
         }else{
             Toast.makeText(this, "13번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(cognitive_14_1.isChecked){
-            mj_inji_14 = "1"
+            mj_inji_14 = "0"
         }else if(cognitive_14_2.isChecked){
-            mj_inji_14 = "2"
+            mj_inji_14 = "1"
         }else if(cognitive_14_3.isChecked){
-            mj_inji_14 = "3"
+            mj_inji_14 = "2"
         }else{
             Toast.makeText(this, "14번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -470,11 +469,11 @@ class CognitiveExaminationActivity : RootActivity(){
 
 
         if(cognitive_15_1.isChecked){
-            mj_inji_15 = "1"
+            mj_inji_15 = "0"
         }else if(cognitive_15_2.isChecked){
-            mj_inji_15 = "2"
+            mj_inji_15 = "1"
         }else if(cognitive_15_3.isChecked){
-            mj_inji_15 = "3"
+            mj_inji_15 = "2"
         }else{
             Toast.makeText(this, "15번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -509,136 +508,136 @@ class CognitiveExaminationActivity : RootActivity(){
         cognitive_edit_submit.visibility = View.VISIBLE
 
 
-        if(paper.mj_inji_1 == "1"){
+        if(paper.mj_inji_1 == "0"){
             cognitive_1_1.isChecked = true
-        }else if(paper.mj_inji_1 == "2"){
+        }else if(paper.mj_inji_1 == "1"){
             cognitive_1_2.isChecked = true
-        }else if(paper.mj_inji_1 == "3"){
+        }else if(paper.mj_inji_1 == "2"){
             cognitive_1_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_2 == "1"){
+        if(paper.mj_inji_2 == "0"){
             cognitive_2_1.isChecked = true
-        }else if(paper.mj_inji_2 == "2"){
+        }else if(paper.mj_inji_2 == "1"){
             cognitive_2_2.isChecked = true
-        }else if(paper.mj_inji_2 == "3"){
+        }else if(paper.mj_inji_2 == "2"){
             cognitive_2_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_3 == "1"){
+        if(paper.mj_inji_3 == "0"){
             cognitive_3_1.isChecked = true
-        }else if(paper.mj_inji_3 == "2"){
+        }else if(paper.mj_inji_3 == "1"){
             cognitive_3_2.isChecked = true
-        }else if(paper.mj_inji_3 == "3"){
+        }else if(paper.mj_inji_3 == "2"){
             cognitive_3_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_4 == "1"){
+        if(paper.mj_inji_4 == "0"){
             cognitive_4_1.isChecked = true
-        }else if(paper.mj_inji_4 == "2"){
+        }else if(paper.mj_inji_4 == "1"){
             cognitive_4_2.isChecked = true
-        }else if(paper.mj_inji_4 == "3"){
+        }else if(paper.mj_inji_4 == "2"){
             cognitive_4_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_5 == "1"){
+        if(paper.mj_inji_5 == "0"){
             cognitive_5_1.isChecked = true
-        }else if(paper.mj_inji_5 == "2"){
+        }else if(paper.mj_inji_5 == "1"){
             cognitive_5_2.isChecked = true
-        }else if(paper.mj_inji_5 == "3"){
+        }else if(paper.mj_inji_5 == "2"){
             cognitive_5_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_6 == "1"){
+        if(paper.mj_inji_6 == "0"){
             cognitive_6_1.isChecked = true
-        }else if(paper.mj_inji_6 == "2"){
+        }else if(paper.mj_inji_6 == "1"){
             cognitive_6_2.isChecked = true
-        }else if(paper.mj_inji_6 == "3"){
+        }else if(paper.mj_inji_6 == "2"){
             cognitive_6_3.isChecked = true
         }
 
-        if(paper.mj_inji_7 == "1"){
+        if(paper.mj_inji_7 == "0"){
             cognitive_7_1.isChecked = true
-        }else if(paper.mj_inji_7 == "2"){
+        }else if(paper.mj_inji_7 == "1"){
             cognitive_7_2.isChecked = true
-        }else if(paper.mj_inji_7 == "3"){
+        }else if(paper.mj_inji_7 == "2"){
             cognitive_7_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_8 == "1"){
+        if(paper.mj_inji_8 == "0"){
             cognitive_8_1.isChecked = true
-        }else if(paper.mj_inji_8 == "2"){
+        }else if(paper.mj_inji_8 == "1"){
             cognitive_8_2.isChecked = true
-        }else if(paper.mj_inji_8 == "3"){
+        }else if(paper.mj_inji_8 == "2"){
             cognitive_8_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_9 == "1"){
+        if(paper.mj_inji_9 == "0"){
             cognitive_9_1.isChecked = true
-        }else if(paper.mj_inji_9 == "2"){
+        }else if(paper.mj_inji_9 == "1"){
             cognitive_9_2.isChecked = true
-        }else if(paper.mj_inji_9 == "3"){
+        }else if(paper.mj_inji_9 == "2"){
             cognitive_9_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_10 == "1"){
+        if(paper.mj_inji_10 == "0"){
             cognitive_10_1.isChecked = true
-        }else if(paper.mj_inji_10 == "2"){
+        }else if(paper.mj_inji_10 == "1"){
             cognitive_10_2.isChecked = true
-        }else if(paper.mj_inji_10 == "3"){
+        }else if(paper.mj_inji_10 == "2"){
             cognitive_10_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_11 == "1"){
+        if(paper.mj_inji_11 == "0"){
             cognitive_11_1.isChecked = true
-        }else if(paper.mj_inji_11 == "2"){
+        }else if(paper.mj_inji_11 == "1"){
             cognitive_11_2.isChecked = true
-        }else if(paper.mj_inji_11 == "3"){
+        }else if(paper.mj_inji_11 == "2"){
             cognitive_11_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_12 == "1"){
+        if(paper.mj_inji_12 == "0"){
             cognitive_12_1.isChecked = true
-        }else if(paper.mj_inji_12 == "2"){
+        }else if(paper.mj_inji_12 == "1"){
             cognitive_12_2.isChecked = true
-        }else if(paper.mj_inji_12 == "3"){
+        }else if(paper.mj_inji_12 == "2"){
             cognitive_12_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_13 == "1"){
+        if(paper.mj_inji_13 == "0"){
             cognitive_13_1.isChecked = true
-        }else if(paper.mj_inji_13 == "2"){
+        }else if(paper.mj_inji_13 == "1"){
             cognitive_13_2.isChecked = true
-        }else if(paper.mj_inji_13 == "3"){
+        }else if(paper.mj_inji_13 == "2"){
             cognitive_13_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_14 == "1"){
+        if(paper.mj_inji_14 == "0"){
             cognitive_14_1.isChecked = true
-        }else if(paper.mj_inji_14 == "2"){
+        }else if(paper.mj_inji_14 == "1"){
             cognitive_14_2.isChecked = true
-        }else if(paper.mj_inji_14 == "3"){
+        }else if(paper.mj_inji_14 == "2"){
             cognitive_14_3.isChecked = true
         }
 
 
-        if(paper.mj_inji_15 == "1"){
+        if(paper.mj_inji_15 == "0"){
             cognitive_15_1.isChecked = true
-        }else if(paper.mj_inji_15 == "2"){
+        }else if(paper.mj_inji_15 == "1"){
             cognitive_15_2.isChecked = true
-        }else if(paper.mj_inji_15 == "3"){
+        }else if(paper.mj_inji_15 == "2"){
             cognitive_15_3.isChecked = true
         }
 

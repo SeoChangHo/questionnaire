@@ -299,117 +299,117 @@ class MentalExaminationActivity : RootActivity(){
         }
 
         if(mental_1_1.isChecked){
-            mj_mtl_1 = "1"
+            mj_mtl_1 = "0"
         }else if(mental_1_2.isChecked){
-            mj_mtl_1 = "2"
+            mj_mtl_1 = "1"
         }else if(mental_1_3.isChecked){
-            mj_mtl_1 = "3"
+            mj_mtl_1 = "2"
         }else if(mental_1_4.isChecked){
-            mj_mtl_1 = "4"
+            mj_mtl_1 = "3"
         }else{
             Toast.makeText(this, "1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(mental_2_1.isChecked){
-            mj_mtl_2 = "1"
+            mj_mtl_2 = "0"
         }else if(mental_2_2.isChecked){
-            mj_mtl_2 = "2"
+            mj_mtl_2 = "1"
         }else if(mental_2_3.isChecked){
-            mj_mtl_2 = "3"
+            mj_mtl_2 = "2"
         }else if(mental_2_4.isChecked){
-            mj_mtl_2 = "4"
+            mj_mtl_2 = "3"
         }else{
             Toast.makeText(this, "2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(mental_3_1.isChecked){
-            mj_mtl_3 = "1"
+            mj_mtl_3 = "0"
         }else if(mental_3_2.isChecked){
-            mj_mtl_3 = "2"
+            mj_mtl_3 = "1"
         }else if(mental_3_3.isChecked){
-            mj_mtl_3 = "3"
+            mj_mtl_3 = "2"
         }else if(mental_3_4.isChecked){
-            mj_mtl_3 = "4"
+            mj_mtl_3 = "3"
         }else{
             Toast.makeText(this, "3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(mental_4_1.isChecked){
-            mj_mtl_4 = "1"
+            mj_mtl_4 = "0"
         }else if(mental_4_2.isChecked){
-            mj_mtl_4 = "2"
+            mj_mtl_4 = "1"
         }else if(mental_4_3.isChecked){
-            mj_mtl_4 = "3"
+            mj_mtl_4 = "2"
         }else if(mental_4_4.isChecked){
-            mj_mtl_4 = "4"
+            mj_mtl_4 = "3"
         }else{
             Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(mental_5_1.isChecked){
-            mj_mtl_5 = "1"
+            mj_mtl_5 = "0"
         }else if(mental_5_2.isChecked){
-            mj_mtl_5 = "2"
+            mj_mtl_5 = "1"
         }else if(mental_5_3.isChecked){
-            mj_mtl_5 = "3"
+            mj_mtl_5 = "2"
         }else if(mental_5_4.isChecked){
-            mj_mtl_5 = "4"
+            mj_mtl_5 = "3"
         }else{
             Toast.makeText(this, "5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(mental_6_1.isChecked){
-            mj_mtl_6 = "1"
+            mj_mtl_6 = "0"
         }else if(mental_6_2.isChecked){
-            mj_mtl_6 = "2"
+            mj_mtl_6 = "1"
         }else if(mental_6_3.isChecked){
-            mj_mtl_6 = "3"
+            mj_mtl_6 = "2"
         }else if(mental_6_4.isChecked){
-            mj_mtl_6 = "4"
+            mj_mtl_6 = "3"
         }else{
             Toast.makeText(this, "6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(mental_7_1.isChecked){
-            mj_mtl_7 = "1"
+            mj_mtl_7 = "0"
         }else if(mental_7_2.isChecked){
-            mj_mtl_7 = "2"
+            mj_mtl_7 = "1"
         }else if(mental_7_3.isChecked){
-            mj_mtl_7 = "3"
+            mj_mtl_7 = "2"
         }else if(mental_7_4.isChecked){
-            mj_mtl_7 = "4"
+            mj_mtl_7 = "3"
         }else{
             Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(mental_8_1.isChecked){
-            mj_mtl_8 = "1"
+            mj_mtl_8 = "0"
         }else if(mental_8_2.isChecked){
-            mj_mtl_8 = "2"
+            mj_mtl_8 = "1"
         }else if(mental_8_3.isChecked){
-            mj_mtl_8 = "3"
+            mj_mtl_8 = "2"
         }else if(mental_8_4.isChecked){
-            mj_mtl_8 = "4"
+            mj_mtl_8 = "3"
         }else{
             Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
         if(mental_9_1.isChecked){
-            mj_mtl_9 = "1"
+            mj_mtl_9 = "0"
         }else if(mental_9_2.isChecked){
-            mj_mtl_9 = "2"
+            mj_mtl_9 = "1"
         }else if(mental_9_3.isChecked){
-            mj_mtl_9 = "3"
+            mj_mtl_9 = "2"
         }else if(mental_9_4.isChecked){
-            mj_mtl_9 = "4"
+            mj_mtl_9 = "3"
         }else{
             Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -444,101 +444,101 @@ class MentalExaminationActivity : RootActivity(){
         mental_edit_submit.visibility = View.VISIBLE
 
 
-        if(paper.mj_mtl_1 == "1"){
+        if(paper.mj_mtl_1 == "0"){
             mental_1_1.isChecked = true
-        }else if(paper.mj_mtl_1 == "2"){
+        }else if(paper.mj_mtl_1 == "1"){
             mental_1_2.isChecked = true
-        }else if(paper.mj_mtl_1 == "3"){
+        }else if(paper.mj_mtl_1 == "2"){
             mental_1_3.isChecked = true
-        }else if(paper.mj_mtl_1 == "4"){
+        }else if(paper.mj_mtl_1 == "3"){
             mental_1_4.isChecked = true
         }
 
 
-        if(paper.mj_mtl_2 == "1"){
+        if(paper.mj_mtl_2 == "0"){
             mental_2_1.isChecked = true
-        }else if(paper.mj_mtl_2 == "2"){
+        }else if(paper.mj_mtl_2 == "1"){
             mental_2_2.isChecked = true
-        }else if(paper.mj_mtl_2 == "3"){
+        }else if(paper.mj_mtl_2 == "2"){
             mental_2_3.isChecked = true
-        }else if(paper.mj_mtl_2 == "4"){
+        }else if(paper.mj_mtl_2 == "3"){
             mental_2_4.isChecked = true
         }
 
 
-        if(paper.mj_mtl_3 == "1"){
+        if(paper.mj_mtl_3 == "0"){
             mental_3_1.isChecked = true
-        }else if(paper.mj_mtl_3 == "2"){
+        }else if(paper.mj_mtl_3 == "1"){
             mental_3_2.isChecked = true
-        }else if(paper.mj_mtl_3 == "3"){
+        }else if(paper.mj_mtl_3 == "2"){
             mental_3_3.isChecked = true
-        }else if(paper.mj_mtl_3 == "4"){
+        }else if(paper.mj_mtl_3 == "3"){
             mental_3_4.isChecked = true
         }
 
 
-        if(paper.mj_mtl_4 == "1"){
+        if(paper.mj_mtl_4 == "0"){
             mental_4_1.isChecked = true
-        }else if(paper.mj_mtl_4 == "2"){
+        }else if(paper.mj_mtl_4 == "1"){
             mental_4_2.isChecked = true
-        }else if(paper.mj_mtl_4 == "3"){
+        }else if(paper.mj_mtl_4 == "2"){
             mental_4_3.isChecked = true
-        }else if(paper.mj_mtl_4 == "4"){
+        }else if(paper.mj_mtl_4 == "3"){
             mental_4_4.isChecked = true
         }
 
 
-        if(paper.mj_mtl_5 == "1"){
+        if(paper.mj_mtl_5 == "0"){
             mental_5_1.isChecked = true
-        }else if(paper.mj_mtl_5 == "2"){
+        }else if(paper.mj_mtl_5 == "1"){
             mental_5_2.isChecked = true
-        }else if(paper.mj_mtl_5 == "3"){
+        }else if(paper.mj_mtl_5 == "2"){
             mental_5_3.isChecked = true
-        }else if(paper.mj_mtl_5 == "4"){
+        }else if(paper.mj_mtl_5 == "3"){
             mental_5_4.isChecked = true
         }
 
 
-        if(paper.mj_mtl_6 == "1"){
+        if(paper.mj_mtl_6 == "0"){
             mental_6_1.isChecked = true
-        }else if(paper.mj_mtl_6 == "2"){
+        }else if(paper.mj_mtl_6 == "1"){
             mental_6_2.isChecked = true
-        }else if(paper.mj_mtl_6 == "3"){
+        }else if(paper.mj_mtl_6 == "2"){
             mental_6_3.isChecked = true
-        }else if(paper.mj_mtl_6 == "4"){
+        }else if(paper.mj_mtl_6 == "3"){
             mental_6_4.isChecked = true
         }
 
 
-        if(paper.mj_mtl_7 == "1"){
+        if(paper.mj_mtl_7 == "0"){
             mental_7_1.isChecked = true
-        }else if(paper.mj_mtl_7 == "2"){
+        }else if(paper.mj_mtl_7 == "1"){
             mental_7_2.isChecked = true
-        }else if(paper.mj_mtl_7 == "3"){
+        }else if(paper.mj_mtl_7 == "2"){
             mental_7_3.isChecked = true
-        }else if(paper.mj_mtl_7 == "4"){
+        }else if(paper.mj_mtl_7 == "3"){
             mental_7_4.isChecked = true
         }
 
 
-        if(paper.mj_mtl_8 == "1"){
+        if(paper.mj_mtl_8 == "0"){
             mental_8_1.isChecked = true
-        }else if(paper.mj_mtl_8 == "2"){
+        }else if(paper.mj_mtl_8 == "1"){
             mental_8_2.isChecked = true
-        }else if(paper.mj_mtl_8 == "3"){
+        }else if(paper.mj_mtl_8 == "2"){
             mental_8_3.isChecked = true
-        }else if(paper.mj_mtl_8 == "4"){
+        }else if(paper.mj_mtl_8 == "3"){
             mental_8_4.isChecked = true
         }
 
 
-        if(paper.mj_mtl_9 == "1"){
+        if(paper.mj_mtl_9 == "0"){
             mental_9_1.isChecked = true
-        }else if(paper.mj_mtl_9 == "2"){
+        }else if(paper.mj_mtl_9 == "1"){
             mental_9_2.isChecked = true
-        }else if(paper.mj_mtl_9 == "3"){
+        }else if(paper.mj_mtl_9 == "2"){
             mental_9_3.isChecked = true
-        }else if(paper.mj_mtl_9 == "4"){
+        }else if(paper.mj_mtl_9 == "3"){
             mental_9_4.isChecked = true
         }
 
