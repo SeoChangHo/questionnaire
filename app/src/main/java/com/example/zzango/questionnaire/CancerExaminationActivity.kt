@@ -10,7 +10,6 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
@@ -58,14 +57,14 @@ class CancerExaminationActivity : RootActivity(){
                          @SerializedName("c_fam_can1_rel5") @Expose var c_fam_can1_rel5 : String,
                          @SerializedName("c_fam_can6") @Expose var c_fam_can6 : String,
                          @SerializedName("c_fam_can1_rel6") @Expose var c_fam_can1_rel6 : String,
-                         @SerializedName("ck4_1_1") @Expose var ck4_1_1 : String,
-                         @SerializedName("ck4_1_2") @Expose var ck4_1_2 : String,
-                         @SerializedName("ck4_2_1") @Expose var ck4_2_1 : String,
-                         @SerializedName("ck4_3_1") @Expose var ck4_3_1 : String,
-                         @SerializedName("ck4_3_2") @Expose var ck4_3_2 : String,
-                         @SerializedName("ck4_3_3") @Expose var ck4_3_3 : String,
-                         @SerializedName("ck4_4_1") @Expose var ck4_4_1 : String,
-                         @SerializedName("ck4_5_1") @Expose var ck4_5_1 : String,
+                         @SerializedName("ck4_1") @Expose var ck4_1 : String,
+                         @SerializedName("ck4_2") @Expose var ck4_2 : String,
+                         @SerializedName("ck4_3") @Expose var ck4_3 : String,
+                         @SerializedName("ck4_4") @Expose var ck4_4 : String,
+                         @SerializedName("ck4_5") @Expose var ck4_5 : String,
+                         @SerializedName("ck4_6") @Expose var ck4_6 : String,
+                         @SerializedName("ck4_7") @Expose var ck4_7 : String,
+                         @SerializedName("ck4_8") @Expose var ck4_8 : String,
                          @SerializedName("ck5_1") @Expose var ck5_1 : String,
                          @SerializedName("ck5_2") @Expose var ck5_2 : String,
                          @SerializedName("ck5_3") @Expose var ck5_3 : String,
@@ -414,14 +413,14 @@ class CancerExaminationActivity : RootActivity(){
         var c_fam_can1_rel5 = ""
         var c_fam_can6 = ""
         var c_fam_can1_rel6 = ""
-        var ck4_1_1 = ""
-        var ck4_1_2 = ""
-        var ck4_2_1 = ""
-        var ck4_3_1 = ""
-        var ck4_3_2 = ""
-        var ck4_3_3 = ""
-        var ck4_4_1 = ""
-        var ck4_5_1 = ""
+        var ck4_1 = ""
+        var ck4_2 = ""
+        var ck4_3 = ""
+        var ck4_4 = ""
+        var ck4_5 = ""
+        var ck4_6 = ""
+        var ck4_7 = ""
+        var ck4_8 = ""
         var ck5_1 = ""
         var ck5_2 = ""
         var ck5_3 = ""
@@ -654,84 +653,84 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_4_1_1.isChecked){
-            ck4_1_1 = "1"
+            ck4_1 = "1"
         }else if(cancer_4_1_2.isChecked){
-            ck4_1_1 = "2"
+            ck4_1 = "2"
         }else if(cancer_4_1_3.isChecked){
-            ck4_1_1 = "3"
+            ck4_1 = "3"
         }else if(cancer_4_1_4.isChecked){
-            ck4_1_1 = "4"
+            ck4_1 = "4"
         }
 
         if(cancer_4_2_1.isChecked){
-            ck4_1_2 = "1"
+            ck4_2 = "1"
         }else if(cancer_4_2_2.isChecked){
-            ck4_1_2 = "2"
+            ck4_2 = "2"
         }else if(cancer_4_2_3.isChecked){
-            ck4_1_2 = "3"
+            ck4_2 = "3"
         }else if(cancer_4_2_4.isChecked){
-            ck4_1_2 = "4"
+            ck4_2 = "4"
         }
 
         if(cancer_4_3_1.isChecked){
-            ck4_2_1 = "1"
+            ck4_3 = "1"
         }else if(cancer_4_3_2.isChecked){
-            ck4_2_1 = "2"
+            ck4_3 = "2"
         }else if(cancer_4_3_3.isChecked){
-            ck4_2_1 = "3"
+            ck4_3 = "3"
         }else if(cancer_4_3_4.isChecked){
-            ck4_2_1 = "4"
+            ck4_3 = "4"
         }
 
         if(cancer_4_4_1.isChecked){
-            ck4_3_1 = "1"
+            ck4_4 = "1"
         }else if(cancer_4_4_2.isChecked){
-            ck4_3_1 = "2"
+            ck4_4 = "2"
         }else if(cancer_4_4_3.isChecked){
-            ck4_3_1 = "3"
+            ck4_4 = "3"
         }else if(cancer_4_4_4.isChecked){
-            ck4_3_1 = "4"
+            ck4_4 = "4"
         }
 
         if(cancer_4_5_1.isChecked){
-            ck4_3_2 = "1"
+            ck4_5 = "1"
         }else if(cancer_4_5_2.isChecked){
-            ck4_3_2 = "2"
+            ck4_5 = "2"
         }else if(cancer_4_5_3.isChecked){
-            ck4_3_2 = "3"
+            ck4_5 = "3"
         }else if(cancer_4_5_4.isChecked){
-            ck4_3_2 = "4"
+            ck4_5 = "4"
         }
 
 
         if(cancer_4_6_1.isChecked){
-            ck4_3_3 = "1"
+            ck4_6 = "1"
         }else if(cancer_4_6_2.isChecked){
-            ck4_3_3 = "2"
+            ck4_6 = "2"
         }else if(cancer_4_6_3.isChecked){
-            ck4_3_3 = "3"
+            ck4_6 = "3"
         }else if(cancer_4_6_4.isChecked){
-            ck4_3_3 = "4"
+            ck4_6 = "4"
         }
 
         if(cancer_4_7_1.isChecked){
-            ck4_4_1 = "1"
+            ck4_7 = "1"
         }else if(cancer_4_7_2.isChecked){
-            ck4_4_1 = "2"
+            ck4_7 = "2"
         }else if(cancer_4_7_3.isChecked){
-            ck4_4_1 = "3"
+            ck4_7 = "3"
         }else if(cancer_4_7_4.isChecked){
-            ck4_4_1 = "4"
+            ck4_7 = "4"
         }
 
         if(cancer_4_8_1.isChecked){
-            ck4_5_1 = "1"
+            ck4_8 = "1"
         }else if(cancer_4_8_2.isChecked){
-            ck4_5_1 = "2"
+            ck4_8 = "2"
         }else if(cancer_4_8_3.isChecked){
-            ck4_5_1 = "3"
+            ck4_8 = "3"
         }else if(cancer_4_8_4.isChecked){
-            ck4_5_1 = "4"
+            ck4_8 = "4"
         }
 
         if(cancer_5_1_checkBox.isChecked){
@@ -944,8 +943,8 @@ class CancerExaminationActivity : RootActivity(){
                 exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
                 ck1, ck1_1, ck2, ck2_1, c_fam_can1, c_fam_can1_rel1, c_fam_can2, c_fam_can1_rel2,
                 c_fam_can3, c_fam_can1_rel3, c_fam_can4, c_fam_can1_rel4, c_fam_can5, c_fam_can1_rel5,
-                c_fam_can6, c_fam_can1_rel6, ck4_1_1, ck4_1_2, ck4_2_1, ck4_3_1, ck4_3_2, ck4_3_3,
-                ck4_4_1, ck4_5_1, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck5_6, ck6_1, ck6_2, ck6_3, ck6_4,
+                c_fam_can6, c_fam_can1_rel6, ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6,
+                ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck5_6, ck6_1, ck6_2, ck6_3, ck6_4,
                 ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8, ck8_1, ck9, ck9_1,
                 ck10, ck11, ck12, ck13, ck14
         ))
@@ -1169,88 +1168,88 @@ class CancerExaminationActivity : RootActivity(){
         }
 
 
-        if(paper.ck4_1_1 == "1"){
+        if(paper.ck4_1 == "1"){
             cancer_4_1_1.isChecked = true
-        }else if(paper.ck4_1_1 == "2"){
+        }else if(paper.ck4_1 == "2"){
             cancer_4_1_2.isChecked = true
-        }else if(paper.ck4_1_1 == "3"){
+        }else if(paper.ck4_1 == "3"){
             cancer_4_1_3.isChecked = true
-        }else if(paper.ck4_1_1 == "4"){
+        }else if(paper.ck4_1 == "4"){
             cancer_4_1_4.isChecked = true
         }
 
 
-        if(paper.ck4_1_2 == "1"){
+        if(paper.ck4_2 == "1"){
             cancer_4_2_1.isChecked = true
-        }else if(paper.ck4_1_2 == "2"){
+        }else if(paper.ck4_2 == "2"){
             cancer_4_2_2.isChecked = true
-        }else if(paper.ck4_1_2 == "3"){
+        }else if(paper.ck4_2 == "3"){
             cancer_4_2_3.isChecked = true
-        }else if(paper.ck4_1_2 == "4"){
+        }else if(paper.ck4_2 == "4"){
             cancer_4_2_4.isChecked = true
         }
 
 
-        if(paper.ck4_2_1 == "1"){
+        if(paper.ck4_3 == "1"){
             cancer_4_3_1.isChecked = true
-        }else if(paper.ck4_2_1 == "2"){
+        }else if(paper.ck4_3 == "2"){
             cancer_4_3_2.isChecked = true
-        }else if(paper.ck4_2_1 == "3"){
+        }else if(paper.ck4_3 == "3"){
             cancer_4_3_3.isChecked = true
-        }else if(paper.ck4_2_1 == "4"){
+        }else if(paper.ck4_3 == "4"){
             cancer_4_3_4.isChecked = true
         }
 
-        if(paper.ck4_3_1 == "1"){
+        if(paper.ck4_4 == "1"){
             cancer_4_4_1.isChecked = true
-        }else if(paper.ck4_3_1 == "2"){
+        }else if(paper.ck4_4 == "2"){
             cancer_4_4_2.isChecked = true
-        }else if(paper.ck4_3_1 == "3"){
+        }else if(paper.ck4_4 == "3"){
             cancer_4_4_3.isChecked = true
-        }else if(paper.ck4_3_1 == "4"){
+        }else if(paper.ck4_4 == "4"){
             cancer_4_4_4.isChecked = true
         }
 
 
-        if(paper.ck4_3_2 == "1"){
+        if(paper.ck4_5 == "1"){
             cancer_4_5_1.isChecked = true
-        }else if(paper.ck4_3_2 == "2"){
+        }else if(paper.ck4_5 == "2"){
             cancer_4_5_2.isChecked = true
-        }else if(paper.ck4_3_2 == "3"){
+        }else if(paper.ck4_5 == "3"){
             cancer_4_5_3.isChecked = true
-        }else if(paper.ck4_3_2 == "4"){
+        }else if(paper.ck4_5 == "4"){
             cancer_4_5_4.isChecked = true
         }
 
 
-        if(paper.ck4_3_3 == "1"){
+        if(paper.ck4_6 == "1"){
             cancer_4_6_1.isChecked = true
-        }else if(paper.ck4_3_3 == "2"){
+        }else if(paper.ck4_6 == "2"){
             cancer_4_6_2.isChecked = true
-        }else if(paper.ck4_3_3 == "3"){
+        }else if(paper.ck4_6 == "3"){
             cancer_4_6_3.isChecked = true
-        }else if(paper.ck4_3_3 == "4"){
+        }else if(paper.ck4_6 == "4"){
             cancer_4_6_4.isChecked = true
         }
 
-        if(paper.ck4_4_1 == "1"){
+        if(paper.ck4_7 == "1"){
             cancer_4_7_1.isChecked = true
-        }else if(paper.ck4_4_1 == "2"){
+        }else if(paper.ck4_7 == "2"){
             cancer_4_7_2.isChecked = true
-        }else if(paper.ck4_4_1 == "3"){
+        }else if(paper.ck4_7 == "3"){
             cancer_4_7_3.isChecked = true
-        }else if(paper.ck4_4_1 == "4"){
+        }else if(paper.ck4_7 == "4"){
             cancer_4_7_4.isChecked = true
         }
 
 
-        if(paper.ck4_5_1 == "1"){
+        if(paper.ck4_8 == "1"){
             cancer_4_8_1.isChecked = true
-        }else if(paper.ck4_5_1 == "2"){
+        }else if(paper.ck4_8 == "2"){
             cancer_4_8_2.isChecked = true
-        }else if(paper.ck4_5_1 == "3"){
+        }else if(paper.ck4_8 == "3"){
             cancer_4_8_3.isChecked = true
-        }else if(paper.ck4_5_1 == "4"){
+        }else if(paper.ck4_8 == "4"){
             cancer_4_8_4.isChecked = true
         }
 

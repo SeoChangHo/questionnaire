@@ -376,14 +376,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " c_fam_can1_rel5 TEXT," +
                 " c_fam_can6 TEXT," +
                 " c_fam_can1_rel6 TEXT," +
-                " ck4_1_1 TEXT," +
-                " ck4_1_2 TEXT," +
-                " ck4_2_1 TEXT," +
-                " ck4_3_1 TEXT," +
-                " ck4_3_2 TEXT," +
-                " ck4_3_3 TEXT," +
-                " ck4_4_1 TEXT," +
-                " ck4_5_1 TEXT," +
+                " ck4_1 TEXT," +
+                " ck4_2 TEXT," +
+                " ck4_3 TEXT," +
+                " ck4_4 TEXT," +
+                " ck4_5 TEXT," +
+                " ck4_6 TEXT," +
+                " ck4_7 TEXT," +
+                " ck4_8 TEXT," +
                 " ck5_1 TEXT," +
                 " ck5_2 TEXT," +
                 " ck5_3 TEXT," +
@@ -718,7 +718,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "category, " +
                 "ck1, ck1_1, ck2, ck2_1, c_fam_can1, c_fam_can1_rel1, c_fam_can2, c_fam_can1_rel2, c_fam_can3, c_fam_can1_rel3," +
                 "c_fam_can4, c_fam_can1_rel4, c_fam_can5, c_fam_can1_rel5, c_fam_can6, c_fam_can1_rel6," +
-                "ck4_1_1, ck4_1_2, ck4_2_1, ck4_3_1, ck4_3_2, ck4_3_3, ck4_4_1, ck4_5_1, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5," +
+                "ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6, ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5," +
                 "ck5_6, ck6_1, ck6_2, ck6_3, ck6_4, ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8, ck8_1," +
                 "ck9, ck9_1, ck10, ck11, ck12, ck13, ck14)" +
                 " VALUES (" +
@@ -727,8 +727,8 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.c_fam_can1}', '${columnValue.c_fam_can1_rel1}', '${columnValue.c_fam_can2}', '${columnValue.c_fam_can1_rel2}'" +
                 ", '${columnValue.c_fam_can3}', '${columnValue.c_fam_can1_rel3}', '${columnValue.c_fam_can4}', '${columnValue.c_fam_can1_rel4}'" +
                 ", '${columnValue.c_fam_can5}', '${columnValue.c_fam_can1_rel5}', '${columnValue.c_fam_can6}', '${columnValue.c_fam_can1_rel6}'" +
-                ", '${columnValue.ck4_1_1}', '${columnValue.ck4_1_2}', '${columnValue.ck4_2_1}', '${columnValue.ck4_3_1}'" +
-                ", '${columnValue.ck4_3_2}', '${columnValue.ck4_3_3}', '${columnValue.ck4_4_1}', '${columnValue.ck4_5_1}'" +
+                ", '${columnValue.ck4_1}', '${columnValue.ck4_2}', '${columnValue.ck4_3}', '${columnValue.ck4_4}'" +
+                ", '${columnValue.ck4_5}', '${columnValue.ck4_6}', '${columnValue.ck4_7}', '${columnValue.ck4_8}'" +
                 ", '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck5_1}'" +
                 ", '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}'" +
                 ", '${columnValue.ck6_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}'" +

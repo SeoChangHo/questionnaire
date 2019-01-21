@@ -10,14 +10,11 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.Paper_COMMON
 import com.google.gson.annotations.Expose
@@ -200,6 +197,30 @@ class CommonExaminationActivity : RootActivity() {
 
             checkCondition(isChecked, constraintLayout6_wrapper)
 
+        }
+
+        common_7_1.setOnClickListener {
+            if(common_7_1.isChecked){
+                common_7_1_editText.visibility = View.VISIBLE
+            }else{
+                common_7_1_editText.visibility = View.GONE
+            }
+        }
+
+        common_7_2.setOnClickListener {
+            if(common_7_2.isChecked){
+                common_7_2_editText.visibility = View.VISIBLE
+            }else{
+                common_7_2_editText.visibility = View.GONE
+            }
+        }
+
+        common_7_3.setOnClickListener {
+            if(common_7_3.isChecked){
+                common_7_3_editText.visibility = View.VISIBLE
+            }else{
+                common_7_3_editText.visibility = View.GONE
+            }
         }
 
         checkBox1.setOnCheckedChangeListener {
@@ -807,13 +828,28 @@ class CommonExaminationActivity : RootActivity() {
         }
 
         if(common_7_1.isChecked){
-            mj71 = "2"
+            if(common_7_1_editText.text.isNullOrEmpty()){
+                mj71 = common_7_1_editText.text.toString()
+            }else{
+                Toast.makeText(this, "7번 문항 첫번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
         }else if(common_7_2.isChecked){
-            mj72 = "2"
+            if(common_7_2_editText.text.isNullOrEmpty()){
+                mj72 = common_7_2_editText.text.toString()
+            }else{
+                Toast.makeText(this, "7번 문항 두번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
         }else if(common_7_3.isChecked){
-            mj73 = "2"
+            if(common_7_3_editText.text.isNullOrEmpty()){
+                mj73 = common_7_3_editText.text.toString()
+            }else{
+                Toast.makeText(this, "7번 문항 세번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
         }else if(common_7_4.isChecked){
-            mj74 = "2"
+            mj74 = "1"
         }else{
             Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -1332,13 +1368,16 @@ class CommonExaminationActivity : RootActivity() {
         }
 
 
-        if(paper.mj71 == "2"){
+        if(paper.mj71.isNullOrEmpty()){
             common_7_1.isChecked = true
-        }else if(paper.mj72 == "2"){
+            common_7_1_editText.setText(paper.mj71)
+        }else if(paper.mj72.isNullOrEmpty()){
             common_7_2.isChecked = true
-        }else if(paper.mj73 == "2"){
+            common_7_2_editText.setText(paper.mj72)
+        }else if(paper.mj73.isNullOrEmpty()){
             common_7_3.isChecked = true
-        }else if(paper.mj74 == "2"){
+            common_7_3_editText.setText(paper.mj73)
+        }else if(paper.mj74.isNullOrEmpty()){
             common_7_4.isChecked = true
         }
 
