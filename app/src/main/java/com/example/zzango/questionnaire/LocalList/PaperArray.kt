@@ -48,11 +48,27 @@ class PaperArray {
 
     object SetList
     {
+        //기본검사
         val SET1 = "SET1"
+
+
+        //기본검사 우울증
         val SET2 = "SET2"
+
+
+        //기본검사 우울증 생활습관
         val SET3 = "SET3"
-        val SET4 = "SET5"
+
+
+        //기본검사 인지기능 노인신체기능검사
+        val SET4 = "SET4"
+
+
+        //기본검사 인지기능
         val SET5 = "SET5"
+
+
+        //기본검사 인지기능 우울증 생활습관 노인신체기능검사
         val SET6 = "SET6"
     }
 
