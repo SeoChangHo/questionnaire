@@ -1,20 +1,13 @@
 package com.example.zzango.questionnaire
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.PaperArray
@@ -22,19 +15,14 @@ import com.example.zzango.questionnaire.LocalList.Paper_EXERCISE
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_exercise_exam.*
-import kotlinx.android.synthetic.main.save_complete_alert.view.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class ExerciseExaminationActivity : RootActivity() {
 
-    var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
+    lateinit var signature:ByteArray
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -211,126 +199,13 @@ class ExerciseExaminationActivity : RootActivity() {
 
     fun exercise_exam_local_insert(){
 
-        LocalDBhelper(this).exerciseCreate(sql_db)
-        LocalDBhelper(this).exerciseSaveLocal(sql_db!!, PaperArray.PaperList.Arr_EXERCISE!!)
-
-        saveCompleteAlert()
+        startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
     }
 
-    fun exercise_exam_server_insert(){
+    fun exercise_exam_server_insert() {
 
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-
-        OracleUtill().exercise_examination().exerciseServer(exam_result!!).enqueue(object : Callback<String> {
-
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-
-                if (response.isSuccessful) {
-
-                    if (!response.body()!!.equals("S")) {
-
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        this@ExerciseExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(this@ExerciseExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-
-                    } else {
-
-                        saveCompleteAlert()
-
-                    }
-
-                }
-
-            }
-
-            override fun onFailure(call: Call<String>, t: Throwable) {
-
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
-                this@ExerciseExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                Toast.makeText(this@ExerciseExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                println(t.toString())
-            }
-
-        })
-
-    }
-
-    fun saveCompleteAlert(){
-
-        login_appbar_loading_progress.visibility = View.GONE
-        login_appbar_loading_progress_bg.visibility = View.GONE
-        this@ExerciseExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-
-        popup = false
-
-        var dialog = AlertDialog.Builder(this).create()
-        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
-
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        dialog.setView(dialog_view)
-        dialog_view.save_complete_alert_text.setText("저장이 완료 되었습니다")
-
-        if(!popup) {
-
-            dialog.show().let {
-
-                popup = true
-
-            }
-
-        }
-
-        var displayMetrics = DisplayMetrics()
-        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-        // The absolute width of the available display size in pixels.
-        var displayWidth = displayMetrics.widthPixels
-        // The absolute height of the available display size in pixels.
-        var displayHeight = displayMetrics.heightPixels
-
-        // Initialize a new window manager layout parameters
-        var layoutParams = WindowManager.LayoutParams()
-
-        // Copy the alert dialog window attributes to new layout parameter instance
-        layoutParams.copyFrom(dialog.window.attributes)
-
-        // Set the alert dialog window width and height
-        // Set alert dialog width equal to screen width 90%
-        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-        // Set alert dialog height equal to screen height 90%
-        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-
-        // Set alert dialog width equal to screen width 70%
-        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-        // Set alert dialog height equal to screen height 70%
-        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-
-        // Set the width and height for the layout parameters
-        // This will bet the width and height of alert dialog
-        layoutParams.width = dialogWindowWidth
-        layoutParams.height = dialogWindowHeight
-
-        // Apply the newly created layout parameters to the alert dialog window
-        dialog.window.attributes = layoutParams
-
-
-        dialog.setOnDismissListener {
-
-            popup = false
-            dialog = null
-
-        }
-
-        dialog_view.return_alert.setOnClickListener {
-
-            startActivity(Intent(this@ExerciseExaminationActivity, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-            dialog.dismiss()
-
-        }
+        startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
     }
 
@@ -779,18 +654,15 @@ class ExerciseExaminationActivity : RootActivity() {
             }
         }
 
-        var arr = ArrayList<ExamInfo>()
-
-        arr.add(ExamInfo(
-                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+        PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
                 sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
                 sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
                 sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
                 sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
-                sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum
-        ))
+                sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
 
-        exam_result = arr
+
+        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_EXERCISE!!)
 
         return true
 

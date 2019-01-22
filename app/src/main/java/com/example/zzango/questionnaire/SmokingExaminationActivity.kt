@@ -16,23 +16,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_SMOKING
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_smoking_exam.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class SmokingExaminationActivity : RootActivity(){
 
-    var exam_result : ArrayList<SmokingExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
+    lateinit var signature:ByteArray
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -125,55 +122,13 @@ class SmokingExaminationActivity : RootActivity(){
 
     fun smoking_exam_local_insert(){
 
-        println("로컬")
-
-        LocalDBhelper(this).smokingCreate(sql_db)
-
-        LocalDBhelper(this).smokingSaveLocal(sql_db!!, exam_result!!)
-
-        saveCompleteAlert()
+        startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
     }
 
     fun smoking_exam_server_insert(){
 
-        println("서버")
-
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-
-        OracleUtill().smoking_examination().smokingServer(exam_result!!).enqueue(object : Callback<String> {
-
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-
-                if (response.isSuccessful) {
-
-                    if (!response.body()!!.equals("S")) {
-
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        this@SmokingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(this@SmokingExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-
-                    } else {
-
-                        saveCompleteAlert()
-
-                    }
-
-                }
-
-            }
-
-            override fun onFailure(call: Call<String>, t: Throwable) {
-
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
-                this@SmokingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                Toast.makeText(this@SmokingExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                println(t.toString())
-            }
-
-        })
+        startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
     }
 
@@ -392,16 +347,14 @@ class SmokingExaminationActivity : RootActivity(){
         }
 
 
-
-        var arr = ArrayList<SmokingExaminationActivity.ExamInfo>()
-
-        arr.add(SmokingExaminationActivity.ExamInfo(
-                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
+        PaperArray.PaperList.Arr_SMOKING!!.add(Paper_SMOKING(
+                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                 sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                 sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
         ))
 
-        exam_result = arr
+
+        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_SMOKING!!)
 
         return true
 

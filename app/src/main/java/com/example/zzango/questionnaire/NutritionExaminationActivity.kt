@@ -1,39 +1,27 @@
 package com.example.zzango.questionnaire
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_NUTRITION
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_nutrition_exam.*
-import kotlinx.android.synthetic.main.save_complete_alert.view.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class NutritionExaminationActivity :RootActivity() {
 
-    var set_result : ArrayList<Any>? = null
-    var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
+    lateinit var signature:ByteArray
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -67,11 +55,6 @@ class NutritionExaminationActivity :RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nutrition_exam)
 
-        if(intent.hasExtra("set")){
-
-            set_result = intent.getSerializableExtra("set") as ArrayList<Any>?
-
-        }
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
@@ -138,129 +121,16 @@ class NutritionExaminationActivity :RootActivity() {
 
     fun nutrition_exam_local_insert(){
 
-        LocalDBhelper(this).nutritionCreate(sql_db)
-
-        LocalDBhelper(this).nutritionSaveLocal(sql_db!!, exam_result!!)
-
-        saveCompleteAlert()
+        startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
     }
 
     fun nutrition_exam_server_insert(){
 
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-
-        OracleUtill().nutrition_examination().nutritionServer(exam_result!!).enqueue(object : Callback<String> {
-
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-
-                if (response.isSuccessful) {
-
-                    if (!response.body()!!.equals("S")) {
-
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        this@NutritionExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(this@NutritionExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-
-                    } else {
-
-                        saveCompleteAlert()
-
-                    }
-
-                }
-
-            }
-
-            override fun onFailure(call: Call<String>, t: Throwable) {
-
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
-                this@NutritionExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                Toast.makeText(this@NutritionExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                println(t.toString())
-            }
-
-        })
+        startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
     }
 
-    fun saveCompleteAlert(){
-
-        login_appbar_loading_progress.visibility = View.GONE
-        login_appbar_loading_progress_bg.visibility = View.GONE
-        this@NutritionExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-
-        popup = false
-
-        var dialog = AlertDialog.Builder(this).create()
-        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
-
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        dialog.setView(dialog_view)
-        dialog_view.save_complete_alert_text.setText("저장이 완료 되었습니다")
-
-        if(!popup) {
-
-            dialog.show().let {
-
-                popup = true
-
-            }
-
-        }
-
-        var displayMetrics = DisplayMetrics()
-        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-        // The absolute width of the available display size in pixels.
-        var displayWidth = displayMetrics.widthPixels
-        // The absolute height of the available display size in pixels.
-        var displayHeight = displayMetrics.heightPixels
-
-        // Initialize a new window manager layout parameters
-        var layoutParams = WindowManager.LayoutParams()
-
-        // Copy the alert dialog window attributes to new layout parameter instance
-        layoutParams.copyFrom(dialog.window.attributes)
-
-        // Set the alert dialog window width and height
-        // Set alert dialog width equal to screen width 90%
-        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-        // Set alert dialog height equal to screen height 90%
-        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-
-        // Set alert dialog width equal to screen width 70%
-        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-        // Set alert dialog height equal to screen height 70%
-        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-
-        // Set the width and height for the layout parameters
-        // This will bet the width and height of alert dialog
-        layoutParams.width = dialogWindowWidth
-        layoutParams.height = dialogWindowHeight
-
-        // Apply the newly created layout parameters to the alert dialog window
-        dialog.window.attributes = layoutParams
-
-
-        dialog.setOnDismissListener {
-
-            popup = false
-            dialog = null
-
-        }
-
-        dialog_view.return_alert.setOnClickListener {
-
-            startActivity(Intent(this@NutritionExaminationActivity, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-            dialog.dismiss()
-
-        }
-
-    }
 
     @SuppressLint("NewApi")
     fun check() : Boolean{
@@ -557,17 +427,13 @@ class NutritionExaminationActivity :RootActivity() {
             }
         }
 
-        var arr = ArrayList<ExamInfo>()
-
-        arr.add(ExamInfo(
-                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+        PaperArray.PaperList.Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                 sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
                 sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
         ))
 
-        exam_result = arr
 
-        set_result!!.add(exam_result!!)
+        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_NUTRITION!!)
 
         return true
 

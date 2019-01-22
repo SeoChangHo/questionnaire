@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_DRINKING
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -30,8 +31,8 @@ import java.util.*
 
 class DrinkingExaminationActivity : RootActivity(){
 
-    var exam_result : ArrayList<DrinkingExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
+    lateinit var signature:ByteArray
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -134,53 +135,82 @@ class DrinkingExaminationActivity : RootActivity(){
 
         println("로컬")
 
-        LocalDBhelper(this).drinkingCreate(sql_db)
+        if(MainActivity.chart == "SET3"){
 
-        LocalDBhelper(this).drinkingSaveLocal(sql_db!!, exam_result!!)
+            LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).commonExaminationDB(sql_db)
+            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
 
-        saveCompleteAlert()
+            LocalDBhelper(this).mentalCreate(sql_db)
+            LocalDBhelper(this).mentalSaveLocal(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
+
+            LocalDBhelper(this).exerciseCreate(sql_db)
+            LocalDBhelper(this).exerciseSaveLocal(sql_db!!, PaperArray.PaperList.Arr_EXERCISE!!)
+
+            LocalDBhelper(this).nutritionCreate(sql_db)
+            LocalDBhelper(this).nutritionSaveLocal(sql_db!!, PaperArray.PaperList.Arr_NUTRITION!!)
+
+            LocalDBhelper(this).smokingCreate(sql_db)
+            LocalDBhelper(this).smokingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_SMOKING!!)
+
+            LocalDBhelper(this).drinkingCreate(sql_db)
+            LocalDBhelper(this).drinkingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!)
+
+            saveCompleteAlert()
+
+        }else if(MainActivity.chart == "SET6"){
+
+            startActivity(Intent(this@DrinkingExaminationActivity, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
 
     }
 
     fun drinking_exam_server_insert(){
 
-        println("서버")
-
         this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-        OracleUtill().drinking_examination().drinkingServer(exam_result!!).enqueue(object : Callback<String> {
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
+        if(MainActivity.chart == "SET3"){
 
-                if (response.isSuccessful) {
+            OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
 
-                    if (!response.body()!!.equals("S")) {
+                override fun onResponse(call: Call<String>, response: Response<String>) {
 
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(this@DrinkingExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                    if (response.isSuccessful) {
 
-                    } else {
+                        if (!response.body()!!.equals("S")) {
 
-                        saveCompleteAlert()
+                            login_appbar_loading_progress.visibility = View.GONE
+                            login_appbar_loading_progress_bg.visibility = View.GONE
+                            this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            Toast.makeText(this@DrinkingExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+
+                        } else {
+
+                            saveCompleteAlert()
+
+                        }
 
                     }
 
                 }
 
-            }
+                override fun onFailure(call: Call<String>, t: Throwable) {
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+                    login_appbar_loading_progress.visibility = View.GONE
+                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(this@DrinkingExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                    println(t.toString())
+                }
+            })
 
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
-                this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                Toast.makeText(this@DrinkingExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                println(t.toString())
-            }
+        }else if(MainActivity.chart == "SET6"){
 
-        })
+            startActivity(Intent(this@DrinkingExaminationActivity, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
 
     }
 
@@ -464,18 +494,13 @@ class DrinkingExaminationActivity : RootActivity(){
         }
 
 
-
-
-
-        var arr = ArrayList<DrinkingExaminationActivity.ExamInfo>()
-
-        arr.add(DrinkingExaminationActivity.ExamInfo(
-                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
+        PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
+                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                 sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                 sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
         ))
 
-        exam_result = arr
+        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_SMOKING!!)
 
         return true
 
