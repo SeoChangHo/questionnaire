@@ -32,6 +32,7 @@ import java.util.*
 class CancerExaminationActivity : RootActivity(){
 
     var sql_db : SQLiteDatabase? = null
+    lateinit var signature:ByteArray
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -125,8 +126,7 @@ class CancerExaminationActivity : RootActivity(){
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
-            var bmp:Bitmap = BitmapFactory.decodeByteArray(MainActivity.user_stream,0,MainActivity.user_stream!!.size)
-            Signature.setImageBitmap(bmp)
+            signature = MainActivity.user_stream!!
         }
 
         sql_db = LocalDBhelper(this).writableDatabase
@@ -1004,7 +1004,7 @@ class CancerExaminationActivity : RootActivity(){
         ))
 
         PaperArray.PaperList.Arr_CANCER!!.add(Paper_CANCER(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                 ck1, ck1_1, ck2, ck2_1,
                 ck3_1, ck3_1_1, ck3_1_2, ck3_1_3, ck3_1_4, ck3_1_5,
                 ck3_2, ck3_2_1, ck3_2_2, ck3_2_3, ck3_2_4, ck3_2_5,
