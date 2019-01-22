@@ -25,6 +25,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
     var sql_db : SQLiteDatabase? = null
     var isFirstTime:Boolean = true
+    val EmptyBytes:ByteArray = ByteArray(0)
 
 
 
@@ -178,6 +179,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         PaperArray.add(Paper_ORAL(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
+                                EmptyBytes,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -217,6 +219,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         PaperArray.add(Paper_COMMON(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
+                                EmptyBytes,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -327,6 +330,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         PaperArray.add(Paper_COGNITIVE(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
+                                EmptyBytes,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -364,6 +368,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         PaperArray.add(Paper_ELDERLY(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
+                                EmptyBytes,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -396,6 +401,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         PaperArray.add(Paper_EXERCISE(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
+                                EmptyBytes,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -448,6 +454,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         PaperArray.add(Paper_NUTRITION(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
+                                EmptyBytes,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -488,6 +495,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         PaperArray.add(Paper_MENTAL(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
+                                EmptyBytes,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -519,6 +527,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         PaperArray.add(Paper_SMOKING(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
+                                EmptyBytes,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -549,6 +558,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         PaperArray.add(Paper_DRINKING(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
+                                EmptyBytes,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -582,6 +592,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                         PaperArray.add(Paper_CANCER(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
+                                EmptyBytes,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
