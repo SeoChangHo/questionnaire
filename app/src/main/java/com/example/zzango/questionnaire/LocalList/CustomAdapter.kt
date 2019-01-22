@@ -124,7 +124,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
         if(MainActivity.user_stream==paper.signature)
         {
             println("같다.")
-        }
+    }
         else
         {
             println("다르다.")

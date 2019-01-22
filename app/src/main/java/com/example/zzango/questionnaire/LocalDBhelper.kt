@@ -1,6 +1,7 @@
 package com.example.zzango.questionnaire
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -450,14 +451,23 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
-        println("&&&&&&&")
-        println(columnValue.signature.size)
 
-        db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, signature, name)" +
-                " VALUES (" +
-                " '${columnValue.exam_bun_no}', '${columnValue.category}', '${columnValue.signature}', '${columnValue.name}');")
+           val cv = ContentValues()
 
+        cv.put("exam_no", columnValue.exam_bun_no)
+        cv.put("category", columnValue.category)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
+
+
+
+//        db.execSQL("INSERT INTO LOCALSAVELIST" +
+//                "(exam_no, category, signature, name)" +
+//                " VALUES (" +
+//                " '${columnValue.exam_bun_no}', '${columnValue.category}', '${columnValue.signature}', '${columnValue.name}');")
+//
         db.execSQL("INSERT INTO ORAL_EXAM" +
                 "(exam_date," +
                 "exam_no," +
