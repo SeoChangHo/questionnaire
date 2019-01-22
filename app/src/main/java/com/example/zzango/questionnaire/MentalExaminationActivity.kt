@@ -31,8 +31,6 @@ import java.util.*
 
 class MentalExaminationActivity : RootActivity(){
 
-    var set_result : ArrayList<Any>? = null
-    var exam_result : ArrayList<MentalExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
     lateinit var signature:ByteArray
 
@@ -131,7 +129,7 @@ class MentalExaminationActivity : RootActivity(){
 
     fun mental_exam_local_insert(){
 
-        if(MainActivity.chart == "2") {
+        if(MainActivity.chart == "SET2") {
             println("로컬")
             LocalDBhelper(this).onCreate(sql_db)
             LocalDBhelper(this).commonExaminationDB(sql_db)
@@ -140,11 +138,14 @@ class MentalExaminationActivity : RootActivity(){
 
             LocalDBhelper(this).mentalCreate(sql_db)
             LocalDBhelper(this).mentalSaveLocal(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
+
             saveCompleteAlert()
 
-        }else if(MainActivity.chart == "3"){
+        }else if(MainActivity.chart == "SET3"){
 
-        }else if(MainActivity.chart == "6"){
+
+
+        }else if(MainActivity.chart == "SET6"){
 
         }
 
@@ -154,11 +155,11 @@ class MentalExaminationActivity : RootActivity(){
 
         println("서버")
 
-        if(MainActivity.chart == "2") {
+        if(MainActivity.chart == "SET2") {
 
             this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-            OracleUtill().common_examination().commonServer(PaperArray.PaperList.Arr_COMMON!!).enqueue(object : Callback<String> {
+            OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
 
                 override fun onResponse(call: Call<String>, response: Response<String>) {
 
@@ -173,39 +174,7 @@ class MentalExaminationActivity : RootActivity(){
 
                         } else {
 
-                            OracleUtill().mental_examination().mentalServer(PaperArray.PaperList.Arr_MENTAL!!).enqueue(object : Callback<String> {
-
-                                override fun onResponse(call: Call<String>, response: Response<String>) {
-
-                                    if (response.isSuccessful) {
-
-                                        if (!response.body()!!.equals("S")) {
-
-                                            login_appbar_loading_progress.visibility = View.GONE
-                                            login_appbar_loading_progress_bg.visibility = View.GONE
-                                            this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                                            Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-
-                                        } else {
-
-                                            saveCompleteAlert()
-
-                                        }
-
-                                    }
-
-                                }
-
-                                override fun onFailure(call: Call<String>, t: Throwable) {
-
-                                    login_appbar_loading_progress.visibility = View.GONE
-                                    login_appbar_loading_progress_bg.visibility = View.GONE
-                                    this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                                    Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                                    println(t.toString())
-                                }
-
-                            })
+                            saveCompleteAlert()
 
                         }
 
@@ -223,10 +192,10 @@ class MentalExaminationActivity : RootActivity(){
                 }
             })
 
-        }else if(MainActivity.chart == "3"){
-
-        }else if(MainActivity.chart == "6"){
-
+        }else if(MainActivity.chart == "SET3"){
+            startActivity(Intent(this@MentalExaminationActivity, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+        }else if(MainActivity.chart == "SET6"){
+            startActivity(Intent(this@MentalExaminationActivity, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
         }
 
     }
@@ -466,19 +435,11 @@ class MentalExaminationActivity : RootActivity(){
         }
 
 
-        var arr = ArrayList<ExamInfo>()
-
-        arr.add(ExamInfo(
-                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
-                mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum
-        ))
-
-        PaperArray.PaperList.Arr_MENTAL!!.add(Paper_MENTAL(exam_date, exam_no, name, signature, first_serial_text, last_serial_text, category,
+        PaperArray.PaperList.Arr_MENTAL!!.add(Paper_MENTAL(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                 mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum))
 
 
-
-        exam_result = arr
+        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_MENTAL!!)
 
         return true
 

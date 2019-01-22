@@ -27,13 +27,12 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class CommonExaminationActivity : RootActivity() {
 
-    var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
+    lateinit var signature:ByteArray
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -1139,30 +1138,9 @@ class CommonExaminationActivity : RootActivity() {
             return false
         }
 
-
-
-
-        var arr = ArrayList<CommonExaminationActivity.ExamInfo>()
-
-        arr.add(CommonExaminationActivity.ExamInfo(
-                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
-                mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
-                mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1,
-                mj2_2, mj2_3, mj2_4, mj2_5, mj3, mj4, mj4_1_1, mj4_1_2, mj4_2_1,
-                mj4_2_2, mj4_2_3, mj5, mj5_1_1, mj5_1_2, mj5_2_1,
-                mj5_2_2, mj5_2_3, mj6, mj6_1, mj71, mj72, mj73, mj74, mj7_1_11, mj7_1_12, mj7_1_13, mj7_1_14,
-                mj7_1_21, mj7_1_22, mj7_1_23, mj7_1_24, mj7_1_31, mj7_1_32, mj7_1_33,
-                mj7_1_34, mj7_1_41, mj7_1_42, mj7_1_43, mj7_1_44, mj7_1_51, mj7_1_52, mj7_1_53,
-                mj7_1_54, mj7_1_etc, mj7_2_11, mj7_2_12, mj7_2_13, mj7_2_14, mj7_2_21, mj7_2_22,
-                mj7_2_23, mj7_2_24, mj7_2_31, mj7_2_32, mj7_2_33, mj7_2_34, mj7_2_41, mj7_2_42,
-                mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1,
-                mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10 ))
-
-        exam_result = arr
-
         PaperArray.PaperArrFunction.ArrayListInit() //<--처음 이닛
 
-        PaperArray.PaperList.Arr_COMMON!!.add(Paper_COMMON(exam_date, exam_no, name,
+        PaperArray.PaperList.Arr_COMMON!!.add(Paper_COMMON(exam_date, exam_no, signature, name,
                 first_serial_text, last_serial_text, category,
                 mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
                 mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1,

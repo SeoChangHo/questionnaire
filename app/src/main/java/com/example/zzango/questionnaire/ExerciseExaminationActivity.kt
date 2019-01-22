@@ -17,6 +17,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_EXERCISE
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -211,8 +212,7 @@ class ExerciseExaminationActivity : RootActivity() {
     fun exercise_exam_local_insert(){
 
         LocalDBhelper(this).exerciseCreate(sql_db)
-
-        LocalDBhelper(this).exerciseSaveLocal(sql_db!!, exam_result!!)
+        LocalDBhelper(this).exerciseSaveLocal(sql_db!!, PaperArray.PaperList.Arr_EXERCISE!!)
 
         saveCompleteAlert()
 
