@@ -30,8 +30,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " first_serial TEXT," +
                 " last_serial TEXT," +
                 " category TEXT," +
-//                " oral_bun_no INTEGER," +
-//                " oral_email_yn TEXT," +
                 " oral_1 TEXT," +
                 " oral_2 TEXT," +
                 " oral_3 TEXT," +

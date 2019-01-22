@@ -83,6 +83,8 @@ class ListActivity : Activity() {
             login_appbar_loading_progress_bg.visibility = View.VISIBLE
             login_appbar_loading_progress.visibility = View.VISIBLE
 
+            val EmptyBytes:ByteArray? = null
+
             var removeArr = ArrayList<Paper>()
             var SaveArr = ArrayList<Any>()
 
@@ -112,6 +114,7 @@ class ListActivity : Activity() {
                             PaperArray.add(Paper_ORAL(
                                     data.getString(data.getColumnIndex("exam_date")),
                                     data.getString(data.getColumnIndex("exam_no")),
+                                    EmptyBytes!!,
                                     data.getString(data.getColumnIndex("name")),
                                     data.getString(data.getColumnIndex("first_serial")),
                                     data.getString(data.getColumnIndex("last_serial")),
@@ -150,6 +153,7 @@ class ListActivity : Activity() {
                             PaperArray.add(Paper_MENTAL(
                                     data.getString(data.getColumnIndex("exam_date")),
                                     data.getString(data.getColumnIndex("exam_no")),
+                                    EmptyBytes!!,
                                     data.getString(data.getColumnIndex("name")),
                                     data.getString(data.getColumnIndex("first_serial")),
                                     data.getString(data.getColumnIndex("last_serial")),
@@ -182,6 +186,7 @@ class ListActivity : Activity() {
                             PaperArray.add(Paper_COGNITIVE(
                                     data.getString(data.getColumnIndex("exam_date")),
                                     data.getString(data.getColumnIndex("exam_no")),
+                                    EmptyBytes!!,
                                     data.getString(data.getColumnIndex("name")),
                                     data.getString(data.getColumnIndex("first_serial")),
                                     data.getString(data.getColumnIndex("last_serial")),
@@ -220,6 +225,7 @@ class ListActivity : Activity() {
                             PaperArray.add(Paper_ELDERLY(
                                     data.getString(data.getColumnIndex("exam_date")),
                                     data.getString(data.getColumnIndex("exam_no")),
+                                    EmptyBytes!!,
                                     data.getString(data.getColumnIndex("name")),
                                     data.getString(data.getColumnIndex("first_serial")),
                                     data.getString(data.getColumnIndex("last_serial")),
@@ -253,6 +259,7 @@ class ListActivity : Activity() {
                             PaperArray.add(Paper_COMMON(
                                     data.getString(data.getColumnIndex("exam_date")),
                                     data.getString(data.getColumnIndex("exam_no")),
+                                    EmptyBytes!!,
                                     data.getString(data.getColumnIndex("name")),
                                     data.getString(data.getColumnIndex("first_serial")),
                                     data.getString(data.getColumnIndex("last_serial")),
@@ -362,6 +369,7 @@ class ListActivity : Activity() {
                             PaperArray.add(Paper_DRINKING(
                                     data.getString(data.getColumnIndex("exam_date")),
                                     data.getString(data.getColumnIndex("exam_no")),
+                                    EmptyBytes!!,
                                     data.getString(data.getColumnIndex("name")),
                                     data.getString(data.getColumnIndex("first_serial")),
                                     data.getString(data.getColumnIndex("last_serial")),
@@ -396,6 +404,7 @@ class ListActivity : Activity() {
                             PaperArray.add(Paper_SMOKING(
                                     data.getString(data.getColumnIndex("exam_date")),
                                     data.getString(data.getColumnIndex("exam_no")),
+                                    EmptyBytes!!,
                                     data.getString(data.getColumnIndex("name")),
                                     data.getString(data.getColumnIndex("first_serial")),
                                     data.getString(data.getColumnIndex("last_serial")),
@@ -427,6 +436,7 @@ class ListActivity : Activity() {
                             PaperArray.add(Paper_EXERCISE(
                                     data.getString(data.getColumnIndex("exam_date")),
                                     data.getString(data.getColumnIndex("exam_no")),
+                                    EmptyBytes!!,
                                     data.getString(data.getColumnIndex("name")),
                                     data.getString(data.getColumnIndex("first_serial")),
                                     data.getString(data.getColumnIndex("last_serial")),
@@ -480,6 +490,7 @@ class ListActivity : Activity() {
                             PaperArray.add(Paper_NUTRITION(
                                     data.getString(data.getColumnIndex("exam_date")),
                                     data.getString(data.getColumnIndex("exam_no")),
+                                    EmptyBytes!!,
                                     data.getString(data.getColumnIndex("name")),
                                     data.getString(data.getColumnIndex("first_serial")),
                                     data.getString(data.getColumnIndex("last_serial")),
@@ -522,6 +533,7 @@ class ListActivity : Activity() {
                             PaperArray.add(Paper_CANCER(
                                     data.getString(data.getColumnIndex("exam_date")),
                                     data.getString(data.getColumnIndex("exam_no")),
+                                    EmptyBytes!!,
                                     data.getString(data.getColumnIndex("name")),
                                     data.getString(data.getColumnIndex("first_serial")),
                                     data.getString(data.getColumnIndex("last_serial")),
