@@ -32,9 +32,8 @@ import java.util.*
 
 class OralExaminationActivity : RootActivity() {
 
-    var exam_result : ArrayList<ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
-    lateinit var signature:ByteArray
+    var signature:ByteArray = ByteArray(0)
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -718,15 +717,11 @@ class OralExaminationActivity : RootActivity() {
 
         }
 
-        var arr = ArrayList<ExamInfo>()
-
-        arr.add(ExamInfo(
-                exam_date, exam_no, "", signature, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
+        PaperArray.PaperList.Arr_ORAL!!.add(Paper_ORAL(
+                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
                 oral_11, oral_12, oral_13, oral_14, oral_15, oral_16
         ))
-
-        exam_result = arr
 
         return true
 

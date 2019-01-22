@@ -21,7 +21,7 @@ import java.util.*
 class NutritionExaminationActivity :RootActivity() {
 
     var sql_db : SQLiteDatabase? = null
-    lateinit var signature:ByteArray
+    var signature:ByteArray = ByteArray(0)
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,

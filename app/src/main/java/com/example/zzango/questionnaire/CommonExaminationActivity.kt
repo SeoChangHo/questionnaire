@@ -5,8 +5,6 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -32,7 +30,7 @@ import java.util.*
 class CommonExaminationActivity : RootActivity() {
 
     var sql_db : SQLiteDatabase? = null
-    lateinit var signature:ByteArray
+    var signature:ByteArray = ByteArray(0)
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -388,7 +386,7 @@ class CommonExaminationActivity : RootActivity() {
 
         }else if(MainActivity.chart == "SET6"){
 
-            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 
