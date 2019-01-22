@@ -70,6 +70,14 @@ class PaperArray {
 
         //기본검사 인지기능 우울증 생활습관 노인신체기능검사
         val SET6 = "SET6"
+
+
+        //구강
+        val SET7 = "SET7"
+
+
+        //암
+        val SET8 = "SET8"
     }
 
 }

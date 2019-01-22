@@ -15,9 +15,22 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "LOCALSAVELIST" +
                 "(exam_no TEXT," +
-                "category TEXT," +
+                "set TEXT," +
                 "signature BLOB," +
                 "name TEXT);")
+    }
+
+    fun LocalListInsert(db : SQLiteDatabase, ex : ArrayList<Paper_COMMON>, set:String) {
+        val columnValue = ex.get(0)
+
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("set", set)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
     }
 
     fun oralCreate(db : SQLiteDatabase?){
@@ -445,62 +458,30 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun oralSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_ORAL>){
 
 
-        try{
-            val columnValue = ex.get(0)
+        val columnValue = ex.get(0)
 
-
-            val cv = ContentValues()
-
-            cv.put("exam_no", columnValue.exam_no)
-            cv.put("category", columnValue.category)
-            cv.put("signature", columnValue.signature)
-            cv.put("name", columnValue.name)
-
-            db.insert("LOCALSAVELIST", null, cv)
-
-
-
-//        db.execSQL("INSERT INTO LOCALSAVELIST" +
-//                "(exam_no, category, signature, name)" +
-//                " VALUES (" +
-//                " '${columnValue.exam_bun_no}', '${columnValue.category}', '${columnValue.signature}', '${columnValue.name}');")
-//
-            db.execSQL("INSERT INTO ORAL_EXAM" +
-                    "(exam_date," +
-                    "exam_no," +
-                    "name," +
-                    "first_serial," +
-                    "last_serial," +
-                    "category, " +
-                    "oral_1, oral_2, oral_3, oral_4, oral_5, oral_6, oral_7," +
-                    "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
-                    "oral_15, oral_16)" +
-                    " VALUES (" +
-                    "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                    ", '${columnValue.category}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
-                    ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
-                    " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
-                    " '${columnValue.oral_13}', '${columnValue.oral_14}', '${columnValue.oral_15}', '${columnValue.oral_16}'"
-                    +");")
-        }catch (e:Exception)
-        {
-            println(e.message)
-        }
-
+        db.execSQL("INSERT INTO ORAL_EXAM" +
+                "(exam_date," +
+                "exam_no," +
+                "name," +
+                "first_serial," +
+                "last_serial," +
+                "category, " +
+                "oral_1, oral_2, oral_3, oral_4, oral_5, oral_6, oral_7," +
+                "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
+                "oral_15, oral_16)" +
+                " VALUES (" +
+                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                ", '${columnValue.category}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
+                ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
+                " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
+                " '${columnValue.oral_13}', '${columnValue.oral_14}', '${columnValue.oral_15}', '${columnValue.oral_16}'"
+                +");")
     }
 
     fun commonSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_COMMON>){
 
         val columnValue = ex.get(0)
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", columnValue.exam_no)
-        cv.put("category", columnValue.category)
-        cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO COMMON_EXAM" +
                 "(exam_date, exam_no, name, first_serial, last_serial, category, " +
@@ -547,16 +528,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", columnValue.exam_no)
-        cv.put("category", columnValue.category)
-        cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
-
         db.execSQL("INSERT INTO MENTAL_EXAM" +
                 "(exam_date," +
                 "exam_no,"  +
@@ -577,16 +548,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun cognitiveSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_COGNITIVE>){
 
         val columnValue = ex.get(0)
-
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", columnValue.exam_no)
-        cv.put("category", columnValue.category)
-        cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO COGNITIVE_EXAM" +
                 "(exam_date," +
@@ -610,16 +571,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", columnValue.exam_no)
-        cv.put("category", columnValue.category)
-        cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
-
         db.execSQL("INSERT INTO ELDERLY_EXAM" +
                 "(exam_date," +
                 "exam_no,"  +
@@ -639,16 +590,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun smokingSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_SMOKING>){
 
         val columnValue = ex.get(0)
-
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", columnValue.exam_no)
-        cv.put("category", columnValue.category)
-        cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO SMOKING_EXAM" +
                 "(exam_date," +
@@ -671,16 +612,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", columnValue.exam_no)
-        cv.put("category", columnValue.category)
-        cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
-
         db.execSQL("INSERT INTO DRINKING_EXAM" +
                 "(exam_date," +
                 "exam_no,"  +
@@ -700,15 +631,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun exerciseSaveLocal(db: SQLiteDatabase, ex : ArrayList<Paper_EXERCISE>){
 
         val columnValue = ex.get(0)
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", columnValue.exam_bun_no)
-        cv.put("category", columnValue.category)
-        cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO EXERCISE_EXAM" +
                 "(exam_date," +
@@ -741,16 +663,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
-        val cv = ContentValues()
-
-        cv.put("exam_no", columnValue.exam_bun_no)
-        cv.put("category", columnValue.category)
-        cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
-
-
         db.execSQL("INSERT INTO NUTRITION_EXAM" +
                 "(exam_date," +
                 "exam_no,"  +
@@ -775,15 +687,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun cancerSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_CANCER>){
 
         val columnValue = ex.get(0)
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", columnValue.exam_no)
-        cv.put("category", columnValue.category)
-        cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO CANCER_EXAM" +
                 "(exam_date," +
