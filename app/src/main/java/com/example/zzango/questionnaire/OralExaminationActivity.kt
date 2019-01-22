@@ -62,6 +62,7 @@ class OralExaminationActivity : RootActivity() {
 
 
 
+
     override fun onCreate(savedInstanceState: Bundle?){
 
         super.onCreate(savedInstanceState)
@@ -342,6 +343,15 @@ class OralExaminationActivity : RootActivity() {
         var oral_14 = ""
         var oral_15 = ""
         var oral_16 = ""
+
+
+        //서명정보 가져오는거
+        if(MainActivity.user_stream!=null)
+        {
+            signature = MainActivity.user_stream!!
+        }
+
+
 
         if(!name_edit.text.isNullOrEmpty()){
 

@@ -444,17 +444,19 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     fun oralSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_ORAL>){
 
-        val columnValue = ex.get(0)
+
+        try{
+            val columnValue = ex.get(0)
 
 
-        val cv = ContentValues()
+            val cv = ContentValues()
 
-        cv.put("exam_no", columnValue.exam_no)
-        cv.put("category", columnValue.category)
-        cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
+            cv.put("exam_no", columnValue.exam_no)
+            cv.put("category", columnValue.category)
+            cv.put("signature", columnValue.signature)
+            cv.put("name", columnValue.name)
 
-        db.insert("LOCALSAVELIST", null, cv)
+            db.insert("LOCALSAVELIST", null, cv)
 
 
 
@@ -463,23 +465,27 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 //                " VALUES (" +
 //                " '${columnValue.exam_bun_no}', '${columnValue.category}', '${columnValue.signature}', '${columnValue.name}');")
 //
-        db.execSQL("INSERT INTO ORAL_EXAM" +
-                "(exam_date," +
-                "exam_no," +
-                "name," +
-                "first_serial," +
-                "last_serial," +
-                "category, " +
-                "oral_1, oral_2, oral_3, oral_4, oral_5, oral_6, oral_7," +
-                "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
-                "oral_15, oral_16)" +
-                " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
-                ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
-                " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
-                " '${columnValue.oral_13}', '${columnValue.oral_14}', '${columnValue.oral_15}', '${columnValue.oral_16}'"
-                +");")
+            db.execSQL("INSERT INTO ORAL_EXAM" +
+                    "(exam_date," +
+                    "exam_no," +
+                    "name," +
+                    "first_serial," +
+                    "last_serial," +
+                    "category, " +
+                    "oral_1, oral_2, oral_3, oral_4, oral_5, oral_6, oral_7," +
+                    "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
+                    "oral_15, oral_16)" +
+                    " VALUES (" +
+                    "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                    ", '${columnValue.category}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
+                    ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
+                    " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
+                    " '${columnValue.oral_13}', '${columnValue.oral_14}', '${columnValue.oral_15}', '${columnValue.oral_16}'"
+                    +");")
+        }catch (e:Exception)
+        {
+            println(e.message)
+        }
 
     }
 
