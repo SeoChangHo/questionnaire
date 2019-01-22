@@ -447,7 +447,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         val columnValue = ex.get(0)
 
 
-           val cv = ContentValues()
+        val cv = ContentValues()
 
         cv.put("exam_no", columnValue.exam_no)
         cv.put("category", columnValue.category)
@@ -487,10 +487,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
-        db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, name)" +
-                " VALUES (" +
-                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("category", columnValue.category)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO COMMON_EXAM" +
                 "(exam_date, exam_no, name, first_serial, last_serial, category, " +
@@ -538,10 +542,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         val columnValue = ex.get(0)
 
 
-        db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, name)" +
-                " VALUES (" +
-                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("category", columnValue.category)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO MENTAL_EXAM" +
                 "(exam_date," +
@@ -565,10 +573,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         val columnValue = ex.get(0)
 
 
-        db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, name)" +
-                " VALUES (" +
-                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("category", columnValue.category)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO COGNITIVE_EXAM" +
                 "(exam_date," +
@@ -593,10 +605,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         val columnValue = ex.get(0)
 
 
-        db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, name)" +
-                " VALUES (" +
-                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("category", columnValue.category)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO ELDERLY_EXAM" +
                 "(exam_date," +
@@ -619,10 +635,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         val columnValue = ex.get(0)
 
 
-        db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, name)" +
-                " VALUES (" +
-                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("category", columnValue.category)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO SMOKING_EXAM" +
                 "(exam_date," +
@@ -646,10 +666,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         val columnValue = ex.get(0)
 
 
-        db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, name)" +
-                " VALUES (" +
-                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("category", columnValue.category)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO DRINKING_EXAM" +
                 "(exam_date," +
@@ -671,10 +695,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
-        db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, name)" +
-                " VALUES (" +
-                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_bun_no)
+        cv.put("category", columnValue.category)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO EXERCISE_EXAM" +
                 "(exam_date," +
@@ -707,10 +735,15 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
-        db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, name)" +
-                " VALUES (" +
-                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_bun_no)
+        cv.put("category", columnValue.category)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
+
 
         db.execSQL("INSERT INTO NUTRITION_EXAM" +
                 "(exam_date," +
@@ -737,11 +770,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         val columnValue = ex.get(0)
 
+        val cv = ContentValues()
 
-        db.execSQL("INSERT INTO LOCALSAVELIST" +
-                "(exam_no, category, name)" +
-                " VALUES (" +
-                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("category", columnValue.category)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
 
         db.execSQL("INSERT INTO CANCER_EXAM" +
                 "(exam_date," +
