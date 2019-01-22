@@ -31,6 +31,7 @@ import java.util.*
 
 class MentalExaminationActivity : RootActivity(){
 
+    var set_result : ArrayList<Any>? = null
     var exam_result : ArrayList<MentalExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
 
@@ -473,6 +474,7 @@ class MentalExaminationActivity : RootActivity(){
 
         PaperArray.PaperList.Arr_MENTAL!!.add(Paper_MENTAL(exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                 mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum))
+
 
 
         exam_result = arr

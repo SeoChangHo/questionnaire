@@ -16,7 +16,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_CANCER
+import com.example.zzango.questionnaire.LocalList.Paper_COMMON
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_cancer_exam.*
@@ -30,7 +32,6 @@ import java.util.*
 
 class CancerExaminationActivity : RootActivity(){
 
-    var exam_result : ArrayList<CancerExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
@@ -288,7 +289,7 @@ class CancerExaminationActivity : RootActivity(){
 
         LocalDBhelper(this).cancerCreate(sql_db)
 
-        LocalDBhelper(this).cancerSaveLocal(sql_db!!, exam_result!!)
+        LocalDBhelper(this).cancerSaveLocal(sql_db!!, PaperArray.PaperList.Arr_CANCER!!)
 
         saveCompleteAlert()
 
@@ -300,7 +301,7 @@ class CancerExaminationActivity : RootActivity(){
 
         this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-        OracleUtill().cancer_examination().cancerServer(exam_result!!).enqueue(object : Callback<String> {
+        OracleUtill().cancer_examination().cancerServer(PaperArray.PaperList.Arr_CANCER!!).enqueue(object : Callback<String> {
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
 
@@ -1003,7 +1004,21 @@ class CancerExaminationActivity : RootActivity(){
                 ck10, ck11, ck12, ck13, ck14
         ))
 
-        exam_result = arr
+        PaperArray.PaperList.Arr_CANCER!!.add(Paper_CANCER(
+                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                ck1, ck1_1, ck2, ck2_1,
+                ck3_1, ck3_1_1, ck3_1_2, ck3_1_3, ck3_1_4, ck3_1_5,
+                ck3_2, ck3_2_1, ck3_2_2, ck3_2_3, ck3_2_4, ck3_2_5,
+                ck3_3, ck3_3_1, ck3_3_2, ck3_3_3, ck3_3_4, ck3_3_5,
+                ck3_4, ck3_4_1, ck3_4_2, ck3_4_3, ck3_4_4, ck3_4_5,
+                ck3_5, ck3_5_1, ck3_5_2, ck3_5_3, ck3_5_4, ck3_5_5,
+                ck3_6, ck3_6_1, ck3_6_2, ck3_6_3, ck3_6_4, ck3_6_5, ck3_6_kita,
+                ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6,
+                ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck5_6, ck6_1, ck6_2, ck6_3, ck6_4,
+                ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2, ck9_1, ck9_2,
+                ck10, ck11, ck12, ck13, ck14
+        ))
+
 
         return true
 

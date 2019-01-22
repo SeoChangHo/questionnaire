@@ -27,6 +27,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class CommonExaminationActivity : RootActivity() {
@@ -366,16 +367,14 @@ class CommonExaminationActivity : RootActivity() {
         if(MainActivity.chart == "1"){
 
             LocalDBhelper(this).onCreate(sql_db)
-
             LocalDBhelper(this).commonExaminationDB(sql_db)
-
             LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!! )
 
             saveCompleteAlert()
 
         }else if(MainActivity.chart == "2"){
 
-            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 
@@ -1145,6 +1144,8 @@ class CommonExaminationActivity : RootActivity() {
                 mj7_2_23, mj7_2_24, mj7_2_31, mj7_2_32, mj7_2_33, mj7_2_34, mj7_2_41, mj7_2_42,
                 mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1,
                 mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10))
+
+        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_COMMON!!)
 
         return true
     }
