@@ -135,12 +135,13 @@ class CognitiveExaminationActivity : RootActivity(){
 
         if(MainActivity.chart == "SET5"){
 
-            LocalDBhelper(this).commonExaminationDB(sql_db)
+            LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, MainActivity.chart)
 
+            LocalDBhelper(this).commonExaminationDB(sql_db)
             LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
 
             LocalDBhelper(this).cognitiveCreate(sql_db)
-
             LocalDBhelper(this).cognitiveSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!)
 
             saveCompleteAlert()

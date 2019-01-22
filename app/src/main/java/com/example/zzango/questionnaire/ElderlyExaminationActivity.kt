@@ -132,6 +132,9 @@ class ElderlyExaminationActivity : RootActivity(){
 
         if(MainActivity.chart == "SET4"){
 
+            LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, MainActivity.chart)
+
             LocalDBhelper(this).commonExaminationDB(sql_db)
             LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
 
@@ -144,6 +147,9 @@ class ElderlyExaminationActivity : RootActivity(){
             saveCompleteAlert()
 
         }else if(MainActivity.chart == "SET6"){
+
+            LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, MainActivity.chart)
 
             LocalDBhelper(this).commonExaminationDB(sql_db)
             LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
