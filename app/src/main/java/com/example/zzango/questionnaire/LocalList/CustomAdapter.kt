@@ -117,7 +117,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
         println(p1.toString()+"번째의 체크값은 "+paper.isChecked.toString()+"입니다.")
         p0?.chkbox?.isChecked = paper.isChecked
-        p0?.txtCategory?.text = getCategory(paper.category)
+        p0?.txtCategory?.text = getCategory(paper.setno)
         p0?.txtName?.text = paper.name
 
 
@@ -166,7 +166,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
             sql_db = LocalDBhelper(Activity.applicationContext).writableDatabase
             println(paper.exam_no)
 
-            when(paper.category)
+            when(paper.setno)
             {
                 Category.ORAL ->
                 {

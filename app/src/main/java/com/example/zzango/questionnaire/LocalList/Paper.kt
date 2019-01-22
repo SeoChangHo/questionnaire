@@ -3,7 +3,7 @@ package com.example.zzango.questionnaire.LocalList
 import java.io.Serializable
 
 //로컬 저장 리스트
-data class Paper(var isChecked: Boolean, var exam_no: String, var category: String, var signature: ByteArray, var name: String) : Serializable
+data class Paper(var isChecked: Boolean, var exam_no: String, var setno: String, var signature: ByteArray, var name: String) : Serializable
 
 //구강검진 리스트
 data class Paper_ORAL(

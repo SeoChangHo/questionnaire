@@ -196,6 +196,8 @@ class OralExaminationActivity : RootActivity() {
 
         LocalDBhelper(this).oralCreate(sql_db)
 
+        LocalDBhelper(this).LocalListOralInsert(sql_db!!, PaperArray.PaperList.Arr_ORAL!!, PaperArray.SetList.SET7)
+
         LocalDBhelper(this).oralSaveLocal(sql_db!!, PaperArray.PaperList.Arr_ORAL!!)
 
         saveCompleteAlert()

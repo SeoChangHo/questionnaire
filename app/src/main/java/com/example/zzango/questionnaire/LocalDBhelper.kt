@@ -15,18 +15,46 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "LOCALSAVELIST" +
                 "(exam_no TEXT," +
-                "set TEXT," +
+                "setno TEXT," +
                 "signature BLOB," +
                 "name TEXT);")
     }
 
-    fun LocalListInsert(db : SQLiteDatabase, ex : ArrayList<Paper_COMMON>, set:String) {
+    fun LocalListInsert(db : SQLiteDatabase, ex : ArrayList<Paper_COMMON>, setno:String) {
         val columnValue = ex.get(0)
 
         val cv = ContentValues()
 
         cv.put("exam_no", columnValue.exam_no)
-        cv.put("set", set)
+        cv.put("setno", setno)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
+    }
+
+
+    fun LocalListOralInsert(db : SQLiteDatabase, ex : ArrayList<Paper_ORAL>, set:String) {
+        val columnValue = ex.get(0)
+
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("setno", set)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
+    }
+
+
+    fun LocalListCancerInsert(db : SQLiteDatabase, ex : ArrayList<Paper_CANCER>, set:String) {
+        val columnValue = ex.get(0)
+
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("setno", set)
         cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
@@ -834,7 +862,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             db.delete("LOCALSAVELIST", "exam_no=?", arrayOf(Paper[i].exam_no))
 
 
-            when (Paper[i].category)
+            when (Paper[i].setno)
             {
                 CustomAdapter.Category.COMMON -> {
                     println("공통검진입니다.")

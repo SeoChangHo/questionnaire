@@ -54,7 +54,7 @@ class ListActivity : Activity() {
         while(!data.isAfterLast){
                 papers.add(Paper(bool,
                         data.getString(data.getColumnIndex("exam_no")),
-                        data.getString(data.getColumnIndex("category")),
+                        data.getString(data.getColumnIndex("setno")),
                         data.getBlob(data.getColumnIndex("signature")),
                         data.getString(data.getColumnIndex("name"))))
 
@@ -99,11 +99,11 @@ class ListActivity : Activity() {
             for(i in 0..removeArr.size-1)
             {
 
-                when(removeArr[i].category)
+                when(removeArr[i].setno)
                 {
                     CustomAdapter.Category.ORAL ->
                     {
-                        println(removeArr[i].category)
+                        println(removeArr[i].setno)
 
                         var PaperArray = ArrayList<Paper_ORAL>()
 
@@ -142,7 +142,7 @@ class ListActivity : Activity() {
                     }
                     CustomAdapter.Category.MENTAL ->
                     {
-                        println(removeArr[i].category)
+                        println(removeArr[i].setno)
 
                         var PaperArray = ArrayList<Paper_MENTAL>()
 
@@ -175,7 +175,7 @@ class ListActivity : Activity() {
                     }
                     CustomAdapter.Category.COGNITIVE ->
                     {
-                        println(removeArr[i].category)
+                        println(removeArr[i].setno)
 
                         var PaperArray = ArrayList<Paper_COGNITIVE>()
 
@@ -214,7 +214,7 @@ class ListActivity : Activity() {
                     }
                     CustomAdapter.Category.ELDERLY ->
                     {
-                        println(removeArr[i].category)
+                        println(removeArr[i].setno)
 
                         var PaperArray = ArrayList<Paper_ELDERLY>()
 
@@ -248,7 +248,7 @@ class ListActivity : Activity() {
                     CustomAdapter.Category.COMMON ->
                     {
 
-                        println(removeArr[i].category)
+                        println(removeArr[i].setno)
 
                         var PaperArray = ArrayList<Paper_COMMON>()
 
@@ -358,7 +358,7 @@ class ListActivity : Activity() {
                     }
                     CustomAdapter.Category.DRINKING ->
                     {
-                        println(removeArr[i].category)
+                        println(removeArr[i].setno)
 
                         var PaperArray = ArrayList<Paper_DRINKING>()
 
@@ -393,7 +393,7 @@ class ListActivity : Activity() {
                     }
                     CustomAdapter.Category.SMOKING ->
                     {
-                        println(removeArr[i].category)
+                        println(removeArr[i].setno)
 
                         var PaperArray = ArrayList<Paper_SMOKING>()
 
@@ -425,7 +425,7 @@ class ListActivity : Activity() {
                     }
                     CustomAdapter.Category.EXERCISE ->
                     {
-                        println(removeArr[i].category)
+                        println(removeArr[i].setno)
 
                         var PaperArray = ArrayList<Paper_EXERCISE>()
 
@@ -479,7 +479,7 @@ class ListActivity : Activity() {
                     }
                     CustomAdapter.Category.NUTRITION ->
                     {
-                        println(removeArr[i].category)
+                        println(removeArr[i].setno)
 
                         var PaperArray = ArrayList<Paper_NUTRITION>()
 
@@ -522,7 +522,7 @@ class ListActivity : Activity() {
                     }
                     CustomAdapter.Category.CANCER ->
                     {
-                        println(removeArr[i].category)
+                        println(removeArr[i].setno)
 
                         var PaperArray = ArrayList<Paper_CANCER>()
 
