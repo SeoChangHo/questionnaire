@@ -422,7 +422,23 @@ class CommonExaminationActivity : RootActivity() {
 
             })
 
-        }else if(MainActivity.chart == "2"){
+        }else if(MainActivity.chart == "SET2"){
+
+            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET3"){
+
+            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET4"){
+
+            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET5"){
+
+            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET6"){
 
             startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 

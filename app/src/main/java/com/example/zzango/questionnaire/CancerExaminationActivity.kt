@@ -18,7 +18,6 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_CANCER
-import com.example.zzango.questionnaire.LocalList.Paper_COMMON
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_cancer_exam.*

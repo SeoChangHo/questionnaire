@@ -1,6 +1,7 @@
 package com.example.zzango.questionnaire
 
 import com.example.zzango.questionnaire.LocalList.Paper
+import com.example.zzango.questionnaire.LocalList.Paper_CANCER
 import com.example.zzango.questionnaire.LocalList.Paper_COMMON
 import com.example.zzango.questionnaire.LocalList.Paper_MENTAL
 import retrofit2.Call
@@ -44,7 +45,7 @@ interface OracleInterface {
 
     @POST("https://finepaperweight.herokuapp.com/InsertCancer")
     @Headers("Content-type: application/json")
-    fun cancerServer(@Body examInfo: ArrayList<CancerExaminationActivity.ExamInfo>) : Call<String>
+    fun cancerServer(@Body examInfo: ArrayList<Paper_CANCER>) : Call<String>
 
     @POST("https://finepaperweight.herokuapp.com/InsertExercise")
     @Headers("Content-type: application/json")

@@ -27,6 +27,7 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.Signature.CanvasView
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -664,22 +665,22 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         if(yy == two || yy == two2){
             //우울증 포함
-            MainActivity.chart = "2"
+            MainActivity.chart = PaperArray.SetList.SET2
         }else if(yy == three || yy == three2 || yy == three3 ){
             //우울증 생활습관 포함
-            MainActivity.chart = "3"
+            MainActivity.chart = PaperArray.SetList.SET3
         }else if(yy == four || yy == four2){
             //인지기능 노인신체기능검사 포함
-            MainActivity.chart = "4"
+            MainActivity.chart = PaperArray.SetList.SET4
         }else if(yy == five || yy == five2 || yy == five3 || yy == five4 || yy == five5 || yy == five6 || yy == five7 || yy == five8){
             //인지기능 포함
-            MainActivity.chart = "5"
+            MainActivity.chart = PaperArray.SetList.SET5
         }else if(yy == six){
             //인지기능 우울증 생활습관 노인신체기능검사 포함
-            MainActivity.chart = "6"
+            MainActivity.chart = PaperArray.SetList.SET6
         }else{
             //기본검사
-            MainActivity.chart = "1"
+            MainActivity.chart = PaperArray.SetList.SET1
         }
 
     }

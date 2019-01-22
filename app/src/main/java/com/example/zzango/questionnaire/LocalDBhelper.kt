@@ -6,10 +6,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.zzango.questionnaire.LocalList.CustomAdapter
-import com.example.zzango.questionnaire.LocalList.Paper
-import com.example.zzango.questionnaire.LocalList.Paper_COMMON
-import com.example.zzango.questionnaire.LocalList.Paper_MENTAL
+import com.example.zzango.questionnaire.LocalList.*
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
 
@@ -738,7 +735,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun cancerSaveLocal(db : SQLiteDatabase, ex : ArrayList<CancerExaminationActivity.ExamInfo>){
+    fun cancerSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_CANCER>){
 
         val columnValue = ex.get(0)
 
@@ -746,7 +743,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO CANCER_EXAM" +
                 "(exam_date," +
@@ -766,7 +763,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "ck5_6, ck6_1, ck6_2, ck6_3, ck6_4, ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2," +
                 "ck9_1, ck9_2, ck10, ck11, ck12, ck13, ck14)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.ck1}', '${columnValue.ck1_1}', '${columnValue.ck2}', '${columnValue.ck2_1}'" +
                 ", '${columnValue.ck3_1}', '${columnValue.ck3_1_1}', '${columnValue.ck3_1_2}', '${columnValue.ck3_1_3}', '${columnValue.ck3_1_4}', '${columnValue.ck3_1_5}'" +
                 ", '${columnValue.ck3_2}', '${columnValue.ck3_2_1}', '${columnValue.ck3_2_2}', '${columnValue.ck3_2_3}', '${columnValue.ck3_2_4}', '${columnValue.ck3_2_5}'" +
