@@ -444,14 +444,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun oralSaveLocal(db : SQLiteDatabase, ex : ArrayList<OralExaminationActivity.ExamInfo>){
+    fun oralSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_ORAL>){
 
         val columnValue = ex.get(0)
 
 
            val cv = ContentValues()
 
-        cv.put("exam_no", columnValue.exam_bun_no)
+        cv.put("exam_no", columnValue.exam_no)
         cv.put("category", columnValue.category)
         cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
@@ -476,7 +476,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
                 "oral_15, oral_16)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
                 ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
                 " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
@@ -562,7 +562,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun cognitiveSaveLocal(db : SQLiteDatabase, ex : ArrayList<CognitiveExaminationActivity.ExamInfo>){
+    fun cognitiveSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_COGNITIVE>){
 
         val columnValue = ex.get(0)
 
@@ -570,7 +570,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO COGNITIVE_EXAM" +
                 "(exam_date," +
@@ -582,7 +582,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7," +
                 "mj_inji_8, mj_inji_9, mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.mj_inji_1}', '${columnValue.mj_inji_2}', '${columnValue.mj_inji_3}', '${columnValue.mj_inji_4}'" +
                 ", '${columnValue.mj_inji_5}', '${columnValue.mj_inji_6}', '${columnValue.mj_inji_7}', '${columnValue.mj_inji_8}'" +
                 ", '${columnValue.mj_inji_9}', '${columnValue.mj_inji_10}', '${columnValue.mj_inji_11}', '${columnValue.mj_inji_12}'" +
@@ -590,7 +590,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun elderlySaveLocal(db : SQLiteDatabase, ex : ArrayList<ElderlyExaminationActivity.ExamInfo>){
+    fun elderlySaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_ELDERLY>){
 
         val columnValue = ex.get(0)
 
@@ -598,7 +598,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO ELDERLY_EXAM" +
                 "(exam_date," +
@@ -610,13 +610,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5," +
                 "mj66_3_6, mj66_4, mj66_5)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.mj66_1}', '${columnValue.mj66_2}', '${columnValue.mj66_3_1}', '${columnValue.mj66_3_2}'" +
                 ", '${columnValue.mj66_3_3}', '${columnValue.mj66_3_4}', '${columnValue.mj66_3_5}', '${columnValue.mj66_3_6}'" +
                 ", '${columnValue.mj66_4}', '${columnValue.mj66_5}');")
     }
 
-    fun smokingSaveLocal(db : SQLiteDatabase, ex : ArrayList<SmokingExaminationActivity.ExamInfo>){
+    fun smokingSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_SMOKING>){
 
         val columnValue = ex.get(0)
 
@@ -624,7 +624,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO SMOKING_EXAM" +
                 "(exam_date," +
@@ -636,14 +636,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6, sg2_spSmoke7," +
                 "sg2_spSmoke8, sg2_spSmokeSum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.sg2_spSmoke1}', '${columnValue.sg2_spSmoke2}', '${columnValue.sg2_spSmoke3}', '${columnValue.sg2_spSmoke4}'" +
                 ", '${columnValue.sg2_spSmoke5}', '${columnValue.sg2_spSmoke6}', '${columnValue.sg2_spSmoke7}', '${columnValue.sg2_spSmoke8}'" +
                 ", '${columnValue.sg2_spSmokeSum}');")
     }
 
 
-    fun drinkingSaveLocal(db : SQLiteDatabase, ex : ArrayList<DrinkingExaminationActivity.ExamInfo>){
+    fun drinkingSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_DRINKING>){
 
         val columnValue = ex.get(0)
 
@@ -651,7 +651,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.execSQL("INSERT INTO LOCALSAVELIST" +
                 "(exam_no, category, name)" +
                 " VALUES (" +
-                " ${columnValue.exam_bun_no}, '${columnValue.category}', '${columnValue.name}');")
+                " ${columnValue.exam_no}, '${columnValue.category}', '${columnValue.name}');")
 
         db.execSQL("INSERT INTO DRINKING_EXAM" +
                 "(exam_date," +
@@ -663,13 +663,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5, sg2_spDrink6," +
                 "sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
+                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
                 ", '${columnValue.category}', '${columnValue.sg2_spDrink1}', '${columnValue.sg2_spDrink2_1}', '${columnValue.sg2_spDrink2_2}', '${columnValue.sg2_spDrink3}'" +
                 ", '${columnValue.sg2_spDrink4}', '${columnValue.sg2_spDrink5}', '${columnValue.sg2_spDrink6}', '${columnValue.sg2_spDrink7}'" +
                 ", '${columnValue.sg2_spDrink8}', '${columnValue.sg2_spDrink9}', '${columnValue.sg2_spDrink10}', '${columnValue.sg2_spDrinkSum}');")
     }
 
-    fun exerciseSaveLocal(db: SQLiteDatabase, ex : ArrayList<ExerciseExaminationActivity.ExamInfo>){
+    fun exerciseSaveLocal(db: SQLiteDatabase, ex : ArrayList<Paper_EXERCISE>){
 
         val columnValue = ex.get(0)
 
@@ -705,7 +705,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun nutritionSaveLocal(db: SQLiteDatabase, ex : ArrayList<NutritionExaminationActivity.ExamInfo>){
+    fun nutritionSaveLocal(db: SQLiteDatabase, ex : ArrayList<Paper_NUTRITION>){
 
         val columnValue = ex.get(0)
 
@@ -730,8 +730,8 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.sg2_spFood4}', '${columnValue.sg2_spFood5}', '${columnValue.sg2_spFood6}'" +
                 ", '${columnValue.sg2_spFood7}', '${columnValue.sg2_spFood8}', '${columnValue.sg2_spFood9}'" +
                 ", '${columnValue.sg2_spFood10}', '${columnValue.sg2_spFood11}', '${columnValue.sg2_spFoodSum}'" +
-                ", '${columnValue.sg2_spFatHeight}', '${columnValue.sg2_spFatWeight}', '${columnValue.sg2_spFatWaistSize}'" +
-                ", '${columnValue.sg2_spFatBmi}', '${columnValue.sg2_spFat1}', '${columnValue.sg2_spFat2}', '${columnValue.sg2_spFat3}');")
+                //", '${columnValue.sg2_spFatHeight}', '${columnValue.sg2_spFatWeight}', '${columnValue.sg2_spFatWaistSize}', '${columnValue.sg2_spFatBmi}'" +
+                ", '${columnValue.sg2_spFat1}', '${columnValue.sg2_spFat2}', '${columnValue.sg2_spFat3}');")
 
     }
 
