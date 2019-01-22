@@ -727,6 +727,9 @@ class OralExaminationActivity : RootActivity() {
 
         }
 
+
+        PaperArray.PaperArrFunction.ArrayListInit()
+
         PaperArray.PaperList.Arr_ORAL!!.add(Paper_ORAL(
                 exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
