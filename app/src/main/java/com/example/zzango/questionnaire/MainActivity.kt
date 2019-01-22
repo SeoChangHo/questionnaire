@@ -13,6 +13,7 @@ import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.net.wifi.WifiManager
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v7.app.AlertDialog
@@ -343,7 +344,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 //login_appbar_loading_progress.visibility = View.VISIBLE
                 //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                Handler().postDelayed({
+                    startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                },125)
 
             }
 
