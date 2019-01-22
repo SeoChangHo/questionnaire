@@ -364,7 +364,7 @@ class CommonExaminationActivity : RootActivity() {
 
     fun common_exam_local_insert(){
 
-        if(MainActivity.chart == "1"){
+        if(MainActivity.chart == "SET1"){
 
             LocalDBhelper(this).onCreate(sql_db)
             LocalDBhelper(this).commonExaminationDB(sql_db)
@@ -372,9 +372,25 @@ class CommonExaminationActivity : RootActivity() {
 
             saveCompleteAlert()
 
-        }else if(MainActivity.chart == "2"){
+        }else if(MainActivity.chart == "SET2"){
 
             startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET3"){
+
+            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET4"){
+
+            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET5"){
+
+            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET6"){
+
+            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 
@@ -384,7 +400,7 @@ class CommonExaminationActivity : RootActivity() {
 
         println("서버")
 
-        if(MainActivity.chart == "1"){
+        if(MainActivity.chart == "SET1"){
 
             this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
@@ -443,7 +459,6 @@ class CommonExaminationActivity : RootActivity() {
             startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
-
 
     }
 
