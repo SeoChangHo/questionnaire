@@ -17,6 +17,7 @@ import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_ORAL
 import com.example.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
@@ -195,7 +196,7 @@ class OralExaminationActivity : RootActivity() {
 
         LocalDBhelper(this).oralCreate(sql_db)
 
-        LocalDBhelper(this).oralSaveLocal(sql_db!!, exam_result!!)
+        LocalDBhelper(this).oralSaveLocal(sql_db!!, PaperArray.PaperList.Arr_ORAL!!)
 
         saveCompleteAlert()
 
@@ -205,7 +206,7 @@ class OralExaminationActivity : RootActivity() {
 
         this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-        OracleUtill().oral_examination().oracleServer(exam_result!!).enqueue(object : Callback<String> {
+        OracleUtill().oral_examination().oracleServer(PaperArray.PaperList.Arr_ORAL!!).enqueue(object : Callback<String> {
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
 
