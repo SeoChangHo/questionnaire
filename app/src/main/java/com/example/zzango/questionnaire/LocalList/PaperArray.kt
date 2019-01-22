@@ -46,4 +46,14 @@ class PaperArray {
         }
     }
 
+    object SetList
+    {
+        val SET1 = "SET1"
+        val SET2 = "SET2"
+        val SET3 = "SET3"
+        val SET4 = "SET5"
+        val SET5 = "SET5"
+        val SET6 = "SET6"
+    }
+
 }
