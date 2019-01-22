@@ -16,6 +16,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
+import com.example.zzango.questionnaire.LocalList.Paper_COGNITIVE
 import com.example.zzango.questionnaire.LocalList.Paper_ELDERLY
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -30,8 +32,8 @@ import java.util.*
 
 class ElderlyExaminationActivity : RootActivity(){
 
-    var exam_result : ArrayList<ElderlyExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
+    lateinit var signature:ByteArray
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -60,8 +62,7 @@ class ElderlyExaminationActivity : RootActivity(){
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
-            var bmp: Bitmap = BitmapFactory.decodeByteArray(MainActivity.user_stream,0,MainActivity.user_stream!!.size)
-            Signature.setImageBitmap(bmp)
+            signature = MainActivity.user_stream!!
         }
 
         sql_db = LocalDBhelper(this).writableDatabase
@@ -129,13 +130,48 @@ class ElderlyExaminationActivity : RootActivity(){
 
     fun elderly_exam_local_insert(){
 
-        println("로컬")
+        if(MainActivity.chart == "SET4"){
 
-        LocalDBhelper(this).elderlyCreate(sql_db)
+            LocalDBhelper(this).commonExaminationDB(sql_db)
+            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
 
-        LocalDBhelper(this).elderlySaveLocal(sql_db!!, exam_result!!)
+            LocalDBhelper(this).cognitiveCreate(sql_db)
+            LocalDBhelper(this).cognitiveSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!)
 
-        saveCompleteAlert()
+            LocalDBhelper(this).elderlyCreate(sql_db)
+            LocalDBhelper(this).elderlySaveLocal(sql_db!!, PaperArray.PaperList.Arr_ELDERLY!!)
+
+            saveCompleteAlert()
+
+        }else if(MainActivity.chart == "SET6"){
+
+            LocalDBhelper(this).commonExaminationDB(sql_db)
+            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
+
+            LocalDBhelper(this).cognitiveCreate(sql_db)
+            LocalDBhelper(this).cognitiveSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!)
+
+            LocalDBhelper(this).mentalCreate(sql_db)
+            LocalDBhelper(this).mentalSaveLocal(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
+
+            LocalDBhelper(this).exerciseCreate(sql_db)
+            LocalDBhelper(this).exerciseSaveLocal(sql_db!!, PaperArray.PaperList.Arr_EXERCISE!!)
+
+            LocalDBhelper(this).nutritionCreate(sql_db)
+            LocalDBhelper(this).nutritionSaveLocal(sql_db!!, PaperArray.PaperList.Arr_NUTRITION!!)
+
+            LocalDBhelper(this).smokingCreate(sql_db)
+            LocalDBhelper(this).smokingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_SMOKING!!)
+
+            LocalDBhelper(this).drinkingCreate(sql_db)
+            LocalDBhelper(this).drinkingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!)
+
+            LocalDBhelper(this).elderlyCreate(sql_db)
+            LocalDBhelper(this).elderlySaveLocal(sql_db!!, PaperArray.PaperList.Arr_ELDERLY!!)
+
+            saveCompleteAlert()
+
+        }
 
     }
 
@@ -145,7 +181,7 @@ class ElderlyExaminationActivity : RootActivity(){
 
         this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-        OracleUtill().elderly_examination().elderlyServer(exam_result!!).enqueue(object : Callback<String> {
+        OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
 
@@ -389,16 +425,12 @@ class ElderlyExaminationActivity : RootActivity(){
             return false
         }
 
-
-
-        var arr = ArrayList<ElderlyExaminationActivity.ExamInfo>()
-
-        arr.add(ElderlyExaminationActivity.ExamInfo(
-                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
+        PaperArray.PaperList.Arr_ELDERLY!!.add(Paper_ELDERLY(
+                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                 mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5, mj66_3_6, mj66_4, mj66_5
         ))
 
-        exam_result = arr
+        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_ELDERLY!!)
 
         return true
 

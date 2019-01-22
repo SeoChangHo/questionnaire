@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_COGNITIVE
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -30,8 +31,8 @@ import java.util.*
 
 class CognitiveExaminationActivity : RootActivity(){
 
-    var exam_result : ArrayList<CognitiveExaminationActivity.ExamInfo>? = null
     var sql_db : SQLiteDatabase? = null
+    lateinit var signature:ByteArray
 
     data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
                          @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
@@ -66,8 +67,7 @@ class CognitiveExaminationActivity : RootActivity(){
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
-            var bmp: Bitmap = BitmapFactory.decodeByteArray(MainActivity.user_stream,0,MainActivity.user_stream!!.size)
-            Signature.setImageBitmap(bmp)
+            signature = MainActivity.user_stream!!
         }
 
         sql_db = LocalDBhelper(this).writableDatabase
@@ -133,13 +133,27 @@ class CognitiveExaminationActivity : RootActivity(){
 
     fun cognitive_exam_local_insert(){
 
-        println("로컬")
+        if(MainActivity.chart == "SET5"){
 
-        LocalDBhelper(this).cognitiveCreate(sql_db)
+            LocalDBhelper(this).commonExaminationDB(sql_db)
 
-        LocalDBhelper(this).cognitiveSaveLocal(sql_db!!, exam_result!!)
+            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
 
-        saveCompleteAlert()
+            LocalDBhelper(this).cognitiveCreate(sql_db)
+
+            LocalDBhelper(this).cognitiveSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!)
+
+            saveCompleteAlert()
+
+        }else if(MainActivity.chart == "SET4"){
+
+            startActivity(Intent(this@CognitiveExaminationActivity, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET6"){
+
+            startActivity(Intent(this@CognitiveExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
 
     }
 
@@ -147,41 +161,53 @@ class CognitiveExaminationActivity : RootActivity(){
 
         println("서버")
 
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        if(MainActivity.chart == "SET5") {
 
-        OracleUtill().cognitive_examination().cognitiveServer(exam_result!!).enqueue(object : Callback<String> {
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
+            OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
 
-                if (response.isSuccessful) {
+                override fun onResponse(call: Call<String>, response: Response<String>) {
 
-                    if (!response.body()!!.equals("S")) {
+                    if (response.isSuccessful) {
 
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        this@CognitiveExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(this@CognitiveExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                        if (!response.body()!!.equals("S")) {
 
-                    } else {
+                            login_appbar_loading_progress.visibility = View.GONE
+                            login_appbar_loading_progress_bg.visibility = View.GONE
+                            this@CognitiveExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            Toast.makeText(this@CognitiveExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
-                        saveCompleteAlert()
+                        } else {
+
+                            saveCompleteAlert()
+
+                        }
 
                     }
 
                 }
 
-            }
+                override fun onFailure(call: Call<String>, t: Throwable) {
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+                    login_appbar_loading_progress.visibility = View.GONE
+                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    this@CognitiveExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(this@CognitiveExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                    println(t.toString())
+                }
 
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
-                this@CognitiveExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                Toast.makeText(this@CognitiveExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                println(t.toString())
-            }
+            })
 
-        })
+        }else if(MainActivity.chart == "SET4"){
+
+            startActivity(Intent(this@CognitiveExaminationActivity, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET6"){
+
+            startActivity(Intent(this@CognitiveExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
 
     }
 
@@ -478,16 +504,13 @@ class CognitiveExaminationActivity : RootActivity(){
             return false
         }
 
-
-        var arr = ArrayList<CognitiveExaminationActivity.ExamInfo>()
-
-        arr.add(CognitiveExaminationActivity.ExamInfo(
-                exam_date, exam_no, "", name, first_serial_text, last_serial_text, category,
+        PaperArray.PaperList.Arr_COGNITIVE!!.add(Paper_COGNITIVE(
+                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                 mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7, mj_inji_8, mj_inji_9,
                 mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum
-                ))
+        ))
 
-        exam_result = arr
+        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_COGNITIVE!!)
 
         return true
 
