@@ -132,6 +132,8 @@ class MentalExaminationActivity : RootActivity(){
         if(MainActivity.chart == "SET2") {
             println("로컬")
             LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, MainActivity.chart)
+
             LocalDBhelper(this).commonExaminationDB(sql_db)
             LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
 

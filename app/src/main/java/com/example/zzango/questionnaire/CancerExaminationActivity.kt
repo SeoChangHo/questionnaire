@@ -983,6 +983,7 @@ class CancerExaminationActivity : RootActivity(){
             return false
         }
 
+        PaperArray.PaperArrFunction.ArrayListInit()
 
         PaperArray.PaperList.Arr_CANCER!!.add(Paper_CANCER(
                 exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
