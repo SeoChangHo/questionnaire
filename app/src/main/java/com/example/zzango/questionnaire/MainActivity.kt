@@ -107,6 +107,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         if(MainActivity.login_user_name != ""){
             user_login.text = MainActivity.login_user_name+"님"
             user_image.setImageResource(R.drawable.exit)
+        }else{
+            user_login.text = "사용자 등록하기"
+            user_image.setImageResource(R.drawable.regi)
         }
 
     }

@@ -143,6 +143,9 @@ class ElderlyExaminationActivity : RootActivity(){
             LocalDBhelper(this).elderlyCreate(sql_db)
             LocalDBhelper(this).elderlySaveLocal(sql_db!!, PaperArray.PaperList.Arr_ELDERLY!!)
 
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
             saveCompleteAlert()
 
         }else if(MainActivity.chart == "SET6"){
@@ -174,6 +177,9 @@ class ElderlyExaminationActivity : RootActivity(){
             LocalDBhelper(this).elderlyCreate(sql_db)
             LocalDBhelper(this).elderlySaveLocal(sql_db!!, PaperArray.PaperList.Arr_ELDERLY!!)
 
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
             saveCompleteAlert()
 
         }else if(MainActivity.chart == "SET0"){
@@ -244,6 +250,9 @@ class ElderlyExaminationActivity : RootActivity(){
 
                         } else {
 
+                            MainActivity.login_user_name = ""
+                            MainActivity.user_first_serial = ""
+                            MainActivity.user_last_serial = ""
                             saveCompleteAlert()
 
                         }

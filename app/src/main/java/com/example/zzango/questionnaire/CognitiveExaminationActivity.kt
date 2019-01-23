@@ -83,9 +83,7 @@ class CognitiveExaminationActivity : RootActivity(){
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
             if(MainActivity.chart != "SET5"){
-
                 cognitive_examination_save.text = "다음"
-
             }
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -149,6 +147,9 @@ class CognitiveExaminationActivity : RootActivity(){
             LocalDBhelper(this).cognitiveCreate(sql_db)
             LocalDBhelper(this).cognitiveSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!)
 
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
             saveCompleteAlert()
 
         }else if(MainActivity.chart == "SET4"){
@@ -190,6 +191,9 @@ class CognitiveExaminationActivity : RootActivity(){
 
                         } else {
 
+                            MainActivity.login_user_name = ""
+                            MainActivity.user_first_serial = ""
+                            MainActivity.user_last_serial = ""
                             saveCompleteAlert()
 
                         }
@@ -324,7 +328,6 @@ class CognitiveExaminationActivity : RootActivity(){
         dialog_view.return_alert.setOnClickListener {
 
             startActivity(Intent(this@CognitiveExaminationActivity, MainActivity::class.java).putExtra("from", "cognitive").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
             dialog.dismiss()
 
         }

@@ -287,9 +287,7 @@ class CancerExaminationActivity : RootActivity(){
         println("로컬")
 
         LocalDBhelper(this).cancerCreate(sql_db)
-
         LocalDBhelper(this).cancerSaveLocal(sql_db!!, PaperArray.PaperList.Arr_CANCER!!)
-
         saveCompleteAlert()
 
     }

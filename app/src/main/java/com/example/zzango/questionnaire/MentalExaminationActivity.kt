@@ -146,6 +146,9 @@ class MentalExaminationActivity : RootActivity(){
             LocalDBhelper(this).mentalCreate(sql_db)
             LocalDBhelper(this).mentalSaveLocal(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
 
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
             saveCompleteAlert()
 
         }else if(MainActivity.chart == "SET3"){
@@ -189,6 +192,9 @@ class MentalExaminationActivity : RootActivity(){
 
                         } else {
 
+                            MainActivity.login_user_name = ""
+                            MainActivity.user_first_serial = ""
+                            MainActivity.user_last_serial = ""
                             saveCompleteAlert()
 
                         }

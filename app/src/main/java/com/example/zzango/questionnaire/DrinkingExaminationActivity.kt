@@ -163,6 +163,9 @@ class DrinkingExaminationActivity : RootActivity(){
             LocalDBhelper(this).drinkingCreate(sql_db)
             LocalDBhelper(this).drinkingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!)
 
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
             saveCompleteAlert()
 
         }else if(MainActivity.chart == "SET6"){
@@ -193,8 +196,49 @@ class DrinkingExaminationActivity : RootActivity(){
         this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
 
-        if(MainActivity.chart == "SET3" || MainActivity.chart == "SET0"){
+        if(MainActivity.chart == "SET3"){
 
+            OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
+
+                override fun onResponse(call: Call<String>, response: Response<String>) {
+
+                    if (response.isSuccessful) {
+
+                        if (!response.body()!!.equals("S")) {
+
+                            login_appbar_loading_progress.visibility = View.GONE
+                            login_appbar_loading_progress_bg.visibility = View.GONE
+                            this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            Toast.makeText(this@DrinkingExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+
+                        } else {
+
+                            MainActivity.login_user_name = ""
+                            MainActivity.user_first_serial = ""
+                            MainActivity.user_last_serial = ""
+                            saveCompleteAlert()
+
+                        }
+
+                    }
+
+                }
+
+                override fun onFailure(call: Call<String>, t: Throwable) {
+
+                    login_appbar_loading_progress.visibility = View.GONE
+                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(this@DrinkingExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                    println(t.toString())
+                }
+            })
+
+        }else if(MainActivity.chart == "SET6"){
+
+            startActivity(Intent(this@DrinkingExaminationActivity, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }else if(MainActivity.chart == "SET0"){
             OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
 
                 override fun onResponse(call: Call<String>, response: Response<String>) {
@@ -227,11 +271,6 @@ class DrinkingExaminationActivity : RootActivity(){
                     println(t.toString())
                 }
             })
-
-        }else if(MainActivity.chart == "SET6"){
-
-            startActivity(Intent(this@DrinkingExaminationActivity, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
         }
 
     }
