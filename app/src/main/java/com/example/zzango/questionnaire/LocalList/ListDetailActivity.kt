@@ -11,16 +11,17 @@ class ListDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_detail)
 
-
-
         if(intent.hasExtra("paper")){
+
+            println("!!!!!!!!")
 
             var paper = intent.getSerializableExtra("paper") as Paper
 
             txtListTitle.setText(paper.name+" 님의 문진표")
+
+            val adapter = CustomDetailAdapter(paper, this)
+
+            detail_recyclertView.adapter = adapter
         }
-
-
-
     }
 }
