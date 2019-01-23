@@ -5,8 +5,6 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -171,6 +169,21 @@ class DrinkingExaminationActivity : RootActivity(){
 
             startActivity(Intent(this@DrinkingExaminationActivity, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
+        }else if(MainActivity.chart == "SET0"){
+
+            LocalDBhelper(this).onCreate(sql_db)
+
+            LocalDBhelper(this).exerciseCreate(sql_db)
+            LocalDBhelper(this).exerciseSaveLocal(sql_db!!, PaperArray.PaperList.Arr_EXERCISE!!)
+
+            LocalDBhelper(this).nutritionCreate(sql_db)
+            LocalDBhelper(this).nutritionSaveLocal(sql_db!!, PaperArray.PaperList.Arr_NUTRITION!!)
+
+            LocalDBhelper(this).smokingCreate(sql_db)
+            LocalDBhelper(this).smokingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_SMOKING!!)
+
+            LocalDBhelper(this).drinkingCreate(sql_db)
+            LocalDBhelper(this).drinkingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!)
         }
 
     }
@@ -180,7 +193,7 @@ class DrinkingExaminationActivity : RootActivity(){
         this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
 
-        if(MainActivity.chart == "SET3"){
+        if(MainActivity.chart == "SET3" || MainActivity.chart == "SET0"){
 
             OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
 

@@ -5,8 +5,6 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -158,6 +156,12 @@ class MentalExaminationActivity : RootActivity(){
 
             startActivity(Intent(this@MentalExaminationActivity, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
+        }else if(MainActivity.chart == "SET0"){
+            LocalDBhelper(this).onCreate(sql_db)
+
+            LocalDBhelper(this).mentalCreate(sql_db)
+            LocalDBhelper(this).mentalSaveLocal(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
+
         }
 
     }
@@ -207,6 +211,40 @@ class MentalExaminationActivity : RootActivity(){
             startActivity(Intent(this@MentalExaminationActivity, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
         }else if(MainActivity.chart == "SET6"){
             startActivity(Intent(this@MentalExaminationActivity, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+        }else if(MainActivity.chart == "SET0"){
+
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            OracleUtill().mental_examination().mentalServer(PaperArray.PaperList.Arr_MENTAL!!).enqueue(object : Callback<String> {
+
+                override fun onResponse(call: Call<String>, response: Response<String>) {
+
+                    if (response.isSuccessful) {
+
+                        if (!response.body()!!.equals("S")) {
+
+                            login_appbar_loading_progress.visibility = View.GONE
+                            login_appbar_loading_progress_bg.visibility = View.GONE
+                            this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+
+                        } else {
+
+                            saveCompleteAlert()
+
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<String>, t: Throwable) {
+
+                    login_appbar_loading_progress.visibility = View.GONE
+                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                    println(t.toString())
+                }
+
+            })
         }
 
     }

@@ -5,8 +5,6 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -17,7 +15,6 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.PaperArray
-import com.example.zzango.questionnaire.LocalList.Paper_COGNITIVE
 import com.example.zzango.questionnaire.LocalList.Paper_ELDERLY
 import com.example.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
@@ -179,6 +176,11 @@ class ElderlyExaminationActivity : RootActivity(){
 
             saveCompleteAlert()
 
+        }else if(MainActivity.chart == "SET0"){
+
+            LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).elderlyCreate(sql_db)
+            LocalDBhelper(this).elderlySaveLocal(sql_db!!, PaperArray.PaperList.Arr_ELDERLY!!)
         }
 
     }
@@ -187,41 +189,81 @@ class ElderlyExaminationActivity : RootActivity(){
 
         println("서버")
 
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        if(MainActivity.chart != "SET0"){
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-        OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
+            OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
+                override fun onResponse(call: Call<String>, response: Response<String>) {
 
-                if (response.isSuccessful) {
+                    if (response.isSuccessful) {
 
-                    if (!response.body()!!.equals("S")) {
+                        if (!response.body()!!.equals("S")) {
 
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        this@ElderlyExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(this@ElderlyExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                            login_appbar_loading_progress.visibility = View.GONE
+                            login_appbar_loading_progress_bg.visibility = View.GONE
+                            this@ElderlyExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            Toast.makeText(this@ElderlyExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
-                    } else {
+                        } else {
 
-                        saveCompleteAlert()
+                            saveCompleteAlert()
+
+                        }
 
                     }
 
                 }
 
-            }
+                override fun onFailure(call: Call<String>, t: Throwable) {
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+                    login_appbar_loading_progress.visibility = View.GONE
+                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    this@ElderlyExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(this@ElderlyExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                    println(t.toString())
+                }
 
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
-                this@ElderlyExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                Toast.makeText(this@ElderlyExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                println(t.toString())
-            }
+            })
 
-        })
+        }else{
+
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            OracleUtill().elderly_examination().elderlyServer(PaperArray.PaperList.Arr_ELDERLY!!).enqueue(object : Callback<String> {
+
+                override fun onResponse(call: Call<String>, response: Response<String>) {
+
+                    if (response.isSuccessful) {
+
+                        if (!response.body()!!.equals("S")) {
+
+                            login_appbar_loading_progress.visibility = View.GONE
+                            login_appbar_loading_progress_bg.visibility = View.GONE
+                            this@ElderlyExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            Toast.makeText(this@ElderlyExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+
+                        } else {
+
+                            saveCompleteAlert()
+
+                        }
+
+                    }
+
+                }
+
+                override fun onFailure(call: Call<String>, t: Throwable) {
+
+                    login_appbar_loading_progress.visibility = View.GONE
+                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    this@ElderlyExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(this@ElderlyExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                    println(t.toString())
+                }
+
+            })
+
+        }
 
     }
 

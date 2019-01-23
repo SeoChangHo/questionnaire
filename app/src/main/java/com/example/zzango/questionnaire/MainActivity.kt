@@ -27,6 +27,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.Signature.CanvasView
@@ -344,9 +345,68 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 //login_appbar_loading_progress.visibility = View.VISIBLE
                 //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                Handler().postDelayed({
-                    startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                },125)
+                var dialog = AlertDialog.Builder(this).create()
+                var dialog_view = LayoutInflater.from(this).inflate(R.layout.notice_alert, null)
+
+                //다이얼로그 뒤로가기 버튼 막기
+                dialog.setCancelable(false)
+
+                dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+                dialog.setView(dialog_view)
+                dialog.setCanceledOnTouchOutside(false)
+
+                val ok = dialog_view.findViewById(R.id.user_ok) as Button
+                val cancel = dialog_view.findViewById(R.id.user_cancel) as Button
+                val title = dialog_view.findViewById(R.id.notice_Title) as TextView
+                val text = dialog_view.findViewById(R.id.notice_textView) as TextView
+                val text2 = dialog_view.findViewById(R.id.notice_textView2) as TextView
+                val text3 = dialog_view.findViewById(R.id.notice_textView3) as TextView
+                val text4 = dialog_view.findViewById(R.id.notice_textView4) as TextView
+                val text5 = dialog_view.findViewById(R.id.notice_textView5) as TextView
+
+
+                title.setText(login_user_name+"에 해당하는 문진항목입니다.")
+
+                if(MainActivity.chart == "SET1"){
+                    text2.visibility = View.GONE
+                    text3.visibility = View.GONE
+                    text4.visibility = View.GONE
+                    text5.visibility = View.GONE
+                }else if(MainActivity.chart == "SET2"){
+                    text2.visibility = View.GONE
+                    text4.visibility = View.GONE
+                    text5.visibility = View.GONE
+                }else if(MainActivity.chart == "SET3"){
+                    text2.visibility = View.GONE
+                    text5.visibility = View.GONE
+                }else if(MainActivity.chart == "SET4"){
+                    text3.visibility = View.GONE
+                    text4.visibility = View.GONE
+                }else if(MainActivity.chart == "SET5"){
+                    text3.visibility = View.GONE
+                    text4.visibility = View.GONE
+                    text5.visibility = View.GONE
+                }else if(MainActivity.chart == "SET6"){
+
+                }
+
+                dialog.show()
+
+                ok.setOnClickListener {
+
+                    dialog.dismiss()
+
+                    Handler().postDelayed({
+                        startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                    },125)
+
+                }
+
+                cancel.setOnClickListener {
+                    MainActivity.chart = PaperArray.SetList.SET0
+                    dialog.dismiss()
+                }
 
             }
 
@@ -357,13 +417,40 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         if(view.text == MainActivity.login_user_name+"님"){
 
-            MainActivity.login_user_name = ""
-            MainActivity.user_first_serial = ""
-            MainActivity.user_last_serial = ""
 
-            Toast.makeText(context, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
-            view.text = "사용자 등록하기"
-            view2.setImageResource(R.drawable.regi)
+
+            var dialog = AlertDialog.Builder(this).create()
+            var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_user_logout, null)
+
+            //다이얼로그 뒤로가기 버튼 막기
+            dialog.setCancelable(false)
+
+            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            dialog.setView(dialog_view)
+            dialog.setCanceledOnTouchOutside(false)
+
+            val logout = dialog_view.findViewById(R.id.user_logout) as Button
+            val cancel = dialog_view.findViewById(R.id.user_logout_cancel) as Button
+
+            dialog.show()
+
+            logout.setOnClickListener {
+
+                MainActivity.login_user_name = ""
+                MainActivity.user_first_serial = ""
+                MainActivity.user_last_serial = ""
+
+                Toast.makeText(context, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
+                view.text = "사용자 등록하기"
+                view2.setImageResource(R.drawable.regi)
+
+                dialog.dismiss()
+            }
+
+            cancel.setOnClickListener {
+                dialog.dismiss()
+            }
 
         }
 

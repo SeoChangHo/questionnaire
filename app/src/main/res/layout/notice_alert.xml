@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout20"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/login_radius1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/notice_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="홍길동님에 해당하는 문진항목입니다."
+            android:textColor="@color/navy"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout21"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:background="@color/backGround"
+        android:paddingBottom="32dp"
+        android:paddingTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout20">
+
+        <TextView
+            android:id="@+id/notice_textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="✓  노인기능"
+            android:textColor="@color/navy"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/notice_textView4"
+            app:layout_constraintTop_toBottomOf="@+id/notice_textView4" />
+
+        <TextView
+            android:id="@+id/notice_textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="✓  인지기능"
+            android:textColor="@color/navy"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/notice_textView"
+            app:layout_constraintTop_toBottomOf="@+id/notice_textView" />
+
+        <TextView
+            android:id="@+id/notice_textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="✓  생활습관"
+            android:textColor="@color/navy"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/notice_textView3"
+            app:layout_constraintTop_toBottomOf="@+id/notice_textView3" />
+
+        <TextView
+            android:id="@+id/notice_textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="✓  정신건강"
+            android:textColor="@color/navy"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/notice_textView2"
+            app:layout_constraintTop_toBottomOf="@+id/notice_textView2" />
+
+        <TextView
+            android:id="@+id/notice_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:text="✓  공통문진"
+            android:textColor="@color/navy"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="500dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/login_radius2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout21">
+
+        <Button
+            android:id="@+id/user_ok"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/user_login_button_blue"
+            android:clickable="false"
+            android:text="진행하기"
+            android:textColor="@color/backGround"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/user_cancel"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/user_cancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/user_login_button"
+            android:clickable="false"
+            android:text="취소"
+            android:textColor="@color/backGround"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/user_ok"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>
