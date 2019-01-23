@@ -52,8 +52,6 @@ open class RootActivity : AppCompatActivity() {
     //진행바 제어하는 메서드
     fun controlProgress(context : Context, layout : ConstraintLayout, view : View, guideline : Guideline, guideline2 : Guideline){
 
-        println(context.javaClass.kotlin.simpleName)
-
         when(MainActivity.chart){
 
             "SET1" -> { view.visibility = View.GONE }
@@ -87,7 +85,169 @@ open class RootActivity : AppCompatActivity() {
 
             }
 
+            "SET3" -> {
+
+                when(context.javaClass.kotlin.simpleName) {
+
+                    "CommonExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                    "MentalExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                    "ExerciseExaminationActivity", "DrinkingExaminationActivity", "NutritionExaminationActivity", "SmokingExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                }
+
+                guideline.setGuidelinePercent(0.33f)
+                guideline2.setGuidelinePercent(0.66f)
+                guideline3.setGuidelinePercent(1f)
+
+            }
+
+            "SET4" -> {
+
+                when(context.javaClass.kotlin.simpleName) {
+
+                    "CommonExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                    "MentalExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                    "ExerciseExaminationActivity", "DrinkingExaminationActivity", "NutritionExaminationActivity", "SmokingExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                }
+
+                guideline.setGuidelinePercent(0.33f)
+                guideline2.setGuidelinePercent(0.66f)
+                guideline3.setGuidelinePercent(1f)
+
+            }
+
+            "SET5" -> {
+
+                when(context.javaClass.kotlin.simpleName) {
+
+                    "CommonExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                    "MentalExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                    "ExerciseExaminationActivity", "DrinkingExaminationActivity", "NutritionExaminationActivity", "SmokingExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                }
+
+                guideline.setGuidelinePercent(0.33f)
+                guideline2.setGuidelinePercent(0.66f)
+                guideline3.setGuidelinePercent(1f)
+
+            }
+
+            "SET6" -> {
+
+                when(context.javaClass.kotlin.simpleName) {
+
+                    "CommonExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                    "MentalExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                    "ExerciseExaminationActivity", "DrinkingExaminationActivity", "NutritionExaminationActivity", "SmokingExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                }
+
+                guideline.setGuidelinePercent(0.33f)
+                guideline2.setGuidelinePercent(0.66f)
+                guideline3.setGuidelinePercent(1f)
+
+            }
+
         }
+
+    }
+
+    fun controlProgressDetail(layout : ConstraintLayout, view : View, guideline : Guideline, guideline2 : Guideline){
+
+
 
     }
 

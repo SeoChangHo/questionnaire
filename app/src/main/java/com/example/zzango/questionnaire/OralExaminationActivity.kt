@@ -172,6 +172,14 @@ class OralExaminationActivity : RootActivity() {
 
     }
 
+    override fun onResume() {
+
+        login_appbar_loading_progress.visibility = View.GONE
+        login_appbar_loading_progress_bg.visibility = View.GONE
+        super.onResume()
+
+    }
+
     override fun onBackPressed() {
 
         if(login_appbar_loading_progress.visibility != View.VISIBLE){
@@ -181,7 +189,6 @@ class OralExaminationActivity : RootActivity() {
         }
 
     }
-
     fun oral_exam_local_insert(){
 
         LocalDBhelper(this).oralCreate(sql_db)

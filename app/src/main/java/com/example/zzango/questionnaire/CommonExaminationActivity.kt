@@ -133,7 +133,7 @@ class CommonExaminationActivity : RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_exam)
 
-        controlProgress(this, questionnaire_progress_wrapper, questionnaire_progress, guideline, guideline2)
+//        controlProgress(this, questionnaire_progress_wrapper, questionnaire_progress, guideline, guideline2)
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
@@ -199,41 +199,6 @@ class CommonExaminationActivity : RootActivity() {
             checkCondition(isChecked, constraintLayout6_wrapper)
 
         }
-
-//        common_7_1.setOnClickListener {
-//            if(common_7_1.isChecked){
-//                common_7_1_editText.visibility = View.VISIBLE
-//
-//                common_7_2_editText.visibility = View.GONE
-//                common_7_3_editText.visibility = View.GONE
-//            }
-//        }
-//
-//        common_7_2.setOnClickListener {
-//            if(common_7_2.isChecked){
-//                common_7_2_editText.visibility = View.VISIBLE
-//
-//                common_7_1_editText.visibility = View.GONE
-//                common_7_3_editText.visibility = View.GONE
-//            }
-//        }
-//
-//        common_7_3.setOnClickListener {
-//            if(common_7_3.isChecked){
-//                common_7_3_editText.visibility = View.VISIBLE
-//
-//                common_7_1_editText.visibility = View.GONE
-//                common_7_2_editText.visibility = View.GONE
-//            }
-//        }
-//
-//        common_7_4.setOnClickListener {
-//
-//            common_7_1_editText.visibility = View.GONE
-//            common_7_2_editText.visibility = View.GONE
-//            common_7_3_editText.visibility = View.GONE
-//
-//        }
 
         checkBox1.setOnCheckedChangeListener {
 

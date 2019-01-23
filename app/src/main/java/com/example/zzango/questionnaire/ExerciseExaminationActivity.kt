@@ -199,6 +199,24 @@ class ExerciseExaminationActivity : RootActivity() {
 
     }
 
+    override fun onResume() {
+
+        login_appbar_loading_progress.visibility = View.GONE
+        login_appbar_loading_progress_bg.visibility = View.GONE
+        super.onResume()
+
+    }
+
+    override fun onBackPressed() {
+
+        if(login_appbar_loading_progress.visibility != View.VISIBLE){
+
+            super.onBackPressed()
+
+        }
+
+    }
+
     fun exercise_exam_local_insert(){
 
         startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))

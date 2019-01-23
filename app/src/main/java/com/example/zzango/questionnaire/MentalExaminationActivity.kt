@@ -82,7 +82,7 @@ class MentalExaminationActivity : RootActivity(){
             if(MainActivity.chart != "SET2"){
                 mental_examination_save.text = "다음"
             }
-            if(MainActivity.chart != "SET0"){
+            if(MainActivity.chart == "SET0"){
                 mental_examination_save.text = "저장"
             }
 
