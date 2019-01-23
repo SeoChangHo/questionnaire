@@ -85,6 +85,10 @@ class CognitiveExaminationActivity : RootActivity(){
             if(MainActivity.chart != "SET5"){
                 cognitive_examination_save.text = "다음"
             }
+            if(MainActivity.chart == "SET0"){
+                cognitive_examination_save.text = "저장"
+            }
+
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -164,6 +168,7 @@ class CognitiveExaminationActivity : RootActivity(){
             LocalDBhelper(this).onCreate(sql_db)
             LocalDBhelper(this).cognitiveCreate(sql_db)
             LocalDBhelper(this).cognitiveSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!)
+            saveCompleteAlert()
         }
 
     }

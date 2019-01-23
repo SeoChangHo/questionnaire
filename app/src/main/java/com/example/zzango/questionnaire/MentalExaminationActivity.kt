@@ -80,9 +80,10 @@ class MentalExaminationActivity : RootActivity(){
             last_serial.text = MainActivity.user_last_serial
 
             if(MainActivity.chart != "SET2"){
-
                 mental_examination_save.text = "다음"
-
+            }
+            if(MainActivity.chart != "SET0"){
+                mental_examination_save.text = "저장"
             }
 
         }
@@ -175,7 +176,7 @@ class MentalExaminationActivity : RootActivity(){
 
             LocalDBhelper(this).mentalCreate(sql_db)
             LocalDBhelper(this).mentalSaveLocal(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
-
+            saveCompleteAlert()
         }
 
     }

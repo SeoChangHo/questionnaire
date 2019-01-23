@@ -77,6 +77,7 @@ class ElderlyExaminationActivity : RootActivity(){
             name_edit.text = MainActivity.login_user_name
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
+
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -187,6 +188,7 @@ class ElderlyExaminationActivity : RootActivity(){
             LocalDBhelper(this).onCreate(sql_db)
             LocalDBhelper(this).elderlyCreate(sql_db)
             LocalDBhelper(this).elderlySaveLocal(sql_db!!, PaperArray.PaperList.Arr_ELDERLY!!)
+            saveCompleteAlert()
         }
 
     }
