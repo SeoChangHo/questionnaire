@@ -17,7 +17,6 @@ class SettingActivity : AppCompatActivity() {
 
         var num = getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")
 
-        println("현재상태 " + num)
 
         if(num != "wifi"){
 
