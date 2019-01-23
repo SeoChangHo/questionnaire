@@ -551,6 +551,10 @@ class CognitiveExaminationActivity : RootActivity(){
             return false
         }
 
+        if(MainActivity.chart == "SET0"){
+            PaperArray.PaperArrFunction.ArrayListInit()
+        }
+
         PaperArray.PaperList.Arr_COGNITIVE!!.add(Paper_COGNITIVE(
                 exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                 mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7, mj_inji_8, mj_inji_9,

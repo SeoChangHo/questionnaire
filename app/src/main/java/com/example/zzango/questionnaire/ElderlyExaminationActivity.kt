@@ -484,6 +484,10 @@ class ElderlyExaminationActivity : RootActivity(){
             return false
         }
 
+        if(MainActivity.chart == "SET0"){
+            PaperArray.PaperArrFunction.ArrayListInit()
+        }
+
         PaperArray.PaperList.Arr_ELDERLY!!.add(Paper_ELDERLY(
                 exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                 mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5, mj66_3_6, mj66_4, mj66_5

@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -656,6 +654,10 @@ class ExerciseExaminationActivity : RootActivity() {
                 return false
 
             }
+        }
+
+        if(MainActivity.chart == "SET0"){
+            PaperArray.PaperArrFunction.ArrayListInit()
         }
 
         PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
