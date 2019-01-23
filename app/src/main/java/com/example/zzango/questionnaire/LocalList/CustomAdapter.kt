@@ -172,7 +172,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 //            {
 //                Category.ORAL ->
 //                {
-//                    var PaperArray = ArrayList<Paper_ORAL>()
+//                    var PaperArray = ArrayList<Paper_ORAL>().0
 //
 //                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_ORAL(sql_db!!, paper.exam_no)
 //                    data.moveToFirst()
