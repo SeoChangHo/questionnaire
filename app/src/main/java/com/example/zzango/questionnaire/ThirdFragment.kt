@@ -41,7 +41,7 @@ class ThirdFragment : Fragment(){
                 activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
                 activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                startActivity(Intent(activity!!, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                startActivity(Intent(activity!!, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             }else{
 
@@ -58,7 +58,7 @@ class ThirdFragment : Fragment(){
                 activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
                 activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                startActivity(Intent(activity!!, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                startActivity(Intent(activity!!, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             }else{
 
@@ -75,7 +75,7 @@ class ThirdFragment : Fragment(){
                 activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
                 activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                startActivity(Intent(activity!!, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                startActivity(Intent(activity!!, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             }else{
 
