@@ -2,6 +2,8 @@ package com.example.zzango.questionnaire.LocalList
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
+import android.widget.LinearLayout
 import com.example.zzango.questionnaire.R
 import kotlinx.android.synthetic.main.activity_list_detail.*
 
@@ -20,8 +22,10 @@ class ListDetailActivity : AppCompatActivity() {
             txtListTitle.text = paper.name+" 님의 문진표"
 
             val adapter = CustomDetailAdapter(paper, this)
+            detail_recyclertView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
             detail_recyclertView.adapter = adapter
         }
     }
 }
+
