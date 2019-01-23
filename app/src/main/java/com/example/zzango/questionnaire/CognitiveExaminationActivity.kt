@@ -84,7 +84,7 @@ class CognitiveExaminationActivity : RootActivity(){
             last_serial.text = MainActivity.user_last_serial
             if(MainActivity.chart != "SET5"){
 
-
+                cognitive_examination_save.text = "다음"
 
             }
         }
