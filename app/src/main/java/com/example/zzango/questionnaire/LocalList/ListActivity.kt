@@ -44,7 +44,7 @@ class ListActivity : Activity() {
         sql_db = LocalDBhelper(this).writableDatabase
 
 
-        val recyclerView = findViewById(R.id.recyclertView) as RecyclerView
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclertView)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
 
@@ -71,9 +71,9 @@ class ListActivity : Activity() {
     fun btnSeeting()
     {
 
-        var btnSave = findViewById(R.id.btnSave) as Button
-        var btnDelete = findViewById(R.id.btnDelete) as Button
-        var txtBottomMent = findViewById(R.id.txtBottomMent) as TextView
+        var btnSave = findViewById<Button>(R.id.btnSave)
+        var btnDelete = findViewById<Button>(R.id.btnDelete)
+        var txtBottomMent = findViewById<TextView>(R.id.txtBottomMent)
 
         //저장하는거
         btnSave.setOnClickListener {
@@ -630,7 +630,7 @@ class ListActivity : Activity() {
             println(SaveArr)
             println("**********SAVE ARRAY**********")
 
-            OracleUtill().save_papers().savePapersServer(SaveArr!!).enqueue(object : Callback<String> {
+            OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
 
                 override fun onResponse(call: Call<String>, response: Response<String>) {
 

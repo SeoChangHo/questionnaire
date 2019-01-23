@@ -16,7 +16,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
         println("%%%")
-        var v : View = LayoutInflater.from(p0?.context).inflate(R.layout.listdetail_layout, p0, false)
+        var v : View = LayoutInflater.from(p0.context).inflate(R.layout.listdetail_layout, p0, false)
         return ContentDetailViewHolder(v)
     }
 

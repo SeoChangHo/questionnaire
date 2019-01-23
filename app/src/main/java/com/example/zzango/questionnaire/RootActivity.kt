@@ -99,7 +99,7 @@ open class RootActivity : AppCompatActivity() {
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
-        dialog_view.notice.setText("문진 내용이 초기화됩니다. \n메인페이지로 가시겠습니까?")
+        dialog_view.notice.text = "문진 내용이 초기화됩니다. \n메인페이지로 가시겠습니까?"
 
         if(!popup) {
 

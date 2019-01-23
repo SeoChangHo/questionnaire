@@ -82,7 +82,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
         return position
     }
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
-        var v : View = LayoutInflater.from(p0?.context).inflate(R.layout.list_layout, p0, false)
+        var v : View = LayoutInflater.from(p0.context).inflate(R.layout.list_layout, p0, false)
         return ContentViewHolder(v)
     }
     override fun getItemCount(): Int {
@@ -116,9 +116,9 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
 
         println(p1.toString()+"번째의 체크값은 "+paper.isChecked.toString()+"입니다.")
-        p0?.chkbox?.isChecked = paper.isChecked
-        p0?.txtCategory?.text = getSetNo(paper.setno)
-        p0?.txtName?.text = paper.name
+        p0.chkbox.isChecked = paper.isChecked
+        p0.txtCategory.text = getSetNo(paper.setno)
+        p0.txtName.text = paper.name
 
 
 
@@ -137,9 +137,9 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
         }
 
         try {
-            var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature!!.size)
+            var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
 
-            p0?.ImgTest.setImageBitmap(bmp)
+            p0.ImgTest.setImageBitmap(bmp)
 
         }
         catch (e:Exception)
@@ -155,12 +155,12 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
 
 
-        p0?.txtDate?.text = date
+        p0.txtDate.text = date
 
 
 
         //Recyclerview Item Click
-        p0?.constraint.setOnClickListener{
+        p0.constraint.setOnClickListener{
 
 
             sql_db = LocalDBhelper(Activity.applicationContext).writableDatabase
@@ -691,12 +691,12 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
         }
 
-        p0?.chkbox.setOnCheckedChangeListener(null)
+        p0.chkbox.setOnCheckedChangeListener(null)
 
-        p0?.chkbox.isChecked = PaperList[p1].isChecked
+        p0.chkbox.isChecked = PaperList[p1].isChecked
 
 
-        p0?.chkbox.setOnCheckedChangeListener { buttonView, isChecked ->
+        p0.chkbox.setOnCheckedChangeListener { buttonView, isChecked ->
 
             println("*******************************************************")
             println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")

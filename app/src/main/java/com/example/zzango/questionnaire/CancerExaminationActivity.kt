@@ -261,9 +261,9 @@ class CancerExaminationActivity : RootActivity(){
 
             GetPaper(paper)
         }else{
-            name_edit.setText(MainActivity.login_user_name)
-            first_serial.setText(MainActivity.user_first_serial)
-            last_serial.setText(MainActivity.user_last_serial)
+            name_edit.text = MainActivity.login_user_name
+            first_serial.text = MainActivity.user_first_serial
+            last_serial.text = MainActivity.user_last_serial
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -348,7 +348,7 @@ class CancerExaminationActivity : RootActivity(){
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
-        dialog_view.save_complete_alert_text.setText("저장이 완료 되었습니다")
+        dialog_view.save_complete_alert_text.text = "저장이 완료 되었습니다"
 
         if(!popup) {
 
@@ -1008,9 +1008,9 @@ class CancerExaminationActivity : RootActivity(){
     fun GetPaper(paper: Paper_CANCER) {
 
 
-        name_edit.setText(paper.name)
-        first_serial.setText(paper.first_serial)
-        last_serial.setText(paper.last_serial)
+        name_edit.text = paper.name
+        first_serial.text = paper.first_serial
+        last_serial.text = paper.last_serial
 
         println(paper)
 

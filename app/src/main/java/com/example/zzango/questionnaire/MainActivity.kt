@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var wfm = getApplicationContext().getSystemService(Context.WIFI_SERVICE) as WifiManager
+        var wfm = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
 
         if(!this.intent.hasExtra("from")) {
 
@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         }
 
         if(MainActivity.login_user_name != ""){
-            user_login.setText(MainActivity.login_user_name+"님")
+            user_login.text = MainActivity.login_user_name+"님"
             user_image.setImageResource(R.drawable.exit)
         }
 
@@ -279,7 +279,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                         }
 
                     }
-                    else if(s!!.length<6)
+                    else if(s.length<6)
                     {
                         ValidationBool = false
                         dialog_view.user_login_button.isClickable = false
@@ -337,7 +337,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 chart(user_first_serial)
 
                 Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
-                view.setText(MainActivity.login_user_name+"님")
+                view.text = MainActivity.login_user_name+"님"
                 view2.setImageResource(R.drawable.exit)
                 dialog.dismiss()
 
@@ -362,7 +362,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             MainActivity.user_last_serial = ""
 
             Toast.makeText(context, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
-            view.setText("사용자 등록하기")
+            view.text = "사용자 등록하기"
             view2.setImageResource(R.drawable.regi)
 
         }
@@ -453,7 +453,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         if (fragment != null) {
 
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_right, fragment!!).commit()
+                    .replace(R.id.fragment_right, fragment).commit()
         }
 
     }
@@ -466,7 +466,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
-        dialog_view.notice.setText("앱을 종료하시겠습니까?")
+        dialog_view.notice.text = "앱을 종료하시겠습니까?"
 
         if(!popup) {
 

@@ -17,7 +17,7 @@ class ListDetailActivity : AppCompatActivity() {
 
             var paper = intent.getSerializableExtra("paper") as Paper
 
-            txtListTitle.setText(paper.name+" 님의 문진표")
+            txtListTitle.text = paper.name+" 님의 문진표"
 
             val adapter = CustomDetailAdapter(paper, this)
 

@@ -59,8 +59,7 @@ class NutritionExaminationActivity :RootActivity() {
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
-            var bmp: Bitmap = BitmapFactory.decodeByteArray(MainActivity.user_stream,0,MainActivity.user_stream!!.size)
-            Signature.setImageBitmap(bmp)
+            signature = MainActivity.user_stream!!
         }
 
         sql_db = LocalDBhelper(this).writableDatabase
@@ -71,12 +70,15 @@ class NutritionExaminationActivity :RootActivity() {
             var paper = intent.getSerializableExtra("paper") as Paper_NUTRITION
 
             GetPaper(paper)
+        }else{
+
+            name_edit.text = MainActivity.login_user_name
+            first_serial.text = MainActivity.user_first_serial
+            last_serial.text = MainActivity.user_last_serial
+            nutrition_examination_save.text = "다음"
+
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        name_edit.setText(MainActivity.login_user_name)
-        first_serial.setText(MainActivity.user_first_serial)
-        last_serial.setText(MainActivity.user_last_serial)
 
         nutrition_examination_save.setOnClickListener {
 
@@ -440,10 +442,10 @@ class NutritionExaminationActivity :RootActivity() {
     }
 
     fun GetPaper(paper:Paper_NUTRITION){
-        
-        name_edit.setText(paper.name)
-        first_serial.setText(paper.first_serial)
-        last_serial.setText(paper.last_serial)
+
+        name_edit.text = paper.name
+        first_serial.text = paper.first_serial
+        last_serial.text = paper.last_serial
 
         nutrition_examination_save.visibility = View.GONE
         nutrition_examination_cancel.visibility = View.GONE

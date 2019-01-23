@@ -68,22 +68,11 @@ class OralExaminationActivity : RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oral_exam)
 
-
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
-
-            println("*****")
-            println(MainActivity.user_stream)
-            println("*****")
-
-            //var bmp: Bitmap = BitmapFactory.decodeByteArray(MainActivity.user_stream,0,MainActivity.user_stream!!.size)
-
-            var bmp: Bitmap = BitmapFun.Fuc.getImage(MainActivity.user_stream!!)
-            Signature.setImageBitmap(bmp)
-            signature = BitmapFun.Fuc.getBytes(bmp)
+            signature = MainActivity.user_stream!!
         }
-
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
 
         sql_db = LocalDBhelper(this).writableDatabase
@@ -140,9 +129,9 @@ class OralExaminationActivity : RootActivity() {
 
             GetPaper(paper)
         }else{
-            name_edit.setText(MainActivity.login_user_name)
-            first_serial.setText(MainActivity.user_first_serial)
-            last_serial.setText(MainActivity.user_last_serial)
+            name_edit.text = MainActivity.login_user_name
+            first_serial.text = MainActivity.user_first_serial
+            last_serial.text = MainActivity.user_last_serial
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -258,7 +247,7 @@ class OralExaminationActivity : RootActivity() {
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
-        dialog_view.save_complete_alert_text.setText("저장이 완료 되었습니다")
+        dialog_view.save_complete_alert_text.text = "저장이 완료 되었습니다"
 
         if(!popup) {
 
@@ -744,9 +733,9 @@ class OralExaminationActivity : RootActivity() {
 
     fun GetPaper(paper:Paper_ORAL)
     {
-        name_edit.setText(paper.name)
-        first_serial.setText(paper.first_serial)
-        last_serial.setText(paper.last_serial)
+        name_edit.text = paper.name
+        first_serial.text = paper.first_serial
+        last_serial.text = paper.last_serial
 
         println(paper)
 
