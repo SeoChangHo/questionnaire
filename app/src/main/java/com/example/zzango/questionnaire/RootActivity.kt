@@ -50,26 +50,46 @@ open class RootActivity : AppCompatActivity() {
     }
 
     //진행바 제어하는 메서드
-//    fun controlProgress(view : View, guideline : Guideline, guideline2 : Guideline){
-//
-//        when(MainActivity.chart){
-//
-//            "SET1" -> { view.visibility = View.GONE }
-//
-//            "SET2" -> {
-//
-//                var constraintSet = ConstraintSet()
-//                constraintSet.clone(questionnaire_progress_wrapper)
-//                constraintSet.connect(R.id.guideline, ConstraintSet.END, R.id.guideline2, )
-//
-//                guideline.setGuidelinePercent(0.5f)
-//                guideline2.setGuidelinePercent(1f)
-//
-//            }
-//
-//        }
-//
-//    }
+    fun controlProgress(context : Context, layout : ConstraintLayout, view : View, guideline : Guideline, guideline2 : Guideline){
+
+        println(context.javaClass.kotlin.simpleName)
+
+        when(MainActivity.chart){
+
+            "SET1" -> { view.visibility = View.GONE }
+
+            "SET2" -> {
+
+                when(context.javaClass.kotlin.simpleName) {
+
+                    "CommonExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                    "MentalExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+
+                    }
+
+                }
+
+                guideline.setGuidelinePercent(0.5f)
+                guideline2.setGuidelinePercent(1f)
+
+            }
+
+        }
+
+    }
 
     //뷰에 포커스를 총괄하는 메서드
     open fun focusControl(view : View){

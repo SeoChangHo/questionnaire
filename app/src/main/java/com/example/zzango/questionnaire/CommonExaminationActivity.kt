@@ -20,6 +20,7 @@ import com.example.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_common_exam.*
+import kotlinx.android.synthetic.main.progressbar.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -132,6 +133,7 @@ class CommonExaminationActivity : RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_exam)
 
+        controlProgress(this, questionnaire_progress_wrapper, questionnaire_progress, guideline, guideline2)
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
@@ -198,40 +200,40 @@ class CommonExaminationActivity : RootActivity() {
 
         }
 
-        common_7_1.setOnClickListener {
-            if(common_7_1.isChecked){
-                common_7_1_editText.visibility = View.VISIBLE
-
-                common_7_2_editText.visibility = View.GONE
-                common_7_3_editText.visibility = View.GONE
-            }
-        }
-
-        common_7_2.setOnClickListener {
-            if(common_7_2.isChecked){
-                common_7_2_editText.visibility = View.VISIBLE
-
-                common_7_1_editText.visibility = View.GONE
-                common_7_3_editText.visibility = View.GONE
-            }
-        }
-
-        common_7_3.setOnClickListener {
-            if(common_7_3.isChecked){
-                common_7_3_editText.visibility = View.VISIBLE
-
-                common_7_1_editText.visibility = View.GONE
-                common_7_2_editText.visibility = View.GONE
-            }
-        }
-
-        common_7_4.setOnClickListener {
-
-            common_7_1_editText.visibility = View.GONE
-            common_7_2_editText.visibility = View.GONE
-            common_7_3_editText.visibility = View.GONE
-
-        }
+//        common_7_1.setOnClickListener {
+//            if(common_7_1.isChecked){
+//                common_7_1_editText.visibility = View.VISIBLE
+//
+//                common_7_2_editText.visibility = View.GONE
+//                common_7_3_editText.visibility = View.GONE
+//            }
+//        }
+//
+//        common_7_2.setOnClickListener {
+//            if(common_7_2.isChecked){
+//                common_7_2_editText.visibility = View.VISIBLE
+//
+//                common_7_1_editText.visibility = View.GONE
+//                common_7_3_editText.visibility = View.GONE
+//            }
+//        }
+//
+//        common_7_3.setOnClickListener {
+//            if(common_7_3.isChecked){
+//                common_7_3_editText.visibility = View.VISIBLE
+//
+//                common_7_1_editText.visibility = View.GONE
+//                common_7_2_editText.visibility = View.GONE
+//            }
+//        }
+//
+//        common_7_4.setOnClickListener {
+//
+//            common_7_1_editText.visibility = View.GONE
+//            common_7_2_editText.visibility = View.GONE
+//            common_7_3_editText.visibility = View.GONE
+//
+//        }
 
         checkBox1.setOnCheckedChangeListener {
 
@@ -336,7 +338,7 @@ class CommonExaminationActivity : RootActivity() {
 
         common_examination_cancel.setOnClickListener {
 
-            finish()
+            startActivity(Intent(this@CommonExaminationActivity, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 
@@ -365,6 +367,14 @@ class CommonExaminationActivity : RootActivity() {
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    }
+
+    override fun onResume() {
+
+        login_appbar_loading_progress.visibility = View.GONE
+        login_appbar_loading_progress_bg.visibility = View.GONE
+        super.onResume()
 
     }
 
