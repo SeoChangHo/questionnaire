@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/progressbar"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
         android:overScrollMode="never"
-        android:fillViewport="true">
-
+        android:fillViewport="true"
+        >
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/common_exam_inside_scroll_layout"

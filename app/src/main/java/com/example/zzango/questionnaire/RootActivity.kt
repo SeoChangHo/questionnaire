@@ -5,6 +5,8 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.support.constraint.ConstraintLayout
+import android.support.constraint.ConstraintSet
+import android.support.constraint.Guideline
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
@@ -15,6 +17,7 @@ import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.RadioButton
+import kotlinx.android.synthetic.main.progressbar.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 
 open class RootActivity : AppCompatActivity() {
@@ -45,6 +48,28 @@ open class RootActivity : AppCompatActivity() {
         }
 
     }
+
+    //진행바 제어하는 메서드
+//    fun controlProgress(view : View, guideline : Guideline, guideline2 : Guideline){
+//
+//        when(MainActivity.chart){
+//
+//            "SET1" -> { view.visibility = View.GONE }
+//
+//            "SET2" -> {
+//
+//                var constraintSet = ConstraintSet()
+//                constraintSet.clone(questionnaire_progress_wrapper)
+//                constraintSet.connect(R.id.guideline, ConstraintSet.END, R.id.guideline2, )
+//
+//                guideline.setGuidelinePercent(0.5f)
+//                guideline2.setGuidelinePercent(1f)
+//
+//            }
+//
+//        }
+//
+//    }
 
     //뷰에 포커스를 총괄하는 메서드
     open fun focusControl(view : View){
