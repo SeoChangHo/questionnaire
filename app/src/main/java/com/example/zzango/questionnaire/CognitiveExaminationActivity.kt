@@ -84,6 +84,11 @@ class CognitiveExaminationActivity : RootActivity(){
             name_edit.text = MainActivity.login_user_name
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
+            if(MainActivity.chart != "SET5"){
+
+
+
+            }
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
