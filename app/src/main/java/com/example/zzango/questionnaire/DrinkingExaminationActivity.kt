@@ -18,6 +18,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_DRINKING
+import com.example.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_drinking_exam.*
@@ -64,6 +65,7 @@ class DrinkingExaminationActivity : RootActivity(){
         if(MainActivity.user_stream!=null)
         {
             signature = MainActivity.user_stream!!
+            Signature.setImageBitmap(BitmapFun.Fuc.getImage(MainActivity.user_stream!!))
         }
 
         sql_db = LocalDBhelper(this).writableDatabase
