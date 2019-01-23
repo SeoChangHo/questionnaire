@@ -199,25 +199,36 @@ class CommonExaminationActivity : RootActivity() {
         common_7_1.setOnClickListener {
             if(common_7_1.isChecked){
                 common_7_1_editText.visibility = View.VISIBLE
-            }else{
-                common_7_1_editText.visibility = View.GONE
+
+                common_7_2_editText.visibility = View.GONE
+                common_7_3_editText.visibility = View.GONE
             }
         }
 
         common_7_2.setOnClickListener {
             if(common_7_2.isChecked){
                 common_7_2_editText.visibility = View.VISIBLE
-            }else{
-                common_7_2_editText.visibility = View.GONE
+
+                common_7_1_editText.visibility = View.GONE
+                common_7_3_editText.visibility = View.GONE
             }
         }
 
         common_7_3.setOnClickListener {
             if(common_7_3.isChecked){
                 common_7_3_editText.visibility = View.VISIBLE
-            }else{
-                common_7_3_editText.visibility = View.GONE
+
+                common_7_1_editText.visibility = View.GONE
+                common_7_2_editText.visibility = View.GONE
             }
+        }
+
+        common_7_4.setOnClickListener {
+
+            common_7_1_editText.visibility = View.GONE
+            common_7_2_editText.visibility = View.GONE
+            common_7_3_editText.visibility = View.GONE
+
         }
 
         checkBox1.setOnCheckedChangeListener {
@@ -874,21 +885,21 @@ class CommonExaminationActivity : RootActivity() {
         }
 
         if(common_7_1.isChecked){
-            if(common_7_1_editText.text.isNullOrEmpty()){
+            if(!common_7_1_editText.text.isNullOrEmpty()){
                 mj71 = common_7_1_editText.text.toString()
             }else{
                 Toast.makeText(this, "7번 문항 첫번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
         }else if(common_7_2.isChecked){
-            if(common_7_2_editText.text.isNullOrEmpty()){
+            if(!common_7_2_editText.text.isNullOrEmpty()){
                 mj72 = common_7_2_editText.text.toString()
             }else{
                 Toast.makeText(this, "7번 문항 두번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
         }else if(common_7_3.isChecked){
-            if(common_7_3_editText.text.isNullOrEmpty()){
+            if(!common_7_3_editText.text.isNullOrEmpty()){
                 mj73 = common_7_3_editText.text.toString()
             }else{
                 Toast.makeText(this, "7번 문항 세번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
