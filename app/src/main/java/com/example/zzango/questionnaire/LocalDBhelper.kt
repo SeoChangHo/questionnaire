@@ -707,7 +707,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.sg2_spFood4}', '${columnValue.sg2_spFood5}', '${columnValue.sg2_spFood6}'" +
                 ", '${columnValue.sg2_spFood7}', '${columnValue.sg2_spFood8}', '${columnValue.sg2_spFood9}'" +
                 ", '${columnValue.sg2_spFood10}', '${columnValue.sg2_spFood11}', '${columnValue.sg2_spFoodSum}'" +
-                //", '${columnValue.sg2_spFatHeight}', '${columnValue.sg2_spFatWeight}', '${columnValue.sg2_spFatWaistSize}', '${columnValue.sg2_spFatBmi}'" +
+                ", '${columnValue.sg2_spHeight}', '${columnValue.sg2_spWeight}', '${columnValue.sg2_spWaistSize}', '${columnValue.sg2_spBmi}'" +
                 ", '${columnValue.sg2_spFat1}', '${columnValue.sg2_spFat2}', '${columnValue.sg2_spFat3}');")
 
     }
