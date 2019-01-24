@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
@@ -31,6 +32,8 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.Signature.CanvasView
+import com.example.zzango.questionnaire.UserList.User
+import com.example.zzango.questionnaire.UserList.UserList
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_user_login.view.*
@@ -39,16 +42,21 @@ import kotlinx.android.synthetic.main.save_location.view.*
 import java.io.*
 import java.time.LocalDateTime
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     var popup = false
     lateinit var canvasView: CanvasView
+    var sql_db : SQLiteDatabase? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        UserCheck()
 
         var wfm = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
 
@@ -175,13 +183,26 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             if(dialog_view.login_id.text.toString() != ""){
 
-                if(dialog_view.login_password.text.toString() == "1111"){
+                var UserArray:ArrayList<UserList> = ArrayList()
+
+                val user = dialog_view.login_id.text.toString()
+                var pass = dialog_view.login_password.text.toString()
+
+                UserArray.add(UserList(user, pass))
+
+                val sql_db = LocalDBhelper(this).writableDatabase
+
+                val datacount = LocalDBhelper(this).UserCheck(sql_db!!, UserArray)
+
+                if(datacount==0)
+                {
+                    Toast.makeText(applicationContext, "유저정보를 확인해주세요.", Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
                     Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
                     dialog.dismiss()
-                }else{
-                    Toast.makeText(applicationContext, "비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
                 }
-
             }
 
 
@@ -722,6 +743,74 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         }
 
         return true
+    }
+
+    fun UserCheck()
+    {
+        println("유저체크")
+
+        sql_db = LocalDBhelper(this).writableDatabase
+
+        LocalDBhelper(this).UserTableCreate(sql_db!!)
+        val data = LocalDBhelper(this).UserUpdateCheck(sql_db!!)
+
+        if(data.count==0)//앱 깔고 첫 구동 유저가 없음. 유저 정보 삽입
+        {
+            var UserListArray:ArrayList<UserList> = ArrayList()
+
+            println("유저정보 삽입")
+            println(User.Map)
+
+            for (item in User.Map)
+            {
+                println(item.key)
+                println(item.value)
+
+                UserListArray.add(UserList(item.key, item.value))
+            }
+
+            LocalDBhelper(this).UserInsert(sql_db!!, UserListArray)
+
+        }
+        else
+        {
+            var SqlArray:ArrayList<UserList> = ArrayList()
+            var UserListArray:ArrayList<UserList> = ArrayList()
+
+            println("유저정보가 업데이트 있나 확인함")
+
+            data.moveToFirst()
+
+
+            //SQL USER 정보 가져오기
+            while(!data.isAfterLast){
+
+                SqlArray.add(UserList(data.getString(data.getColumnIndex("user")),
+                                      data.getString(data.getColumnIndex("pass"))))
+                data.moveToNext()
+            }
+
+            //로컬 기기 USER 정보 가져오기
+            for (item in User.Map)
+            {
+                println(item.key)
+                println(item.value)
+
+                UserListArray.add(UserList(item.key, item.value))
+            }
+
+            //기존정보와 같다 아무것도 하지 않는다.
+            if(UserListArray==SqlArray)
+            {
+                println("기존정보와 같다.")
+            }
+            else//기존정보와 다르다. 삭제하고 다시 삽입한다.
+            {
+                LocalDBhelper(this).UserDeleteAndInsert(sql_db!!, UserListArray)
+            }
+        }
+
+
     }
 
     @SuppressLint("NewApi")

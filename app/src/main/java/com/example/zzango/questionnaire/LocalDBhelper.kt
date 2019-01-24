@@ -7,6 +7,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.zzango.questionnaire.LocalList.*
+import com.example.zzango.questionnaire.UserList.UserList
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
 
@@ -31,6 +32,77 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         cv.put("name", columnValue.name)
 
         db.insert("LOCALSAVELIST", null, cv)
+    }
+
+    fun UserTableCreate(db: SQLiteDatabase?) {
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "USERTABLE" +
+                "(user TEXT," +
+                "pass TEXT);")
+    }
+
+    @SuppressLint("Recycle")
+    fun UserUpdateCheck(db : SQLiteDatabase): Cursor{
+
+        var data = db.rawQuery("SELECT * FROM USERTABLE;", null)
+
+
+        return data
+
+    }
+
+    fun UserInsert(db : SQLiteDatabase, arr : ArrayList<UserList>)
+    {
+        for (item in arr)
+        {
+            val cv = ContentValues()
+            cv.put("user", item.user)
+            cv.put("pass", item.pass)
+
+            db.insert("USERTABLE", null, cv)
+        }
+    }
+
+    fun UserDeleteAndInsert(db : SQLiteDatabase, arr : ArrayList<UserList>)
+    {
+        db.delete("USERTABLE", null, null)
+
+        println("유저정보를 제거 합니다.")
+
+        println("유저정보를 새로 입력합니다!")
+
+        println("*********************")
+
+        for (item in arr)
+        {
+
+            println("*** user: "+item.user+"***")
+            println("*** pass: "+item.pass+"***")
+            val cv = ContentValues()
+            cv.put("user", item.user)
+            cv.put("pass", item.pass)
+
+            db.insert("USERTABLE", null, cv)
+        }
+
+        println("*********************")
+    }
+
+    fun UserCheck(db : SQLiteDatabase, arr : ArrayList<UserList>) : Int
+    {
+        var sql = "SELECT * FROM USERTABLE WHERE user =? AND pass=?;"
+
+
+
+        var data = db.rawQuery(sql, arrayOf(arr[0].user, arr[0].pass))
+
+        println("user:" + arr[0].user)
+        println("pass:" + arr[0].pass)
+        println("count: "+data.count)
+
+
+        return data.count
     }
 
 
