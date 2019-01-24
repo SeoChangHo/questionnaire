@@ -1702,6 +1702,7 @@
                 android:id="@+id/common_7_1_wrapper"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@+id/common_7_radio"
                 app:layout_constraintTop_toTopOf="@+id/common_7_radio">
 
@@ -1713,7 +1714,6 @@
                     android:hint="횟수입력"
                     android:inputType="number"
                     android:textSize="18dp"
-                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -1726,6 +1726,7 @@
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="6dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@+id/common_7_radio"
                 app:layout_constraintTop_toBottomOf="@+id/common_7_1_wrapper">
 
@@ -1737,7 +1738,6 @@
                     android:hint="횟수입력"
                     android:inputType="number"
                     android:textSize="18dp"
-                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -1750,6 +1750,7 @@
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="6dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@+id/common_7_radio"
                 app:layout_constraintTop_toBottomOf="@+id/common_7_2_wrapper">
 
@@ -1761,7 +1762,6 @@
                     android:hint="횟수입력"
                     android:inputType="number"
                     android:textSize="18dp"
-                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
