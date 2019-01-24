@@ -27,7 +27,7 @@ class FirstFragment : Fragment(){
 
             }else{
 
-                MainActivity().userlogin(activity!!.user_login, activity!!.user_image, activity as Context)
+                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context)
 
             }
 
@@ -39,6 +39,8 @@ class FirstFragment : Fragment(){
     }
 
     override fun onResume() {
+
+        println("resume")
 
         activity!!.login_appbar_loading_progress.visibility = View.GONE
         activity!!.login_appbar_loading_progress_bg.visibility = View.GONE
