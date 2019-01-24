@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -129,6 +130,17 @@ class OralExaminationActivity : RootActivity() {
             var paper = intent.getSerializableExtra("paper") as Paper_ORAL
 
             GetPaper(paper)
+
+            try {
+                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+
+                Signature.setImageBitmap(bmp)
+
+            }
+            catch (e:Exception)
+            {
+                println(e.message)
+            }
         }else{
             name_edit.text = MainActivity.login_user_name
             first_serial.text = MainActivity.user_first_serial

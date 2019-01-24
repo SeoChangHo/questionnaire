@@ -20,7 +20,6 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
 
     var CategoryArr = ArrayList<String>()
     var sql_db : SQLiteDatabase? = null
-    val EmptyBytes:ByteArray = ByteArray(0)
 
 
 
@@ -97,7 +96,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         PaperArray.add(Paper_ORAL(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
-                                EmptyBytes,
+                                PaperList.signature,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -137,7 +136,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         PaperArray.add(Paper_COMMON(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
-                                EmptyBytes,
+                                PaperList.signature,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -248,7 +247,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         PaperArray.add(Paper_COGNITIVE(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
-                                EmptyBytes,
+                                PaperList.signature,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -286,7 +285,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         PaperArray.add(Paper_ELDERLY(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
-                                EmptyBytes,
+                                PaperList.signature,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -319,7 +318,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         PaperArray.add(Paper_EXERCISE(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
-                                EmptyBytes,
+                                PaperList.signature,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -372,7 +371,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         PaperArray.add(Paper_NUTRITION(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
-                                EmptyBytes,
+                                PaperList.signature,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -413,7 +412,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         PaperArray.add(Paper_MENTAL(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
-                                EmptyBytes,
+                                PaperList.signature,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -445,7 +444,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         PaperArray.add(Paper_SMOKING(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
-                                EmptyBytes,
+                                PaperList.signature,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -476,7 +475,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         PaperArray.add(Paper_DRINKING(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
-                                EmptyBytes,
+                                PaperList.signature,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),
@@ -510,7 +509,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         PaperArray.add(Paper_CANCER(
                                 data.getString(data.getColumnIndex("exam_date")),
                                 data.getString(data.getColumnIndex("exam_no")),
-                                EmptyBytes,
+                                PaperList.signature,
                                 data.getString(data.getColumnIndex("name")),
                                 data.getString(data.getColumnIndex("first_serial")),
                                 data.getString(data.getColumnIndex("last_serial")),

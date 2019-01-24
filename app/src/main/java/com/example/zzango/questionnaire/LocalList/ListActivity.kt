@@ -688,7 +688,6 @@ class ListActivity : Activity() {
             txtBottomMent.text = "문진표를 선택해주세요."
             select_all_checkbox.isChecked = false
         }
-
     }
 
     //전체선택

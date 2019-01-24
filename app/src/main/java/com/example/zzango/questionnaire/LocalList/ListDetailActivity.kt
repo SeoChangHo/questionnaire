@@ -22,6 +22,9 @@ class ListDetailActivity : AppCompatActivity() {
             txtListTitle.text = paper.name+" 님의 문진표"
 
             val adapter = CustomDetailAdapter(paper, this)
+
+            println("@@@")
+            println(paper.signature.size)
             detail_recyclertView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
             detail_recyclertView.adapter = adapter

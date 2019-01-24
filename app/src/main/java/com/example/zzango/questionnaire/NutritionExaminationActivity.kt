@@ -72,6 +72,17 @@ class NutritionExaminationActivity :RootActivity() {
             var paper = intent.getSerializableExtra("paper") as Paper_NUTRITION
 
             GetPaper(paper)
+
+            try {
+                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+
+                Signature.setImageBitmap(bmp)
+
+            }
+            catch (e:Exception)
+            {
+                println(e.message)
+            }
         }else{
 
             name_edit.text = MainActivity.login_user_name

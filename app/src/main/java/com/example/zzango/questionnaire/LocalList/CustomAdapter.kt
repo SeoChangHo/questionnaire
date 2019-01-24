@@ -124,20 +124,6 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
 
 
-        if(MainActivity.user_stream==paper.signature)
-        {
-            println("같다.")
-    }
-        else
-        {
-            println("다르다.")
-
-
-            println("paper.signature = ")
-            println(paper.signature)
-            println(paper.signature.size)
-        }
-
         try {
             var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
 
@@ -167,6 +153,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
             sql_db = LocalDBhelper(Activity.applicationContext).writableDatabase
             println(paper.exam_no)
+            println(paper.signature.size)
 
             startActivity(Activity, Intent(Activity, ListDetailActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
 
