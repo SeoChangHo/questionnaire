@@ -27,11 +27,12 @@ class SettingActivity : AppCompatActivity() {
 
         switch1.setOnClickListener {
             if(switch1.isChecked){
-                getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "server").apply()
+                getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
             }else{
                 getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
             }
         }
+
 
 
     }

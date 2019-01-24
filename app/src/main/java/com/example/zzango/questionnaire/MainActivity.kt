@@ -200,6 +200,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 }
                 else
                 {
+                    MainActivity.manager_name = user
                     Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
                     dialog.dismiss()
                 }
@@ -654,6 +655,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var user_last_serial = ""
         var user_stream:ByteArray? = null
         var chart = ""
+        var manager_name = ""
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{
