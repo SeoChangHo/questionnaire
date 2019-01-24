@@ -10,7 +10,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout9"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,12 +20,12 @@
             android:id="@+id/select_all_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:buttonTint="@color/mainBlue"
-            app:layout_constraintBottom_toBottomOf="@+id/textView56"
-            app:layout_constraintEnd_toStartOf="@+id/select_all"
-            app:layout_constraintTop_toTopOf="@+id/textView56" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/select_all" />
 
         <TextView
             android:id="@+id/select_all"
@@ -55,13 +55,11 @@
             android:id="@+id/textView56"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:layout_marginTop="16dp"
             android:text="로컬에 저장된 문진표"
             android:textColor="@color/mainBlue"
             android:textSize="25dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/imageView11"
             app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 

@@ -39,7 +39,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -72,8 +71,8 @@
             android:id="@+id/imageView9"
             android:layout_width="15dp"
             android:layout_height="30dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -81,6 +80,82 @@
 
 
     </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/local_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:text=""
+        android:background="@color/mainBlue"
+        app:layout_constraintEnd_toStartOf="@+id/server_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14" />
+
+    <Button
+        android:id="@+id/server_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:text=""
+        android:background="@drawable/border_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/local_button"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14" />
+
+    <ImageView
+        android:id="@+id/local_imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/server_button"
+        app:layout_constraintStart_toStartOf="@+id/local_button"
+        app:layout_constraintTop_toTopOf="@+id/local_button"
+        app:srcCompat="@drawable/local" />
+
+    <ImageView
+        android:id="@+id/server_imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/server_button"
+        app:layout_constraintStart_toStartOf="@+id/server_button"
+        app:layout_constraintTop_toTopOf="@+id/server_button"
+        app:srcCompat="@drawable/server_blue" />
+
+    <TextView
+        android:id="@+id/server_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서버(업로드)"
+        android:textColor="@color/navy"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/server_imageView"
+        app:layout_constraintStart_toStartOf="@+id/server_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/server_imageView" />
+
+    <TextView
+        android:id="@+id/local_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="기기저장"
+        android:textColor="@color/backGround"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/local_imageView"
+        app:layout_constraintStart_toStartOf="@+id/local_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/local_imageView" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout15"
@@ -100,42 +175,5 @@
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout15"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/logo2" />
-
-    <android.support.constraint.ConstraintLayout
-        android:background="@drawable/border_top"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14">
-
-        <TextView
-            android:id="@+id/textView74"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:text="서버저장(업로드)"
-            android:textColor="@color/navy"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:checked="false" />
-
-    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

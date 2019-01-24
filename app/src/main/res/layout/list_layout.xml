@@ -8,7 +8,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout10"
-        android:layout_width="70dp"
+        android:layout_width="100dp"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
         android:layout_marginEnd="32dp"
@@ -38,7 +38,7 @@
 
 
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
@@ -63,9 +63,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:text="검진표종류"
+                android:text="공통 외 3건"
                 android:textColor="@color/mainBlue"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView63"
                 app:layout_constraintStart_toEndOf="@+id/textView63"
                 app:layout_constraintTop_toTopOf="@+id/textView63" />
@@ -78,7 +78,7 @@
                 android:layout_marginStart="8dp"
                 android:text="20189-12-18"
                 android:textColor="@color/mainBlue"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView62"
                 app:layout_constraintStart_toEndOf="@+id/textView62"
                 app:layout_constraintTop_toTopOf="@+id/textView62" />
@@ -88,14 +88,14 @@
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginStart="32dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="작성일자 :"
                 android:textColor="@color/mainBlue"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txtCategory"
+                app:layout_constraintStart_toEndOf="@+id/constraintLayout19"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -106,18 +106,18 @@
                 android:layout_marginStart="32dp"
                 android:text="검진 :"
                 android:textColor="@color/mainBlue"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout18"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout18"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginStart="32dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/list_name_background"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -142,6 +142,35 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout19"
+                android:layout_width="2dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/whiteGray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtCategory"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="2dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/whiteGray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtDate"
+                app:layout_constraintTop_toTopOf="parent">
+
             </android.support.constraint.ConstraintLayout>
 
         </android.support.constraint.ConstraintLayout>
