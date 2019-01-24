@@ -700,7 +700,6 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                 return 0
             }
         }
-
         return CategoryArr.size
     }
 }
