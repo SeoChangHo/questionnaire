@@ -12,6 +12,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.zzango.questionnaire.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -67,6 +69,12 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
         p0 as ContentDetailViewHolder
 
         p0.txtCategory.text = CategoryArr[p1]
+
+        var date = SimpleDateFormat("yyyy-MM-dd").format(Date(PaperList.exam_no.toLong()))
+
+
+
+        p0.txtDate.text = date
 
 
 
