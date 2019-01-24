@@ -133,7 +133,7 @@ class CommonExaminationActivity : RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_exam)
 
-//        controlProgress(this, questionnaire_progress_wrapper, questionnaire_progress, guideline, guideline2)
+        controlProgress(this, questionnaire_progress_wrapper, questionnaire_progress, guideline, guideline2)
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
