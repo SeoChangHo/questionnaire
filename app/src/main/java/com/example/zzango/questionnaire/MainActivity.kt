@@ -348,6 +348,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 //login_appbar_loading_progress.visibility = View.VISIBLE
                 //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
+                //사용자
                 var dialog = AlertDialog.Builder(context).create()
                 var dialog_view = LayoutInflater.from(context).inflate(R.layout.notice_alert, null)
 
