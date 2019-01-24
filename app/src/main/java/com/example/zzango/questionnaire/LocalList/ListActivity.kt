@@ -649,7 +649,7 @@ class ListActivity : Activity() {
                             login_appbar_loading_progress.visibility = View.GONE
                             Toast.makeText(this@ListActivity, "전송 완료", Toast.LENGTH_LONG).show()
 
-                            //LocalDBhelper(this@ListActivity).deletePaper(sql_db!!, removeArr)
+                            LocalDBhelper(this@ListActivity).deletePaper(sql_db!!, removeArr)
                             ListSetting(false)
                             btnSave.visibility = View.GONE
                             btnDelete.visibility = View.GONE
@@ -664,42 +664,7 @@ class ListActivity : Activity() {
                 }
             })
         }
-//            OracleUtill().oral_examination().oracleServer1(removeArr!!).enqueue(object : Callback<String> {
-//
-//                override fun onResponse(call: Call<String>, response: Response<String>) {
-//
-//                    if (response.isSuccessful) {
-//
-//                        if (!response.body()!!.equals("S")) {
-//
-//                            println(response.body())
-//                            Toast.makeText(this@ListActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-//
-//                        } else {
-//                            window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//                            login_appbar_loading_progress_bg.visibility = View.GONE
-//                            login_appbar_loading_progress.visibility = View.GONE
-//                            Toast.makeText(this@ListActivity, "전송 완료", Toast.LENGTH_LONG).show()
-//
-//                            LocalDBhelper(this@ListActivity).deletePaper(sql_db!!, removeArr)
-//                            ListSetting(false)
-//                            btnSave.visibility = View.GONE
-//                            btnDelete.visibility = View.GONE
-//                            txtBottomMent.text = "문진표를 선택해주세요."
-//                            constraintLayout_bottom.visibility = View.GONE
-//                        }
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<String>, t: Throwable) {
-//
-//                    Toast.makeText(this@ListActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-//                    println(t.toString())
-//                }
-//
-//            })
-//
-//        }
+
 
         //삭제하는거
         btnDelete.setOnClickListener{
