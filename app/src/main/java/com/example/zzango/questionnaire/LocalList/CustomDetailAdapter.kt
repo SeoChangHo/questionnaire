@@ -72,8 +72,6 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
 
         var date = SimpleDateFormat("yyyy-MM-dd").format(Date(PaperList.exam_no.toLong()))
 
-
-
         p0.txtDate.text = date
 
 
