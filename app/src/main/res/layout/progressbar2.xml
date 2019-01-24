@@ -64,7 +64,7 @@
         app:layout_constraintGuide_percent="0" />
 
     <TextView
-        android:id="@+id/questionnaire_name1"
+        android:id="@+id/questionnaire_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="8dp"

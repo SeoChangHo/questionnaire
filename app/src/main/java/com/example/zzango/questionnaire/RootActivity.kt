@@ -66,7 +66,7 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
-                        questionnaire_name1.text = "1/2 진행중"
+                        questionnaire_page.text = "1/2 진행중"
 
                     }
 
@@ -76,8 +76,8 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
-                        questionnaire_name1.text = "2/2 진행중"
-                        questionnaire_name1.setTextColor(ContextCompat.getColor(this, R.color.white))
+                        questionnaire_page.text = "2/2 진행중"
+                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
 
                     }
 
@@ -98,6 +98,7 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "1/6 진행중"
 
                     }
 
@@ -107,23 +108,59 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "2/6 진행중"
 
                     }
 
-                    "ExerciseExaminationActivity", "DrinkingExaminationActivity", "NutritionExaminationActivity", "SmokingExaminationActivity" -> {
+                    "ExerciseExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "3/6 진행중"
+
+                    }
+
+                    "DrinkingExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+                        questionnaire_page.text = "4/6 진행중"
+
+                    }
+
+                    "NutritionExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+                        questionnaire_page.text = "5/6 진행중"
+
+                    }
+
+                    "SmokingExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+                        questionnaire_page.text = "6/6 진행중"
+                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
 
                     }
 
                 }
 
-                guideline.setGuidelinePercent(0.33f)
-                guideline2.setGuidelinePercent(0.66f)
-                guideline3.setGuidelinePercent(1f)
+                guideline.setGuidelinePercent(0.16f)
+                guideline2.setGuidelinePercent(0.33f)
+                guideline3.setGuidelinePercent(0.49f)
+                guideline4.setGuidelinePercent(0.66f)
+                guideline5.setGuidelinePercent(0.88f)
+                guideline6.setGuidelinePercent(1f)
 
             }
 
