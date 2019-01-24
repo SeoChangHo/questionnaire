@@ -602,8 +602,6 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                     println("확인되지 않습니다.")
                 }
             }
-
-
         }
     }
 

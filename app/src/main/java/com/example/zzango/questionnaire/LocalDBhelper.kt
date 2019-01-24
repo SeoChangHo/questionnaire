@@ -822,80 +822,99 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_COMMON(db : SQLiteDatabase, no: String): Cursor{
-
-        var data = db.rawQuery("SELECT * FROM COMMON_EXAM;", null)
+    fun Select_Local_COMMON(db : SQLiteDatabase, getno: String): Cursor{
 
 
+        var sql = "SELECT * FROM COMMON_EXAM WHERE exam_no =?;"
 
-        return data
-    }
-
-    @SuppressLint("Recycle")
-    fun Select_Local_COGNITIVE(db : SQLiteDatabase, no: String): Cursor{
-
-        var data = db.rawQuery("SELECT * FROM COGNITIVE_EXAM;", null)
+        var data = db.rawQuery(sql, arrayOf(getno))
 
         return data
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_ELDERLY(db : SQLiteDatabase, no: String): Cursor{
+    fun Select_Local_COGNITIVE(db : SQLiteDatabase, getno: String): Cursor{
 
-        var data = db.rawQuery("SELECT * FROM ELDERLY_EXAM;", null)
 
-        return data
-    }
+        var sql = "SELECT * FROM COGNITIVE_EXAM WHERE exam_no =?;"
 
-    @SuppressLint("Recycle")
-    fun Select_Local_MENTAL(db : SQLiteDatabase, no: String): Cursor{
-
-        var data = db.rawQuery("SELECT * FROM MENTAL_EXAM;", null)
+        var data = db.rawQuery(sql, arrayOf(getno))
 
         return data
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_EXERCISE(db : SQLiteDatabase, no: String): Cursor{
+    fun Select_Local_ELDERLY(db : SQLiteDatabase, getno: String): Cursor{
 
-        var data = db.rawQuery("SELECT * FROM EXERCISE_EXAM;", null)
 
+        var sql = "SELECT * FROM ELDERLY_EXAM WHERE exam_no =?;"
+
+        var data = db.rawQuery(sql, arrayOf(getno))
+
+        return data
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_MENTAL(db : SQLiteDatabase, getno: String): Cursor{
+
+
+        var sql = "SELECT * FROM MENTAL_EXAM WHERE exam_no =?;"
+
+        var data = db.rawQuery(sql, arrayOf(getno))
+        return data
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_EXERCISE(db : SQLiteDatabase, getno: String): Cursor{
+
+
+        var sql = "SELECT * FROM EXERCISE_EXAM WHERE exam_no =?;"
+
+        var data = db.rawQuery(sql, arrayOf(getno))
         return data
 
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_SMOKING(db : SQLiteDatabase, no: String): Cursor{
+    fun Select_Local_SMOKING(db : SQLiteDatabase, getno: String): Cursor{
 
-        var data = db.rawQuery("SELECT * FROM SMOKING_EXAM;", null)
 
+        var sql = "SELECT * FROM SMOKING_EXAM WHERE exam_no =?;"
+
+        var data = db.rawQuery(sql, arrayOf(getno))
         return data
 
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_DRINKING(db : SQLiteDatabase, no: String): Cursor{
+    fun Select_Local_DRINKING(db : SQLiteDatabase, getno: String): Cursor{
 
-        var data = db.rawQuery("SELECT * FROM DRINKING_EXAM;", null)
 
+        var sql = "SELECT * FROM DRINKING_EXAM WHERE exam_no =?;"
+
+        var data = db.rawQuery(sql, arrayOf(getno))
         return data
 
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_CANCER(db : SQLiteDatabase, no: String): Cursor{
+    fun Select_Local_CANCER(db : SQLiteDatabase, getno: String): Cursor{
 
-        var data = db.rawQuery("SELECT * FROM CANCER_EXAM;", null)
 
+        var sql = "SELECT * FROM CANCER_EXAM WHERE exam_no =?;"
+
+        var data = db.rawQuery(sql, arrayOf(getno))
         return data
 
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_NUTRITION(db : SQLiteDatabase, no: String): Cursor{
+    fun Select_Local_NUTRITION(db : SQLiteDatabase, getno: String): Cursor{
 
-        var data = db.rawQuery("SELECT * FROM NUTRITION_EXAM;", null)
 
+        var sql = "SELECT * FROM NUTRITION_EXAM WHERE exam_no =?;"
+
+        var data = db.rawQuery(sql, arrayOf(getno))
         return data
 
     }
