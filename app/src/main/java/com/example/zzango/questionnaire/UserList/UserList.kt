@@ -5,14 +5,14 @@ import java.io.Serializable
 
 data class UserList(var user: String, var pass: String) : Serializable
 
-var jeongyeon = "qwer"
-var jeongyeonpass = "1q2w3e4r"
+var USER1 = "qwer"
+var USER1PASS = "1q2w3e4r"
 
-var changho = "changho"
-var changhopass = "changho"
+var USER2 = "changho"
+var USER2PASS = "changho"
 
 
 object User
 {
-    val Map: HashMap<String, String> = hashMapOf(jeongyeon to jeongyeonpass, changho to changhopass)
+    val Map: HashMap<String, String> = hashMapOf(USER1 to USER1PASS, USER2 to USER2PASS)
 }
