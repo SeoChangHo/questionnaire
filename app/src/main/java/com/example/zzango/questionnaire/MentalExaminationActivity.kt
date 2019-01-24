@@ -20,7 +20,7 @@ import com.example.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_mental_exam.*
-import kotlinx.android.synthetic.main.progressbar.*
+import kotlinx.android.synthetic.main.progressbar2.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -57,7 +57,7 @@ class MentalExaminationActivity : RootActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mental_exam)
 
-        controlProgress(this, questionnaire_progress_wrapper, questionnaire_progress, guideline, guideline2)
+        controlProgress(this, questionnaire_progress_wrapper, questionnaire_progress, guideline, guideline2, guideline3, guideline4, guideline5, guideline6, guideline7, guideline8)
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)

@@ -1699,7 +1699,7 @@
 
 
             <android.support.constraint.ConstraintLayout
-                android:id="@+id/constraintLayout18"
+                android:id="@+id/common_7_1_wrapper"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 app:layout_constraintStart_toEndOf="@+id/common_7_radio"
@@ -1722,12 +1722,12 @@
             </android.support.constraint.ConstraintLayout>
 
             <android.support.constraint.ConstraintLayout
-                android:id="@+id/constraintLayout19"
+                android:id="@+id/common_7_2_wrapper"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="6dp"
                 app:layout_constraintStart_toEndOf="@+id/common_7_radio"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout18">
+                app:layout_constraintTop_toBottomOf="@+id/common_7_1_wrapper">
 
                 <EditText
                     android:id="@+id/common_7_2_editText"
@@ -1746,11 +1746,12 @@
             </android.support.constraint.ConstraintLayout>
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/common_7_3_wrapper"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="6dp"
                 app:layout_constraintStart_toEndOf="@+id/common_7_radio"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout19">
+                app:layout_constraintTop_toBottomOf="@+id/common_7_2_wrapper">
 
                 <EditText
                     android:id="@+id/common_7_3_editText"

@@ -20,7 +20,7 @@ import com.example.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_common_exam.*
-import kotlinx.android.synthetic.main.progressbar.*
+import kotlinx.android.synthetic.main.progressbar2.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -133,7 +133,7 @@ class CommonExaminationActivity : RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common_exam)
 
-        controlProgress(this, questionnaire_progress_wrapper, questionnaire_progress, guideline, guideline2)
+        controlProgress(this, questionnaire_progress_wrapper, questionnaire_progress, guideline, guideline2, guideline3, guideline4, guideline5, guideline6, guideline7, guideline8)
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
@@ -197,6 +197,30 @@ class CommonExaminationActivity : RootActivity() {
             buttonView, isChecked ->
 
             checkCondition(isChecked, constraintLayout6_wrapper)
+
+        }
+
+        common_7_1.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, common_7_1_wrapper)
+
+        }
+
+        common_7_2.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, common_7_2_wrapper)
+
+        }
+
+        common_7_3.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, common_7_3_wrapper)
 
         }
 
@@ -303,7 +327,7 @@ class CommonExaminationActivity : RootActivity() {
 
         common_examination_cancel.setOnClickListener {
 
-            startActivity(Intent(this@CommonExaminationActivity, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            finish()
 
         }
 

@@ -7,7 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
 import android.support.constraint.Guideline
-import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
@@ -17,7 +17,7 @@ import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.RadioButton
-import kotlinx.android.synthetic.main.progressbar.*
+import kotlinx.android.synthetic.main.progressbar2.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 
 open class RootActivity : AppCompatActivity() {
@@ -50,7 +50,7 @@ open class RootActivity : AppCompatActivity() {
     }
 
     //진행바 제어하는 메서드
-    fun controlProgress(context : Context, layout : ConstraintLayout, view : View, guideline : Guideline, guideline2 : Guideline){
+    fun controlProgress(context : Context, layout : ConstraintLayout, view : View, guideline : Guideline, guideline2 : Guideline, guideline3: Guideline, guideline4: Guideline, guideline5: Guideline, guideline6: Guideline, guideline7: Guideline, guideline8: Guideline){
 
         when(MainActivity.chart){
 
@@ -66,6 +66,7 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_name1.text = "1/2 진행중"
 
                     }
 
@@ -75,6 +76,8 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_name1.text = "2/2 진행중"
+                        questionnaire_name1.setTextColor(ContextCompat.getColor(this, R.color.white))
 
                     }
 
@@ -242,12 +245,6 @@ open class RootActivity : AppCompatActivity() {
             }
 
         }
-
-    }
-
-    fun controlProgressDetail(layout : ConstraintLayout, view : View, guideline : Guideline, guideline2 : Guideline){
-
-
 
     }
 
