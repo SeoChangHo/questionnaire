@@ -3,7 +3,6 @@ package com.example.zzango.questionnaire.LocalList
 import android.app.Activity
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.icu.util.ULocale
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.ContextCompat.startActivity
@@ -11,8 +10,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.ImageView
 import android.widget.TextView
 import com.example.zzango.questionnaire.*
 
@@ -430,7 +427,9 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
+
                     startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+
                 }
                 Category.SMOKING ->
                 {
@@ -609,7 +608,6 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
     class ContentDetailViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
     {
         val txtCategory = itemView.findViewById(R.id.txtCategory1) as TextView
-        val txtName = itemView.findViewById(R.id.txtName1) as TextView
         val txtDate = itemView.findViewById(R.id.txtDate1) as TextView
         val constraint = itemView.findViewById(R.id.constraintDetailLayoutArea) as ConstraintLayout
     }

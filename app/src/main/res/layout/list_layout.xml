@@ -8,10 +8,11 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout10"
-        android:layout_width="160dp"
+        android:layout_width="70dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:background="@color/backGround"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,9 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:buttonTint="@color/mainBlue"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -40,11 +39,14 @@
 
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
         app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout10"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <android.support.constraint.ConstraintLayout
@@ -59,8 +61,8 @@
                 android:id="@+id/txtCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:text="검진표종류"
                 android:textColor="@color/mainBlue"
                 android:textSize="20dp"
@@ -69,39 +71,12 @@
                 app:layout_constraintTop_toTopOf="@+id/textView63" />
 
             <TextView
-                android:id="@+id/txtName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:text="이름들어가는자리"
-                android:textColor="@color/mainBlue"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView61"
-                app:layout_constraintStart_toEndOf="@+id/textView61"
-                app:layout_constraintTop_toTopOf="@+id/textView61" />
-
-            <ImageView
-                android:id="@+id/imageView12"
-                android:layout_width="200dp"
-                android:layout_height="250dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/thumbnail"
-                android:scaleType="fitCenter"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
                 android:id="@+id/txtDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:text="날짜 들어가는 자리"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:text="20189-12-18"
                 android:textColor="@color/mainBlue"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView62"
@@ -109,31 +84,19 @@
                 app:layout_constraintTop_toTopOf="@+id/textView62" />
 
             <TextView
-                android:id="@+id/textView61"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_marginStart="32dp"
-                android:text="이름 :"
-                android:textColor="@color/mainBlue"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView62"
-                app:layout_constraintStart_toEndOf="@+id/imageView12"
-                app:layout_constraintTop_toBottomOf="@+id/textView63" />
-
-            <TextView
                 android:id="@+id/textView62"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="70dp"
+                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="32dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
                 android:text="작성일자 :"
                 android:textColor="@color/mainBlue"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView12"
-                app:layout_constraintTop_toBottomOf="@+id/textView61" />
+                app:layout_constraintStart_toEndOf="@+id/txtCategory"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView63"
@@ -141,13 +104,45 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="70dp"
                 android:text="검진 :"
                 android:textColor="@color/mainBlue"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView61"
-                app:layout_constraintStart_toEndOf="@+id/imageView12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/constraintLayout18"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout18"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/list_name_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="홍길동"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>

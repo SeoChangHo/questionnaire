@@ -13,9 +13,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.ImageView
 import android.widget.TextView
-import com.example.zzango.questionnaire.*
+import com.example.zzango.questionnaire.LocalDBhelper
+import com.example.zzango.questionnaire.R
 import kotlinx.android.synthetic.main.activity_list.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -127,7 +127,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
         try {
             var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
 
-            p0.ImgTest.setImageBitmap(bmp)
+            //p0.ImgTest.setImageBitmap(bmp)
 
         }
         catch (e:Exception)
@@ -235,7 +235,7 @@ class ContentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
     val txtName = itemView.findViewById(R.id.txtName) as TextView
     val txtDate = itemView.findViewById(R.id.txtDate) as TextView
 
-    var ImgTest = itemView.findViewById(R.id.imageView12) as ImageView
+    //var ImgTest = itemView.findViewById(R.id.imageView12) as ImageView
 
     val constraint = itemView.findViewById(R.id.constraintLayoutArea) as ConstraintLayout
 }
@@ -252,23 +252,23 @@ fun getSetNo(setno: String):String
             }
             PaperArray.SetList.SET2 ->
             {
-                return "공통 우울증"
+                return "공통 외 1건"
             }
             PaperArray.SetList.SET3 ->
             {
-                return "공통 우울증 생활습관"
+                return "공통 외 2건"
             }
             PaperArray.SetList.SET4 ->
             {
-                return "공통 인지기능 노인신체기능"
+                return "공통 외 2건"
             }
             PaperArray.SetList.SET5 ->
             {
-                return "공통 인지기능"
+                return "공통 외 1건"
             }
             PaperArray.SetList.SET6 ->
             {
-                return "공통 인지기능 우울증 생활습관 노인신체기능"
+                return "공통 외 4건"
             }
             PaperArray.SetList.SET7 ->
             {
