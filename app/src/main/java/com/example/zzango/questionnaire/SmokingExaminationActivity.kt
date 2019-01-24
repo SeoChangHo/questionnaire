@@ -71,7 +71,6 @@ class SmokingExaminationActivity : RootActivity(){
 
             try {
                 var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
-
                 Signature.setImageBitmap(bmp)
 
             }
