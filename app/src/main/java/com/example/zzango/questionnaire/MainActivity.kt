@@ -348,8 +348,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 //login_appbar_loading_progress.visibility = View.VISIBLE
                 //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                var dialog = AlertDialog.Builder(this).create()
-                var dialog_view = LayoutInflater.from(this).inflate(R.layout.notice_alert, null)
+                var dialog = AlertDialog.Builder(context).create()
+                var dialog_view = LayoutInflater.from(context).inflate(R.layout.notice_alert, null)
 
                 //다이얼로그 뒤로가기 버튼 막기
                 dialog.setCancelable(false)

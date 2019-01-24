@@ -75,6 +75,18 @@ class PaperArray {
         //암
         val SET8 = "SET8"
 
+        //인지기능
+        val SET9 = "SET9"
+
+        //우울증
+        val SET10 = "SET10"
+
+        //생활습관
+        val SET11 = "SET11"
+
+        //노인신체
+        val SET12 = "SET12"
+
     }
 
 }
