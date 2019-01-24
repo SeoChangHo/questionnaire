@@ -187,6 +187,8 @@ class CognitiveExaminationActivity : RootActivity(){
 
         }else if(MainActivity.chart == "SET0"){
             LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).LocalListCognitiveInsert(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!, "SET9")
+
             LocalDBhelper(this).cognitiveCreate(sql_db)
             LocalDBhelper(this).cognitiveSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!)
             saveCompleteAlert()

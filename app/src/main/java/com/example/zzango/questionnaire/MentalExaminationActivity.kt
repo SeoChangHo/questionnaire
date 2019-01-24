@@ -186,6 +186,7 @@ class MentalExaminationActivity : RootActivity(){
 
         }else if(MainActivity.chart == "SET0"){
             LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).LocalListMentalInsert(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!, "SET10")
 
             LocalDBhelper(this).mentalCreate(sql_db)
             LocalDBhelper(this).mentalSaveLocal(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
