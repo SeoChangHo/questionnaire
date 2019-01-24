@@ -126,7 +126,7 @@ open class RootActivity : AppCompatActivity() {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline4.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
                         questionnaire_page.text = "4/6 진행중"
 
@@ -136,7 +136,7 @@ open class RootActivity : AppCompatActivity() {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline5.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
                         questionnaire_page.text = "5/6 진행중"
 
@@ -146,7 +146,7 @@ open class RootActivity : AppCompatActivity() {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline6.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
                         questionnaire_page.text = "6/6 진행중"
                         questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
@@ -174,6 +174,7 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "1/3 진행중"
 
                     }
 
@@ -183,15 +184,18 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "2/3 진행중"
 
                     }
 
-                    "ExerciseExaminationActivity", "DrinkingExaminationActivity", "NutritionExaminationActivity", "SmokingExaminationActivity" -> {
+                    "ElderlyExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "3/3 진행중"
+                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
 
                     }
 
@@ -213,32 +217,25 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "1/2 진행중"
 
                     }
 
-                    "MentalExaminationActivity" -> {
+                    "CognitiveExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
-
-                    }
-
-                    "ExerciseExaminationActivity", "DrinkingExaminationActivity", "NutritionExaminationActivity", "SmokingExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
+                        questionnaire_page.text = "2/2 진행중"
+                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
 
                     }
 
                 }
 
-                guideline.setGuidelinePercent(0.33f)
-                guideline2.setGuidelinePercent(0.66f)
-                guideline3.setGuidelinePercent(1f)
+                guideline.setGuidelinePercent(0.5f)
+                guideline2.setGuidelinePercent(1f)
 
             }
 
@@ -252,6 +249,17 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "1/8 진행중"
+
+                    }
+
+                    "CognitiveExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+                        questionnaire_page.text = "2/8 진행중"
 
                     }
 
@@ -261,23 +269,71 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "3/8 진행중"
 
                     }
 
-                    "ExerciseExaminationActivity", "DrinkingExaminationActivity", "NutritionExaminationActivity", "SmokingExaminationActivity" -> {
+                    "ExerciseExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "4/8 진행중"
+
+                    }
+
+                    "DrinkingExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline4.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+                        questionnaire_page.text = "5/8 진행중"
+
+                    }
+
+                    "NutritionExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline5.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+                        questionnaire_page.text = "6/8 진행중"
+
+                    }
+
+                    "SmokingExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline6.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+                        questionnaire_page.text = "7/8 진행중"
+
+                    }
+
+                    "ElderlyExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
+                        questionnaire_page.text = "8/8 진행중"
+                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
 
                     }
 
                 }
 
-                guideline.setGuidelinePercent(0.33f)
-                guideline2.setGuidelinePercent(0.66f)
-                guideline3.setGuidelinePercent(1f)
+                guideline.setGuidelinePercent(0.125f)
+                guideline2.setGuidelinePercent(0.25f)
+                guideline3.setGuidelinePercent(0.375f)
+                guideline4.setGuidelinePercent(0.5f)
+                guideline5.setGuidelinePercent(0.625f)
+                guideline6.setGuidelinePercent(0.75f)
+                guideline7.setGuidelinePercent(0.875f)
+                guideline8.setGuidelinePercent(1f)
 
             }
 
