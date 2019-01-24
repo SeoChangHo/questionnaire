@@ -1725,10 +1725,11 @@
                 android:id="@+id/common_7_2_wrapper"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="6dp"
                 android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/common_7_radio"
                 app:layout_constraintStart_toEndOf="@+id/common_7_radio"
-                app:layout_constraintTop_toBottomOf="@+id/common_7_1_wrapper">
+                app:layout_constraintTop_toTopOf="@+id/common_7_radio"
+                app:layout_constraintVertical_bias="0.25">
 
                 <EditText
                     android:id="@+id/common_7_2_editText"
@@ -1749,10 +1750,11 @@
                 android:id="@+id/common_7_3_wrapper"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="6dp"
                 android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/common_7_radio"
                 app:layout_constraintStart_toEndOf="@+id/common_7_radio"
-                app:layout_constraintTop_toBottomOf="@+id/common_7_2_wrapper">
+                app:layout_constraintTop_toTopOf="@+id/common_7_radio"
+                app:layout_constraintVertical_bias="0.62">
 
                 <EditText
                     android:id="@+id/common_7_3_editText"
