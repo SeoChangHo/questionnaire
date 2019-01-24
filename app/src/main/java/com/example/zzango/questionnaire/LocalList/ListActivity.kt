@@ -650,10 +650,12 @@ class ListActivity : Activity() {
                             Toast.makeText(this@ListActivity, "전송 완료", Toast.LENGTH_LONG).show()
 
                             LocalDBhelper(this@ListActivity).deletePaper(sql_db!!, removeArr)
+
                             ListSetting(false)
                             btnSave.visibility = View.GONE
                             btnDelete.visibility = View.GONE
                             txtBottomMent.text = "문진표를 선택해주세요."
+                            select_all_checkbox.isChecked = false
                             constraintLayout_bottom.visibility = View.GONE
                         }
                     }
@@ -705,10 +707,13 @@ class ListActivity : Activity() {
                             count++
                         }
                     }
-                    constraintLayout_bottom.visibility = View.VISIBLE
-                    txtBottomMent.text = "선택한 " + count.toString() + "개의 문진표를"
-                    btnSave.visibility = View.VISIBLE
-                    btnDelete.visibility = View.VISIBLE
+                    if(count>0)
+                    {
+                        constraintLayout_bottom.visibility = View.VISIBLE
+                        txtBottomMent.text = "선택한 " + count.toString() + "개의 문진표를"
+                        btnSave.visibility = View.VISIBLE
+                        btnDelete.visibility = View.VISIBLE
+                    }
                 }
                 else//전체선택 해제
                 {
