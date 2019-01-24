@@ -675,6 +675,26 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
             {
                 CategoryArr.add(Category.CANCER)
             }
+            PaperArray.SetList.SET9->
+            {
+                CategoryArr.add(Category.COGNITIVE)
+            }
+            PaperArray.SetList.SET10->
+            {
+                CategoryArr.add(Category.MENTAL)
+            }
+            PaperArray.SetList.SET11->
+            {
+                //생활습관 4개
+                CategoryArr.add(Category.EXERCISE)
+                CategoryArr.add(Category.NUTRITION)
+                CategoryArr.add(Category.SMOKING)
+                CategoryArr.add(Category.DRINKING)
+            }
+            PaperArray.SetList.SET12->
+            {
+                CategoryArr.add(Category.ELDERLY)
+            }
             else->
             {
                 return 0

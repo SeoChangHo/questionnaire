@@ -278,6 +278,22 @@ fun getSetNo(setno: String):String
             {
                 return "암"
             }
+            PaperArray.SetList.SET9 ->
+            {
+                return "인지기능"
+            }
+            PaperArray.SetList.SET10 ->
+            {
+                return "우울증"
+            }
+            PaperArray.SetList.SET11 ->
+            {
+                return "생활습관"
+            }
+            PaperArray.SetList.SET12 ->
+            {
+                return "노인신체기능"
+            }
             else ->
             {
                 return "확인불가"
