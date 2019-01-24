@@ -61,6 +61,62 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.insert("LOCALSAVELIST", null, cv)
     }
 
+    //정신
+    fun LocalListMentalInsert(db : SQLiteDatabase, ex : ArrayList<Paper_MENTAL>, set:String) {
+        val columnValue = ex.get(0)
+
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("setno", set)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
+    }
+
+    //인지
+    fun LocalListCognitiveInsert(db : SQLiteDatabase, ex : ArrayList<Paper_COGNITIVE>, set:String) {
+        val columnValue = ex.get(0)
+
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("setno", set)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
+    }
+
+    //노인
+    fun LocalListElderlyInsert(db : SQLiteDatabase, ex : ArrayList<Paper_ELDERLY>, set:String) {
+        val columnValue = ex.get(0)
+
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("setno", set)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
+    }
+
+    //생활
+    fun LocalListDrinkingInsert(db : SQLiteDatabase, ex : ArrayList<Paper_DRINKING>, set:String) {
+        val columnValue = ex.get(0)
+
+        val cv = ContentValues()
+
+        cv.put("exam_no", columnValue.exam_no)
+        cv.put("setno", set)
+        cv.put("signature", columnValue.signature)
+        cv.put("name", columnValue.name)
+
+        db.insert("LOCALSAVELIST", null, cv)
+    }
+
     fun oralCreate(db : SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
