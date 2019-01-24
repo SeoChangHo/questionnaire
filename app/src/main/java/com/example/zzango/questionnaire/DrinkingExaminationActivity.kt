@@ -196,6 +196,7 @@ class DrinkingExaminationActivity : RootActivity(){
         }else if(MainActivity.chart == "SET0"){
 
             LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).LocalListDrinkingInsert(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!, "SET11")
 
             LocalDBhelper(this).exerciseCreate(sql_db)
             LocalDBhelper(this).exerciseSaveLocal(sql_db!!, PaperArray.PaperList.Arr_EXERCISE!!)

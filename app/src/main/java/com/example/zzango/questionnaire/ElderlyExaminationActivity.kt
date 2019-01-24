@@ -207,6 +207,8 @@ class ElderlyExaminationActivity : RootActivity(){
         }else if(MainActivity.chart == "SET0"){
 
             LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).LocalListElderlyInsert(sql_db!!, PaperArray.PaperList.Arr_ELDERLY!!, "SET12")
+
             LocalDBhelper(this).elderlyCreate(sql_db)
             LocalDBhelper(this).elderlySaveLocal(sql_db!!, PaperArray.PaperList.Arr_ELDERLY!!)
             saveCompleteAlert()
