@@ -40,6 +40,65 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout22"
+            android:layout_width="115dp"
+            android:layout_height="40dp"
+            android:background="@color/navy"
+            app:layout_constraintBottom_toBottomOf="@+id/textView71"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout23"
+            app:layout_constraintTop_toTopOf="@+id/textView71">
+
+            <TextView
+                android:id="@+id/textView75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="관리자 ID"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout23"
+            android:background="@drawable/blue_border"
+            android:layout_width="238dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout22">
+
+            <Button
+                android:id="@+id/manager_logout"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="관리자아이디"
+                android:gravity="left"
+                android:textColor="@color/navy"
+                android:textSize="18dp"
+                android:paddingLeft="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/manager_logout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/exit" />
+        </android.support.constraint.ConstraintLayout>
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
