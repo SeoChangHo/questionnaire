@@ -435,7 +435,7 @@ class CancerExaminationActivity : RootActivity(){
     fun check() : Boolean {
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = System.currentTimeMillis().toString()
+        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -1005,6 +1005,7 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         PaperArray.PaperArrFunction.ArrayListInit()
+        exam_no = System.currentTimeMillis().toString()
 
         PaperArray.PaperList.Arr_CANCER!!.add(Paper_CANCER(
                 exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,

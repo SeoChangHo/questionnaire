@@ -333,7 +333,7 @@ class OralExaminationActivity : RootActivity() {
     fun check() : Boolean{
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = System.currentTimeMillis().toString()
+        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -740,6 +740,8 @@ class OralExaminationActivity : RootActivity() {
 
 
         PaperArray.PaperArrFunction.ArrayListInit()
+        exam_no = MainActivity.exam_no
+
 
         PaperArray.PaperList.Arr_ORAL!!.add(Paper_ORAL(
                 exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, oral_1, oral_2,

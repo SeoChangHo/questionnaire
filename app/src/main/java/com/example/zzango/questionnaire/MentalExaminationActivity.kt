@@ -360,7 +360,7 @@ class MentalExaminationActivity : RootActivity(){
     fun check() : Boolean{
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = System.currentTimeMillis().toString()
+        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -514,9 +514,11 @@ class MentalExaminationActivity : RootActivity(){
             return false
         }
 
-
         if(MainActivity.chart == "SET0"){
             PaperArray.PaperArrFunction.ArrayListInit()
+            exam_no = System.currentTimeMillis().toString()
+        }else{
+            exam_no = MainActivity.exam_no
         }
 
         PaperArray.PaperList.Arr_MENTAL!!.add(Paper_MENTAL(

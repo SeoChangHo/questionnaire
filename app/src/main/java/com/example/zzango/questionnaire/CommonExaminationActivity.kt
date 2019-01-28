@@ -584,7 +584,7 @@ class CommonExaminationActivity : RootActivity() {
     fun check() : Boolean {
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = System.currentTimeMillis().toString()
+        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -1177,6 +1177,11 @@ class CommonExaminationActivity : RootActivity() {
             Toast.makeText(this, "10번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
             return false
         }
+
+        //exam_no
+        exam_no = System.currentTimeMillis().toString()
+
+
 
         PaperArray.PaperArrFunction.ArrayListInit() //<--처음 이닛
 
