@@ -127,6 +127,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
         drinking_examination_cancel.setOnClickListener {
 
+            MainActivity.chart = "SET0"
             cancelAlert()
 
         }

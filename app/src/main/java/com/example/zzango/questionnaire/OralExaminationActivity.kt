@@ -114,6 +114,7 @@ class OralExaminationActivity : RootActivity() {
 
         oral_examination_cancel.setOnClickListener {
 
+            MainActivity.chart = "SET0"
             cancelAlert()
 
         }
