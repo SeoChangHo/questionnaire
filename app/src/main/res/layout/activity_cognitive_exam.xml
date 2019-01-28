@@ -19,6 +19,18 @@
             android:focusableInTouchMode="true"
             android:onClick="focusControl" >
 
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView17"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.8">
+
+                <include layout="@layout/progressbar2" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <ImageView
                 android:id="@+id/imageView17"

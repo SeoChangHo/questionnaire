@@ -15,6 +15,7 @@ import com.example.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_nutrition_exam.*
+import kotlinx.android.synthetic.main.progressbar2.*
 import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
@@ -56,6 +57,7 @@ class NutritionExaminationActivity :RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nutrition_exam)
 
+        controlProgress(this, questionnaire_progress_wrapper, questionnaire_progress, progress_guideline, progress_guideline2, progress_guideline3, progress_guideline4, progress_guideline5, progress_guideline6, progress_guideline7, progress_guideline8)
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
