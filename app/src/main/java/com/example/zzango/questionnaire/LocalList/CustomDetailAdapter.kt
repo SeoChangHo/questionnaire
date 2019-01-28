@@ -124,7 +124,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         data.moveToNext()
                     }
 
-
+                    println(PaperArray[0])
                     startActivity(Activity, Intent(Activity, OralExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 Category.COMMON ->
@@ -235,6 +235,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         data.moveToNext()
                     }
 
+                    println(PaperArray[0])
 
                     startActivity(Activity, Intent(Activity, CommonExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
@@ -274,8 +275,9 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
+                    println(PaperArray)
 
-                    startActivity(Activity, Intent(Activity, CognitiveExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    //startActivity(Activity, Intent(Activity, CognitiveExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                 }
                 Category.ELDERLY ->
                 {
