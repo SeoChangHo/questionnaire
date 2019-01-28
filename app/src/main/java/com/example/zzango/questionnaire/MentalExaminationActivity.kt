@@ -125,7 +125,6 @@ class MentalExaminationActivity : RootActivity(){
 
         mental_examination_cancel.setOnClickListener {
 
-            MainActivity.chart = "SET0"
             cancelAlert()
 
         }

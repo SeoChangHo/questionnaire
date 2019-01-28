@@ -329,7 +329,6 @@ class CommonExaminationActivity : RootActivity() {
 
         common_examination_cancel.setOnClickListener {
 
-            MainActivity.chart = "SET0"
             cancelAlert()
 
         }

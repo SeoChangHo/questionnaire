@@ -124,7 +124,6 @@ class NutritionExaminationActivity :RootActivity() {
 
         nutrition_examination_cancel.setOnClickListener {
 
-            MainActivity.chart = "SET0"
             cancelAlert()
 
         }
