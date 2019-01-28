@@ -170,7 +170,7 @@ class NutritionExaminationActivity :RootActivity() {
     fun check() : Boolean{
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = System.currentTimeMillis().toString()
+        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -460,6 +460,9 @@ class NutritionExaminationActivity :RootActivity() {
 
             }
         }
+
+        exam_no = MainActivity.exam_no
+
 
         PaperArray.PaperList.Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                 sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,

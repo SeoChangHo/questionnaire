@@ -10,20 +10,25 @@ import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.widget.Button
 import com.example.zzango.questionnaire.LocalList.ListActivity
-import kotlinx.android.synthetic.main.activity_setting.*
+import kotlinx.android.synthetic.main.activity_setting_back.*
 
 class SettingActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_setting)
+        setContentView(R.layout.activity_setting_back)
 
         manager_logout.setText(MainActivity.manager_name)
         var num = getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")
 
+        if(num == "wifi"){
 
-        switch1.isChecked = num == "wifi"
+        }else{
+
+        }
+
+//        switch1.isChecked = num == "wifi"
 
         listViewButton.setOnClickListener {
 
@@ -31,15 +36,15 @@ class SettingActivity : AppCompatActivity() {
 
         }
 
-        switch1.setOnClickListener {
-
-            if(switch1.isChecked){
-                getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
-            }else{
-                getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
-            }
-
-        }
+//        switch1.setOnClickListener {
+//
+//            if(switch1.isChecked){
+//                getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
+//            }else{
+//                getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
+//            }
+//
+//        }
 
         manager_logout.setOnClickListener {
 

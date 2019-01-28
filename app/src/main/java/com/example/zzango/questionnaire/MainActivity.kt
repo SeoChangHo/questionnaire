@@ -656,6 +656,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var user_stream:ByteArray? = null
         var chart = ""
         var manager_name = ""
+        var exam_no = ""
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{

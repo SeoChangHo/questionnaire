@@ -249,7 +249,7 @@ class ExerciseExaminationActivity : RootActivity() {
     fun check() : Boolean {
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = System.currentTimeMillis().toString()
+        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -692,6 +692,9 @@ class ExerciseExaminationActivity : RootActivity() {
 
         if(MainActivity.chart == "SET0"){
             PaperArray.PaperArrFunction.ArrayListInit()
+            exam_no = System.currentTimeMillis().toString()
+        }else{
+            exam_no = MainActivity.exam_no
         }
 
         PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
