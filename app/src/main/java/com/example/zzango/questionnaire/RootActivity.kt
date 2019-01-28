@@ -68,7 +68,7 @@ open class RootActivity : AppCompatActivity() {
 
                     }
 
-                    "DrinkingExaminationActivity" -> {
+                    "NutritionExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
@@ -78,7 +78,7 @@ open class RootActivity : AppCompatActivity() {
 
                     }
 
-                    "NutritionExaminationActivity" -> {
+                    "SmokingExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
@@ -88,7 +88,7 @@ open class RootActivity : AppCompatActivity() {
 
                     }
 
-                    "SmokingExaminationActivity" -> {
+                    "DrinkingExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
@@ -101,7 +101,7 @@ open class RootActivity : AppCompatActivity() {
 
                     else ->{
 
-                        view.visibility = View.GONE
+                        layout.visibility = View.GONE
 
                     }
 
@@ -182,7 +182,7 @@ open class RootActivity : AppCompatActivity() {
 
                     }
 
-                    "DrinkingExaminationActivity" -> {
+                    "NutritionExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
@@ -192,7 +192,7 @@ open class RootActivity : AppCompatActivity() {
 
                     }
 
-                    "NutritionExaminationActivity" -> {
+                    "SmokingExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
@@ -202,7 +202,7 @@ open class RootActivity : AppCompatActivity() {
 
                     }
 
-                    "SmokingExaminationActivity" -> {
+                    "DrinkingExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
@@ -327,7 +327,7 @@ open class RootActivity : AppCompatActivity() {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
                         questionnaire_page.text = "3/8 진행중"
 
@@ -337,19 +337,9 @@ open class RootActivity : AppCompatActivity() {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "4/8 진행중"
-
-                    }
-
-                    "DrinkingExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline4.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
-                        questionnaire_page.text = "5/8 진행중"
+                        questionnaire_page.text = "4/8 진행중"
 
                     }
 
@@ -359,7 +349,7 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline5.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
-                        questionnaire_page.text = "6/8 진행중"
+                        questionnaire_page.text = "5/8 진행중"
 
                     }
 
@@ -369,6 +359,16 @@ open class RootActivity : AppCompatActivity() {
                         constraintSet.clone(layout)
                         constraintSet.connect(view.id, ConstraintSet.END, guideline6.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
+                        questionnaire_page.text = "6/8 진행중"
+
+                    }
+
+                    "DrinkingExaminationActivity" -> {
+
+                        var constraintSet = ConstraintSet()
+                        constraintSet.clone(layout)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline7.id, ConstraintSet.START)
+                        constraintSet.applyTo(layout)
                         questionnaire_page.text = "7/8 진행중"
 
                     }
@@ -377,7 +377,7 @@ open class RootActivity : AppCompatActivity() {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+                        constraintSet.connect(view.id, ConstraintSet.END, guideline8.id, ConstraintSet.START)
                         constraintSet.applyTo(layout)
                         questionnaire_page.text = "8/8 진행중"
                         questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))

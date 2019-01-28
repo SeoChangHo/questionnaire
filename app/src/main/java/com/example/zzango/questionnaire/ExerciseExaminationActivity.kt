@@ -713,6 +713,9 @@ class ExerciseExaminationActivity : RootActivity() {
 
     fun GetPaper(paper:Paper_EXERCISE)
     {
+
+        progress_constraintLayout.visibility = View.GONE
+
         name_edit.text = paper.name
         first_serial.text = paper.first_serial
         last_serial.text = paper.last_serial
