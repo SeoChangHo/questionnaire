@@ -248,7 +248,7 @@ class CancerExaminationActivity : RootActivity(){
 
         cancer_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 

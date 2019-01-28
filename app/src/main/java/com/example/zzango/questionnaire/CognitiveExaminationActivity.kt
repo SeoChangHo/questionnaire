@@ -131,7 +131,7 @@ class CognitiveExaminationActivity : RootActivity(){
 
         cognitive_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 

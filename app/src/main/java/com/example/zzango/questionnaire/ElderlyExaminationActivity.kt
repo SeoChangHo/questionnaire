@@ -120,7 +120,7 @@ class ElderlyExaminationActivity : RootActivity(){
 
         elderly_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 

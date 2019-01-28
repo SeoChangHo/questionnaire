@@ -127,7 +127,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
         drinking_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 

@@ -125,7 +125,7 @@ class MentalExaminationActivity : RootActivity(){
 
         mental_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 

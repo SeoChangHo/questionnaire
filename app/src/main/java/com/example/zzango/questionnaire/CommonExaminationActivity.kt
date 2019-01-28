@@ -329,7 +329,7 @@ class CommonExaminationActivity : RootActivity() {
 
         common_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 

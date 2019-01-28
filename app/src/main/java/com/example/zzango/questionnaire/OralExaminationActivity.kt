@@ -114,7 +114,7 @@ class OralExaminationActivity : RootActivity() {
 
         oral_examination_cancel.setOnClickListener {
 
-            finish()
+            cancelAlert()
 
         }
 
