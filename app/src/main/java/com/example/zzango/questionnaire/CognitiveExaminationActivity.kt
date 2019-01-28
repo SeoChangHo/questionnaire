@@ -131,7 +131,6 @@ class CognitiveExaminationActivity : RootActivity(){
 
         cognitive_examination_cancel.setOnClickListener {
 
-            MainActivity.chart = "SET0"
             cancelAlert()
 
         }
@@ -603,6 +602,7 @@ class CognitiveExaminationActivity : RootActivity(){
 
     fun GetPaper(paper: Paper_COGNITIVE) {
 
+        progress_constraintLayout.visibility = View.GONE
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial

@@ -248,7 +248,6 @@ class CancerExaminationActivity : RootActivity(){
 
         cancer_examination_cancel.setOnClickListener {
 
-            MainActivity.chart = "SET0"
             cancelAlert()
 
         }

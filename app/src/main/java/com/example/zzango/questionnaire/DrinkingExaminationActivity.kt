@@ -127,7 +127,6 @@ class DrinkingExaminationActivity : RootActivity(){
 
         drinking_examination_cancel.setOnClickListener {
 
-            MainActivity.chart = "SET0"
             cancelAlert()
 
         }
@@ -597,6 +596,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
     fun GetPaper(paper: Paper_DRINKING) {
 
+        progress_constraintLayout.visibility = View.GONE
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial
