@@ -22,9 +22,26 @@ class SettingActivity : AppCompatActivity() {
         manager_logout.setText(MainActivity.manager_name)
         var num = getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")
 
-        if(num == "wifi"){
+
+        if(num != "wifi"){
+
+            local_button.setBackgroundColor(Color.parseColor("#3C6FD1"))
+            local_imageView.setImageResource(R.drawable.local)
+            local_textView.setTextColor(Color.parseColor("#FFFFFF"))
+
+            server_button.setBackgroundResource(R.drawable.border_top)
+            server_imageView.setImageResource(R.drawable.server_blue)
+            server_textView.setTextColor(Color.parseColor("#2B53A2"))
 
         }else{
+
+            local_button.setBackgroundResource(R.drawable.border_top)
+            local_imageView.setImageResource(R.drawable.local_blue)
+            local_textView.setTextColor(Color.parseColor("#2B53A2"))
+
+            server_button.setBackgroundColor(Color.parseColor("#3C6FD1"))
+            server_imageView.setImageResource(R.drawable.server)
+            server_textView.setTextColor(Color.parseColor("#FFFFFF"))
 
         }
 
@@ -45,6 +62,36 @@ class SettingActivity : AppCompatActivity() {
 //            }
 //
 //        }
+
+        local_button.setOnClickListener {
+
+            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
+
+            local_button.setBackgroundColor(Color.parseColor("#3C6FD1"))
+            local_imageView.setImageResource(R.drawable.local)
+            local_textView.setTextColor(Color.parseColor("#FFFFFF"))
+
+            server_button.setBackgroundResource(R.drawable.border_top)
+            server_imageView.setImageResource(R.drawable.server_blue)
+            server_textView.setTextColor(Color.parseColor("#2B53A2"))
+
+
+        }
+
+        server_button.setOnClickListener {
+
+            getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
+
+            local_button.setBackgroundResource(R.drawable.border_top)
+            local_imageView.setImageResource(R.drawable.local_blue)
+            local_textView.setTextColor(Color.parseColor("#2B53A2"))
+
+            server_button.setBackgroundColor(Color.parseColor("#3C6FD1"))
+            server_imageView.setImageResource(R.drawable.server)
+            server_textView.setTextColor(Color.parseColor("#FFFFFF"))
+
+        }
+
 
         manager_logout.setOnClickListener {
 
