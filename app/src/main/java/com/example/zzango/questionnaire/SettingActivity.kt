@@ -32,11 +32,13 @@ class SettingActivity : AppCompatActivity() {
         }
 
         switch1.setOnClickListener {
+
             if(switch1.isChecked){
                 getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
             }else{
                 getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
             }
+
         }
 
         manager_logout.setOnClickListener {
@@ -63,12 +65,10 @@ class SettingActivity : AppCompatActivity() {
                 MainActivity.user_first_serial = ""
                 MainActivity.user_last_serial = ""
 
-                //view.text = "사용자 등록하기"
-                //view2.setImageResource(R.drawable.regi)
-
                 startActivity(Intent(this@SettingActivity, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
                 dialog.dismiss()
+
             }
 
             cancel.setOnClickListener {

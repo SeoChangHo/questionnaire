@@ -346,8 +346,6 @@ class CommonExaminationActivity : RootActivity() {
 
             GetPaper(paper)
 
-            println(paper.signature.size)
-
             try {
                 var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
 
@@ -367,6 +365,9 @@ class CommonExaminationActivity : RootActivity() {
 
                 common_examination_save.text = "다음"
 
+            }
+            if(MainActivity.chart == "SET0"){
+                common_examination_save.text = "저장"
             }
 
         }
@@ -424,7 +425,16 @@ class CommonExaminationActivity : RootActivity() {
 
             startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
+        }else if(MainActivity.chart == "SET0"){
+            LocalDBhelper(this).onCreate(sql_db)
+            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, "SET1")
+
+            LocalDBhelper(this).commonExaminationDB(sql_db)
+            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!! )
+
+            saveCompleteAlert()
         }
+
 
     }
 
@@ -432,7 +442,7 @@ class CommonExaminationActivity : RootActivity() {
 
         println("서버")
 
-        if(MainActivity.chart == "SET1"){
+        if(MainActivity.chart == "SET1" || MainActivity.chart == "SET0"){
 
             this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
@@ -908,23 +918,20 @@ class CommonExaminationActivity : RootActivity() {
         }
 
         if(common_7_1.isChecked){
-            if(!common_7_1_editText.text.isNullOrEmpty()){
-                mj71 = common_7_1_editText.text.toString()
-            }else{
+            mj71 = common_7_1_editText.text.toString()
+            if(common_7_1_editText.text.isNullOrEmpty()){
                 Toast.makeText(this, "7번 문항 첫번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
         }else if(common_7_2.isChecked){
-            if(!common_7_2_editText.text.isNullOrEmpty()){
-                mj72 = common_7_2_editText.text.toString()
-            }else{
+            mj72 = common_7_2_editText.text.toString()
+            if(common_7_2_editText.text.isNullOrEmpty()){
                 Toast.makeText(this, "7번 문항 두번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
         }else if(common_7_3.isChecked){
-            if(!common_7_3_editText.text.isNullOrEmpty()){
-                mj73 = common_7_3_editText.text.toString()
-            }else{
+            mj73 = common_7_3_editText.text.toString()
+            if(common_7_3_editText.text.isNullOrEmpty()){
                 Toast.makeText(this, "7번 문항 세번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
@@ -1445,16 +1452,17 @@ class CommonExaminationActivity : RootActivity() {
         }
 
 
-        if(paper.mj71.isNullOrEmpty()){
+        if(!paper.mj71.isNullOrEmpty()){
+            println("나오는 값은?" + paper.mj71)
             common_7_1.isChecked = true
             common_7_1_editText.setText(paper.mj71)
-        }else if(paper.mj72.isNullOrEmpty()){
+        }else if(!paper.mj72.isNullOrEmpty()){
             common_7_2.isChecked = true
             common_7_2_editText.setText(paper.mj72)
-        }else if(paper.mj73.isNullOrEmpty()){
+        }else if(!paper.mj73.isNullOrEmpty()){
             common_7_3.isChecked = true
             common_7_3_editText.setText(paper.mj73)
-        }else if(paper.mj74.isNullOrEmpty()){
+        }else if(!paper.mj74.isNullOrEmpty()){
             common_7_4.isChecked = true
         }
 
