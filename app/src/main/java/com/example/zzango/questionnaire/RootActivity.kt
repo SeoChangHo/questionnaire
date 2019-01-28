@@ -514,6 +514,7 @@ open class RootActivity : AppCompatActivity() {
 
         dialog_view.finish.setOnClickListener {
 
+            MainActivity.chart = "SET0"
             startActivity(Intent(this, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
