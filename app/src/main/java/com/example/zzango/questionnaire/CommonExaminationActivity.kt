@@ -1180,8 +1180,7 @@ class CommonExaminationActivity : RootActivity() {
 
         //exam_no
         exam_no = System.currentTimeMillis().toString()
-
-
+        MainActivity.exam_no = exam_no
 
         PaperArray.PaperArrFunction.ArrayListInit() //<--처음 이닛
 
