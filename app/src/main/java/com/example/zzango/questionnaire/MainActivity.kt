@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         listButton.setOnClickListener{
 
-            startActivity(Intent(this@MainActivity, SettingActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            popuplogin()
 
         }
 
@@ -127,16 +127,20 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var dialog = AlertDialog.Builder(this).create()
         var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_login, null)
 
-        //다이얼로그 뒤로가기 버튼 막기
-        dialog.setCancelable(false)
-
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
-        dialog.setCanceledOnTouchOutside(false)
 
-
-
+        if(MainActivity.manager_name == ""){
+            //다이얼로그 뒤로가기 버튼 막기
+            dialog.setCancelable(false)
+            //밖에부분 터치 막기
+            dialog.setCanceledOnTouchOutside(false)
+        }else{
+            dialog_view.login_id.setText(MainActivity.manager_name)
+            dialog_view.login_id.isFocusableInTouchMode = false
+            dialog_view.login_password.isFocusableInTouchMode = true
+        }
 
         dialog_view.login_id.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -200,9 +204,18 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 }
                 else
                 {
-                    MainActivity.manager_name = user
-                    Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
-                    dialog.dismiss()
+                    if(MainActivity.manager_name == ""){
+                        MainActivity.manager_name = user
+                        Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
+                        dialog.dismiss()
+                    }else{
+                        dialog.dismiss()
+                        Handler().postDelayed({
+                            startActivity(Intent(this@MainActivity, SettingActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        },125)
+
+                    }
+
                 }
             }
 

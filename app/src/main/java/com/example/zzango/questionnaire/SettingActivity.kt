@@ -116,6 +116,7 @@ class SettingActivity : AppCompatActivity() {
                 MainActivity.login_user_name = ""
                 MainActivity.user_first_serial = ""
                 MainActivity.user_last_serial = ""
+                MainActivity.manager_name = ""
 
                 startActivity(Intent(this@SettingActivity, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
