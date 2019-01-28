@@ -12,13 +12,13 @@
         android:fillViewport="true">
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/progress_constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:focusableInTouchMode="true"
             android:onClick="focusControl" >
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/progress_constraintLayout"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 app:layout_constraintBottom_toTopOf="@+id/imageView17"
