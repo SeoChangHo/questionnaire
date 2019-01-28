@@ -114,6 +114,7 @@ class SmokingExaminationActivity : RootActivity(){
 
         smoking_examination_cancel.setOnClickListener {
 
+            MainActivity.chart = "SET0"
             cancelAlert()
 
         }

@@ -149,6 +149,7 @@ class ExerciseExaminationActivity : RootActivity() {
 
         exercise_examination_cancel.setOnClickListener {
 
+            MainActivity.chart = "SET0"
             cancelAlert()
 
         }
