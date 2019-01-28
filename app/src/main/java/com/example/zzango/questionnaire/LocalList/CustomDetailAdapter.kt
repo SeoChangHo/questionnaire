@@ -123,9 +123,14 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                                 ))
                         data.moveToNext()
                     }
-
-                    println(PaperArray[0])
-                    startActivity(Activity, Intent(Activity, OralExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    if(PaperArray.size>0)
+                    {
+                        startActivity(Activity, Intent(Activity, OralExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    }
+                    else
+                    {
+                        println("확인불가")
+                    }
                 }
                 Category.COMMON ->
                 {
@@ -235,9 +240,14 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         data.moveToNext()
                     }
 
-                    println(PaperArray[0])
-
-                    startActivity(Activity, Intent(Activity, CommonExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    if(PaperArray.size>0)
+                    {
+                        startActivity(Activity, Intent(Activity, CommonExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    }
+                    else
+                    {
+                        println("확인불가")
+                    }
                 }
                 Category.COGNITIVE ->
                 {
@@ -275,9 +285,14 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
-                    println(PaperArray)
-
-                    //startActivity(Activity, Intent(Activity, CognitiveExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    if(PaperArray.size>0)
+                    {
+                        startActivity(Activity, Intent(Activity, CognitiveExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    }
+                    else
+                    {
+                        println("확인불가")
+                    }
                 }
                 Category.ELDERLY ->
                 {
@@ -308,8 +323,14 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
-
-                    startActivity(Activity, Intent(Activity, ElderlyExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    if(PaperArray.size>0)
+                    {
+                        startActivity(Activity, Intent(Activity, ElderlyExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    }
+                    else
+                    {
+                        println("확인불가")
+                    }
                 }
                 Category.EXERCISE ->
                 {
@@ -362,7 +383,15 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
-                    startActivity(Activity, Intent(Activity, ExerciseExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    if(PaperArray.size>0)
+                    {
+                        startActivity(Activity, Intent(Activity, ExerciseExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    }
+                    else
+                    {
+                        println("확인불가")
+                    }
+
                 }
                 Category.NUTRITION ->
                 {
@@ -403,7 +432,15 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
-                    startActivity(Activity, Intent(Activity, NutritionExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    if(PaperArray.size>0)
+                    {
+                        startActivity(Activity, Intent(Activity, NutritionExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    }
+                    else
+                    {
+                        println("확인불가")
+                    }
+
                 }
                 Category.MENTAL ->
                 {
@@ -435,9 +472,14 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
-
-                    startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
-
+                    if(PaperArray.size>0)
+                    {
+                        startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    }
+                    else
+                    {
+                        println("확인불가")
+                    }
                 }
                 Category.SMOKING ->
                 {
@@ -468,7 +510,14 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
-                    startActivity(Activity, Intent(Activity, SmokingExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    if(PaperArray.size>0)
+                    {
+                        startActivity(Activity, Intent(Activity, SmokingExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    }
+                    else
+                    {
+                        println("확인불가")
+                    }
                 }
                 Category.DRINKING ->
                 {
@@ -502,7 +551,14 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
-                    startActivity(Activity, Intent(Activity, DrinkingExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    if(PaperArray.size>0)
+                    {
+                        startActivity(Activity, Intent(Activity, DrinkingExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    }
+                    else
+                    {
+                        println("확인불가")
+                    }
                 }
                 Category.CANCER ->
                 {
@@ -600,7 +656,14 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
-                    startActivity(Activity, Intent(Activity, CancerExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    if(PaperArray.size>0)
+                    {
+                        startActivity(Activity, Intent(Activity, CancerExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+                    }
+                    else
+                    {
+                        println("확인불가")
+                    }
                 }
 
 
