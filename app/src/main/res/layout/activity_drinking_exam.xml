@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -169,11 +170,50 @@
                 android:layout_marginTop="@dimen/blue_text_top_margin"
                 android:text="술을 전혀 안 마시는 비음주자는 작성하지 않습니다."
                 android:textColor="@color/mainBlue"
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/number_text" />
+
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/family_medical_history"
+                app:layout_constraintTop_toBottomOf="@+id/family_medical_history">
+
+                <RadioButton
+                    android:id="@+id/drinking_0_true"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="70dp"
+                    android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="음주자"
+                    android:textSize="15dp" />
+
+                <RadioButton
+                    android:id="@+id/drinking_0_false"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="70dp"
+                    android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="비음주자"
+                    android:textSize="15dp" />
+
+            </RadioGroup>
 
 
             <TextView
@@ -181,16 +221,14 @@
                 android:layout_width="700dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:layout_marginTop="32dp"
                 android:text="1. 술을 마시는 횟수는 어느 정도입니까?"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/family_medical_history" />
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 
             <RadioGroup

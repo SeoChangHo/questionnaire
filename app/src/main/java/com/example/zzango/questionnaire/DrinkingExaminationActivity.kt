@@ -72,6 +72,69 @@ class DrinkingExaminationActivity : RootActivity(){
 
         sql_db = LocalDBhelper(this).writableDatabase
 
+        drinking_0_true.isChecked = true
+
+        drinking_0_true.setOnClickListener {
+
+            drinking_question_1.visibility = View.VISIBLE
+            drinking_question_2.visibility = View.VISIBLE
+            drinking_question_2_1.visibility = View.VISIBLE
+            drinking_question_2_2.visibility = View.VISIBLE
+            drinking_question_3.visibility = View.VISIBLE
+            drinking_question_3_sub.visibility = View.VISIBLE
+            drinking_question_4.visibility = View.VISIBLE
+            drinking_question_5.visibility = View.VISIBLE
+            drinking_question_6.visibility = View.VISIBLE
+            drinking_question_7.visibility = View.VISIBLE
+            drinking_question_8.visibility = View.VISIBLE
+            drinking_question_9.visibility = View.VISIBLE
+            drinking_question_10.visibility = View.VISIBLE
+
+            drinking_1_radio.visibility = View.VISIBLE
+            drinking_2_1_radio.visibility = View.VISIBLE
+            drinking_2_2_radio.visibility = View.VISIBLE
+            drinking_3_radio.visibility = View.VISIBLE
+            drinking_4_radio.visibility = View.VISIBLE
+            drinking_5_radio.visibility = View.VISIBLE
+            drinking_6_radio.visibility = View.VISIBLE
+            drinking_7_radio.visibility = View.VISIBLE
+            drinking_8_radio.visibility = View.VISIBLE
+            drinking_9_radio.visibility = View.VISIBLE
+            drinking_10_radio.visibility = View.VISIBLE
+
+        }
+
+        drinking_0_false.setOnClickListener {
+
+            drinking_question_1.visibility = View.GONE
+            drinking_question_2.visibility = View.GONE
+            drinking_question_2_1.visibility = View.GONE
+            drinking_question_2_2.visibility = View.GONE
+            drinking_question_3.visibility = View.GONE
+            drinking_question_3_sub.visibility = View.GONE
+            drinking_question_4.visibility = View.GONE
+            drinking_question_5.visibility = View.GONE
+            drinking_question_6.visibility = View.GONE
+            drinking_question_7.visibility = View.GONE
+            drinking_question_8.visibility = View.GONE
+            drinking_question_9.visibility = View.GONE
+            drinking_question_10.visibility = View.GONE
+
+            drinking_1_radio.visibility = View.GONE
+            drinking_2_1_radio.visibility = View.GONE
+            drinking_2_2_radio.visibility = View.GONE
+            drinking_3_radio.visibility = View.GONE
+            drinking_4_radio.visibility = View.GONE
+            drinking_5_radio.visibility = View.GONE
+            drinking_6_radio.visibility = View.GONE
+            drinking_7_radio.visibility = View.GONE
+            drinking_8_radio.visibility = View.GONE
+            drinking_9_radio.visibility = View.GONE
+            drinking_10_radio.visibility = View.GONE
+
+        }
+
+
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
@@ -136,7 +199,6 @@ class DrinkingExaminationActivity : RootActivity(){
             finish()
 
         }
-
 
 
     }
@@ -398,7 +460,6 @@ class DrinkingExaminationActivity : RootActivity(){
         var sg2_spDrink10 = ""
         var sg2_spDrinkSum = ""
 
-
         if (!name_edit.text.isNullOrEmpty()) {
             name = name_edit.text.toString()
         } else {
@@ -420,163 +481,169 @@ class DrinkingExaminationActivity : RootActivity(){
             return false
         }
 
-        if(drinking_1_1.isChecked){
-            sg2_spDrink1 = "1"
-        }else if(drinking_1_2.isChecked){
-            sg2_spDrink1 = "2"
-        }else if(drinking_1_3.isChecked){
-            sg2_spDrink1 = "3"
-        }else if(drinking_1_4.isChecked){
-            sg2_spDrink1 = "4"
-        }else{
-            Toast.makeText(this, "1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+        if(drinking_0_false.isChecked){
+            sg2_spDrinkSum = "0"
+        }else {
+            sg2_spDrinkSum = "1"
 
-        if(drinking_2_1_1.isChecked){
-            sg2_spDrink2_1 = "1"
-        }else if(drinking_2_1_2.isChecked){
-            sg2_spDrink2_1 = "2"
-        }else if(drinking_2_1_3.isChecked){
-            sg2_spDrink2_1 = "3"
-        }else if(drinking_2_1_4.isChecked){
-            sg2_spDrink2_1 = "4"
-        }else if(drinking_2_1_5.isChecked){
-            sg2_spDrink2_1 = "5"
-        }else{
-            Toast.makeText(this, "2-1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (drinking_1_1.isChecked) {
+                sg2_spDrink1 = "1"
+            } else if (drinking_1_2.isChecked) {
+                sg2_spDrink1 = "2"
+            } else if (drinking_1_3.isChecked) {
+                sg2_spDrink1 = "3"
+            } else if (drinking_1_4.isChecked) {
+                sg2_spDrink1 = "4"
+            } else {
+                Toast.makeText(this, "1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(drinking_2_2_1.isChecked){
-            sg2_spDrink2_2 = "1"
-        }else if(drinking_2_2_2.isChecked){
-            sg2_spDrink2_2 = "2"
-        }else if(drinking_2_2_3.isChecked){
-            sg2_spDrink2_2 = "3"
-        }else if(drinking_2_2_4.isChecked){
-            sg2_spDrink2_2 = "4"
-        }else if(drinking_2_2_5.isChecked){
-            sg2_spDrink2_2 = "5"
-        }else{
-            Toast.makeText(this, "2-2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (drinking_2_1_1.isChecked) {
+                sg2_spDrink2_1 = "1"
+            } else if (drinking_2_1_2.isChecked) {
+                sg2_spDrink2_1 = "2"
+            } else if (drinking_2_1_3.isChecked) {
+                sg2_spDrink2_1 = "3"
+            } else if (drinking_2_1_4.isChecked) {
+                sg2_spDrink2_1 = "4"
+            } else if (drinking_2_1_5.isChecked) {
+                sg2_spDrink2_1 = "5"
+            } else {
+                Toast.makeText(this, "2-1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(drinking_3_1.isChecked){
-            sg2_spDrink3 = "1"
-        }else if(drinking_3_2.isChecked){
-            sg2_spDrink3 = "2"
-        }else if(drinking_3_3.isChecked){
-            sg2_spDrink3 = "3"
-        }else if(drinking_3_4.isChecked){
-            sg2_spDrink3 = "4"
-        }else if(drinking_3_5.isChecked){
-            sg2_spDrink3 = "5"
-        }else{
-            Toast.makeText(this, "3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (drinking_2_2_1.isChecked) {
+                sg2_spDrink2_2 = "1"
+            } else if (drinking_2_2_2.isChecked) {
+                sg2_spDrink2_2 = "2"
+            } else if (drinking_2_2_3.isChecked) {
+                sg2_spDrink2_2 = "3"
+            } else if (drinking_2_2_4.isChecked) {
+                sg2_spDrink2_2 = "4"
+            } else if (drinking_2_2_5.isChecked) {
+                sg2_spDrink2_2 = "5"
+            } else {
+                Toast.makeText(this, "2-2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(drinking_4_1.isChecked){
-            sg2_spDrink4 = "1"
-        }else if(drinking_4_2.isChecked){
-            sg2_spDrink4 = "2"
-        }else if(drinking_4_3.isChecked){
-            sg2_spDrink4 = "3"
-        }else if(drinking_4_4.isChecked){
-            sg2_spDrink4 = "4"
-        }else if(drinking_4_5.isChecked){
-            sg2_spDrink4 = "5"
-        }else{
-            Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (drinking_3_1.isChecked) {
+                sg2_spDrink3 = "1"
+            } else if (drinking_3_2.isChecked) {
+                sg2_spDrink3 = "2"
+            } else if (drinking_3_3.isChecked) {
+                sg2_spDrink3 = "3"
+            } else if (drinking_3_4.isChecked) {
+                sg2_spDrink3 = "4"
+            } else if (drinking_3_5.isChecked) {
+                sg2_spDrink3 = "5"
+            } else {
+                Toast.makeText(this, "3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(drinking_5_1.isChecked){
-            sg2_spDrink5 = "1"
-        }else if(drinking_5_2.isChecked){
-            sg2_spDrink5 = "2"
-        }else if(drinking_5_3.isChecked){
-            sg2_spDrink5 = "3"
-        }else if(drinking_5_4.isChecked){
-            sg2_spDrink5 = "4"
-        }else if(drinking_5_5.isChecked){
-            sg2_spDrink5 = "5"
-        }else{
-            Toast.makeText(this, "5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (drinking_4_1.isChecked) {
+                sg2_spDrink4 = "1"
+            } else if (drinking_4_2.isChecked) {
+                sg2_spDrink4 = "2"
+            } else if (drinking_4_3.isChecked) {
+                sg2_spDrink4 = "3"
+            } else if (drinking_4_4.isChecked) {
+                sg2_spDrink4 = "4"
+            } else if (drinking_4_5.isChecked) {
+                sg2_spDrink4 = "5"
+            } else {
+                Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-
-        if(drinking_6_1.isChecked){
-            sg2_spDrink6 = "1"
-        }else if(drinking_6_2.isChecked){
-            sg2_spDrink6 = "2"
-        }else if(drinking_6_3.isChecked){
-            sg2_spDrink6 = "3"
-        }else if(drinking_6_4.isChecked){
-            sg2_spDrink6 = "4"
-        }else if(drinking_6_5.isChecked){
-            sg2_spDrink6 = "5"
-        }else{
-            Toast.makeText(this, "6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (drinking_5_1.isChecked) {
+                sg2_spDrink5 = "1"
+            } else if (drinking_5_2.isChecked) {
+                sg2_spDrink5 = "2"
+            } else if (drinking_5_3.isChecked) {
+                sg2_spDrink5 = "3"
+            } else if (drinking_5_4.isChecked) {
+                sg2_spDrink5 = "4"
+            } else if (drinking_5_5.isChecked) {
+                sg2_spDrink5 = "5"
+            } else {
+                Toast.makeText(this, "5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
 
-        if(drinking_7_1.isChecked){
-            sg2_spDrink7 = "1"
-        }else if(drinking_7_2.isChecked){
-            sg2_spDrink7 = "2"
-        }else if(drinking_7_3.isChecked){
-            sg2_spDrink7 = "3"
-        }else if(drinking_7_4.isChecked){
-            sg2_spDrink7 = "4"
-        }else if(drinking_7_5.isChecked){
-            sg2_spDrink7 = "5"
-        }else{
-            Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (drinking_6_1.isChecked) {
+                sg2_spDrink6 = "1"
+            } else if (drinking_6_2.isChecked) {
+                sg2_spDrink6 = "2"
+            } else if (drinking_6_3.isChecked) {
+                sg2_spDrink6 = "3"
+            } else if (drinking_6_4.isChecked) {
+                sg2_spDrink6 = "4"
+            } else if (drinking_6_5.isChecked) {
+                sg2_spDrink6 = "5"
+            } else {
+                Toast.makeText(this, "6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
 
-        if(drinking_8_1.isChecked){
-            sg2_spDrink8 = "1"
-        }else if(drinking_8_2.isChecked){
-            sg2_spDrink8 = "2"
-        }else if(drinking_8_3.isChecked){
-            sg2_spDrink8 = "3"
-        }else if(drinking_8_4.isChecked){
-            sg2_spDrink8 = "4"
-        }else if(drinking_8_5.isChecked){
-            sg2_spDrink8 = "5"
-        }else{
-            Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
-
-        if(drinking_9_1.isChecked){
-            sg2_spDrink9 = "1"
-        }else if(drinking_9_2.isChecked){
-            sg2_spDrink9 = "2"
-        }else if(drinking_9_3.isChecked){
-            sg2_spDrink9 = "3"
-        }else{
-            Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (drinking_7_1.isChecked) {
+                sg2_spDrink7 = "1"
+            } else if (drinking_7_2.isChecked) {
+                sg2_spDrink7 = "2"
+            } else if (drinking_7_3.isChecked) {
+                sg2_spDrink7 = "3"
+            } else if (drinking_7_4.isChecked) {
+                sg2_spDrink7 = "4"
+            } else if (drinking_7_5.isChecked) {
+                sg2_spDrink7 = "5"
+            } else {
+                Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
 
-        if(drinking_10_1.isChecked){
-            sg2_spDrink10 = "1"
-        }else if(drinking_10_2.isChecked){
-            sg2_spDrink10 = "2"
-        }else if(drinking_10_3.isChecked){
-            sg2_spDrink10 = "3"
-        }else{
-            Toast.makeText(this, "10번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
+            if (drinking_8_1.isChecked) {
+                sg2_spDrink8 = "1"
+            } else if (drinking_8_2.isChecked) {
+                sg2_spDrink8 = "2"
+            } else if (drinking_8_3.isChecked) {
+                sg2_spDrink8 = "3"
+            } else if (drinking_8_4.isChecked) {
+                sg2_spDrink8 = "4"
+            } else if (drinking_8_5.isChecked) {
+                sg2_spDrink8 = "5"
+            } else {
+                Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+
+            if (drinking_9_1.isChecked) {
+                sg2_spDrink9 = "1"
+            } else if (drinking_9_2.isChecked) {
+                sg2_spDrink9 = "2"
+            } else if (drinking_9_3.isChecked) {
+                sg2_spDrink9 = "3"
+            } else {
+                Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+
+
+            if (drinking_10_1.isChecked) {
+                sg2_spDrink10 = "1"
+            } else if (drinking_10_2.isChecked) {
+                sg2_spDrink10 = "2"
+            } else if (drinking_10_3.isChecked) {
+                sg2_spDrink10 = "3"
+            } else {
+                Toast.makeText(this, "10번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
         }
 
         exam_no = MainActivity.exam_no
@@ -610,6 +677,38 @@ class DrinkingExaminationActivity : RootActivity(){
         drinking_examination_cancel.visibility = View.GONE
         drinking_edit_submit.visibility = View.VISIBLE
 
+        if(paper.sg2_spDrinkSum=="0"){
+            drinking_0_false.isChecked = true
+            println(drinking_0_false.isChecked)
+            drinking_question_1.visibility = View.GONE
+            drinking_question_2.visibility = View.GONE
+            drinking_question_2_1.visibility = View.GONE
+            drinking_question_2_2.visibility = View.GONE
+            drinking_question_3.visibility = View.GONE
+            drinking_question_3_sub.visibility = View.GONE
+            drinking_question_4.visibility = View.GONE
+            drinking_question_5.visibility = View.GONE
+            drinking_question_6.visibility = View.GONE
+            drinking_question_7.visibility = View.GONE
+            drinking_question_8.visibility = View.GONE
+            drinking_question_9.visibility = View.GONE
+            drinking_question_10.visibility = View.GONE
+
+            drinking_1_radio.visibility = View.GONE
+            drinking_2_1_radio.visibility = View.GONE
+            drinking_2_2_radio.visibility = View.GONE
+            drinking_3_radio.visibility = View.GONE
+            drinking_4_radio.visibility = View.GONE
+            drinking_5_radio.visibility = View.GONE
+            drinking_6_radio.visibility = View.GONE
+            drinking_7_radio.visibility = View.GONE
+            drinking_8_radio.visibility = View.GONE
+            drinking_9_radio.visibility = View.GONE
+            drinking_10_radio.visibility = View.GONE
+
+        }else if(paper.sg2_spDrinkSum=="1"){
+            drinking_0_true.isChecked = true
+        }
 
         if(paper.sg2_spDrink1 == "1"){
             drinking_1_1.isChecked = true

@@ -1,20 +1,13 @@
 package com.example.zzango.questionnaire
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_SMOKING
@@ -23,7 +16,6 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_smoking_exam.*
 import kotlinx.android.synthetic.main.progressbar2.*
-import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
@@ -64,6 +56,50 @@ class SmokingExaminationActivity : RootActivity(){
         }
 
         sql_db = LocalDBhelper(this).writableDatabase
+
+        smoking_0_true.isChecked = true
+
+        smoking_0_false.setOnClickListener {
+            smoking_question_1.visibility = View.GONE
+            smoking_question_2.visibility = View.GONE
+            smoking_question_3.visibility = View.GONE
+            smoking_question_4.visibility = View.GONE
+            smoking_question_5.visibility = View.GONE
+            smoking_question_6.visibility = View.GONE
+            smoking_question_7.visibility = View.GONE
+            smoking_question_8.visibility = View.GONE
+
+            smoking_1_radio.visibility = View.GONE
+            smoking_2_radio.visibility = View.GONE
+            smoking_3_radio.visibility = View.GONE
+            smoking_4_radio.visibility = View.GONE
+            smoking_5_radio.visibility = View.GONE
+            smoking_6_radio.visibility = View.GONE
+            smoking_7_radio.visibility = View.GONE
+            smoking_8_radio.visibility = View.GONE
+        }
+
+        smoking_0_true.setOnClickListener {
+            smoking_question_1.visibility = View.VISIBLE
+            smoking_question_2.visibility = View.VISIBLE
+            smoking_question_3.visibility = View.VISIBLE
+            smoking_question_4.visibility = View.VISIBLE
+            smoking_question_5.visibility = View.VISIBLE
+            smoking_question_6.visibility = View.VISIBLE
+            smoking_question_7.visibility = View.VISIBLE
+            smoking_question_8.visibility = View.VISIBLE
+
+            smoking_1_radio.visibility = View.VISIBLE
+            smoking_2_radio.visibility = View.VISIBLE
+            smoking_3_radio.visibility = View.VISIBLE
+            smoking_4_radio.visibility = View.VISIBLE
+            smoking_5_radio.visibility = View.VISIBLE
+            smoking_6_radio.visibility = View.VISIBLE
+            smoking_7_radio.visibility = View.VISIBLE
+            smoking_8_radio.visibility = View.VISIBLE
+        }
+
+
 
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
@@ -156,81 +192,6 @@ class SmokingExaminationActivity : RootActivity(){
 
     }
 
-    fun saveCompleteAlert(){
-
-        login_appbar_loading_progress.visibility = View.GONE
-        login_appbar_loading_progress_bg.visibility = View.GONE
-        this@SmokingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-
-        popup = false
-
-        var dialog = AlertDialog.Builder(this).create()
-        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
-
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        dialog.setView(dialog_view)
-        dialog_view.save_complete_alert_text.text = "저장이 완료 되었습니다"
-
-        if(!popup) {
-
-            dialog.show().let {
-
-                popup = true
-
-            }
-
-        }
-
-        var displayMetrics = DisplayMetrics()
-        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-        // The absolute width of the available display size in pixels.
-        var displayWidth = displayMetrics.widthPixels
-        // The absolute height of the available display size in pixels.
-        var displayHeight = displayMetrics.heightPixels
-
-        // Initialize a new window manager layout parameters
-        var layoutParams = WindowManager.LayoutParams()
-
-        // Copy the alert dialog window attributes to new layout parameter instance
-        layoutParams.copyFrom(dialog.window.attributes)
-
-        // Set the alert dialog window width and height
-        // Set alert dialog width equal to screen width 90%
-        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-        // Set alert dialog height equal to screen height 90%
-        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-
-        // Set alert dialog width equal to screen width 70%
-        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-        // Set alert dialog height equal to screen height 70%
-        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-
-        // Set the width and height for the layout parameters
-        // This will bet the width and height of alert dialog
-        layoutParams.width = dialogWindowWidth
-        layoutParams.height = dialogWindowHeight
-
-        // Apply the newly created layout parameters to the alert dialog window
-        dialog.window.attributes = layoutParams
-
-
-        dialog.setOnDismissListener {
-
-            popup = false
-            dialog = null
-
-        }
-
-        dialog_view.return_alert.setOnClickListener {
-
-            startActivity(Intent(this@SmokingExaminationActivity, MainActivity::class.java).putExtra("from", "oral").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-            dialog.dismiss()
-
-        }
-
-    }
 
     @SuppressLint("NewApi")
     fun check() : Boolean{
@@ -251,127 +212,131 @@ class SmokingExaminationActivity : RootActivity(){
         var sg2_spSmoke8 = ""
         var sg2_spSmokeSum = ""
 
-
-        if(!name_edit.text.isNullOrEmpty()){
+        if (!name_edit.text.isNullOrEmpty()) {
             name = name_edit.text.toString()
-        }else{
+        } else {
             Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
-        if(!first_serial.text.isNullOrEmpty()){
+        if (!first_serial.text.isNullOrEmpty()) {
             first_serial_text = first_serial.text.toString()
-        }else{
+        } else {
             Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
-        if(!last_serial.text.isNullOrEmpty()){
+        if (!last_serial.text.isNullOrEmpty()) {
             last_serial_text = last_serial.text.toString()
-        }else{
+        } else {
             Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
-        if(smoking_1_1.isChecked){
-            sg2_spSmoke1 = "1"
-        }else if(smoking_1_2.isChecked){
-            sg2_spSmoke1 = "2"
-        }else if(smoking_1_3.isChecked){
-            sg2_spSmoke1 = "3"
-        }else if(smoking_1_4.isChecked){
-            sg2_spSmoke1 = "4"
-        }else{
-            Toast.makeText(this, "1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+        if(smoking_0_false.isChecked){
+            sg2_spSmokeSum = "0"
+        }else {
+            sg2_spSmokeSum = "1"
 
-        if(smoking_2_1.isChecked){
-            sg2_spSmoke2 = "1"
-        }else if(smoking_2_2.isChecked){
-            sg2_spSmoke2 = "2"
-        }else if(smoking_2_3.isChecked){
-            sg2_spSmoke2 = "3"
-        }else if(smoking_2_4.isChecked){
-            sg2_spSmoke2 = "4"
-        }else if(smoking_2_5.isChecked){
-            sg2_spSmoke2 = "5"
-        }else if(smoking_2_6.isChecked){
-            sg2_spSmoke2 = "6"
-        }else if(smoking_2_7.isChecked){
-            sg2_spSmoke2 = "7"
-        }else if(smoking_2_8.isChecked){
-            sg2_spSmoke2 = "8"
-        }else{
-            Toast.makeText(this, "2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (smoking_1_1.isChecked) {
+                sg2_spSmoke1 = "1"
+            } else if (smoking_1_2.isChecked) {
+                sg2_spSmoke1 = "2"
+            } else if (smoking_1_3.isChecked) {
+                sg2_spSmoke1 = "3"
+            } else if (smoking_1_4.isChecked) {
+                sg2_spSmoke1 = "4"
+            } else {
+                Toast.makeText(this, "1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(smoking_3_1.isChecked){
-            sg2_spSmoke3 = "1"
-        }else if(smoking_3_2.isChecked){
-            sg2_spSmoke3 = "2"
-        }else if(smoking_3_3.isChecked){
-            sg2_spSmoke3 = "3"
-        }else if(smoking_3_4.isChecked){
-            sg2_spSmoke3 = "4"
-        }else{
-            Toast.makeText(this, "3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (smoking_2_1.isChecked) {
+                sg2_spSmoke2 = "1"
+            } else if (smoking_2_2.isChecked) {
+                sg2_spSmoke2 = "2"
+            } else if (smoking_2_3.isChecked) {
+                sg2_spSmoke2 = "3"
+            } else if (smoking_2_4.isChecked) {
+                sg2_spSmoke2 = "4"
+            } else if (smoking_2_5.isChecked) {
+                sg2_spSmoke2 = "5"
+            } else if (smoking_2_6.isChecked) {
+                sg2_spSmoke2 = "6"
+            } else if (smoking_2_7.isChecked) {
+                sg2_spSmoke2 = "7"
+            } else if (smoking_2_8.isChecked) {
+                sg2_spSmoke2 = "8"
+            } else {
+                Toast.makeText(this, "2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+
+            if (smoking_3_1.isChecked) {
+                sg2_spSmoke3 = "1"
+            } else if (smoking_3_2.isChecked) {
+                sg2_spSmoke3 = "2"
+            } else if (smoking_3_3.isChecked) {
+                sg2_spSmoke3 = "3"
+            } else if (smoking_3_4.isChecked) {
+                sg2_spSmoke3 = "4"
+            } else {
+                Toast.makeText(this, "3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
 
-        if(smoking_4_1.isChecked){
-            sg2_spSmoke4 = "1"
-        }else if(smoking_4_2.isChecked){
-            sg2_spSmoke4 = "2"
-        }else{
-            Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (smoking_4_1.isChecked) {
+                sg2_spSmoke4 = "1"
+            } else if (smoking_4_2.isChecked) {
+                sg2_spSmoke4 = "2"
+            } else {
+                Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(smoking_5_1.isChecked){
-            sg2_spSmoke5 = "1"
-        }else if(smoking_5_2.isChecked){
-            sg2_spSmoke5 = "2"
-        }else{
-            Toast.makeText(this, "5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (smoking_5_1.isChecked) {
+                sg2_spSmoke5 = "1"
+            } else if (smoking_5_2.isChecked) {
+                sg2_spSmoke5 = "2"
+            } else {
+                Toast.makeText(this, "5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(smoking_6_1.isChecked){
-            sg2_spSmoke6 = "1"
-        }else if(smoking_6_2.isChecked){
-            sg2_spSmoke6 = "2"
-        }else if(smoking_6_3.isChecked){
-            sg2_spSmoke6 = "3"
-        }else if(smoking_6_4.isChecked){
-            sg2_spSmoke6 = "4"
-        }else{
-            Toast.makeText(this, "6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (smoking_6_1.isChecked) {
+                sg2_spSmoke6 = "1"
+            } else if (smoking_6_2.isChecked) {
+                sg2_spSmoke6 = "2"
+            } else if (smoking_6_3.isChecked) {
+                sg2_spSmoke6 = "3"
+            } else if (smoking_6_4.isChecked) {
+                sg2_spSmoke6 = "4"
+            } else {
+                Toast.makeText(this, "6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(smoking_7_1.isChecked){
-            sg2_spSmoke7 = "1"
-        }else if(smoking_7_2.isChecked){
-            sg2_spSmoke7 = "2"
-        }else{
-            Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if (smoking_7_1.isChecked) {
+                sg2_spSmoke7 = "1"
+            } else if (smoking_7_2.isChecked) {
+                sg2_spSmoke7 = "2"
+            } else {
+                Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(smoking_8_1.isChecked){
-            sg2_spSmoke8 = "1"
-        }else if(smoking_8_2.isChecked){
-            sg2_spSmoke8 = "2"
-        }else{
-            Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
+            if (smoking_8_1.isChecked) {
+                sg2_spSmoke8 = "1"
+            } else if (smoking_8_2.isChecked) {
+                sg2_spSmoke8 = "2"
+            } else {
+                Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
         }
 
         exam_no = MainActivity.exam_no
-
 
         PaperArray.PaperList.Arr_SMOKING!!.add(Paper_SMOKING(
                 exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
@@ -402,6 +367,30 @@ class SmokingExaminationActivity : RootActivity(){
         smoking_examination_cancel.visibility = View.GONE
         smoking_edit_submit.visibility = View.VISIBLE
 
+        if(paper.sg2_spSmokeSum=="0"){
+            smoking_0_false.isChecked = true
+
+            smoking_question_1.visibility = View.GONE
+            smoking_question_2.visibility = View.GONE
+            smoking_question_3.visibility = View.GONE
+            smoking_question_4.visibility = View.GONE
+            smoking_question_5.visibility = View.GONE
+            smoking_question_6.visibility = View.GONE
+            smoking_question_7.visibility = View.GONE
+            smoking_question_8.visibility = View.GONE
+
+            smoking_1_radio.visibility = View.GONE
+            smoking_2_radio.visibility = View.GONE
+            smoking_3_radio.visibility = View.GONE
+            smoking_4_radio.visibility = View.GONE
+            smoking_5_radio.visibility = View.GONE
+            smoking_6_radio.visibility = View.GONE
+            smoking_7_radio.visibility = View.GONE
+            smoking_8_radio.visibility = View.GONE
+
+        }else if(paper.sg2_spSmokeSum=="1"){
+            smoking_0_true.isChecked = true
+        }
 
         if(paper.sg2_spSmoke1 == "1"){
             smoking_1_1.isChecked = true
