@@ -405,7 +405,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 val text5 = dialog_view.findViewById(R.id.notice_textView5) as TextView
 
 
-                title.setText(login_user_name+"에 해당하는 문진항목입니다.")
+                title.setText(login_user_name+"님")
 
                 if(MainActivity.chart == "SET1"){
                     text2.visibility = View.GONE

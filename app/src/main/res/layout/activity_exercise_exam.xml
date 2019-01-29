@@ -1295,11 +1295,11 @@
                 android:id="@+id/textView159"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="여가활동"
+                android:text=" 여가활동"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView158"
-                app:layout_constraintTop_toTopOf="@+id/textView158"/>
+                app:layout_constraintTop_toTopOf="@+id/textView158" />
 
             <View
                 android:layout_width="0dp"
@@ -1399,7 +1399,7 @@
                     android:id="@+id/textView164"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="일주일 "
+                    android:text="일주일 동안, "
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView163"
@@ -1409,8 +1409,9 @@
                     android:id="@+id/textView165"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="고강도의 스포츠, 운동 및"
+                    android:text="고강도의 스포츠, 운동 및 "
                     android:textSize="20dp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView164"
                     app:layout_constraintTop_toTopOf="@+id/textView164" />
 

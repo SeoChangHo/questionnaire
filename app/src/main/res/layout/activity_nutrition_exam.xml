@@ -72,7 +72,7 @@
                 android:layout_marginTop="16dp"
                 android:text="※ 해당 항목에 체크 해주시기 바랍니다."
                 android:textColor="@color/mainBlue"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/textView234"
                 app:layout_constraintStart_toStartOf="@+id/textView234"
                 app:layout_constraintTop_toBottomOf="@+id/textView234" />
@@ -556,7 +556,7 @@
                     android:id="@+id/textView256"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="과일(1개)을"
+                    android:text="과일(1개)을 "
                     android:textSize="18dp"
                     app:layout_constraintStart_toEndOf="@+id/textView255"
                     app:layout_constraintTop_toTopOf="@+id/textView255" />
@@ -575,7 +575,7 @@
                     android:id="@+id/textView258"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="먹는다."
+                    android:text=" 먹는다."
                     android:textSize="18dp"
                     app:layout_constraintStart_toEndOf="@+id/textView257"
                     app:layout_constraintTop_toTopOf="@+id/textView257" />
@@ -1416,7 +1416,7 @@
                     android:id="@+id/textView297"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="곡류(밥·빵류), 고기 · 생선 · 달걀"
+                    android:text="곡류(밥·빵류), 고기·생선·달걀·"
                     android:textSize="18dp"
                     app:layout_constraintStart_toEndOf="@+id/textView296"
                     app:layout_constraintTop_toTopOf="@+id/textView296" />
