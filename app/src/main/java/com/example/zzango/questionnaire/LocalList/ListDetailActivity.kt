@@ -3,6 +3,8 @@ package com.example.zzango.questionnaire.LocalList
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
+import android.view.WindowManager
 import android.widget.LinearLayout
 import com.example.zzango.questionnaire.R
 import kotlinx.android.synthetic.main.activity_list_detail.*
@@ -30,5 +32,15 @@ class ListDetailActivity : AppCompatActivity() {
             detail_recyclertView.adapter = adapter
         }
     }
+
+    override fun onResume() {
+
+        login_appbar_loading_progress_bg.visibility = View.GONE
+        login_appbar_loading_progress.visibility = View.GONE
+        window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        super.onResume()
+
+    }
+
 }
 
