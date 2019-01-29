@@ -5,6 +5,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.example.zzango.questionnaire.MainActivity
 
 class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(context, attrs) {
 
@@ -28,6 +29,7 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas!!.drawPath(mPath, mPaint)
+
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -69,6 +71,8 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
     override fun onTouchEvent(event: MotionEvent): Boolean {
         val x = event.x
         val y = event.y
+
+        MainActivity.onTouch = true
 
         when(event.action) {
             MotionEvent.ACTION_DOWN -> {
