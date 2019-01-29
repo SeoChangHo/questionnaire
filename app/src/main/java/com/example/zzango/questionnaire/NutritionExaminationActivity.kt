@@ -478,6 +478,8 @@ class NutritionExaminationActivity :RootActivity() {
 
     fun GetPaper(paper:Paper_NUTRITION){
 
+        cannotEditQuestionnaire(nutrition_root)
+
         progress_constraintLayout.visibility = View.GONE
 
         name_edit.text = paper.name

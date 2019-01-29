@@ -602,6 +602,8 @@ class CognitiveExaminationActivity : RootActivity(){
 
     fun GetPaper(paper: Paper_COGNITIVE) {
 
+        cannotEditQuestionnaire(cognitive_root)
+
         progress_constraintLayout.visibility = View.GONE
 
         name_edit.text = paper.name

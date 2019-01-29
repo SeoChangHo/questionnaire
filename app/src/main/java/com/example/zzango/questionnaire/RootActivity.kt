@@ -17,6 +17,7 @@ import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import kotlinx.android.synthetic.main.progressbar2.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 
@@ -34,6 +35,49 @@ open class RootActivity : AppCompatActivity() {
         }else{
 
             view.visibility = View.GONE
+
+        }
+
+    }
+
+    //로컬에 저장된 검진을 다시 불러와서 확인할때 체크된 사항들을 수정 못하도록 막는 메서드
+    fun cannotEditQuestionnaire(root : ConstraintLayout){
+
+        for(i in 0 until root.childCount){
+
+            var view = root.getChildAt(i)
+
+            if(view is RadioGroup){
+
+                inCannotEditQuestionnaire(view)
+
+            }else if(view is ConstraintLayout){
+
+                for(j in 0 until view.childCount){
+
+                    var rg = view.getChildAt(j)
+
+                    if(rg is RadioGroup){
+
+                        inCannotEditQuestionnaire(rg)
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    fun inCannotEditQuestionnaire(rg : RadioGroup){
+
+        for(i in 0 until rg.childCount){
+
+            var rb = rg.getChildAt(i)
+
+            rb.isEnabled = false
 
         }
 

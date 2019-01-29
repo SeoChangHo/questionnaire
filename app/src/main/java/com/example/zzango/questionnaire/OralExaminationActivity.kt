@@ -755,6 +755,9 @@ class OralExaminationActivity : RootActivity() {
 
     fun GetPaper(paper:Paper_ORAL)
     {
+
+        cannotEditQuestionnaire(oral_exam_inside_scroll_layout)
+
         name_edit.text = paper.name
         first_serial.text = paper.first_serial
         last_serial.text = paper.last_serial

@@ -536,6 +536,8 @@ class MentalExaminationActivity : RootActivity(){
 
     fun GetPaper(paper:Paper_MENTAL){
 
+        cannotEditQuestionnaire(mental_root)
+
         progress_constraintLayout.visibility = View.GONE
 
         name_edit.text = paper.name

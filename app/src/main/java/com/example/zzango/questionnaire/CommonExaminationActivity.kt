@@ -1204,7 +1204,9 @@ class CommonExaminationActivity : RootActivity() {
     }
 
     fun GetPaper(paper: Paper_COMMON) {
-        
+
+        cannotEditQuestionnaire(common_exam_inside_scroll_layout)
+
         progress_constraintLayout.visibility = View.GONE
 
         name_edit.text = paper.name

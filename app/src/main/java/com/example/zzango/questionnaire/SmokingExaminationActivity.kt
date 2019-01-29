@@ -388,6 +388,8 @@ class SmokingExaminationActivity : RootActivity(){
 
     fun GetPaper(paper: Paper_SMOKING) {
 
+        cannotEditQuestionnaire(smoking_root)
+
         progress_constraintLayout.visibility = View.GONE
 
         name_edit.text = paper.name

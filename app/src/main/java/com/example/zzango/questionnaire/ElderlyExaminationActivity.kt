@@ -531,6 +531,8 @@ class ElderlyExaminationActivity : RootActivity(){
 
     fun GetPaper(paper:Paper_ELDERLY) {
 
+        cannotEditQuestionnaire(elderly_root)
+
         progress_constraintLayout.visibility = View.GONE
 
         name_edit.text = paper.name

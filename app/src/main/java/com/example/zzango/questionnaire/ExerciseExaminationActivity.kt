@@ -7,8 +7,10 @@ import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.RadioGroup
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.LocalList.Paper_EXERCISE
@@ -713,6 +715,8 @@ class ExerciseExaminationActivity : RootActivity() {
 
     fun GetPaper(paper:Paper_EXERCISE)
     {
+
+        cannotEditQuestionnaire(exercise_root)
 
         progress_constraintLayout.visibility = View.GONE
 
