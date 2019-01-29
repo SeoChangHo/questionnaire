@@ -9,15 +9,16 @@ import android.support.constraint.ConstraintSet
 import android.support.constraint.Guideline
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.AppCompatEditText
+import android.support.v7.widget.AppCompatRadioButton
+import android.support.v7.widget.AppCompatSpinner
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.RadioGroup
+import android.widget.*
 import kotlinx.android.synthetic.main.progressbar2.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 
@@ -41,43 +42,25 @@ open class RootActivity : AppCompatActivity() {
     }
 
     //로컬에 저장된 검진을 다시 불러와서 확인할때 체크된 사항들을 수정 못하도록 막는 메서드
-    fun cannotEditQuestionnaire(root : ConstraintLayout){
+    fun cannotEditQuestionnaire(vg : ViewGroup){
 
-        for(i in 0 until root.childCount){
+        for(i in 0 until vg.childCount){
 
-            var view = root.getChildAt(i)
+            var child = vg.getChildAt(i)
 
-            if(view is RadioGroup){
+            if(child is ViewGroup) {
 
-                inCannotEditQuestionnaire(view)
+                cannotEditQuestionnaire(child)
 
-            }else if(view is ConstraintLayout){
+            }else{
 
-                for(j in 0 until view.childCount){
+                if(child is RadioButton || child is EditText || child is Spinner){
 
-                    var rg = view.getChildAt(j)
-
-                    if(rg is RadioGroup){
-
-                        inCannotEditQuestionnaire(rg)
-
-                    }
+                    child.isEnabled = false
 
                 }
 
             }
-
-        }
-
-    }
-
-    fun inCannotEditQuestionnaire(rg : RadioGroup){
-
-        for(i in 0 until rg.childCount){
-
-            var rb = rg.getChildAt(i)
-
-            rb.isEnabled = false
 
         }
 
