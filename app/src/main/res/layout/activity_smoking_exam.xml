@@ -214,595 +214,603 @@
 
             </RadioGroup>
 
-
-            <TextView
-                android:id="@+id/smoking_question_1"
-                android:layout_width="700dp"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/smoking_question_constraintLayout"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="32dp"
-                android:text="1. 앞으로 1개월 이내에 담배를 끊을 계획이 있으십니까?"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-
-            <RadioGroup
-                android:id="@+id/smoking_1_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="@+id/smoking_question_1"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_question_1">
+                android:onClick="focusControl"
+                app:layout_constraintEnd_toEndOf="@id/family_medical_history"
+                app:layout_constraintStart_toStartOf="@id/family_medical_history"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup">
 
-                <RadioButton
-                    android:id="@+id/smoking_1_1"
-                    android:layout_width="500dp"
+                <TextView
+                    android:id="@+id/smoking_question_1"
+                    android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="1개월 안에 금연할 계획이 있다."
-                    android:onClick="focusControl" />
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:text="1. 앞으로 1개월 이내에 담배를 끊을 계획이 있으십니까?"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-                <RadioButton
-                    android:id="@+id/smoking_1_2"
-                    android:layout_width="500dp"
+
+                <RadioGroup
+                    android:id="@+id/smoking_1_radio"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="6개월 안에 금연할 계획이 있다."
-                    android:onClick="focusControl" />
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/smoking_question_1"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_question_1">
 
-                <RadioButton
-                    android:id="@+id/smoking_1_3"
-                    android:layout_width="500dp"
+                    <RadioButton
+                        android:id="@+id/smoking_1_1"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="1개월 안에 금연할 계획이 있다."
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_1_2"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="6개월 안에 금연할 계획이 있다."
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_1_3"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="6개월 이내는 아니지만 언젠가는 금연할 생각이 있다."
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_1_4"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="현재로서는 전혀 금연할 생각이 없다."
+                        android:onClick="focusControl" />
+
+                </RadioGroup>
+
+
+                <TextView
+                    android:id="@+id/smoking_question_2"
+                    android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="6개월 이내는 아니지만 언젠가는 금연할 생각이 있다."
-                    android:onClick="focusControl" />
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="2. 만약 오늘 당장 금연을 하신다면 금연성공을 얼마나 확신합니까?"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_1_radio" />
 
-                <RadioButton
-                    android:id="@+id/smoking_1_4"
-                    android:layout_width="500dp"
+
+                <RadioGroup
+                    android:id="@+id/smoking_2_radio"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="현재로서는 전혀 금연할 생각이 없다."
-                    android:onClick="focusControl" />
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/smoking_question_2"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_question_2">
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/smoking_2_1"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="0 (전혀 아님)"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_2_2"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="1"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_2_3"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="2"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_2_4"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="3"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_2_5"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="4"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_2_6"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="5"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_2_7"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="6"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_2_8"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="7 (매우 확신)"
+                        android:onClick="focusControl" />
+
+                </RadioGroup>
 
 
-            <TextView
-                android:id="@+id/smoking_question_2"
-                android:layout_width="700dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="2. 만약 오늘 당장 금연을 하신다면 금연성공을 얼마나 확신합니까?"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_1_radio" />
-
-
-            <RadioGroup
-                android:id="@+id/smoking_2_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="@+id/smoking_question_2"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_question_2">
-
-                <RadioButton
-                    android:id="@+id/smoking_2_1"
-                    android:layout_width="500dp"
+                <TextView
+                    android:id="@+id/smoking_question_3"
+                    android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="0 (전혀 아님)"
-                    android:onClick="focusControl" />
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="3. 아침에 일어나서 얼마 만에 첫 번째 담배를 피우십니까?"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_2_radio" />
 
-                <RadioButton
-                    android:id="@+id/smoking_2_2"
-                    android:layout_width="500dp"
+
+                <RadioGroup
+                    android:id="@+id/smoking_3_radio"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="1"
-                    android:onClick="focusControl" />
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/smoking_question_3"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_question_3">
 
-                <RadioButton
-                    android:id="@+id/smoking_2_3"
-                    android:layout_width="500dp"
+                    <RadioButton
+                        android:id="@+id/smoking_3_1"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="5분 이내"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_3_2"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="6 ~ 30분 사이"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_3_3"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="31 ~ 60분 사이"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_3_4"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="60분 이후"
+                        android:onClick="focusControl" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/smoking_question_4"
+                    android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="2"
-                    android:onClick="focusControl" />
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="4. 당신은 금연구역, 예를 들면 교회, 극장, 도서관 등에서 흡연을 참기가 어렵습니까?"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_3_radio" />
 
-                <RadioButton
-                    android:id="@+id/smoking_2_4"
-                    android:layout_width="500dp"
+
+                <RadioGroup
+                    android:id="@+id/smoking_4_radio"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="3"
-                    android:onClick="focusControl" />
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/smoking_question_4"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_question_4">
 
-                <RadioButton
-                    android:id="@+id/smoking_2_5"
-                    android:layout_width="500dp"
+                    <RadioButton
+                        android:id="@+id/smoking_4_1"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="예"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_4_2"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="아니오"
+                        android:onClick="focusControl" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/smoking_question_5"
+                    android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="4"
-                    android:onClick="focusControl" />
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="5. 어떤 경우의 담배가 가장 포기하기 싫으시겠습니까?"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_4_radio" />
 
-                <RadioButton
-                    android:id="@+id/smoking_2_6"
-                    android:layout_width="500dp"
+
+                <RadioGroup
+                    android:id="@+id/smoking_5_radio"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="5"
-                    android:onClick="focusControl" />
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/smoking_question_5"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_question_5">
 
-                <RadioButton
-                    android:id="@+id/smoking_2_7"
-                    android:layout_width="500dp"
+                    <RadioButton
+                        android:id="@+id/smoking_5_1"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="아침 첫 담배"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_5_2"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="다른 나머지"
+                        android:onClick="focusControl" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/smoking_question_6"
+                    android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="6"
-                    android:onClick="focusControl" />
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="6. 하루에 담배를 몇 개비나 피우십니까?"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_5_radio" />
 
-                <RadioButton
-                    android:id="@+id/smoking_2_8"
-                    android:layout_width="500dp"
+
+                <RadioGroup
+                    android:id="@+id/smoking_6_radio"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="7 (매우 확신)"
-                    android:onClick="focusControl" />
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/smoking_question_6"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_question_6">
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/smoking_6_1"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="10개비 이하"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_6_2"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="11~20개비"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_6_3"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginBottom="15dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="21~30개비"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_6_4"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="31개비 이상"
+                        android:onClick="focusControl" />
+
+                </RadioGroup>
 
 
-            <TextView
-                android:id="@+id/smoking_question_3"
-                android:layout_width="700dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="3. 아침에 일어나서 얼마 만에 첫 번째 담배를 피우십니까?"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_2_radio" />
-
-
-            <RadioGroup
-                android:id="@+id/smoking_3_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="@+id/smoking_question_3"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_question_3">
-
-                <RadioButton
-                    android:id="@+id/smoking_3_1"
-                    android:layout_width="500dp"
+                <TextView
+                    android:id="@+id/smoking_question_7"
+                    android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="5분 이내"
-                    android:onClick="focusControl" />
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="7. 아침에 일어나서 첫 몇 시간 동안에, 하루 중 다른 시간보다 더 자주 담배를 피우십니까?"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_6_radio" />
 
-                <RadioButton
-                    android:id="@+id/smoking_3_2"
-                    android:layout_width="500dp"
+
+                <RadioGroup
+                    android:id="@+id/smoking_7_radio"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="6 ~ 30분 사이"
-                    android:onClick="focusControl" />
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/smoking_question_7"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_question_7">
 
-                <RadioButton
-                    android:id="@+id/smoking_3_3"
-                    android:layout_width="500dp"
+                    <RadioButton
+                        android:id="@+id/smoking_7_1"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="예"
+                        android:onClick="focusControl" />
+
+                    <RadioButton
+                        android:id="@+id/smoking_7_2"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="아니오"
+                        android:onClick="focusControl" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/smoking_question_8"
+                    android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="31 ~ 60분 사이"
-                    android:onClick="focusControl" />
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:text="8. 하루 중 대부분을 누워 지낼 만큼 몹시 아프다면 담배를 피우시겠습니까?"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_7_radio" />
 
-                <RadioButton
-                    android:id="@+id/smoking_3_4"
-                    android:layout_width="500dp"
+
+                <RadioGroup
+                    android:id="@+id/smoking_8_radio"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="60분 이후"
-                    android:onClick="focusControl" />
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@+id/smoking_question_8"
+                    app:layout_constraintTop_toBottomOf="@+id/smoking_question_8">
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/smoking_8_1"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="예"
+                        android:onClick="focusControl" />
 
-            <TextView
-                android:id="@+id/smoking_question_4"
-                android:layout_width="700dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="4. 당신은 금연구역, 예를 들면 교회, 극장, 도서관 등에서 흡연을 참기가 어렵습니까?"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_3_radio" />
+                    <RadioButton
+                        android:id="@+id/smoking_8_2"
+                        android:layout_width="500dp"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/mainBlue"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="70dp"
+                        android:text="아니오"
+                        android:onClick="focusControl" />
 
+                </RadioGroup>
 
-            <RadioGroup
-                android:id="@+id/smoking_4_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="@+id/smoking_question_4"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_question_4">
-
-                <RadioButton
-                    android:id="@+id/smoking_4_1"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="예"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/smoking_4_2"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="아니오"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/smoking_question_5"
-                android:layout_width="700dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="5. 어떤 경우의 담배가 가장 포기하기 싫으시겠습니까?"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_4_radio" />
-
-
-            <RadioGroup
-                android:id="@+id/smoking_5_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="@+id/smoking_question_5"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_question_5">
-
-                <RadioButton
-                    android:id="@+id/smoking_5_1"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="아침 첫 담배"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/smoking_5_2"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="다른 나머지"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/smoking_question_6"
-                android:layout_width="700dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="6. 하루에 담배를 몇 개비나 피우십니까?"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_5_radio" />
-
-
-            <RadioGroup
-                android:id="@+id/smoking_6_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="@+id/smoking_question_6"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_question_6">
-
-                <RadioButton
-                    android:id="@+id/smoking_6_1"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="10개비 이하"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/smoking_6_2"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="11~20개비"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/smoking_6_3"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:layout_marginBottom="15dp"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="21~30개비"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/smoking_6_4"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="31개비 이상"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-
-            <TextView
-                android:id="@+id/smoking_question_7"
-                android:layout_width="700dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="7. 아침에 일어나서 첫 몇 시간 동안에, 하루 중 다른 시간보다 더 자주 담배를 피우십니까?"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_6_radio" />
-
-
-            <RadioGroup
-                android:id="@+id/smoking_7_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="@+id/smoking_question_7"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_question_7">
-
-                <RadioButton
-                    android:id="@+id/smoking_7_1"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="예"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/smoking_7_2"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="아니오"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/smoking_question_8"
-                android:layout_width="700dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="8. 하루 중 대부분을 누워 지낼 만큼 몹시 아프다면 담배를 피우시겠습니까?"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_7_radio" />
-
-
-            <RadioGroup
-                android:id="@+id/smoking_8_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="@+id/smoking_question_8"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_question_8">
-
-                <RadioButton
-                    android:id="@+id/smoking_8_1"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="예"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/smoking_8_2"
-                    android:layout_width="500dp"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/mainBlue"
-                    android:scaleX="1.3"
-                    android:scaleY="1.3"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="70dp"
-                    android:text="아니오"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
+            </android.support.constraint.ConstraintLayout>
 
             <Button
                 android:id="@+id/smoking_examination_save"
@@ -821,7 +829,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/smoking_examination_cancel"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_8_radio" />
+                app:layout_constraintTop_toBottomOf="@+id/smoking_question_constraintLayout" />
 
 
             <Button
@@ -841,7 +849,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/smoking_examination_save"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_8_radio" />
+                app:layout_constraintTop_toBottomOf="@+id/smoking_question_constraintLayout" />
 
             <Button
                 android:id="@+id/smoking_edit_submit"
@@ -863,7 +871,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/smoking_8_radio" />
+                app:layout_constraintTop_toBottomOf="@+id/smoking_question_constraintLayout" />
 
         </android.support.constraint.ConstraintLayout>
 

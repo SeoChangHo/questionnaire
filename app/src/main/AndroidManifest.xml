@@ -61,7 +61,8 @@
         <activity
             android:name=".SettingActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".LocalList.ListDetailActivity"></activity>
+        <activity android:name=".LocalList.ListDetailActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

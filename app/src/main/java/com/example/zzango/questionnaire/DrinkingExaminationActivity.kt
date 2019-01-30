@@ -74,98 +74,13 @@ class DrinkingExaminationActivity : RootActivity(){
 
         drinking_0_true.isChecked = true
 
-        drinking_0_true.setOnClickListener {
+        drinking_0_true.setOnCheckedChangeListener {
 
-            drinking_question_1.visibility = View.VISIBLE
-            drinking_question_2.visibility = View.VISIBLE
-            drinking_question_2_1.visibility = View.VISIBLE
-            drinking_question_2_2.visibility = View.VISIBLE
-            drinking_question_3.visibility = View.VISIBLE
-            drinking_question_3_sub.visibility = View.VISIBLE
-            drinking_question_4.visibility = View.VISIBLE
-            drinking_question_5.visibility = View.VISIBLE
-            drinking_question_6.visibility = View.VISIBLE
-            drinking_question_7.visibility = View.VISIBLE
-            drinking_question_8.visibility = View.VISIBLE
-            drinking_question_9.visibility = View.VISIBLE
-            drinking_question_10.visibility = View.VISIBLE
+            buttonView, isChecked ->
 
-            drinking_1_radio.visibility = View.VISIBLE
-            drinking_2_1_radio.visibility = View.VISIBLE
-            drinking_2_2_radio.visibility = View.VISIBLE
-            drinking_3_radio.visibility = View.VISIBLE
-            drinking_4_radio.visibility = View.VISIBLE
-            drinking_5_radio.visibility = View.VISIBLE
-            drinking_6_radio.visibility = View.VISIBLE
-            drinking_7_radio.visibility = View.VISIBLE
-            drinking_8_radio.visibility = View.VISIBLE
-            drinking_9_radio.visibility = View.VISIBLE
-            drinking_10_radio.visibility = View.VISIBLE
+            checkCondition(isChecked, drinking_question_constraintLayout)
 
         }
-
-        drinking_0_false.setOnClickListener {
-
-            drinking_question_1.visibility = View.GONE
-            drinking_question_2.visibility = View.GONE
-            drinking_question_2_1.visibility = View.GONE
-            drinking_question_2_2.visibility = View.GONE
-            drinking_question_3.visibility = View.GONE
-            drinking_question_3_sub.visibility = View.GONE
-            drinking_question_4.visibility = View.GONE
-            drinking_question_5.visibility = View.GONE
-            drinking_question_6.visibility = View.GONE
-            drinking_question_7.visibility = View.GONE
-            drinking_question_8.visibility = View.GONE
-            drinking_question_9.visibility = View.GONE
-            drinking_question_10.visibility = View.GONE
-
-            drinking_1_radio.visibility = View.GONE
-            drinking_2_1_radio.visibility = View.GONE
-            drinking_2_2_radio.visibility = View.GONE
-            drinking_3_radio.visibility = View.GONE
-            drinking_4_radio.visibility = View.GONE
-            drinking_5_radio.visibility = View.GONE
-            drinking_6_radio.visibility = View.GONE
-            drinking_7_radio.visibility = View.GONE
-            drinking_8_radio.visibility = View.GONE
-            drinking_9_radio.visibility = View.GONE
-            drinking_10_radio.visibility = View.GONE
-
-        }
-
-
-        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
-        if(intent.hasExtra("paper")){
-
-            var paper = intent.getSerializableExtra("paper") as Paper_DRINKING
-
-            GetPaper(paper)
-
-            try {
-                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
-
-                Signature.setImageBitmap(bmp)
-
-            }
-            catch (e:Exception)
-            {
-                println(e.message)
-            }
-        }else{
-            name_edit.text = MainActivity.login_user_name
-            first_serial.text = MainActivity.user_first_serial
-            last_serial.text = MainActivity.user_last_serial
-
-            if(MainActivity.chart != "SET3"){
-                drinking_examination_save.text = "다음"
-            }
-            if(MainActivity.chart == "SET0"){
-                drinking_examination_save.text = "저장"
-            }
-
-        }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         drinking_examination_save.setOnClickListener {
 
@@ -200,6 +115,37 @@ class DrinkingExaminationActivity : RootActivity(){
 
         }
 
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper_DRINKING
+
+            GetPaper(paper)
+
+            try {
+                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+
+                Signature.setImageBitmap(bmp)
+
+            }
+            catch (e:Exception)
+            {
+                println(e.message)
+            }
+        }else{
+            name_edit.text = MainActivity.login_user_name
+            first_serial.text = MainActivity.user_first_serial
+            last_serial.text = MainActivity.user_last_serial
+
+            if(MainActivity.chart != "SET3"){
+                drinking_examination_save.text = "다음"
+            }
+            if(MainActivity.chart == "SET0"){
+                drinking_examination_save.text = "저장"
+            }
+
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
 
@@ -679,33 +625,6 @@ class DrinkingExaminationActivity : RootActivity(){
 
         if(paper.sg2_spDrinkSum=="0"){
             drinking_0_false.isChecked = true
-            println(drinking_0_false.isChecked)
-            drinking_question_1.visibility = View.GONE
-            drinking_question_2.visibility = View.GONE
-            drinking_question_2_1.visibility = View.GONE
-            drinking_question_2_2.visibility = View.GONE
-            drinking_question_3.visibility = View.GONE
-            drinking_question_3_sub.visibility = View.GONE
-            drinking_question_4.visibility = View.GONE
-            drinking_question_5.visibility = View.GONE
-            drinking_question_6.visibility = View.GONE
-            drinking_question_7.visibility = View.GONE
-            drinking_question_8.visibility = View.GONE
-            drinking_question_9.visibility = View.GONE
-            drinking_question_10.visibility = View.GONE
-
-            drinking_1_radio.visibility = View.GONE
-            drinking_2_1_radio.visibility = View.GONE
-            drinking_2_2_radio.visibility = View.GONE
-            drinking_3_radio.visibility = View.GONE
-            drinking_4_radio.visibility = View.GONE
-            drinking_5_radio.visibility = View.GONE
-            drinking_6_radio.visibility = View.GONE
-            drinking_7_radio.visibility = View.GONE
-            drinking_8_radio.visibility = View.GONE
-            drinking_9_radio.visibility = View.GONE
-            drinking_10_radio.visibility = View.GONE
-
         }else if(paper.sg2_spDrinkSum=="1"){
             drinking_0_true.isChecked = true
         }

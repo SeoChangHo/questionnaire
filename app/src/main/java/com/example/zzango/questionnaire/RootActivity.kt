@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
 import android.support.constraint.Guideline
@@ -25,6 +26,14 @@ import kotlinx.android.synthetic.main.quit_alert.view.*
 open class RootActivity : AppCompatActivity() {
 
     var popup = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
+
+    }
 
     //radio button check change listener와 연동 bool은 라디오 버튼 체크 값, view는 라디오 버튼과 연계된 wrapper view
     fun checkCondition(bool: Boolean, view : View){
@@ -437,11 +446,23 @@ open class RootActivity : AppCompatActivity() {
 
                 if(view is ConstraintLayout) {
 
-                    (view as View).isFocusableInTouchMode = true
+                    if(view.id != R.id.smoking_question_constraintLayout && view.id != R.id.drinking_question_constraintLayout) {
 
-                    view.requestFocus()
+                        (view as View).isFocusableInTouchMode = true
 
-                    (view as View).isFocusableInTouchMode = false
+                        view.requestFocus()
+
+                        (view as View).isFocusableInTouchMode = false
+
+                    }else{
+
+                        (view.parent as View).isFocusableInTouchMode = true
+
+                        (view.parent as View).requestFocus()
+
+                        (view.parent as View).isFocusableInTouchMode = false
+
+                    }
 
                 }else {
 
@@ -455,11 +476,23 @@ open class RootActivity : AppCompatActivity() {
 
             }else{
 
-                (view.parent.parent as View).isFocusableInTouchMode = true
+                if((view.parent.parent as View).id != R.id.smoking_question_constraintLayout && (view.parent.parent as View).id != R.id.drinking_question_constraintLayout) {
 
-                (view.parent.parent as View).requestFocus()
+                    (view.parent.parent as View).isFocusableInTouchMode = true
 
-                (view.parent.parent as View).isFocusableInTouchMode = false
+                    (view.parent.parent as View).requestFocus()
+
+                    (view.parent.parent as View).isFocusableInTouchMode = false
+
+                }else{
+
+                    (view.parent.parent.parent as View).isFocusableInTouchMode = true
+
+                    (view.parent.parent.parent as View).requestFocus()
+
+                    (view.parent.parent.parent as View).isFocusableInTouchMode = false
+
+                }
 
             }
 

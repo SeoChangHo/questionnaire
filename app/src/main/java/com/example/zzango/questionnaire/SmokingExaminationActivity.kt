@@ -59,73 +59,13 @@ class SmokingExaminationActivity : RootActivity(){
 
         smoking_0_true.isChecked = true
 
-        smoking_0_false.setOnClickListener {
-            smoking_question_1.visibility = View.GONE
-            smoking_question_2.visibility = View.GONE
-            smoking_question_3.visibility = View.GONE
-            smoking_question_4.visibility = View.GONE
-            smoking_question_5.visibility = View.GONE
-            smoking_question_6.visibility = View.GONE
-            smoking_question_7.visibility = View.GONE
-            smoking_question_8.visibility = View.GONE
+        smoking_0_true.setOnCheckedChangeListener {
 
-            smoking_1_radio.visibility = View.GONE
-            smoking_2_radio.visibility = View.GONE
-            smoking_3_radio.visibility = View.GONE
-            smoking_4_radio.visibility = View.GONE
-            smoking_5_radio.visibility = View.GONE
-            smoking_6_radio.visibility = View.GONE
-            smoking_7_radio.visibility = View.GONE
-            smoking_8_radio.visibility = View.GONE
-        }
+            buttonView, isChecked ->
 
-        smoking_0_true.setOnClickListener {
-            smoking_question_1.visibility = View.VISIBLE
-            smoking_question_2.visibility = View.VISIBLE
-            smoking_question_3.visibility = View.VISIBLE
-            smoking_question_4.visibility = View.VISIBLE
-            smoking_question_5.visibility = View.VISIBLE
-            smoking_question_6.visibility = View.VISIBLE
-            smoking_question_7.visibility = View.VISIBLE
-            smoking_question_8.visibility = View.VISIBLE
-
-            smoking_1_radio.visibility = View.VISIBLE
-            smoking_2_radio.visibility = View.VISIBLE
-            smoking_3_radio.visibility = View.VISIBLE
-            smoking_4_radio.visibility = View.VISIBLE
-            smoking_5_radio.visibility = View.VISIBLE
-            smoking_6_radio.visibility = View.VISIBLE
-            smoking_7_radio.visibility = View.VISIBLE
-            smoking_8_radio.visibility = View.VISIBLE
-        }
-
-
-
-        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
-        if(intent.hasExtra("paper")){
-
-            var paper = intent.getSerializableExtra("paper") as Paper_SMOKING
-
-            GetPaper(paper)
-
-            try {
-                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
-                Signature.setImageBitmap(bmp)
-
-            }
-            catch (e:Exception)
-            {
-                println(e.message)
-            }
-        }else{
-
-            name_edit.text = MainActivity.login_user_name
-            first_serial.text = MainActivity.user_first_serial
-            last_serial.text = MainActivity.user_last_serial
-            smoking_examination_save.text = "다음"
+            checkCondition(isChecked, smoking_question_constraintLayout)
 
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         smoking_examination_save.setOnClickListener {
 
@@ -159,6 +99,32 @@ class SmokingExaminationActivity : RootActivity(){
             finish()
 
         }
+
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper_SMOKING
+
+            GetPaper(paper)
+
+            try {
+                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+                Signature.setImageBitmap(bmp)
+
+            }
+            catch (e:Exception)
+            {
+                println(e.message)
+            }
+        }else{
+
+            name_edit.text = MainActivity.login_user_name
+            first_serial.text = MainActivity.user_first_serial
+            last_serial.text = MainActivity.user_last_serial
+            smoking_examination_save.text = "다음"
+
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
 
@@ -369,24 +335,6 @@ class SmokingExaminationActivity : RootActivity(){
 
         if(paper.sg2_spSmokeSum=="0"){
             smoking_0_false.isChecked = true
-
-            smoking_question_1.visibility = View.GONE
-            smoking_question_2.visibility = View.GONE
-            smoking_question_3.visibility = View.GONE
-            smoking_question_4.visibility = View.GONE
-            smoking_question_5.visibility = View.GONE
-            smoking_question_6.visibility = View.GONE
-            smoking_question_7.visibility = View.GONE
-            smoking_question_8.visibility = View.GONE
-
-            smoking_1_radio.visibility = View.GONE
-            smoking_2_radio.visibility = View.GONE
-            smoking_3_radio.visibility = View.GONE
-            smoking_4_radio.visibility = View.GONE
-            smoking_5_radio.visibility = View.GONE
-            smoking_6_radio.visibility = View.GONE
-            smoking_7_radio.visibility = View.GONE
-            smoking_8_radio.visibility = View.GONE
 
         }else if(paper.sg2_spSmokeSum=="1"){
             smoking_0_true.isChecked = true

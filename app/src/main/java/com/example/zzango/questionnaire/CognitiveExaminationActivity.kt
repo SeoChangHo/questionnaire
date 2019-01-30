@@ -76,38 +76,6 @@ class CognitiveExaminationActivity : RootActivity(){
 
         sql_db = LocalDBhelper(this).writableDatabase
 
-        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
-        if(intent.hasExtra("paper")){
-
-            var paper = intent.getSerializableExtra("paper") as Paper_COGNITIVE
-
-            GetPaper(paper)
-
-            try {
-                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
-
-                Signature.setImageBitmap(bmp)
-
-            }
-            catch (e:Exception)
-            {
-                println(e.message)
-            }
-        }else{
-            name_edit.text = MainActivity.login_user_name
-            first_serial.text = MainActivity.user_first_serial
-            last_serial.text = MainActivity.user_last_serial
-            if(MainActivity.chart != "SET5"){
-                cognitive_examination_save.text = "다음"
-            }
-            if(MainActivity.chart == "SET0"){
-                cognitive_examination_save.text = "저장"
-            }
-
-        }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
         cognitive_examination_save.setOnClickListener {
 
             if(check()){
@@ -140,6 +108,37 @@ class CognitiveExaminationActivity : RootActivity(){
             finish()
 
         }
+
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            var paper = intent.getSerializableExtra("paper") as Paper_COGNITIVE
+
+            GetPaper(paper)
+
+            try {
+                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+
+                Signature.setImageBitmap(bmp)
+
+            }
+            catch (e:Exception)
+            {
+                println(e.message)
+            }
+        }else{
+            name_edit.text = MainActivity.login_user_name
+            first_serial.text = MainActivity.user_first_serial
+            last_serial.text = MainActivity.user_last_serial
+            if(MainActivity.chart != "SET5"){
+                cognitive_examination_save.text = "다음"
+            }
+            if(MainActivity.chart == "SET0"){
+                cognitive_examination_save.text = "저장"
+            }
+
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
 
