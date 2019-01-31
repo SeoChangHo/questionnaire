@@ -239,7 +239,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog.setCanceledOnTouchOutside(false)
             dialog_view.user_login_button.isClickable = false
 
-//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+//            //////////😎😎😎서명을 위한 공간😎😎😎/////// ///
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
             canvasView = dialog_view.canvas
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
