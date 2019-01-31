@@ -229,8 +229,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             var dialog = AlertDialog.Builder(context).create()
             var dialog_view = LayoutInflater.from(context).inflate(R.layout.activity_user_login, null)
-            MainActivity.alert_view = dialog_view
-            MainActivity.ValidationBool = false
+            alert_view = dialog_view
+            ValidationBool = false
+            canvas_motion = null
 
             dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
@@ -464,10 +465,15 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 view.text = "사용자 등록하기"
                 view2.setImageResource(R.drawable.regi)
 
+                canvas_motion = null
+
                 dialog.dismiss()
             }
 
             cancel.setOnClickListener {
+
+                canvas_motion = null
+
                 dialog.dismiss()
             }
 
