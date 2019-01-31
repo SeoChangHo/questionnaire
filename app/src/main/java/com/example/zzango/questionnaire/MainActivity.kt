@@ -22,10 +22,7 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -54,7 +51,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         UserCheck()
 
@@ -233,15 +229,14 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             var dialog = AlertDialog.Builder(context).create()
             var dialog_view = LayoutInflater.from(context).inflate(R.layout.activity_user_login, null)
-            MainActivity.onTouch = false
+            MainActivity.alert_view = dialog_view
+            MainActivity.ValidationBool = false
 
             dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
             dialog.setView(dialog_view)
             dialog.setCanceledOnTouchOutside(false)
             dialog_view.user_login_button.isClickable = false
-
-            var ValidationBool:Boolean = false
 
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
@@ -252,13 +247,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             dialog_view.user_name.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
-                    if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != "")
-                    {
-                        if(ValidationBool)
-                        {
-                            dialog_view.user_login_button.isClickable = true
-                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
-                        }
+                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && MainActivity.canvas_motion != null){
+                        dialog_view.user_login_button.isClickable = true
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
                         dialog_view.user_login_button.isClickable = false
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
@@ -281,14 +272,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
                 override fun afterTextChanged(s: Editable?) {
-                    if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != ""){
-
-                        if(ValidationBool)
-                        {
-                            dialog_view.user_login_button.isClickable = true
-                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
-                        }
-
+                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && MainActivity.canvas_motion != null){
+                        dialog_view.user_login_button.isClickable = true
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
                         dialog_view.user_login_button.isClickable = false
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
@@ -328,11 +314,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             dialog_view.last_serial.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
-                    if(dialog_view.user_name.text.toString() != "" && dialog_view.first_serial.text.toString() != "" && dialog_view.last_serial.text.toString() != "" ){
-                        if(ValidationBool) {
-                            dialog_view.user_login_button.isClickable = true
-                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
-                        }
+                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && MainActivity.canvas_motion != null){
+                        dialog_view.user_login_button.isClickable = true
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
                         dialog_view.user_login_button.isClickable = false
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
@@ -351,106 +335,98 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             val login = dialog_view.findViewById(R.id.user_login_button) as Button
             login.setOnClickListener{
 
-                if(MainActivity.onTouch == true){
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+                var bitmap:Bitmap = Bitmap.createBitmap(canvasView.width, canvasView.height, Bitmap.Config.ARGB_8888)
+                var canvas:Canvas = Canvas(bitmap)
+                canvasView.draw(canvas)
 
-                    //////////😎😎😎서명을 위한 공간😎😎😎//////////
-                    //////////😎😎😎서명을 위한 공간😎😎😎//////////
-                    var bitmap:Bitmap = Bitmap.createBitmap(canvasView.width, canvasView.height, Bitmap.Config.ARGB_8888)
-                    var canvas:Canvas = Canvas(bitmap)
-                    canvasView.draw(canvas)
+                var stream = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                //MainActivity.user_signature = bitmap
 
-                    var stream = ByteArrayOutputStream()
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
-                    //MainActivity.user_signature = bitmap
-
-                    MainActivity.user_stream = stream.toByteArray()
-                    //////////😎😎😎서명을 위한 공간😎😎😎//////////
-                    //////////😎😎😎서명을 위한 공간😎😎😎//////////
+                MainActivity.user_stream = stream.toByteArray()
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
 
 
-                    MainActivity.login_user_name = dialog_view.user_name.text.toString()
-                    MainActivity.user_first_serial = dialog_view.first_serial.text.toString()
-                    MainActivity.user_last_serial = dialog_view.last_serial.text.toString()
+                MainActivity.login_user_name = dialog_view.user_name.text.toString()
+                MainActivity.user_first_serial = dialog_view.first_serial.text.toString()
+                MainActivity.user_last_serial = dialog_view.last_serial.text.toString()
 
-                    chart(user_first_serial)
+                chart(user_first_serial)
 
-                    Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
-                    view.text = MainActivity.login_user_name+"님"
-                    view2.setImageResource(R.drawable.exit)
+                Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
+                view.text = MainActivity.login_user_name+"님"
+                view2.setImageResource(R.drawable.exit)
+                dialog.dismiss()
+
+                //login_appbar_loading_progress.visibility = View.VISIBLE
+                //login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
+                //사용자
+                var dialog = AlertDialog.Builder(context).create()
+                var dialog_view = LayoutInflater.from(context).inflate(R.layout.notice_alert, null)
+
+                //다이얼로그 뒤로가기 버튼 막기
+                dialog.setCancelable(false)
+
+                dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+                dialog.setView(dialog_view)
+                dialog.setCanceledOnTouchOutside(false)
+
+                val ok = dialog_view.findViewById(R.id.user_ok) as Button
+                val cancel = dialog_view.findViewById(R.id.user_cancel) as Button
+                val title = dialog_view.findViewById(R.id.notice_Title) as TextView
+                val text = dialog_view.findViewById(R.id.notice_textView) as TextView
+                val text2 = dialog_view.findViewById(R.id.notice_textView2) as TextView
+                val text3 = dialog_view.findViewById(R.id.notice_textView3) as TextView
+                val text4 = dialog_view.findViewById(R.id.notice_textView4) as TextView
+                val text5 = dialog_view.findViewById(R.id.notice_textView5) as TextView
+
+
+                title.setText(login_user_name+"님")
+
+                if(MainActivity.chart == "SET1"){
+                    text2.visibility = View.GONE
+                    text3.visibility = View.GONE
+                    text4.visibility = View.GONE
+                    text5.visibility = View.GONE
+                }else if(MainActivity.chart == "SET2"){
+                    text2.visibility = View.GONE
+                    text4.visibility = View.GONE
+                    text5.visibility = View.GONE
+                }else if(MainActivity.chart == "SET3"){
+                    text2.visibility = View.GONE
+                    text5.visibility = View.GONE
+                }else if(MainActivity.chart == "SET4"){
+                    text3.visibility = View.GONE
+                    text4.visibility = View.GONE
+                }else if(MainActivity.chart == "SET5"){
+                    text3.visibility = View.GONE
+                    text4.visibility = View.GONE
+                    text5.visibility = View.GONE
+                }else if(MainActivity.chart == "SET6"){
+
+                }
+
+                dialog.show()
+
+                ok.setOnClickListener {
+
                     dialog.dismiss()
 
-                    //login_appbar_loading_progress.visibility = View.VISIBLE
-                    //login_appbar_loading_progress_bg.visibility = View.VISIBLE
+                    Handler().postDelayed({
+                        startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                    },125)
 
-                    //사용자
-                    var dialog = AlertDialog.Builder(context).create()
-                    var dialog_view = LayoutInflater.from(context).inflate(R.layout.notice_alert, null)
+                }
 
-                    //다이얼로그 뒤로가기 버튼 막기
-                    dialog.setCancelable(false)
-
-                    dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-                    dialog.setView(dialog_view)
-                    dialog.setCanceledOnTouchOutside(false)
-
-                    val ok = dialog_view.findViewById(R.id.user_ok) as Button
-                    val cancel = dialog_view.findViewById(R.id.user_cancel) as Button
-                    val title = dialog_view.findViewById(R.id.notice_Title) as TextView
-                    val text = dialog_view.findViewById(R.id.notice_textView) as TextView
-                    val text2 = dialog_view.findViewById(R.id.notice_textView2) as TextView
-                    val text3 = dialog_view.findViewById(R.id.notice_textView3) as TextView
-                    val text4 = dialog_view.findViewById(R.id.notice_textView4) as TextView
-                    val text5 = dialog_view.findViewById(R.id.notice_textView5) as TextView
-
-
-                    title.setText(login_user_name+"님")
-
-                    if(MainActivity.chart == "SET1"){
-                        text2.visibility = View.GONE
-                        text3.visibility = View.GONE
-                        text4.visibility = View.GONE
-                        text5.visibility = View.GONE
-                    }else if(MainActivity.chart == "SET2"){
-                        text2.visibility = View.GONE
-                        text4.visibility = View.GONE
-                        text5.visibility = View.GONE
-                    }else if(MainActivity.chart == "SET3"){
-                        text2.visibility = View.GONE
-                        text5.visibility = View.GONE
-                    }else if(MainActivity.chart == "SET4"){
-                        text3.visibility = View.GONE
-                        text4.visibility = View.GONE
-                    }else if(MainActivity.chart == "SET5"){
-                        text3.visibility = View.GONE
-                        text4.visibility = View.GONE
-                        text5.visibility = View.GONE
-                    }else if(MainActivity.chart == "SET6"){
-
-                    }
-
-                    dialog.show()
-
-                    ok.setOnClickListener {
-
-                        dialog.dismiss()
-
-                        Handler().postDelayed({
-                            startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                        },125)
-
-                    }
-
-                    cancel.setOnClickListener {
-                        MainActivity.chart = PaperArray.SetList.SET0
-                        dialog.dismiss()
-                    }
-
-                }else{
-
-                    Toast.makeText(context, "서명을 작성해 주세요.", Toast.LENGTH_SHORT).show()
-
+                cancel.setOnClickListener {
+                    MainActivity.chart = PaperArray.SetList.SET0
+                    dialog.dismiss()
                 }
 
             }
@@ -674,7 +650,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var chart = ""
         var manager_name = ""
         var exam_no = ""
-        var onTouch = false
+        @SuppressLint("StaticFieldLeak")
+        var alert_view : View? = null
+        var ValidationBool = false
+        var canvas_motion : MotionEvent? = null
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{

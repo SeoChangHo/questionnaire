@@ -6,6 +6,8 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import com.example.zzango.questionnaire.MainActivity
+import com.example.zzango.questionnaire.R
+import kotlinx.android.synthetic.main.activity_user_login.view.*
 
 class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(context, attrs) {
 
@@ -72,7 +74,15 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
         val x = event.x
         val y = event.y
 
-        MainActivity.onTouch = true
+        MainActivity.canvas_motion = event
+
+        if(MainActivity.alert_view!!.user_name.text.toString() != "" && MainActivity.ValidationBool && MainActivity.canvas_motion != null){
+            MainActivity.alert_view!!.user_login_button.isClickable = true
+            MainActivity.alert_view!!.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+        }else{
+            MainActivity.alert_view!!.user_login_button.isClickable = false
+            MainActivity.alert_view!!.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+        }
 
         when(event.action) {
             MotionEvent.ACTION_DOWN -> {
