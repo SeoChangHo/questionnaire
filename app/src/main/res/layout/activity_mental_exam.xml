@@ -171,7 +171,7 @@
                 android:layout_marginTop="@dimen/blue_text_top_margin"
                 android:text="지난 2주 동안 아래 나열되는 증상들에 얼마나 자주 시달렸습니까?"
                 android:textColor="@color/mainBlue"
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

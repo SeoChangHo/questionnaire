@@ -386,7 +386,7 @@
                     android:id="@+id/textView94"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="동안, "
+                    android:text=" 동안, "
                     android:textSize="20dp"
                     app:layout_constraintStart_toEndOf="@+id/textView93"
                     app:layout_constraintTop_toTopOf="@+id/textView93" />
@@ -485,7 +485,7 @@
                     android:id="@+id/textView101"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="일과 관련된 고강도 신체 활동"
+                    android:text=" 일과 관련된 고강도 신체 활동"
                     android:textSize="20dp"
                     app:layout_constraintStart_toEndOf="@+id/textView100"
                     app:layout_constraintTop_toTopOf="@+id/textView100" />
@@ -495,7 +495,7 @@
                     android:id="@+id/textView102"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="을"
+                    android:text="을 "
                     android:textSize="20dp"
                     app:layout_constraintStart_toEndOf="@+id/textView101"
                     app:layout_constraintTop_toTopOf="@+id/textView101" />
@@ -581,7 +581,7 @@
                 android:id="@+id/textView108"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="은 최소 10분 이상 계속 숨이 약간"
+                android:text="은 최소 10분 이상 계속 숨이 약간 "
                 android:textSize="20dp"
                 app:layout_constraintStart_toEndOf="@+id/textView107"
                 app:layout_constraintTop_toTopOf="@+id/textView107" />
@@ -617,7 +617,7 @@
                 android:id="@+id/textView111"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="을"
+                android:text="을 "
                 android:textSize="20dp"
                 app:layout_constraintStart_toEndOf="@+id/textView110"
                 app:layout_constraintTop_toTopOf="@id/textView110" />
@@ -1626,7 +1626,7 @@
                 android:id="@+id/textView180"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="여가활동"
+                android:text=" 여가활동"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView179"
@@ -2082,7 +2082,7 @@
                 android:id="@+id/textView215"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="역기, 철봉 등의 근력운동을"
+                android:text=" 역기, 철봉 등의 근력운동을"
                 android:textSize="20dp"
                 app:layout_constraintStart_toEndOf="@id/textView214"
                 app:layout_constraintTop_toTopOf="@id/textView214"/>

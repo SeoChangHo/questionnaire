@@ -876,7 +876,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="11. 이전에 잘 다루던 기구의 사용이 서툴러졌다. (세탁기, 전기밥솥, 경우기 등)"
+                android:text="11. 이전에 잘 다루던 기구의 사용이 서툴러졌다. (세탁기, 전기밥솥, 경운기 등)"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
