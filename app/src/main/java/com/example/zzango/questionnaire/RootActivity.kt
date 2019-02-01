@@ -86,7 +86,7 @@ open class RootActivity : AppCompatActivity() {
     }
 
     //진행바 제어하는 메서드
-    fun controlProgress(context : Context, layout : ConstraintLayout, view : View, guideline : Guideline, guideline2 : Guideline, guideline3: Guideline, guideline4: Guideline, guideline5: Guideline, guideline6: Guideline, guideline7: Guideline, guideline8: Guideline){
+    fun controlProgress(context : Context, layout : ConstraintLayout, layout2 : ConstraintLayout, view : View, guideline : Guideline, guideline2 : Guideline, guideline3: Guideline, guideline4: Guideline, guideline5: Guideline, guideline6: Guideline, guideline7: Guideline, guideline8: Guideline){
 
         when(MainActivity.chart){
 
@@ -137,7 +137,7 @@ open class RootActivity : AppCompatActivity() {
 
                     else ->{
 
-                        layout.visibility = View.GONE
+                        layout2.visibility = View.GONE
 
                     }
 
@@ -150,7 +150,7 @@ open class RootActivity : AppCompatActivity() {
 
             }
 
-            "SET1" -> { view.visibility = View.GONE }
+            "SET1" -> { layout2.visibility = View.GONE }
 
             "SET2" -> {
 
