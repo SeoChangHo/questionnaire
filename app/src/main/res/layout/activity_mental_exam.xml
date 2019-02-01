@@ -8,7 +8,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
         android:overScrollMode="never"
         android:fillViewport="true">
 
@@ -23,6 +22,7 @@
                 android:id="@+id/progress_constraintLayout"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintBottom_toTopOf="@+id/imageView17"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
                 android:background="@color/mainBlue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/progress_constraintLayout" />
 
             <TextView
                 android:id="@+id/textView69"
