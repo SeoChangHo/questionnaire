@@ -739,7 +739,7 @@ class OralExaminationActivity : RootActivity() {
 
 
         PaperArray.PaperArrFunction.ArrayListInit()
-        exam_no = MainActivity.exam_no
+        exam_no = System.currentTimeMillis().toString()
 
 
         PaperArray.PaperList.Arr_ORAL!!.add(Paper_ORAL(

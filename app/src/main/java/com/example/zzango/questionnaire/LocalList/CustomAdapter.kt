@@ -136,16 +136,9 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
         }
 
 
-
-
-
         var date = SimpleDateFormat("yyyy-MM-dd").format(Date(paper.exam_no.toLong()))
 
-
-
         p0.txtDate.text = date
-
-
 
         //Recyclerview Item Click
         p0.constraint.setOnClickListener{
