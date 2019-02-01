@@ -3482,7 +3482,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="50dp"
-                android:background="@color/mainBlue"
+                android:background="@drawable/button_main_blue"
                 android:text="확인"
                 android:textColor="@color/backGround"
                 android:textSize="20dp"
