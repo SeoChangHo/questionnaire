@@ -205,7 +205,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/user_login_button"
-            android:clickable="false"
+            android:enabled="false"
             android:text="확인"
             android:textColor="@color/backGround"
             android:textSize="20dp"

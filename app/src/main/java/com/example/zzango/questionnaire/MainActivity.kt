@@ -142,10 +142,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         dialog_view.login_id.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
-                    dialog_view.Login.isClickable = true
+                    dialog_view.Login.isEnabled = true
                     dialog_view.Login.setBackgroundResource(R.drawable.user_login_button_blue)
                 }else{
-                    dialog_view.Login.isClickable = false
+                    dialog_view.Login.isEnabled = false
                     dialog_view.Login.setBackgroundResource(R.drawable.user_login_button)
                 }
             }
@@ -162,10 +162,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         dialog_view.login_password.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if(dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != ""){
-                    dialog_view.Login.isClickable = true
+                    dialog_view.Login.isEnabled = true
                     dialog_view.Login.setBackgroundResource(R.drawable.user_login_button_blue)
                 }else{
-                    dialog_view.Login.isClickable = false
+                    dialog_view.Login.isEnabled = false
                     dialog_view.Login.setBackgroundResource(R.drawable.user_login_button)
                 }
             }
