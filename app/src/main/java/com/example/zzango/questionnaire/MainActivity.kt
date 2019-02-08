@@ -123,8 +123,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var dialog = AlertDialog.Builder(this).create()
         var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_login, null)
 
-        dialog_view.Login.isClickable = false
-
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
