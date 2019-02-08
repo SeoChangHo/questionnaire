@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     var popup = false
     lateinit var canvasView: CanvasView
     var sql_db : SQLiteDatabase? = null
+    var validationInside = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -237,7 +238,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             dialog.setView(dialog_view)
             dialog.setCanceledOnTouchOutside(false)
-            dialog_view.user_login_button.isClickable = false
+            dialog_view.user_login_button.isEnabled = false
 
 //            //////////😎😎😎서명을 위한 공간😎😎😎/////// ///
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
@@ -249,10 +250,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog_view.user_name.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
                     if(dialog_view.user_name.text.toString() != "" && ValidationBool && MainActivity.canvas_motion != null){
-                        dialog_view.user_login_button.isClickable = true
+                        dialog_view.user_login_button.isEnabled = true
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
-                        dialog_view.user_login_button.isClickable = false
+                        dialog_view.user_login_button.isEnabled = false
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
@@ -274,10 +275,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 override fun afterTextChanged(s: Editable?) {
                     if(dialog_view.user_name.text.toString() != "" && ValidationBool && MainActivity.canvas_motion != null){
-                        dialog_view.user_login_button.isClickable = true
+                        dialog_view.user_login_button.isEnabled = true
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
-                        dialog_view.user_login_button.isClickable = false
+                        dialog_view.user_login_button.isEnabled = false
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
@@ -291,23 +292,23 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                         var Jumin = dialog_view.first_serial.text.toString()
 
-                        ValidationBool = JuminValidation(Jumin, context)
+                        validationInside = JuminValidation(Jumin, context)
 
-                        if(ValidationBool)
+                        if(validationInside)
                         {
                             dialog_view.last_serial.requestFocus()
                         }
                         else
                         {
-                            dialog_view.user_login_button.isClickable = false
+                            dialog_view.user_login_button.isEnabled = false
                             dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                         }
 
                     }
                     else if(s.length<6)
                     {
-                        ValidationBool = false
-                        dialog_view.user_login_button.isClickable = false
+                        validationInside = false
+                        dialog_view.user_login_button.isEnabled = false
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
@@ -316,10 +317,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog_view.last_serial.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
                     if(dialog_view.user_name.text.toString() != "" && ValidationBool && MainActivity.canvas_motion != null){
-                        dialog_view.user_login_button.isClickable = true
+                        dialog_view.user_login_button.isEnabled = true
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
-                        dialog_view.user_login_button.isClickable = false
+                        dialog_view.user_login_button.isEnabled = false
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
                     }
                 }
@@ -329,7 +330,19 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    if(s!!.length == 1){
 
+                        ValidationBool = true
+                        dialog_view.user_login_button.isEnabled = true
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+
+                    }
+                    else if(s.length<1)
+                    {
+                        ValidationBool = false
+                        dialog_view.user_login_button.isEnabled = false
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                    }
                 }
             })
 
