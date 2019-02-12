@@ -79,6 +79,7 @@ class ListActivity : Activity() {
 
             var removeArr = ArrayList<Paper>()
             var SaveArr = ArrayList<Any>()
+            var SetArr = ArrayList<String>()
 
 
             for(item in papers)
@@ -216,6 +217,8 @@ class ListActivity : Activity() {
                     }
                 }
                 SaveArr.add(CategoryArr)
+                SetArr.add(removeArr[i].setno)
+
             }
 
             println("**********SAVE ARRAY**********")
@@ -223,7 +226,7 @@ class ListActivity : Activity() {
             println("**********SAVE ARRAY**********")
 
 
-            UploadPaper(SaveArr, 0, SaveArr.size)
+            UploadPaper(SaveArr, SetArr, 0, SaveArr.size)
 
 
 
@@ -258,11 +261,13 @@ class ListActivity : Activity() {
 
 
     //재귀호출함수
-    fun UploadPaper(SaveArr:ArrayList<Any>, startIndex:Int, TotalIndex:Int)
+    fun UploadPaper(SaveArr:ArrayList<Any>, SetArr:ArrayList<String>, startIndex:Int, TotalIndex:Int)
     {
         println("업로드 들어옴")
         println("Array의 크기는 "+TotalIndex.toString()+" 개 입니다.")
         println("현재는 "+startIndex.toString()+" 번째 입니다.")
+
+        println("세트번호는 "+SetArr[startIndex]+" 입니다.")
 
         window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
         login_appbar_loading_progress_bg.visibility = View.VISIBLE
@@ -271,7 +276,10 @@ class ListActivity : Activity() {
 
 
 
+        var body = ArrayList<Any>()
 
+        body.add(SetArr[startIndex])
+        body.add(SaveArr[startIndex])
 
 
         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
@@ -279,7 +287,7 @@ class ListActivity : Activity() {
         login_appbar_loading_progress.visibility = View.GONE
 
 
-        OracleUtill().save_papers().savePapersServer(SaveArr[startIndex]).enqueue(object : Callback<String> {
+        OracleUtill().save_papers().savePapersServer(body).enqueue(object : Callback<String> {
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
 
@@ -294,18 +302,14 @@ class ListActivity : Activity() {
 
                     } else {
 
-
-
-
                         if(startIndex+1<TotalIndex)
                         {
                             //할게 더 남아서 재귀호출
-                            UploadPaper(SaveArr, startIndex+1, TotalIndex)
+                            UploadPaper(SaveArr, SetArr, startIndex+1, TotalIndex)
                         }
                         else
                         {
                             //끝
-
                             println("모든 업로드가 완료되었습니다.")
 
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
@@ -322,7 +326,6 @@ class ListActivity : Activity() {
                             select_all_checkbox.isChecked = false
                             constraintLayout_bottom.visibility = View.GONE
                         }
-
                     }
                 }
             }
