@@ -872,11 +872,11 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.ck3_6}', '${columnValue.ck3_6_1}', '${columnValue.ck3_6_2}', '${columnValue.ck3_6_3}', '${columnValue.ck3_6_4}', '${columnValue.ck3_6_5}', '${columnValue.ck3_6_kita}'" +
                 ", '${columnValue.ck4_1}', '${columnValue.ck4_2}', '${columnValue.ck4_3}', '${columnValue.ck4_4}'" +
                 ", '${columnValue.ck4_5}', '${columnValue.ck4_6}', '${columnValue.ck4_7}', '${columnValue.ck4_8}'" +
-                ", '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck5_1}'" +
-                ", '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}'" +
-                ", '${columnValue.ck6_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}'" +
-                ", '${columnValue.ck7_1}', '${columnValue.ck7_1}', '${columnValue.ck7_1}', '${columnValue.ck7_1}'" +
-                ", '${columnValue.ck7_1}', '${columnValue.ck7_1}', '${columnValue.ck8_1}', '${columnValue.ck8_2}'" +
+                ", '${columnValue.ck5_1}', '${columnValue.ck5_2}', '${columnValue.ck5_3}', '${columnValue.ck5_4}'" +
+                ", '${columnValue.ck5_5}', '${columnValue.ck5_6}', '${columnValue.ck6_1}', '${columnValue.ck6_2}'" +
+                ", '${columnValue.ck6_3}', '${columnValue.ck6_4}', '${columnValue.ck6_5}', '${columnValue.ck6_6}'" +
+                ", '${columnValue.ck7_1}', '${columnValue.ck7_2}', '${columnValue.ck7_3}', '${columnValue.ck7_4}'" +
+                ", '${columnValue.ck7_5}', '${columnValue.ck7_6}', '${columnValue.ck8_1}', '${columnValue.ck8_2}'" +
                 ", '${columnValue.ck9_1}', '${columnValue.ck9_2}', '${columnValue.ck10}', '${columnValue.ck11}'" +
                 ", '${columnValue.ck12}', '${columnValue.ck13}', '${columnValue.ck14}');")
     }
