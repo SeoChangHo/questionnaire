@@ -569,11 +569,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else if(oral_9_etc.isChecked) {
 
-            if(oral_9_count.text.toString()=="0"){
-                oral_9 = "77"
-            }else{
-                oral_9 = oral_9_count.text.toString()
-            }
+            oral_9 = oral_9_count.text.toString()
 
         }else{
 

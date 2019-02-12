@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.support.constraint.ConstraintLayout
+import android.support.v4.content.ContextCompat
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -659,16 +660,19 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                                 data.getString(data.getColumnIndex("ck5_3")),
                                 data.getString(data.getColumnIndex("ck5_4")),
                                 data.getString(data.getColumnIndex("ck5_5")),
+                                data.getString(data.getColumnIndex("ck5_6")),
                                 data.getString(data.getColumnIndex("ck6_1")),
                                 data.getString(data.getColumnIndex("ck6_2")),
                                 data.getString(data.getColumnIndex("ck6_3")),
                                 data.getString(data.getColumnIndex("ck6_4")),
                                 data.getString(data.getColumnIndex("ck6_5")),
+                                data.getString(data.getColumnIndex("ck6_6")),
                                 data.getString(data.getColumnIndex("ck7_1")),
                                 data.getString(data.getColumnIndex("ck7_2")),
                                 data.getString(data.getColumnIndex("ck7_3")),
                                 data.getString(data.getColumnIndex("ck7_4")),
                                 data.getString(data.getColumnIndex("ck7_5")),
+                                data.getString(data.getColumnIndex("ck7_6")),
                                 data.getString(data.getColumnIndex("ck8_1")),
                                 data.getString(data.getColumnIndex("ck8_2")),
                                 data.getString(data.getColumnIndex("ck9_1")),

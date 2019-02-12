@@ -14,6 +14,7 @@ import android.widget.Toast
 import com.example.zzango.questionnaire.LocalDBhelper
 import com.example.zzango.questionnaire.OracleUtill
 import com.example.zzango.questionnaire.R
+import com.example.zzango.questionnaire.Signature.BitmapFun
 import kotlinx.android.synthetic.main.activity_list.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -788,16 +789,19 @@ class ListActivity : Activity() {
                     data.getString(data.getColumnIndex("ck5_3")),
                     data.getString(data.getColumnIndex("ck5_4")),
                     data.getString(data.getColumnIndex("ck5_5")),
+                    data.getString(data.getColumnIndex("ck5_6")),
                     data.getString(data.getColumnIndex("ck6_1")),
                     data.getString(data.getColumnIndex("ck6_2")),
                     data.getString(data.getColumnIndex("ck6_3")),
                     data.getString(data.getColumnIndex("ck6_4")),
                     data.getString(data.getColumnIndex("ck6_5")),
+                    data.getString(data.getColumnIndex("ck6_6")),
                     data.getString(data.getColumnIndex("ck7_1")),
                     data.getString(data.getColumnIndex("ck7_2")),
                     data.getString(data.getColumnIndex("ck7_3")),
                     data.getString(data.getColumnIndex("ck7_4")),
                     data.getString(data.getColumnIndex("ck7_5")),
+                    data.getString(data.getColumnIndex("ck7_6")),
                     data.getString(data.getColumnIndex("ck8_1")),
                     data.getString(data.getColumnIndex("ck8_2")),
                     data.getString(data.getColumnIndex("ck9_1")),
