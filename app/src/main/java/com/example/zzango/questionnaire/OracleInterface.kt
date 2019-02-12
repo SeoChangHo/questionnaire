@@ -54,6 +54,6 @@ interface OracleInterface {
 
     @POST("https://finepaperweight.herokuapp.com/SavePapers")
     @Headers("Content-type: application/json")
-    fun savePapersServer(@Body examInfo: ArrayList<Any>) : Call<String>
+    fun savePapersServer(@Body examInfo: Any) : Call<String>
 
 }
