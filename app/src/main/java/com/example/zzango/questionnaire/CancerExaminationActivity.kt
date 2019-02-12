@@ -96,19 +96,16 @@ class CancerExaminationActivity : RootActivity(){
                          @SerializedName("ck5_3") @Expose var ck5_3 : String,
                          @SerializedName("ck5_4") @Expose var ck5_4 : String,
                          @SerializedName("ck5_5") @Expose var ck5_5 : String,
-                         @SerializedName("ck5_6") @Expose var ck5_6 : String,
                          @SerializedName("ck6_1") @Expose var ck6_1 : String,
                          @SerializedName("ck6_2") @Expose var ck6_2 : String,
                          @SerializedName("ck6_3") @Expose var ck6_3 : String,
                          @SerializedName("ck6_4") @Expose var ck6_4 : String,
                          @SerializedName("ck6_5") @Expose var ck6_5 : String,
-                         @SerializedName("ck6_6") @Expose var ck6_6 : String,
                          @SerializedName("ck7_1") @Expose var ck7_1 : String,
                          @SerializedName("ck7_2") @Expose var ck7_2 : String,
                          @SerializedName("ck7_3") @Expose var ck7_3 : String,
                          @SerializedName("ck7_4") @Expose var ck7_4 : String,
                          @SerializedName("ck7_5") @Expose var ck7_5 : String,
-                         @SerializedName("ck7_6") @Expose var ck7_6 : String,
                          @SerializedName("ck8_1") @Expose var ck8_1 : String,
                          @SerializedName("ck8_2") @Expose var ck8_2 : String,
                          @SerializedName("ck9_1") @Expose var ck9_1 : String,
@@ -497,19 +494,16 @@ class CancerExaminationActivity : RootActivity(){
         var ck5_3 = ""
         var ck5_4 = ""
         var ck5_5 = ""
-        var ck5_6 = ""
         var ck6_1 = ""
         var ck6_2 = ""
         var ck6_3 = ""
         var ck6_4 = ""
         var ck6_5 = ""
-        var ck6_6 = ""
         var ck7_1 = ""
         var ck7_2 = ""
         var ck7_3 = ""
         var ck7_4 = ""
         var ck7_5 = ""
-        var ck7_6 = ""
         var ck8_1 = ""
         var ck8_2 = ""
         var ck9_1 = ""
@@ -834,11 +828,6 @@ class CancerExaminationActivity : RootActivity(){
             ck5_5 = "1"
         }
 
-        if(cancer_5_6_checkBox.isChecked){
-            ck5_6 = "2"
-        }else{
-            ck5_6 = "1"
-        }
 
         if(cancer_6_1_checkBox.isChecked){
             ck6_1 = "2"
@@ -868,12 +857,6 @@ class CancerExaminationActivity : RootActivity(){
             ck6_5 = "2"
         }else{
             ck6_5 = "1"
-        }
-
-        if(cancer_6_6_checkBox.isChecked){
-            ck6_6 = "2"
-        }else{
-            ck6_6 = "1"
         }
 
         if(cancer_7_1_checkBox.isChecked){
@@ -906,11 +889,6 @@ class CancerExaminationActivity : RootActivity(){
             ck7_5 = "1"
         }
 
-        if(cancer_7_6_checkBox.isChecked){
-            ck7_6 = "2"
-        }else{
-            ck7_6 = "1"
-        }
 
         if(cancer_8_1.isChecked){
             ck8_1 = "1"
@@ -1020,8 +998,8 @@ class CancerExaminationActivity : RootActivity(){
                 ck3_5, ck3_5_1, ck3_5_2, ck3_5_3, ck3_5_4, ck3_5_5,
                 ck3_6, ck3_6_1, ck3_6_2, ck3_6_3, ck3_6_4, ck3_6_5, ck3_6_kita,
                 ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6,
-                ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck5_6, ck6_1, ck6_2, ck6_3, ck6_4,
-                ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2, ck9_1, ck9_2,
+                ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck6_1, ck6_2, ck6_3, ck6_4,
+                ck6_5, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck8_1, ck8_2, ck9_1, ck9_2,
                 ck10, ck11, ck12, ck13, ck14
         ))
 
@@ -1345,9 +1323,6 @@ class CancerExaminationActivity : RootActivity(){
         if(paper.ck5_5 == "2"){
             cancer_5_5_checkBox.isChecked = true
         }
-        if(paper.ck5_6 == "2"){
-            cancer_5_6_checkBox.isChecked = true
-        }
 
 
         if(paper.ck6_1 == "2"){
@@ -1365,9 +1340,6 @@ class CancerExaminationActivity : RootActivity(){
         if(paper.ck6_5 == "2"){
             cancer_6_5_checkBox.isChecked = true
         }
-        if(paper.ck6_6 == "2"){
-            cancer_6_6_checkBox.isChecked = true
-        }
 
         if(paper.ck7_1 == "2"){
             cancer_7_1_checkBox.isChecked = true
@@ -1383,9 +1355,6 @@ class CancerExaminationActivity : RootActivity(){
         }
         if(paper.ck7_5 == "2"){
             cancer_7_5_checkBox.isChecked = true
-        }
-        if(paper.ck7_6 == "2"){
-            cancer_7_6_checkBox.isChecked = true
         }
 
 

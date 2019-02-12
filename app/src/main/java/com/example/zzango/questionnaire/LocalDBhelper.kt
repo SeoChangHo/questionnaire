@@ -581,19 +581,16 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " ck5_3 TEXT," +
                 " ck5_4 TEXT," +
                 " ck5_5 TEXT," +
-                " ck5_6 TEXT," +
                 " ck6_1 TEXT," +
                 " ck6_2 TEXT," +
                 " ck6_3 TEXT," +
                 " ck6_4 TEXT," +
                 " ck6_5 TEXT," +
-                " ck6_6 TEXT," +
                 " ck7_1 TEXT," +
                 " ck7_2 TEXT," +
                 " ck7_3 TEXT," +
                 " ck7_4 TEXT," +
                 " ck7_5 TEXT," +
-                " ck7_6 TEXT," +
                 " ck8_1 TEXT," +
                 " ck8_2 TEXT," +
                 " ck9_1 TEXT," +
@@ -859,7 +856,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "ck3_5, ck3_5_1, ck3_5_2, ck3_5_3, ck3_5_4, ck3_5_5," +
                 "ck3_6, ck3_6_1, ck3_6_2, ck3_6_3, ck3_6_4, ck3_6_5, ck3_6_kita," +
                 "ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6, ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5," +
-                "ck5_6, ck6_1, ck6_2, ck6_3, ck6_4, ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2," +
+                "ck6_1, ck6_2, ck6_3, ck6_4, ck6_5, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck8_1, ck8_2," +
                 "ck9_1, ck9_2, ck10, ck11, ck12, ck13, ck14)" +
                 " VALUES (" +
                 "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
@@ -872,11 +869,11 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${columnValue.ck3_6}', '${columnValue.ck3_6_1}', '${columnValue.ck3_6_2}', '${columnValue.ck3_6_3}', '${columnValue.ck3_6_4}', '${columnValue.ck3_6_5}', '${columnValue.ck3_6_kita}'" +
                 ", '${columnValue.ck4_1}', '${columnValue.ck4_2}', '${columnValue.ck4_3}', '${columnValue.ck4_4}'" +
                 ", '${columnValue.ck4_5}', '${columnValue.ck4_6}', '${columnValue.ck4_7}', '${columnValue.ck4_8}'" +
-                ", '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck5_1}'" +
-                ", '${columnValue.ck5_1}', '${columnValue.ck5_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}'" +
-                ", '${columnValue.ck6_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}', '${columnValue.ck6_1}'" +
-                ", '${columnValue.ck7_1}', '${columnValue.ck7_1}', '${columnValue.ck7_1}', '${columnValue.ck7_1}'" +
-                ", '${columnValue.ck7_1}', '${columnValue.ck7_1}', '${columnValue.ck8_1}', '${columnValue.ck8_2}'" +
+                ", '${columnValue.ck5_1}', '${columnValue.ck5_2}', '${columnValue.ck5_3}', '${columnValue.ck5_4}'" +
+                ", '${columnValue.ck5_5}', '${columnValue.ck6_1}', '${columnValue.ck6_2}'" +
+                ", '${columnValue.ck6_3}', '${columnValue.ck6_4}', '${columnValue.ck6_5}'" +
+                ", '${columnValue.ck7_1}', '${columnValue.ck7_2}', '${columnValue.ck7_3}', '${columnValue.ck7_4}'" +
+                ", '${columnValue.ck7_5}', '${columnValue.ck8_1}', '${columnValue.ck8_2}'" +
                 ", '${columnValue.ck9_1}', '${columnValue.ck9_2}', '${columnValue.ck10}', '${columnValue.ck11}'" +
                 ", '${columnValue.ck12}', '${columnValue.ck13}', '${columnValue.ck14}');")
     }
