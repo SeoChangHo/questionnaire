@@ -82,7 +82,7 @@ class OracleUtill {
 
     }
 
-    val save_papers_url : String = "https://finepaperweight.herokuapp.com/SavePapers/"
+    val save_papers_url : String = "https://finepaper.herokuapp.com//SavePapers/"
 
     fun save_papers() : OracleInterface {
 
