@@ -226,7 +226,7 @@ class ListActivity : Activity() {
             println("**********SAVE ARRAY**********")
 
 
-            UploadPaper(SaveArr, SetArr, 0, SaveArr.size)
+            UploadPaper(SaveArr, SetArr, removeArr,0, SaveArr.size)
 
 
 
@@ -261,8 +261,9 @@ class ListActivity : Activity() {
 
 
     //재귀호출함수
-    fun UploadPaper(SaveArr:ArrayList<Any>, SetArr:ArrayList<String>, startIndex:Int, TotalIndex:Int)
+    fun UploadPaper(SaveArr:ArrayList<Any>, SetArr:ArrayList<String>, removeArr:ArrayList<Paper>, startIndex:Int, TotalIndex:Int)
     {
+        sql_db = LocalDBhelper(this).writableDatabase
         println("업로드 들어옴")
         println("Array의 크기는 "+TotalIndex.toString()+" 개 입니다.")
         println("현재는 "+startIndex.toString()+" 번째 입니다.")
@@ -295,6 +296,8 @@ class ListActivity : Activity() {
 
                     if (!response.body()!!.equals("S")) {
 
+                        println(startIndex.toString()+"번째 요청 실패")
+
                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         login_appbar_loading_progress_bg.visibility = View.GONE
                         login_appbar_loading_progress.visibility = View.GONE
@@ -302,10 +305,15 @@ class ListActivity : Activity() {
 
                     } else {
 
+                        LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
+
+
                         if(startIndex+1<TotalIndex)
                         {
                             //할게 더 남아서 재귀호출
-                            UploadPaper(SaveArr, SetArr, startIndex+1, TotalIndex)
+
+
+                            UploadPaper(SaveArr, SetArr, removeArr, startIndex+1, TotalIndex)
                         }
                         else
                         {
