@@ -225,6 +225,11 @@ class ListActivity : Activity() {
             println(SaveArr)
             println("**********SAVE ARRAY**********")
 
+            window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            login_appbar_loading_progress_bg.visibility = View.VISIBLE
+            login_appbar_loading_progress.visibility = View.VISIBLE
+
+
 
             UploadPaper(SaveArr, SetArr, removeArr,0, SaveArr.size)
 
@@ -270,9 +275,7 @@ class ListActivity : Activity() {
 
         println("세트번호는 "+SetArr[startIndex]+" 입니다.")
 
-        window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-        login_appbar_loading_progress_bg.visibility = View.VISIBLE
-        login_appbar_loading_progress.visibility = View.VISIBLE
+
 
 
 
@@ -283,9 +286,6 @@ class ListActivity : Activity() {
         body.add(SaveArr[startIndex])
 
 
-        window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-        login_appbar_loading_progress_bg.visibility = View.GONE
-        login_appbar_loading_progress.visibility = View.GONE
 
 
         OracleUtill().save_papers().savePapersServer(body).enqueue(object : Callback<String> {
