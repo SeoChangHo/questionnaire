@@ -435,10 +435,10 @@ class NutritionExaminationActivity :RootActivity() {
         }
 
         sg2_spFat2 = when {
-            fat_2_no.isChecked -> "no"
-            fat_2_1.isChecked -> "1"
-            fat_2_2.isChecked -> "2"
-            fat_2_3.isChecked -> "3"
+            fat_2_no.isChecked -> "1"
+            fat_2_1.isChecked -> "2"
+            fat_2_2.isChecked -> "3"
+            fat_2_3.isChecked -> "4"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -670,15 +670,15 @@ class NutritionExaminationActivity :RootActivity() {
 
         }
 
-        if(paper.sg2_spFat2=="no"){
+        if(paper.sg2_spFat2=="1"){
 
             fat_2_no.isChecked = true
 
-        }else if(paper.sg2_spFat2=="1"){
+        }else if(paper.sg2_spFat2=="2"){
 
             fat_2_1.isChecked = true
 
-        }else if(paper.sg2_spFat2=="2"){
+        }else if(paper.sg2_spFat2=="3"){
 
             fat_2_2.isChecked = true
 

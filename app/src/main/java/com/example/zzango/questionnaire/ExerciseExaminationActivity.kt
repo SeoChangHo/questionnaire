@@ -323,8 +323,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports1_1 = when {
-            exercise_1_true.isChecked -> "y"
-            exercise_1_false.isChecked -> "n"
+            exercise_1_true.isChecked -> "1"
+            exercise_1_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -375,8 +375,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports1_4 = when {
-            exercise_2_true.isChecked -> "y"
-            exercise_2_false.isChecked -> "n"
+            exercise_2_true.isChecked -> "1"
+            exercise_2_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -423,8 +423,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports2_1 = when {
-            exercise_3_true.isChecked -> "y"
-            exercise_3_false.isChecked -> "n"
+            exercise_3_true.isChecked -> "1"
+            exercise_3_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -471,8 +471,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports3_1 = when {
-            exercise_4_true.isChecked -> "y"
-            exercise_4_false.isChecked -> "n"
+            exercise_4_true.isChecked -> "1"
+            exercise_4_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -519,8 +519,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports3_4 = when {
-            exercise_5_true.isChecked -> "y"
-            exercise_5_false.isChecked -> "n"
+            exercise_5_true.isChecked -> "1"
+            exercise_5_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -607,8 +607,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports6 = when {
-            exercise_7_true.isChecked -> "y"
-            exercise_7_false.isChecked -> "n"
+            exercise_7_true.isChecked -> "1"
+            exercise_7_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -619,8 +619,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports7 = when {
-            exercise_8_true.isChecked -> "y"
-            exercise_8_false.isChecked -> "n"
+            exercise_8_true.isChecked -> "1"
+            exercise_8_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -631,8 +631,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports8 = when {
-            exercise_9_true.isChecked -> "y"
-            exercise_9_false.isChecked -> "n"
+            exercise_9_true.isChecked -> "1"
+            exercise_9_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -643,8 +643,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports9 = when {
-            exercise_10_true.isChecked -> "y"
-            exercise_10_false.isChecked -> "n"
+            exercise_10_true.isChecked -> "1"
+            exercise_10_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -655,8 +655,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports10 = when {
-            exercise_11_true.isChecked -> "y"
-            exercise_11_false.isChecked -> "n"
+            exercise_11_true.isChecked -> "1"
+            exercise_11_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -667,8 +667,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports11 = when {
-            exercise_12_true.isChecked -> "y"
-            exercise_12_false.isChecked -> "n"
+            exercise_12_true.isChecked -> "1"
+            exercise_12_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -679,8 +679,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         sg2_spSports12 = when {
-            exercise_13_true.isChecked -> "y"
-            exercise_13_false.isChecked -> "n"
+            exercise_13_true.isChecked -> "1"
+            exercise_13_false.isChecked -> "2"
             else -> {
 
                 Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
@@ -729,7 +729,7 @@ class ExerciseExaminationActivity : RootActivity() {
         exercise_examination_cancel.visibility = View.GONE
         exercise_edit_submit.visibility = View.VISIBLE
 
-        if(paper.sg2_spSports1_1=="y")
+        if(paper.sg2_spSports1_1=="1")
         {
             exercise_1_true.isChecked = true
         }
@@ -742,7 +742,7 @@ class ExerciseExaminationActivity : RootActivity() {
         exercise_1_3_hour.setText(paper.sg2_spSports1_3_1)
         exercise_1_3_minute.setText(paper.sg2_spSports1_3_2)
 
-        if(paper.sg2_spSports1_4=="y")
+        if(paper.sg2_spSports1_4=="1")
         {
             exercise_2_true.isChecked = true
         }
@@ -755,7 +755,7 @@ class ExerciseExaminationActivity : RootActivity() {
         exercise_1_6_hour.setText(paper.sg2_spSports1_6_1)
         exercise_1_6_minute.setText(paper.sg2_spSports1_6_2)
 
-        if(paper.sg2_spSports2_1=="y"){
+        if(paper.sg2_spSports2_1=="1"){
 
             exercise_3_true.isChecked = true
 
@@ -770,7 +770,7 @@ class ExerciseExaminationActivity : RootActivity() {
         exercise_2_3_hour.setText(paper.sg2_spSports2_3_1)
         exercise_2_3_minute.setText(paper.sg2_spSports2_3_2)
 
-        if(paper.sg2_spSports3_1=="y")
+        if(paper.sg2_spSports3_1=="1")
         {
             exercise_4_true.isChecked = true
         }
@@ -783,7 +783,7 @@ class ExerciseExaminationActivity : RootActivity() {
         exercise_3_3_hour.setText(paper.sg2_spSports3_3_1)
         exercise_3_3_minute.setText(paper.sg2_spSports3_3_2)
 
-        if(paper.sg2_spSports3_4=="y")
+        if(paper.sg2_spSports3_4=="1")
         {
             exercise_5_true.isChecked = true
         }
@@ -828,7 +828,7 @@ class ExerciseExaminationActivity : RootActivity() {
 
         }
 
-        if(paper.sg2_spSports6=="y")
+        if(paper.sg2_spSports6=="1")
         {
             exercise_7_true.isChecked = true
         }
@@ -837,7 +837,7 @@ class ExerciseExaminationActivity : RootActivity() {
             exercise_7_false.isChecked = true
         }
 
-        if(paper.sg2_spSports7=="y")
+        if(paper.sg2_spSports7=="1")
         {
             exercise_8_true.isChecked = true
         }
@@ -846,7 +846,7 @@ class ExerciseExaminationActivity : RootActivity() {
             exercise_8_false.isChecked = true
         }
 
-        if(paper.sg2_spSports8=="y")
+        if(paper.sg2_spSports8=="1")
         {
             exercise_9_true.isChecked = true
         }
@@ -854,7 +854,7 @@ class ExerciseExaminationActivity : RootActivity() {
             exercise_9_false.isChecked = true
         }
 
-        if(paper.sg2_spSports9=="y")
+        if(paper.sg2_spSports9=="1")
         {
             exercise_10_true.isChecked = true
         }
@@ -863,7 +863,7 @@ class ExerciseExaminationActivity : RootActivity() {
             exercise_10_false.isChecked = true
         }
 
-        if(paper.sg2_spSports10=="y")
+        if(paper.sg2_spSports10=="1")
         {
             exercise_11_true.isChecked = true
         }
@@ -872,7 +872,7 @@ class ExerciseExaminationActivity : RootActivity() {
             exercise_11_false.isChecked = true
         }
 
-        if(paper.sg2_spSports11=="y")
+        if(paper.sg2_spSports11=="1")
         {
             exercise_12_true.isChecked = true
         }
@@ -881,7 +881,7 @@ class ExerciseExaminationActivity : RootActivity() {
             exercise_12_false.isChecked = true
         }
 
-        if(paper.sg2_spSports12=="y"){
+        if(paper.sg2_spSports12=="1"){
 
             exercise_13_true.isChecked = true
 

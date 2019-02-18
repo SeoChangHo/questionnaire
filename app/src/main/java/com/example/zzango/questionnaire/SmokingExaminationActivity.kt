@@ -218,21 +218,21 @@ class SmokingExaminationActivity : RootActivity(){
             }
 
             if (smoking_2_1.isChecked) {
-                sg2_spSmoke2 = "1"
+                sg2_spSmoke2 = "0"
             } else if (smoking_2_2.isChecked) {
-                sg2_spSmoke2 = "2"
+                sg2_spSmoke2 = "1"
             } else if (smoking_2_3.isChecked) {
-                sg2_spSmoke2 = "3"
+                sg2_spSmoke2 = "2"
             } else if (smoking_2_4.isChecked) {
-                sg2_spSmoke2 = "4"
+                sg2_spSmoke2 = "3"
             } else if (smoking_2_5.isChecked) {
-                sg2_spSmoke2 = "5"
+                sg2_spSmoke2 = "4"
             } else if (smoking_2_6.isChecked) {
-                sg2_spSmoke2 = "6"
+                sg2_spSmoke2 = "5"
             } else if (smoking_2_7.isChecked) {
-                sg2_spSmoke2 = "7"
+                sg2_spSmoke2 = "6"
             } else if (smoking_2_8.isChecked) {
-                sg2_spSmoke2 = "8"
+                sg2_spSmoke2 = "7"
             } else {
                 Toast.makeText(this, "2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
@@ -350,21 +350,21 @@ class SmokingExaminationActivity : RootActivity(){
             smoking_1_4.isChecked = true
         }
 
-        if(paper.sg2_spSmoke2 == "1"){
+        if(paper.sg2_spSmoke2 == "0"){
             smoking_2_1.isChecked = true
-        }else if(paper.sg2_spSmoke2 == "2"){
+        }else if(paper.sg2_spSmoke2 == "1"){
             smoking_2_2.isChecked = true
-        }else if(paper.sg2_spSmoke2 == "3"){
+        }else if(paper.sg2_spSmoke2 == "2"){
             smoking_2_3.isChecked = true
-        }else if(paper.sg2_spSmoke2 == "4"){
+        }else if(paper.sg2_spSmoke2 == "3"){
             smoking_2_4.isChecked = true
-        }else if(paper.sg2_spSmoke2 == "5"){
+        }else if(paper.sg2_spSmoke2 == "4"){
             smoking_2_5.isChecked = true
-        }else if(paper.sg2_spSmoke2 == "6"){
+        }else if(paper.sg2_spSmoke2 == "5"){
             smoking_2_6.isChecked = true
-        }else if(paper.sg2_spSmoke2 == "7"){
+        }else if(paper.sg2_spSmoke2 == "6"){
             smoking_2_7.isChecked = true
-        }else if(paper.sg2_spSmoke2 == "8"){
+        }else if(paper.sg2_spSmoke2 == "7"){
             smoking_2_8.isChecked = true
         }
 
