@@ -249,7 +249,7 @@ fun getSetNo(setno: String):String
             }
             PaperArray.SetList.SET3 ->
             {
-                return "공통 외 2건"
+                return "공통 외 5건"
             }
             PaperArray.SetList.SET4 ->
             {
@@ -261,7 +261,7 @@ fun getSetNo(setno: String):String
             }
             PaperArray.SetList.SET6 ->
             {
-                return "공통 외 4건"
+                return "공통 외 7건"
             }
             PaperArray.SetList.SET7 ->
             {
