@@ -581,9 +581,9 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_3_1_1.isChecked){
-            ck3_1 = "0"
-        }else if(cancer_3_1_2.isChecked){
             ck3_1 = "1"
+        }else if(cancer_3_1_2.isChecked){
+            ck3_1 = "3"
         }else if(cancer_3_1_3.isChecked){
             ck3_1 = "2"
             if(cancer_3_1_checkBox1.isChecked){
@@ -606,9 +606,9 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_3_2_1.isChecked){
-            ck3_2 = "0"
-        }else if(cancer_3_2_2.isChecked){
             ck3_2 = "1"
+        }else if(cancer_3_2_2.isChecked){
+            ck3_2 = "3"
         }else if(cancer_3_2_3.isChecked){
             ck3_2 = "2"
             if(cancer_3_2_checkBox1.isChecked){
@@ -631,9 +631,9 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_3_3_1.isChecked){
-            ck3_3 = "0"
-        }else if(cancer_3_3_2.isChecked){
             ck3_3 = "1"
+        }else if(cancer_3_3_2.isChecked){
+            ck3_3 = "3"
         }else if(cancer_3_3_3.isChecked){
             ck3_3 = "2"
             if(cancer_3_3_checkBox1.isChecked){
@@ -657,9 +657,9 @@ class CancerExaminationActivity : RootActivity(){
 
 
         if(cancer_3_4_1.isChecked){
-            ck3_4 = "0"
-        }else if(cancer_3_4_2.isChecked){
             ck3_4 = "1"
+        }else if(cancer_3_4_2.isChecked){
+            ck3_4 = "3"
         }else if(cancer_3_4_3.isChecked){
             ck3_4 = "2"
             if(cancer_3_4_checkBox1.isChecked){
@@ -682,9 +682,9 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_3_5_1.isChecked){
-            ck3_5 = "0"
-        }else if(cancer_3_5_2.isChecked){
             ck3_5 = "1"
+        }else if(cancer_3_5_2.isChecked){
+            ck3_5 = "3"
         }else if(cancer_3_5_3.isChecked){
             ck3_5 = "2"
             if(cancer_3_5_checkBox1.isChecked){
@@ -707,9 +707,9 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_3_6_1.isChecked){
-            ck3_6 = "0"
-        }else if(cancer_3_6_2.isChecked){
             ck3_6 = "1"
+        }else if(cancer_3_6_2.isChecked){
+            ck3_6 = "3"
         }else if(cancer_3_6_3.isChecked){
             ck3_6 = "2"
             if(cancer_3_6_checkBox1.isChecked){
@@ -1075,10 +1075,10 @@ class CancerExaminationActivity : RootActivity(){
         }
 
 
-        if(paper.ck3_1 == "0"){
+        if(paper.ck3_1 == "1"){
             cancer_3_1_1.isChecked = true
 
-        }else if(paper.ck3_1 == "1"){
+        }else if(paper.ck3_1 == "3"){
             cancer_3_1_2.isChecked = true
 
         }else if(paper.ck3_1 == "2"){
@@ -1104,10 +1104,10 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
-        if(paper.ck3_2 == "0"){
+        if(paper.ck3_2 == "1"){
             cancer_3_2_1.isChecked = true
 
-        }else if(paper.ck3_2 == "1"){
+        }else if(paper.ck3_2 == "3"){
             cancer_3_2_2.isChecked = true
 
         }else if(paper.ck3_2 == "2"){
@@ -1133,10 +1133,10 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
-        if(paper.ck3_3 == "0"){
+        if(paper.ck3_3 == "1"){
             cancer_3_3_1.isChecked = true
 
-        }else if(paper.ck3_3 == "1"){
+        }else if(paper.ck3_3 == "3"){
             cancer_3_3_2.isChecked = true
 
         }else if(paper.ck3_3 == "2"){
@@ -1162,10 +1162,10 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
-        if(paper.ck3_4 == "0"){
+        if(paper.ck3_4 == "1"){
             cancer_3_4_1.isChecked = true
 
-        }else if(paper.ck3_4 == "1"){
+        }else if(paper.ck3_4 == "3"){
             cancer_3_4_2.isChecked = true
 
         }else if(paper.ck3_4 == "2"){
@@ -1191,10 +1191,10 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
-        if(paper.ck3_5 == "0"){
+        if(paper.ck3_5 == "1"){
             cancer_3_5_1.isChecked = true
 
-        }else if(paper.ck3_5 == "1"){
+        }else if(paper.ck3_5 == "3"){
             cancer_3_5_2.isChecked = true
 
         }else if(paper.ck3_5 == "2"){
@@ -1221,10 +1221,10 @@ class CancerExaminationActivity : RootActivity(){
         }
 
 
-        if(paper.ck3_6 == "0"){
+        if(paper.ck3_6 == "1"){
             cancer_3_6_1.isChecked = true
 
-        }else if(paper.ck3_6 == "1"){
+        }else if(paper.ck3_6 == "3"){
             cancer_3_6_2.isChecked = true
 
         }else if(paper.ck3_6 == "2"){

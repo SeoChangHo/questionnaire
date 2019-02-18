@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import com.example.zzango.questionnaire.LocalList.PaperArray
@@ -17,6 +19,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_nutrition_exam.*
 import kotlinx.android.synthetic.main.progressbar2.*
 import java.io.Serializable
+import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -133,6 +136,54 @@ class NutritionExaminationActivity :RootActivity() {
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //BMI 지수
+
+        height.addTextChangedListener(object :TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+              if(height.text.toString() != "" && weight.text.toString() != ""){
+                  val heightValue = java.lang.Float.parseFloat(height.text.toString()) / 100
+                  val weightValue = java.lang.Float.parseFloat(weight.text.toString())
+
+                  val resultBmi = weightValue / (heightValue * heightValue)
+
+                  val result = (DecimalFormat("#.#").format(resultBmi)).toDouble()
+
+                  bmi.setText(result.toString())
+              }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
+
+        weight.addTextChangedListener(object :TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                if(height.text.toString() != "" && weight.text.toString() != ""){
+                    val heightValue = java.lang.Float.parseFloat(height.text.toString()) / 100
+                    val weightValue = java.lang.Float.parseFloat(weight.text.toString())
+
+                    val resultBmi = weightValue / (heightValue * heightValue)
+
+                    val result = (DecimalFormat("#.#").format(resultBmi)).toDouble()
+
+                    bmi.setText(result.toString())
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
 
     }
 

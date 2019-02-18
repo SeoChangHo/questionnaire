@@ -1765,22 +1765,22 @@
 
             <EditText
                 android:id="@+id/height"
-                android:layout_width="50dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/gray"
                 android:layout_marginBottom="8dp"
-                android:textSize="20dp"
-                android:maxLength="3"
+                android:backgroundTint="@color/gray"
                 android:inputType="number"
+                android:maxLength="3"
                 android:maxWidth="100dp"
                 android:minWidth="100dp"
+                android:onClick="focusControl"
                 android:textAlignment="center"
                 android:textCursorDrawable="@color/gray"
-                app:layout_constraintStart_toStartOf="@+id/bmi"
-                app:layout_constraintEnd_toEndOf="@+id/bmi"
-                app:layout_constraintTop_toTopOf="@+id/textView314"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView314"
-                android:onClick="focusControl" />
+                app:layout_constraintEnd_toEndOf="@+id/bmi"
+                app:layout_constraintStart_toStartOf="@+id/bmi"
+                app:layout_constraintTop_toTopOf="@+id/textView314" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1803,22 +1803,22 @@
 
             <EditText
                 android:id="@+id/weight"
-                android:layout_width="50dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/gray"
                 android:layout_marginBottom="8dp"
-                android:textSize="20dp"
+                android:backgroundTint="@color/gray"
+                android:inputType="number"
                 android:maxLength="3"
                 android:maxWidth="100dp"
                 android:minWidth="100dp"
+                android:onClick="focusControl"
                 android:textAlignment="center"
                 android:textCursorDrawable="@color/gray"
-                android:inputType="number"
-                app:layout_constraintStart_toStartOf="@+id/bmi"
-                app:layout_constraintEnd_toEndOf="@+id/bmi"
-                app:layout_constraintTop_toTopOf="@+id/textView315"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView315"
-                android:onClick="focusControl" />
+                app:layout_constraintEnd_toEndOf="@+id/bmi"
+                app:layout_constraintStart_toStartOf="@+id/bmi"
+                app:layout_constraintTop_toTopOf="@+id/textView315" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1841,22 +1841,22 @@
 
             <EditText
                 android:id="@+id/waist_size"
-                android:layout_width="50dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/gray"
                 android:layout_marginBottom="8dp"
-                android:textSize="20dp"
+                android:backgroundTint="@color/gray"
+                android:inputType="number"
                 android:maxLength="3"
                 android:maxWidth="100dp"
                 android:minWidth="100dp"
+                android:onClick="focusControl"
                 android:textAlignment="center"
                 android:textCursorDrawable="@color/gray"
-                android:inputType="number"
-                app:layout_constraintStart_toStartOf="@+id/bmi"
-                app:layout_constraintEnd_toEndOf="@+id/bmi"
-                app:layout_constraintTop_toTopOf="@+id/textView316"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView316"
-                android:onClick="focusControl" />
+                app:layout_constraintEnd_toEndOf="@+id/bmi"
+                app:layout_constraintStart_toStartOf="@+id/bmi"
+                app:layout_constraintTop_toTopOf="@+id/textView316" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1879,22 +1879,20 @@
 
             <EditText
                 android:id="@+id/bmi"
-                android:layout_width="50dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/gray"
-                android:layout_marginLeft="50dp"
                 android:layout_marginBottom="8dp"
-                android:textSize="20dp"
-                android:maxLength="3"
-                android:maxWidth="100dp"
-                android:minWidth="100dp"
+                android:layout_marginLeft="50dp"
+                android:backgroundTint="@color/gray"
+                android:enabled="false"
+                android:inputType="text"
+                android:onClick="focusControl"
                 android:textAlignment="center"
                 android:textCursorDrawable="@color/gray"
-                android:inputType="number"
-                app:layout_constraintStart_toEndOf="@+id/textView317"
-                app:layout_constraintTop_toTopOf="@+id/textView317"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView317"
-                android:onClick="focusControl" />
+                app:layout_constraintStart_toEndOf="@+id/textView317"
+                app:layout_constraintTop_toTopOf="@+id/textView317" />
 
             <TextView
                 android:layout_width="wrap_content"
