@@ -446,8 +446,15 @@ class CommonExaminationActivity : RootActivity() {
 
             this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-            OracleUtill().common_examination().commonServer(PaperArray.PaperList.Arr_COMMON!!).enqueue(object : Callback<String> {
 
+            var SaveArr = ArrayList<Any>()
+            var OneArr = ArrayList<Any>()
+            OneArr.add(PaperArray.PaperList.Arr_COMMON!!)
+            SaveArr.add("SET1")
+            SaveArr.add(OneArr)
+
+
+            OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
 
                     if (response.isSuccessful) {

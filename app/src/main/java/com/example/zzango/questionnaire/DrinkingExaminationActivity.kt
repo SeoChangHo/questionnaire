@@ -231,7 +231,13 @@ class DrinkingExaminationActivity : RootActivity(){
 
         if(MainActivity.chart == "SET3"){
 
-            OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
+            var SaveArr = ArrayList<Any>()
+
+            SaveArr.add("SET3")
+            SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
+
+
+            OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
 
                 override fun onResponse(call: Call<String>, response: Response<String>) {
 
@@ -272,8 +278,15 @@ class DrinkingExaminationActivity : RootActivity(){
             startActivity(Intent(this@DrinkingExaminationActivity, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }else if(MainActivity.chart == "SET0"){
-            OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
 
+
+            println("들어옴")
+            var SaveArr = ArrayList<Any>()
+            SaveArr.add("SET11")
+            SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
+
+
+            OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
 
                     if (response.isSuccessful) {
@@ -305,7 +318,6 @@ class DrinkingExaminationActivity : RootActivity(){
                 }
             })
         }
-
     }
 
     fun saveCompleteAlert(){
@@ -601,7 +613,7 @@ class DrinkingExaminationActivity : RootActivity(){
                 sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
         ))
 
-        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_SMOKING!!)
+        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_DRINKING!!)
 
         return true
 

@@ -322,7 +322,15 @@ class CancerExaminationActivity : RootActivity(){
 
         this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-        OracleUtill().cancer_examination().cancerServer(PaperArray.PaperList.Arr_CANCER!!).enqueue(object : Callback<String> {
+
+        var SaveArr = ArrayList<Any>()
+        var OneArr = ArrayList<Any>()
+        OneArr.add(PaperArray.PaperList.Arr_CANCER!!)
+        SaveArr.add("SET8")
+        SaveArr.add(OneArr)
+
+
+        OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
 

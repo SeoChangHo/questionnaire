@@ -222,7 +222,14 @@ class ElderlyExaminationActivity : RootActivity(){
         if(MainActivity.chart != "SET0"){
             this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
-            OracleUtill().save_papers().savePapersServer(PaperArray.PaperList.Arr_RESULT!!).enqueue(object : Callback<String> {
+
+            var SaveArr = ArrayList<Any>()
+
+            SaveArr.add(MainActivity.chart)
+            SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
+
+
+            OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
 
                 override fun onResponse(call: Call<String>, response: Response<String>) {
 
@@ -259,8 +266,15 @@ class ElderlyExaminationActivity : RootActivity(){
         }else{
 
             this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-            OracleUtill().elderly_examination().elderlyServer(PaperArray.PaperList.Arr_ELDERLY!!).enqueue(object : Callback<String> {
 
+            var SaveArr = ArrayList<Any>()
+            var OneArr = ArrayList<Any>()
+            OneArr.add(PaperArray.PaperList.Arr_ELDERLY!!)
+            SaveArr.add("SET10")
+            SaveArr.add(OneArr)
+
+
+            OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
 
                     if (response.isSuccessful) {
