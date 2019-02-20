@@ -1100,7 +1100,9 @@ class CommonExaminationActivity : RootActivity() {
             }
         }
 
-        if(common_8_1_1.isChecked){
+        if(common_8_1_0.isChecked) {
+            mj8_1 = "0"
+        }else if(common_8_1_1.isChecked){
             mj8_1 = "1"
         }else if(common_8_1_2.isChecked){
             mj8_1 = "2"
@@ -1133,7 +1135,9 @@ class CommonExaminationActivity : RootActivity() {
             return false
         }
 
-        if(common_9_1_1.isChecked){
+        if(common_9_1_0.isChecked){
+            mj9_1 = "0"
+        }else if(common_9_1_1.isChecked){
             mj9_1 = "1"
         }else if(common_9_1_2.isChecked){
             mj9_1 = "2"
@@ -1702,8 +1706,9 @@ class CommonExaminationActivity : RootActivity() {
             table_edit_10.setText(paper.mj7_2_54)
         }
 
-
-        if(paper.mj8_1 == "1"){
+        if(paper.mj8_1 == "0"){
+            common_8_1_0.isChecked = true
+        }else if(paper.mj8_1 == "1"){
             common_8_1_1.isChecked = true
         }else if(paper.mj8_1 == "2"){
             common_8_1_2.isChecked = true
@@ -1729,7 +1734,9 @@ class CommonExaminationActivity : RootActivity() {
         }
 
 
-        if(paper.mj9_1 == "1"){
+        if(paper.mj9_1 == "0"){
+            common_9_1_0.isChecked = true
+        }else if(paper.mj9_1 == "1"){
             common_9_1_1.isChecked = true
         }else if(paper.mj9_1 == "2"){
             common_9_1_2.isChecked = true
