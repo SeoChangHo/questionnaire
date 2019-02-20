@@ -154,12 +154,11 @@
     </android.support.constraint.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imageView20"
+        android:id="@+id/setting_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/logo2" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"

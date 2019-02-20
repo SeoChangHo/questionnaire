@@ -5,14 +5,15 @@ import java.io.Serializable
 
 data class UserList(var user: String, var pass: String) : Serializable
 
-var USER1 = "qwer"
-var USER1PASS = "1q2w3e4r"
 
-var USER2 = "fine"
+var USER1 = "fine"
+var USER1PASS = "1111"
+
+var USER2 = "mokpo"
 var USER2PASS = "1111"
 
-var USER3 = "qq"
-var USER3PASS ="1111"
+var USER3 = "banpo"
+var USER3PASS = "1111"
 
 
 object User

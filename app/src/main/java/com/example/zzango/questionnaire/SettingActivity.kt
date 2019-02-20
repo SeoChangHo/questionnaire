@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.widget.Button
+import com.example.zzango.questionnaire.LocalList.HospitalList
 import com.example.zzango.questionnaire.LocalList.ListActivity
 import kotlinx.android.synthetic.main.activity_setting_back.*
 
@@ -117,6 +118,13 @@ class SettingActivity : AppCompatActivity() {
                 MainActivity.user_first_serial = ""
                 MainActivity.user_last_serial = ""
                 MainActivity.manager_name = ""
+                MainActivity.chart = ""
+                MainActivity.manager_name = ""
+                MainActivity.exam_no = ""
+                MainActivity.alert_view = null
+                MainActivity.ValidationBool = false
+                MainActivity.canvas_motion = null
+                MainActivity.hospital = ""
 
                 startActivity(Intent(this@SettingActivity, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
@@ -128,6 +136,12 @@ class SettingActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
 
+        }
+
+        if(MainActivity.hospital == HospitalList.hospital.Mokpo){
+            setting_image.setImageResource(R.drawable.logo2)
+        }else if(MainActivity.hospital == HospitalList.hospital.test){
+            setting_image.setImageResource(R.drawable.logo)
         }
 
 

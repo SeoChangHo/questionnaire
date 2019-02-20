@@ -27,6 +27,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.example.zzango.questionnaire.LocalList.HospitalList
 import com.example.zzango.questionnaire.LocalList.PaperArray
 import com.example.zzango.questionnaire.Signature.CanvasView
 import com.example.zzango.questionnaire.UserList.User
@@ -203,6 +204,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 {
                     if(MainActivity.manager_name == ""){
                         MainActivity.manager_name = user
+                        setHospitalList()
                         Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
                         dialog.dismiss()
                     }else{
@@ -673,6 +675,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var alert_view : View? = null
         var ValidationBool = false
         var canvas_motion : MotionEvent? = null
+        var hospital = ""
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{
@@ -883,6 +886,27 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         }else{
             //기본검사
             MainActivity.chart = PaperArray.SetList.SET1
+        }
+
+    }
+
+    fun setHospitalList(){
+
+        if(MainActivity.manager_name == "fine"){
+
+            MainActivity.hospital = HospitalList.hospital.test
+            main_logo.setImageResource(R.drawable.logo)
+
+        }else if(MainActivity.manager_name == "mokpo"){
+
+            MainActivity.hospital = HospitalList.hospital.Mokpo
+            main_logo.setImageResource(R.drawable.logo2)
+
+        }else if(MainActivity.manager_name == "banpo"){
+
+            MainActivity.hospital = HospitalList.hospital.Banpo
+
+
         }
 
     }
