@@ -117,17 +117,18 @@ class ListActivity : Activity() {
                         var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
                         var MENTALArr = Return_MENTAL(removeArr[i].exam_no, removeArr[i].signature)
 
-                        var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
+
                         var EXERCISEArr = Return_EXERCISE(removeArr[i].exam_no, removeArr[i].signature)
                         var NUTRITIONArr = Return_NUTRITION(removeArr[i].exam_no, removeArr[i].signature)
                         var SMOKING = Return_SMOKING(removeArr[i].exam_no, removeArr[i].signature)
+                        var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
 
                         CategoryArr.add(COMMONArr)
                         CategoryArr.add(MENTALArr)
-                        CategoryArr.add(DRINKINGArr)
                         CategoryArr.add(EXERCISEArr)
                         CategoryArr.add(NUTRITIONArr)
                         CategoryArr.add(SMOKING)
+                        CategoryArr.add(DRINKINGArr)
                     }
                     PaperArray.SetList.SET4 ->
                     {
@@ -153,20 +154,21 @@ class ListActivity : Activity() {
                         var COGNITIVEArr = Return_COGNITIVE(removeArr[i].exam_no, removeArr[i].signature)
                         var MENTALArr = Return_MENTAL(removeArr[i].exam_no, removeArr[i].signature)
 
-                        var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
+
                         var EXERCISEArr = Return_EXERCISE(removeArr[i].exam_no, removeArr[i].signature)
                         var NUTRITIONArr = Return_NUTRITION(removeArr[i].exam_no, removeArr[i].signature)
                         var SMOKING = Return_SMOKING(removeArr[i].exam_no, removeArr[i].signature)
+                        var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
 
                         var ELDERLYArr = Return_ELDERLY(removeArr[i].exam_no, removeArr[i].signature)
 
                         CategoryArr.add(COMMONArr)
                         CategoryArr.add(COGNITIVEArr)
                         CategoryArr.add(MENTALArr)
-                        CategoryArr.add(DRINKINGArr)
                         CategoryArr.add(EXERCISEArr)
                         CategoryArr.add(NUTRITIONArr)
                         CategoryArr.add(SMOKING)
+                        CategoryArr.add(DRINKINGArr)
                         CategoryArr.add(ELDERLYArr)
                     }
                     PaperArray.SetList.SET7 ->
@@ -195,15 +197,16 @@ class ListActivity : Activity() {
                     }
                     PaperArray.SetList.SET11 ->
                     {
-                        var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
+
                         var EXERCISEArr = Return_EXERCISE(removeArr[i].exam_no, removeArr[i].signature)
                         var NUTRITIONArr = Return_NUTRITION(removeArr[i].exam_no, removeArr[i].signature)
                         var SMOKING = Return_SMOKING(removeArr[i].exam_no, removeArr[i].signature)
+                        var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
 
-                        CategoryArr.add(DRINKINGArr)
                         CategoryArr.add(EXERCISEArr)
                         CategoryArr.add(NUTRITIONArr)
                         CategoryArr.add(SMOKING)
+                        CategoryArr.add(DRINKINGArr)
                     }
                     PaperArray.SetList.SET12 ->
                     {
