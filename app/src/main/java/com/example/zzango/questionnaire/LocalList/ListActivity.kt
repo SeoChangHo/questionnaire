@@ -244,7 +244,6 @@ class ListActivity : Activity() {
 
 
 
-
         //삭제하는거
         btnDelete.setOnClickListener{
 
