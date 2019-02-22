@@ -214,48 +214,58 @@ class OralExaminationActivity : RootActivity() {
 
     fun oral_exam_server_insert(){
 
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        if(wfm!!.isWifiEnabled) {
 
-        var SaveArr = ArrayList<Any>()
-        var OneArr = ArrayList<Any>()
-        OneArr.add(PaperArray.PaperList.Arr_ORAL!!)
-        SaveArr.add("SET7")
-        SaveArr.add(OneArr)
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+
+            var SaveArr = ArrayList<Any>()
+            var OneArr = ArrayList<Any>()
+            OneArr.add(PaperArray.PaperList.Arr_ORAL!!)
+            SaveArr.add("SET7")
+            SaveArr.add(OneArr)
 
 
-        OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
+            OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
+                override fun onResponse(call: Call<String>, response: Response<String>) {
 
-                if (response.isSuccessful) {
+                    if (response.isSuccessful) {
 
-                    if (!response.body()!!.equals("S")) {
+                        if (!response.body()!!.equals("S")) {
 
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        this@OralExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(this@OralExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                            login_appbar_loading_progress.visibility = View.GONE
+                            login_appbar_loading_progress_bg.visibility = View.GONE
+                            this@OralExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            Toast.makeText(this@OralExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
-                    } else {
+                        } else {
 
-                        saveCompleteAlert()
+                            saveCompleteAlert()
+
+                        }
 
                     }
 
                 }
 
-            }
+                override fun onFailure(call: Call<String>, t: Throwable) {
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+                    login_appbar_loading_progress.visibility = View.GONE
+                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    this@OralExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(this@OralExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                    println(t.toString())
+                }
 
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
-                this@OralExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                Toast.makeText(this@OralExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                println(t.toString())
-            }
+            })
 
-        })
+        }else{
+
+            login_appbar_loading_progress.visibility = View.GONE
+            login_appbar_loading_progress_bg.visibility = View.GONE
+            wifiCheck()
+
+        }
 
     }
 

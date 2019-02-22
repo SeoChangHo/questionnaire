@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
@@ -22,16 +23,19 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import kotlinx.android.synthetic.main.progressbar2.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
+import kotlinx.android.synthetic.main.save_complete_alert.view.*
 
 open class RootActivity : AppCompatActivity() {
 
     var popup = false
+    var wfm : WifiManager? = null
+    @Suppress("LeakingThis")
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)// edittext 키보드 올라왔을때 화면 자동조정
+        wfm = this.getSystemService(Context.WIFI_SERVICE) as WifiManager
 
     }
 
@@ -576,6 +580,76 @@ open class RootActivity : AppCompatActivity() {
 
             MainActivity.chart = "SET0"
             startActivity(Intent(this, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
+
+    }
+
+    fun wifiCheck(){
+
+        popup = false
+
+        var dialog = android.app.AlertDialog.Builder(this).create()
+        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
+
+        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        dialog.setView(dialog_view)
+        dialog_view.save_complete_alert_text.text = "와이파이 연결상태를 확인해주세요"
+
+        if(!popup) {
+
+            dialog.show().let {
+
+                popup = true
+
+            }
+
+        }
+
+        var displayMetrics = DisplayMetrics()
+        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
+        // The absolute width of the available display size in pixels.
+        var displayWidth = displayMetrics.widthPixels
+        // The absolute height of the available display size in pixels.
+        var displayHeight = displayMetrics.heightPixels
+
+        // Initialize a new window manager layout parameters
+        var layoutParams = WindowManager.LayoutParams()
+
+        // Copy the alert dialog window attributes to new layout parameter instance
+        layoutParams.copyFrom(dialog.window.attributes)
+
+        // Set the alert dialog window width and height
+        // Set alert dialog width equal to screen width 90%
+        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
+        // Set alert dialog height equal to screen height 90%
+        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
+
+        // Set alert dialog width equal to screen width 70%
+        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
+        // Set alert dialog height equal to screen height 70%
+        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
+
+        // Set the width and height for the layout parameters
+        // This will bet the width and height of alert dialog
+        layoutParams.width = dialogWindowWidth
+        layoutParams.height = dialogWindowHeight
+
+        // Apply the newly created layout parameters to the alert dialog window
+        dialog.window.attributes = layoutParams
+
+
+        dialog.setOnDismissListener {
+
+            popup = false
+            dialog = null
+
+        }
+
+        dialog_view.return_alert.setOnClickListener {
+
+            dialog.dismiss()
 
         }
 

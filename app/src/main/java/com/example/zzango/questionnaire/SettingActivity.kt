@@ -4,17 +4,25 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Button
 import com.example.zzango.questionnaire.LocalList.HospitalList
 import com.example.zzango.questionnaire.LocalList.ListActivity
+import kotlinx.android.synthetic.main.activity_drinking_exam.*
 import kotlinx.android.synthetic.main.activity_setting_back.*
+import kotlinx.android.synthetic.main.save_complete_alert.view.*
 
 class SettingActivity : AppCompatActivity() {
 
+    var popup = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +30,6 @@ class SettingActivity : AppCompatActivity() {
 
         manager_logout.setText(MainActivity.manager_name)
         var num = getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")
-
 
         if(num != "wifi"){
 
@@ -143,8 +150,6 @@ class SettingActivity : AppCompatActivity() {
         }else if(MainActivity.hospital == HospitalList.hospital.test){
             setting_image.setImageResource(R.drawable.logo)
         }
-
-
 
     }
 

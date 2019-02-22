@@ -195,53 +195,61 @@ class MentalExaminationActivity : RootActivity(){
 
     fun mental_exam_server_insert(){
 
-        println("서버")
-
         if(MainActivity.chart == "SET2") {
 
-            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            if(wfm!!.isWifiEnabled) {
+
+                this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
 
-            var SaveArr = ArrayList<Any>()
+                var SaveArr = ArrayList<Any>()
 
-            SaveArr.add("SET2")
-            SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
+                SaveArr.add("SET2")
+                SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
 
-            OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
+                OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
 
-                override fun onResponse(call: Call<String>, response: Response<String>) {
+                    override fun onResponse(call: Call<String>, response: Response<String>) {
 
-                    if (response.isSuccessful) {
+                        if (response.isSuccessful) {
 
-                        if (!response.body()!!.equals("S")) {
+                            if (!response.body()!!.equals("S")) {
 
-                            login_appbar_loading_progress.visibility = View.GONE
-                            login_appbar_loading_progress_bg.visibility = View.GONE
-                            this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                                login_appbar_loading_progress.visibility = View.GONE
+                                login_appbar_loading_progress_bg.visibility = View.GONE
+                                this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
-                        } else {
+                            } else {
 
-                            MainActivity.login_user_name = ""
-                            MainActivity.user_first_serial = ""
-                            MainActivity.user_last_serial = ""
-                            saveCompleteAlert()
+                                MainActivity.login_user_name = ""
+                                MainActivity.user_first_serial = ""
+                                MainActivity.user_last_serial = ""
+                                saveCompleteAlert()
+
+                            }
 
                         }
 
                     }
 
-                }
+                    override fun onFailure(call: Call<String>, t: Throwable) {
 
-                override fun onFailure(call: Call<String>, t: Throwable) {
+                        login_appbar_loading_progress.visibility = View.GONE
+                        login_appbar_loading_progress_bg.visibility = View.GONE
+                        this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                        println(t.toString())
+                    }
+                })
 
-                    login_appbar_loading_progress.visibility = View.GONE
-                    login_appbar_loading_progress_bg.visibility = View.GONE
-                    this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                    Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                    println(t.toString())
-                }
-            })
+            }else{
+
+                login_appbar_loading_progress.visibility = View.GONE
+                login_appbar_loading_progress_bg.visibility = View.GONE
+                wifiCheck()
+
+            }
 
         }else if(MainActivity.chart == "SET3"){
             startActivity(Intent(this@MentalExaminationActivity, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
@@ -249,46 +257,57 @@ class MentalExaminationActivity : RootActivity(){
             startActivity(Intent(this@MentalExaminationActivity, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
         }else if(MainActivity.chart == "SET0"){
 
-            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            if(wfm!!.isWifiEnabled) {
+
+                this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
 
-            var SaveArr = ArrayList<Any>()
-            var OneArr = ArrayList<Any>()
-            OneArr.add(PaperArray.PaperList.Arr_MENTAL!!)
-            SaveArr.add("SET10")
-            SaveArr.add(OneArr)
+                var SaveArr = ArrayList<Any>()
+                var OneArr = ArrayList<Any>()
+                OneArr.add(PaperArray.PaperList.Arr_MENTAL!!)
+                SaveArr.add("SET10")
+                SaveArr.add(OneArr)
 
 
-            OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
-                override fun onResponse(call: Call<String>, response: Response<String>) {
+                OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
+                    override fun onResponse(call: Call<String>, response: Response<String>) {
 
-                    if (response.isSuccessful) {
+                        if (response.isSuccessful) {
 
-                        if (!response.body()!!.equals("S")) {
+                            if (!response.body()!!.equals("S")) {
 
-                            login_appbar_loading_progress.visibility = View.GONE
-                            login_appbar_loading_progress_bg.visibility = View.GONE
-                            this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+                                login_appbar_loading_progress.visibility = View.GONE
+                                login_appbar_loading_progress_bg.visibility = View.GONE
+                                this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                                Toast.makeText(this@MentalExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
-                        } else {
+                            } else {
 
-                            saveCompleteAlert()
+                                saveCompleteAlert()
 
+                            }
                         }
                     }
-                }
 
-                override fun onFailure(call: Call<String>, t: Throwable) {
+                    override fun onFailure(call: Call<String>, t: Throwable) {
 
-                    login_appbar_loading_progress.visibility = View.GONE
-                    login_appbar_loading_progress_bg.visibility = View.GONE
-                    this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                    Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                    println(t.toString())
-                }
+                        login_appbar_loading_progress.visibility = View.GONE
+                        login_appbar_loading_progress_bg.visibility = View.GONE
+                        this@MentalExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Toast.makeText(this@MentalExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                        println(t.toString())
+                    }
 
-            })
+                })
+
+            }else{
+
+                login_appbar_loading_progress.visibility = View.GONE
+                login_appbar_loading_progress_bg.visibility = View.GONE
+                wifiCheck()
+
+            }
+
         }
 
     }
