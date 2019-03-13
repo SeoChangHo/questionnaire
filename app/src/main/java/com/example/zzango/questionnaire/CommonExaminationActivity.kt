@@ -387,7 +387,7 @@ class CommonExaminationActivity : RootActivity() {
 
         if(login_appbar_loading_progress.visibility != View.VISIBLE){
 
-            super.onBackPressed()
+            cancelAlert()
 
         }
 
@@ -530,6 +530,7 @@ class CommonExaminationActivity : RootActivity() {
         var dialog = AlertDialog.Builder(this).create()
         var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
 
+        dialog.setCancelable(false)
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)

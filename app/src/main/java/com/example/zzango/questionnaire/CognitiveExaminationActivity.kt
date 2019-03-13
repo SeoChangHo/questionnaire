@@ -331,6 +331,7 @@ class CognitiveExaminationActivity : RootActivity(){
         var dialog = AlertDialog.Builder(this).create()
         var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
 
+        dialog.setCancelable(false)
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
