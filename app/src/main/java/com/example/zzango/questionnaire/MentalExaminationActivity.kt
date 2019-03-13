@@ -269,8 +269,15 @@ class MentalExaminationActivity : RootActivity(){
 
                 var SaveArr = ArrayList<Any>()
                 var OneArr = ArrayList<Any>()
+                var InfoArr = ArrayList<String>()
+
+
+                InfoArr.add("SET10")
+                InfoArr.add(MainActivity.hospital)
+
+
                 OneArr.add(PaperArray.PaperList.Arr_MENTAL!!)
-                SaveArr.add("SET10")
+                SaveArr.add(InfoArr)
                 SaveArr.add(OneArr)
 
 

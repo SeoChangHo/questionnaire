@@ -277,7 +277,7 @@ class ElderlyExaminationActivity : RootActivity(){
                 var InfoArr = ArrayList<String>()
 
 
-                InfoArr.add("SET10")
+                InfoArr.add("SET12")
                 InfoArr.add(MainActivity.hospital)
                 OneArr.add(PaperArray.PaperList.Arr_ELDERLY!!)
                 SaveArr.add(InfoArr)
