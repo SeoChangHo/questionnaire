@@ -321,8 +321,15 @@ class CancerExaminationActivity : RootActivity(){
 
             var SaveArr = ArrayList<Any>()
             var OneArr = ArrayList<Any>()
+
+            var InfoArr = ArrayList<String>()
+
+
+            InfoArr.add("SET8")
+            InfoArr.add(MainActivity.hospital)
+
             OneArr.add(PaperArray.PaperList.Arr_CANCER!!)
-            SaveArr.add("SET8")
+            SaveArr.add(InfoArr)
             SaveArr.add(OneArr)
 
 

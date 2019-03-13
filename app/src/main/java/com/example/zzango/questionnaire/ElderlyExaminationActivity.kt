@@ -224,8 +224,13 @@ class ElderlyExaminationActivity : RootActivity(){
 
 
                 var SaveArr = ArrayList<Any>()
+                var InfoArr = ArrayList<String>()
 
-                SaveArr.add(MainActivity.chart)
+
+                InfoArr.add(MainActivity.chart)
+                InfoArr.add(MainActivity.hospital)
+
+                SaveArr.add(InfoArr)
                 SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
 
 
@@ -269,8 +274,13 @@ class ElderlyExaminationActivity : RootActivity(){
 
                 var SaveArr = ArrayList<Any>()
                 var OneArr = ArrayList<Any>()
+                var InfoArr = ArrayList<String>()
+
+
+                InfoArr.add("SET10")
+                InfoArr.add(MainActivity.hospital)
                 OneArr.add(PaperArray.PaperList.Arr_ELDERLY!!)
-                SaveArr.add("SET10")
+                SaveArr.add(InfoArr)
                 SaveArr.add(OneArr)
 
 

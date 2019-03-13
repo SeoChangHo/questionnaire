@@ -207,7 +207,13 @@ class CognitiveExaminationActivity : RootActivity(){
 
                 var SaveArr = ArrayList<Any>()
 
-                SaveArr.add("SET5")
+                var InfoArr = ArrayList<String>()
+
+
+                InfoArr.add("SET5")
+                InfoArr.add(MainActivity.hospital)
+
+                SaveArr.add(InfoArr)
                 SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
 
 
@@ -272,8 +278,14 @@ class CognitiveExaminationActivity : RootActivity(){
 
                 var SaveArr = ArrayList<Any>()
                 var OneArr = ArrayList<Any>()
+                var InfoArr = ArrayList<String>()
+
+
+                InfoArr.add("SET9")
+                InfoArr.add(MainActivity.hospital)
+
                 OneArr.add(PaperArray.PaperList.Arr_COGNITIVE!!)
-                SaveArr.add("SET9")
+                SaveArr.add(InfoArr)
                 SaveArr.add(OneArr)
 
 

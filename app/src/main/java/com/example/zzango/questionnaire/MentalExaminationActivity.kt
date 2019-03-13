@@ -203,8 +203,13 @@ class MentalExaminationActivity : RootActivity(){
 
 
                 var SaveArr = ArrayList<Any>()
+                var InfoArr = ArrayList<String>()
 
-                SaveArr.add("SET2")
+
+                InfoArr.add("SET2")
+                InfoArr.add(MainActivity.hospital)
+
+                SaveArr.add(InfoArr)
                 SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
 
                 OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {

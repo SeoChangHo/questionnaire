@@ -892,17 +892,19 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     fun setHospitalList(){
 
+
+
         if(MainActivity.manager_name == "fine"){
 
             MainActivity.hospital = HospitalList.hospital.test
             main_logo.setImageResource(R.drawable.logo)
 
-        }else if(MainActivity.manager_name == "mokpo"){
+        }else if(MainActivity.manager_name == "mokpohos"){
 
             MainActivity.hospital = HospitalList.hospital.Mokpo
             main_logo.setImageResource(R.drawable.logo2)
 
-        }else if(MainActivity.manager_name == "banpo"){
+        }else if(MainActivity.manager_name == "hanshin"){
 
             MainActivity.hospital = HospitalList.hospital.Banpo
 

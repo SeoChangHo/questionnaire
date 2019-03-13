@@ -9,11 +9,11 @@ data class UserList(var user: String, var pass: String) : Serializable
 var USER1 = "fine"
 var USER1PASS = "1111"
 
-var USER2 = "mokpo"
-var USER2PASS = "1111"
+var USER2 = "mokpohos"
+var USER2PASS = "mokpohos1678"
 
-var USER3 = "banpo"
-var USER3PASS = "1111"
+var USER3 = "hanshin"
+var USER3PASS = "hanshin1678"
 
 
 object User

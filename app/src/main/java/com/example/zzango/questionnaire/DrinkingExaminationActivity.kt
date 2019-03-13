@@ -232,8 +232,12 @@ class DrinkingExaminationActivity : RootActivity(){
             if (MainActivity.chart == "SET3") {
 
                 var SaveArr = ArrayList<Any>()
+                var InfoArr = ArrayList<String>()
 
-                SaveArr.add("SET3")
+
+                InfoArr.add("SET3")
+                InfoArr.add(MainActivity.hospital)
+                SaveArr.add(InfoArr)
                 SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
 
 
@@ -282,7 +286,12 @@ class DrinkingExaminationActivity : RootActivity(){
 
                 println("들어옴")
                 var SaveArr = ArrayList<Any>()
-                SaveArr.add("SET11")
+                var InfoArr = ArrayList<String>()
+
+
+                InfoArr.add("SET11")
+                InfoArr.add(MainActivity.hospital)
+                SaveArr.add(InfoArr)
                 SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
 
 

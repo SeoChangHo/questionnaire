@@ -220,8 +220,14 @@ class OralExaminationActivity : RootActivity() {
 
             var SaveArr = ArrayList<Any>()
             var OneArr = ArrayList<Any>()
+            var InfoArr = ArrayList<String>()
+
+
+            InfoArr.add("SET7")
+            InfoArr.add(MainActivity.hospital)
+
             OneArr.add(PaperArray.PaperList.Arr_ORAL!!)
-            SaveArr.add("SET7")
+            SaveArr.add(InfoArr)
             SaveArr.add(OneArr)
 
 

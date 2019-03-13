@@ -11,10 +11,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import com.example.zzango.questionnaire.LocalDBhelper
-import com.example.zzango.questionnaire.OracleUtill
-import com.example.zzango.questionnaire.R
-import com.example.zzango.questionnaire.RootActivity
+import com.example.zzango.questionnaire.*
 import com.example.zzango.questionnaire.Signature.BitmapFun
 import kotlinx.android.synthetic.main.activity_list.*
 import retrofit2.Call
@@ -80,6 +77,7 @@ class ListActivity : RootActivity() {
                 var removeArr = ArrayList<Paper>()
                 var SaveArr = ArrayList<Any>()
                 var SetArr = ArrayList<String>()
+
 
 
                 for (item in papers) {
@@ -204,12 +202,19 @@ class ListActivity : RootActivity() {
                     }
                     SaveArr.add(CategoryArr)
                     SetArr.add(removeArr[i].setno)
+//                    SetArr.add(MainActivity.hospital)
 
                 }
 
                 println("**********SAVE ARRAY**********")
                 println(SaveArr)
                 println("**********SAVE ARRAY**********")
+
+
+                println("**********SET ARRAY**********")
+                println(SetArr)
+                println("**********SET ARRAY**********")
+
 
                 window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                 login_appbar_loading_progress_bg.visibility = View.VISIBLE
@@ -265,13 +270,17 @@ class ListActivity : RootActivity() {
         println("세트번호는 "+SetArr[startIndex]+" 입니다.")
 
 
+        var InfoArr = ArrayList<String>()
 
+
+        InfoArr.add(SetArr[startIndex])
+        InfoArr.add(MainActivity.hospital)
 
 
 
         var body = ArrayList<Any>()
 
-        body.add(SetArr[startIndex])
+        body.add(InfoArr)
         body.add(SaveArr[startIndex])
 
 
@@ -294,7 +303,7 @@ class ListActivity : RootActivity() {
 
                     } else {
 
-                        LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
+                        //LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
 
 
                         if(startIndex+1<TotalIndex)

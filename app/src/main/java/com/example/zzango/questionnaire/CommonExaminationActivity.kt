@@ -449,8 +449,15 @@ class CommonExaminationActivity : RootActivity() {
 
                 var SaveArr = ArrayList<Any>()
                 var OneArr = ArrayList<Any>()
+                var InfoArr = ArrayList<String>()
+
+
+                InfoArr.add("SET1")
+                InfoArr.add(MainActivity.hospital)
+
+
                 OneArr.add(PaperArray.PaperList.Arr_COMMON!!)
-                SaveArr.add("SET1")
+                SaveArr.add(InfoArr)
                 SaveArr.add(OneArr)
 
 
