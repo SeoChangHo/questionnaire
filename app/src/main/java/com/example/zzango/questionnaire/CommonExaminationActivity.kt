@@ -520,7 +520,7 @@ class CommonExaminationActivity : RootActivity() {
 
         }else if(MainActivity.chart == "SET6"){
 
-            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 
