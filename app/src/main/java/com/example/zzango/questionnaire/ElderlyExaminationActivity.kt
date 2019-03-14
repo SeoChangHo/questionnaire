@@ -234,6 +234,7 @@ class ElderlyExaminationActivity : RootActivity(){
                 SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
 
 
+
                 OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
 
                     override fun onResponse(call: Call<String>, response: Response<String>) {
