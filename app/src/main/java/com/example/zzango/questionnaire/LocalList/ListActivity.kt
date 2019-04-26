@@ -302,8 +302,8 @@ class ListActivity : RootActivity() {
                         Toast.makeText(this@ListActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
                     } else {
-
-                        //LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
+ㅅ
+                        LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
 
 
                         if(startIndex+1<TotalIndex)
