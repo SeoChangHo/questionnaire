@@ -275,7 +275,7 @@ open class RootActivity : AppCompatActivity() {
 
                     }
 
-                    "MentalExaminationActivity" -> {
+                    "CognitiveExaminationActivity" -> {
 
                         var constraintSet = ConstraintSet()
                         constraintSet.clone(layout)
