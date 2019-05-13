@@ -908,6 +908,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             MainActivity.hospital = HospitalList.hospital.Banpo
 
+        }else if(MainActivity.manager_name == "bestian"){
+
+            MainActivity.hospital = HospitalList.hospital.Osong
+            main_logo.setImageResource(R.drawable.bestianlogo)
 
         }
 

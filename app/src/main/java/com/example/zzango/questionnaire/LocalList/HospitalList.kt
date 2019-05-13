@@ -15,6 +15,9 @@ class HospitalList {
         //반포
         val Banpo = "Banpo"
 
+        //베스티안 오송
+        val Osong = "Osong"
+
     }
 
 }

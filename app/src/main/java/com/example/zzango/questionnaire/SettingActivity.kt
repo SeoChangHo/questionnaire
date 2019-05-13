@@ -149,6 +149,8 @@ class SettingActivity : AppCompatActivity() {
             setting_image.setImageResource(R.drawable.logo2)
         }else if(MainActivity.hospital == HospitalList.hospital.test){
             setting_image.setImageResource(R.drawable.logo)
+        }else if(MainActivity.hospital == HospitalList.hospital.Osong){
+            setting_image.setImageResource(R.drawable.bestianlogo)
         }
 
     }

@@ -9,12 +9,13 @@
 
     <ImageView
         android:id="@+id/main_logo"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="92dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_goneMarginBottom="92dp" />
+        app:layout_constraintWidth_percent="0.5"
+        android:src="@drawable/bestianlogo"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
