@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.zzango.questionnaire">
+    package="com.fineinsight.zzango.questionnaire">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.fineinsight.zzango.questionnaire.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,45 +23,45 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".OralExaminationActivity"
+            android:name="com.fineinsight.zzango.questionnaire.OralExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LocalList.ListActivity"
+            android:name="com.fineinsight.zzango.questionnaire.LocalList.ListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CommonExaminationActivity"
+            android:name="com.fineinsight.zzango.questionnaire.CommonExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ServerListActivity"
+            android:name="com.fineinsight.zzango.questionnaire.ServerListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MentalExaminationActivity"
+            android:name="com.fineinsight.zzango.questionnaire.MentalExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ElderlyExaminationActivity"
+            android:name="com.fineinsight.zzango.questionnaire.ElderlyExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CognitiveExaminationActivity"
+            android:name="com.fineinsight.zzango.questionnaire.CognitiveExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SmokingExaminationActivity"
+            android:name="com.fineinsight.zzango.questionnaire.SmokingExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ExerciseExaminationActivity"
+            android:name="com.fineinsight.zzango.questionnaire.ExerciseExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DrinkingExaminationActivity"
+            android:name="com.fineinsight.zzango.questionnaire.DrinkingExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CancerExaminationActivity"
+            android:name="com.fineinsight.zzango.questionnaire.CancerExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".NutritionExaminationActivity"
+            android:name="com.fineinsight.zzango.questionnaire.NutritionExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SettingActivity"
+            android:name="com.fineinsight.zzango.questionnaire.SettingActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".LocalList.ListDetailActivity"
+        <activity android:name="com.fineinsight.zzango.questionnaire.LocalList.ListDetailActivity"
             android:screenOrientation="portrait" />
     </application>
 
