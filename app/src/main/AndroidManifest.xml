@@ -8,9 +8,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/questionnaire_logo"
+        android:icon="@drawable/questionnaire_logo2"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/questionnaire_logo"
+        android:roundIcon="@drawable/questionnaire_logo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
