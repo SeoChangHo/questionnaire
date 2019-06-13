@@ -407,6 +407,13 @@ class DrinkingExaminationActivity : RootActivity(){
 
         dialog_view.return_alert.setOnClickListener {
 
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
+
+            MainActivity.userLogin!!.text = "사용자 등록하기"
+            MainActivity.userImage!!.setImageResource(R.drawable.regi)
+
             startActivity(Intent(this@DrinkingExaminationActivity, MainActivity::class.java).putExtra("from", "drinking").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
@@ -639,6 +646,8 @@ class DrinkingExaminationActivity : RootActivity(){
     }
 
     fun GetPaper(paper: Paper_DRINKING) {
+
+        state = "getPaper"
 
         cannotEditQuestionnaire(drinking_root)
 

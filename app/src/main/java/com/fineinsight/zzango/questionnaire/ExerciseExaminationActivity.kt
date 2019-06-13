@@ -715,6 +715,8 @@ class ExerciseExaminationActivity : RootActivity() {
     fun GetPaper(paper:Paper_EXERCISE)
     {
 
+        state = "getPaper"
+
         cannotEditQuestionnaire(exercise_root)
 
         progress_constraintLayout.visibility = View.GONE

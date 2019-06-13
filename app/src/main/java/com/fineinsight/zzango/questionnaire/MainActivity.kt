@@ -42,7 +42,7 @@ import java.time.LocalDateTime
 import java.util.*
 import kotlin.collections.ArrayList
 
-
+@SuppressLint("StaticFieldLeak")
 class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     var popup = false
@@ -53,6 +53,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        userLogin = user_login
+        userImage = user_image
 
         UserCheck()
 
@@ -676,6 +679,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var ValidationBool = false
         var canvas_motion : MotionEvent? = null
         var hospital = ""
+        var userLogin : Button? = null
+        var userImage : ImageView? = null
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{

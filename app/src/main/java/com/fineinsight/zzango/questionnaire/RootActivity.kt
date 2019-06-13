@@ -22,11 +22,12 @@ import kotlinx.android.synthetic.main.progressbar2.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
 
+@Suppress("LeakingThis")
 open class RootActivity : AppCompatActivity() {
 
     var popup = false
     var wfm : WifiManager? = null
-    @Suppress("LeakingThis")
+    var state = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -509,74 +510,89 @@ open class RootActivity : AppCompatActivity() {
 
     fun cancelAlert(){
 
-        var dialog = android.app.AlertDialog.Builder(this).create()
-        var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
+        if(state != "getPaper") {
 
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            var dialog = android.app.AlertDialog.Builder(this).create()
+            var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
 
-        dialog.setView(dialog_view)
-        dialog_view.notice.text = "문진 내용이 초기화됩니다. \n메인페이지로 가시겠습니까?"
+            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        if(!popup) {
+            dialog.setView(dialog_view)
+            dialog_view.notice.text = "문진 내용이 초기화됩니다. \n메인페이지로 가시겠습니까?"
 
-            dialog.show().let {
+            if (!popup) {
 
-                popup = true
+                dialog.show().let {
+
+                    popup = true
+
+                }
 
             }
 
-        }
+            var displayMetrics = DisplayMetrics()
+            dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
+            // The absolute width of the available display size in pixels.
+            var displayWidth = displayMetrics.widthPixels
+            // The absolute height of the available display size in pixels.
+            var displayHeight = displayMetrics.heightPixels
 
-        var displayMetrics = DisplayMetrics()
-        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-        // The absolute width of the available display size in pixels.
-        var displayWidth = displayMetrics.widthPixels
-        // The absolute height of the available display size in pixels.
-        var displayHeight = displayMetrics.heightPixels
+            // Initialize a new window manager layout parameters
+            var layoutParams = WindowManager.LayoutParams()
 
-        // Initialize a new window manager layout parameters
-        var layoutParams = WindowManager.LayoutParams()
+            // Copy the alert dialog window attributes to new layout parameter instance
+            layoutParams.copyFrom(dialog.window.attributes)
 
-        // Copy the alert dialog window attributes to new layout parameter instance
-        layoutParams.copyFrom(dialog.window.attributes)
+            // Set the alert dialog window width and height
+            // Set alert dialog width equal to screen width 90%
+            // int dialogWindowWidth = (int) (displayWidth * 0.9f);
+            // Set alert dialog height equal to screen height 90%
+            // int dialogWindowHeight = (int) (displayHeight * 0.9f);
 
-        // Set the alert dialog window width and height
-        // Set alert dialog width equal to screen width 90%
-        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-        // Set alert dialog height equal to screen height 90%
-        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
+            // Set alert dialog width equal to screen width 70%
+            var dialogWindowWidth = (displayWidth * 0.7f).toInt()
+            // Set alert dialog height equal to screen height 70%
+            var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
 
-        // Set alert dialog width equal to screen width 70%
-        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-        // Set alert dialog height equal to screen height 70%
-        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
+            // Set the width and height for the layout parameters
+            // This will bet the width and height of alert dialog
+            layoutParams.width = dialogWindowWidth
+            layoutParams.height = dialogWindowHeight
 
-        // Set the width and height for the layout parameters
-        // This will bet the width and height of alert dialog
-        layoutParams.width = dialogWindowWidth
-        layoutParams.height = dialogWindowHeight
-
-        // Apply the newly created layout parameters to the alert dialog window
-        dialog.window.attributes = layoutParams
+            // Apply the newly created layout parameters to the alert dialog window
+            dialog.window.attributes = layoutParams
 
 
-        dialog.setOnDismissListener {
+            dialog.setOnDismissListener {
 
-            popup = false
-            dialog = null
+                popup = false
+                dialog = null
 
-        }
+            }
 
-        dialog_view.cancel.setOnClickListener {
+            dialog_view.cancel.setOnClickListener {
 
-            dialog.dismiss()
+                dialog.dismiss()
 
-        }
+            }
 
-        dialog_view.finish.setOnClickListener {
+            dialog_view.finish.setOnClickListener {
 
-            MainActivity.chart = "SET0"
-            startActivity(Intent(this, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                MainActivity.chart = "SET0"
+                startActivity(Intent(this, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+            }
+
+        }else{
+
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
+
+            MainActivity.userLogin!!.text = "사용자 등록하기"
+            MainActivity.userImage!!.setImageResource(R.drawable.regi)
+
+            super.onBackPressed()
 
         }
 

@@ -595,6 +595,13 @@ class CommonExaminationActivity : RootActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
+
+            MainActivity.userLogin!!.text = "사용자 등록하기"
+            MainActivity.userImage!!.setImageResource(R.drawable.regi)
+
             startActivity(Intent(this@CommonExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
@@ -1231,6 +1238,8 @@ class CommonExaminationActivity : RootActivity() {
     }
 
     fun GetPaper(paper: Paper_COMMON) {
+
+        state = "getPaper"
 
         cannotEditQuestionnaire(common_exam_inside_scroll_layout)
 

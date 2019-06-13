@@ -344,6 +344,13 @@ class OralExaminationActivity : RootActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
+
+            MainActivity.userLogin!!.text = "사용자 등록하기"
+            MainActivity.userImage!!.setImageResource(R.drawable.regi)
+
             startActivity(Intent(this@OralExaminationActivity, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
@@ -778,6 +785,8 @@ class OralExaminationActivity : RootActivity() {
 
     fun GetPaper(paper:Paper_ORAL)
     {
+
+        state = "getPaper"
 
         cannotEditQuestionnaire(oral_exam_inside_scroll_layout)
 

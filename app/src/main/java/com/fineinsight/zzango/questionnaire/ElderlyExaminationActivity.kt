@@ -402,6 +402,13 @@ class ElderlyExaminationActivity : RootActivity(){
 
         dialog_view.return_alert.setOnClickListener {
 
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
+
+            MainActivity.userLogin!!.text = "사용자 등록하기"
+            MainActivity.userImage!!.setImageResource(R.drawable.regi)
+
             startActivity(Intent(this@ElderlyExaminationActivity, MainActivity::class.java).putExtra("from", "elderly").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             dialog.dismiss()
@@ -561,6 +568,8 @@ class ElderlyExaminationActivity : RootActivity(){
     }
 
     fun GetPaper(paper:Paper_ELDERLY) {
+
+        state = "getPaper"
 
         cannotEditQuestionnaire(elderly_root)
 

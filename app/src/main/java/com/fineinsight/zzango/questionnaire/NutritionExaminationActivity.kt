@@ -529,6 +529,8 @@ class NutritionExaminationActivity :RootActivity() {
 
     fun GetPaper(paper:Paper_NUTRITION){
 
+        state = "getPaper"
+
         cannotEditQuestionnaire(nutrition_root)
 
         progress_constraintLayout.visibility = View.GONE

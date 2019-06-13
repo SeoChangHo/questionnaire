@@ -319,6 +319,8 @@ class SmokingExaminationActivity : RootActivity(){
 
     fun GetPaper(paper: Paper_SMOKING) {
 
+        state = "getPaper"
+
         cannotEditQuestionnaire(smoking_root)
 
         progress_constraintLayout.visibility = View.GONE
