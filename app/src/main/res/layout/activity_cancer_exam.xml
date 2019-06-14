@@ -2507,6 +2507,7 @@
                     android:hint="만나이 입력"
                     android:inputType="number"
                     android:textSize="16dp"
+                    android:maxLength="2"
                     android:backgroundTint="@color/gray"
                     android:textCursorDrawable="@color/gray"
                     android:onClick="focusControl" />
