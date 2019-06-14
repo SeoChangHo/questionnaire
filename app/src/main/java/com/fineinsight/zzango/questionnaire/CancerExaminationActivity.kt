@@ -1075,6 +1075,8 @@ class CancerExaminationActivity : RootActivity(){
         if(paper.ck1 == "1"){
             cancer_1_1.isChecked = true
             if(paper.ck1_1.isNullOrEmpty()){
+
+            }else{
                 cancer_editText1.setText(paper.ck1_1)
             }
         }else if(paper.ck1 == "2"){
@@ -1089,6 +1091,8 @@ class CancerExaminationActivity : RootActivity(){
             cancer_2_2.isChecked = true
 
             if(paper.ck2_1.isNullOrEmpty()){
+
+            }else{
                 cancer_editText2.setText(paper.ck2_1)
             }
         }
@@ -1420,6 +1424,8 @@ class CancerExaminationActivity : RootActivity(){
         if(paper.ck8_1 == "1"){
             cancer_8_1.isChecked = true
             if(paper.ck8_2.isNullOrEmpty()){
+
+            }else{
                 cancer_editText3.setText(paper.ck8_2)
             }
         }else if(paper.ck8_1 == "2"){
@@ -1433,6 +1439,8 @@ class CancerExaminationActivity : RootActivity(){
         }else if(paper.ck9_1 == "3"){
             cancer_9_3.isChecked = true
             if(paper.ck9_2.isNullOrEmpty()){
+
+            }else{
                 cancer_editText4.setText(paper.ck9_2)
             }
         }
