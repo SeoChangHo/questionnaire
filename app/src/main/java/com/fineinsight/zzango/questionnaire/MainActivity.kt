@@ -554,7 +554,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             })
 
             val login = dialog_view.findViewById(R.id.user_login_button) as Button
-            var reSign = dialog_view.findViewById(R.id.btnReSign) as Button
+            var reSign = dialog_view.findViewById(R.id.btnReSign) as ImageView
 
             reSign.setOnClickListener {
                 canvasView.ClearCanvas()

@@ -196,7 +196,7 @@ class OralExaminationActivity : RootActivity() {
 
         if(login_appbar_loading_progress.visibility != View.VISIBLE){
 
-            super.onBackPressed()
+            cancelAlert()
 
         }
 
