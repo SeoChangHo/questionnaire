@@ -18,6 +18,7 @@ import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_ORAL
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -344,16 +345,25 @@ class OralExaminationActivity : RootActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
-            MainActivity.login_user_name = ""
-            MainActivity.user_first_serial = ""
-            MainActivity.user_last_serial = ""
+            if(AdditionalArr.Page.isCancerChecked){
 
-            MainActivity.userLogin!!.text = "사용자 등록하기"
-            MainActivity.userImage!!.setImageResource(R.drawable.regi)
+                startActivity(Intent(this@OralExaminationActivity, CancerExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                dialog.dismiss()
 
-            startActivity(Intent(this@OralExaminationActivity, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            }else{
 
-            dialog.dismiss()
+                MainActivity.login_user_name = ""
+                MainActivity.user_first_serial = ""
+                MainActivity.user_last_serial = ""
+
+                MainActivity.userLogin!!.text = "사용자 등록하기"
+                MainActivity.userImage!!.setImageResource(R.drawable.regi)
+
+                startActivity(Intent(this@OralExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+                dialog.dismiss()
+
+            }
 
         }
 

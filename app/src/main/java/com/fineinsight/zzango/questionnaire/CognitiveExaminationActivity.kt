@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_COGNITIVE
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -401,16 +402,32 @@ class CognitiveExaminationActivity : RootActivity(){
 
         dialog_view.return_alert.setOnClickListener {
 
-            MainActivity.login_user_name = ""
-            MainActivity.user_first_serial = ""
-            MainActivity.user_last_serial = ""
 
-            MainActivity.userLogin!!.text = "사용자 등록하기"
-            MainActivity.userImage!!.setImageResource(R.drawable.regi)
+            if(AdditionalArr.Page.isOralChecked){
 
-            startActivity(Intent(this@CognitiveExaminationActivity, MainActivity::class.java).putExtra("from", "cognitive").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-            dialog.dismiss()
+                startActivity(Intent(this@CognitiveExaminationActivity, OralExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                dialog.dismiss()
 
+            }else if(AdditionalArr.Page.isCancerChecked){
+
+                startActivity(Intent(this@CognitiveExaminationActivity, CancerExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                dialog.dismiss()
+
+            }else{
+
+                MainActivity.login_user_name = ""
+                MainActivity.user_first_serial = ""
+                MainActivity.user_last_serial = ""
+
+                MainActivity.userLogin!!.text = "사용자 등록하기"
+                MainActivity.userImage!!.setImageResource(R.drawable.regi)
+
+                startActivity(Intent(this@CognitiveExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+                dialog.dismiss()
+
+            }
+          
         }
 
     }
