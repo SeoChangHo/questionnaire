@@ -352,6 +352,14 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             })
 
             val login = dialog_view.findViewById(R.id.user_login_button) as Button
+            var reSign = dialog_view.findViewById(R.id.btnReSign) as ImageView
+
+            reSign.setOnClickListener {
+                canvasView.ClearCanvas()
+                dialog_view.user_login_button.isEnabled = false
+                dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+            }
+
             login.setOnClickListener{
 
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////

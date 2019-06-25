@@ -7,6 +7,105 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout28"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/mainBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="60dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="64dp"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="16dp"
+            android:text="구강검진 문진표"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="8dp"
+            android:text="※해당 항목에 체크해주시기 바랍니다."
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/oral_examination_save"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/save_button_back"
+            android:text="저장"
+            android:textStyle="bold"
+            android:textColor="@color/mainBlue"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/oral_examination_cancel" />
+
+        <Button
+            android:id="@+id/oral_edit_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/save_button_back"
+            android:text="확인"
+            android:textColor="@color/mainBlue"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/oral_examination_cancel" />
+
+        <Button
+            android:id="@+id/oral_examination_cancel"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/save_button_back"
+            android:text="취소"
+            android:textStyle="bold"
+            android:textColor="@color/mainBlue"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout28">
+
     <ScrollView
         android:id="@+id/oral_exam_scroll_view"
         android:layout_width="match_parent"
@@ -20,30 +119,17 @@
             android:layout_height="match_parent"
             android:onClick="focusControl">
 
-            <TextView
-                android:id="@+id/oral_questionnaire"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="구강검진 문진표"
-                android:textColor="@color/mainBlue"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
             <TextView
                 android:id="@+id/name_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="@dimen/common_text_top_margin"
+                android:layout_marginTop="60dp"
                 android:text="성명 : "
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/name_edit"
@@ -121,10 +207,6 @@
                 app:layout_constraintStart_toEndOf="@+id/number_hyphen"
                 app:layout_constraintTop_toTopOf="@+id/number_hyphen" />
 
-            <TextView
-                android:id="@+id/oral_questionnaire_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/oral_questionnaire_section1"
@@ -1233,89 +1315,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire_section3"
                 android:onClick="focusControl" />
 
-            <Button
-                android:id="@+id/oral_examination_save"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="50dp"
-                android:background="@drawable/button_main_blue"
-                android:text="저장"
-                android:textColor="@color/backGround"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/oral_examination_cancel"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/remark_content" />
-
-            <Button
-                android:id="@+id/oral_examination_cancel"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="50dp"
-                android:background="@drawable/button_main_blue"
-                android:text="취소"
-                android:textColor="@color/backGround"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/oral_examination_save"
-                app:layout_constraintTop_toBottomOf="@+id/remark_content" />
-
-            <Button
-                android:id="@+id/oral_edit_submit"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="50dp"
-                android:background="@drawable/button_main_blue"
-                android:text="확인"
-                android:textColor="@color/backGround"
-                android:textSize="20dp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/remark_content"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/remark_content"
-                app:layout_constraintTop_toBottomOf="@+id/remark_content" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="60dp"
-                android:layout_height="8dp"
-                android:layout_marginTop="80dp"
-                android:background="@color/mainBlue"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="32dp"
-                android:text="※해당 항목에 체크해주시기 바랍니다."
-                android:textColor="@color/mainBlue"
-                android:textSize="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/oral_questionnaire" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -1369,6 +1368,8 @@
         </android.support.constraint.ConstraintLayout>
 
     </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/login_appbar_loading_progress_bg"
