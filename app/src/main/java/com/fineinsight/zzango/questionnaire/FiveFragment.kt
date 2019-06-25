@@ -27,7 +27,7 @@ class FiveFragment : Fragment(){
 
             }else{
 
-                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context)
+                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context, "CancerExaminationActivity")
 
             }
 

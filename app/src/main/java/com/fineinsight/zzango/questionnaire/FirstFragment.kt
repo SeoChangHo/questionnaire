@@ -1,5 +1,6 @@
 package com.fineinsight.zzango.questionnaire
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -27,7 +28,7 @@ class FirstFragment : Fragment(){
 
             }else{
 
-                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context)
+                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context, "CommonExaminationActivity")
 
             }
 

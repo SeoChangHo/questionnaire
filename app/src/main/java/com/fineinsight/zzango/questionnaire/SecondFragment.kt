@@ -27,7 +27,7 @@ class SecondFragment : Fragment(){
 
             }else{
 
-                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context)
+                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context, "MentalExaminationActivity")
 
             }
 
@@ -44,7 +44,7 @@ class SecondFragment : Fragment(){
 
             }else{
 
-                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context)
+                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context, "CognitiveExaminationActivity")
 
             }
 
@@ -61,7 +61,7 @@ class SecondFragment : Fragment(){
 
             }else{
 
-                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context)
+                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context, "ElderlyExaminationActivity")
 
             }
 

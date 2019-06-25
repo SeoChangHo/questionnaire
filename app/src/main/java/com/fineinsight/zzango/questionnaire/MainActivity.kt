@@ -2,6 +2,7 @@ package com.fineinsight.zzango.questionnaire
 
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
@@ -24,10 +25,7 @@ import android.text.TextWatcher
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.Signature.CanvasView
@@ -111,11 +109,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button5.setOnClickListener(this)
 
         user_login.setOnClickListener{
-            userlogin(user_login, user_image,this@MainActivity)
+            userlogin2(user_login, user_image,this@MainActivity)
         }
 
-        if(MainActivity.login_user_name != ""){
-            user_login.text = MainActivity.login_user_name+"님"
+        if(login_user_name != ""){
+            user_login.text = login_user_name+"님"
             user_image.setImageResource(R.drawable.exit)
         }else{
             user_login.text = "사용자 등록하기"
@@ -133,13 +131,13 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         dialog.setView(dialog_view)
 
-        if(MainActivity.manager_name == ""){
+        if(manager_name == ""){
             //다이얼로그 뒤로가기 버튼 막기
             dialog.setCancelable(false)
             //밖에부분 터치 막기
             dialog.setCanceledOnTouchOutside(false)
         }else{
-            dialog_view.login_id.setText(MainActivity.manager_name)
+            dialog_view.login_id.setText(manager_name)
             dialog_view.login_id.isFocusableInTouchMode = false
             dialog_view.login_password.isFocusableInTouchMode = true
         }
@@ -206,8 +204,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 }
                 else
                 {
-                    if(MainActivity.manager_name == ""){
-                        MainActivity.manager_name = user
+                    if(manager_name == ""){
+                        manager_name = user
                         setHospitalList()
                         Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
                         dialog.dismiss()
@@ -230,7 +228,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     }
 
-    fun userlogin(view : Button, view2 : ImageView, context : Context){
+    fun userlogin(view : Button, view2 : ImageView, context : Context, startPage : String){
 
         if(view.text == "사용자 등록하기"){
 
@@ -246,16 +244,16 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog.setCanceledOnTouchOutside(false)
             dialog_view.user_login_button.isEnabled = false
 
-//            //////////😎😎😎서명을 위한 공간😎😎😎/////// ///
-//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+            //////////😎😎😎서명을 위한 공간😎😎😎/////// ///
+            //////////😎😎😎서명을 위한 공간😎😎😎//////////
             canvasView = dialog_view.canvas
-//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
-//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
 
             dialog_view.user_name.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
-                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && MainActivity.canvas_motion != null){
+                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && canvas_motion != null){
                         dialog_view.user_login_button.isEnabled = true
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
@@ -280,7 +278,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
                 override fun afterTextChanged(s: Editable?) {
-                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && MainActivity.canvas_motion != null){
+                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && canvas_motion != null){
                         dialog_view.user_login_button.isEnabled = true
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
@@ -322,7 +320,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             dialog_view.last_serial.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
-                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && MainActivity.canvas_motion != null){
+                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && canvas_motion != null){
                         dialog_view.user_login_button.isEnabled = true
                         dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
                     }else{
@@ -365,15 +363,217 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
                 //MainActivity.user_signature = bitmap
 
-                MainActivity.user_stream = stream.toByteArray()
+                user_stream = stream.toByteArray()
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+
+
+                login_user_name = dialog_view.user_name.text.toString()
+                user_first_serial = dialog_view.first_serial.text.toString()
+                user_last_serial = dialog_view.last_serial.text.toString()
+
+                chart(user_first_serial)
+
+                Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
+                view.text = login_user_name+"님"
+                view2.setImageResource(R.drawable.exit)
+                dialog.dismiss()
+
+                //login_appbar_loading_progress.visibility = View.VISIBLE
+                //login_appbar_loading_progress_bg.visibility = View.VISIBLE
+
+                when(startPage){
+                    "CommonExaminationActivity" -> {
+                        Handler().postDelayed({
+                            startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        },125)
+                    }
+                    "MentalExaminationActivity" -> {
+                        Handler().postDelayed({
+                            startActivity(Intent(context, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        },125)
+                    }
+                    "CognitiveExaminationActivity" -> {
+                        Handler().postDelayed({
+                            startActivity(Intent(context, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        },125)
+                    }
+                    "ElderlyExaminationActivity" -> {
+                        Handler().postDelayed({
+                            startActivity(Intent(context, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        },125)
+                    }
+                    "ExerciseExaminationActivity" -> {
+                        Handler().postDelayed({
+                            startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        },125)
+                    }
+                    "OralExaminationActivity" -> {
+                        Handler().postDelayed({
+                            startActivity(Intent(context, OralExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        },125)
+                    }
+                    "CancerExaminationActivity" -> {
+                        Handler().postDelayed({
+                            startActivity(Intent(context, CancerExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        },125)
+                    }
+
+                }
+
+
+            }
+
+            dialog.show()
+        }
+
+    }
+
+
+    fun userlogin2(view : Button, view2 : ImageView, context : Context){
+
+        if(view.text == "사용자 등록하기"){
+
+            var dialog = AlertDialog.Builder(context).create()
+            var dialog_view = LayoutInflater.from(context).inflate(R.layout.activity_user_login, null)
+            alert_view = dialog_view
+            ValidationBool = false
+            canvas_motion = null
+
+            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            dialog.setView(dialog_view)
+            dialog.setCanceledOnTouchOutside(false)
+            dialog_view.user_login_button.isEnabled = false
+
+//            //////////😎😎😎서명을 위한 공간😎😎😎/////// ///
+//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+            canvasView = dialog_view.canvas
+//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+//            //////////😎😎😎서명을 위한 공간😎😎😎//////////
+
+
+            dialog_view.user_name.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {
+                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && canvas_motion != null){
+                        dialog_view.user_login_button.isEnabled = true
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                    }else{
+                        dialog_view.user_login_button.isEnabled = false
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                    }
+                }
+
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+                }
+
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+                }
+            })
+
+
+            dialog_view.first_serial.addTextChangedListener(object : TextWatcher {
+
+
+
+                override fun afterTextChanged(s: Editable?) {
+                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && canvas_motion != null){
+                        dialog_view.user_login_button.isEnabled = true
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                    }else{
+                        dialog_view.user_login_button.isEnabled = false
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                    }
+                }
+
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    if(s!!.length==6){
+
+                        var Jumin = dialog_view.first_serial.text.toString()
+
+                        validationInside = JuminValidation(Jumin, context)
+
+                        if(validationInside)
+                        {
+                            dialog_view.last_serial.requestFocus()
+                        }
+                        else
+                        {
+                            dialog_view.user_login_button.isEnabled = false
+                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                        }
+
+                    }
+                    else if(s.length<6)
+                    {
+                        validationInside = false
+                        dialog_view.user_login_button.isEnabled = false
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                    }
+                }
+            })
+
+            dialog_view.last_serial.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {
+                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && canvas_motion != null){
+                        dialog_view.user_login_button.isEnabled = true
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                    }else{
+                        dialog_view.user_login_button.isEnabled = false
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                    }
+                }
+
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    if(s!!.length == 1){
+
+                        ValidationBool = true
+                        dialog_view.user_login_button.isEnabled = true
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+
+                    }
+                    else if(s.length<1)
+                    {
+                        ValidationBool = false
+                        dialog_view.user_login_button.isEnabled = false
+                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                    }
+                }
+            })
+
+            val login = dialog_view.findViewById(R.id.user_login_button) as Button
+            login.setOnClickListener{
+
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+                //////////😎😎😎서명을 위한 공간😎😎😎//////////
+                var bitmap:Bitmap = Bitmap.createBitmap(canvasView.width, canvasView.height, Bitmap.Config.ARGB_8888)
+                var canvas:Canvas = Canvas(bitmap)
+                canvasView.draw(canvas)
+
+                var stream = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                //MainActivity.user_signature = bitmap
+
+                user_stream = stream.toByteArray()
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
 
 
-                MainActivity.login_user_name = dialog_view.user_name.text.toString()
-                MainActivity.user_first_serial = dialog_view.first_serial.text.toString()
-                MainActivity.user_last_serial = dialog_view.last_serial.text.toString()
+                login_user_name = dialog_view.user_name.text.toString()
+                user_first_serial = dialog_view.first_serial.text.toString()
+                user_last_serial = dialog_view.last_serial.text.toString()
 
                 chart(user_first_serial)
 
@@ -405,30 +605,32 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 val text3 = dialog_view.findViewById(R.id.notice_textView3) as TextView
                 val text4 = dialog_view.findViewById(R.id.notice_textView4) as TextView
                 val text5 = dialog_view.findViewById(R.id.notice_textView5) as TextView
+                var chkOral = dialog_view.findViewById(R.id.chkOral) as CheckBox
+                var chkCancer = dialog_view.findViewById(R.id.chkCancer) as CheckBox
 
 
                 title.setText(login_user_name+"님")
 
-                if(MainActivity.chart == "SET1"){
+                if(chart == "SET1"){
                     text2.visibility = View.GONE
                     text3.visibility = View.GONE
                     text4.visibility = View.GONE
                     text5.visibility = View.GONE
-                }else if(MainActivity.chart == "SET2"){
+                }else if(chart == "SET2"){
                     text2.visibility = View.GONE
                     text4.visibility = View.GONE
                     text5.visibility = View.GONE
-                }else if(MainActivity.chart == "SET3"){
+                }else if(chart == "SET3"){
                     text2.visibility = View.GONE
                     text5.visibility = View.GONE
-                }else if(MainActivity.chart == "SET4"){
+                }else if(chart == "SET4"){
                     text3.visibility = View.GONE
                     text4.visibility = View.GONE
-                }else if(MainActivity.chart == "SET5"){
+                }else if(chart == "SET5"){
                     text3.visibility = View.GONE
                     text4.visibility = View.GONE
                     text5.visibility = View.GONE
-                }else if(MainActivity.chart == "SET6"){
+                }else if(chart == "SET6"){
 
                 }
 
@@ -445,7 +647,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 }
 
                 cancel.setOnClickListener {
-                    MainActivity.chart = PaperArray.SetList.SET0
+                    chart = PaperArray.SetList.SET0
                     dialog.dismiss()
                 }
 
@@ -454,7 +656,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog.show()
         }
 
-        if(view.text == MainActivity.login_user_name+"님"){
+        if(view.text == login_user_name+"님"){
 
 
 
@@ -476,9 +678,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             logout.setOnClickListener {
 
-                MainActivity.login_user_name = ""
-                MainActivity.user_first_serial = ""
-                MainActivity.user_last_serial = ""
+                login_user_name = ""
+                user_first_serial = ""
+                user_last_serial = ""
 
                 Toast.makeText(context, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
                 view.text = "사용자 등록하기"
@@ -876,22 +1078,22 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         if(yy == two || yy == two2){
             //우울증 포함
-            MainActivity.chart = PaperArray.SetList.SET2
+            chart = PaperArray.SetList.SET2
         }else if(yy == three || yy == three2 || yy == three3 ){
             //우울증 생활습관 포함
-            MainActivity.chart = PaperArray.SetList.SET3
+            chart = PaperArray.SetList.SET3
         }else if(yy == four || yy == four2){
             //인지기능 노인신체기능검사 포함
-            MainActivity.chart = PaperArray.SetList.SET4
+            chart = PaperArray.SetList.SET4
         }else if(yy == five || yy == five2 || yy == five3 || yy == five4 || yy == five5 || yy == five6 || yy == five7 || yy == five8){
             //인지기능 포함
-            MainActivity.chart = PaperArray.SetList.SET5
+            chart = PaperArray.SetList.SET5
         }else if(yy == six){
             //인지기능 우울증 생활습관 노인신체기능검사 포함
-            MainActivity.chart = PaperArray.SetList.SET6
+            chart = PaperArray.SetList.SET6
         }else{
             //기본검사
-            MainActivity.chart = PaperArray.SetList.SET1
+            chart = PaperArray.SetList.SET1
         }
 
     }
@@ -900,23 +1102,23 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
 
-        if(MainActivity.manager_name == "fine"){
+        if(manager_name == "fine"){
 
-            MainActivity.hospital = HospitalList.hospital.test
+            hospital = HospitalList.hospital.test
             main_logo.setImageResource(R.drawable.logo)
 
-        }else if(MainActivity.manager_name == "mokpohos"){
+        }else if(manager_name == "mokpohos"){
 
-            MainActivity.hospital = HospitalList.hospital.Mokpo
+            hospital = HospitalList.hospital.Mokpo
             main_logo.setImageResource(R.drawable.logo2)
 
-        }else if(MainActivity.manager_name == "hanshin"){
+        }else if(manager_name == "hanshin"){
 
-            MainActivity.hospital = HospitalList.hospital.Banpo
+            hospital = HospitalList.hospital.Banpo
 
-        }else if(MainActivity.manager_name == "bestian"){
+        }else if(manager_name == "bestian"){
 
-            MainActivity.hospital = HospitalList.hospital.Osong
+            hospital = HospitalList.hospital.Osong
             main_logo.setImageResource(R.drawable.bestianlogo)
 
         }
