@@ -319,7 +319,7 @@ class ListActivity : RootActivity() {
 
                     } else {
 
-                        //LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
+                        LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
 
                         if(startIndex+1<TotalIndex)
                         {
