@@ -557,7 +557,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             var reSign = dialog_view.findViewById(R.id.btnReSign) as Button
 
             reSign.setOnClickListener {
-
+                canvasView.ClearCanvas()
+                dialog_view.user_login_button.isEnabled = false
+                dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
             }
 
             login.setOnClickListener{
