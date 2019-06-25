@@ -450,7 +450,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -470,7 +470,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -490,7 +490,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -506,7 +506,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -522,7 +522,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -538,7 +538,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -566,7 +566,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -582,7 +582,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -614,7 +614,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -638,7 +638,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "10번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -666,7 +666,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "11번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -686,7 +686,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "12번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -714,7 +714,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "13번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -742,7 +742,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "14번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
@@ -762,7 +762,7 @@ class OralExaminationActivity : RootActivity() {
 
         }else{
 
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "15번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
 
             return false
 
