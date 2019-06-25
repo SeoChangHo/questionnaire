@@ -26,6 +26,7 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
 import android.widget.*
+import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.Signature.CanvasView
@@ -637,6 +638,17 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 dialog.show()
 
                 ok.setOnClickListener {
+
+                    AdditionalArr.Page.init()
+                    if(chkOral.isChecked)
+                    {
+                        AdditionalArr.Page.isOralChecked = true
+                    }
+                    if(chkCancer.isChecked)
+                    {
+                        AdditionalArr.Page.isCancerChecked = true
+                    }
+
 
                     dialog.dismiss()
 
