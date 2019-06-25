@@ -277,7 +277,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:layout_marginBottom="32dp"
                 android:onClick="focusControl"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/family_medical_history"
                 app:layout_constraintStart_toStartOf="@id/family_medical_history"
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup">
@@ -286,9 +288,9 @@
                     android:id="@+id/drinking_question_1"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
                     android:text="1. 술을 마시는 횟수는 어느 정도입니까?"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -308,52 +310,52 @@
                         android:id="@+id/drinking_1_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 1번 이하"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_1_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 2 ~ 4번"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_1_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="일주일에 2 ~ 3번"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_1_4"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="일주일에 4번 이상"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -362,11 +364,11 @@
                     android:id="@+id/drinking_question_2"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="2. 술을 마시는 날은 보통 어느 정도 마십니까?"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -378,11 +380,11 @@
                     android:id="@+id/drinking_question_2_1"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="1) 소주"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -405,65 +407,65 @@
                         android:id="@+id/drinking_2_1_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="반병 이하"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_2_1_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="1병 이하"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_2_1_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="1.5병 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_2_1_4"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="2병 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_2_1_5"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="2.5병 이상"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -471,11 +473,11 @@
                     android:id="@+id/drinking_question_2_2"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="2) 기타의 술"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -498,65 +500,65 @@
                         android:id="@+id/drinking_2_2_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="1 ~ 2잔"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_2_2_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="3 ~ 4잔"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_2_2_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="5 ~ 6잔"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_2_2_4"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="7 ~ 9 잔"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_2_2_5"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="10잔 이상"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -564,11 +566,11 @@
                     android:id="@+id/drinking_question_3"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="3. 한 번의 술좌석에서 소주 1병을 초과하거나 맥주 5캔(생맥주 2,000cc)이상을 마시는 횟수는 어느 정도입니까?"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -580,10 +582,10 @@
                     android:id="@+id/drinking_question_3_sub"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp"
                     android:text="(알코올 60g에 해당하는 음주량을 의미 / 양주, 와인, 막걸리는 각각의 술잔으로 5잔 이상)"
                     android:textSize="18dp"
                     app:layout_constraintEnd_toEndOf="@+id/drinking_question_3"
@@ -605,65 +607,65 @@
                         android:id="@+id/drinking_3_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="전혀 없다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_3_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 미만"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_3_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_3_4"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="일주일에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_3_5"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="거의 매일"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -672,11 +674,11 @@
                     android:id="@+id/drinking_question_4"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="4. 지난 1년간, 일단 술을 마시기 시작하여 자제가 안 된 적이 있습니까?"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -699,65 +701,65 @@
                         android:id="@+id/drinking_4_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="전혀 없다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_4_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 미만"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_4_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_4_4"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="일주일에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_4_5"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="거의 매일"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -765,11 +767,11 @@
                     android:id="@+id/drinking_question_5"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="5. 지난 1년간, 음주 때문에 일상생활에 지장을 받은 적이 있습니까?"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -792,65 +794,65 @@
                         android:id="@+id/drinking_5_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="전혀 없다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_5_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 미만"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_5_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_5_4"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="일주일에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_5_5"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="거의 매일"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -859,11 +861,11 @@
                     android:id="@+id/drinking_question_6"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="6. 지난 1년간, 과음 후 다음날 아침 정신을 차리기 위해 해장술을 마신 적이 있습니까?"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -886,65 +888,65 @@
                         android:id="@+id/drinking_6_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="전혀 없다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_6_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 미만"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_6_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_6_4"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="일주일에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_6_5"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="거의 매일"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -953,11 +955,11 @@
                     android:id="@+id/drinking_question_7"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="7. 지난 1년간, 음주 후 술을 마신 것에 대해 후회한 적이 있습니까?"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -980,65 +982,65 @@
                         android:id="@+id/drinking_7_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="전혀 없다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_7_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 미만"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_7_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_7_4"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="일주일에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_7_5"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="거의 매일"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -1046,11 +1048,11 @@
                     android:id="@+id/drinking_question_8"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="8. 지난 1년간, 술이 깬 후에 취중의 일을 기억할 수 없었던 적이 있습니까?"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -1073,65 +1075,65 @@
                         android:id="@+id/drinking_8_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="전혀 없다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_8_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 미만"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_8_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="한 달에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_8_4"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="일주일에 한 번 정도"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_8_5"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="거의 매일"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -1139,11 +1141,11 @@
                     android:id="@+id/drinking_question_9"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="9. 당신의 음주로 인해 본인이 다치거나, 또는 가족이나 타인이 다친 적이 있습니까?"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -1166,40 +1168,40 @@
                         android:id="@+id/drinking_9_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="전혀 없었다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_9_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="과거에는 있었지만, 지난 1년 동안에는 없었다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_9_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="지난 1년 동안에 있었다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
@@ -1207,11 +1209,11 @@
                     android:id="@+id/drinking_question_10"
                     android:layout_width="700dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="@dimen/common_text_top_margin"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="10. 가족이나 의사가 당신의 음주에 대해 걱정을 하거나, 또는 '술을 끊거나 줄이라'는 권고를 한 적이 있습니까?"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -1234,40 +1236,40 @@
                         android:id="@+id/drinking_10_1"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
                         android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="전혀 없었다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_10_2"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="과거에는 있었지만, 지난 1년 동안에는 없었다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                     <RadioButton
                         android:id="@+id/drinking_10_3"
                         android:layout_width="500dp"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/mainBlue"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginBottom="15dp"
+                        android:buttonTint="@color/mainBlue"
+                        android:onClick="focusControl"
                         android:scaleX="1.3"
                         android:scaleY="1.3"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="70dp"
                         android:text="지난 1년 동안에 있었다"
-                        android:onClick="focusControl" />
+                        android:textSize="15dp" />
 
                 </RadioGroup>
 
