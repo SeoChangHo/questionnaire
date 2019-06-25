@@ -192,9 +192,6 @@ class DrinkingExaminationActivity : RootActivity(){
             LocalDBhelper(this).drinkingCreate(sql_db)
             LocalDBhelper(this).drinkingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!)
 
-            MainActivity.login_user_name = ""
-            MainActivity.user_first_serial = ""
-            MainActivity.user_last_serial = ""
             saveCompleteAlert()
 
         }else if(MainActivity.chart == "SET6"){
@@ -257,9 +254,6 @@ class DrinkingExaminationActivity : RootActivity(){
 
                             } else {
 
-                                MainActivity.login_user_name = ""
-                                MainActivity.user_first_serial = ""
-                                MainActivity.user_last_serial = ""
                                 saveCompleteAlert()
 
                             }

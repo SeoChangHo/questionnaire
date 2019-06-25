@@ -554,6 +554,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             })
 
             val login = dialog_view.findViewById(R.id.user_login_button) as Button
+            var reSign = dialog_view.findViewById(R.id.btnReSign) as Button
+
+            reSign.setOnClickListener {
+
+            }
+
             login.setOnClickListener{
 
                 //////////😎😎😎서명을 위한 공간😎😎😎//////////
@@ -654,7 +660,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                     Handler().postDelayed({
                         startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                    },125)
+                    },100)
 
                 }
 

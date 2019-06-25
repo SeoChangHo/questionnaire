@@ -174,9 +174,6 @@ class CognitiveExaminationActivity : RootActivity(){
             LocalDBhelper(this).cognitiveCreate(sql_db)
             LocalDBhelper(this).cognitiveSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!)
 
-            MainActivity.login_user_name = ""
-            MainActivity.user_first_serial = ""
-            MainActivity.user_last_serial = ""
             saveCompleteAlert()
 
         }else if(MainActivity.chart == "SET4"){
@@ -233,9 +230,6 @@ class CognitiveExaminationActivity : RootActivity(){
 
                             } else {
 
-                                MainActivity.login_user_name = ""
-                                MainActivity.user_first_serial = ""
-                                MainActivity.user_last_serial = ""
                                 saveCompleteAlert()
 
                             }
@@ -427,7 +421,7 @@ class CognitiveExaminationActivity : RootActivity(){
                 dialog.dismiss()
 
             }
-          
+
         }
 
     }
