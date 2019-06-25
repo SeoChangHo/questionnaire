@@ -2,6 +2,7 @@ package com.fineinsight.zzango.questionnaire.LocalList
 
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -12,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.*
 import kotlinx.android.synthetic.main.activity_list.*
+import kotlinx.android.synthetic.main.progress_dialog.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -215,12 +217,19 @@ class ListActivity : RootActivity() {
 
 
                 window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                login_appbar_loading_progress.visibility = View.VISIBLE
 
 
 
-                UploadPaper(SaveArr, SetArr, removeArr, 0, SaveArr.size)
+                val mdialogView = layoutInflater.inflate(R.layout.progress_dialog, null)
+
+                val mBuilder = AlertDialog.Builder(this)
+                        .setView(mdialogView)
+                        .setCancelable(false)
+
+                val mAlertDialog = mBuilder.show()
+
+
+                UploadPaper(SaveArr, SetArr, removeArr, 0, SaveArr.size, mdialogView, mAlertDialog)
 
             }else{
 
@@ -258,8 +267,10 @@ class ListActivity : RootActivity() {
 
 
     //재귀호출함수
-    fun UploadPaper(SaveArr:ArrayList<Any>, SetArr:ArrayList<String>, removeArr:ArrayList<Paper>, startIndex:Int, TotalIndex:Int)
+    fun UploadPaper(SaveArr:ArrayList<Any>, SetArr:ArrayList<String>, removeArr:ArrayList<Paper>, startIndex:Int, TotalIndex:Int, dialogView:View, Alertdialog:AlertDialog)
     {
+
+
         sql_db = LocalDBhelper(this).writableDatabase
         println("업로드 들어옴")
         println("Array의 크기는 "+TotalIndex.toString()+" 개 입니다.")
@@ -267,6 +278,14 @@ class ListActivity : RootActivity() {
 
         println("세트번호는 "+SetArr[startIndex]+" 입니다.")
 
+        dialogView.txtMent.text = "${(startIndex+1)}/${TotalIndex} 저장중.."
+
+        val double_start_index = (startIndex+1).toDouble()
+        val double_total_index = TotalIndex.toDouble()
+
+        dialogView.stickProgress.progress = ((double_start_index/double_total_index)*100).toInt()
+
+        println("진행률: ${(double_start_index/double_total_index)*100}")
 
         var InfoArr = ArrayList<String>()
 
@@ -293,32 +312,29 @@ class ListActivity : RootActivity() {
                     if (!response.body()!!.equals("S")) {
 
                         println(startIndex.toString()+"번째 요청 실패")
+                        Alertdialog.dismiss()
 
                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        login_appbar_loading_progress.visibility = View.GONE
                         Toast.makeText(this@ListActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
                     } else {
 
-                        LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
-
+                        //LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
 
                         if(startIndex+1<TotalIndex)
                         {
                             //할게 더 남아서 재귀호출
 
 
-                            UploadPaper(SaveArr, SetArr, removeArr, startIndex+1, TotalIndex)
+                            UploadPaper(SaveArr, SetArr, removeArr, startIndex+1, TotalIndex, dialogView, Alertdialog)
                         }
                         else
                         {
                             //끝
                             println("모든 업로드가 완료되었습니다.")
+                            Alertdialog.dismiss()
 
                             window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                            login_appbar_loading_progress_bg.visibility = View.GONE
-                            login_appbar_loading_progress.visibility = View.GONE
                             Toast.makeText(this@ListActivity, "전송 완료", Toast.LENGTH_LONG).show()
 
                             //LocalDBhelper(this@ListActivity).deletePaper(sql_db!!, removeArr)
@@ -334,6 +350,7 @@ class ListActivity : RootActivity() {
                 }
             }
             override fun onFailure(call: Call<String>, t: Throwable) {
+                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                 Toast.makeText(this@ListActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
                 println(t.toString())
             }
