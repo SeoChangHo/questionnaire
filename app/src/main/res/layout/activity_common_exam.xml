@@ -1103,6 +1103,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView44"
                         app:layout_constraintStart_toEndOf="@+id/textView44"
                         app:layout_constraintTop_toTopOf="@+id/textView44" />
@@ -1128,6 +1129,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView42"
                         app:layout_constraintStart_toEndOf="@+id/textView42"
                         app:layout_constraintTop_toTopOf="@+id/textView42" />
@@ -1173,6 +1175,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView45"
                         app:layout_constraintStart_toEndOf="@+id/textView45"
                         app:layout_constraintTop_toTopOf="@+id/textView45" />
@@ -1198,6 +1201,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView46"
                         app:layout_constraintStart_toEndOf="@+id/textView46"
                         app:layout_constraintTop_toTopOf="@+id/textView46" />
@@ -1223,6 +1227,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView47"
                         app:layout_constraintStart_toEndOf="@+id/textView47"
                         app:layout_constraintTop_toTopOf="@+id/textView47" />
@@ -1370,6 +1375,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="13dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView49"
                         app:layout_constraintStart_toEndOf="@+id/textView49"
                         app:layout_constraintTop_toTopOf="@+id/textView49" />
@@ -1394,6 +1400,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="13dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView50"
                         app:layout_constraintStart_toEndOf="@+id/textView50"
                         app:layout_constraintTop_toTopOf="@+id/textView50" />
@@ -1439,6 +1446,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="13dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView52"
                         app:layout_constraintStart_toEndOf="@+id/textView52"
                         app:layout_constraintTop_toTopOf="@+id/textView52" />
@@ -1463,6 +1471,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="13dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView53"
                         app:layout_constraintStart_toEndOf="@+id/textView53"
                         app:layout_constraintTop_toTopOf="@+id/textView53" />
@@ -1487,6 +1496,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="13dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView54"
                         app:layout_constraintStart_toEndOf="@+id/textView54"
                         app:layout_constraintTop_toTopOf="@+id/textView54" />
@@ -1751,6 +1761,7 @@
                     android:inputType="number"
                     android:textSize="18dp"
                     android:maxLength="1"
+                    android:imeOptions="actionDone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -1777,6 +1788,7 @@
                     android:inputType="number"
                     android:textSize="18dp"
                     android:maxLength="2"
+                    android:imeOptions="actionDone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -1803,6 +1815,7 @@
                     android:inputType="number"
                     android:textSize="18dp"
                     android:maxLength="3"
+                    android:imeOptions="actionDone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -1936,6 +1949,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/table_text_1"
                         app:layout_constraintStart_toEndOf="@+id/table_text_1"
                         app:layout_constraintTop_toTopOf="@+id/table_text_1" />
@@ -2031,6 +2045,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/table_text_2"
                         app:layout_constraintStart_toEndOf="@+id/table_text_2"
                         app:layout_constraintTop_toTopOf="@+id/table_text_2" />
@@ -2127,6 +2142,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/table_text_3"
                         app:layout_constraintStart_toEndOf="@+id/table_text_3"
                         app:layout_constraintTop_toTopOf="@+id/table_text_3" />
@@ -2223,6 +2239,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/table_text_4"
                         app:layout_constraintStart_toEndOf="@+id/table_text_4"
                         app:layout_constraintTop_toTopOf="@+id/table_text_4" />
@@ -2319,6 +2336,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/table_text_5"
                         app:layout_constraintStart_toEndOf="@+id/table_text_5"
                         app:layout_constraintTop_toTopOf="@+id/table_text_5" />
@@ -2523,6 +2541,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/table_text_6"
                         app:layout_constraintStart_toEndOf="@+id/table_text_6"
                         app:layout_constraintTop_toTopOf="@+id/table_text_6" />
@@ -2618,6 +2637,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/table_text_7"
                         app:layout_constraintStart_toEndOf="@+id/table_text_7"
                         app:layout_constraintTop_toTopOf="@+id/table_text_7" />
@@ -2714,6 +2734,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/table_text_8"
                         app:layout_constraintStart_toEndOf="@+id/table_text_8"
                         app:layout_constraintTop_toTopOf="@+id/table_text_8" />
@@ -2810,6 +2831,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/table_text_9"
                         app:layout_constraintStart_toEndOf="@+id/table_text_9"
                         app:layout_constraintTop_toTopOf="@+id/table_text_9" />
@@ -2906,6 +2928,7 @@
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
                         android:textSize="16dp"
+                        android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/table_text_10"
                         app:layout_constraintStart_toEndOf="@+id/table_text_10"
                         app:layout_constraintTop_toTopOf="@+id/table_text_10" />
@@ -3157,6 +3180,7 @@
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
                 android:text="0"
+                android:imeOptions="actionDone"
                 app:layout_constraintStart_toStartOf="@+id/textView31"
                 app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
@@ -3186,6 +3210,7 @@
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
                 android:text="0"
+                android:imeOptions="actionDone"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_time_1"
                 app:layout_constraintStart_toEndOf="@+id/textView32"
                 app:layout_constraintTop_toTopOf="@+id/editText_time_1" />
@@ -3373,6 +3398,7 @@
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
                 android:text="0"
+                android:imeOptions="actionDone"
                 app:layout_constraintStart_toStartOf="@+id/textView37"
                 app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
@@ -3402,6 +3428,7 @@
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
                 android:text="0"
+                android:imeOptions="actionDone"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_time_2"
                 app:layout_constraintStart_toEndOf="@+id/textView38"
                 app:layout_constraintTop_toTopOf="@+id/editText_time_2" />

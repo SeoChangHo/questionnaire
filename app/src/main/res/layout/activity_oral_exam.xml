@@ -803,6 +803,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     android:onClick="focusControl" />
 
                 <TextView
@@ -1311,6 +1312,7 @@
                 android:paddingTop="10dp"
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
+                android:imeOptions="actionDone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/oral_questionnaire_section3"
                 app:layout_constraintStart_toStartOf="@+id/oral_questionnaire_section3"
