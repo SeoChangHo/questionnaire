@@ -381,7 +381,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 user_first_serial = dialog_view.first_serial.text.toString()
                 user_last_serial = dialog_view.last_serial.text.toString()
 
-                chart(user_first_serial)
+//                chart(user_first_serial)
+                MainActivity.chart = "SET0"
                 if(user_last_serial.toInt()%2 == 0){
                     AdditionalArr.Gender.isGender = true
                 }else{
