@@ -330,8 +330,13 @@ class CancerExaminationActivity : RootActivity(){
 
         if(!AdditionalArr.Gender.isGender){
 
-            cancer_4_3_radio.isEnabled = false
-            cancer_4_7_radio.isEnabled = false
+            cancer_question_4_3.visibility = View.GONE
+            cancer_4_3_radio.visibility = View.GONE
+
+            cancer_question_4_7.visibility = View.GONE
+            cancer_4_7_radio.visibility = View.GONE
+
+            family_medical_history3.visibility = View.GONE
 
             cancer_question_8.visibility = View.GONE
             cancer_question_9.visibility = View.GONE
@@ -348,6 +353,31 @@ class CancerExaminationActivity : RootActivity(){
             cancer_12_radio.visibility = View.GONE
             cancer_13_radio.visibility = View.GONE
             cancer_14_radio.visibility = View.GONE
+
+        }else{
+            cancer_question_4_3.visibility = View.VISIBLE
+            cancer_4_3_radio.visibility = View.VISIBLE
+
+            cancer_question_4_7.visibility = View.VISIBLE
+            cancer_4_7_radio.visibility = View.VISIBLE
+
+            family_medical_history3.visibility = View.VISIBLE
+
+            cancer_question_8.visibility = View.VISIBLE
+            cancer_question_9.visibility = View.VISIBLE
+            cancer_question_10.visibility = View.VISIBLE
+            cancer_question_11.visibility = View.VISIBLE
+            cancer_question_12.visibility = View.VISIBLE
+            cancer_question_13.visibility = View.VISIBLE
+            cancer_question_14.visibility = View.VISIBLE
+
+            cancer_8_radio.visibility = View.VISIBLE
+            cancer_9_radio.visibility = View.VISIBLE
+            cancer_10_radio.visibility = View.VISIBLE
+            cancer_11_radio.visibility = View.VISIBLE
+            cancer_12_radio.visibility = View.VISIBLE
+            cancer_13_radio.visibility = View.VISIBLE
+            cancer_14_radio.visibility = View.VISIBLE
 
         }
 
@@ -699,20 +729,33 @@ class CancerExaminationActivity : RootActivity(){
             ck3_1 = "3"
         }else if(cancer_3_1_3.isChecked){
             ck3_1 = "2"
+
             if(cancer_3_1_checkBox1.isChecked){
                 ck3_1_1 = "1"
-            }else if(cancer_3_1_checkBox2.isChecked){
+            }
+            if(cancer_3_1_checkBox2.isChecked){
                 ck3_1_2 = "2"
-            }else if(cancer_3_1_checkBox3.isChecked){
+            }
+            if(cancer_3_1_checkBox3.isChecked){
                 ck3_1_3 = "3"
-            }else if(cancer_3_1_checkBox4.isChecked){
+            }
+            if(cancer_3_1_checkBox4.isChecked){
                 ck3_1_4 = "4"
-            }else if(cancer_3_1_checkBox5.isChecked){
+            }
+            if(cancer_3_1_checkBox5.isChecked){
                 ck3_1_5 = "5"
+            }
+
+            if(cancer_3_1_checkBox1.isChecked){
+            }else if(cancer_3_1_checkBox2.isChecked){
+            }else if(cancer_3_1_checkBox3.isChecked){
+            }else if(cancer_3_1_checkBox4.isChecked){
+            }else if(cancer_3_1_checkBox5.isChecked){
             }else{
                 Toast.makeText(this, "3-1번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
+
         }else{
             Toast.makeText(this, "3-1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -724,20 +767,33 @@ class CancerExaminationActivity : RootActivity(){
             ck3_2 = "3"
         }else if(cancer_3_2_3.isChecked){
             ck3_2 = "2"
+
             if(cancer_3_2_checkBox1.isChecked){
-                ck3_2_1 = "1"
             }else if(cancer_3_2_checkBox2.isChecked){
-                ck3_2_2 = "2"
             }else if(cancer_3_2_checkBox3.isChecked){
-                ck3_2_3 = "3"
             }else if(cancer_3_2_checkBox4.isChecked){
-                ck3_2_4 = "4"
             }else if(cancer_3_2_checkBox5.isChecked){
-                ck3_2_5 = "5"
             }else{
                 Toast.makeText(this, "3-2번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
+
+            if(cancer_3_2_checkBox1.isChecked){
+                ck3_2_1 = "1"
+            }
+            if(cancer_3_2_checkBox2.isChecked){
+                ck3_2_2 = "2"
+            }
+            if(cancer_3_2_checkBox3.isChecked){
+                ck3_2_3 = "3"
+            }
+            if(cancer_3_2_checkBox4.isChecked){
+                ck3_2_4 = "4"
+            }
+            if(cancer_3_2_checkBox5.isChecked){
+                ck3_2_5 = "5"
+            }
+
         }else{
             Toast.makeText(this, "3-2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -750,19 +806,31 @@ class CancerExaminationActivity : RootActivity(){
         }else if(cancer_3_3_3.isChecked){
             ck3_3 = "2"
             if(cancer_3_3_checkBox1.isChecked){
-                ck3_3_1 = "1"
             }else if(cancer_3_3_checkBox2.isChecked){
-                ck3_3_2 = "2"
             }else if(cancer_3_3_checkBox3.isChecked){
-                ck3_3_3 = "3"
             }else if(cancer_3_3_checkBox4.isChecked){
-                ck3_3_4 = "4"
             }else if(cancer_3_3_checkBox5.isChecked){
-                ck3_3_5 = "5"
             }else{
                 Toast.makeText(this, "3-3번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
+
+            if(cancer_3_3_checkBox1.isChecked){
+                ck3_3_1 = "1"
+            }
+            if(cancer_3_3_checkBox2.isChecked){
+                ck3_3_2 = "2"
+            }
+            if(cancer_3_3_checkBox3.isChecked){
+                ck3_3_3 = "3"
+            }
+            if(cancer_3_3_checkBox4.isChecked){
+                ck3_3_4 = "4"
+            }
+            if(cancer_3_3_checkBox5.isChecked){
+                ck3_3_5 = "5"
+            }
+
         }else{
             Toast.makeText(this, "3-3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -776,19 +844,31 @@ class CancerExaminationActivity : RootActivity(){
         }else if(cancer_3_4_3.isChecked){
             ck3_4 = "2"
             if(cancer_3_4_checkBox1.isChecked){
-                ck3_4_1 = "1"
             }else if(cancer_3_4_checkBox2.isChecked){
-                ck3_4_2 = "2"
             }else if(cancer_3_4_checkBox3.isChecked){
-                ck3_4_3 = "3"
             }else if(cancer_3_4_checkBox4.isChecked){
-                ck3_4_4 = "4"
             }else if(cancer_3_4_checkBox5.isChecked){
-                ck3_4_5 = "5"
             }else{
                 Toast.makeText(this, "3-4번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
+
+            if(cancer_3_4_checkBox1.isChecked){
+                ck3_4_1 = "1"
+            }
+            if(cancer_3_4_checkBox2.isChecked){
+                ck3_4_2 = "2"
+            }
+            if(cancer_3_4_checkBox3.isChecked){
+                ck3_4_3 = "3"
+            }
+            if(cancer_3_4_checkBox4.isChecked){
+                ck3_4_4 = "4"
+            }
+            if(cancer_3_4_checkBox5.isChecked){
+                ck3_4_5 = "5"
+            }
+
         }else{
             Toast.makeText(this, "3-4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -801,19 +881,31 @@ class CancerExaminationActivity : RootActivity(){
         }else if(cancer_3_5_3.isChecked){
             ck3_5 = "2"
             if(cancer_3_5_checkBox1.isChecked){
-                ck3_5_1 = "1"
             }else if(cancer_3_5_checkBox2.isChecked){
-                ck3_5_2 = "2"
             }else if(cancer_3_5_checkBox3.isChecked){
-                ck3_5_3 = "3"
             }else if(cancer_3_5_checkBox4.isChecked){
-                ck3_5_4 = "4"
             }else if(cancer_3_5_checkBox5.isChecked){
-                ck3_5_5 = "5"
             }else{
                 Toast.makeText(this, "3-5번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
+
+            if(cancer_3_5_checkBox1.isChecked){
+                ck3_5_1 = "1"
+            }
+            if(cancer_3_5_checkBox2.isChecked){
+                ck3_5_2 = "2"
+            }
+            if(cancer_3_5_checkBox3.isChecked){
+                ck3_5_3 = "3"
+            }
+            if(cancer_3_5_checkBox4.isChecked){
+                ck3_5_4 = "4"
+            }
+            if(cancer_3_5_checkBox5.isChecked){
+                ck3_5_5 = "5"
+            }
+
         }else{
             Toast.makeText(this, "3-5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -826,19 +918,31 @@ class CancerExaminationActivity : RootActivity(){
         }else if(cancer_3_6_3.isChecked){
             ck3_6 = "2"
             if(cancer_3_6_checkBox1.isChecked){
-                ck3_6_1 = "1"
             }else if(cancer_3_6_checkBox2.isChecked){
-                ck3_6_2 = "2"
             }else if(cancer_3_6_checkBox3.isChecked){
-                ck3_6_3 = "3"
             }else if(cancer_3_6_checkBox4.isChecked){
-                ck3_6_4 = "4"
             }else if(cancer_3_6_checkBox5.isChecked){
-                ck3_6_5 = "5"
             }else{
                 Toast.makeText(this, "3-6번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
+
+            if(cancer_3_6_checkBox1.isChecked){
+                ck3_6_1 = "1"
+            }
+            if(cancer_3_6_checkBox2.isChecked){
+                ck3_6_2 = "2"
+            }
+            if(cancer_3_6_checkBox3.isChecked){
+                ck3_6_3 = "3"
+            }
+            if(cancer_3_6_checkBox4.isChecked){
+                ck3_6_4 = "4"
+            }
+            if(cancer_3_6_checkBox5.isChecked){
+                ck3_6_5 = "5"
+            }
+
         }else{
             Toast.makeText(this, "3-6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -930,111 +1034,111 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         if(cancer_5_1_checkBox.isChecked){
+
+        }else{
+
+        }
+
+        if(cancer_5_2_checkBox.isChecked){
             ck5_1 = "2"
         }else{
             ck5_1 = "1"
         }
 
-        if(cancer_5_2_checkBox.isChecked){
+        if(cancer_5_3_checkBox.isChecked){
             ck5_2 = "2"
         }else{
             ck5_2 = "1"
         }
 
-        if(cancer_5_3_checkBox.isChecked){
+        if(cancer_5_4_checkBox.isChecked){
             ck5_3 = "2"
         }else{
             ck5_3 = "1"
         }
 
-        if(cancer_5_4_checkBox.isChecked){
+        if(cancer_5_5_checkBox.isChecked){
             ck5_4 = "2"
         }else{
             ck5_4 = "1"
         }
 
-        if(cancer_5_5_checkBox.isChecked){
+        if(cancer_5_6_checkBox.isChecked){
             ck5_5 = "2"
         }else{
             ck5_5 = "1"
         }
 
-        if(cancer_5_6_checkBox.isChecked){
-            ck5_6 = "2"
+        if(cancer_6_1_checkBox.isChecked){
+
         }else{
-            ck5_6 = "1"
+
         }
 
-        if(cancer_6_1_checkBox.isChecked){
+        if(cancer_6_2_checkBox.isChecked){
             ck6_1 = "2"
         }else{
             ck6_1 = "1"
         }
 
-        if(cancer_6_2_checkBox.isChecked){
+        if(cancer_6_3_checkBox.isChecked){
             ck6_2 = "2"
         }else{
             ck6_2 = "1"
         }
 
-        if(cancer_6_3_checkBox.isChecked){
+        if(cancer_6_4_checkBox.isChecked){
             ck6_3 = "2"
         }else{
             ck6_3 = "1"
         }
 
-        if(cancer_6_4_checkBox.isChecked){
+        if(cancer_6_5_checkBox.isChecked){
             ck6_4 = "2"
         }else{
             ck6_4 = "1"
         }
 
-        if(cancer_6_5_checkBox.isChecked){
+        if(cancer_6_6_checkBox.isChecked){
             ck6_5 = "2"
         }else{
             ck6_5 = "1"
         }
 
-        if(cancer_6_6_checkBox.isChecked){
-            ck6_6 = "2"
+        if(cancer_7_1_checkBox.isChecked){
+
         }else{
-            ck6_6 = "1"
+
         }
 
-        if(cancer_7_1_checkBox.isChecked){
+        if(cancer_7_2_checkBox.isChecked){
             ck7_1 = "2"
         }else{
             ck7_1 = "1"
         }
 
-        if(cancer_7_2_checkBox.isChecked){
+        if(cancer_7_3_checkBox.isChecked){
             ck7_2 = "2"
         }else{
             ck7_2 = "1"
         }
 
-        if(cancer_7_3_checkBox.isChecked){
+        if(cancer_7_4_checkBox.isChecked){
             ck7_3 = "2"
         }else{
             ck7_3 = "1"
         }
 
-        if(cancer_7_4_checkBox.isChecked){
+        if(cancer_7_5_checkBox.isChecked){
             ck7_4 = "2"
         }else{
             ck7_4 = "1"
         }
 
-        if(cancer_7_5_checkBox.isChecked){
+        if(cancer_7_6_checkBox.isChecked){
             ck7_5 = "2"
         }else{
             ck7_5 = "1"
-        }
-
-        if(cancer_7_6_checkBox.isChecked){
-            ck7_6 = "2"
-        }else{
-            ck7_6 = "1"
         }
 
         if(AdditionalArr.Gender.isGender){
@@ -1217,13 +1321,17 @@ class CancerExaminationActivity : RootActivity(){
 
             if(paper.ck3_1_1 == "1"){
                 cancer_3_1_checkBox1.isChecked = true
-            }else if(paper.ck3_1_2 == "2"){
+            }
+            if(paper.ck3_1_2 == "2"){
                 cancer_3_1_checkBox2.isChecked = true
-            }else if(paper.ck3_1_3 == "3"){
+            }
+            if(paper.ck3_1_3 == "3"){
                 cancer_3_1_checkBox3.isChecked = true
-            }else if(paper.ck3_1_4 == "4"){
+            }
+            if(paper.ck3_1_4 == "4"){
                 cancer_3_1_checkBox4.isChecked = true
-            }else if(paper.ck3_1_5 == "5"){
+            }
+            if(paper.ck3_1_5 == "5"){
                 cancer_3_1_checkBox5.isChecked = true
             }
 
@@ -1246,13 +1354,17 @@ class CancerExaminationActivity : RootActivity(){
 
             if(paper.ck3_2_1 == "1"){
                 cancer_3_2_checkBox1.isChecked = true
-            }else if(paper.ck3_2_2 == "2"){
+            }
+            if(paper.ck3_2_2 == "2"){
                 cancer_3_2_checkBox2.isChecked = true
-            }else if(paper.ck3_2_3 == "3"){
+            }
+            if(paper.ck3_2_3 == "3"){
                 cancer_3_2_checkBox3.isChecked = true
-            }else if(paper.ck3_2_4 == "4"){
+            }
+            if(paper.ck3_2_4 == "4"){
                 cancer_3_2_checkBox4.isChecked = true
-            }else if(paper.ck3_2_5 == "5"){
+            }
+            if(paper.ck3_2_5 == "5"){
                 cancer_3_2_checkBox5.isChecked = true
             }
 
@@ -1275,13 +1387,17 @@ class CancerExaminationActivity : RootActivity(){
 
             if(paper.ck3_3_1 == "1"){
                 cancer_3_3_checkBox1.isChecked = true
-            }else if(paper.ck3_3_2 == "2"){
+            }
+            if(paper.ck3_3_2 == "2"){
                 cancer_3_3_checkBox2.isChecked = true
-            }else if(paper.ck3_3_3 == "3"){
+            }
+            if(paper.ck3_3_3 == "3"){
                 cancer_3_3_checkBox3.isChecked = true
-            }else if(paper.ck3_3_4 == "4"){
+            }
+            if(paper.ck3_3_4 == "4"){
                 cancer_3_3_checkBox4.isChecked = true
-            }else if(paper.ck3_3_5 == "5"){
+            }
+            if(paper.ck3_3_5 == "5"){
                 cancer_3_3_checkBox5.isChecked = true
             }
 
@@ -1304,13 +1420,17 @@ class CancerExaminationActivity : RootActivity(){
 
             if(paper.ck3_4_1 == "1"){
                 cancer_3_4_checkBox1.isChecked = true
-            }else if(paper.ck3_4_2 == "2"){
+            }
+            if(paper.ck3_4_2 == "2"){
                 cancer_3_4_checkBox2.isChecked = true
-            }else if(paper.ck3_4_3 == "3"){
+            }
+            if(paper.ck3_4_3 == "3"){
                 cancer_3_4_checkBox3.isChecked = true
-            }else if(paper.ck3_4_4 == "4"){
+            }
+            if(paper.ck3_4_4 == "4"){
                 cancer_3_4_checkBox4.isChecked = true
-            }else if(paper.ck3_4_5 == "5"){
+            }
+            if(paper.ck3_4_5 == "5"){
                 cancer_3_4_checkBox5.isChecked = true
             }
 
@@ -1333,13 +1453,17 @@ class CancerExaminationActivity : RootActivity(){
 
             if(paper.ck3_5_1 == "1"){
                 cancer_3_5_checkBox1.isChecked = true
-            }else if(paper.ck3_5_2 == "2"){
+            }
+            if(paper.ck3_5_2 == "2"){
                 cancer_3_5_checkBox2.isChecked = true
-            }else if(paper.ck3_5_3 == "3"){
+            }
+            if(paper.ck3_5_3 == "3"){
                 cancer_3_5_checkBox3.isChecked = true
-            }else if(paper.ck3_5_4 == "4"){
+            }
+            if(paper.ck3_5_4 == "4"){
                 cancer_3_5_checkBox4.isChecked = true
-            }else if(paper.ck3_5_5 == "5"){
+            }
+            if(paper.ck3_5_5 == "5"){
                 cancer_3_5_checkBox5.isChecked = true
             }
 
@@ -1363,13 +1487,17 @@ class CancerExaminationActivity : RootActivity(){
 
             if(paper.ck3_6_1 == "1"){
                 cancer_3_6_checkBox1.isChecked = true
-            }else if(paper.ck3_6_2 == "2"){
+            }
+            if(paper.ck3_6_2 == "2"){
                 cancer_3_6_checkBox2.isChecked = true
-            }else if(paper.ck3_6_3 == "3"){
+            }
+            if(paper.ck3_6_3 == "3"){
                 cancer_3_6_checkBox3.isChecked = true
-            }else if(paper.ck3_6_4 == "4"){
+            }
+            if(paper.ck3_6_4 == "4"){
                 cancer_3_6_checkBox4.isChecked = true
-            }else if(paper.ck3_6_5 == "5"){
+            }
+            if(paper.ck3_6_5 == "5"){
                 cancer_3_6_checkBox5.isChecked = true
             }
 
