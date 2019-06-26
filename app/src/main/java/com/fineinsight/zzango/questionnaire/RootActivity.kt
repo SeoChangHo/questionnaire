@@ -4,6 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkInfo
 import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
@@ -27,6 +30,7 @@ open class RootActivity : AppCompatActivity() {
 
     var popup = false
     var wfm : WifiManager? = null
+    var connectivityManager : ConnectivityManager? = null
     var state = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +38,7 @@ open class RootActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         wfm = this.getSystemService(Context.WIFI_SERVICE) as WifiManager
+        connectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
     }
 
@@ -608,7 +613,7 @@ open class RootActivity : AppCompatActivity() {
         dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialog.setView(dialog_view)
-        dialog_view.save_complete_alert_text.text = "와이파이 연결상태를 확인해주세요"
+        dialog_view.save_complete_alert_text.text = "모바일 데이터 연결상태를 확인해주세요"
 
         if(!popup) {
 

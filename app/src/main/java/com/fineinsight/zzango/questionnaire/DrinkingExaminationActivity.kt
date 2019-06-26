@@ -9,6 +9,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
@@ -233,7 +234,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
     fun drinking_exam_server_insert(){
 
-        if(wfm!!.isWifiEnabled) {
+        if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
 
             login_appbar_loading_progress.visibility = View.VISIBLE
             login_appbar_loading_progress_bg.visibility = View.VISIBLE
