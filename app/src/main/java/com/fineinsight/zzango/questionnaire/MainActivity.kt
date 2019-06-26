@@ -382,6 +382,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 user_last_serial = dialog_view.last_serial.text.toString()
 
                 chart(user_first_serial)
+                if(user_last_serial.toInt()%2 == 0){
+                    AdditionalArr.Gender.isGender = true
+                }else{
+                    AdditionalArr.Gender.isGender = false
+                }
 
                 Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
                 view.text = login_user_name+"님"

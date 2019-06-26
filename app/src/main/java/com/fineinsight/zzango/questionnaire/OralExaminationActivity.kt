@@ -622,19 +622,19 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_10_4.isChecked) {
 
-            oral_10 = "1"
+            oral_10 = "4"
 
         }else if(oral_10_3.isChecked){
 
-            oral_10 = "2"
+            oral_10 = "3"
 
         }else if(oral_10_2.isChecked){
 
-            oral_10 = "3"
+            oral_10 = "2"
 
         }else if(oral_10_1.isChecked){
 
-            oral_10 = "4"
+            oral_10 = "1"
 
         }else{
 
@@ -646,11 +646,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_11_5.isChecked) {
 
-            oral_11 = "1"
+            oral_11 = "5"
 
         }else if(oral_11_4.isChecked){
 
-            oral_11 = "2"
+            oral_11 = "4"
 
         }else if(oral_11_3.isChecked){
 
@@ -658,11 +658,11 @@ class OralExaminationActivity : RootActivity() {
 
         }else if(oral_11_2.isChecked){
 
-            oral_11 = "4"
+            oral_11 = "2"
 
         }else if(oral_11_1.isChecked){
 
-            oral_11 = "5"
+            oral_11 = "1"
 
         }else{
 
@@ -722,11 +722,11 @@ class OralExaminationActivity : RootActivity() {
 
         if(oral_14_5.isChecked) {
 
-            oral_14 = "1"
+            oral_14 = "5"
 
         }else if(oral_14_4.isChecked){
 
-            oral_14 = "2"
+            oral_14 = "4"
 
         }else if(oral_14_3.isChecked){
 
@@ -734,11 +734,11 @@ class OralExaminationActivity : RootActivity() {
 
         }else if(oral_14_2.isChecked){
 
-            oral_14 = "4"
+            oral_14 = "2"
 
         }else if(oral_14_1.isChecked){
 
-            oral_14 = "5"
+            oral_14 = "1"
 
         }else{
 

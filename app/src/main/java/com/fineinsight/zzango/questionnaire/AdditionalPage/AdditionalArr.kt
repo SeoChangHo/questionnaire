@@ -3,6 +3,7 @@ package com.fineinsight.zzango.questionnaire.AdditionalPage
 import android.app.Activity
 
 class AdditionalArr {
+
     object Page
     {
         var isOralChecked = false
@@ -14,5 +15,10 @@ class AdditionalArr {
             isOralChecked = false
             isCancerChecked = false
         }
+    }
+
+    object Gender
+    {
+        var isGender = false
     }
 }

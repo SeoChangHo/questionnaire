@@ -641,7 +641,7 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_etc_examination_check"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
                     app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc_examination_check" />
@@ -1893,6 +1893,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
+                            android:enabled="false"
                             android:text="캔"
                             android:textSize="15dp" />
 
@@ -2084,6 +2085,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="캔"
+                            android:enabled="false"
                             android:textSize="15dp" />
 
                         <RadioButton
@@ -2179,6 +2181,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="캔"
+                            android:enabled="false"
                             android:textSize="15dp" />
 
                         <RadioButton
@@ -2274,6 +2277,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="캔"
+                            android:enabled="false"
                             android:textSize="15dp" />
 
                         <RadioButton
@@ -2477,6 +2481,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="캔"
+                            android:enabled="false"
                             android:textSize="15dp" />
 
                         <RadioButton
@@ -2667,6 +2672,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="캔"
+                            android:enabled="false"
                             android:textSize="15dp" />
 
                         <RadioButton
@@ -2762,6 +2768,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="캔"
+                            android:enabled="false"
                             android:textSize="15dp" />
 
                         <RadioButton
@@ -2857,6 +2864,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="캔"
+                            android:enabled="false"
                             android:textSize="15dp" />
 
                         <RadioButton

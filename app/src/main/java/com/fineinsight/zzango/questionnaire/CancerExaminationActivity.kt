@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_CANCER
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -205,6 +206,78 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
+        cancer_5_1_checkBox.setOnClickListener {
+            cancer_5_2_checkBox.isChecked = false
+            cancer_5_3_checkBox.isChecked = false
+            cancer_5_4_checkBox.isChecked = false
+            cancer_5_5_checkBox.isChecked = false
+            cancer_5_6_checkBox.isChecked = false
+        }
+
+        cancer_5_2_checkBox.setOnClickListener {
+            cancer_5_1_checkBox.isChecked = false
+        }
+        cancer_5_3_checkBox.setOnClickListener {
+            cancer_5_1_checkBox.isChecked = false
+        }
+        cancer_5_4_checkBox.setOnClickListener {
+            cancer_5_1_checkBox.isChecked = false
+        }
+        cancer_5_5_checkBox.setOnClickListener {
+            cancer_5_1_checkBox.isChecked = false
+        }
+        cancer_5_6_checkBox.setOnClickListener {
+            cancer_5_1_checkBox.isChecked = false
+        }
+
+        cancer_6_1_checkBox.setOnClickListener {
+            cancer_6_2_checkBox.isChecked = false
+            cancer_6_3_checkBox.isChecked = false
+            cancer_6_4_checkBox.isChecked = false
+            cancer_6_5_checkBox.isChecked = false
+            cancer_6_6_checkBox.isChecked = false
+        }
+
+        cancer_6_2_checkBox.setOnClickListener {
+            cancer_6_1_checkBox.isChecked = false
+        }
+        cancer_6_3_checkBox.setOnClickListener {
+            cancer_6_1_checkBox.isChecked = false
+        }
+        cancer_6_4_checkBox.setOnClickListener {
+            cancer_6_1_checkBox.isChecked = false
+        }
+        cancer_6_5_checkBox.setOnClickListener {
+            cancer_6_1_checkBox.isChecked = false
+        }
+        cancer_6_6_checkBox.setOnClickListener {
+            cancer_6_1_checkBox.isChecked = false
+        }
+
+        cancer_7_1_checkBox.setOnClickListener {
+            cancer_7_2_checkBox.isChecked = false
+            cancer_7_3_checkBox.isChecked = false
+            cancer_7_4_checkBox.isChecked = false
+            cancer_7_5_checkBox.isChecked = false
+            cancer_7_6_checkBox.isChecked = false
+        }
+
+        cancer_7_2_checkBox.setOnClickListener {
+            cancer_7_1_checkBox.isChecked = false
+        }
+        cancer_7_3_checkBox.setOnClickListener {
+            cancer_7_1_checkBox.isChecked = false
+        }
+        cancer_7_4_checkBox.setOnClickListener {
+            cancer_7_1_checkBox.isChecked = false
+        }
+        cancer_7_5_checkBox.setOnClickListener {
+            cancer_7_1_checkBox.isChecked = false
+        }
+        cancer_7_6_checkBox.setOnClickListener {
+            cancer_7_1_checkBox.isChecked = false
+        }
+
         cancer_8_1.setOnCheckedChangeListener {
 
             buttonView, isChecked ->
@@ -252,6 +325,29 @@ class CancerExaminationActivity : RootActivity(){
         cancer_edit_submit.setOnClickListener {
 
             finish()
+
+        }
+
+        if(!AdditionalArr.Gender.isGender){
+
+            cancer_4_3_radio.isEnabled = false
+            cancer_4_7_radio.isEnabled = false
+
+            cancer_question_8.visibility = View.GONE
+            cancer_question_9.visibility = View.GONE
+            cancer_question_10.visibility = View.GONE
+            cancer_question_11.visibility = View.GONE
+            cancer_question_12.visibility = View.GONE
+            cancer_question_13.visibility = View.GONE
+            cancer_question_14.visibility = View.GONE
+
+            cancer_8_radio.visibility = View.GONE
+            cancer_9_radio.visibility = View.GONE
+            cancer_10_radio.visibility = View.GONE
+            cancer_11_radio.visibility = View.GONE
+            cancer_12_radio.visibility = View.GONE
+            cancer_13_radio.visibility = View.GONE
+            cancer_14_radio.visibility = View.GONE
 
         }
 
@@ -768,14 +864,16 @@ class CancerExaminationActivity : RootActivity(){
             ck4_2 = "4"
         }
 
-        if(cancer_4_3_1.isChecked){
-            ck4_3 = "1"
-        }else if(cancer_4_3_2.isChecked){
-            ck4_3 = "2"
-        }else if(cancer_4_3_3.isChecked){
-            ck4_3 = "3"
-        }else if(cancer_4_3_4.isChecked){
-            ck4_3 = "4"
+        if(AdditionalArr.Gender.isGender){
+            if(cancer_4_3_1.isChecked){
+                ck4_3 = "1"
+            }else if(cancer_4_3_2.isChecked){
+                ck4_3 = "2"
+            }else if(cancer_4_3_3.isChecked){
+                ck4_3 = "3"
+            }else if(cancer_4_3_4.isChecked){
+                ck4_3 = "4"
+            }
         }
 
         if(cancer_4_4_1.isChecked){
@@ -809,14 +907,16 @@ class CancerExaminationActivity : RootActivity(){
             ck4_6 = "4"
         }
 
-        if(cancer_4_7_1.isChecked){
-            ck4_7 = "1"
-        }else if(cancer_4_7_2.isChecked){
-            ck4_7 = "2"
-        }else if(cancer_4_7_3.isChecked){
-            ck4_7 = "3"
-        }else if(cancer_4_7_4.isChecked){
-            ck4_7 = "4"
+        if(AdditionalArr.Gender.isGender){
+            if(cancer_4_7_1.isChecked){
+                ck4_7 = "1"
+            }else if(cancer_4_7_2.isChecked){
+                ck4_7 = "2"
+            }else if(cancer_4_7_3.isChecked){
+                ck4_7 = "3"
+            }else if(cancer_4_7_4.isChecked){
+                ck4_7 = "4"
+            }
         }
 
         if(cancer_4_8_1.isChecked){
@@ -937,99 +1037,101 @@ class CancerExaminationActivity : RootActivity(){
             ck7_6 = "1"
         }
 
-        if(cancer_8_1.isChecked){
-            ck8_1 = "1"
-            if(!cancer_editText3.text.isNullOrEmpty()){
-                ck8_2 = cancer_editText3.text.toString()
+        if(AdditionalArr.Gender.isGender){
+            if(cancer_8_1.isChecked){
+                ck8_1 = "1"
+                if(!cancer_editText3.text.isNullOrEmpty()){
+                    ck8_2 = cancer_editText3.text.toString()
+                }else{
+                    Toast.makeText(this, "8번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
+                    return false
+                }
+            }else if(cancer_8_2.isChecked){
+                ck8_1 = "2"
             }else{
-                Toast.makeText(this, "8번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
-        }else if(cancer_8_2.isChecked){
-            ck8_1 = "2"
-        }else{
-            Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
 
-        if(cancer_9_1.isChecked){
-            ck9_1 = "1"
-        }else if(cancer_9_2.isChecked){
-            ck9_1 = "2"
-        }else if(cancer_9_3.isChecked){
-            ck9_1 = "3"
-            if(!cancer_editText4.text.isNullOrEmpty()){
-                ck9_2 = cancer_editText4.text.toString()
+            if(cancer_9_1.isChecked){
+                ck9_1 = "1"
+            }else if(cancer_9_2.isChecked){
+                ck9_1 = "2"
+            }else if(cancer_9_3.isChecked){
+                ck9_1 = "3"
+                if(!cancer_editText4.text.isNullOrEmpty()){
+                    ck9_2 = cancer_editText4.text.toString()
+                }else{
+                    Toast.makeText(this, "9번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
-                Toast.makeText(this, "9번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
-        }else{
-            Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
 
-        if(cancer_10_1.isChecked){
-            ck10 = "1"
-        }else if(cancer_10_2.isChecked){
-            ck10 = "2"
-        }else if(cancer_10_3.isChecked){
-            ck10 = "3"
-        }else if(cancer_10_4.isChecked){
-            ck10 = "4"
-        }else if(cancer_10_5.isChecked){
-            ck10 = "5"
-        }else{
-            Toast.makeText(this, "10번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if(cancer_10_1.isChecked){
+                ck10 = "1"
+            }else if(cancer_10_2.isChecked){
+                ck10 = "2"
+            }else if(cancer_10_3.isChecked){
+                ck10 = "3"
+            }else if(cancer_10_4.isChecked){
+                ck10 = "4"
+            }else if(cancer_10_5.isChecked){
+                ck10 = "5"
+            }else{
+                Toast.makeText(this, "10번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(cancer_11_1.isChecked){
-            ck11 = "1"
-        }else if(cancer_11_2.isChecked){
-            ck11 = "2"
-        }else if(cancer_11_3.isChecked){
-            ck11 = "3"
-        }else{
-            Toast.makeText(this, "11번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if(cancer_11_1.isChecked){
+                ck11 = "1"
+            }else if(cancer_11_2.isChecked){
+                ck11 = "2"
+            }else if(cancer_11_3.isChecked){
+                ck11 = "3"
+            }else{
+                Toast.makeText(this, "11번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(cancer_12_1.isChecked){
-            ck12 = "1"
-        }else if(cancer_12_2.isChecked){
-            ck12 = "2"
-        }else if(cancer_12_3.isChecked){
-            ck12 = "3"
-        }else if(cancer_12_4.isChecked){
-            ck12 = "4"
-        }else{
-            Toast.makeText(this, "12번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if(cancer_12_1.isChecked){
+                ck12 = "1"
+            }else if(cancer_12_2.isChecked){
+                ck12 = "2"
+            }else if(cancer_12_3.isChecked){
+                ck12 = "3"
+            }else if(cancer_12_4.isChecked){
+                ck12 = "4"
+            }else{
+                Toast.makeText(this, "12번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(cancer_13_1.isChecked){
-            ck13 = "1"
-        }else if(cancer_13_2.isChecked){
-            ck13 = "2"
-        }else if(cancer_13_3.isChecked){
-            ck13 = "3"
-        }else{
-            Toast.makeText(this, "13번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
-        }
+            if(cancer_13_1.isChecked){
+                ck13 = "1"
+            }else if(cancer_13_2.isChecked){
+                ck13 = "2"
+            }else if(cancer_13_3.isChecked){
+                ck13 = "3"
+            }else{
+                Toast.makeText(this, "13번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
 
-        if(cancer_14_1.isChecked){
-            ck14 = "1"
-        }else if(cancer_14_2.isChecked){
-            ck14 = "2"
-        }else if(cancer_14_3.isChecked){
-            ck14 = "3"
-        }else if(cancer_14_4.isChecked){
-            ck14 = "4"
-        }else{
-            Toast.makeText(this, "14번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
+            if(cancer_14_1.isChecked){
+                ck14 = "1"
+            }else if(cancer_14_2.isChecked){
+                ck14 = "2"
+            }else if(cancer_14_3.isChecked){
+                ck14 = "3"
+            }else if(cancer_14_4.isChecked){
+                ck14 = "4"
+            }else{
+                Toast.makeText(this, "14번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
         }
 
         PaperArray.PaperArrFunction.ArrayListInit()

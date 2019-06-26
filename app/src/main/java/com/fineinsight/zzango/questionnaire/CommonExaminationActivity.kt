@@ -744,119 +744,119 @@ class CommonExaminationActivity : RootActivity() {
         }
 
         if(diagnosis_medication_stroke_examination_check.isChecked){
-            mj1_1_1 = "2"
-        }else{
             mj1_1_1 = "1"
+        }else{
+            mj1_1_1 = "2"
         }
 
         if(diagnosis_medication_stroke_medication_check.isChecked){
-            mj1_1_2 = "2"
-        }else{
             mj1_1_2 = "1"
+        }else{
+            mj1_1_2 = "2"
         }
 
         if(diagnosis_medication_myocardial_examination_check.isChecked){
-            mj1_2_1 = "2"
-        }else{
             mj1_2_1 = "1"
+        }else{
+            mj1_2_1 = "2"
         }
 
         if(diagnosis_medication_myocardial_medication_check.isChecked){
-            mj1_2_2 = "2"
-        }else{
             mj1_2_2 = "1"
+        }else{
+            mj1_2_2 = "2"
         }
 
         if(diagnosis_medication_high_blood_pressure_examination_check.isChecked){
-            mj1_3_1 = "2"
-        }else{
             mj1_3_1 = "1"
+        }else{
+            mj1_3_1 = "2"
         }
 
         if(diagnosis_medication_high_blood_pressure_medication_check.isChecked){
-            mj1_3_2 = "2"
-        }else{
             mj1_3_2 = "1"
+        }else{
+            mj1_3_2 = "2"
         }
 
         if(diagnosis_medication_diabetes_examination_check.isChecked){
-            mj1_4_1 = "2"
-        }else{
             mj1_4_1 = "1"
+        }else{
+            mj1_4_1 = "2"
         }
 
         if(diagnosis_medication_diabetes_medication_check.isChecked){
-            mj1_4_2 = "2"
-        }else{
             mj1_4_2 = "1"
+        }else{
+            mj1_4_2 = "2"
         }
 
         if(diagnosis_medication_dyslipidemia_examination_check.isChecked){
-            mj1_5_1 = "2"
-        }else{
             mj1_5_1 = "1"
+        }else{
+            mj1_5_1 = "2"
         }
 
         if(diagnosis_medication_dyslipidemia_medication_check.isChecked){
-            mj1_5_2 = "2"
-        }else{
             mj1_5_2 = "1"
+        }else{
+            mj1_5_2 = "2"
         }
 
         if(diagnosis_medication_tuberculosis_examination_check.isChecked){
-            mj1_6_1 = "2"
-        }else{
             mj1_6_1 = "1"
+        }else{
+            mj1_6_1 = "2"
         }
 
         if(diagnosis_medication_tuberculosis_medication_check.isChecked){
-            mj1_6_2 = "2"
-        }else{
             mj1_6_2 = "1"
+        }else{
+            mj1_6_2 = "2"
         }
 
         if(diagnosis_medication_etc_examination_check.isChecked){
-            mj1_7_1 = "2"
-        }else{
             mj1_7_1 = "1"
+        }else{
+            mj1_7_1 = "2"
         }
 
         if(diagnosis_medication_etc_medication_check.isChecked){
-            mj1_7_2 = "2"
-        }else{
             mj1_7_2 = "1"
+        }else{
+            mj1_7_2 = "2"
         }
 
         if(family_history_disease_stroke_examination_check.isChecked){
-            mj2_1 = "2"
-        }else{
             mj2_1 = "1"
+        }else{
+            mj2_1 = "2"
         }
 
         if(family_history_disease_myocardial_examination_check.isChecked){
-            mj2_2 = "2"
-        }else{
             mj2_2 = "1"
+        }else{
+            mj2_2 = "2"
         }
 
 
         if(family_history_disease_high_blood_pressure_examination_check.isChecked){
-            mj2_3 = "2"
-        }else{
             mj2_3 = "1"
+        }else{
+            mj2_3 = "2"
         }
 
 
         if(family_history_disease_diabetes_examination_check.isChecked){
-            mj2_4 = "2"
-        }else{
             mj2_4 = "1"
+        }else{
+            mj2_4 = "2"
         }
 
         if(family_history_etc_examination_check.isChecked){
-            mj2_5 = "2"
-        }else{
             mj2_5 = "1"
+        }else{
+            mj2_5 = "2"
         }
 
         if(common_3_true.isChecked){
@@ -938,7 +938,7 @@ class CommonExaminationActivity : RootActivity() {
         }
 
         if(common_6_true.isChecked){
-            mj6 = "2"
+            mj6 = "1"
 
             if(common_6_1_1.isChecked){
                 mj6_1 = "1"
@@ -956,7 +956,7 @@ class CommonExaminationActivity : RootActivity() {
             }
 
         }else if(common_6_false.isChecked){
-            mj6 = "1"
+            mj6 = "2"
         }else{
             Toast.makeText(this, "6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
