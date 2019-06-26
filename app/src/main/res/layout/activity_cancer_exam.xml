@@ -313,6 +313,7 @@
                     android:onClick="focusControl"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintBottom_toBottomOf="@+id/textView184"
                     app:layout_constraintStart_toEndOf="@+id/textView184"
                     app:layout_constraintTop_toTopOf="@+id/textView184" />
@@ -395,7 +396,8 @@
                     android:maxLength="3"
                     android:onClick="focusControl"
                     android:textCursorDrawable="@color/gray"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:imeOptions="actionDone" />
 
                 <TextView
                     android:id="@+id/textView230"
@@ -1399,6 +1401,7 @@
                 android:inputType="textPersonName"
                 android:backgroundTint="@color/gray"
                 android:textCursorDrawable="@color/gray"
+                android:imeOptions="actionDone"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_3_6"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_question_3_6"
                 android:onClick="focusControl" />
@@ -2483,7 +2486,8 @@
                     android:inputType="number"
                     android:onClick="focusControl"
                     android:textCursorDrawable="@color/gray"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:imeOptions="actionDone" />
 
                 <TextView
                     android:id="@+id/textView231"
@@ -2587,6 +2591,7 @@
                     android:maxLength="2"
                     android:backgroundTint="@color/gray"
                     android:textCursorDrawable="@color/gray"
+                    android:imeOptions="actionDone"
                     android:onClick="focusControl" />
 
                 <TextView

@@ -597,6 +597,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="18dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintStart_toStartOf="@+id/textView98"
                     app:layout_constraintTop_toBottomOf="@+id/textView103"
                     android:onClick="focusControl" />
@@ -617,6 +618,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintStart_toEndOf="@+id/exercise_1_3_hour"
                     app:layout_constraintTop_toBottomOf="@+id/textView101" />
 
@@ -934,6 +936,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintStart_toStartOf="@+id/textView121"
                     app:layout_constraintTop_toBottomOf="@+id/textView121"
                     android:onClick="focusControl" />
@@ -951,6 +954,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintStart_toStartOf="@+id/exercise_1_6_hour"
                     app:layout_constraintTop_toBottomOf="@+id/exercise_1_6_hour"
                     android:onClick="focusControl" />
@@ -1230,6 +1234,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintStart_toStartOf="@+id/textView147"
                     app:layout_constraintTop_toBottomOf="@+id/textView147"
                     android:onClick="focusControl" />
@@ -1247,6 +1252,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintStart_toStartOf="@+id/exercise_2_3_hour"
                     app:layout_constraintTop_toBottomOf="@+id/exercise_2_3_hour"
                     android:onClick="focusControl" />
@@ -1625,6 +1631,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintStart_toStartOf="@+id/textView168"
                     app:layout_constraintTop_toBottomOf="@+id/textView168"
                     android:onClick="focusControl" />
@@ -1642,6 +1649,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintStart_toStartOf="@+id/exercise_3_3_hour"
                     app:layout_constraintTop_toBottomOf="@+id/exercise_3_3_hour"
                     android:onClick="focusControl" />
@@ -1953,6 +1961,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintStart_toStartOf="@+id/textView196"
                     app:layout_constraintTop_toBottomOf="@+id/textView196"
                     android:onClick="focusControl" />
@@ -1970,6 +1979,7 @@
                     android:textAlignment="center"
                     android:textCursorDrawable="@color/gray"
                     android:textSize="16dp"
+                    android:imeOptions="actionDone"
                     app:layout_constraintStart_toStartOf="@+id/exercise_3_6_hour"
                     app:layout_constraintTop_toBottomOf="@+id/exercise_3_6_hour"
                     android:onClick="focusControl" />
@@ -2118,6 +2128,7 @@
                 android:textAlignment="center"
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
+                android:imeOptions="actionDone"
                 app:layout_constraintStart_toStartOf="@+id/textView206"
                 app:layout_constraintTop_toBottomOf="@+id/textView209"
                 android:onClick="focusControl" />
@@ -2138,6 +2149,7 @@
                 android:textAlignment="center"
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
+                android:imeOptions="actionDone"
                 app:layout_constraintStart_toEndOf="@+id/exercise_4_1_hour"
                 app:layout_constraintTop_toBottomOf="@+id/view5" />
 
