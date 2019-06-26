@@ -146,16 +146,26 @@ class DrinkingExaminationActivity : RootActivity(){
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        if(AdditionalArr.over.isDrinking){
-            drinking_0_true.isChecked = true
-            drinking_0_false.isChecked = false
-            drinking_0_true.isEnabled = false
-            drinking_0_false.isEnabled = false
-        }else if(AdditionalArr.over.isDrinking2){
-            drinking_0_true.isChecked = true
-            drinking_0_false.isChecked = false
-            drinking_0_true.isEnabled = false
-            drinking_0_false.isEnabled = false
+        if(AdditionalArr.over.checkAll){
+            if(AdditionalArr.over.isDrinking){
+                drinking_0_true.isChecked = true
+                drinking_0_false.isChecked = false
+                drinking_0_true.isEnabled = false
+                drinking_0_false.isEnabled = false
+            }else if(AdditionalArr.over.isDrinking2){
+                drinking_0_true.isChecked = true
+                drinking_0_false.isChecked = false
+                drinking_0_true.isEnabled = false
+                drinking_0_false.isEnabled = false
+            }else{
+                drinking_0_true.isChecked = false
+                drinking_0_false.isChecked = true
+                drinking_0_true.isEnabled = false
+                drinking_0_false.isEnabled = false
+            }
+        }else{
+            drinking_0_true.isEnabled = true
+            drinking_0_false.isEnabled = true
         }
 
     }
@@ -439,6 +449,8 @@ class DrinkingExaminationActivity : RootActivity(){
                 dialog.dismiss()
 
             }
+
+            AdditionalArr.over.checkAll = false
 
         }
 

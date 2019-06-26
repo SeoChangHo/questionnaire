@@ -136,16 +136,21 @@ class SmokingExaminationActivity : RootActivity(){
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-        if(AdditionalArr.over.isSmoking){
-            smoking_0_true.isChecked = true
-            smoking_0_false.isChecked = false
-            smoking_0_true.isEnabled = false
-            smoking_0_false.isEnabled = false
+        if(AdditionalArr.over.checkAll){
+            if(AdditionalArr.over.isSmoking){
+                smoking_0_true.isChecked = true
+                smoking_0_false.isChecked = false
+                smoking_0_true.isEnabled = false
+                smoking_0_false.isEnabled = false
+            }else{
+                smoking_0_true.isChecked = false
+                smoking_0_false.isChecked = true
+                smoking_0_true.isEnabled = false
+                smoking_0_false.isEnabled = false
+            }
         }else{
-            smoking_0_true.isChecked = false
-            smoking_0_false.isChecked = true
-            smoking_0_true.isEnabled = false
-            smoking_0_false.isEnabled = false
+            smoking_0_true.isEnabled = true
+            smoking_0_false.isEnabled = true
         }
 
     }

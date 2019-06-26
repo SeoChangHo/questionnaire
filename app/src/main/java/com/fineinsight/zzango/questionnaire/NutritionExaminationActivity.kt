@@ -425,53 +425,53 @@ class NutritionExaminationActivity :RootActivity() {
             }
         }
 
-        sg2_spFatHeight = when {
-
-            !height.text.toString().isNullOrEmpty() -> height.text.toString()
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
-        }
-
-        sg2_spFatWeight = when {
-
-            !weight.text.toString().isNullOrEmpty() -> weight.text.toString()
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
-        }
-
-        sg2_spFatWaistSize = when {
-
-            !waist_size.text.toString().isNullOrEmpty() -> waist_size.text.toString()
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
-        }
-
-        sg2_spFatBmi = when {
-
-            !bmi.text.toString().isNullOrEmpty() -> bmi.text.toString()
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
-        }
+//        sg2_spFatHeight = when {
+//
+//            !height.text.toString().isNullOrEmpty() -> height.text.toString()
+//            else -> {
+//
+//                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+//
+//                return false
+//
+//            }
+//        }
+//
+//        sg2_spFatWeight = when {
+//
+//            !weight.text.toString().isNullOrEmpty() -> weight.text.toString()
+//            else -> {
+//
+//                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+//
+//                return false
+//
+//            }
+//        }
+//
+//        sg2_spFatWaistSize = when {
+//
+//            !waist_size.text.toString().isNullOrEmpty() -> waist_size.text.toString()
+//            else -> {
+//
+//                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+//
+//                return false
+//
+//            }
+//        }
+//
+//        sg2_spFatBmi = when {
+//
+//            !bmi.text.toString().isNullOrEmpty() -> bmi.text.toString()
+//            else -> {
+//
+//                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
+//
+//                return false
+//
+//            }
+//        }
 
         sg2_spFat1 = when {
             fat_1_true.isChecked -> "1"

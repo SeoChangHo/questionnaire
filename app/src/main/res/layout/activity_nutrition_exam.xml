@@ -1809,6 +1809,7 @@
                 android:textSize="20dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/textView313"
                 app:layout_constraintStart_toStartOf="@+id/textView313"/>
 
@@ -1827,6 +1828,7 @@
                 android:textCursorDrawable="@color/gray"
                 android:textSize="20dp"
                 android:imeOptions="actionDone"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/textView314"
                 app:layout_constraintEnd_toEndOf="@+id/bmi"
                 app:layout_constraintStart_toStartOf="@+id/bmi"
@@ -1838,6 +1840,7 @@
                 android:layout_marginLeft="50dp"
                 android:text="cm"
                 android:textSize="20dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@+id/height"
                 app:layout_constraintTop_toTopOf="@+id/textView314"/>
 
@@ -1848,6 +1851,7 @@
                 android:text="※ 체중"
                 android:textSize="20dp"
                 android:layout_marginTop="20dp"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/textView314"
                 app:layout_constraintStart_toStartOf="@+id/textView314"/>
 
@@ -1866,6 +1870,7 @@
                 android:textCursorDrawable="@color/gray"
                 android:textSize="20dp"
                 android:imeOptions="actionDone"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/textView315"
                 app:layout_constraintEnd_toEndOf="@+id/bmi"
                 app:layout_constraintStart_toStartOf="@+id/bmi"
@@ -1877,6 +1882,7 @@
                 android:layout_marginLeft="50dp"
                 android:text="kg"
                 android:textSize="20dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@+id/weight"
                 app:layout_constraintTop_toTopOf="@+id/textView315"/>
 
@@ -1887,6 +1893,7 @@
                 android:text="※ 허리둘레"
                 android:textSize="20dp"
                 android:layout_marginTop="20dp"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/textView315"
                 app:layout_constraintStart_toStartOf="@+id/textView314"/>
 
@@ -1905,6 +1912,7 @@
                 android:textCursorDrawable="@color/gray"
                 android:textSize="20dp"
                 android:imeOptions="actionDone"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/textView316"
                 app:layout_constraintEnd_toEndOf="@+id/bmi"
                 app:layout_constraintStart_toStartOf="@+id/bmi"
@@ -1916,6 +1924,7 @@
                 android:layout_marginLeft="50dp"
                 android:text="cm"
                 android:textSize="20dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@+id/waist_size"
                 app:layout_constraintTop_toTopOf="@+id/textView316"/>
 
@@ -1926,6 +1935,7 @@
                 android:text="※ 체질량지수"
                 android:textSize="20dp"
                 android:layout_marginTop="20dp"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/textView316"
                 app:layout_constraintStart_toStartOf="@+id/textView314"/>
 
@@ -1943,6 +1953,7 @@
                 android:textCursorDrawable="@color/gray"
                 android:textSize="20dp"
                 android:imeOptions="actionDone"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/textView317"
                 app:layout_constraintStart_toEndOf="@+id/textView317"
                 app:layout_constraintTop_toTopOf="@+id/textView317" />
@@ -1953,6 +1964,7 @@
                 android:layout_marginLeft="50dp"
                 android:text="kg/㎡"
                 android:textSize="20dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@+id/bmi"
                 app:layout_constraintTop_toTopOf="@+id/textView317"/>
 

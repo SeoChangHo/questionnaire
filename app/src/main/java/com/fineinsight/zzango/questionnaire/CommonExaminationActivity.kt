@@ -230,6 +230,18 @@ class CommonExaminationActivity : RootActivity() {
 
         }
 
+        common_7_4.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition1(isChecked, common_subtitle_1)
+            checkCondition1(isChecked, textView27)
+            checkCondition1(isChecked, table_view_1)
+            checkCondition1(isChecked, textView28)
+            checkCondition1(isChecked, table_view_2)
+
+        }
+
         checkBox1.setOnCheckedChangeListener {
 
             buttonView, isChecked ->
@@ -2093,8 +2105,8 @@ class CommonExaminationActivity : RootActivity() {
 
         AdditionalArr.over.isDrinking = isOverDrink
         AdditionalArr.over.isDrinking2 = isManyDrink
+        AdditionalArr.over.checkAll = true
 
     }
-
 
 }

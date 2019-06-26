@@ -21,6 +21,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import kotlinx.android.synthetic.main.progressbar2.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
@@ -52,6 +53,20 @@ open class RootActivity : AppCompatActivity() {
         }else{
 
             view.visibility = View.GONE
+
+        }
+
+    }
+
+    fun checkCondition1(bool: Boolean, view : View){
+
+        if(bool){
+
+            view.visibility = View.GONE
+
+        }else{
+
+            view.visibility = View.VISIBLE
 
         }
 

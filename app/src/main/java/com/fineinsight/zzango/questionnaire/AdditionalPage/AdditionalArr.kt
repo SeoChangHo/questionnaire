@@ -24,6 +24,7 @@ class AdditionalArr {
 
     object over
     {
+        var checkAll = false
         var isDrinking = false
         var isDrinking2 = false
         var isSmoking = false
