@@ -145,6 +145,18 @@ class DrinkingExaminationActivity : RootActivity(){
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        if(AdditionalArr.over.isDrinking){
+            drinking_0_true.isChecked = true
+            drinking_0_false.isChecked = false
+            drinking_0_true.isEnabled = false
+            drinking_0_false.isEnabled = false
+        }else if(AdditionalArr.over.isDrinking2){
+            drinking_0_true.isChecked = true
+            drinking_0_false.isChecked = false
+            drinking_0_true.isEnabled = false
+            drinking_0_false.isEnabled = false
+        }
+
     }
 
     override fun onResume() {

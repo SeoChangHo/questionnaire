@@ -9,12 +9,21 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_SMOKING
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.synthetic.main.activity_drinking_exam.*
 import kotlinx.android.synthetic.main.activity_smoking_exam.*
+import kotlinx.android.synthetic.main.activity_smoking_exam.Signature
+import kotlinx.android.synthetic.main.activity_smoking_exam.first_serial
+import kotlinx.android.synthetic.main.activity_smoking_exam.last_serial
+import kotlinx.android.synthetic.main.activity_smoking_exam.login_appbar_loading_progress
+import kotlinx.android.synthetic.main.activity_smoking_exam.login_appbar_loading_progress_bg
+import kotlinx.android.synthetic.main.activity_smoking_exam.name_edit
+import kotlinx.android.synthetic.main.activity_smoking_exam.progress_constraintLayout
 import kotlinx.android.synthetic.main.progressbar2.*
 import java.io.Serializable
 import java.text.SimpleDateFormat
@@ -125,6 +134,19 @@ class SmokingExaminationActivity : RootActivity(){
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        if(AdditionalArr.over.isSmoking){
+            smoking_0_true.isChecked = true
+            smoking_0_false.isChecked = false
+            smoking_0_true.isEnabled = false
+            smoking_0_false.isEnabled = false
+        }else{
+            smoking_0_true.isChecked = false
+            smoking_0_false.isChecked = true
+            smoking_0_true.isEnabled = false
+            smoking_0_false.isEnabled = false
+        }
 
     }
 

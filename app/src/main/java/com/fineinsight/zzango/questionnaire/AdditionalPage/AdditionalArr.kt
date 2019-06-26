@@ -21,4 +21,12 @@ class AdditionalArr {
     {
         var isGender = false
     }
+
+    object over
+    {
+        var isDrinking = false
+        var isDrinking2 = false
+        var isSmoking = false
+    }
+
 }

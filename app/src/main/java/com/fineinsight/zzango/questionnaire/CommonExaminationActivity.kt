@@ -29,6 +29,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -311,6 +313,8 @@ class CommonExaminationActivity : RootActivity() {
 
             if(check()){
 
+                Drinking()
+
                 login_appbar_loading_progress.visibility = View.VISIBLE
                 login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
@@ -335,6 +339,8 @@ class CommonExaminationActivity : RootActivity() {
         }
 
         common_edit_submit.setOnClickListener {
+
+            Drinking()
 
             finish()
 
@@ -872,7 +878,7 @@ class CommonExaminationActivity : RootActivity() {
 
         if(common_4_true.isChecked){
             mj4 = "2"
-
+            AdditionalArr.over.isSmoking = true
             if(common_4_1_true.isChecked){
                 if(!editText_4_1_1.text.isNullOrEmpty() && !editText_4_1_2.text.isNullOrEmpty()){
                     mj4_1_1 = editText_4_1_1.text.toString()
@@ -897,7 +903,7 @@ class CommonExaminationActivity : RootActivity() {
 
         }else if(common_4_false.isChecked){
             mj4 = "1"
-
+            AdditionalArr.over.isSmoking = false
         }else{
             Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -1817,6 +1823,273 @@ class CommonExaminationActivity : RootActivity() {
             common_10_7.isChecked = true
         }
 
+
+    }
+
+    fun Drinking(){
+
+        var common1 = 0.00
+        var common2 = 0.00
+        var common3 = 0.00
+
+        var num1 = 0.00
+        var num2 = 0.00
+        var num3 = 0.00
+        var num4 = 0.00
+        var num5 = 0.00
+
+        var num6 = 0.00
+        var num7 = 0.00
+        var num8 = 0.00
+        var num9 = 0.00
+        var num10 = 0.00
+
+
+        if(common_7_1.isChecked){
+            common1 = common_7_1_editText.text.toString().toDouble()
+
+        }else if(common_7_2.isChecked){
+            var numbering = common_7_2_editText.text.toString().toDouble()/4
+            common1 = String.format("%.2f", numbering).toDouble()
+
+        }else if(common_7_3.isChecked){
+            var numbering = common_7_3_editText.text.toString().toDouble()/48
+            common1 = String.format("%.2f", numbering).toDouble()
+
+        }else if(common_7_4.isChecked){
+            AdditionalArr.over.isDrinking = false
+            AdditionalArr.over.isDrinking2 = false
+        }
+
+
+
+        if(checkBox1.isChecked){
+            if(common_7_1_1_1.isChecked){
+                num1 = (table_edit_1.text.toString().toDouble() * 4)/7
+            }else if(common_7_1_1_2.isChecked){
+                num1 = (table_edit_1.text.toString().toDouble() * 4)
+            }else if(common_7_1_1_3.isChecked){
+
+            }else if(common_7_1_1_4.isChecked){
+                num1 = (table_edit_1.text.toString().toDouble() * 90)
+            }
+        }
+
+        if(checkBox2.isChecked){
+            if(common_7_1_2_1.isChecked){
+                num2 = (table_edit_2.text.toString().toDouble() * 200)/350
+            }else if(common_7_1_2_2.isChecked){
+                num2 = (table_edit_2.text.toString().toDouble() * 500)/350
+            }else if(common_7_1_2_3.isChecked){
+                num2 = table_edit_2.text.toString().toDouble()
+            }else if(common_7_1_2_4.isChecked){
+                num2 = table_edit_2.text.toString().toDouble() / 350
+            }
+        }
+
+        if(checkBox3.isChecked){
+            if(common_7_1_3_1.isChecked){
+                num3 = table_edit_3.text.toString().toDouble()
+            }else if(common_7_1_3_2.isChecked){
+                num3 = (table_edit_3.text.toString().toDouble() * 500)/45
+            }else if(common_7_1_3_3.isChecked){
+
+            }else if(common_7_1_3_4.isChecked){
+                num3 = table_edit_3.text.toString().toDouble()/45
+            }
+        }
+
+        if(checkBox4.isChecked){
+            if(common_7_1_4_1.isChecked){
+                num4 = table_edit_4.text.toString().toDouble()
+            }else if(common_7_1_4_2.isChecked){
+                num4 = (table_edit_4.text.toString().toDouble() * 750)/300
+            }else if(common_7_1_4_3.isChecked){
+
+            }else if(common_7_1_4_4.isChecked){
+                num4 = table_edit_4.text.toString().toDouble()/300
+            }
+        }
+
+        if(checkBox5.isChecked){
+            if(common_7_1_5_1.isChecked){
+                num5 = table_edit_5.text.toString().toDouble()
+            }else if(common_7_1_5_2.isChecked){
+                num5 = (table_edit_5.text.toString().toDouble() * 750)/300
+            }else if(common_7_1_5_3.isChecked){
+
+            }else if(common_7_1_5_4.isChecked){
+                num5 = table_edit_5.text.toString().toDouble()/150
+            }
+        }
+
+
+        var numbering = (num1 + num2 + num3 + num4 + num5) * common1
+        common2 = String.format("%.2f", numbering).toDouble()
+
+
+
+        if(checkBox6.isChecked){
+            if(common_7_2_1_1.isChecked){
+                num6 = (table_edit_6.text.toString().toDouble() * 4) / 7
+            }else if(common_7_2_1_2.isChecked){
+                num6 = table_edit_6.text.toString().toDouble() * 4
+            }else if(common_7_2_1_3.isChecked){
+
+            }else if(common_7_2_1_4.isChecked){
+                num6 = table_edit_6.text.toString().toDouble() * 90
+            }
+        }
+
+        if(checkBox7.isChecked){
+            if(common_7_2_2_1.isChecked){
+                num7 = (table_edit_7.text.toString().toDouble() * 200)/350
+            }else if(common_7_2_2_2.isChecked){
+                num7 = (table_edit_7.text.toString().toDouble() * 500)/350
+            }else if(common_7_2_2_3.isChecked){
+                num7 = table_edit_7.text.toString().toDouble()
+            }else if(common_7_2_2_4.isChecked){
+                num7 = table_edit_7.text.toString().toDouble()/350
+            }
+        }
+
+        if(checkBox8.isChecked){
+            if(common_7_2_3_1.isChecked){
+                num8 = table_edit_8.text.toString().toDouble()
+            }else if(common_7_2_3_2.isChecked){
+                num8 = (table_edit_8.text.toString().toDouble() * 500)/45
+            }else if(common_7_2_3_3.isChecked){
+
+            }else if(common_7_2_3_4.isChecked){
+                num8 = table_edit_8.text.toString().toDouble() / 45
+            }
+        }
+
+        if(checkBox9.isChecked){
+            if(common_7_2_4_1.isChecked){
+                num9 = table_edit_9.text.toString().toDouble()
+            }else if(common_7_2_4_2.isChecked){
+                num9 = (table_edit_9.text.toString().toDouble() * 750)/300
+            }else if(common_7_2_4_3.isChecked){
+
+            }else if(common_7_2_4_4.isChecked){
+                num9 = table_edit_9.text.toString().toDouble()/300
+            }
+        }
+
+        if(checkBox10.isChecked){
+            if(common_7_2_5_1.isChecked){
+                num10 = table_edit_10.text.toString().toDouble()
+            }else if(common_7_2_5_2.isChecked){
+                num10 = (table_edit_10.text.toString().toDouble() * 750)/150
+            }else if(common_7_2_5_3.isChecked){
+
+            }else if(common_7_2_5_4.isChecked){
+                num10 = table_edit_10.text.toString().toDouble()/150
+            }
+        }
+
+
+        var numbering2 = (num6 + num7 + num8 + num9 + num10)
+        common3 = String.format("%.1f", numbering2).toDouble()
+
+        var gender = "M"
+
+        if(AdditionalArr.Gender.isGender){
+            gender = "F"
+        }else{
+            gender = "M"
+        }
+
+        var yyStr = MainActivity.user_first_serial.substring(0,2)
+        var birthyear = ("19"+yyStr).toInt()
+        var nowyear = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy")).toInt()
+        var age =  nowyear - birthyear
+
+        Run(gender, age ,common2, common3)
+    }
+
+    fun Run(Gender:String, Age:Int, WeekDrink:Double, OverDrink:Double)
+    {
+        //Gender: 성별
+        //Age: 나이
+        //WeekDrink: 과음측정 기준 음주량
+        //OverDrink: 폭음측정 기준 음주량
+
+        //과음판정
+        var isManyDrink:Boolean = false
+
+        //폭음판정
+        var isOverDrink:Boolean = false
+
+        ////////////////////과음측정 시작////////////////////
+        when
+        {
+            Age<65 ->
+            {
+                if (Gender=="M") //65세 미만 남자
+                {
+                    if(WeekDrink > 14)
+                    {
+                        isManyDrink = true
+                    }
+                }
+                else //65세 미만 여자
+                {
+                    if(WeekDrink > 7)
+                    {
+                        isManyDrink = true
+                    }
+                }
+            }
+            Age>=65 ->
+            {
+                if (Gender=="M") //65세 이상 남자
+                {
+                    if(WeekDrink > 7)
+                    {
+                        isManyDrink = true
+                    }
+                }
+                else //65세 이상 여자
+                {
+                    if(WeekDrink > 3)
+                    {
+                        isManyDrink = true
+                    }
+                }
+            }
+        }
+        ////////////////////과음측정 끝////////////////////
+
+
+
+        ////////////////////폭음측정 시작////////////////////
+        when
+        {
+            //남자일 때
+            Gender=="M" ->
+            {
+                if(OverDrink > 4)
+                {
+                    isOverDrink = true
+                }
+            }
+
+            //여자일 때
+            Gender=="F" ->
+            {
+                if(OverDrink > 3)
+                {
+                    isOverDrink = true
+                }
+            }
+
+        }
+        ////////////////////폭음측정 끝////////////////////
+
+        AdditionalArr.over.isDrinking = isOverDrink
+        AdditionalArr.over.isDrinking2 = isManyDrink
 
     }
 
