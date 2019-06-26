@@ -1504,6 +1504,10 @@ class CancerExaminationActivity : RootActivity(){
                 cancer_3_6_checkBox5.isChecked = true
             }
 
+            if(paper.ck3_6_kita != ""){
+                cancer_3_6_1_editText.setText(paper.ck3_6_kita)
+            }
+
         }
 
 
