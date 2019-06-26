@@ -86,6 +86,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
         drinking_examination_save.setOnClickListener {
 
+            AdditionalArr.over.checkAll = false
             if(check()){
 
                 if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
@@ -110,6 +111,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
         drinking_edit_submit.setOnClickListener {
 
+            AdditionalArr.over.checkAll = false
             finish()
 
         }
@@ -425,6 +427,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
         dialog_view.return_alert.setOnClickListener {
 
+            AdditionalArr.over.checkAll = false
             if(AdditionalArr.Page.isOralChecked){
 
                 startActivity(Intent(this@DrinkingExaminationActivity, OralExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
@@ -449,8 +452,6 @@ class DrinkingExaminationActivity : RootActivity(){
                 dialog.dismiss()
 
             }
-
-            AdditionalArr.over.checkAll = false
 
         }
 

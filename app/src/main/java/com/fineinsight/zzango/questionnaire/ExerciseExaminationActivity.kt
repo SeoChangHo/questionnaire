@@ -698,8 +698,8 @@ class ExerciseExaminationActivity : RootActivity() {
             exam_no = MainActivity.exam_no
         }
 
-        PaperArray.PaperArrFunction.ArrayListInit()
-        exam_no = System.currentTimeMillis().toString()
+//        PaperArray.PaperArrFunction.ArrayListInit()
+//        exam_no = System.currentTimeMillis().toString()
 
         PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
                 sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
