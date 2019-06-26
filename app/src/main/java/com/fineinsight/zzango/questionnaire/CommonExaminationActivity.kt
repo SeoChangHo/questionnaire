@@ -902,8 +902,10 @@ class CommonExaminationActivity : RootActivity() {
             }
 
         }else if(common_4_false.isChecked){
+
             mj4 = "1"
             AdditionalArr.over.isSmoking = false
+
         }else{
             Toast.makeText(this, "4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
