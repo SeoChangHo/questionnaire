@@ -3156,6 +3156,7 @@
                 android:onClick="focusControl"
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
+                android:text="0"
                 app:layout_constraintStart_toStartOf="@+id/textView31"
                 app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
@@ -3184,6 +3185,7 @@
                 android:onClick="focusControl"
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
+                android:text="0"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_time_1"
                 app:layout_constraintStart_toEndOf="@+id/textView32"
                 app:layout_constraintTop_toTopOf="@+id/editText_time_1" />
@@ -3370,6 +3372,7 @@
                 android:onClick="focusControl"
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
+                android:text="0"
                 app:layout_constraintStart_toStartOf="@+id/textView37"
                 app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
@@ -3398,6 +3401,7 @@
                 android:onClick="focusControl"
                 android:textCursorDrawable="@color/gray"
                 android:textSize="16dp"
+                android:text="0"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_time_2"
                 app:layout_constraintStart_toEndOf="@+id/textView38"
                 app:layout_constraintTop_toTopOf="@+id/editText_time_2" />
