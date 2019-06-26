@@ -942,6 +942,9 @@ class CancerExaminationActivity : RootActivity(){
             if(cancer_3_6_checkBox5.isChecked){
                 ck3_6_5 = "5"
             }
+            if(cancer_3_6_1_editText.text.toString() != ""){
+                ck3_6_kita = cancer_3_6_1_editText.text.toString()
+            }
 
         }else{
             Toast.makeText(this, "3-6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
