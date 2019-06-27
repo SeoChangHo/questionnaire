@@ -644,6 +644,8 @@ class CognitiveExaminationActivity : RootActivity(){
             return false
         }
 
+        mj_inji_sum = (mj_inji_1.toInt() + mj_inji_2.toInt() + + mj_inji_3.toInt() + + mj_inji_4.toInt() + mj_inji_5.toInt()+ mj_inji_6.toInt()+ mj_inji_7.toInt()+ mj_inji_8.toInt()+ mj_inji_9.toInt()+ mj_inji_10.toInt() + mj_inji_11.toInt()+ mj_inji_12.toInt()+ mj_inji_13.toInt()+ mj_inji_14.toInt()+ mj_inji_15.toInt()).toString()
+
         if(MainActivity.chart == "SET0"){
             PaperArray.PaperArrFunction.ArrayListInit()
             exam_no = System.currentTimeMillis().toString()
