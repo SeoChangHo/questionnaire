@@ -891,11 +891,11 @@ class CommonExaminationActivity : RootActivity() {
 
         if(common_4_true.isChecked){
             mj4 = "2"
-            AdditionalArr.over.isSmoking = true
             if(common_4_1_true.isChecked){
                 if(!editText_4_1_1.text.isNullOrEmpty() && !editText_4_1_2.text.isNullOrEmpty()){
                     mj4_1_1 = editText_4_1_1.text.toString()
                     mj4_1_2 = editText_4_1_2.text.toString()
+                    AdditionalArr.over.isSmoking = true
                 }else{
                     Toast.makeText(this, "4-1번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
                     return false
@@ -905,6 +905,7 @@ class CommonExaminationActivity : RootActivity() {
                     mj4_2_1 = editText_4_1_3.text.toString()
                     mj4_2_2 = editText_4_1_4.text.toString()
                     mj4_2_3 = editText_4_1_5.text.toString()
+                    AdditionalArr.over.isSmoking = false
                 }else{
                     Toast.makeText(this, "4-1번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
                     return false
