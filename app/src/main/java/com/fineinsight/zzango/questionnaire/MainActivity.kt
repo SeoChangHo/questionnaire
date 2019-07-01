@@ -63,6 +63,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //앱을 구동하는 동안 화면이 절대 꺼지지 않도록 함
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
         userLogin = user_login
         userImage = user_image
 
