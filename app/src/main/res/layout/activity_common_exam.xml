@@ -641,10 +641,21 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:textSize="15dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                     app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
                     app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc_examination_check" />
+
+                <!--<EditText-->
+                    <!--android:id="@+id/diagnosis_medication_etc_medication_edit_text"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="8dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:layout_marginEnd="8dp"-->
+                    <!--android:hint="기타 사항을 입력해주세요"-->
+                    <!--app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_etc"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/diagnosis_medication_etc" />-->
 
 
                 <View
@@ -3467,6 +3478,19 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView40"
                 app:layout_constraintTop_toBottomOf="@+id/textView40">
+
+                <RadioButton
+                    android:id="@+id/common_10_0"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginBottom="15dp"
+                    android:buttonTint="@color/mainBlue"
+                    android:onClick="focusControl"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:text="0일"
+                    android:textSize="15dp" />
 
                 <RadioButton
                     android:id="@+id/common_10_1"

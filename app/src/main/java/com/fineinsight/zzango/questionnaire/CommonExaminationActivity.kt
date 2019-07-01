@@ -1230,7 +1230,9 @@ class CommonExaminationActivity : RootActivity() {
             return false
         }
 
-        if(common_10_1.isChecked){
+        if(common_10_0.isChecked) {
+            mj10 = "0"
+        }else if(common_10_1.isChecked){
             mj10 = "1"
         }else if(common_10_2.isChecked){
             mj10 = "2"
@@ -1823,7 +1825,9 @@ class CommonExaminationActivity : RootActivity() {
             editText_minute_2.setText(paper.mj9_2_2)
         }
 
-        if(paper.mj10 == "1"){
+        if(paper.mj10 == "0"){
+            common_10_0.isChecked = true
+        }else if(paper.mj10 == "1"){
             common_10_1.isChecked = true
         }else if(paper.mj10 == "2"){
             common_10_2.isChecked = true

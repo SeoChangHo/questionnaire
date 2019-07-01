@@ -897,7 +897,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="11. 최근 일주일 동안, 잠자기 직전에 칫솔질을 얼마나 자주 하였습니까?"
+                android:text="11. 최근 일주일 동안, 치아를 닦을 때 치실 혹은 치간솔을 얼마나 자주 이용하였습니까?"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/oral_question1"
