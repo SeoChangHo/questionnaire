@@ -90,4 +90,12 @@ class OracleUtill {
 
     }
 
+    val mokpo_check_url : String = "https://finepaper.herokuapp.com//SelectMokpoCheckPaper/"
+
+    fun getMokpoCheck() : OracleInterface{
+
+        return OracleRequest().getResponse(mokpo_check_url)!!.create(OracleInterface::class.java)
+
+    }
+
 }

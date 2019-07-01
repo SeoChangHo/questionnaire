@@ -12,6 +12,8 @@ import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.net.Uri
 import android.net.wifi.WifiManager
 import android.os.Bundle
@@ -27,6 +29,7 @@ import android.util.Log
 import android.view.*
 import android.widget.*
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.MokpoCheck
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.Signature.CanvasView
@@ -37,10 +40,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_user_login.view.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_location.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.*
+import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 @SuppressLint("StaticFieldLeak")
 class MainActivity : AppCompatActivity() , View.OnClickListener {
@@ -386,13 +395,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 //                chart(user_first_serial)
                     MainActivity.chart = "SET0"
-                    if(user_last_serial.toInt()%2 == 0){
-                        AdditionalArr.Gender.isGender = true
-                    }else{
-                        AdditionalArr.Gender.isGender = false
-                    }
+                    AdditionalArr.Gender.isGender = user_last_serial.toInt()%2 == 0
 
-                    Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "사용자가 등록되었습니다!!.", Toast.LENGTH_SHORT).show()
                     view.text = login_user_name+"님"
                     view2.setImageResource(R.drawable.exit)
                     dialog.dismiss()
@@ -621,81 +626,24 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     //login_appbar_loading_progress.visibility = View.VISIBLE
                     //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                    //사용자
-                    var dialog = AlertDialog.Builder(context).create()
-                    var dialog_view = LayoutInflater.from(context).inflate(R.layout.notice_alert, null)
-
-                    //다이얼로그 뒤로가기 버튼 막기
-                    dialog.setCancelable(false)
-
-                    dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-                    dialog.setView(dialog_view)
-                    dialog.setCanceledOnTouchOutside(false)
-
-                    val ok = dialog_view.findViewById(R.id.user_ok) as Button
-                    val cancel = dialog_view.findViewById(R.id.user_cancel) as Button
-                    val title = dialog_view.findViewById(R.id.notice_Title) as TextView
-                    val text = dialog_view.findViewById(R.id.notice_textView) as TextView
-                    val text2 = dialog_view.findViewById(R.id.notice_textView2) as TextView
-                    val text3 = dialog_view.findViewById(R.id.notice_textView3) as TextView
-                    val text4 = dialog_view.findViewById(R.id.notice_textView4) as TextView
-                    val text5 = dialog_view.findViewById(R.id.notice_textView5) as TextView
-                    var chkOral = dialog_view.findViewById(R.id.chkOral) as CheckBox
-                    var chkCancer = dialog_view.findViewById(R.id.chkCancer) as CheckBox
 
 
-                    title.setText(login_user_name+"님")
+                    //현재 접속병원이 목포한국병원이면서 네트워크가 켜져 있을 때
+                    if(hospital == HospitalList.hospital.Mokpo && isNetworkAvailable())
+                    {
+                        var now = LocalDate.now()
 
-                    if(chart == "SET1"){
-                        text2.visibility = View.GONE
-                        text3.visibility = View.GONE
-                        text4.visibility = View.GONE
-                        text5.visibility = View.GONE
-                    }else if(chart == "SET2"){
-                        text2.visibility = View.GONE
-                        text4.visibility = View.GONE
-                        text5.visibility = View.GONE
-                    }else if(chart == "SET3"){
-                        text2.visibility = View.GONE
-                        text5.visibility = View.GONE
-                    }else if(chart == "SET4"){
-                        text3.visibility = View.GONE
-                        text4.visibility = View.GONE
-                    }else if(chart == "SET5"){
-                        text3.visibility = View.GONE
-                        text4.visibility = View.GONE
-                        text5.visibility = View.GONE
-                    }else if(chart == "SET6"){
+                        var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+                        var NAME = login_user_name
+                        var JUMIN = user_first_serial+user_last_serial
 
+                        MokpoCheckPaper(context, Strnow, NAME, JUMIN)
                     }
-
-                    dialog.show()
-
-                    ok.setOnClickListener {
-
-                        AdditionalArr.Page.init()
-                        if(chkOral.isChecked)
-                        {
-                            AdditionalArr.Page.isOralChecked = true
-                        }
-                        if(chkCancer.isChecked)
-                        {
-                            AdditionalArr.Page.isCancerChecked = true
-                        }
-
-
-                        dialog.dismiss()
-
-                        Handler().postDelayed({
-                            startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                        },100)
-
-                    }
-
-                    cancel.setOnClickListener {
-                        chart = PaperArray.SetList.SET0
-                        dialog.dismiss()
+                    else
+                    {
+                        println("목포병원이 아니거나 네트워크가 꺼져있습니다")
+                        var EmptyStringArr = ArrayList<String>()
+                        ShowPaperDIALOG(context, EmptyStringArr)
                     }
                 }
                 else
@@ -753,6 +701,163 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
+    }
+
+    fun ShowPaperDIALOG(context: Context, arr:ArrayList<String>)
+    {
+
+        //사용자
+        var dialog = AlertDialog.Builder(context).create()
+        var dialog_view = LayoutInflater.from(context).inflate(R.layout.notice_alert, null)
+
+        //다이얼로그 뒤로가기 버튼 막기
+        dialog.setCancelable(false)
+
+        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        dialog.setView(dialog_view)
+        dialog.setCanceledOnTouchOutside(false)
+
+        val ok = dialog_view.findViewById(R.id.user_ok) as Button
+        val cancel = dialog_view.findViewById(R.id.user_cancel) as Button
+        val title = dialog_view.findViewById(R.id.notice_Title) as TextView
+        val text = dialog_view.findViewById(R.id.notice_textView) as TextView
+        val text2 = dialog_view.findViewById(R.id.notice_textView2) as TextView
+        val text3 = dialog_view.findViewById(R.id.notice_textView3) as TextView
+        val text4 = dialog_view.findViewById(R.id.notice_textView4) as TextView
+        val text5 = dialog_view.findViewById(R.id.notice_textView5) as TextView
+        var chkOral = dialog_view.findViewById(R.id.chkOral) as CheckBox
+        var chkCancer = dialog_view.findViewById(R.id.chkCancer) as CheckBox
+
+
+        for (item in arr)
+        {
+            //암검진 체크
+            if (item.contains("03"))
+            {
+                chkCancer.isChecked = true
+            }
+
+            //구강문진 체크
+            if (item.contains("75"))
+            {
+                chkOral.isChecked = true
+            }
+        }
+
+
+        title.text = login_user_name+"님"
+
+        if(chart == "SET1"){
+            text2.visibility = View.GONE
+            text3.visibility = View.GONE
+            text4.visibility = View.GONE
+            text5.visibility = View.GONE
+        }else if(chart == "SET2"){
+            text2.visibility = View.GONE
+            text4.visibility = View.GONE
+            text5.visibility = View.GONE
+        }else if(chart == "SET3"){
+            text2.visibility = View.GONE
+            text5.visibility = View.GONE
+        }else if(chart == "SET4"){
+            text3.visibility = View.GONE
+            text4.visibility = View.GONE
+        }else if(chart == "SET5"){
+            text3.visibility = View.GONE
+            text4.visibility = View.GONE
+            text5.visibility = View.GONE
+        }else if(chart == "SET6"){
+
+        }
+
+        dialog.show()
+
+        ok.setOnClickListener {
+
+            AdditionalArr.Page.init()
+            if(chkOral.isChecked)
+            {
+                AdditionalArr.Page.isOralChecked = true
+            }
+            if(chkCancer.isChecked)
+            {
+                AdditionalArr.Page.isCancerChecked = true
+            }
+
+
+            dialog.dismiss()
+
+            Handler().postDelayed({
+                startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            },100)
+
+        }
+
+        cancel.setOnClickListener {
+            chart = PaperArray.SetList.SET0
+            dialog.dismiss()
+        }
+    }
+
+    fun MokpoCheckPaper(context:Context, DATE:String, NAME:String, JUMIN:String)
+    {
+
+        ProgressAction(true)
+
+        val MokpoCheckParam = HashMap<String, String>()
+        MokpoCheckParam["DATE"] = DATE.trim()
+        MokpoCheckParam["NAME"] = NAME.trim()
+        MokpoCheckParam["JUMIN"] = JUMIN.trim()
+
+        var CheckArr = ArrayList<String>()
+
+
+        OracleUtill().getMokpoCheck().SelectMokpoCheckPaper(MokpoCheckParam).enqueue(object : Callback<List<MokpoCheck>> {
+
+            override fun onResponse(call: Call<List<MokpoCheck>>, response: Response<List<MokpoCheck>>) {
+
+                if(response.isSuccessful){
+
+                    val MOKPODATA = response.body()
+
+                    //값이 있음
+                    if(!MOKPODATA!!.isEmpty()) {
+
+                        println("값 확인")
+                        for (document in MOKPODATA) {
+                            println(document.gj_jong)
+                            CheckArr.add(document.gj_jong)
+                        }
+                        ProgressAction(false)
+                        ShowPaperDIALOG(context, CheckArr)
+                    }
+                    else//값이 없음
+                    {
+                        println("값이 없음")
+                        ProgressAction(false)
+                        ShowPaperDIALOG(context, CheckArr)
+                    }
+
+                }
+                else//요청실패
+                {
+                    println("값이 없음")
+                    ProgressAction(false)
+                    ShowPaperDIALOG(context, CheckArr)
+                }
+            }
+
+            //요청 오류
+            override fun onFailure(call: Call<List<MokpoCheck>>, t: Throwable) {
+
+                println("값이 없음")
+                ProgressAction(false)
+                ShowPaperDIALOG(context, CheckArr)
+
+            }
+
+        })
     }
 
     fun dataSaveLocationAlert(){
@@ -1184,6 +1289,30 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
+    }
+
+    private fun isNetworkAvailable(): Boolean {
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE)
+        return if (connectivityManager is ConnectivityManager) {
+            val networkInfo: NetworkInfo? = connectivityManager.activeNetworkInfo
+            networkInfo?.isConnected ?: false
+        } else false
+    }
+
+    fun ProgressAction(isShow:Boolean)
+    {
+        if(isShow)
+        {
+            login_appbar_loading_progress.visibility = View.VISIBLE
+            login_appbar_loading_progress_bg.visibility = View.VISIBLE
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        }
+        else
+        {
+            login_appbar_loading_progress.visibility = View.GONE
+            login_appbar_loading_progress_bg.visibility = View.GONE
+            this.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        }
     }
 
 

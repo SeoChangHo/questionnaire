@@ -1,10 +1,9 @@
 package com.fineinsight.zzango.questionnaire
 
+import com.fineinsight.zzango.questionnaire.DataClass.MokpoCheck
 import com.fineinsight.zzango.questionnaire.LocalList.*
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface OracleInterface {
 
@@ -55,5 +54,9 @@ interface OracleInterface {
     @POST("https://finepaper.herokuapp.com/SavePapers")
     @Headers("Content-type: application/json")
     fun savePapersServer(@Body examInfo: Any) : Call<String>
+
+    @POST("https://finepaper.herokuapp.com/SelectMokpoCheckPaper")
+    @FormUrlEncoded
+    fun SelectMokpoCheckPaper(@FieldMap sql : Map<String, String>) : Call<List<MokpoCheck>>
 
 }
