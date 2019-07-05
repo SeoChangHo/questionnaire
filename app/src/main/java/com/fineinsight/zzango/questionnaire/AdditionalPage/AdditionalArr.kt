@@ -19,7 +19,7 @@ class AdditionalArr {
 
     object Gender
     {
-        var isGender = false
+        var isFemale = false
     }
 
     object over

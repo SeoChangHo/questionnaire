@@ -2015,7 +2015,7 @@ class CommonExaminationActivity : RootActivity() {
 
         var gender = "M"
 
-        if(AdditionalArr.Gender.isGender){
+        if(AdditionalArr.Gender.isFemale){
             gender = "F"
         }else{
             gender = "M"

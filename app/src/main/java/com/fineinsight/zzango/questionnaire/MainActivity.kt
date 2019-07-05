@@ -398,7 +398,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 //                chart(user_first_serial)
                     MainActivity.chart = "SET0"
-                    AdditionalArr.Gender.isGender = user_last_serial.toInt()%2 == 0
+
+                    println("user_last_serial.toInt(): ${user_last_serial.toInt()}")
+                    println("user_last_serial.toInt()%2: ${user_last_serial.toInt()%2}")
+                    println("user_last_serial.toInt()%2 == 0 : ->${user_last_serial.toInt()%2==0}")
+                    AdditionalArr.Gender.isFemale = user_last_serial.toInt()%2 == 0
 
                     Toast.makeText(context, "사용자가 등록되었습니다!!.", Toast.LENGTH_SHORT).show()
                     view.text = login_user_name+"님"
@@ -630,6 +634,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
 
+                    println("user_last_serial.toInt(): ${user_last_serial.toInt()}")
+                    println("user_last_serial.toInt()%2: ${user_last_serial.toInt()%2}")
+                    println("user_last_serial.toInt()%2 == 0 : ->${user_last_serial.toInt()%2==0}")
+                    AdditionalArr.Gender.isFemale = user_last_serial.toInt()%2 == 0
 
                     //현재 접속병원이 목포한국병원이면서 네트워크가 켜져 있을 때
                     if(hospital == HospitalList.hospital.Mokpo && isNetworkAvailable())

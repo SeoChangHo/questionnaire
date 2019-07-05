@@ -128,6 +128,18 @@ class CancerExaminationActivity : RootActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cancer_exam)
 
+
+        var gender = ""
+        if(AdditionalArr.Gender.isFemale)
+        {
+            gender = "여자"
+        }
+        else
+        {
+            gender = "남자"
+        }
+        println("성별: ${gender}")
+
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
@@ -331,7 +343,7 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
-        if(!AdditionalArr.Gender.isGender){
+        if(!AdditionalArr.Gender.isFemale){
 
             cancer_question_4_3.visibility = View.GONE
             cancer_4_3_radio.visibility = View.GONE
@@ -1035,7 +1047,7 @@ class CancerExaminationActivity : RootActivity(){
             ck4_2 = "4"
         }
 
-        if(AdditionalArr.Gender.isGender){
+        if(AdditionalArr.Gender.isFemale){
             if(cancer_4_3_1.isChecked){
                 ck4_3 = "1"
             }else if(cancer_4_3_2.isChecked){
@@ -1078,7 +1090,7 @@ class CancerExaminationActivity : RootActivity(){
             ck4_6 = "4"
         }
 
-        if(AdditionalArr.Gender.isGender){
+        if(AdditionalArr.Gender.isFemale){
             if(cancer_4_7_1.isChecked){
                 ck4_7 = "1"
             }else if(cancer_4_7_2.isChecked){
@@ -1208,7 +1220,7 @@ class CancerExaminationActivity : RootActivity(){
             ck7_5 = "1"
         }
 
-        if(AdditionalArr.Gender.isGender){
+        if(AdditionalArr.Gender.isFemale){
             if(cancer_8_1.isChecked){
                 ck8_1 = "1"
                 if(!cancer_editText3.text.isNullOrEmpty()){
