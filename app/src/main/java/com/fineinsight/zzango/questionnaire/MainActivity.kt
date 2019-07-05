@@ -404,7 +404,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     println("user_last_serial.toInt()%2 == 0 : ->${user_last_serial.toInt()%2==0}")
                     AdditionalArr.Gender.isFemale = user_last_serial.toInt()%2 == 0
 
-                    Toast.makeText(context, "사용자가 등록되었습니다!!.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
                     view.text = login_user_name+"님"
                     view2.setImageResource(R.drawable.exit)
                     dialog.dismiss()
