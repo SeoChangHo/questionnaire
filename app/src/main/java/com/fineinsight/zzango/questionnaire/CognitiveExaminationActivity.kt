@@ -111,6 +111,7 @@ class CognitiveExaminationActivity : RootActivity(){
 
         }
 
+
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 

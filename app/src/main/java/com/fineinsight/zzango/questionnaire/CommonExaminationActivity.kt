@@ -353,7 +353,7 @@ class CommonExaminationActivity : RootActivity() {
 
         common_edit_submit.setOnClickListener {
 
-            Drinking()
+//            Drinking()
 
             finish()
 
