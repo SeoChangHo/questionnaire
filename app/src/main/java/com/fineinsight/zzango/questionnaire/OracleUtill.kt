@@ -98,4 +98,12 @@ class OracleUtill {
 
     }
 
+    val list_view_url : String = "https://finepaper.herokuapp.com//SelectList/"
+
+    fun getUserCheck() : OracleInterface{
+
+        return OracleRequest().getResponse(list_view_url)!!.create(OracleInterface::class.java)
+
+    }
+
 }

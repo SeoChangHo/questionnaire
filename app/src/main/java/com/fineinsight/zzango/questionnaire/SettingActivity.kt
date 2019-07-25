@@ -12,6 +12,9 @@ import android.widget.Button
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.LocalList.ListActivity
 import kotlinx.android.synthetic.main.activity_setting_back.*
+import kotlinx.android.synthetic.main.activity_setting_back.listViewButton
+import kotlinx.android.synthetic.main.activity_setting_back.manager_logout
+import kotlinx.android.synthetic.main.activity_setting_back.setting_image
 
 class SettingActivity : AppCompatActivity() {
 
@@ -51,6 +54,12 @@ class SettingActivity : AppCompatActivity() {
         listViewButton.setOnClickListener {
 
             startActivity(Intent(this@SettingActivity, ListActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
+
+        listViewButton2.setOnClickListener {
+
+            startActivity(Intent(this@SettingActivity, ServerListActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
 

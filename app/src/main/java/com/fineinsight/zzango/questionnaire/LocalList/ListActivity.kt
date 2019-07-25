@@ -28,7 +28,7 @@ class ListActivity : RootActivity() {
         setContentView(R.layout.activity_list)
 
         ListSetting(false)
-        btnSeeting()
+        btnSetting()
         SelectAllSetting()
     }
 
@@ -61,7 +61,7 @@ class ListActivity : RootActivity() {
         recyclerView.adapter = adapter
     }
 
-    fun btnSeeting()
+    fun btnSetting()
     {
         sql_db = LocalDBhelper(this).writableDatabase
 
