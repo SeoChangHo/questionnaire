@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.widget.Button
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.LocalList.ListActivity
+import com.fineinsight.zzango.questionnaire.ServerList.ServerListActivity
 import kotlinx.android.synthetic.main.activity_setting_back.*
 import kotlinx.android.synthetic.main.activity_setting_back.listViewButton
 import kotlinx.android.synthetic.main.activity_setting_back.manager_logout

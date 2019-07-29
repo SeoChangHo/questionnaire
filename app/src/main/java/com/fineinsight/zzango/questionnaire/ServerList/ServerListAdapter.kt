@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.fineinsight.zzango.questionnaire.DataClass.SelectInfo
 import com.fineinsight.zzango.questionnaire.R
-import com.fineinsight.zzango.questionnaire.ServerListActivity
+import com.fineinsight.zzango.questionnaire.ServerList.ServerListActivity
 
 
 class ServerListAdapter (var userList: ArrayList<SelectInfo>,val Activity : ServerListActivity) : RecyclerView.Adapter<ServerListAdapter.ViewHolder>(){

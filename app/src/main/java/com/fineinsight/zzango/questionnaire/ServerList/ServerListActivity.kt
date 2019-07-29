@@ -1,4 +1,4 @@
-package com.fineinsight.zzango.questionnaire
+package com.fineinsight.zzango.questionnaire.ServerList
 
 import android.app.Activity
 import android.os.Bundle
@@ -6,13 +6,14 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.DataClass.SelectInfo
-import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
+import com.fineinsight.zzango.questionnaire.MainActivity
+import com.fineinsight.zzango.questionnaire.OracleUtill
+import com.fineinsight.zzango.questionnaire.R
 import fineinsight.indonesia.examination.indonesia_healthcare.Activity_ModeMonitoring.ServerListAdapter
 import kotlinx.android.synthetic.main.server_list_activity.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.time.LocalDate
 
 class ServerListActivity : Activity() {
 
@@ -44,7 +45,7 @@ class ServerListActivity : Activity() {
 
                     if(response.body()!!.size == 0){
 
-                        Toast.makeText(this@ServerListActivity, "가져올 서명정보가 없습니다.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@ServerListActivity, "저장정보가 없습니다.", Toast.LENGTH_SHORT).show()
                         login_appbar_loading_progress.visibility = View.GONE
                         login_appbar_loading_progress_bg.visibility = View.GONE
 

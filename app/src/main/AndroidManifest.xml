@@ -32,7 +32,7 @@
             android:name="com.fineinsight.zzango.questionnaire.CommonExaminationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.fineinsight.zzango.questionnaire.ServerListActivity"
+            android:name="com.fineinsight.zzango.questionnaire.ServerList.ServerListActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.fineinsight.zzango.questionnaire.MentalExaminationActivity"
