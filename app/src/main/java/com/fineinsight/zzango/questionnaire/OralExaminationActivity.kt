@@ -38,34 +38,6 @@ class OralExaminationActivity : RootActivity() {
     var sql_db : SQLiteDatabase? = null
     var signature:ByteArray = ByteArray(0)
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
-                         @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
-                         @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
-                         @SerializedName("signature") @Expose var signature : ByteArray,
-                         @SerializedName("name") @Expose var name : String,
-                         @SerializedName("first_serial") @Expose var first_serial : String,
-                         @SerializedName("last_serial") @Expose var last_serial : String,
-                         @SerializedName("category") @Expose var category : String,
-                         @SerializedName("oral_1") @Expose var oral_1 : String,
-                         @SerializedName("oral_2") @Expose var oral_2 : String,
-                         @SerializedName("oral_3") @Expose var oral_3 : String,
-                         @SerializedName("oral_4") @Expose var oral_4 : String,
-                         @SerializedName("oral_5") @Expose var oral_5 : String,
-                         @SerializedName("oral_6") @Expose var oral_6 : String,
-                         @SerializedName("oral_7") @Expose var oral_7 : String,
-                         @SerializedName("oral_8") @Expose var oral_8 : String,
-                         @SerializedName("oral_9") @Expose var oral_9 : String,
-                         @SerializedName("oral_10") @Expose var oral_10 : String,
-                         @SerializedName("oral_11") @Expose var oral_11 : String,
-                         @SerializedName("oral_12") @Expose var oral_12 : String,
-                         @SerializedName("oral_13") @Expose var oral_13 : String,
-                         @SerializedName("oral_14") @Expose var oral_14 : String,
-                         @SerializedName("oral_15") @Expose var oral_15 : String,
-                         @SerializedName("oral_16") @Expose var oral_16 : String)
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?){
 
         super.onCreate(savedInstanceState)

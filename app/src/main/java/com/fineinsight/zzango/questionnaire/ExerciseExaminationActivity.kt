@@ -26,45 +26,6 @@ class ExerciseExaminationActivity : RootActivity() {
     var sql_db : SQLiteDatabase? = null
     var signature:ByteArray = ByteArray(0)
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
-                         @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
-                         @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
-                         @SerializedName("name") @Expose var name : String,
-                         @SerializedName("first_serial") @Expose var first_serial : String,
-                         @SerializedName("last_serial") @Expose var last_serial : String,
-                         @SerializedName("category") @Expose var category : String,
-                         @SerializedName("sg2_spSports1_1") @Expose var sg2_spSports1_1 : String,
-                         @SerializedName("sg2_spSports1_2") @Expose var sg2_spSports1_2 : String,
-                         @SerializedName("sg2_spSports1_3_1") @Expose var sg2_spSports1_3_1 : String,
-                         @SerializedName("sg2_spSports1_3_2") @Expose var sg2_spSports1_3_2 : String,
-                         @SerializedName("sg2_spSports1_4") @Expose var sg2_spSports1_4 : String,
-                         @SerializedName("sg2_spSports1_5") @Expose var sg2_spSports1_5 : String,
-                         @SerializedName("sg2_spSports1_6_1") @Expose var sg2_spSports1_6_1 : String,
-                         @SerializedName("sg2_spSports1_6_2") @Expose var sg2_spSports1_6_2 : String,
-                         @SerializedName("sg2_spSports2_1") @Expose var sg2_spSports2_1 : String,
-                         @SerializedName("sg2_spSports2_2") @Expose var sg2_spSports2_2 : String,
-                         @SerializedName("sg2_spSports2_3_1") @Expose var sg2_spSports2_3_1 : String,
-                         @SerializedName("sg2_spSports2_3_2") @Expose var sg2_spSports2_3_2 : String,
-                         @SerializedName("sg2_spSports3_1") @Expose var sg2_spSports3_1 : String,
-                         @SerializedName("sg2_spSports3_2") @Expose var sg2_spSports3_2 : String,
-                         @SerializedName("sg2_spSports3_3_1") @Expose var sg2_spSports3_3_1 : String,
-                         @SerializedName("sg2_spSports3_3_2") @Expose var sg2_spSports3_3_2 : String,
-                         @SerializedName("sg2_spSports3_4") @Expose var sg2_spSports3_4 : String,
-                         @SerializedName("sg2_spSports3_5") @Expose var sg2_spSports3_5 : String,
-                         @SerializedName("sg2_spSports3_6_1") @Expose var sg2_spSports3_6_1 : String,
-                         @SerializedName("sg2_spSports3_6_2") @Expose var sg2_spSports3_6_2 : String,
-                         @SerializedName("sg2_spSports4_1_1") @Expose var sg2_spSports4_1_1 : String,
-                         @SerializedName("sg2_spSports4_1_2") @Expose var sg2_spSports4_1_2 : String,
-                         @SerializedName("sg2_spSports5") @Expose var sg2_spSports5 : String,
-                         @SerializedName("sg2_spSports6") @Expose var sg2_spSports6 : String,
-                         @SerializedName("sg2_spSports7") @Expose var sg2_spSports7 : String,
-                         @SerializedName("sg2_spSports8") @Expose var sg2_spSports8 : String,
-                         @SerializedName("sg2_spSports9") @Expose var sg2_spSports9 : String,
-                         @SerializedName("sg2_spSports10") @Expose var sg2_spSports10 : String,
-                         @SerializedName("sg2_spSports11") @Expose var sg2_spSports11 : String,
-                         @SerializedName("sg2_spSports12") @Expose var sg2_spSports12 : String,
-                         @SerializedName("sg2_spSportsSum") @Expose var sg2_spSportsSum : String) : Serializable
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)

@@ -38,31 +38,6 @@ class CognitiveExaminationActivity : RootActivity(){
     var sql_db : SQLiteDatabase? = null
     lateinit var signature:ByteArray
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
-                         @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
-                         @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
-                         @SerializedName("name") @Expose var name : String,
-                         @SerializedName("first_serial") @Expose var first_serial : String,
-                         @SerializedName("last_serial") @Expose var last_serial : String,
-                         @SerializedName("category") @Expose var category : String,
-                         @SerializedName("mj_inji_1") @Expose var mj_inji_1 : String,
-                         @SerializedName("mj_inji_2") @Expose var mj_inji_2 : String,
-                         @SerializedName("mj_inji_3") @Expose var mj_inji_3 : String,
-                         @SerializedName("mj_inji_4") @Expose var mj_inji_4 : String,
-                         @SerializedName("mj_inji_5") @Expose var mj_inji_5 : String,
-                         @SerializedName("mj_inji_6") @Expose var mj_inji_6 : String,
-                         @SerializedName("mj_inji_7") @Expose var mj_inji_7 : String,
-                         @SerializedName("mj_inji_8") @Expose var mj_inji_8 : String,
-                         @SerializedName("mj_inji_9") @Expose var mj_inji_9 : String,
-                         @SerializedName("mj_inji_10") @Expose var mj_inji_10 : String,
-                         @SerializedName("mj_inji_11") @Expose var mj_inji_11 : String,
-                         @SerializedName("mj_inji_12") @Expose var mj_inji_12 : String,
-                         @SerializedName("mj_inji_13") @Expose var mj_inji_13 : String,
-                         @SerializedName("mj_inji_14") @Expose var mj_inji_14 : String,
-                         @SerializedName("mj_inji_15") @Expose var mj_inji_15 : String,
-                         @SerializedName("mj_inji_sum") @Expose var mj_inji_sum : String)
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cognitive_exam)

@@ -28,33 +28,6 @@ class NutritionExaminationActivity :RootActivity() {
     var sql_db : SQLiteDatabase? = null
     var signature:ByteArray = ByteArray(0)
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
-                         @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
-                         @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
-                         @SerializedName("name") @Expose var name : String,
-                         @SerializedName("first_serial") @Expose var first_serial : String,
-                         @SerializedName("last_serial") @Expose var last_serial : String,
-                         @SerializedName("category") @Expose var category : String,
-                         @SerializedName("sg2_spFood1") @Expose var sg2_spFood1 : String,
-                         @SerializedName("sg2_spFood2") @Expose var sg2_spFood2 : String,
-                         @SerializedName("sg2_spFood3") @Expose var sg2_spFood3 : String,
-                         @SerializedName("sg2_spFood4") @Expose var sg2_spFood4 : String,
-                         @SerializedName("sg2_spFood5") @Expose var sg2_spFood5 : String,
-                         @SerializedName("sg2_spFood6") @Expose var sg2_spFood6 : String,
-                         @SerializedName("sg2_spFood7") @Expose var sg2_spFood7 : String,
-                         @SerializedName("sg2_spFood8") @Expose var sg2_spFood8 : String,
-                         @SerializedName("sg2_spFood9") @Expose var sg2_spFood9 : String,
-                         @SerializedName("sg2_spFood10") @Expose var sg2_spFood10 : String,
-                         @SerializedName("sg2_spFood11") @Expose var sg2_spFood11 : String,
-                         @SerializedName("sg2_spFoodSum") @Expose var sg2_spFoodSum : String,
-                         @SerializedName("sg2_spFatHeight") @Expose var sg2_spFatHeight : String,
-                         @SerializedName("sg2_spFatWeight") @Expose var sg2_spFatWeight : String,
-                         @SerializedName("sg2_spFatWaistSize") @Expose var sg2_spFatWaistSize : String,
-                         @SerializedName("sg2_spFatBmi") @Expose var sg2_spFatBmi : String,
-                         @SerializedName("sg2_spFat1") @Expose var sg2_spFat1 : String,
-                         @SerializedName("sg2_spFat2") @Expose var sg2_spFat2 : String,
-                         @SerializedName("sg2_spFat3") @Expose var sg2_spFat3 : String) : Serializable
-    
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)

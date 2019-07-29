@@ -38,25 +38,6 @@ class MentalExaminationActivity : RootActivity(){
     var sql_db : SQLiteDatabase? = null
     var signature:ByteArray = ByteArray(0)
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
-                         @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
-                         @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
-                         @SerializedName("name") @Expose var name : String,
-                         @SerializedName("first_serial") @Expose var first_serial : String,
-                         @SerializedName("last_serial") @Expose var last_serial : String,
-                         @SerializedName("category") @Expose var category : String,
-                         @SerializedName("mj_mtl_1") @Expose var mj_mtl_1 : String,
-                         @SerializedName("mj_mtl_2") @Expose var mj_mtl_2 : String,
-                         @SerializedName("mj_mtl_3") @Expose var mj_mtl_3 : String,
-                         @SerializedName("mj_mtl_4") @Expose var mj_mtl_4 : String,
-                         @SerializedName("mj_mtl_5") @Expose var mj_mtl_5 : String,
-                         @SerializedName("mj_mtl_6") @Expose var mj_mtl_6 : String,
-                         @SerializedName("mj_mtl_7") @Expose var mj_mtl_7 : String,
-                         @SerializedName("mj_mtl_8") @Expose var mj_mtl_8 : String,
-                         @SerializedName("mj_mtl_9") @Expose var mj_mtl_9 : String,
-                         @SerializedName("mj_mtl_sum") @Expose var mj_mtl_sum : String)
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mental_exam)

@@ -38,25 +38,6 @@ class ElderlyExaminationActivity : RootActivity(){
     var sql_db : SQLiteDatabase? = null
     lateinit var signature:ByteArray
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
-                         @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
-                         @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
-                         @SerializedName("name") @Expose var name : String,
-                         @SerializedName("first_serial") @Expose var first_serial : String,
-                         @SerializedName("last_serial") @Expose var last_serial : String,
-                         @SerializedName("category") @Expose var category : String,
-                         @SerializedName("mj66_1") @Expose var mj66_1 : String,
-                         @SerializedName("mj66_2") @Expose var mj66_2 : String,
-                         @SerializedName("mj66_3_1") @Expose var mj66_3_1 : String,
-                         @SerializedName("mj66_3_2") @Expose var mj66_3_2 : String,
-                         @SerializedName("mj66_3_3") @Expose var mj66_3_3 : String,
-                         @SerializedName("mj66_3_4") @Expose var mj66_3_4 : String,
-                         @SerializedName("mj66_3_5") @Expose var mj66_3_5 : String,
-                         @SerializedName("mj66_3_6") @Expose var mj66_3_6 : String,
-                         @SerializedName("mj66_4") @Expose var mj66_4 : String,
-                         @SerializedName("mj66_5") @Expose var mj66_5 : String)
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_elderly_exam)

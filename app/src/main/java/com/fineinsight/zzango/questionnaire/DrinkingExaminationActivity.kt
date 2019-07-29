@@ -38,27 +38,6 @@ class DrinkingExaminationActivity : RootActivity(){
     var sql_db : SQLiteDatabase? = null
     var signature:ByteArray = ByteArray(0)
 
-    data class ExamInfo (@SerializedName("exam_date") @Expose var exam_date : String,
-                         @SerializedName("exam_bun_no") @Expose var exam_bun_no : String,
-                         @SerializedName("exam_email_yn") @Expose var exam_email_yn : String,
-                         @SerializedName("name") @Expose var name : String,
-                         @SerializedName("first_serial") @Expose var first_serial : String,
-                         @SerializedName("last_serial") @Expose var last_serial : String,
-                         @SerializedName("category") @Expose var category : String,
-                         @SerializedName("sg2_spDrink1") @Expose var sg2_spDrink1 : String,
-                         @SerializedName("sg2_spDrink2_1") @Expose var sg2_spDrink2_1 : String,
-                         @SerializedName("sg2_spDrink2_2") @Expose var sg2_spDrink2_2 : String,
-                         @SerializedName("sg2_spDrink3") @Expose var sg2_spDrink3 : String,
-                         @SerializedName("sg2_spDrink4") @Expose var sg2_spDrink4 : String,
-                         @SerializedName("sg2_spDrink5") @Expose var sg2_spDrink5 : String,
-                         @SerializedName("sg2_spDrink6") @Expose var sg2_spDrink6 : String,
-                         @SerializedName("sg2_spDrink7") @Expose var sg2_spDrink7 : String,
-                         @SerializedName("sg2_spDrink8") @Expose var sg2_spDrink8 : String,
-                         @SerializedName("sg2_spDrink9") @Expose var sg2_spDrink9 : String,
-                         @SerializedName("sg2_spDrink10") @Expose var sg2_spDrink10 : String,
-                         @SerializedName("sg2_spDrinkSum") @Expose var sg2_spDrinkSum : String)
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drinking_exam)
