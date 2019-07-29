@@ -32,6 +32,7 @@ import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.MokpoCheck
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
+import com.fineinsight.zzango.questionnaire.Network.NetworkCheck
 import com.fineinsight.zzango.questionnaire.Signature.CanvasView
 import com.fineinsight.zzango.questionnaire.UserList.User
 import com.fineinsight.zzango.questionnaire.UserList.UserList
@@ -63,6 +64,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        NetworkCheck.Func.Check(this)
+
+
+
         //앱을 구동하는 동안 화면이 절대 꺼지지 않도록 함
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
@@ -78,6 +83,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             popuplogin()
 
         }
+
 
 //        if (wfm.isWifiEnabled) {
 //
