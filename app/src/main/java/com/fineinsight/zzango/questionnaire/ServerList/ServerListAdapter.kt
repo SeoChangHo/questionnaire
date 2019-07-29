@@ -1,4 +1,4 @@
-package fineinsight.indonesia.examination.indonesia_healthcare.Activity_ModeMonitoring
+package com.fineinsight.zzango.questionnaire.ServerList
 
 
 import android.support.constraint.ConstraintLayout
@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.fineinsight.zzango.questionnaire.DataClass.SelectInfo
 import com.fineinsight.zzango.questionnaire.R
-import com.fineinsight.zzango.questionnaire.ServerList.ServerListActivity
 
 
 class ServerListAdapter (var userList: ArrayList<SelectInfo>,val Activity : ServerListActivity) : RecyclerView.Adapter<ServerListAdapter.ViewHolder>(){
@@ -33,6 +32,19 @@ class ServerListAdapter (var userList: ArrayList<SelectInfo>,val Activity : Serv
         p0.userJumin.text = userList[p1].userNumber
         p0.userGender.text = userList[p1].userNumber
 
+
+        p0.listlayoutBack.setOnClickListener {
+
+
+            Activity.loadDetailList(
+                    userList[p1].userName,
+                    userList[p1].userNumber,
+                    userList[p1].dateInfo)
+            println("${p1}번째 클릭")
+            println("이름: ${userList[p1].userName}")
+            println("주민: ${userList[p1].userNumber}")
+            println("날짜: ${userList[p1].dateInfo}")
+        }
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)

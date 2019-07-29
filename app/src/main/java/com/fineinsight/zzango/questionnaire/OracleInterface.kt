@@ -1,6 +1,7 @@
 package com.fineinsight.zzango.questionnaire
 
 import com.fineinsight.zzango.questionnaire.DataClass.MokpoCheck
+import com.fineinsight.zzango.questionnaire.DataClass.SelectDetailInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SelectInfo
 import com.fineinsight.zzango.questionnaire.LocalList.*
 import retrofit2.Call
@@ -63,6 +64,10 @@ interface OracleInterface {
     @POST("https://finepaper.herokuapp.com/SelectList")
     @FormUrlEncoded
     fun SelectList(@FieldMap sql : Map<String, String>) : Call<ArrayList<SelectInfo>>
+
+    @POST("https://finepaper.herokuapp.com/SelectListDetail")
+    @FormUrlEncoded
+    fun SelectListDetail(@FieldMap sql : Map<String, String>) : Call<ArrayList<SelectDetailInfo>>
 
 
 
