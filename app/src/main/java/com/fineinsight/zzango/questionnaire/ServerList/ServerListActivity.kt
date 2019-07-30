@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.DataClass.SelectDetailInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SelectInfo
@@ -35,8 +36,7 @@ class ServerListActivity : Activity() {
         selectDate["DATE"] = "2019-07-05"
         selectDate["AREA"] = MainActivity.hospital
 
-        login_appbar_loading_progress.visibility = View.VISIBLE
-        login_appbar_loading_progress_bg.visibility = View.VISIBLE
+        ProgressAction(true)
 
         OracleUtill().getUserCheck().SelectList(selectDate).enqueue(object : Callback<ArrayList<SelectInfo>> {
 
@@ -47,8 +47,7 @@ class ServerListActivity : Activity() {
                     if(response.body()!!.size == 0){
 
                         Toast.makeText(this@ServerListActivity, "저장된 정보가 없습니다.", Toast.LENGTH_SHORT).show()
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
+                        ProgressAction(false)
 
                     }else{
 
@@ -68,21 +67,18 @@ class ServerListActivity : Activity() {
                         server_recyclertView.layoutManager = LinearLayoutManager(this@ServerListActivity)
                         server_recyclertView.adapter = ServerListAdapter(userList, this@ServerListActivity)
 
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
+                        ProgressAction(false)
                     }
 
 
                 }else{
-                    login_appbar_loading_progress.visibility = View.GONE
-                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    ProgressAction(false)
                 }
             }
 
             override fun onFailure(call: Call<ArrayList<SelectInfo>>, t: Throwable) {
 
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
+                ProgressAction(false)
             }
         })
     }
@@ -97,8 +93,7 @@ class ServerListActivity : Activity() {
         MAP["JUMIN"] = JUMIN
         MAP["NAME"] = NAME
 
-        login_appbar_loading_progress.visibility = View.VISIBLE
-        login_appbar_loading_progress_bg.visibility = View.VISIBLE
+        ProgressAction(true)
 
         OracleUtill().getUserDetailCheck().SelectListDetail(MAP).enqueue(object : Callback<ArrayList<SelectDetailInfo>> {
 
@@ -109,8 +104,7 @@ class ServerListActivity : Activity() {
                     if(response.body()!!.size == 0){
 
                         Toast.makeText(this@ServerListActivity, "저장된 정보가 없습니다.", Toast.LENGTH_SHORT).show()
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
+                        ProgressAction(false)
 
                     }else{
 
@@ -121,6 +115,7 @@ class ServerListActivity : Activity() {
                             userDetailList.add(
                                     SelectDetailInfo(
                                             response.body()!!.get(i).TableName,
+                                            response.body()!!.get(i).seq,
                                             response.body()!!.get(i).userName,
                                             response.body()!!.get(i).userNumber,
                                             response.body()!!.get(i).dateInfo
@@ -135,26 +130,39 @@ class ServerListActivity : Activity() {
 
                         val ServerListDetailActivity = Intent(this@ServerListActivity, ServerListDetailActivity::class.java).putExtra("ARR", userDetailList)
                         startActivity(ServerListDetailActivity)
-
-
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
+                        ProgressAction(false)
                     }
 
 
                 }else{
-                    login_appbar_loading_progress.visibility = View.GONE
-                    login_appbar_loading_progress_bg.visibility = View.GONE
+                    ProgressAction(false)
                 }
             }
 
             override fun onFailure(call: Call<ArrayList<SelectDetailInfo>>, t: Throwable) {
 
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
+                ProgressAction(false)
             }
         })
     }
+
+    fun ProgressAction(isShow:Boolean)
+    {
+        if(isShow)
+        {
+
+            Progress_circle.visibility = View.VISIBLE
+            Progress_bg.visibility = View.VISIBLE
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        }
+        else
+        {
+            Progress_circle.visibility = View.GONE
+            Progress_bg.visibility = View.GONE
+            this.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        }
+    }
+
 
 
 }

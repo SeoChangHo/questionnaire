@@ -90,22 +90,25 @@
 
     </android.support.constraint.ConstraintLayout>
 
+
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/login_appbar_loading_progress_bg"
+        android:id="@+id/Progress_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.4"
+        android:elevation="4dp"
         android:background="#000000"
         android:visibility="gone">
 
     </android.support.constraint.ConstraintLayout>
 
-    <com.wang.avi.AVLoadingIndicatorView
-        android:id="@+id/login_appbar_loading_progress"
+    <ProgressBar
+        android:id="@+id/Progress_circle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:indeterminateTint="@color/colorPrimaryDark"
         android:visibility="gone"
-        app:indicatorName="LineSpinFadeLoaderIndicator"
+        android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

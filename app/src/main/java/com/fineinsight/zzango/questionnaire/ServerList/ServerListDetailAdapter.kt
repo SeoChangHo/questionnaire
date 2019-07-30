@@ -20,9 +20,7 @@ class ServerListDetailAdapter (var userList: ArrayList<SelectDetailInfo>,val Act
     }
 
     override fun getItemCount(): Int {
-
         return userList.size
-
     }
 
 

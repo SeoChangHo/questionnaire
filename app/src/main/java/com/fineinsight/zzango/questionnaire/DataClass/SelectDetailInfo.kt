@@ -4,6 +4,7 @@ import java.io.Serializable
 
 data class SelectDetailInfo(
         var TableName: String,
+        var seq: String,
         var userName: String,
         var userNumber: String,
         var dateInfo: String
