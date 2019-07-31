@@ -106,13 +106,45 @@ class OracleUtill {
 
     }
 
-
     val listdetail_view_url : String = "https://finepaper.herokuapp.com//SelectListDetail/"
-
     fun getUserDetailCheck() : OracleInterface{
-
         return OracleRequest().getResponse(listdetail_view_url)!!.create(OracleInterface::class.java)
+    }
 
+
+    val Paper_cancer_url : String = "https://finepaper.herokuapp.com//Paper_cancer/"
+    fun getPaper_cancer() : OracleInterface{
+        return OracleRequest().getResponse(Paper_cancer_url)!!.create(OracleInterface::class.java)
+    }
+
+    val Paper_cognitive_url : String = "https://finepaper.herokuapp.com//Paper_cognitive/"
+    fun getPaper_cognitive() : OracleInterface{
+        return OracleRequest().getResponse(Paper_cognitive_url)!!.create(OracleInterface::class.java)
+    }
+
+    val Paper_common_url : String = "https://finepaper.herokuapp.com//Paper_common/"
+    fun getPaper_common() : OracleInterface{
+        return OracleRequest().getResponse(Paper_common_url)!!.create(OracleInterface::class.java)
+    }
+
+    val Paper_elderly_url : String = "https://finepaper.herokuapp.com//Paper_elderly/"
+    fun getPaper_elderly() : OracleInterface{
+        return OracleRequest().getResponse(Paper_elderly_url)!!.create(OracleInterface::class.java)
+    }
+
+    val Paper_life_url : String = "https://finepaper.herokuapp.com//Paper_life/"
+    fun getPaper_life() : OracleInterface{
+        return OracleRequest().getResponse(Paper_life_url)!!.create(OracleInterface::class.java)
+    }
+
+    val Paper_mental_url : String = "https://finepaper.herokuapp.com//Paper_mental/"
+    fun getPaper_mental() : OracleInterface{
+        return OracleRequest().getResponse(Paper_mental_url)!!.create(OracleInterface::class.java)
+    }
+
+    val Paper_oral_url : String = "https://finepaper.herokuapp.com//Paper_oral/"
+    fun getPaper_oral() : OracleInterface{
+        return OracleRequest().getResponse(Paper_oral_url)!!.create(OracleInterface::class.java)
     }
 
 

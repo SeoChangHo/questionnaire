@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
 import android.widget.TextView
 import com.fineinsight.zzango.questionnaire.DataClass.SelectDetailInfo
 import com.fineinsight.zzango.questionnaire.R
@@ -33,6 +34,13 @@ class ServerListDetailAdapter (var userList: ArrayList<SelectDetailInfo>,val Act
 
         p0.listlayoutBack.setOnClickListener {
 
+            val SEQ = userList[p1].seq
+            val DATE = userList[p1].dateInfo
+            val NAME = userList[p1].userName
+            val JUMIN = userList[p1].userNumber
+            val TABLE = userList[p1].TableName
+
+            Activity.LoadServerPaper(SEQ, DATE, NAME, JUMIN, TABLE)
         }
     }
 

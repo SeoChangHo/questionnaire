@@ -3,6 +3,7 @@ package com.fineinsight.zzango.questionnaire
 import com.fineinsight.zzango.questionnaire.DataClass.MokpoCheck
 import com.fineinsight.zzango.questionnaire.DataClass.SelectDetailInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SelectInfo
+import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Cancer
 import com.fineinsight.zzango.questionnaire.LocalList.*
 import retrofit2.Call
 import retrofit2.http.*
@@ -68,6 +69,36 @@ interface OracleInterface {
     @POST("https://finepaper.herokuapp.com/SelectListDetail")
     @FormUrlEncoded
     fun SelectListDetail(@FieldMap sql : Map<String, String>) : Call<ArrayList<SelectDetailInfo>>
+
+
+    //서버 저장 리스트
+    @POST("https://finepaper.herokuapp.com/Paper_cancer")
+    @FormUrlEncoded
+    fun SelectPaper_cancer(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+
+    @POST("https://finepaper.herokuapp.com/Paper_cognitive")
+    @FormUrlEncoded
+    fun SelectPaper_cognitive(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+
+    @POST("https://finepaper.herokuapp.com/Paper_common")
+    @FormUrlEncoded
+    fun SelectPaper_common(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+
+    @POST("https://finepaper.herokuapp.com/Paper_elderly")
+    @FormUrlEncoded
+    fun SelectPaper_elderly(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+
+    @POST("https://finepaper.herokuapp.com/Paper_life")
+    @FormUrlEncoded
+    fun SelectPaper_life(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+
+    @POST("https://finepaper.herokuapp.com/Paper_mental")
+    @FormUrlEncoded
+    fun SelectPaper_mental(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+
+    @POST("https://finepaper.herokuapp.com/Paper_oral")
+    @FormUrlEncoded
+    fun SelectPaper_oral(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
 
 
 
