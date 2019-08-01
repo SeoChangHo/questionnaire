@@ -1,9 +1,6 @@
 package com.fineinsight.zzango.questionnaire
 
-import com.fineinsight.zzango.questionnaire.DataClass.MokpoCheck
-import com.fineinsight.zzango.questionnaire.DataClass.SelectDetailInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SelectInfo
-import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Cancer
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.*
 import retrofit2.Call
 import retrofit2.http.*
@@ -78,27 +75,27 @@ interface OracleInterface {
 
     @POST("https://finepaper.herokuapp.com/Paper_cognitive")
     @FormUrlEncoded
-    fun SelectPaper_cognitive(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+    fun SelectPaper_cognitive(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cognitive>>
 
     @POST("https://finepaper.herokuapp.com/Paper_common")
     @FormUrlEncoded
-    fun SelectPaper_common(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+    fun SelectPaper_common(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Common>>
 
     @POST("https://finepaper.herokuapp.com/Paper_elderly")
     @FormUrlEncoded
-    fun SelectPaper_elderly(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+    fun SelectPaper_elderly(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Elderly>>
 
     @POST("https://finepaper.herokuapp.com/Paper_life")
     @FormUrlEncoded
-    fun SelectPaper_life(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+    fun SelectPaper_life(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Life>>
 
     @POST("https://finepaper.herokuapp.com/Paper_mental")
     @FormUrlEncoded
-    fun SelectPaper_mental(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+    fun SelectPaper_mental(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Mental>>
 
     @POST("https://finepaper.herokuapp.com/Paper_oral")
     @FormUrlEncoded
-    fun SelectPaper_oral(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Cancer>>
+    fun SelectPaper_oral(@FieldMap sql : Map<String, String>) : Call<ArrayList<ServerPaper_Oral>>
 
 
 
