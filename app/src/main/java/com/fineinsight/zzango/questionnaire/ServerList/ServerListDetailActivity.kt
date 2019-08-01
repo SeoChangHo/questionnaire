@@ -293,7 +293,9 @@ class ServerListDetailActivity : AppCompatActivity() {
                                                 if(response.body()!![i].mj_inji_13.isNullOrBlank()) "" else response.body()!![i].mj_inji_13,
                                                 if(response.body()!![i].mj_inji_14.isNullOrBlank()) "" else response.body()!![i].mj_inji_14,
                                                 if(response.body()!![i].mj_inji_15.isNullOrBlank()) "" else response.body()!![i].mj_inji_15,
-                                                if(response.body()!![i].mj_inji_sum.isNullOrBlank()) "" else response.body()!![i].mj_inji_sum
+                                                if(response.body()!![i].mj_inji_sum.isNullOrBlank()) "" else response.body()!![i].mj_inji_sum,
+                                                if(response.body()!![i].mj_name.isNullOrBlank()) "" else response.body()!![i].mj_name,
+                                                if(response.body()!![i].mj_jumin.isNullOrBlank()) "" else response.body()!![i].mj_jumin
                                         )
                                 )
                             }
@@ -451,7 +453,9 @@ class ServerListDetailActivity : AppCompatActivity() {
                                                 if(response.body()!![i].mj9_1.isNullOrBlank()) "" else response.body()!![i].mj9_1,
                                                 if(response.body()!![i].mj9_2_1.isNullOrBlank()) "" else response.body()!![i].mj9_2_1,
                                                 if(response.body()!![i].mj9_2_2.isNullOrBlank()) "" else response.body()!![i].mj9_2_2,
-                                                if(response.body()!![i].mj10.isNullOrBlank()) "" else response.body()!![i].mj10
+                                                if(response.body()!![i].mj10.isNullOrBlank()) "" else response.body()!![i].mj10,
+                                                if(response.body()!![i].mj_name.isNullOrBlank()) "" else response.body()!![i].mj_name,
+                                                if(response.body()!![i].mj_jumin.isNullOrBlank()) "" else response.body()!![i].mj_jumin
                                         )
                                 )
                             }
@@ -528,7 +532,9 @@ class ServerListDetailActivity : AppCompatActivity() {
                                                 if(response.body()!![i].mj66_3_5.isNullOrBlank()) "" else response.body()!![i].mj66_3_5,
                                                 if(response.body()!![i].mj66_3_6.isNullOrBlank()) "" else response.body()!![i].mj66_3_6,
                                                 if(response.body()!![i].mj66_4.isNullOrBlank()) "" else response.body()!![i].mj66_4,
-                                                if(response.body()!![i].mj66_5.isNullOrBlank()) "" else response.body()!![i].mj66_5
+                                                if(response.body()!![i].mj66_5.isNullOrBlank()) "" else response.body()!![i].mj66_5,
+                                                if(response.body()!![i].mj_name.isNullOrBlank()) "" else response.body()!![i].mj_name,
+                                                if(response.body()!![i].mj_jumin.isNullOrBlank()) "" else response.body()!![i].mj_jumin
                                         )
                                 )
                             }
@@ -743,7 +749,9 @@ class ServerListDetailActivity : AppCompatActivity() {
                                                 if(response.body()!![i].mj_mtl_7.isNullOrBlank()) "" else response.body()!![i].mj_mtl_7,
                                                 if(response.body()!![i].mj_mtl_8.isNullOrBlank()) "" else response.body()!![i].mj_mtl_8,
                                                 if(response.body()!![i].mj_mtl_9.isNullOrBlank()) "" else response.body()!![i].mj_mtl_9,
-                                                if(response.body()!![i].mj_mtl_sum.isNullOrBlank()) "" else response.body()!![i].mj_mtl_sum
+                                                if(response.body()!![i].mj_mtl_sum.isNullOrBlank()) "" else response.body()!![i].mj_mtl_sum,
+                                                if(response.body()!![i].mj_name.isNullOrBlank()) "" else response.body()!![i].mj_name,
+                                                if(response.body()!![i].mj_jumin.isNullOrBlank()) "" else response.body()!![i].mj_jumin
                                         )
                                 )
                             }

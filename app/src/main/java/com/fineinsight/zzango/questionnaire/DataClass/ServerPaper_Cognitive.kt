@@ -20,5 +20,7 @@ data class ServerPaper_Cognitive (
         var mj_inji_13:String,
         var mj_inji_14:String,
         var mj_inji_15:String,
-        var mj_inji_sum:String
+        var mj_inji_sum:String,
+        var mj_name:String,
+        var mj_jumin:String
 ):Serializable

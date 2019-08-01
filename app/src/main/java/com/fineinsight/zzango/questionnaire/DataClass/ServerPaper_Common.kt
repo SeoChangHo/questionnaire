@@ -93,5 +93,7 @@ data class ServerPaper_Common (
         var mj9_1:String,
         var mj9_2_1:String,
         var mj9_2_2:String,
-        var mj10:String
+        var mj10:String,
+        var mj_name:String,
+        var mj_jumin:String
 ):Serializable

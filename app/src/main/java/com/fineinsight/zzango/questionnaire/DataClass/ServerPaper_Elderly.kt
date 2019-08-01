@@ -14,5 +14,7 @@ data class ServerPaper_Elderly (
         var mj66_3_5:String,
         var mj66_3_6:String,
         var mj66_4:String,
-        var mj66_5:String
+        var mj66_5:String,
+        var mj_name:String,
+        var mj_jumin:String
 ):Serializable

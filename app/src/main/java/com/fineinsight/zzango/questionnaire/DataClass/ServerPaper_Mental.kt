@@ -12,5 +12,7 @@ data class ServerPaper_Mental (
         var mj_mtl_7:String,
         var mj_mtl_8:String,
         var mj_mtl_9:String,
-        var mj_mtl_sum:String
+        var mj_mtl_sum:String,
+        var mj_name:String,
+        var mj_jumin:String
 )
