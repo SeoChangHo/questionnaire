@@ -176,6 +176,8 @@ class ExerciseExaminationActivity : RootActivity() {
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        //초기화 or 완료된 문진 액티비티로 다시 왔을때
+        //표시되는 뷰 (수정가능)
         if(PaperArray.PaperList.Arr_EXERCISE != null && PaperArray.PaperList.Arr_EXERCISE!!.size != 0){
 
             whenTempLoad(PaperArray.PaperList.Arr_EXERCISE!![0])
@@ -1557,6 +1559,7 @@ class ExerciseExaminationActivity : RootActivity() {
 
     }
 
+    //로컬, 서버로 구분될것 will
     fun GetPaper(paper:Paper_EXERCISE)
     {
 
@@ -1740,6 +1743,8 @@ class ExerciseExaminationActivity : RootActivity() {
 
     }
 
+    //해당 액티비티에 Exercise 배열이 저장안되어 있다면 temp_arr를 저장함
+    //해당 액티비티를 정상적으로 완료하고 이동하면 temp_arr를 초기화함
     override fun onPause() {
 
         if(PaperArray.PaperList.Arr_EXERCISE != null && PaperArray.PaperList.Arr_EXERCISE!!.size != 0){

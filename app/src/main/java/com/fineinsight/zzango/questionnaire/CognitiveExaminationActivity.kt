@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Cognitive
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_COGNITIVE
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -652,6 +653,161 @@ class CognitiveExaminationActivity : RootActivity(){
         name_edit.text = paper.name
         first_serial.text = paper.first_serial
         last_serial.text = paper.last_serial
+
+        println(paper)
+
+        cognitive_examination_save.visibility = View.GONE
+        cognitive_examination_cancel.visibility = View.GONE
+        cognitive_edit_submit.visibility = View.VISIBLE
+
+
+        if(paper.mj_inji_1 == "0"){
+            cognitive_1_1.isChecked = true
+        }else if(paper.mj_inji_1 == "1"){
+            cognitive_1_2.isChecked = true
+        }else if(paper.mj_inji_1 == "2"){
+            cognitive_1_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_2 == "0"){
+            cognitive_2_1.isChecked = true
+        }else if(paper.mj_inji_2 == "1"){
+            cognitive_2_2.isChecked = true
+        }else if(paper.mj_inji_2 == "2"){
+            cognitive_2_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_3 == "0"){
+            cognitive_3_1.isChecked = true
+        }else if(paper.mj_inji_3 == "1"){
+            cognitive_3_2.isChecked = true
+        }else if(paper.mj_inji_3 == "2"){
+            cognitive_3_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_4 == "0"){
+            cognitive_4_1.isChecked = true
+        }else if(paper.mj_inji_4 == "1"){
+            cognitive_4_2.isChecked = true
+        }else if(paper.mj_inji_4 == "2"){
+            cognitive_4_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_5 == "0"){
+            cognitive_5_1.isChecked = true
+        }else if(paper.mj_inji_5 == "1"){
+            cognitive_5_2.isChecked = true
+        }else if(paper.mj_inji_5 == "2"){
+            cognitive_5_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_6 == "0"){
+            cognitive_6_1.isChecked = true
+        }else if(paper.mj_inji_6 == "1"){
+            cognitive_6_2.isChecked = true
+        }else if(paper.mj_inji_6 == "2"){
+            cognitive_6_3.isChecked = true
+        }
+
+        if(paper.mj_inji_7 == "0"){
+            cognitive_7_1.isChecked = true
+        }else if(paper.mj_inji_7 == "1"){
+            cognitive_7_2.isChecked = true
+        }else if(paper.mj_inji_7 == "2"){
+            cognitive_7_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_8 == "0"){
+            cognitive_8_1.isChecked = true
+        }else if(paper.mj_inji_8 == "1"){
+            cognitive_8_2.isChecked = true
+        }else if(paper.mj_inji_8 == "2"){
+            cognitive_8_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_9 == "0"){
+            cognitive_9_1.isChecked = true
+        }else if(paper.mj_inji_9 == "1"){
+            cognitive_9_2.isChecked = true
+        }else if(paper.mj_inji_9 == "2"){
+            cognitive_9_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_10 == "0"){
+            cognitive_10_1.isChecked = true
+        }else if(paper.mj_inji_10 == "1"){
+            cognitive_10_2.isChecked = true
+        }else if(paper.mj_inji_10 == "2"){
+            cognitive_10_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_11 == "0"){
+            cognitive_11_1.isChecked = true
+        }else if(paper.mj_inji_11 == "1"){
+            cognitive_11_2.isChecked = true
+        }else if(paper.mj_inji_11 == "2"){
+            cognitive_11_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_12 == "0"){
+            cognitive_12_1.isChecked = true
+        }else if(paper.mj_inji_12 == "1"){
+            cognitive_12_2.isChecked = true
+        }else if(paper.mj_inji_12 == "2"){
+            cognitive_12_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_13 == "0"){
+            cognitive_13_1.isChecked = true
+        }else if(paper.mj_inji_13 == "1"){
+            cognitive_13_2.isChecked = true
+        }else if(paper.mj_inji_13 == "2"){
+            cognitive_13_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_14 == "0"){
+            cognitive_14_1.isChecked = true
+        }else if(paper.mj_inji_14 == "1"){
+            cognitive_14_2.isChecked = true
+        }else if(paper.mj_inji_14 == "2"){
+            cognitive_14_3.isChecked = true
+        }
+
+
+        if(paper.mj_inji_15 == "0"){
+            cognitive_15_1.isChecked = true
+        }else if(paper.mj_inji_15 == "1"){
+            cognitive_15_2.isChecked = true
+        }else if(paper.mj_inji_15 == "2"){
+            cognitive_15_3.isChecked = true
+        }
+
+
+    }
+
+    fun GetPaper(paper: ServerPaper_Cognitive) {
+
+        state = "getPaper"
+
+        cannotEditQuestionnaire(cognitive_root)
+
+        progress_constraintLayout.visibility = View.GONE
+
+//        name_edit.text = paper.mj_n
+//        first_serial.text = paper.first_serial
+//        last_serial.text = paper.last_serial
 
         println(paper)
 

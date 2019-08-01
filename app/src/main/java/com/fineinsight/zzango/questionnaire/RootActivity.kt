@@ -83,7 +83,7 @@ open class RootActivity : AppCompatActivity() {
 
             }else{
 
-                if(child is RadioButton || child is EditText || child is Spinner){
+                if(child is RadioButton || child is EditText || child is Spinner || child is CheckBox){
 
                     child.isEnabled = false
 
@@ -106,6 +106,9 @@ open class RootActivity : AppCompatActivity() {
     }
 
     //진행바 제어하는 메서드
+    //진행중, 완료, 미실행 으로 구분
+    //각 문진을 클릭하면 이동 미실행인 부분은 이동 불가
+    //이동할때 해당 액티비티에 check2 메서드로 현재 수정사항을 저장함
     fun controlProgress(context : Context){
 
         when(MainActivity.chart){
@@ -705,6 +708,7 @@ open class RootActivity : AppCompatActivity() {
 
     }
 
+    //창 닫기를 하면 모든 PaperArray가 초기화 된다
     fun cancelAlert(){
 
         if(state != "getPaper") {

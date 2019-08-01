@@ -8,11 +8,9 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.Switch
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.*
 import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_CANCER
-import com.fineinsight.zzango.questionnaire.MainActivity
-import com.fineinsight.zzango.questionnaire.OracleUtill
-import com.fineinsight.zzango.questionnaire.R
 import kotlinx.android.synthetic.main.activity_server_list_detail.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -218,6 +216,8 @@ class ServerListDetailActivity : AppCompatActivity() {
                             println("SIZE: ${userDetailList.size}")
                             //스타트액티비티 putextra userDetailList as ServerPaper_Cancer
 
+                            startActivity(Intent(this@ServerListDetailActivity, CancerExaminationActivity::class.java).putExtra("paper", userDetailList[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
                             for (item in userDetailList)
                             {
                                 println("SEQ: ${item.c_bun}")
@@ -300,6 +300,8 @@ class ServerListDetailActivity : AppCompatActivity() {
 
 
                             println("SIZE: ${userDetailList.size}")
+
+                            startActivity(Intent(this@ServerListDetailActivity, CognitiveExaminationActivity::class.java).putExtra("paper", userDetailList[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
                             for (item in userDetailList)
                             {
