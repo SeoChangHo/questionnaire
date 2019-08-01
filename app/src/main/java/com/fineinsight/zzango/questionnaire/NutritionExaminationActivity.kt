@@ -1324,7 +1324,7 @@ class NutritionExaminationActivity :RootActivity() {
 
         }else{
 
-            if(state != "getPaper") {
+            if(state != "getPaper" && !quit) {
 
                 whenTempSave()
 
