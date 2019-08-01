@@ -1210,29 +1210,29 @@ class CommonExaminationActivity : RootActivity() {
         common_edit_submit.visibility = View.VISIBLE
 
 
-        if(paper.mj1_1_1 == "2"){
+        if(paper.mj1_1_1 == "1"){
             diagnosis_medication_stroke_examination_check.isChecked = true
-        }else if(paper.mj1_1_1 == "1"){
+        }else if(paper.mj1_1_1 == "2"){
             diagnosis_medication_stroke_examination_check.isChecked = false
         }
 
 
-        if(paper.mj1_1_2 == "2"){
+        if(paper.mj1_1_2 == "1"){
             diagnosis_medication_stroke_medication_check.isChecked = true
-        }else if(paper.mj1_1_2 == "1"){
+        }else if(paper.mj1_1_2 == "2"){
             diagnosis_medication_stroke_medication_check.isChecked = false
         }
 
-        if(paper.mj1_2_1 == "2"){
+        if(paper.mj1_2_1 == "1"){
             diagnosis_medication_myocardial_examination_check.isChecked = true
-        }else if(paper.mj1_2_1 == "1"){
+        }else if(paper.mj1_2_1 == "2"){
             diagnosis_medication_myocardial_examination_check.isChecked = false
         }
 
 
-        if(paper.mj1_2_2 == "2"){
+        if(paper.mj1_2_2 == "1"){
             diagnosis_medication_myocardial_medication_check.isChecked = true
-        }else if(paper.mj1_2_2 == "1"){
+        }else if(paper.mj1_2_2 == "2"){
             diagnosis_medication_myocardial_medication_check.isChecked = false
         }
 
@@ -1244,100 +1244,100 @@ class CommonExaminationActivity : RootActivity() {
         }
 
 
-        if(paper.mj1_3_2 == "2"){
+        if(paper.mj1_3_2 == "1"){
             diagnosis_medication_high_blood_pressure_medication_check.isChecked = true
-        }else if(paper.mj1_3_2 == "1"){
+        }else if(paper.mj1_3_2 == "2"){
             diagnosis_medication_high_blood_pressure_medication_check.isChecked = false
         }
 
 
-        if(paper.mj1_4_1 == "2"){
+        if(paper.mj1_4_1 == "1"){
             diagnosis_medication_diabetes_examination_check.isChecked = true
-        }else if(paper.mj1_4_1 == "1"){
+        }else if(paper.mj1_4_1 == "2"){
             diagnosis_medication_diabetes_examination_check.isChecked = false
         }
 
-        if(paper.mj1_4_2 == "2"){
+        if(paper.mj1_4_2 == "1"){
             diagnosis_medication_diabetes_medication_check.isChecked = true
-        }else if(paper.mj1_4_2 == "1"){
+        }else if(paper.mj1_4_2 == "2"){
             diagnosis_medication_diabetes_medication_check.isChecked = false
         }
 
 
-        if(paper.mj1_5_1 == "2"){
+        if(paper.mj1_5_1 == "1"){
             diagnosis_medication_dyslipidemia_examination_check.isChecked = true
-        }else if(paper.mj1_5_1 == "1"){
+        }else if(paper.mj1_5_1 == "2"){
             diagnosis_medication_dyslipidemia_examination_check.isChecked = false
         }
 
-        if(paper.mj1_5_2 == "2"){
+        if(paper.mj1_5_2 == "1"){
             diagnosis_medication_dyslipidemia_medication_check.isChecked = true
-        }else if(paper.mj1_5_2 == "1"){
+        }else if(paper.mj1_5_2 == "2"){
             diagnosis_medication_dyslipidemia_medication_check.isChecked = false
         }
 
 
-        if(paper.mj1_6_1 == "2"){
+        if(paper.mj1_6_1 == "1"){
             diagnosis_medication_tuberculosis_examination_check.isChecked = true
-        }else if(paper.mj1_6_1 == "1"){
+        }else if(paper.mj1_6_1 == "2"){
             diagnosis_medication_tuberculosis_examination_check.isChecked = false
         }
 
 
-        if(paper.mj1_6_2 == "2"){
+        if(paper.mj1_6_2 == "1"){
             diagnosis_medication_tuberculosis_medication_check.isChecked = true
-        }else if(paper.mj1_6_2 == "1"){
+        }else if(paper.mj1_6_2 == "2"){
             diagnosis_medication_tuberculosis_medication_check.isChecked = false
         }
 
 
-        if(paper.mj1_7_1 == "2"){
+        if(paper.mj1_7_1 == "1"){
             diagnosis_medication_etc_examination_check.isChecked = true
-        }else if(paper.mj1_7_1 == "1"){
+        }else if(paper.mj1_7_1 == "2"){
             diagnosis_medication_etc_examination_check.isChecked = false
         }
 
 
-        if(paper.mj1_7_2 == "2"){
+        if(paper.mj1_7_2 == "1"){
             diagnosis_medication_etc_medication_check.isChecked = true
-        }else if(paper.mj1_7_2 == "1"){
+        }else if(paper.mj1_7_2 == "2"){
             diagnosis_medication_etc_medication_check.isChecked = false
         }
 
 
-        if(paper.mj2_1 == "2"){
+        if(paper.mj2_1 == "1"){
             family_history_disease_stroke_examination_check.isChecked = true
-        }else if(paper.mj2_1 == "1"){
+        }else if(paper.mj2_1 == "2"){
             family_history_disease_stroke_examination_check.isChecked = false
         }
 
 
-        if(paper.mj2_2 == "2"){
+        if(paper.mj2_2 == "1"){
             family_history_disease_myocardial_examination_check.isChecked = true
-        }else if(paper.mj2_2 == "1"){
+        }else if(paper.mj2_2 == "2"){
             family_history_disease_myocardial_examination_check.isChecked = false
         }
 
 
 
-        if(paper.mj2_3 == "2"){
+        if(paper.mj2_3 == "1"){
             family_history_disease_high_blood_pressure_examination_check.isChecked = true
-        }else if(paper.mj2_3 == "1"){
+        }else if(paper.mj2_3 == "2"){
             family_history_disease_high_blood_pressure_examination_check.isChecked = false
         }
 
 
-        if(paper.mj2_4 == "2"){
+        if(paper.mj2_4 == "1"){
             family_history_disease_diabetes_examination_check.isChecked = true
-        }else if(paper.mj2_4 == "1"){
+        }else if(paper.mj2_4 == "2"){
             family_history_disease_diabetes_examination_check.isChecked = false
         }
 
 
 
-        if(paper.mj2_5 == "2"){
+        if(paper.mj2_5 == "1"){
             family_history_etc_examination_check.isChecked = true
-        }else if(paper.mj2_5 == "1"){
+        }else if(paper.mj2_5 == "2"){
             family_history_etc_examination_check.isChecked = false
         }
 
@@ -1425,7 +1425,7 @@ class CommonExaminationActivity : RootActivity() {
         }
 
 
-        if(paper.mj6 == "2"){
+        if(paper.mj6 == "1"){
             common_6_true.isChecked = true
 
             textView25.visibility = View.VISIBLE
@@ -1444,7 +1444,7 @@ class CommonExaminationActivity : RootActivity() {
                 common_6_1_5.isChecked = true
             }
 
-        }else if(paper.mj6 == "1"){
+        }else if(paper.mj6 == "2"){
             common_6_false.isChecked = true
         }
 
@@ -1781,29 +1781,29 @@ class CommonExaminationActivity : RootActivity() {
         common_edit_submit.visibility = View.VISIBLE
 
 
-        if(paper.mj1_1_1 == "2"){
+        if(paper.mj1_1_1 == "1"){
             diagnosis_medication_stroke_examination_check.isChecked = true
-        }else if(paper.mj1_1_1 == "1"){
+        }else if(paper.mj1_1_1 == "2"){
             diagnosis_medication_stroke_examination_check.isChecked = false
         }
 
 
-        if(paper.mj1_1_2 == "2"){
+        if(paper.mj1_1_2 == "1"){
             diagnosis_medication_stroke_medication_check.isChecked = true
-        }else if(paper.mj1_1_2 == "1"){
+        }else if(paper.mj1_1_2 == "2"){
             diagnosis_medication_stroke_medication_check.isChecked = false
         }
 
-        if(paper.mj1_2_1 == "2"){
+        if(paper.mj1_2_1 == "1"){
             diagnosis_medication_myocardial_examination_check.isChecked = true
-        }else if(paper.mj1_2_1 == "1"){
+        }else if(paper.mj1_2_1 == "2"){
             diagnosis_medication_myocardial_examination_check.isChecked = false
         }
 
 
-        if(paper.mj1_2_2 == "2"){
+        if(paper.mj1_2_2 == "1"){
             diagnosis_medication_myocardial_medication_check.isChecked = true
-        }else if(paper.mj1_2_2 == "1"){
+        }else if(paper.mj1_2_2 == "2"){
             diagnosis_medication_myocardial_medication_check.isChecked = false
         }
 
@@ -1815,100 +1815,100 @@ class CommonExaminationActivity : RootActivity() {
         }
 
 
-        if(paper.mj1_3_2 == "2"){
+        if(paper.mj1_3_2 == "1"){
             diagnosis_medication_high_blood_pressure_medication_check.isChecked = true
-        }else if(paper.mj1_3_2 == "1"){
+        }else if(paper.mj1_3_2 == "2"){
             diagnosis_medication_high_blood_pressure_medication_check.isChecked = false
         }
 
 
-        if(paper.mj1_4_1 == "2"){
+        if(paper.mj1_4_1 == "1"){
             diagnosis_medication_diabetes_examination_check.isChecked = true
-        }else if(paper.mj1_4_1 == "1"){
+        }else if(paper.mj1_4_1 == "2"){
             diagnosis_medication_diabetes_examination_check.isChecked = false
         }
 
-        if(paper.mj1_4_2 == "2"){
+        if(paper.mj1_4_2 == "1"){
             diagnosis_medication_diabetes_medication_check.isChecked = true
-        }else if(paper.mj1_4_2 == "1"){
+        }else if(paper.mj1_4_2 == "2"){
             diagnosis_medication_diabetes_medication_check.isChecked = false
         }
 
 
-        if(paper.mj1_5_1 == "2"){
+        if(paper.mj1_5_1 == "1"){
             diagnosis_medication_dyslipidemia_examination_check.isChecked = true
-        }else if(paper.mj1_5_1 == "1"){
+        }else if(paper.mj1_5_1 == "2"){
             diagnosis_medication_dyslipidemia_examination_check.isChecked = false
         }
 
-        if(paper.mj1_5_2 == "2"){
+        if(paper.mj1_5_2 == "1"){
             diagnosis_medication_dyslipidemia_medication_check.isChecked = true
-        }else if(paper.mj1_5_2 == "1"){
+        }else if(paper.mj1_5_2 == "2"){
             diagnosis_medication_dyslipidemia_medication_check.isChecked = false
         }
 
 
-        if(paper.mj1_6_1 == "2"){
+        if(paper.mj1_6_1 == "1"){
             diagnosis_medication_tuberculosis_examination_check.isChecked = true
-        }else if(paper.mj1_6_1 == "1"){
+        }else if(paper.mj1_6_1 == "2"){
             diagnosis_medication_tuberculosis_examination_check.isChecked = false
         }
 
 
-        if(paper.mj1_6_2 == "2"){
+        if(paper.mj1_6_2 == "1"){
             diagnosis_medication_tuberculosis_medication_check.isChecked = true
-        }else if(paper.mj1_6_2 == "1"){
+        }else if(paper.mj1_6_2 == "2"){
             diagnosis_medication_tuberculosis_medication_check.isChecked = false
         }
 
 
-        if(paper.mj1_7_1 == "2"){
+        if(paper.mj1_7_1 == "1"){
             diagnosis_medication_etc_examination_check.isChecked = true
-        }else if(paper.mj1_7_1 == "1"){
+        }else if(paper.mj1_7_1 == "2"){
             diagnosis_medication_etc_examination_check.isChecked = false
         }
 
 
-        if(paper.mj1_7_2 == "2"){
+        if(paper.mj1_7_2 == "1"){
             diagnosis_medication_etc_medication_check.isChecked = true
-        }else if(paper.mj1_7_2 == "1"){
+        }else if(paper.mj1_7_2 == "2"){
             diagnosis_medication_etc_medication_check.isChecked = false
         }
 
 
-        if(paper.mj2_1 == "2"){
+        if(paper.mj2_1 == "1"){
             family_history_disease_stroke_examination_check.isChecked = true
-        }else if(paper.mj2_1 == "1"){
+        }else if(paper.mj2_1 == "2"){
             family_history_disease_stroke_examination_check.isChecked = false
         }
 
 
-        if(paper.mj2_2 == "2"){
+        if(paper.mj2_2 == "1"){
             family_history_disease_myocardial_examination_check.isChecked = true
-        }else if(paper.mj2_2 == "1"){
+        }else if(paper.mj2_2 == "2"){
             family_history_disease_myocardial_examination_check.isChecked = false
         }
 
 
 
-        if(paper.mj2_3 == "2"){
+        if(paper.mj2_3 == "1"){
             family_history_disease_high_blood_pressure_examination_check.isChecked = true
-        }else if(paper.mj2_3 == "1"){
+        }else if(paper.mj2_3 == "2"){
             family_history_disease_high_blood_pressure_examination_check.isChecked = false
         }
 
 
-        if(paper.mj2_4 == "2"){
+        if(paper.mj2_4 == "1"){
             family_history_disease_diabetes_examination_check.isChecked = true
-        }else if(paper.mj2_4 == "1"){
+        }else if(paper.mj2_4 == "2"){
             family_history_disease_diabetes_examination_check.isChecked = false
         }
 
 
 
-        if(paper.mj2_5 == "2"){
+        if(paper.mj2_5 == "1"){
             family_history_etc_examination_check.isChecked = true
-        }else if(paper.mj2_5 == "1"){
+        }else if(paper.mj2_5 == "2"){
             family_history_etc_examination_check.isChecked = false
         }
 
@@ -1996,7 +1996,7 @@ class CommonExaminationActivity : RootActivity() {
         }
 
 
-        if(paper.mj6 == "2"){
+        if(paper.mj6 == "1"){
             common_6_true.isChecked = true
 
             textView25.visibility = View.VISIBLE
@@ -2015,7 +2015,7 @@ class CommonExaminationActivity : RootActivity() {
                 common_6_1_5.isChecked = true
             }
 
-        }else if(paper.mj6 == "1"){
+        }else if(paper.mj6 == "2"){
             common_6_false.isChecked = true
         }
 

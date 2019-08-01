@@ -11,6 +11,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_NUTRITION
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -80,31 +81,48 @@ class NutritionExaminationActivity :RootActivity() {
 
         }
 
-        nutrition_edit_submit.setOnClickListener {
-
-            finish()
-
-        }
-
-
 
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
-            var paper = intent.getSerializableExtra("paper") as Paper_NUTRITION
+            if(intent.getSerializableExtra("paper") is Paper_NUTRITION) {
 
-            GetPaper(paper)
+                var paper = intent.getSerializableExtra("paper") as Paper_NUTRITION
 
-            try {
-                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+                GetPaper(paper)
 
-                Signature.setImageBitmap(bmp)
+                try {
+                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+
+                    Signature.setImageBitmap(bmp)
+
+                } catch (e: Exception) {
+                    println(e.message)
+                }
+
+                nutrition_edit_submit.setOnClickListener {
+
+                    finish()
+
+                }
+
+            }else{
+
+                var paper = intent.getSerializableExtra("paper") as ServerPaper_Life
+
+                GetPaper(paper)
+
+                nutrition_edit_submit.text = "다음"
+
+                nutrition_edit_submit.setOnClickListener {
+
+                    nutrition_exam_server_getPaper()
+                    finish()
+
+                }
 
             }
-            catch (e:Exception)
-            {
-                println(e.message)
-            }
+
         }else{
 
             name_edit.text = MainActivity.login_user_name
@@ -202,6 +220,12 @@ class NutritionExaminationActivity :RootActivity() {
     fun nutrition_exam_server_insert(){
 
         startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+    }
+
+    fun nutrition_exam_server_getPaper(){
+
+        startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).putExtra("paper", intent.getSerializableExtra("paper") as ServerPaper_Life).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
     }
 
@@ -1010,10 +1034,241 @@ class NutritionExaminationActivity :RootActivity() {
 
         }
 
-        height.setText(paper.sg2_spHeight)
-        weight.setText(paper.sg2_spWeight)
-        waist_size.setText(paper.sg2_spWaistSize)
-        bmi.setText(paper.sg2_spBmi)
+//        height.setText(paper.sg2_spHeight)
+//        weight.setText(paper.sg2_spWeight)
+//        waist_size.setText(paper.sg2_spWaistSize)
+//        bmi.setText(paper.sg2_spBmi)
+
+        if(paper.sg2_spFat1=="1"){
+
+            fat_1_true.isChecked = true
+
+        }else{
+
+            fat_1_false.isChecked = true
+
+        }
+
+        if(paper.sg2_spFat2=="1"){
+
+            fat_2_no.isChecked = true
+
+        }else if(paper.sg2_spFat2=="2"){
+
+            fat_2_1.isChecked = true
+
+        }else if(paper.sg2_spFat2=="3"){
+
+            fat_2_2.isChecked = true
+
+        }else{
+
+            fat_2_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFat3=="1"){
+
+            fat_3_1.isChecked = true
+
+        }else if(paper.sg2_spFat3=="2"){
+
+            fat_3_2.isChecked = true
+
+        }else{
+
+            fat_3_3.isChecked = true
+
+        }
+
+    }
+
+    fun GetPaper(paper:ServerPaper_Life){
+
+        state = "getPaper"
+
+        cannotEditQuestionnaire(nutrition_root)
+
+        progress_constraintLayout.visibility = View.GONE
+
+        name_edit.text = paper.sg2_name
+        first_serial.text = paper.sg2_jumin.substring(0, 6)
+        last_serial.text = paper.sg2_jumin.substring(6, 7)
+        Signature.visibility = View.GONE
+
+        nutrition_examination_save.visibility = View.GONE
+        nutrition_examination_cancel.visibility = View.GONE
+        nutrition_edit_submit.visibility = View.VISIBLE
+
+        if(paper.sg2_spFood1=="1"){
+
+            nutrition_1_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood1=="2"){
+
+            nutrition_1_2.isChecked = true
+
+        }else{
+
+            nutrition_1_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFood2=="1"){
+
+            nutrition_2_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood2=="2"){
+
+            nutrition_2_2.isChecked = true
+
+        }else{
+
+            nutrition_2_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFood3=="1"){
+
+            nutrition_3_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood3=="2"){
+
+            nutrition_3_2.isChecked = true
+
+        }else{
+
+            nutrition_3_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFood4=="1"){
+
+            nutrition_4_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood4=="2"){
+
+            nutrition_4_2.isChecked = true
+
+        }else{
+
+            nutrition_4_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFood5=="1"){
+
+            nutrition_5_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood5=="2"){
+
+            nutrition_5_2.isChecked = true
+
+        }else{
+
+            nutrition_5_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFood6=="1"){
+
+            nutrition_6_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood6=="2"){
+
+            nutrition_6_2.isChecked = true
+
+        }else{
+
+            nutrition_6_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFood7=="1"){
+
+            nutrition_7_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood7=="2"){
+
+            nutrition_7_2.isChecked = true
+
+        }else{
+
+            nutrition_7_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFood8=="1"){
+
+            nutrition_8_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood8=="2"){
+
+            nutrition_8_2.isChecked = true
+
+        }else{
+
+            nutrition_8_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFood9=="1"){
+
+            nutrition_9_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood1=="2"){
+
+            nutrition_9_2.isChecked = true
+
+        }else{
+
+            nutrition_9_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFood10=="1"){
+
+            nutrition_10_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood10=="2"){
+
+            nutrition_10_2.isChecked = true
+
+        }else{
+
+            nutrition_10_3.isChecked = true
+
+        }
+
+        if(paper.sg2_spFood11=="1"){
+
+            nutrition_11_1.isChecked = true
+
+        }
+        else if(paper.sg2_spFood11=="2"){
+
+            nutrition_11_2.isChecked = true
+
+        }else{
+
+            nutrition_11_3.isChecked = true
+
+        }
+
+//        height.setText(paper.sg2_spHeight)
+//        weight.setText(paper.sg2_spWeight)
+//        waist_size.setText(paper.sg2_spWaistSize)
+//        bmi.setText(paper.sg2_spBmi)
 
         if(paper.sg2_spFat1=="1"){
 

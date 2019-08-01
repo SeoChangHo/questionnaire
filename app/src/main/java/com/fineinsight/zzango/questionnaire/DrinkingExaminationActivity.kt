@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_DRINKING
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -100,20 +101,29 @@ class DrinkingExaminationActivity : RootActivity(){
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
-            var paper = intent.getSerializableExtra("paper") as Paper_DRINKING
+            if(intent.getSerializableExtra("paper") is Paper_DRINKING) {
 
-            GetPaper(paper)
+                var paper = intent.getSerializableExtra("paper") as Paper_DRINKING
 
-            try {
-                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+                GetPaper(paper)
 
-                Signature.setImageBitmap(bmp)
+                try {
+                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+
+                    Signature.setImageBitmap(bmp)
+
+                } catch (e: Exception) {
+                    println(e.message)
+                }
+
+            }else{
+
+                var paper = intent.getSerializableExtra("paper") as ServerPaper_Life
+
+                GetPaper(paper)
 
             }
-            catch (e:Exception)
-            {
-                println(e.message)
-            }
+
         }else{
             name_edit.text = MainActivity.login_user_name
             first_serial.text = MainActivity.user_first_serial
@@ -978,6 +988,164 @@ class DrinkingExaminationActivity : RootActivity(){
         name_edit.text = paper.name
         first_serial.text = paper.first_serial
         last_serial.text = paper.last_serial
+
+        println(paper)
+
+        drinking_examination_save.visibility = View.GONE
+        drinking_examination_cancel.visibility = View.GONE
+        drinking_edit_submit.visibility = View.VISIBLE
+
+        if(paper.sg2_spDrinkSum=="0"){
+            drinking_0_false.isChecked = true
+        }else if(paper.sg2_spDrinkSum=="1"){
+            drinking_0_true.isChecked = true
+        }
+
+        if(paper.sg2_spDrink1 == "1"){
+            drinking_1_1.isChecked = true
+        }else if(paper.sg2_spDrink1 == "2"){
+            drinking_1_2.isChecked = true
+        }else if(paper.sg2_spDrink1 == "3"){
+            drinking_1_3.isChecked = true
+        }else if(paper.sg2_spDrink1 == "4"){
+            drinking_1_4.isChecked = true
+        }
+
+
+        if(paper.sg2_spDrink2_1 == "1"){
+            drinking_2_1_1.isChecked = true
+        }else if(paper.sg2_spDrink2_1 == "2"){
+            drinking_2_1_2.isChecked = true
+        }else if(paper.sg2_spDrink2_1 == "3"){
+            drinking_2_1_3.isChecked = true
+        }else if(paper.sg2_spDrink2_1 == "4"){
+            drinking_2_1_4.isChecked = true
+        }else if(paper.sg2_spDrink2_1 == "5"){
+            drinking_2_1_5.isChecked = true
+        }
+
+
+        if(paper.sg2_spDrink2_2 == "1"){
+            drinking_2_2_1.isChecked = true
+        }else if(paper.sg2_spDrink2_2 == "2"){
+            drinking_2_2_2.isChecked = true
+        }else if(paper.sg2_spDrink2_2 == "3"){
+            drinking_2_2_3.isChecked = true
+        }else if(paper.sg2_spDrink2_2 == "4"){
+            drinking_2_2_4.isChecked = true
+        }else if(paper.sg2_spDrink2_2 == "5"){
+            drinking_2_2_5.isChecked = true
+        }
+
+
+        if(paper.sg2_spDrink3 == "1"){
+            drinking_3_1.isChecked = true
+        }else if(paper.sg2_spDrink3 == "2"){
+            drinking_3_2.isChecked = true
+        }else if(paper.sg2_spDrink3 == "3"){
+            drinking_3_3.isChecked = true
+        }else if(paper.sg2_spDrink3 == "4"){
+            drinking_3_4.isChecked = true
+        }else if(paper.sg2_spDrink3 == "5"){
+            drinking_3_5.isChecked = true
+        }
+
+
+        if(paper.sg2_spDrink4 == "1"){
+            drinking_4_1.isChecked = true
+        }else if(paper.sg2_spDrink4 == "2"){
+            drinking_4_2.isChecked = true
+        }else if(paper.sg2_spDrink4 == "3"){
+            drinking_4_3.isChecked = true
+        }else if(paper.sg2_spDrink4 == "4"){
+            drinking_4_4.isChecked = true
+        }else if(paper.sg2_spDrink4 == "5"){
+            drinking_4_5.isChecked = true
+        }
+
+
+        if(paper.sg2_spDrink5 == "1"){
+            drinking_5_1.isChecked = true
+        }else if(paper.sg2_spDrink5 == "2"){
+            drinking_5_2.isChecked = true
+        }else if(paper.sg2_spDrink5 == "3"){
+            drinking_5_3.isChecked = true
+        }else if(paper.sg2_spDrink5 == "4"){
+            drinking_5_4.isChecked = true
+        }else if(paper.sg2_spDrink5 == "5"){
+            drinking_5_5.isChecked = true
+        }
+
+
+        if(paper.sg2_spDrink6 == "1"){
+            drinking_6_1.isChecked = true
+        }else if(paper.sg2_spDrink6 == "2"){
+            drinking_6_2.isChecked = true
+        }else if(paper.sg2_spDrink6 == "3"){
+            drinking_6_3.isChecked = true
+        }else if(paper.sg2_spDrink6 == "4"){
+            drinking_6_4.isChecked = true
+        }else if(paper.sg2_spDrink6 == "5"){
+            drinking_6_5.isChecked = true
+        }
+
+
+        if(paper.sg2_spDrink7 == "1"){
+            drinking_7_1.isChecked = true
+        }else if(paper.sg2_spDrink7 == "2"){
+            drinking_7_2.isChecked = true
+        }else if(paper.sg2_spDrink7 == "3"){
+            drinking_7_3.isChecked = true
+        }else if(paper.sg2_spDrink7 == "4"){
+            drinking_7_4.isChecked = true
+        }else if(paper.sg2_spDrink7 == "5"){
+            drinking_7_5.isChecked = true
+        }
+
+        if(paper.sg2_spDrink8 == "1"){
+            drinking_8_1.isChecked = true
+        }else if(paper.sg2_spDrink8 == "2"){
+            drinking_8_2.isChecked = true
+        }else if(paper.sg2_spDrink8 == "3"){
+            drinking_8_3.isChecked = true
+        }else if(paper.sg2_spDrink8 == "4"){
+            drinking_8_4.isChecked = true
+        }else if(paper.sg2_spDrink8 == "5"){
+            drinking_8_5.isChecked = true
+        }
+
+
+        if(paper.sg2_spDrink9 == "1"){
+            drinking_9_1.isChecked = true
+        }else if(paper.sg2_spDrink9 == "2"){
+            drinking_9_2.isChecked = true
+        }else if(paper.sg2_spDrink9 == "3"){
+            drinking_9_3.isChecked = true
+        }
+
+
+        if(paper.sg2_spDrink10 == "1"){
+            drinking_10_1.isChecked = true
+        }else if(paper.sg2_spDrink10 == "2"){
+            drinking_10_2.isChecked = true
+        }else if(paper.sg2_spDrink10 == "3"){
+            drinking_10_3.isChecked = true
+        }
+
+    }
+
+    fun GetPaper(paper: ServerPaper_Life) {
+
+        state = "getPaper"
+
+        cannotEditQuestionnaire(drinking_root)
+
+        progress_constraintLayout.visibility = View.GONE
+
+        name_edit.text = paper.sg2_name
+        first_serial.text = paper.sg2_jumin.substring(0, 6)
+        last_serial.text = paper.sg2_jumin.substring(6, 7)
+        Signature.visibility = View.GONE
 
         println(paper)
 

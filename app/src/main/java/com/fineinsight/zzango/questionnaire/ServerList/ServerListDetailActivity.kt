@@ -683,6 +683,7 @@ class ServerListDetailActivity : AppCompatActivity() {
 
 
                             println("SIZE: ${userDetailList.size}")
+                            startActivity(Intent(this@ServerListDetailActivity, ExerciseExaminationActivity::class.java).putExtra("paper", userDetailList[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
                             for (item in userDetailList)
                             {
