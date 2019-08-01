@@ -1,5 +1,7 @@
 package com.fineinsight.zzango.questionnaire.DataClass
 
+import java.io.Serializable
+
 data class ServerPaper_Mental (
         var mj_date:String,
         var mj_no:String,
@@ -15,4 +17,4 @@ data class ServerPaper_Mental (
         var mj_mtl_sum:String,
         var mj_name:String,
         var mj_jumin:String
-)
+):Serializable

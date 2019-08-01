@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Mental
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_MENTAL
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -89,20 +90,29 @@ class MentalExaminationActivity : RootActivity(){
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
-            var paper = intent.getSerializableExtra("paper") as Paper_MENTAL
+            if(intent.getSerializableExtra("paper") is Paper_MENTAL) {
 
-            GetPaper(paper)
+                var paper = intent.getSerializableExtra("paper") as Paper_MENTAL
 
-            try {
-                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+                GetPaper(paper)
 
-                Signature.setImageBitmap(bmp)
+                try {
+                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+
+                    Signature.setImageBitmap(bmp)
+
+                } catch (e: Exception) {
+                    println(e.message)
+                }
+
+            }else{
+
+                var paper = intent.getSerializableExtra("paper") as ServerPaper_Mental
+
+                GetPaper(paper)
 
             }
-            catch (e:Exception)
-            {
-                println(e.message)
-            }
+
         }else{
             name_edit.text = MainActivity.login_user_name
             first_serial.text = MainActivity.user_first_serial
@@ -590,6 +600,127 @@ class MentalExaminationActivity : RootActivity(){
         name_edit.text = paper.name
         first_serial.text = paper.first_serial
         last_serial.text = paper.last_serial
+
+        println(paper)
+
+        mental_examination_save.visibility = View.GONE
+        mental_examination_cancel.visibility = View.GONE
+        mental_edit_submit.visibility = View.VISIBLE
+
+
+        if(paper.mj_mtl_1 == "0"){
+            mental_1_1.isChecked = true
+        }else if(paper.mj_mtl_1 == "1"){
+            mental_1_2.isChecked = true
+        }else if(paper.mj_mtl_1 == "2"){
+            mental_1_3.isChecked = true
+        }else if(paper.mj_mtl_1 == "3"){
+            mental_1_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_2 == "0"){
+            mental_2_1.isChecked = true
+        }else if(paper.mj_mtl_2 == "1"){
+            mental_2_2.isChecked = true
+        }else if(paper.mj_mtl_2 == "2"){
+            mental_2_3.isChecked = true
+        }else if(paper.mj_mtl_2 == "3"){
+            mental_2_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_3 == "0"){
+            mental_3_1.isChecked = true
+        }else if(paper.mj_mtl_3 == "1"){
+            mental_3_2.isChecked = true
+        }else if(paper.mj_mtl_3 == "2"){
+            mental_3_3.isChecked = true
+        }else if(paper.mj_mtl_3 == "3"){
+            mental_3_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_4 == "0"){
+            mental_4_1.isChecked = true
+        }else if(paper.mj_mtl_4 == "1"){
+            mental_4_2.isChecked = true
+        }else if(paper.mj_mtl_4 == "2"){
+            mental_4_3.isChecked = true
+        }else if(paper.mj_mtl_4 == "3"){
+            mental_4_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_5 == "0"){
+            mental_5_1.isChecked = true
+        }else if(paper.mj_mtl_5 == "1"){
+            mental_5_2.isChecked = true
+        }else if(paper.mj_mtl_5 == "2"){
+            mental_5_3.isChecked = true
+        }else if(paper.mj_mtl_5 == "3"){
+            mental_5_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_6 == "0"){
+            mental_6_1.isChecked = true
+        }else if(paper.mj_mtl_6 == "1"){
+            mental_6_2.isChecked = true
+        }else if(paper.mj_mtl_6 == "2"){
+            mental_6_3.isChecked = true
+        }else if(paper.mj_mtl_6 == "3"){
+            mental_6_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_7 == "0"){
+            mental_7_1.isChecked = true
+        }else if(paper.mj_mtl_7 == "1"){
+            mental_7_2.isChecked = true
+        }else if(paper.mj_mtl_7 == "2"){
+            mental_7_3.isChecked = true
+        }else if(paper.mj_mtl_7 == "3"){
+            mental_7_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_8 == "0"){
+            mental_8_1.isChecked = true
+        }else if(paper.mj_mtl_8 == "1"){
+            mental_8_2.isChecked = true
+        }else if(paper.mj_mtl_8 == "2"){
+            mental_8_3.isChecked = true
+        }else if(paper.mj_mtl_8 == "3"){
+            mental_8_4.isChecked = true
+        }
+
+
+        if(paper.mj_mtl_9 == "0"){
+            mental_9_1.isChecked = true
+        }else if(paper.mj_mtl_9 == "1"){
+            mental_9_2.isChecked = true
+        }else if(paper.mj_mtl_9 == "2"){
+            mental_9_3.isChecked = true
+        }else if(paper.mj_mtl_9 == "3"){
+            mental_9_4.isChecked = true
+        }
+
+
+    }
+
+    fun GetPaper(paper:ServerPaper_Mental){
+
+        state = "getPaper"
+
+        cannotEditQuestionnaire(mental_root)
+
+        progress_constraintLayout.visibility = View.GONE
+
+        name_edit.text = paper.mj_name
+        first_serial.text = paper.mj_jumin.substring(0, 6)
+        last_serial.text = paper.mj_jumin.substring(6, 7)
+        Signature.visibility = View.GONE
 
         println(paper)
 

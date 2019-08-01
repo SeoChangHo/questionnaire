@@ -91,20 +91,29 @@ class CognitiveExaminationActivity : RootActivity(){
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
-            var paper = intent.getSerializableExtra("paper") as Paper_COGNITIVE
+            if(intent.getSerializableExtra("paper") is Paper_COGNITIVE) {
 
-            GetPaper(paper)
+                var paper = intent.getSerializableExtra("paper") as Paper_COGNITIVE
 
-            try {
-                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+                GetPaper(paper)
 
-                Signature.setImageBitmap(bmp)
+                try {
+                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+
+                    Signature.setImageBitmap(bmp)
+
+                } catch (e: Exception) {
+                    println(e.message)
+                }
+
+            }else{
+
+                var paper = intent.getSerializableExtra("paper") as ServerPaper_Cognitive
+
+                GetPaper(paper)
 
             }
-            catch (e:Exception)
-            {
-                println(e.message)
-            }
+
         }else{
             name_edit.text = MainActivity.login_user_name
             first_serial.text = MainActivity.user_first_serial
@@ -805,9 +814,10 @@ class CognitiveExaminationActivity : RootActivity(){
 
         progress_constraintLayout.visibility = View.GONE
 
-//        name_edit.text = paper.mj_n
-//        first_serial.text = paper.first_serial
-//        last_serial.text = paper.last_serial
+        name_edit.text = paper.mj_name
+        first_serial.text = paper.mj_jumin.substring(0, 6)
+        last_serial.text = paper.mj_jumin.substring(6, 7)
+        Signature.visibility = View.GONE
 
         println(paper)
 

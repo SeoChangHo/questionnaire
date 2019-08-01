@@ -463,6 +463,8 @@ class ServerListDetailActivity : AppCompatActivity() {
 
                             println("SIZE: ${userDetailList.size}")
 
+                            startActivity(Intent(this@ServerListDetailActivity, CommonExaminationActivity::class.java).putExtra("paper", userDetailList[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
                             for (item in userDetailList)
                             {
                                 println("SEQ: ${item.mj_no}")
@@ -541,6 +543,8 @@ class ServerListDetailActivity : AppCompatActivity() {
 
 
                             println("SIZE: ${userDetailList.size}")
+
+                            startActivity(Intent(this@ServerListDetailActivity, ElderlyExaminationActivity::class.java).putExtra("paper", userDetailList[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
                             for (item in userDetailList)
                             {
@@ -759,6 +763,8 @@ class ServerListDetailActivity : AppCompatActivity() {
 
                             println("SIZE: ${userDetailList.size}")
 
+                            startActivity(Intent(this@ServerListDetailActivity, MentalExaminationActivity::class.java).putExtra("paper", userDetailList[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
                             for (item in userDetailList)
                             {
                                 println("SEQ: ${item.mj_no}")
@@ -848,6 +854,8 @@ class ServerListDetailActivity : AppCompatActivity() {
 
 
                             println("SIZE: ${userDetailList.size}")
+
+                            startActivity(Intent(this@ServerListDetailActivity, OralExaminationActivity::class.java).putExtra("paper", userDetailList[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
                             for (item in userDetailList)
                             {

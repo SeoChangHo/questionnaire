@@ -1,5 +1,7 @@
 package com.fineinsight.zzango.questionnaire.DataClass
 
+import java.io.Serializable
+
 data class ServerPaper_Oral (
         var oral_date:String,
         var oral_bun_no:String,
@@ -26,4 +28,4 @@ data class ServerPaper_Oral (
         var oral_19:String,
         var oral_name:String,
         var oral_jumin:String
-)
+):Serializable

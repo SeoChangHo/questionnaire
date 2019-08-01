@@ -20,6 +20,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Oral
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_ORAL
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -100,20 +101,29 @@ class OralExaminationActivity : RootActivity() {
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
-            var paper = intent.getSerializableExtra("paper") as Paper_ORAL
+            if(intent.getSerializableExtra("paper") is Paper_ORAL) {
 
-            GetPaper(paper)
+                var paper = intent.getSerializableExtra("paper") as Paper_ORAL
 
-            try {
-                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+                GetPaper(paper)
 
-                Signature.setImageBitmap(bmp)
+                try {
+                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+
+                    Signature.setImageBitmap(bmp)
+
+                } catch (e: Exception) {
+                    println(e.message)
+                }
+
+            }else{
+
+                var paper = intent.getSerializableExtra("paper") as Paper_ORAL
+
+                GetPaper(paper)
 
             }
-            catch (e:Exception)
-            {
-                println(e.message)
-            }
+
         }else{
             name_edit.text = MainActivity.login_user_name
             first_serial.text = MainActivity.user_first_serial
@@ -776,6 +786,283 @@ class OralExaminationActivity : RootActivity() {
         name_edit.text = paper.name
         first_serial.text = paper.first_serial
         last_serial.text = paper.last_serial
+
+        println(paper)
+
+        oral_examination_save.visibility = View.GONE
+        oral_examination_cancel.visibility = View.GONE
+        oral_edit_submit.visibility = View.VISIBLE
+
+        //1번
+        if(paper.oral_1=="1")
+        {
+            oral_1_true.isChecked = true
+        }
+        else if(paper.oral_1=="2")
+        {
+            oral_1_false.isChecked = true
+        }
+
+
+
+        //2번
+        if(paper.oral_2=="1")
+        {
+            oral_2_true.isChecked = true
+        }
+        else if(paper.oral_2=="2")
+        {
+            oral_2_false.isChecked = true
+        }
+        else if(paper.oral_2=="3")
+        {
+            oral_2_do_not_know.isChecked = true
+        }
+
+
+        //3번
+        if(paper.oral_3=="1")
+        {
+            oral_3_true.isChecked = true
+        }
+        else if(paper.oral_3=="2")
+        {
+            oral_3_false.isChecked = true
+        }
+        else if(paper.oral_3=="3")
+        {
+            oral_3_do_not_know.isChecked = true
+        }
+
+
+        //4번
+        if(paper.oral_4=="1")
+        {
+            oral_4_true.isChecked = true
+        }
+        else if(paper.oral_4=="2")
+        {
+            oral_4_false.isChecked = true
+        }
+
+        //5번
+        if(paper.oral_5=="1")
+        {
+            oral_5_true.isChecked = true
+        }
+        else if(paper.oral_5=="2")
+        {
+            oral_5_false.isChecked = true
+        }
+
+        //6번
+        if(paper.oral_6=="1")
+        {
+            oral_6_true.isChecked = true
+        }
+        else if(paper.oral_6=="2")
+        {
+            oral_6_false.isChecked = true
+        }
+
+
+        //7번
+        if(paper.oral_7=="1")
+        {
+            oral_7_very_good.isChecked = true
+        }
+        else if(paper.oral_7=="2")
+        {
+            oral_7_good.isChecked = true
+        }
+        else if(paper.oral_7=="3")
+        {
+            oral_7_normal.isChecked = true
+        }
+        else if(paper.oral_7=="4")
+        {
+            oral_7_bad.isChecked = true
+        }
+        else if(paper.oral_7=="5")
+        {
+            oral_7_very_bad.isChecked = true
+        }
+
+
+        //8번
+        if(paper.oral_8=="1")
+        {
+            oral_8_true.isChecked = true
+        }
+        else if(paper.oral_8=="2")
+        {
+            oral_8_false.isChecked = true
+        }
+
+
+        //9번
+        if(paper.oral_9=="1")
+        {
+            oral_9_1.isChecked = true
+        }
+        else if(paper.oral_9=="2")
+        {
+            oral_9_2.isChecked = true
+        }
+        else if(paper.oral_9=="3")
+        {
+            oral_9_3.isChecked = true
+        }
+        else if(paper.oral_9=="4")
+        {
+            oral_9_4.isChecked = true
+        }
+        else if(paper.oral_9=="5")
+        {
+            oral_9_5.isChecked = true
+        }
+        else if(!paper.oral_9.isNullOrEmpty())
+        {
+            oral_9_etc.isChecked = true
+            oral_9_count.setText(paper.oral_9.toString())
+        }
+
+
+        //10번
+        if(paper.oral_10=="1")
+        {
+            oral_10_1.isChecked = true
+        }
+        else if(paper.oral_10=="2")
+        {
+            oral_10_2.isChecked = true
+        }
+        else if(paper.oral_10=="3")
+        {
+            oral_10_3.isChecked = true
+        }
+        else if(paper.oral_10=="4")
+        {
+            oral_10_4.isChecked = true
+        }
+
+
+
+
+        //11번
+        if(paper.oral_11=="1")
+        {
+            oral_11_1.isChecked = true
+        }
+        else if(paper.oral_11=="2")
+        {
+            oral_11_2.isChecked = true
+        }
+        else if(paper.oral_11=="3")
+        {
+            oral_11_3.isChecked = true
+        }
+        else if(paper.oral_11=="4")
+        {
+            oral_11_4.isChecked = true
+        }
+        else if(paper.oral_11=="5")
+        {
+            oral_11_5.isChecked = true
+        }
+
+
+        //12번
+        if(paper.oral_12=="1")
+        {
+            oral_12_true.isChecked = true
+        }
+        else if(paper.oral_12=="2")
+        {
+            oral_12_false.isChecked = true
+        }
+        else if(paper.oral_12=="3")
+        {
+            oral_12_do_not_know.isChecked = true
+        }
+
+
+        //13번
+        if(paper.oral_13=="1")
+        {
+            oral_13_1.isChecked = true
+        }
+        else if(paper.oral_13=="2")
+        {
+            oral_13_2.isChecked = true
+        }
+        else if(paper.oral_13=="3")
+        {
+            oral_13_3.isChecked = true
+        }
+        else if(paper.oral_13=="4")
+        {
+            oral_13_4.isChecked = true
+        }
+        else if(paper.oral_13=="5")
+        {
+            oral_13_5.isChecked = true
+        }
+
+
+
+        //14번
+        if(paper.oral_14=="1")
+        {
+            oral_14_1.isChecked = true
+        }
+        else if(paper.oral_14=="2")
+        {
+            oral_14_2.isChecked = true
+        }
+        else if(paper.oral_14=="3")
+        {
+            oral_14_3.isChecked = true
+        }
+        else if(paper.oral_14=="4")
+        {
+            oral_14_4.isChecked = true
+        }
+        else if(paper.oral_14=="5")
+        {
+            oral_14_5.isChecked = true
+        }
+
+
+        //15번
+        if(paper.oral_15=="1")
+        {
+            oral_15_true.isChecked = true
+        }
+        else if(paper.oral_15=="2")
+        {
+            oral_15_false.isChecked = true
+        }
+        else if(paper.oral_15=="3")
+        {
+            oral_15_do_not_know.isChecked = true
+        }
+
+        remark_content.setText(paper.oral_16)
+
+    }
+
+    fun GetPaper(paper:ServerPaper_Oral)
+    {
+
+        state = "getPaper"
+
+        cannotEditQuestionnaire(oral_exam_inside_scroll_layout)
+
+        name_edit.text = paper.oral_name
+        first_serial.text = paper.oral_jumin.substring(0, 6)
+        last_serial.text = paper.oral_jumin.substring(6, 7)
+        Signature.visibility = View.GONE
 
         println(paper)
 

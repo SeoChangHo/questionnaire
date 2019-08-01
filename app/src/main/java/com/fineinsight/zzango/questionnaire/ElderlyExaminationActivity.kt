@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Elderly
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_ELDERLY
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -89,20 +90,29 @@ class ElderlyExaminationActivity : RootActivity(){
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 
-            var paper = intent.getSerializableExtra("paper") as Paper_ELDERLY
+            if(intent.getSerializableExtra("paper") is Paper_ELDERLY) {
 
-            GetPaper(paper)
+                var paper = intent.getSerializableExtra("paper") as Paper_ELDERLY
 
-            try {
-                var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+                GetPaper(paper)
 
-                Signature.setImageBitmap(bmp)
+                try {
+                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+
+                    Signature.setImageBitmap(bmp)
+
+                } catch (e: Exception) {
+                    println(e.message)
+                }
+
+            }else{
+
+                var paper = intent.getSerializableExtra("paper") as ServerPaper_Elderly
+
+                GetPaper(paper)
 
             }
-            catch (e:Exception)
-            {
-                println(e.message)
-            }
+
         }else{
             name_edit.text = MainActivity.login_user_name
             first_serial.text = MainActivity.user_first_serial
@@ -567,6 +577,98 @@ class ElderlyExaminationActivity : RootActivity(){
         name_edit.text = paper.name
         first_serial.text = paper.first_serial
         last_serial.text = paper.last_serial
+
+        println(paper)
+
+        elderly_examination_save.visibility = View.GONE
+        elderly_examination_cancel.visibility = View.GONE
+        elderly_edit_submit.visibility = View.VISIBLE
+
+
+
+        if(paper.mj66_1 == "1"){
+            elderly_1_true.isChecked = true
+        }else if(paper.mj66_1 == "2"){
+            elderly_1_false.isChecked = true
+        }
+
+
+        if(paper.mj66_2 == "1"){
+            elderly_2_true.isChecked = true
+        }else if(paper.mj66_2 == "2"){
+            elderly_2_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_1 == "1"){
+            elderly_3_1_true.isChecked = true
+        }else if(paper.mj66_3_1 == "2"){
+            elderly_3_1_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_2 == "1"){
+            elderly_3_2_true.isChecked = true
+        }else if(paper.mj66_3_2 == "2"){
+            elderly_3_2_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_3 == "1"){
+            elderly_3_3_true.isChecked = true
+        }else if(paper.mj66_3_3 == "2"){
+            elderly_3_3_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_4 == "1"){
+            elderly_3_4_true.isChecked = true
+        }else if(paper.mj66_3_4 == "2"){
+            elderly_3_4_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_5 == "1"){
+            elderly_3_5_true.isChecked = true
+        }else if(paper.mj66_3_5 == "2"){
+            elderly_3_5_false.isChecked = true
+        }
+
+
+        if(paper.mj66_3_6 == "1"){
+            elderly_3_6_true.isChecked = true
+        }else if(paper.mj66_3_6 == "2"){
+            elderly_3_6_false.isChecked = true
+        }
+
+
+        if(paper.mj66_4 == "1"){
+            elderly_4_true.isChecked = true
+        }else if(paper.mj66_4 == "2"){
+            elderly_4_false.isChecked = true
+        }
+
+
+        if(paper.mj66_5 == "1"){
+            elderly_5_true.isChecked = true
+        }else if(paper.mj66_5 == "2"){
+            elderly_5_false.isChecked = true
+        }
+
+    }
+
+    fun GetPaper(paper:ServerPaper_Elderly) {
+
+        state = "getPaper"
+
+        cannotEditQuestionnaire(elderly_root)
+
+        progress_constraintLayout.visibility = View.GONE
+
+        name_edit.text = paper.mj_name
+        first_serial.text = paper.mj_jumin.substring(0, 6)
+        last_serial.text = paper.mj_jumin.substring(6, 7)
+        Signature.visibility = View.GONE
 
         println(paper)
 
