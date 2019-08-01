@@ -216,6 +216,7 @@ class ServerListDetailActivity : AppCompatActivity() {
 
 
                             println("SIZE: ${userDetailList.size}")
+                            //스타트액티비티 putextra userDetailList as ServerPaper_Cancer
 
                             for (item in userDetailList)
                             {

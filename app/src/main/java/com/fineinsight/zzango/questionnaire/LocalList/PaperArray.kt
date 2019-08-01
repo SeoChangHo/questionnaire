@@ -21,6 +21,24 @@ class PaperArray {
         var Arr_CANCER:ArrayList<Paper_CANCER>? = null
 
         var Arr_RESULT:ArrayList<Any>? = null
+
+        var temp_Arr_COMMON:ArrayList<Paper_COMMON>? = null
+
+        var temp_Arr_MENTAL:ArrayList<Paper_MENTAL>? = null
+        var temp_Arr_COGNITIVE:ArrayList<Paper_COGNITIVE>? = null
+        var temp_Arr_ELDERLY:ArrayList<Paper_ELDERLY>? = null
+
+        var temp_Arr_DRINKING:ArrayList<Paper_DRINKING>? = null
+        var temp_Arr_EXERCISE:ArrayList<Paper_EXERCISE>? = null
+        var temp_Arr_NUTRITION:ArrayList<Paper_NUTRITION>? = null
+        var temp_Arr_SMOKING:ArrayList<Paper_SMOKING>? = null
+
+        var temp_Arr_ORAL:ArrayList<Paper_ORAL>? = null
+
+        var temp_Arr_CANCER:ArrayList<Paper_CANCER>? = null
+
+        var temp_Arr_RESULT:ArrayList<Any>? = null
+
     }
 
     object PaperArrFunction
@@ -43,6 +61,23 @@ class PaperArray {
             PaperList.Arr_CANCER = ArrayList<Paper_CANCER>()
 
             PaperList.Arr_RESULT = ArrayList<Any>()
+
+            PaperList.temp_Arr_COMMON = ArrayList<Paper_COMMON>()
+
+            PaperList.temp_Arr_MENTAL = ArrayList<Paper_MENTAL>()
+            PaperList.temp_Arr_COGNITIVE = ArrayList<Paper_COGNITIVE>()
+            PaperList.temp_Arr_ELDERLY = ArrayList<Paper_ELDERLY>()
+
+            PaperList.temp_Arr_DRINKING = ArrayList<Paper_DRINKING>()
+            PaperList.temp_Arr_EXERCISE = ArrayList<Paper_EXERCISE>()
+            PaperList.temp_Arr_NUTRITION = ArrayList<Paper_NUTRITION>()
+            PaperList.temp_Arr_SMOKING = ArrayList<Paper_SMOKING>()
+
+            PaperList.temp_Arr_ORAL = ArrayList<Paper_ORAL>()
+
+            PaperList.temp_Arr_CANCER = ArrayList<Paper_CANCER>()
+
+            PaperList.temp_Arr_RESULT = ArrayList<Any>()
         }
     }
 

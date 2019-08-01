@@ -5,8 +5,6 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
-import android.net.Network
-import android.net.NetworkInfo
 import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
@@ -21,7 +19,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
-import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import kotlinx.android.synthetic.main.progressbar2.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
@@ -108,356 +106,535 @@ open class RootActivity : AppCompatActivity() {
     }
 
     //진행바 제어하는 메서드
-    fun controlProgress(context : Context, layout : ConstraintLayout, layout2 : ConstraintLayout, view : View, guideline : Guideline, guideline2 : Guideline, guideline3: Guideline, guideline4: Guideline, guideline5: Guideline, guideline6: Guideline, guideline7: Guideline, guideline8: Guideline){
+    fun controlProgress(context : Context){
 
         when(MainActivity.chart){
 
             "SET0" -> {
 
-                when(context.javaClass.kotlin.simpleName) {
+                progress.visibility = View.VISIBLE
+                progress2.visibility = View.VISIBLE
+                progress3.visibility = View.VISIBLE
+                progress4.visibility = View.VISIBLE
+                progress_text.text = "운동"
+                progress_text2.text = "영양"
+                progress_text3.text = "흡연"
+                progress_text4.text = "음주"
+
+                when(context.javaClass.kotlin.simpleName){
 
                     "ExerciseExaminationActivity" -> {
 
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "1/4 진행중"
+                        when {
+                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
+
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = true
+
+                                progress2.setOnClickListener {
+                                    if((context as ExerciseExaminationActivity).check2()) {
+                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    }
+                                }
+                                progress3.setOnClickListener {
+                                    if((context as ExerciseExaminationActivity).check2()) {
+                                        startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    }
+                                }
+                                progress4.setOnClickListener {
+                                    if((context as ExerciseExaminationActivity).check2()) {
+                                        startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    }
+                                }
+
+                            }
+                            PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0 -> {
+
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = false
+
+                                progress2.setOnClickListener {
+                                    if((context as ExerciseExaminationActivity).check2()) {
+                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    }
+                                }
+                                progress3.setOnClickListener {
+                                    if((context as ExerciseExaminationActivity).check2()) {
+                                        startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    }
+                                }
+
+                            }
+                            PaperArray.PaperList.temp_Arr_NUTRITION != null && PaperArray.PaperList.temp_Arr_NUTRITION!!.size != 0 -> {
+
+                                progress2.isClickable = true
+                                progress3.isClickable = false
+                                progress4.isClickable = false
+
+                                progress2.setOnClickListener {
+                                    if((context as ExerciseExaminationActivity).check2()) {
+                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    }
+                                }
+
+                            }
+                            else -> {
+
+                                progress2.isClickable = false
+                                progress3.isClickable = false
+                                progress4.isClickable = false
+
+                            }
+
+                        }
 
                     }
 
                     "NutritionExaminationActivity" -> {
 
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "2/4 진행중"
+                        when {
+                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
+
+                                progress.isClickable = true
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = true
+
+                                progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress3.setOnClickListener { startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress4.setOnClickListener { startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+
+                            }
+                            PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0 -> {
+
+                                progress.isClickable = true
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = false
+
+                                progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress3.setOnClickListener { startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+
+                            }
+                            else -> {
+
+                                progress.isClickable = true
+                                progress2.isClickable = true
+                                progress3.isClickable = false
+                                progress4.isClickable = false
+
+                                progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+
+                            }
+
+                        }
 
                     }
 
                     "SmokingExaminationActivity" -> {
 
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "3/4 진행중"
+                        when {
+                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
+
+                                progress.isClickable = true
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = true
+
+                                progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress2.setOnClickListener { startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress4.setOnClickListener { startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+
+                            }
+                            else -> {
+
+                                progress.isClickable = true
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = false
+
+                                progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress2.setOnClickListener { startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+
+                            }
+
+                        }
 
                     }
 
                     "DrinkingExaminationActivity" -> {
 
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline4.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "4/4 진행중"
-                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
+                        progress.isClickable = true
+                        progress2.isClickable = true
+                        progress3.isClickable = true
+                        progress4.isClickable = true
 
-                    }
-
-                    else ->{
-
-                        layout2.visibility = View.GONE
+                        progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                        progress2.setOnClickListener { startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                        progress3.setOnClickListener { startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
 
                     }
 
                 }
-
-                guideline.setGuidelinePercent(0.25f)
-                guideline2.setGuidelinePercent(0.5f)
-                guideline3.setGuidelinePercent(0.75f)
-                guideline4.setGuidelinePercent(1f)
-
-            }
-
-            "SET1" -> { layout2.visibility = View.GONE }
-
-            "SET2" -> {
-
-                when(context.javaClass.kotlin.simpleName) {
-
-                    "CommonExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "1/2 진행중"
-
-                    }
-
-                    "MentalExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "2/2 진행중"
-                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
-
-                    }
-
-                }
-
-                guideline.setGuidelinePercent(0.5f)
-                guideline2.setGuidelinePercent(1f)
-
-            }
-
-            "SET3" -> {
-
-                when(context.javaClass.kotlin.simpleName) {
-
-                    "CommonExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "1/6 진행중"
-
-                    }
-
-                    "MentalExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "2/6 진행중"
-
-                    }
-
-                    "ExerciseExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "3/6 진행중"
-
-                    }
-
-                    "NutritionExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline4.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "4/6 진행중"
-
-                    }
-
-                    "SmokingExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline5.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "5/6 진행중"
-
-                    }
-
-                    "DrinkingExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline6.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "6/6 진행중"
-                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
-
-                    }
-
-                }
-
-                guideline.setGuidelinePercent(0.16f)
-                guideline2.setGuidelinePercent(0.33f)
-                guideline3.setGuidelinePercent(0.49f)
-                guideline4.setGuidelinePercent(0.66f)
-                guideline5.setGuidelinePercent(0.88f)
-                guideline6.setGuidelinePercent(1f)
-
-            }
-
-            "SET4" -> {
-
-                when(context.javaClass.kotlin.simpleName) {
-
-                    "CommonExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "1/3 진행중"
-
-                    }
-
-                    "CognitiveExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "2/3 진행중"
-
-                    }
-
-                    "ElderlyExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "3/3 진행중"
-                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
-
-                    }
-
-                }
-
-                guideline.setGuidelinePercent(0.33f)
-                guideline2.setGuidelinePercent(0.66f)
-                guideline3.setGuidelinePercent(1f)
-
-            }
-
-            "SET5" -> {
-
-                when(context.javaClass.kotlin.simpleName) {
-
-                    "CommonExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "1/2 진행중"
-
-                    }
-
-                    "CognitiveExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "2/2 진행중"
-                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
-
-                    }
-
-                }
-
-                guideline.setGuidelinePercent(0.5f)
-                guideline2.setGuidelinePercent(1f)
-
-            }
-
-            "SET6" -> {
-
-                when(context.javaClass.kotlin.simpleName) {
-
-                    "CommonExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "1/8 진행중"
-
-                    }
-
-                    "CognitiveExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "2/8 진행중"
-
-                    }
-
-                    "MentalExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "3/8 진행중"
-
-                    }
-
-                    "ExerciseExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline4.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "4/8 진행중"
-
-                    }
-
-                    "NutritionExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline5.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "5/8 진행중"
-
-                    }
-
-                    "SmokingExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline6.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "6/8 진행중"
-
-                    }
-
-                    "DrinkingExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline7.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "7/8 진행중"
-
-                    }
-
-                    "ElderlyExaminationActivity" -> {
-
-                        var constraintSet = ConstraintSet()
-                        constraintSet.clone(layout)
-                        constraintSet.connect(view.id, ConstraintSet.END, guideline8.id, ConstraintSet.START)
-                        constraintSet.applyTo(layout)
-                        questionnaire_page.text = "8/8 진행중"
-                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
-
-                    }
-
-                }
-
-                guideline.setGuidelinePercent(0.125f)
-                guideline2.setGuidelinePercent(0.25f)
-                guideline3.setGuidelinePercent(0.375f)
-                guideline4.setGuidelinePercent(0.5f)
-                guideline5.setGuidelinePercent(0.625f)
-                guideline6.setGuidelinePercent(0.75f)
-                guideline7.setGuidelinePercent(0.875f)
-                guideline8.setGuidelinePercent(1f)
 
             }
 
         }
 
     }
+
+//    fun controlProgress(context : Context, layout : ConstraintLayout, layout2 : ConstraintLayout, view : View, guideline : Guideline, guideline2 : Guideline, guideline3: Guideline, guideline4: Guideline, guideline5: Guideline, guideline6: Guideline, guideline7: Guideline, guideline8: Guideline){
+//
+//        when(MainActivity.chart){
+//
+//            "SET0" -> {
+//
+//                when(context.javaClass.kotlin.simpleName) {
+//
+//                    "ExerciseExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "1/4 진행중"
+//
+//                    }
+//
+//                    "NutritionExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "2/4 진행중"
+//
+//                    }
+//
+//                    "SmokingExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "3/4 진행중"
+//
+//                    }
+//
+//                    "DrinkingExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline4.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "4/4 진행중"
+//                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
+//
+//                    }
+//
+//                    else ->{
+//
+//                        layout2.visibility = View.GONE
+//
+//                    }
+//
+//                }
+//
+//                guideline.setGuidelinePercent(0.25f)
+//                guideline2.setGuidelinePercent(0.5f)
+//                guideline3.setGuidelinePercent(0.75f)
+//                guideline4.setGuidelinePercent(1f)
+//
+//            }
+//
+//            "SET1" -> { layout2.visibility = View.GONE }
+//
+//            "SET2" -> {
+//
+//                when(context.javaClass.kotlin.simpleName) {
+//
+//                    "CommonExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "1/2 진행중"
+//
+//                    }
+//
+//                    "MentalExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "2/2 진행중"
+//                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
+//
+//                    }
+//
+//                }
+//
+//                guideline.setGuidelinePercent(0.5f)
+//                guideline2.setGuidelinePercent(1f)
+//
+//            }
+//
+//            "SET3" -> {
+//
+//                when(context.javaClass.kotlin.simpleName) {
+//
+//                    "CommonExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "1/6 진행중"
+//
+//                    }
+//
+//                    "MentalExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "2/6 진행중"
+//
+//                    }
+//
+//                    "ExerciseExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "3/6 진행중"
+//
+//                    }
+//
+//                    "NutritionExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline4.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "4/6 진행중"
+//
+//                    }
+//
+//                    "SmokingExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline5.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "5/6 진행중"
+//
+//                    }
+//
+//                    "DrinkingExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline6.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "6/6 진행중"
+//                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
+//
+//                    }
+//
+//                }
+//
+//                guideline.setGuidelinePercent(0.16f)
+//                guideline2.setGuidelinePercent(0.33f)
+//                guideline3.setGuidelinePercent(0.49f)
+//                guideline4.setGuidelinePercent(0.66f)
+//                guideline5.setGuidelinePercent(0.88f)
+//                guideline6.setGuidelinePercent(1f)
+//
+//            }
+//
+//            "SET4" -> {
+//
+//                when(context.javaClass.kotlin.simpleName) {
+//
+//                    "CommonExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "1/3 진행중"
+//
+//                    }
+//
+//                    "CognitiveExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "2/3 진행중"
+//
+//                    }
+//
+//                    "ElderlyExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "3/3 진행중"
+//                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
+//
+//                    }
+//
+//                }
+//
+//                guideline.setGuidelinePercent(0.33f)
+//                guideline2.setGuidelinePercent(0.66f)
+//                guideline3.setGuidelinePercent(1f)
+//
+//            }
+//
+//            "SET5" -> {
+//
+//                when(context.javaClass.kotlin.simpleName) {
+//
+//                    "CommonExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "1/2 진행중"
+//
+//                    }
+//
+//                    "CognitiveExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "2/2 진행중"
+//                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
+//
+//                    }
+//
+//                }
+//
+//                guideline.setGuidelinePercent(0.5f)
+//                guideline2.setGuidelinePercent(1f)
+//
+//            }
+//
+//            "SET6" -> {
+//
+//                when(context.javaClass.kotlin.simpleName) {
+//
+//                    "CommonExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "1/8 진행중"
+//
+//                    }
+//
+//                    "CognitiveExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline2.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "2/8 진행중"
+//
+//                    }
+//
+//                    "MentalExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline3.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "3/8 진행중"
+//
+//                    }
+//
+//                    "ExerciseExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline4.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "4/8 진행중"
+//
+//                    }
+//
+//                    "NutritionExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline5.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "5/8 진행중"
+//
+//                    }
+//
+//                    "SmokingExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline6.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "6/8 진행중"
+//
+//                    }
+//
+//                    "DrinkingExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline7.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "7/8 진행중"
+//
+//                    }
+//
+//                    "ElderlyExaminationActivity" -> {
+//
+//                        var constraintSet = ConstraintSet()
+//                        constraintSet.clone(layout)
+//                        constraintSet.connect(view.id, ConstraintSet.END, guideline8.id, ConstraintSet.START)
+//                        constraintSet.applyTo(layout)
+//                        questionnaire_page.text = "8/8 진행중"
+//                        questionnaire_page.setTextColor(ContextCompat.getColor(this, R.color.white))
+//
+//                    }
+//
+//                }
+//
+//                guideline.setGuidelinePercent(0.125f)
+//                guideline2.setGuidelinePercent(0.25f)
+//                guideline3.setGuidelinePercent(0.375f)
+//                guideline4.setGuidelinePercent(0.5f)
+//                guideline5.setGuidelinePercent(0.625f)
+//                guideline6.setGuidelinePercent(0.75f)
+//                guideline7.setGuidelinePercent(0.875f)
+//                guideline8.setGuidelinePercent(1f)
+//
+//            }
+//
+//        }
+//
+//    }
 
     //뷰에 포커스를 총괄하는 메서드
     open fun focusControl(view : View){
@@ -599,6 +776,7 @@ open class RootActivity : AppCompatActivity() {
             dialog_view.finish.setOnClickListener {
 
                 MainActivity.chart = "SET0"
+                PaperArray.PaperArrFunction.ArrayListInit()
                 startActivity(Intent(this, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             }
