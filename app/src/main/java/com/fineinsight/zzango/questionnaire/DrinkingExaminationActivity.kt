@@ -44,6 +44,8 @@ class DrinkingExaminationActivity : RootActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drinking_exam)
 
+        quit = false
+
 //        controlProgress(this, questionnaire_progress_wrapper, progress_constraintLayout,questionnaire_progress, progress_guideline, progress_guideline2, progress_guideline3, progress_guideline4, progress_guideline5, progress_guideline6, progress_guideline7, progress_guideline8)
         controlProgress(this)
 

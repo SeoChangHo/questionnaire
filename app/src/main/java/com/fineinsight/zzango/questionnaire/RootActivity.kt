@@ -31,6 +31,7 @@ open class RootActivity : AppCompatActivity() {
     var wfm : WifiManager? = null
     var connectivityManager : ConnectivityManager? = null
     var state = ""
+    var quit = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -779,6 +780,7 @@ open class RootActivity : AppCompatActivity() {
 
             dialog_view.finish.setOnClickListener {
 
+                quit = true
                 MainActivity.chart = "SET0"
                 PaperArray.PaperArrFunction.ArrayListInit()
                 startActivity(Intent(this, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))

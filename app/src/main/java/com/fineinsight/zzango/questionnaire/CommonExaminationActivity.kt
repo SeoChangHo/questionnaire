@@ -1237,9 +1237,9 @@ class CommonExaminationActivity : RootActivity() {
         }
 
 
-        if(paper.mj1_3_1 == "2"){
+        if(paper.mj1_3_1 == "1"){
             diagnosis_medication_high_blood_pressure_examination_check.isChecked = true
-        }else if(paper.mj1_3_1 == "1"){
+        }else if(paper.mj1_3_1 == "2"){
             diagnosis_medication_high_blood_pressure_examination_check.isChecked = false
         }
 
@@ -1808,9 +1808,9 @@ class CommonExaminationActivity : RootActivity() {
         }
 
 
-        if(paper.mj1_3_1 == "2"){
+        if(paper.mj1_3_1 == "1"){
             diagnosis_medication_high_blood_pressure_examination_check.isChecked = true
-        }else if(paper.mj1_3_1 == "1"){
+        }else if(paper.mj1_3_1 == "2"){
             diagnosis_medication_high_blood_pressure_examination_check.isChecked = false
         }
 
