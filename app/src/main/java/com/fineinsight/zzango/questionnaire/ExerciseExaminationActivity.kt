@@ -30,10 +30,6 @@ class ExerciseExaminationActivity : RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise_exam)
 
-        quit = false
-
-//        controlProgress(this, questionnaire_progress_wrapper, progress_constraintLayout, questionnaire_progress, progress_guideline, progress_guideline2, progress_guideline3, progress_guideline4, progress_guideline5, progress_guideline6, progress_guideline7, progress_guideline8)
-
         controlProgress(this)
 
         //서명정보 가져오는거
@@ -489,7 +485,9 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         if(MainActivity.chart == "SET0"){
-            PaperArray.PaperArrFunction.ArrayListInit()
+            if(!PaperArray.initCheck) {
+                PaperArray.PaperArrFunction.ArrayListInit()
+            }
             exam_no = System.currentTimeMillis().toString()
             MainActivity.exam_no = exam_no
         }else{
@@ -499,12 +497,26 @@ class ExerciseExaminationActivity : RootActivity() {
 //        PaperArray.PaperArrFunction.ArrayListInit()
 //        exam_no = System.currentTimeMillis().toString()
 
-        PaperArray.PaperList.temp_Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
-                sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
-                sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
-                sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
-                sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
-                sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
+        if(PaperArray.PaperList.temp_Arr_EXERCISE!!.size < 1) {
+
+            PaperArray.PaperList.temp_Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+                    sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
+                    sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
+                    sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
+                    sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
+                    sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
+
+        }else{
+
+            PaperArray.PaperList.temp_Arr_EXERCISE!!.removeAt(0)
+            PaperArray.PaperList.temp_Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+                    sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
+                    sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
+                    sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
+                    sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
+                    sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
+
+        }
 
     }
 
@@ -953,33 +965,77 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         if(MainActivity.chart == "SET0"){
-            PaperArray.PaperArrFunction.ArrayListInit()
+            if(!PaperArray.initCheck) {
+                PaperArray.PaperArrFunction.ArrayListInit()
+            }
             exam_no = System.currentTimeMillis().toString()
             MainActivity.exam_no = exam_no
         }else{
             exam_no = MainActivity.exam_no
         }
 
-//        PaperArray.PaperArrFunction.ArrayListInit()
-//        exam_no = System.currentTimeMillis().toString()
+        //해당 배열이 존재할경우
+        //clear 후 다시 문항을 체크하고 배열을 add한다
+        //저장된 해당문진에서 수정하는 경우 대비
+        if(PaperArray.PaperList.Arr_EXERCISE != null && PaperArray.PaperList.Arr_EXERCISE!!.size >= 1) {
 
-        PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
-                sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
-                sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
-                sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
-                sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
-                sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
+            PaperArray.PaperList.Arr_EXERCISE!!.clear()
+            PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+                    sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
+                    sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
+                    sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
+                    sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
+                    sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
+
+            //iterator를 써야 오류가 안난다
+            //java.util.ConcurrentModificationException
+            //index 문제
+            //증가된 index와 list의 size를 비교하는데 있어서 문제가 발생하게된다.
+            var iter = PaperArray.PaperList.Arr_RESULT?.listIterator()
+
+            //result 배열에서 paper_exercise인 인덱스를 삭제하고
+            //새 paper_exercise배열을 다시 그 자리에 추가하는 반복문
+           while(iter!!.hasNext()){
+                var arr = iter.next()
+                if((arr as ArrayList<*>)[0] is Paper_EXERCISE){
+                    iter.remove()
+                    iter.add(PaperArray.PaperList.Arr_EXERCISE!!)
+                }
+            }
+
+//            for ((i, arr) in PaperArray.PaperList.Arr_RESULT!!.withIndex()) {
+//
+//                if ((arr as ArrayList<*>)[0] is Paper_EXERCISE) {
+//
+//                    PaperArray.PaperList.Arr_RESULT!!.remove(i)
+//                    PaperArray.PaperList.Arr_RESULT!!.add(i, PaperArray.PaperList.Arr_EXERCISE!!)
+//
+//                }
+//
+//            }
+
+        }else {
+
+            PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+                    sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
+                    sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
+                    sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
+                    sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
+                    sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
 
 
-        PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_EXERCISE!!)
+            PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_EXERCISE!!)
+            PaperArray.PaperList.temp_Arr_EXERCISE = ArrayList()
 
-        PaperArray.PaperList.temp_Arr_EXERCISE = ArrayList()
+        }
 
         return true
 
     }
 
-    fun check2() : Boolean {
+    //이미 저장된 배열이 있을경우 수정된 사항이 있는지 체크한다
+    //해당 배열이 저장된 인덱스를 지우고 다시 수정된 값을 넣는다
+    fun check2() {
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
         var exam_no = ""
@@ -1023,23 +1079,11 @@ class ExerciseExaminationActivity : RootActivity() {
 
             name = name_edit.text.toString()
 
-        } else {
-
-            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
         }
 
         if (!first_serial.text.isNullOrEmpty()) {
 
             first_serial_text = first_serial.text.toString()
-
-        } else {
-
-            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
 
         }
 
@@ -1047,280 +1091,138 @@ class ExerciseExaminationActivity : RootActivity() {
 
             last_serial_text = last_serial.text.toString()
 
-        }else{
-
-            Toast.makeText(this, "성명 또는 주민번호란을 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
         }
 
         sg2_spSports1_1 = when {
             exercise_1_true.isChecked -> "1"
             exercise_1_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         if (pick_time.selectedItem != null) {
 
             sg2_spSports1_2 = pick_time.selectedItemPosition.toString()
 
-        } else {
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
         }
 
-        sg2_spSports1_3_1 = if (!exercise_1_3_hour.text.isNullOrEmpty()) {
-
-            exercise_1_3_hour.text.toString()
-
-        } else if(exercise_1_3_hour.text.isEmpty()) {
-
-            "0"
-
-        } else {
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
+        sg2_spSports1_3_1 = when {
+            !exercise_1_3_hour.text.isNullOrEmpty() -> exercise_1_3_hour.text.toString()
+            exercise_1_3_hour.text.isEmpty() -> "0"
+            else -> ""
         }
 
         sg2_spSports1_3_2 = when {
             exercise_1_3_minute.text != null -> exercise_1_3_minute.text.toString()
             exercise_1_3_minute.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports1_4 = when {
             exercise_2_true.isChecked -> "1"
             exercise_2_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         if (pick_time2.selectedItem != null) {
 
             sg2_spSports1_5 = pick_time2.selectedItemPosition.toString()
 
-        } else {
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
         }
 
         sg2_spSports1_6_1 = when {
             !exercise_2_3_hour.text.isNullOrEmpty() -> exercise_2_3_hour.text.toString()
             exercise_2_3_hour.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports1_6_2 = when {
             !exercise_2_3_minute.text.isNullOrEmpty() -> exercise_2_3_minute.text.toString()
             exercise_2_3_minute.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports2_1 = when {
             exercise_3_true.isChecked -> "1"
             exercise_3_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         if (pick_time3.selectedItem != null) {
 
             sg2_spSports2_2 = pick_time3.selectedItemPosition.toString()
 
-        } else {
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
         }
 
         sg2_spSports2_3_1 = when {
             !exercise_3_3_hour.text.isNullOrEmpty() -> exercise_3_3_hour.text.toString()
             exercise_3_3_hour.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports2_3_2 = when {
             !exercise_3_3_minute.text.isNullOrEmpty() -> exercise_3_3_minute.text.toString()
             exercise_3_3_minute.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports3_1 = when {
             exercise_4_true.isChecked -> "1"
             exercise_4_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         if (pick_time4.selectedItem != null) {
 
             sg2_spSports3_2 = pick_time4.selectedItemPosition.toString()
 
-        } else {
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
         }
 
         sg2_spSports3_3_1 = when {
             !exercise_4_1_hour.text.isNullOrEmpty() -> exercise_4_1_hour.text.toString()
             exercise_4_1_hour.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports3_3_2 = when {
             !exercise_4_1_minute.text.isNullOrEmpty() -> exercise_4_1_minute.text.toString()
             exercise_4_1_minute.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports3_4 = when {
             exercise_5_true.isChecked -> "1"
             exercise_5_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         if (pick_time5.selectedItem != null) {
 
             sg2_spSports3_5 = pick_time5.selectedItemPosition.toString()
 
-        } else {
-
-            Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-            return false
-
         }
 
         sg2_spSports3_6_1 = when {
             !exercise_3_6_hour.text.isNullOrEmpty() -> exercise_3_6_hour.text.toString()
             exercise_3_6_hour.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports3_6_2 = when {
             !exercise_3_6_minute.text.isNullOrEmpty() -> exercise_3_6_minute.text.toString()
             exercise_3_6_minute.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports4_1_1 = when {
             !exercise_4_1_hour.text.isNullOrEmpty() -> exercise_4_1_hour.text.toString()
             exercise_4_1_hour.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports4_1_2 = when {
             exercise_4_1_minute.text !=null -> exercise_4_1_minute.text.toString()
             exercise_4_1_minute.text.isEmpty() -> "0"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports5 = when {
@@ -1330,138 +1232,115 @@ class ExerciseExaminationActivity : RootActivity() {
             exercise_6_3.isChecked -> "4"
             exercise_6_4.isChecked -> "5"
             exercise_6_5.isChecked -> "6"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports6 = when {
             exercise_7_true.isChecked -> "1"
             exercise_7_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports7 = when {
             exercise_8_true.isChecked -> "1"
             exercise_8_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports8 = when {
             exercise_9_true.isChecked -> "1"
             exercise_9_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports9 = when {
             exercise_10_true.isChecked -> "1"
             exercise_10_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports10 = when {
             exercise_11_true.isChecked -> "1"
             exercise_11_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports11 = when {
             exercise_12_true.isChecked -> "1"
             exercise_12_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         sg2_spSports12 = when {
             exercise_13_true.isChecked -> "1"
             exercise_13_false.isChecked -> "2"
-            else -> {
-
-                Toast.makeText(this, "체크 안된 문항이 있는지 확인해주세요", Toast.LENGTH_LONG).show()
-
-                return false
-
-            }
+            else -> ""
         }
 
         if(MainActivity.chart == "SET0"){
-            PaperArray.PaperArrFunction.ArrayListInit()
+            if(!PaperArray.initCheck) {
+                PaperArray.PaperArrFunction.ArrayListInit()
+            }
             exam_no = System.currentTimeMillis().toString()
             MainActivity.exam_no = exam_no
         }else{
             exam_no = MainActivity.exam_no
         }
 
-//        PaperArray.PaperArrFunction.ArrayListInit()
-//        exam_no = System.currentTimeMillis().toString()
+        //해당 배열이 존재할경우
+        //clear 후 다시 문항을 체크하고 배열을 add한다
+        //저장된 해당문진에서 수정하는 경우 대비
+        if(PaperArray.PaperList.Arr_EXERCISE != null && PaperArray.PaperList.Arr_EXERCISE!!.size >= 1) {
 
-        println(PaperArray.PaperList.Arr_EXERCISE!!.size)
-        println(PaperArray.PaperList.Arr_RESULT!!.size)
+            PaperArray.PaperList.Arr_EXERCISE!!.clear()
+            PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+                    sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
+                    sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
+                    sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
+                    sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
+                    sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
 
-        PaperArray.PaperList.Arr_EXERCISE!!.clear()
-        PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
-                sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
-                sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
-                sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
-                sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
-                sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
+            //iterator를 써야 오류가 안난다
+            //java.util.ConcurrentModificationException
+            //index 문제
+            //증가된 index와 list의 size를 비교하는데 있어서 문제가 발생하게된다.
+            var iter = PaperArray.PaperList.Arr_RESULT?.listIterator()
 
-        for((i, arr) in PaperArray.PaperList.Arr_RESULT!!.withIndex()){
-
-            if((arr as ArrayList<*>)[0] is Paper_EXERCISE){
-
-                PaperArray.PaperList.Arr_RESULT!!.remove(i)
-                PaperArray.PaperList.Arr_RESULT!!.add(i, PaperArray.PaperList.Arr_EXERCISE!!)
-
+            //result 배열에서 paper_exercise인 인덱스를 삭제하고
+            //새 paper_exercise배열을 다시 그 자리에 추가하는 반복문
+            while(iter!!.hasNext()){
+                var arr = iter.next()
+                if((arr as ArrayList<*>)[0] is Paper_EXERCISE){
+                    iter.remove()
+                    iter.add(PaperArray.PaperList.Arr_EXERCISE!!)
+                }
             }
 
+//            for ((i, arr) in PaperArray.PaperList.Arr_RESULT!!.withIndex()) {
+//
+//                if ((arr as ArrayList<*>)[0] is Paper_EXERCISE) {
+//
+//                    PaperArray.PaperList.Arr_RESULT!!.remove(i)
+//                    PaperArray.PaperList.Arr_RESULT!!.add(i, PaperArray.PaperList.Arr_EXERCISE!!)
+//
+//                }
+//
+//            }
+
+        }else {
+
+            PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+                    sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
+                    sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
+                    sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
+                    sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
+                    sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
+
+
+            PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_EXERCISE!!)
+            PaperArray.PaperList.temp_Arr_EXERCISE = ArrayList()
+
         }
-
-        println(PaperArray.PaperList.Arr_EXERCISE!!.size)
-        println(PaperArray.PaperList.Arr_RESULT!!.size)
-
-        PaperArray.PaperList.temp_Arr_EXERCISE = ArrayList()
-
-        return true
 
     }
 
@@ -1954,15 +1833,17 @@ class ExerciseExaminationActivity : RootActivity() {
 
     //해당 액티비티에 Exercise 배열이 저장안되어 있다면 temp_arr를 저장함
     //해당 액티비티를 정상적으로 완료하고 이동하면 temp_arr를 초기화함
+    //PaperList Arr EXERCISE가 존재하면 check2를 실행한다
     override fun onPause() {
 
         if(PaperArray.PaperList.Arr_EXERCISE != null && PaperArray.PaperList.Arr_EXERCISE!!.size != 0){
 
             PaperArray.PaperList.temp_Arr_EXERCISE = null
+            check2()
 
         }else{
 
-            if(state != "getPaper" && !quit) {
+            if(state != "getPaper") {
 
                 whenTempSave()
 

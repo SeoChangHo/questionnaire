@@ -2,7 +2,6 @@ package com.fineinsight.zzango.questionnaire.LocalList
 
 class PaperArray {
 
-
     object PaperList
     {
         var Arr_COMMON:ArrayList<Paper_COMMON>? = null
@@ -43,8 +42,12 @@ class PaperArray {
 
     object PaperArrFunction
     {
+
         fun ArrayListInit()
         {
+
+            Companion.initCheck = !Companion.initCheck
+
             PaperList.Arr_COMMON = ArrayList<Paper_COMMON>()
 
             PaperList.Arr_MENTAL = ArrayList<Paper_MENTAL>()
@@ -122,6 +125,10 @@ class PaperArray {
         //노인신체
         val SET12 = "SET12"
 
+    }
+
+    companion object {
+        var initCheck = false
     }
 
 }

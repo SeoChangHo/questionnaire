@@ -3,9 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/questionnaire_progress_wrapper"
-    android:background="@drawable/progress_shape"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/triangle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/triangle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/progress"
@@ -22,6 +29,8 @@
             android:id="@+id/progress_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/progressGray"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +53,8 @@
             android:id="@+id/progress_text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/progressGray"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +77,8 @@
             android:id="@+id/progress_text3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/progressGray"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +101,8 @@
             android:id="@+id/progress_text4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/progressGray"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -110,6 +125,8 @@
             android:id="@+id/progress_text5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/progressGray"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -132,6 +149,8 @@
             android:id="@+id/progress_text6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/progressGray"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -154,6 +173,8 @@
             android:id="@+id/progress_text7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/progressGray"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -176,11 +197,31 @@
             android:id="@+id/progress_text8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/progressGray"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/questionnaire_progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/progress_shape2"
+        android:elevation="1dp"
+        app:layout_constraintTop_toTopOf="@+id/questionnaire_progressbg"
+        app:layout_constraintBottom_toBottomOf="@+id/questionnaire_progressbg"
+        app:layout_constraintStart_toStartOf="@id/questionnaire_progressbg"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/questionnaire_progressbg"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:background="@drawable/progress_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

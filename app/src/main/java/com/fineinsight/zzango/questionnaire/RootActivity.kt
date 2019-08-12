@@ -3,16 +3,16 @@ package com.fineinsight.zzango.questionnaire
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
 import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
-import android.support.constraint.Guideline
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,7 +31,6 @@ open class RootActivity : AppCompatActivity() {
     var wfm : WifiManager? = null
     var connectivityManager : ConnectivityManager? = null
     var state = ""
-    var quit = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -124,6 +123,8 @@ open class RootActivity : AppCompatActivity() {
                 progress_text2.text = "영양"
                 progress_text3.text = "흡연"
                 progress_text4.text = "음주"
+                var constraintSet = ConstraintSet()
+                constraintSet.clone(questionnaire_progress_wrapper)
 
                 when(context.javaClass.kotlin.simpleName){
 
@@ -135,22 +136,21 @@ open class RootActivity : AppCompatActivity() {
                                 progress2.isClickable = true
                                 progress3.isClickable = true
                                 progress4.isClickable = true
+                                progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
+                                progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress2.setOnClickListener {
-                                    if((context as ExerciseExaminationActivity).check2()) {
-                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 }
                                 progress3.setOnClickListener {
-                                    if((context as ExerciseExaminationActivity).check2()) {
-                                        startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 }
                                 progress4.setOnClickListener {
-                                    if((context as ExerciseExaminationActivity).check2()) {
-                                        startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
 
                             }
                             PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0 -> {
@@ -158,17 +158,17 @@ open class RootActivity : AppCompatActivity() {
                                 progress2.isClickable = true
                                 progress3.isClickable = true
                                 progress4.isClickable = false
+                                progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress2.setOnClickListener {
-                                    if((context as ExerciseExaminationActivity).check2()) {
-                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 }
                                 progress3.setOnClickListener {
-                                    if((context as ExerciseExaminationActivity).check2()) {
-                                        startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
 
                             }
                             PaperArray.PaperList.temp_Arr_NUTRITION != null && PaperArray.PaperList.temp_Arr_NUTRITION!!.size != 0 -> {
@@ -176,12 +176,13 @@ open class RootActivity : AppCompatActivity() {
                                 progress2.isClickable = true
                                 progress3.isClickable = false
                                 progress4.isClickable = false
+                                progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress2.setOnClickListener {
-                                    if((context as ExerciseExaminationActivity).check2()) {
-                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress.id, ConstraintSet.END)
 
                             }
                             else -> {
@@ -194,6 +195,15 @@ open class RootActivity : AppCompatActivity() {
 
                         }
 
+                        constraintSet.connect(triangle.id, ConstraintSet.START, progress.id, ConstraintSet.START)
+                        constraintSet.connect(triangle.id, ConstraintSet.END, progress.id, ConstraintSet.END)
+                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
+                        constraintSet.applyTo(questionnaire_progress_wrapper)
+
+                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text.textSize = 37f
+                        progress_text.typeface = Typeface.DEFAULT_BOLD
+
                     }
 
                     "NutritionExaminationActivity" -> {
@@ -205,10 +215,20 @@ open class RootActivity : AppCompatActivity() {
                                 progress2.isClickable = true
                                 progress3.isClickable = true
                                 progress4.isClickable = true
+                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
+                                progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
 
-                                progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
-                                progress3.setOnClickListener { startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
-                                progress4.setOnClickListener { startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress.setOnClickListener {
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress3.setOnClickListener {
+                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress4.setOnClickListener {
+                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
 
                             }
                             PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0 -> {
@@ -217,9 +237,16 @@ open class RootActivity : AppCompatActivity() {
                                 progress2.isClickable = true
                                 progress3.isClickable = true
                                 progress4.isClickable = false
+                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
 
-                                progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
-                                progress3.setOnClickListener { startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress.setOnClickListener {
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress3.setOnClickListener {
+                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
 
                             }
                             else -> {
@@ -228,12 +255,26 @@ open class RootActivity : AppCompatActivity() {
                                 progress2.isClickable = true
                                 progress3.isClickable = false
                                 progress4.isClickable = false
+                                progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
 
-                                progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress.setOnClickListener {
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress.id, ConstraintSet.END)
 
                             }
 
                         }
+
+                        constraintSet.connect(triangle.id, ConstraintSet.START, progress2.id, ConstraintSet.START)
+                        constraintSet.connect(triangle.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
+                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
+                        constraintSet.applyTo(questionnaire_progress_wrapper)
+                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text2.textSize = 37f
+                        progress_text2.typeface = Typeface.DEFAULT_BOLD
 
                     }
 
@@ -246,10 +287,19 @@ open class RootActivity : AppCompatActivity() {
                                 progress2.isClickable = true
                                 progress3.isClickable = true
                                 progress4.isClickable = true
+                                progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
 
-                                progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
-                                progress2.setOnClickListener { startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
-                                progress4.setOnClickListener { startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress.setOnClickListener {
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress2.setOnClickListener {
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress4.setOnClickListener {
+                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
 
                             }
                             else -> {
@@ -259,12 +309,28 @@ open class RootActivity : AppCompatActivity() {
                                 progress3.isClickable = true
                                 progress4.isClickable = false
 
-                                progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
-                                progress2.setOnClickListener { startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                                progress.setOnClickListener {
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress2.setOnClickListener {
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
 
                             }
 
                         }
+
+                        constraintSet.connect(triangle.id, ConstraintSet.START, progress3.id, ConstraintSet.START)
+                        constraintSet.connect(triangle.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
+                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
+                        constraintSet.applyTo(questionnaire_progress_wrapper)
+                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text3.textSize = 37f
+                        progress_text3.typeface = Typeface.DEFAULT_BOLD
 
                     }
 
@@ -275,9 +341,56 @@ open class RootActivity : AppCompatActivity() {
                         progress3.isClickable = true
                         progress4.isClickable = true
 
-                        progress.setOnClickListener { startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
-                        progress2.setOnClickListener { startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
-                        progress3.setOnClickListener { startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)) }
+                        progress.setOnClickListener {
+                            startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        }
+                        progress2.setOnClickListener {
+                            startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        }
+                        progress3.setOnClickListener {
+                            startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        }
+
+                        constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
+                        constraintSet.connect(triangle.id, ConstraintSet.START, progress4.id, ConstraintSet.START)
+                        constraintSet.connect(triangle.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
+                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
+                        constraintSet.applyTo(questionnaire_progress_wrapper)
+                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text4.textSize = 37f
+                        progress_text4.typeface = Typeface.DEFAULT_BOLD
+
+                    }
+
+                    else -> { questionnaire_progress_wrapper.visibility = View.GONE }
+
+                }
+
+            }
+
+            "SET1" -> { questionnaire_progress_wrapper.visibility = View.GONE }
+
+            "SET2" -> {
+
+                progress.visibility = View.VISIBLE
+                progress2.visibility = View.VISIBLE
+                progress_text.text = "공통"
+                progress_text2.text = "영양"
+
+                when(context.javaClass.kotlin.simpleName) {
+
+                    "CommonExaminationActivity" -> {
+
+
+
+                    }
+
+                    "MentalExaminationActivity" -> {
+
+
 
                     }
 
@@ -780,7 +893,6 @@ open class RootActivity : AppCompatActivity() {
 
             dialog_view.finish.setOnClickListener {
 
-                quit = true
                 MainActivity.chart = "SET0"
                 PaperArray.PaperArrFunction.ArrayListInit()
                 startActivity(Intent(this, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
