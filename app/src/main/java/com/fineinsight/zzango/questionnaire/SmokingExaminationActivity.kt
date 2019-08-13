@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_SMOKING
@@ -313,10 +314,22 @@ class SmokingExaminationActivity : RootActivity(){
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
             ))
 
+            SavePaper.Total.Array.add(Paper_SMOKING(
+                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
+                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
+            ))
+
         }else{
 
             PaperArray.PaperList.temp_Arr_SMOKING!!.removeAt(0)
             PaperArray.PaperList.temp_Arr_SMOKING!!.add(Paper_SMOKING(
+                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
+                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
+            ))
+
+            SavePaper.Total.Array.add(Paper_SMOKING(
                     exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum

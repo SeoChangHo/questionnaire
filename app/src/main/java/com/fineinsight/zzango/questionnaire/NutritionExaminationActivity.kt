@@ -11,6 +11,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_NUTRITION
@@ -429,10 +430,20 @@ class NutritionExaminationActivity :RootActivity() {
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
             ))
 
+            SavePaper.Total.Array.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+                    sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
+                    sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
+            ))
+
         }else{
 
             PaperArray.PaperList.temp_Arr_NUTRITION!!.removeAt(0)
             PaperArray.PaperList.temp_Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+                    sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
+                    sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
+            ))
+
+            SavePaper.Total.Array.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                     sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
             ))

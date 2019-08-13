@@ -128,7 +128,7 @@ class SettingActivity : AppCompatActivity() {
                 MainActivity.user_first_serial = ""
                 MainActivity.user_last_serial = ""
                 MainActivity.manager_name = ""
-                MainActivity.chart = ""
+                MainActivity.chart.clear()
                 MainActivity.manager_name = ""
                 MainActivity.exam_no = ""
                 MainActivity.alert_view = null

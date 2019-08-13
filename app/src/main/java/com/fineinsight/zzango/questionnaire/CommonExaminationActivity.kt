@@ -21,6 +21,7 @@ import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
 import com.fineinsight.zzango.questionnaire.DataClass.ChartInfo
+import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Common
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_COMMON
@@ -240,18 +241,10 @@ class CommonExaminationActivity : RootActivity() {
                 login_appbar_loading_progress.visibility = View.VISIBLE
                 login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
-
-                    //common_exam_local_insert()
-                    ChartDivision.ChartDivision.local_insert(this, 0)
-                    MainActivity.chartNumber++
-
+                if(MainActivity.chart.isEmpty()){
+                    ChartDivision.ChartDivision.each_insert(this, 0)
                 }else{
-
-                    //common_exam_server_insert()
-                    ChartDivision.ChartDivision.server_insert(this)
-                    MainActivity.chartNumber++
-
+                    ChartDivision.ChartDivision.chart_array_insert(this, 0)
                 }
 
             }
@@ -303,7 +296,7 @@ class CommonExaminationActivity : RootActivity() {
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
 
-            if(MainActivity.chart[1].isNullOrEmpty()){
+            if(MainActivity.chart.isEmpty()){
 
                 common_examination_save.text = "저장"
 
@@ -337,218 +330,218 @@ class CommonExaminationActivity : RootActivity() {
 
     }
 
-    fun common_exam_local_insert(){
-
-        if(MainActivity.chart.isEmpty()){
-            LocalDBhelper(this).onCreate(sql_db)
-            //LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, "SET1")
-            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
-
-            LocalDBhelper(this).commonExaminationDB(sql_db)
-            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!! )
-
-            saveCompleteAlert()
-        }else if(MainActivity.chart[1].isNullOrEmpty()){
-
-            LocalDBhelper(this).onCreate(sql_db)
-            //LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, MainActivity.chart)
-            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
-
-            LocalDBhelper(this).commonExaminationDB(sql_db)
-            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!! )
-
-            saveCompleteAlert()
-        }else{
-
-            when(MainActivity.chart[1]){
-                "mental" -> {
-                    startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                }
-                "cognitive" -> {
-                    startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                }
-            }
-
-        }
-
-
-    }
-
-    fun common_exam_server_insert(){
-
-        if(MainActivity.chart[1].isNullOrEmpty() || MainActivity.chart.isEmpty()){
-
-            if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
-
-                this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-
-
-                var SaveArr = ArrayList<Any>()
-                var OneArr = ArrayList<Any>()
-                var InfoArr = ArrayList<String>()
-
-
-                InfoArr.add("SET1")
-                InfoArr.add(MainActivity.hospital)
-
-
-                OneArr.add(PaperArray.PaperList.Arr_COMMON!!)
-                SaveArr.add(InfoArr)
-                SaveArr.add(OneArr)
-
-
-                OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
-                    override fun onResponse(call: Call<String>, response: Response<String>) {
-
-                        if (response.isSuccessful) {
-
-                            if (!response.body()!!.equals("S")) {
-
-                                login_appbar_loading_progress.visibility = View.GONE
-                                login_appbar_loading_progress_bg.visibility = View.GONE
-                                this@CommonExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                                Toast.makeText(this@CommonExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-
-                            } else {
-
-                                saveCompleteAlert()
-
-                            }
-
-                        }
-
-                    }
-
-                    override fun onFailure(call: Call<String>, t: Throwable) {
-
-                        login_appbar_loading_progress.visibility = View.GONE
-                        login_appbar_loading_progress_bg.visibility = View.GONE
-                        this@CommonExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(this@CommonExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                        println(t.toString())
-                    }
-
-                })
-
-            }else{
-
-                login_appbar_loading_progress.visibility = View.GONE
-                login_appbar_loading_progress_bg.visibility = View.GONE
-                wifiCheck()
-
-            }
-
-        }else{
-
-            when(MainActivity.chart[1]){
-                "mental" -> {
-                    startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                }
-                "cognitive" -> {
-                    startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                }
-            }
-        }
-
-    }
-
-    fun saveCompleteAlert() {
-
-        login_appbar_loading_progress.visibility = View.GONE
-        login_appbar_loading_progress_bg.visibility = View.GONE
-        this@CommonExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-
-        popup = false
-
-        var dialog = AlertDialog.Builder(this).create()
-        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
-
-        dialog.setCancelable(false)
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        dialog.setView(dialog_view)
-        dialog_view.save_complete_alert_text.text = "저장이 완료 되었습니다"
-
-        if (!popup) {
-
-            dialog.show().let {
-
-                popup = true
-
-            }
-
-        }
-
-        var displayMetrics = DisplayMetrics()
-        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-        // The absolute width of the available display size in pixels.
-        var displayWidth = displayMetrics.widthPixels
-        // The absolute height of the available display size in pixels.
-        var displayHeight = displayMetrics.heightPixels
-
-        // Initialize a new window manager layout parameters
-        var layoutParams = WindowManager.LayoutParams()
-
-        // Copy the alert dialog window attributes to new layout parameter instance
-        layoutParams.copyFrom(dialog.window.attributes)
-
-        // Set the alert dialog window width and height
-        // Set alert dialog width equal to screen width 90%
-        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-        // Set alert dialog height equal to screen height 90%
-        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-
-        // Set alert dialog width equal to screen width 70%
-        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-        // Set alert dialog height equal to screen height 70%
-        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-
-        // Set the width and height for the layout parameters
-        // This will bet the width and height of alert dialog
-        layoutParams.width = dialogWindowWidth
-        layoutParams.height = dialogWindowHeight
-
-        // Apply the newly created layout parameters to the alert dialog window
-        dialog.window.attributes = layoutParams
-
-
-        dialog.setOnDismissListener {
-
-            popup = false
-            dialog = null
-
-        }
-
-        dialog_view.return_alert.setOnClickListener {
-
-            if(AdditionalArr.Page.isOralChecked){
-
-                startActivity(Intent(this@CommonExaminationActivity, OralExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                dialog.dismiss()
-
-            }else if(AdditionalArr.Page.isCancerChecked){
-
-                startActivity(Intent(this@CommonExaminationActivity, CancerExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                dialog.dismiss()
-
-            }else{
-
-                MainActivity.login_user_name = ""
-                MainActivity.user_first_serial = ""
-                MainActivity.user_last_serial = ""
-
-                MainActivity.userLogin!!.text = "사용자 등록하기"
-                MainActivity.userImage!!.setImageResource(R.drawable.regi)
-
-                startActivity(Intent(this@CommonExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-                dialog.dismiss()
-
-            }
-
-        }
-
-    }
+//    fun common_exam_local_insert(){
+//
+//        if(MainActivity.chart.isEmpty()){
+//            LocalDBhelper(this).onCreate(sql_db)
+//            //LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, "SET1")
+//            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
+//
+//            LocalDBhelper(this).commonExaminationDB(sql_db)
+//            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!! )
+//
+//            saveCompleteAlert()
+//        }else if(MainActivity.chart[1].isNullOrEmpty()){
+//
+//            LocalDBhelper(this).onCreate(sql_db)
+//            //LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, MainActivity.chart)
+//            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
+//
+//            LocalDBhelper(this).commonExaminationDB(sql_db)
+//            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!! )
+//
+//            saveCompleteAlert()
+//        }else{
+//
+//            when(MainActivity.chart[1]){
+//                "mental" -> {
+//                    startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//                }
+//                "cognitive" -> {
+//                    startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//                }
+//            }
+//
+//        }
+//
+//
+//    }
+//
+//    fun common_exam_server_insert(){
+//
+//        if(MainActivity.chart[1].isNullOrEmpty() || MainActivity.chart.isEmpty()){
+//
+//            if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
+//
+//                this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+//
+//
+//                var SaveArr = ArrayList<Any>()
+//                var OneArr = ArrayList<Any>()
+//                var InfoArr = ArrayList<String>()
+//
+//
+//                InfoArr.add("SET1")
+//                InfoArr.add(MainActivity.hospital)
+//
+//
+//                OneArr.add(PaperArray.PaperList.Arr_COMMON!!)
+//                SaveArr.add(InfoArr)
+//                SaveArr.add(OneArr)
+//
+//
+//                OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
+//                    override fun onResponse(call: Call<String>, response: Response<String>) {
+//
+//                        if (response.isSuccessful) {
+//
+//                            if (!response.body()!!.equals("S")) {
+//
+//                                login_appbar_loading_progress.visibility = View.GONE
+//                                login_appbar_loading_progress_bg.visibility = View.GONE
+//                                this@CommonExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+//                                Toast.makeText(this@CommonExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+//
+//                            } else {
+//
+//                                saveCompleteAlert()
+//
+//                            }
+//
+//                        }
+//
+//                    }
+//
+//                    override fun onFailure(call: Call<String>, t: Throwable) {
+//
+//                        login_appbar_loading_progress.visibility = View.GONE
+//                        login_appbar_loading_progress_bg.visibility = View.GONE
+//                        this@CommonExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+//                        Toast.makeText(this@CommonExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+//                        println(t.toString())
+//                    }
+//
+//                })
+//
+//            }else{
+//
+//                login_appbar_loading_progress.visibility = View.GONE
+//                login_appbar_loading_progress_bg.visibility = View.GONE
+//                wifiCheck()
+//
+//            }
+//
+//        }else{
+//
+//            when(MainActivity.chart[1]){
+//                "mental" -> {
+//                    startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//                }
+//                "cognitive" -> {
+//                    startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//                }
+//            }
+//        }
+//
+//    }
+//
+//    fun saveCompleteAlert() {
+//
+//        login_appbar_loading_progress.visibility = View.GONE
+//        login_appbar_loading_progress_bg.visibility = View.GONE
+//        this@CommonExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+//
+//        popup = false
+//
+//        var dialog = AlertDialog.Builder(this).create()
+//        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
+//
+//        dialog.setCancelable(false)
+//        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//
+//        dialog.setView(dialog_view)
+//        dialog_view.save_complete_alert_text.text = "저장이 완료 되었습니다"
+//
+//        if (!popup) {
+//
+//            dialog.show().let {
+//
+//                popup = true
+//
+//            }
+//
+//        }
+//
+//        var displayMetrics = DisplayMetrics()
+//        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
+//        // The absolute width of the available display size in pixels.
+//        var displayWidth = displayMetrics.widthPixels
+//        // The absolute height of the available display size in pixels.
+//        var displayHeight = displayMetrics.heightPixels
+//
+//        // Initialize a new window manager layout parameters
+//        var layoutParams = WindowManager.LayoutParams()
+//
+//        // Copy the alert dialog window attributes to new layout parameter instance
+//        layoutParams.copyFrom(dialog.window.attributes)
+//
+//        // Set the alert dialog window width and height
+//        // Set alert dialog width equal to screen width 90%
+//        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
+//        // Set alert dialog height equal to screen height 90%
+//        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
+//
+//        // Set alert dialog width equal to screen width 70%
+//        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
+//        // Set alert dialog height equal to screen height 70%
+//        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
+//
+//        // Set the width and height for the layout parameters
+//        // This will bet the width and height of alert dialog
+//        layoutParams.width = dialogWindowWidth
+//        layoutParams.height = dialogWindowHeight
+//
+//        // Apply the newly created layout parameters to the alert dialog window
+//        dialog.window.attributes = layoutParams
+//
+//
+//        dialog.setOnDismissListener {
+//
+//            popup = false
+//            dialog = null
+//
+//        }
+//
+//        dialog_view.return_alert.setOnClickListener {
+//
+//            if(AdditionalArr.Page.isOralChecked){
+//
+//                startActivity(Intent(this@CommonExaminationActivity, OralExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//                dialog.dismiss()
+//
+//            }else if(AdditionalArr.Page.isCancerChecked){
+//
+//                startActivity(Intent(this@CommonExaminationActivity, CancerExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//                dialog.dismiss()
+//
+//            }else{
+//
+//                MainActivity.login_user_name = ""
+//                MainActivity.user_first_serial = ""
+//                MainActivity.user_last_serial = ""
+//
+//                MainActivity.userLogin!!.text = "사용자 등록하기"
+//                MainActivity.userImage!!.setImageResource(R.drawable.regi)
+//
+//                startActivity(Intent(this@CommonExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//
+//                dialog.dismiss()
+//
+//            }
+//
+//        }
+//
+//    }
 
     @SuppressLint("NewApi")
     fun check() : Boolean {
@@ -1164,6 +1157,20 @@ class CommonExaminationActivity : RootActivity() {
         PaperArray.PaperArrFunction.ArrayListInit() //<--처음 이닛
 
         PaperArray.PaperList.Arr_COMMON!!.add(Paper_COMMON(exam_date, exam_no, signature, name,
+                first_serial_text, last_serial_text, category,
+                mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
+                mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1,
+                mj2_2, mj2_3, mj2_4, mj2_5, mj3, mj4, mj4_1_1, mj4_1_2, mj4_2_1,
+                mj4_2_2, mj4_2_3, mj5, mj5_1_1, mj5_1_2, mj5_2_1, mj5_2_2,
+                mj5_2_3, mj6, mj6_1, mj71, mj72, mj73, mj74, mj7_1_11, mj7_1_12, mj7_1_13, mj7_1_14,
+                mj7_1_21, mj7_1_22, mj7_1_23, mj7_1_24, mj7_1_31, mj7_1_32, mj7_1_33,
+                mj7_1_34, mj7_1_41, mj7_1_42, mj7_1_43, mj7_1_44, mj7_1_51, mj7_1_52, mj7_1_53,
+                mj7_1_54, mj7_1_etc, mj7_2_11, mj7_2_12, mj7_2_13, mj7_2_14, mj7_2_21, mj7_2_22,
+                mj7_2_23, mj7_2_24, mj7_2_31, mj7_2_32, mj7_2_33, mj7_2_34, mj7_2_41, mj7_2_42,
+                mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1,
+                mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10))
+
+        SavePaper.Total.Array.add(Paper_COMMON(exam_date, exam_no, signature, name,
                 first_serial_text, last_serial_text, category,
                 mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
                 mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1,

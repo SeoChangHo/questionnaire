@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_EXERCISE
@@ -484,7 +485,7 @@ class ExerciseExaminationActivity : RootActivity() {
             else -> ""
         }
 
-        if(MainActivity.chart == "SET0"){
+        if(MainActivity.chart.isEmpty()){
             if(!PaperArray.initCheck) {
                 PaperArray.PaperArrFunction.ArrayListInit()
             }
@@ -964,7 +965,7 @@ class ExerciseExaminationActivity : RootActivity() {
             }
         }
 
-        if(MainActivity.chart == "SET0"){
+        if(MainActivity.chart.isEmpty()){
             if(!PaperArray.initCheck) {
                 PaperArray.PaperArrFunction.ArrayListInit()
             }
@@ -981,6 +982,13 @@ class ExerciseExaminationActivity : RootActivity() {
 
             PaperArray.PaperList.Arr_EXERCISE!!.clear()
             PaperArray.PaperList.Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+                    sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
+                    sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
+                    sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
+                    sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
+                    sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
+
+            SavePaper.Total.Array.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
                     sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
                     sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
                     sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
@@ -1023,6 +1031,12 @@ class ExerciseExaminationActivity : RootActivity() {
                     sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
                     sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
 
+            SavePaper.Total.Array.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+                    sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
+                    sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
+                    sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
+                    sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
+                    sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
 
             PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_EXERCISE!!)
             PaperArray.PaperList.temp_Arr_EXERCISE = ArrayList()
@@ -1277,7 +1291,7 @@ class ExerciseExaminationActivity : RootActivity() {
             else -> ""
         }
 
-        if(MainActivity.chart == "SET0"){
+        if(MainActivity.chart.isEmpty()){
             if(!PaperArray.initCheck) {
                 PaperArray.PaperArrFunction.ArrayListInit()
             }
