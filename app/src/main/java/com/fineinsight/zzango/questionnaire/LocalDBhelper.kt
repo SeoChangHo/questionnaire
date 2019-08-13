@@ -21,13 +21,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "name TEXT);")
     }
 
-    fun LocalListInsert(db : SQLiteDatabase, ex : ArrayList<Paper_COMMON>, setno:String) {
+    fun LocalListInsert(db : SQLiteDatabase, ex : ArrayList<Paper_COMMON>) {
         val columnValue = ex.get(0)
 
         val cv = ContentValues()
 
         cv.put("exam_no", columnValue.exam_no)
-        cv.put("setno", setno)
+        //cv.put("setno", setno)
         cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 

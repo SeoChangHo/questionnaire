@@ -25,11 +25,12 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
-import android.util.Log
 import android.view.*
 import android.widget.*
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.ChartInfo
 import com.fineinsight.zzango.questionnaire.DataClass.MokpoCheck
+import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.Network.NetworkCheck
@@ -402,8 +403,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     user_first_serial = dialog_view.first_serial.text.toString()
                     user_last_serial = dialog_view.last_serial.text.toString()
 
-//                chart(user_first_serial)
-                    MainActivity.chart = "SET0"
+
+                    //chart(user_first_serial, false, false)
+
 
                     println("user_last_serial.toInt(): ${user_last_serial.toInt()}")
                     println("user_last_serial.toInt()%2: ${user_last_serial.toInt()%2}")
@@ -629,10 +631,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     user_first_serial = dialog_view.first_serial.text.toString()
                     user_last_serial = dialog_view.last_serial.text.toString()
 
-                    chart(user_first_serial)
 
                     Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
-                    view.text = MainActivity.login_user_name+"님"
+                    view.text = login_user_name+"님"
                     view2.setImageResource(R.drawable.exit)
                     dialog.dismiss()
 
@@ -652,15 +653,16 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                         var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
                         var NAME = login_user_name
-                        var JUMIN = user_first_serial+user_last_serial
+                        var JUMIN = user_first_serial
+                        var JUMIN2 = user_last_serial
 
-                        MokpoCheckPaper(context, Strnow, NAME, JUMIN)
+                        MokpoCheckPaper(context, Strnow, NAME, JUMIN, JUMIN2)
                     }
                     else
                     {
                         println("목포병원이 아니거나 네트워크가 꺼져있습니다")
                         var EmptyStringArr = ArrayList<String>()
-                        ShowPaperDIALOG(context, EmptyStringArr)
+                        ShowPaperDIALOG(context, EmptyStringArr, user_first_serial)
                     }
                 }
                 else
@@ -720,7 +722,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     }
 
-    fun ShowPaperDIALOG(context: Context, arr:ArrayList<String>)
+    fun ShowPaperDIALOG(context: Context, arr:ArrayList<String>, JUMIN1:String)
     {
 
         //사용자
@@ -765,28 +767,34 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         title.text = login_user_name+"님"
 
-        if(chart == "SET1"){
-            text2.visibility = View.GONE
-            text3.visibility = View.GONE
-            text4.visibility = View.GONE
-            text5.visibility = View.GONE
-        }else if(chart == "SET2"){
-            text2.visibility = View.GONE
-            text4.visibility = View.GONE
-            text5.visibility = View.GONE
-        }else if(chart == "SET3"){
-            text2.visibility = View.GONE
-            text5.visibility = View.GONE
-        }else if(chart == "SET4"){
-            text3.visibility = View.GONE
-            text4.visibility = View.GONE
-        }else if(chart == "SET5"){
-            text3.visibility = View.GONE
-            text4.visibility = View.GONE
-            text5.visibility = View.GONE
-        }else if(chart == "SET6"){
+
+        for(i in chart){
+
+            if(i.isbool){
+                when(i.chartName){
+                    PaperNameInfo.PC.COMMON.EN_NM -> {
+
+                    }
+                    PaperNameInfo.PC.MENTAL.EN_NM -> {
+                        text3.visibility = View.VISIBLE
+                    }
+                    PaperNameInfo.PC.ELDERLY.EN_NM -> {
+                        text5.visibility = View.VISIBLE
+                    }
+                    PaperNameInfo.PC.COGNITIVE.EN_NM -> {
+                        text2.visibility = View.VISIBLE
+                    }
+                    PaperNameInfo.PC.LIFE.EN_NM -> {
+                        text4.visibility = View.VISIBLE
+                    }
+                    else -> {
+
+                    }
+                }
+            }
 
         }
+
 
         dialog.show()
 
@@ -802,6 +810,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 AdditionalArr.Page.isCancerChecked = true
             }
 
+            chart(JUMIN1, chkOral.isChecked, chkCancer.isChecked)
 
             dialog.dismiss()
 
@@ -812,12 +821,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         }
 
         cancel.setOnClickListener {
-            chart = PaperArray.SetList.SET0
+            chart.clear()
             dialog.dismiss()
         }
     }
 
-    fun MokpoCheckPaper(context:Context, DATE:String, NAME:String, JUMIN:String)
+    fun MokpoCheckPaper(context:Context, DATE:String, NAME:String, JUMIN1:String, JUMIN2:String)
     {
 
         ProgressAction(true)
@@ -825,7 +834,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         val MokpoCheckParam = HashMap<String, String>()
         MokpoCheckParam["DATE"] = DATE.trim()
         MokpoCheckParam["NAME"] = NAME.trim()
-        MokpoCheckParam["JUMIN"] = JUMIN.trim()
+        MokpoCheckParam["JUMIN"] = JUMIN1.trim() + JUMIN2.trim()
 
         var CheckArr = ArrayList<String>()
 
@@ -847,13 +856,13 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                             CheckArr.add(document.gj_jong)
                         }
                         ProgressAction(false)
-                        ShowPaperDIALOG(context, CheckArr)
+                        ShowPaperDIALOG(context, CheckArr, JUMIN1)
                     }
                     else//값이 없음
                     {
                         println("값이 없음")
                         ProgressAction(false)
-                        ShowPaperDIALOG(context, CheckArr)
+                        ShowPaperDIALOG(context, CheckArr, JUMIN1)
                     }
 
                 }
@@ -861,7 +870,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 {
                     println("값이 없음")
                     ProgressAction(false)
-                    ShowPaperDIALOG(context, CheckArr)
+                    ShowPaperDIALOG(context, CheckArr, JUMIN1)
                 }
             }
 
@@ -870,7 +879,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 println("값이 없음")
                 ProgressAction(false)
-                ShowPaperDIALOG(context, CheckArr)
+                ShowPaperDIALOG(context, CheckArr, JUMIN1)
 
             }
 
@@ -1050,7 +1059,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var user_first_serial = ""
         var user_last_serial = ""
         var user_stream:ByteArray? = null
-        var chart = ""
+        var chart = ArrayList<ChartInfo>()
+        var chartNumber = 0
         var manager_name = ""
         var exam_no = ""
         @SuppressLint("StaticFieldLeak")
@@ -1227,7 +1237,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     }
 
     @SuppressLint("NewApi")
-    fun chart(Jumin : String){
+    fun chart(Jumin : String, oral:Boolean, cancer:Boolean){
 
         var yy = Jumin.substring(0,2)
 
@@ -1261,22 +1271,59 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         if(yy == two || yy == two2){
             //우울증 포함
-            chart = PaperArray.SetList.SET2
+            //chart = PaperArray.SetList.SET2
+            chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
+            chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, true, 1))
+            chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, false, 2))
+            chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
+            chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false,  4))
         }else if(yy == three || yy == three2 || yy == three3 ){
             //우울증 생활습관 포함
-            chart = PaperArray.SetList.SET3
+            chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
+            chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, true, 1))
+            chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, false, 2))
+            chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
+            chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, true, 4))
         }else if(yy == four || yy == four2){
             //인지기능 노인신체기능검사 포함
-            chart = PaperArray.SetList.SET4
+            chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
+            chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, false, 1))
+            chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, true, 2))
+            chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, true, 3))
+            chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false, 4))
         }else if(yy == five || yy == five2 || yy == five3 || yy == five4 || yy == five5 || yy == five6 || yy == five7 || yy == five8){
             //인지기능 포함
-            chart = PaperArray.SetList.SET5
+            chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
+            chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, false, 1))
+            chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, true, 2))
+            chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
+            chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false, 4))
         }else if(yy == six){
             //인지기능 우울증 생활습관 노인신체기능검사 포함
-            chart = PaperArray.SetList.SET6
+            chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
+            chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, true, 1))
+            chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, true, 2))
+            chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, true, 3))
+            chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, true, 4))
         }else{
             //기본검사
-            chart = PaperArray.SetList.SET1
+            chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
+            chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, false, 1))
+            chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, false, 2))
+            chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
+            chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false, 4))
+        }
+
+        if(oral){
+            chart.add(ChartInfo(PaperNameInfo.PC.ORAL.EN_NM, true, 5))
+        }else{
+            chart.add(ChartInfo(PaperNameInfo.PC.ORAL.EN_NM, false, 5))
+        }
+
+        if(cancer){
+            chart.add(ChartInfo(PaperNameInfo.PC.CANCER.EN_NM, true, 6))
+        }else{
+            chart.add(ChartInfo(PaperNameInfo.PC.CANCER.EN_NM, false, 6))
         }
 
     }

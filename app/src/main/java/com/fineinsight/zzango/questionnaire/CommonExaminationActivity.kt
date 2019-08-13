@@ -11,6 +11,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.NetworkCapabilities
 import android.os.Bundle
+import android.support.v4.content.ContextCompat.startActivity
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Common
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_COMMON
@@ -239,11 +241,15 @@ class CommonExaminationActivity : RootActivity() {
 
                 if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
 
-                    common_exam_local_insert()
+                    //common_exam_local_insert()
+                    ChartDivision.ChartDivision.local_insert(this)
+                    MainActivity.chartNumber++
 
                 }else{
 
-                    common_exam_server_insert()
+                    //common_exam_server_insert()
+                    ChartDivision.ChartDivision.server_insert(this)
+                    MainActivity.chartNumber++
 
                 }
 
@@ -296,14 +302,16 @@ class CommonExaminationActivity : RootActivity() {
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
 
-            if(MainActivity.chart != "SET1"){
+            if(MainActivity.chart[1].isNullOrEmpty()){
+
+                common_examination_save.text = "저장"
+
+            }else{
 
                 common_examination_save.text = "다음"
 
             }
-            if(MainActivity.chart == "SET0"){
-                common_examination_save.text = "저장"
-            }
+
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -330,44 +338,36 @@ class CommonExaminationActivity : RootActivity() {
 
     fun common_exam_local_insert(){
 
-        if(MainActivity.chart == "SET1"){
-
+        if(MainActivity.chart.isEmpty()){
             LocalDBhelper(this).onCreate(sql_db)
-            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, MainActivity.chart)
+            //LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, "SET1")
+            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
 
             LocalDBhelper(this).commonExaminationDB(sql_db)
             LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!! )
 
             saveCompleteAlert()
+        }else if(MainActivity.chart[1].isNullOrEmpty()){
 
-        }else if(MainActivity.chart == "SET2"){
-
-            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-        }else if(MainActivity.chart == "SET3"){
-
-            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-        }else if(MainActivity.chart == "SET4"){
-
-            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-        }else if(MainActivity.chart == "SET5"){
-
-            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-        }else if(MainActivity.chart == "SET6"){
-
-            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-        }else if(MainActivity.chart == "SET0"){
             LocalDBhelper(this).onCreate(sql_db)
-            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, "SET1")
+            //LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, MainActivity.chart)
+            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
 
             LocalDBhelper(this).commonExaminationDB(sql_db)
             LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!! )
 
             saveCompleteAlert()
+        }else{
+
+            when(MainActivity.chart[1]){
+                "mental" -> {
+                    startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }
+                "cognitive" -> {
+                    startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }
+            }
+
         }
 
 
@@ -375,7 +375,7 @@ class CommonExaminationActivity : RootActivity() {
 
     fun common_exam_server_insert(){
 
-        if(MainActivity.chart == "SET1" || MainActivity.chart == "SET0"){
+        if(MainActivity.chart[1].isNullOrEmpty() || MainActivity.chart.isEmpty()){
 
             if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
 
@@ -437,26 +437,16 @@ class CommonExaminationActivity : RootActivity() {
 
             }
 
-        }else if(MainActivity.chart == "SET2"){
+        }else{
 
-            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-        }else if(MainActivity.chart == "SET3"){
-
-            startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-        }else if(MainActivity.chart == "SET4"){
-
-            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-        }else if(MainActivity.chart == "SET5"){
-
-            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-        }else if(MainActivity.chart == "SET6"){
-
-            startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
+            when(MainActivity.chart[1]){
+                "mental" -> {
+                    startActivity(Intent(this@CommonExaminationActivity, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }
+                "cognitive" -> {
+                    startActivity(Intent(this@CommonExaminationActivity, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }
+            }
         }
 
     }

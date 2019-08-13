@@ -121,7 +121,7 @@ class CognitiveExaminationActivity : RootActivity(){
             if(MainActivity.chart != "SET5"){
                 cognitive_examination_save.text = "다음"
             }
-            if(MainActivity.chart == "SET0"){
+            if(MainActivity.chart.isEmpty()){
                 cognitive_examination_save.text = "저장"
             }
 
