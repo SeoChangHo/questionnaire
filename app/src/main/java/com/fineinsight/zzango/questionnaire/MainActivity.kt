@@ -977,6 +977,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     override fun onBackPressed() {
 
+
         var dialog = android.app.AlertDialog.Builder(this).create()
         var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
 
