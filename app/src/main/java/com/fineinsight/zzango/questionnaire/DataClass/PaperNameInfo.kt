@@ -20,6 +20,7 @@ class PaperNameInfo {
         val LIFE = PC_Class("생활습관", "LIFE")
         val CANCER = PC_Class("암", "CANCER")
 
+
         //생활습관 4개항목
         /*
         val EXERCISE = PC_Class("운동", "EXERCISE")
