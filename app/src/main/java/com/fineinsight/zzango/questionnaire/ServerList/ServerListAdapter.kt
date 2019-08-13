@@ -26,9 +26,19 @@ class ServerListAdapter (var userList: ArrayList<SelectInfo>,val Activity : Serv
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
 
+        val JUMIN = userList[p1].userNumber
+        val LASTNUM = JUMIN.substring(JUMIN.length-1, JUMIN.length).toIntOrNull()
+
+        if (LASTNUM != null)
+        {
+            if (LASTNUM %2 == 0) p0.userGender.text="여자" else p0.userGender.text="남자"
+        }
+
+
+
         p0.userName.text = userList[p1].userName
-        p0.userJumin.text = userList[p1].userNumber
-        p0.userGender.text = userList[p1].userNumber
+        p0.userJumin.text = JUMIN.substring(0, JUMIN.length-1)
+
 
 
         p0.listlayoutBack.setOnClickListener {
