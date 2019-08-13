@@ -4,7 +4,7 @@ class SavePaper {
 
     object Total
     {
-        val Array = ArrayList<Any>()
+        var Array = ArrayList<Any>()
     }
 
 }

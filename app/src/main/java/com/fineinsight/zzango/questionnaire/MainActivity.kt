@@ -32,10 +32,7 @@ import com.fineinsight.zzango.questionnaire.DataClass.ChartInfo
 import com.fineinsight.zzango.questionnaire.DataClass.MokpoCheck
 import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
-import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
-import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
-import com.fineinsight.zzango.questionnaire.LocalList.Paper_COMMON
-import com.fineinsight.zzango.questionnaire.LocalList.Paper_MENTAL
+import com.fineinsight.zzango.questionnaire.LocalList.*
 import com.fineinsight.zzango.questionnaire.Network.NetworkCheck
 import com.fineinsight.zzango.questionnaire.Signature.CanvasView
 import com.fineinsight.zzango.questionnaire.UserList.User
@@ -787,9 +784,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     PaperNameInfo.PC.COGNITIVE.EN_NM -> {
                         text2.visibility = View.VISIBLE
                     }
-//                    PaperNameInfo.PC.LIFE.EN_NM -> {
-//                        text4.visibility = View.VISIBLE
-//                    }
+                    PaperNameInfo.PC.LIFE.EN_NM -> {
+                        text4.visibility = View.VISIBLE
+                    }
                     else -> {
 
                     }
@@ -818,7 +815,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog.dismiss()
 
             Handler().postDelayed({
-                startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                //startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+
+                //초기화
+                SavePaper.Total.Array = ArrayList()
+
 
                 for(item in chart)
                 {
@@ -826,6 +828,45 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     {
                         startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                         break
+
+                        when(item.chartName)
+                        {
+                            PaperNameInfo.PC.COMMON.EN_NM ->
+                            {
+
+                            }
+
+                            PaperNameInfo.PC.MENTAL.EN_NM ->
+                            {
+
+                            }
+
+                            PaperNameInfo.PC.COGNITIVE.EN_NM ->
+                            {
+
+                            }
+
+                            PaperNameInfo.PC.ELDERLY.EN_NM ->
+                            {
+
+                            }
+
+                            PaperNameInfo.PC.LIFE.EN_NM ->
+                            {
+
+
+                            }
+
+                            PaperNameInfo.PC.ORAL.EN_NM ->
+                            {
+
+                            }
+
+                            PaperNameInfo.PC.CANCER.EN_NM ->
+                            {
+
+                            }
+                        }
                     }
                     else
                     {
@@ -846,42 +887,30 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                             PaperNameInfo.PC.COGNITIVE.EN_NM ->
                             {
-
+                                SavePaper.Total.Array.add(Paper_COGNITIVE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
 
                             PaperNameInfo.PC.ELDERLY.EN_NM ->
                             {
-
+                                SavePaper.Total.Array.add(Paper_ELDERLY("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
 
-                            PaperNameInfo.PC.EXERCISE.EN_NM ->
+                            PaperNameInfo.PC.LIFE.EN_NM ->
                             {
-
-                            }
-
-                            PaperNameInfo.PC.NUTRITION.EN_NM ->
-                            {
-
-                            }
-
-                            PaperNameInfo.PC.SMOKING.EN_NM ->
-                            {
-
-                            }
-
-                            PaperNameInfo.PC.DRINKING.EN_NM ->
-                            {
-
+                                SavePaper.Total.Array.add(Paper_EXERCISE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_NUTRITION("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_SMOKING("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_DRINKING("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
 
                             PaperNameInfo.PC.ORAL.EN_NM ->
                             {
-
+                                SavePaper.Total.Array.add(Paper_ORAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
 
                             PaperNameInfo.PC.CANCER.EN_NM ->
                             {
-
+                                SavePaper.Total.Array.add(Paper_CANCER("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
                         }
                     }
