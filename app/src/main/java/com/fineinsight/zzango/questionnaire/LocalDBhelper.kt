@@ -106,13 +106,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
 
-    fun LocalListOralInsert(db : SQLiteDatabase, ex : ArrayList<Paper_ORAL>, set:String) {
+    fun LocalListOralInsert(db : SQLiteDatabase, ex : ArrayList<Paper_ORAL>) {
         val columnValue = ex.get(0)
 
         val cv = ContentValues()
 
         cv.put("exam_no", columnValue.exam_no)
-        cv.put("setno", set)
+        //cv.put("setno", set)
         cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
@@ -120,13 +120,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
 
-    fun LocalListCancerInsert(db : SQLiteDatabase, ex : ArrayList<Paper_CANCER>, set:String) {
+    fun LocalListCancerInsert(db : SQLiteDatabase, ex : ArrayList<Paper_CANCER>) {
         val columnValue = ex.get(0)
 
         val cv = ContentValues()
 
         cv.put("exam_no", columnValue.exam_no)
-        cv.put("setno", set)
+        //cv.put("setno", set)
         cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
@@ -134,13 +134,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     //정신
-    fun LocalListMentalInsert(db : SQLiteDatabase, ex : ArrayList<Paper_MENTAL>, set:String) {
+    fun LocalListMentalInsert(db : SQLiteDatabase, ex : ArrayList<Paper_MENTAL>) {
         val columnValue = ex.get(0)
 
         val cv = ContentValues()
 
         cv.put("exam_no", columnValue.exam_no)
-        cv.put("setno", set)
+        //cv.put("setno", set)
         cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
@@ -148,13 +148,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     //인지
-    fun LocalListCognitiveInsert(db : SQLiteDatabase, ex : ArrayList<Paper_COGNITIVE>, set:String) {
+    fun LocalListCognitiveInsert(db : SQLiteDatabase, ex : ArrayList<Paper_COGNITIVE>) {
         val columnValue = ex.get(0)
 
         val cv = ContentValues()
 
         cv.put("exam_no", columnValue.exam_no)
-        cv.put("setno", set)
+        //cv.put("setno", set)
         cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
@@ -162,13 +162,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     //노인
-    fun LocalListElderlyInsert(db : SQLiteDatabase, ex : ArrayList<Paper_ELDERLY>, set:String) {
+    fun LocalListElderlyInsert(db : SQLiteDatabase, ex : ArrayList<Paper_ELDERLY>) {
         val columnValue = ex.get(0)
 
         val cv = ContentValues()
 
         cv.put("exam_no", columnValue.exam_no)
-        cv.put("setno", set)
+        //cv.put("setno", set)
         cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
@@ -176,13 +176,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     //생활
-    fun LocalListDrinkingInsert(db : SQLiteDatabase, ex : ArrayList<Paper_DRINKING>, set:String) {
+    fun LocalListDrinkingInsert(db : SQLiteDatabase, ex : ArrayList<Paper_DRINKING>) {
         val columnValue = ex.get(0)
 
         val cv = ContentValues()
 
         cv.put("exam_no", columnValue.exam_no)
-        cv.put("setno", set)
+        //cv.put("setno", set)
         cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 

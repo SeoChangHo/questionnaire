@@ -20,6 +20,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
+import com.fineinsight.zzango.questionnaire.DataClass.ChartInfo
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Common
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_COMMON
@@ -242,7 +243,7 @@ class CommonExaminationActivity : RootActivity() {
                 if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
 
                     //common_exam_local_insert()
-                    ChartDivision.ChartDivision.local_insert(this)
+                    ChartDivision.ChartDivision.local_insert(this, 0)
                     MainActivity.chartNumber++
 
                 }else{

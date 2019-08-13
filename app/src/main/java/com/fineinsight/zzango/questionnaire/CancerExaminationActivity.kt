@@ -371,10 +371,9 @@ class CancerExaminationActivity : RootActivity(){
 
     fun cancer_exam_local_insert(){
 
+        LocalDBhelper(this).LocalListCancerInsert(sql_db!!, PaperArray.PaperList.Arr_CANCER!!)
+
         LocalDBhelper(this).cancerCreate(sql_db)
-
-        LocalDBhelper(this).LocalListCancerInsert(sql_db!!, PaperArray.PaperList.Arr_CANCER!!, PaperArray.SetList.SET8)
-
         LocalDBhelper(this).cancerSaveLocal(sql_db!!, PaperArray.PaperList.Arr_CANCER!!)
         saveCompleteAlert()
 
