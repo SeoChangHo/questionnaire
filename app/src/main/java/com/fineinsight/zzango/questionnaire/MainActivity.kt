@@ -31,8 +31,10 @@ import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.ChartInfo
 import com.fineinsight.zzango.questionnaire.DataClass.MokpoCheck
 import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
+import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
+import com.fineinsight.zzango.questionnaire.LocalList.Paper_COMMON
 import com.fineinsight.zzango.questionnaire.Network.NetworkCheck
 import com.fineinsight.zzango.questionnaire.Signature.CanvasView
 import com.fineinsight.zzango.questionnaire.UserList.User
@@ -816,6 +818,56 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             Handler().postDelayed({
                 startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+                for(item in chart)
+                {
+                    if (item.isbool)
+                    {
+                        startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        break
+                    }
+                    else
+                    {
+                        when(item.chartName)
+                        {
+                            PaperNameInfo.PC.COMMON.EN_NM ->
+                            {
+                                SavePaper.Total.Array.add(Paper_COMMON(""))
+                            }
+
+                            PaperNameInfo.PC.MENTAL.EN_NM ->
+                            {
+
+                            }
+
+                            PaperNameInfo.PC.COGNITIVE.EN_NM ->
+                            {
+
+                            }
+
+                            PaperNameInfo.PC.ELDERLY.EN_NM ->
+                            {
+
+                            }
+
+                            PaperNameInfo.PC.LIFE.EN_NM ->
+                            {
+
+                            }
+
+                            PaperNameInfo.PC.ORAL.EN_NM ->
+                            {
+
+                            }
+
+                            PaperNameInfo.PC.CANCER.EN_NM ->
+                            {
+
+                            }
+                        }
+                    }
+                }
+
             },100)
 
         }
