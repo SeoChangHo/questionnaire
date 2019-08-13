@@ -826,47 +826,44 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 {
                     if (item.isbool)
                     {
-                        startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                        break
-
                         when(item.chartName)
                         {
                             PaperNameInfo.PC.COMMON.EN_NM ->
                             {
-
+                                startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                             }
 
                             PaperNameInfo.PC.MENTAL.EN_NM ->
                             {
-
+                                startActivity(Intent(context, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                             }
 
                             PaperNameInfo.PC.COGNITIVE.EN_NM ->
                             {
-
+                                startActivity(Intent(context, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                             }
 
                             PaperNameInfo.PC.ELDERLY.EN_NM ->
                             {
-
+                                startActivity(Intent(context, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                             }
 
                             PaperNameInfo.PC.LIFE.EN_NM ->
                             {
-
-
+                                startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                             }
 
                             PaperNameInfo.PC.ORAL.EN_NM ->
                             {
-
+                                startActivity(Intent(context, OralExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                             }
 
                             PaperNameInfo.PC.CANCER.EN_NM ->
                             {
-
+                                startActivity(Intent(context, CancerExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                             }
                         }
+                        break
                     }
                     else
                     {
