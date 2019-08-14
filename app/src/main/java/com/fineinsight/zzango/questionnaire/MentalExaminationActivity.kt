@@ -1,40 +1,21 @@
 package com.fineinsight.zzango.questionnaire
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
-import android.content.Context
-import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.net.NetworkCapabilities
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Toast
-import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Mental
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_MENTAL
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_mental_exam.*
-import kotlinx.android.synthetic.main.progressbar2.*
-import kotlinx.android.synthetic.main.save_complete_alert.view.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class MentalExaminationActivity : RootActivity(){
 
@@ -64,12 +45,11 @@ class MentalExaminationActivity : RootActivity(){
                 login_appbar_loading_progress.visibility = View.VISIBLE
                 login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                if(MainActivity.chart.isEmpty()){
-                    ChartDivision.ChartDivision.each_insert(this, 1)
-                }else{
+                if(ChartDivision.ChartDivision.next_or_save(1)){
                     ChartDivision.ChartDivision.chart_array_insert(this, 1)
+                }else{
+                    ChartDivision.ChartDivision.each_insert(this, 1)
                 }
-
             }
 
         }
@@ -117,12 +97,11 @@ class MentalExaminationActivity : RootActivity(){
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
 
-            if(MainActivity.chart.isEmpty()){
-                mental_examination_save.text = "저장"
-            }else{
+            if(ChartDivision.ChartDivision.next_or_save(1)){
                 mental_examination_save.text = "다음"
+            }else{
+                mental_examination_save.text = "저장"
             }
-
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////

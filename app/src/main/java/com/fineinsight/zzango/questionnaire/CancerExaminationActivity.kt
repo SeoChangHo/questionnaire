@@ -28,6 +28,13 @@ import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_cancer_exam.*
+import kotlinx.android.synthetic.main.activity_cancer_exam.Signature
+import kotlinx.android.synthetic.main.activity_cancer_exam.first_serial
+import kotlinx.android.synthetic.main.activity_cancer_exam.last_serial
+import kotlinx.android.synthetic.main.activity_cancer_exam.login_appbar_loading_progress
+import kotlinx.android.synthetic.main.activity_cancer_exam.login_appbar_loading_progress_bg
+import kotlinx.android.synthetic.main.activity_cancer_exam.name_edit
+import kotlinx.android.synthetic.main.activity_elderly_exam.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -234,12 +241,11 @@ class CancerExaminationActivity : RootActivity(){
 
             if(check()){
 
-                if(MainActivity.chart.isEmpty()){
-                    ChartDivision.ChartDivision.each_insert(this, 6)
-                }else{
+                if(ChartDivision.ChartDivision.next_or_save(6)){
                     ChartDivision.ChartDivision.chart_array_insert(this, 6)
+                }else {
+                    ChartDivision.ChartDivision.each_insert(this, 6)
                 }
-
             }
 
         }
@@ -342,6 +348,13 @@ class CancerExaminationActivity : RootActivity(){
             name_edit.text = MainActivity.login_user_name
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
+
+            if(ChartDivision.ChartDivision.next_or_save(6)){
+                cancer_examination_save.text = "다음"
+            }else {
+                elderly_examination_save.text = "저장"
+            }
+
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

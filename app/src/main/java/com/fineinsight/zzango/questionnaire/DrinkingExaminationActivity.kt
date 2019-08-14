@@ -72,10 +72,10 @@ class DrinkingExaminationActivity : RootActivity(){
             AdditionalArr.over.checkAll = false
             if(check()){
 
-                if(MainActivity.chart.isEmpty()){
-                    ChartDivision.ChartDivision.each_insert(this, 4)
-                }else{
+                if(ChartDivision.ChartDivision.next_or_save(4)){
                     ChartDivision.ChartDivision.chart_array_insert(this, 4)
+                }else{
+                    ChartDivision.ChartDivision.each_insert(this, 4)
                 }
 
             }
@@ -126,12 +126,12 @@ class DrinkingExaminationActivity : RootActivity(){
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
 
-            if(MainActivity.chart.isEmpty()){
-                drinking_examination_save.text = "저장"
-            }else{
-                drinking_examination_save.text = "다음"
-            }
 
+            if(ChartDivision.ChartDivision.next_or_save(4)){
+                drinking_examination_save.text = "다음"
+            }else{
+                drinking_examination_save.text = "저장"
+            }
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////

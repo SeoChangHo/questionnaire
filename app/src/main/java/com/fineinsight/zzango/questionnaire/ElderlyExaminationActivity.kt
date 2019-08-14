@@ -63,12 +63,11 @@ class ElderlyExaminationActivity : RootActivity(){
                 login_appbar_loading_progress.visibility = View.VISIBLE
                 login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                if(MainActivity.chart.isEmpty()){
-                    ChartDivision.ChartDivision.each_insert(this, 3)
-                }else{
+                if(ChartDivision.ChartDivision.next_or_save(3)){
                     ChartDivision.ChartDivision.chart_array_insert(this, 3)
+                }else {
+                    ChartDivision.ChartDivision.each_insert(this, 3)
                 }
-
 
             }
 
@@ -117,10 +116,11 @@ class ElderlyExaminationActivity : RootActivity(){
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
 
-            if(MainActivity.chart.isEmpty()){
-                elderly_examination_save.text = "저장"
-            }else{
+
+            if(ChartDivision.ChartDivision.next_or_save(3)){
                 elderly_examination_save.text = "다음"
+            }else {
+                elderly_examination_save.text = "저장"
             }
 
         }
@@ -322,104 +322,104 @@ class ElderlyExaminationActivity : RootActivity(){
 //        }
 //
 //    }
-//
-//    fun saveCompleteAlert(){
-//
-//        login_appbar_loading_progress.visibility = View.GONE
-//        login_appbar_loading_progress_bg.visibility = View.GONE
-//        this@ElderlyExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//
-//        popup = false
-//
-//        var dialog = AlertDialog.Builder(this).create()
-//        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
-//
-//        dialog.setCancelable(false)
-//        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-//
-//        dialog.setView(dialog_view)
-//        dialog_view.save_complete_alert_text.text = "저장이 완료 되었습니다"
-//
-//        if(!popup) {
-//
-//            dialog.show().let {
-//
-//                popup = true
-//
-//            }
-//
-//        }
-//
-//        var displayMetrics = DisplayMetrics()
-//        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-//        // The absolute width of the available display size in pixels.
-//        var displayWidth = displayMetrics.widthPixels
-//        // The absolute height of the available display size in pixels.
-//        var displayHeight = displayMetrics.heightPixels
-//
-//        // Initialize a new window manager layout parameters
-//        var layoutParams = WindowManager.LayoutParams()
-//
-//        // Copy the alert dialog window attributes to new layout parameter instance
-//        layoutParams.copyFrom(dialog.window.attributes)
-//
-//        // Set the alert dialog window width and height
-//        // Set alert dialog width equal to screen width 90%
-//        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-//        // Set alert dialog height equal to screen height 90%
-//        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-//
-//        // Set alert dialog width equal to screen width 70%
-//        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-//        // Set alert dialog height equal to screen height 70%
-//        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-//
-//        // Set the width and height for the layout parameters
-//        // This will bet the width and height of alert dialog
-//        layoutParams.width = dialogWindowWidth
-//        layoutParams.height = dialogWindowHeight
-//
-//        // Apply the newly created layout parameters to the alert dialog window
-//        dialog.window.attributes = layoutParams
-//
-//
-//        dialog.setOnDismissListener {
-//
-//            popup = false
-//            dialog = null
-//
-//        }
-//
-//        dialog_view.return_alert.setOnClickListener {
-//
-//            if(AdditionalArr.Page.isOralChecked){
-//
-//                startActivity(Intent(this@ElderlyExaminationActivity, OralExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-//                dialog.dismiss()
-//
-//            }else if(AdditionalArr.Page.isCancerChecked){
-//
-//                startActivity(Intent(this@ElderlyExaminationActivity, CancerExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-//                dialog.dismiss()
-//
-//            }else{
-//
-//                MainActivity.login_user_name = ""
-//                MainActivity.user_first_serial = ""
-//                MainActivity.user_last_serial = ""
-//
-//                MainActivity.userLogin!!.text = "사용자 등록하기"
-//                MainActivity.userImage!!.setImageResource(R.drawable.regi)
-//
-//                startActivity(Intent(this@ElderlyExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-//
-//                dialog.dismiss()
-//
-//            }
-//
-//        }
-//
-//    }
+
+    fun saveCompleteAlert(){
+
+        login_appbar_loading_progress.visibility = View.GONE
+        login_appbar_loading_progress_bg.visibility = View.GONE
+        this@ElderlyExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+
+        popup = false
+
+        var dialog = AlertDialog.Builder(this).create()
+        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
+
+        dialog.setCancelable(false)
+        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        dialog.setView(dialog_view)
+        dialog_view.save_complete_alert_text.text = "저장이 완료 되었습니다"
+
+        if(!popup) {
+
+            dialog.show().let {
+
+                popup = true
+
+            }
+
+        }
+
+        var displayMetrics = DisplayMetrics()
+        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
+        // The absolute width of the available display size in pixels.
+        var displayWidth = displayMetrics.widthPixels
+        // The absolute height of the available display size in pixels.
+        var displayHeight = displayMetrics.heightPixels
+
+        // Initialize a new window manager layout parameters
+        var layoutParams = WindowManager.LayoutParams()
+
+        // Copy the alert dialog window attributes to new layout parameter instance
+        layoutParams.copyFrom(dialog.window.attributes)
+
+        // Set the alert dialog window width and height
+        // Set alert dialog width equal to screen width 90%
+        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
+        // Set alert dialog height equal to screen height 90%
+        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
+
+        // Set alert dialog width equal to screen width 70%
+        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
+        // Set alert dialog height equal to screen height 70%
+        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
+
+        // Set the width and height for the layout parameters
+        // This will bet the width and height of alert dialog
+        layoutParams.width = dialogWindowWidth
+        layoutParams.height = dialogWindowHeight
+
+        // Apply the newly created layout parameters to the alert dialog window
+        dialog.window.attributes = layoutParams
+
+
+        dialog.setOnDismissListener {
+
+            popup = false
+            dialog = null
+
+        }
+
+        dialog_view.return_alert.setOnClickListener {
+
+            if(AdditionalArr.Page.isOralChecked){
+
+                startActivity(Intent(this@ElderlyExaminationActivity, OralExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                dialog.dismiss()
+
+            }else if(AdditionalArr.Page.isCancerChecked){
+
+                startActivity(Intent(this@ElderlyExaminationActivity, CancerExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                dialog.dismiss()
+
+            }else{
+
+                MainActivity.login_user_name = ""
+                MainActivity.user_first_serial = ""
+                MainActivity.user_last_serial = ""
+
+                MainActivity.userLogin!!.text = "사용자 등록하기"
+                MainActivity.userImage!!.setImageResource(R.drawable.regi)
+
+                startActivity(Intent(this@ElderlyExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+                dialog.dismiss()
+
+            }
+
+        }
+
+    }
 
     @SuppressLint("NewApi")
     fun check() : Boolean{
