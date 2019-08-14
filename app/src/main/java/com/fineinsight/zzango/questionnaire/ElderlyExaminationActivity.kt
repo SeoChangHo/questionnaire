@@ -565,10 +565,9 @@ class ElderlyExaminationActivity : RootActivity(){
                 mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5, mj66_3_6, mj66_4, mj66_5
         ))
 
-        SavePaper.Total.Array.add(Paper_ELDERLY(
+        SavePaper.Total.Array[4] = Paper_ELDERLY(
                 exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
-                mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5, mj66_3_6, mj66_4, mj66_5
-        ))
+                mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5, mj66_3_6, mj66_4, mj66_5)
 
         PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_ELDERLY!!)
 

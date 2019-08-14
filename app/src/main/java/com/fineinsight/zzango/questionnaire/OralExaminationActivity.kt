@@ -21,6 +21,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
+import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Oral
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_ORAL
@@ -791,6 +792,11 @@ class OralExaminationActivity : RootActivity() {
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
                 oral_11, oral_12, oral_13, oral_14, oral_15, oral_16
         ))
+
+        SavePaper.Total.Array[9] = Paper_ORAL(
+                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
+                oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
+                oral_11, oral_12, oral_13, oral_14, oral_15, oral_16)
 
         return true
 

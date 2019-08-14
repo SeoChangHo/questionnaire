@@ -559,10 +559,9 @@ class MentalExaminationActivity : RootActivity(){
                 mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum
         ))
 
-        SavePaper.Total.Array.add(Paper_MENTAL(
+        SavePaper.Total.Array[2] = Paper_MENTAL(
                 exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
-                mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum
-        ))
+                mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum)
 
         PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_MENTAL!!)
 

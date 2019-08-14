@@ -644,11 +644,10 @@ class CognitiveExaminationActivity : RootActivity(){
                 mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum
         ))
 
-        SavePaper.Total.Array.add(Paper_COGNITIVE(
+        SavePaper.Total.Array[3] = Paper_COGNITIVE(
                 exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                 mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7, mj_inji_8, mj_inji_9,
-                mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum
-        ))
+                mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum)
 
         PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_COGNITIVE!!)
 

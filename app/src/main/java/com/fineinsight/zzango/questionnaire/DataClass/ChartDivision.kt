@@ -48,14 +48,14 @@ class ChartDivision{
 
                     when(index){
 
-                        0 ->{
+                        1 ->{
                             LocalDBhelper(activity).onCreate(sql_db)
                             LocalDBhelper(activity).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
 
                             LocalDBhelper(activity).commonExaminationDB(sql_db)
                             LocalDBhelper(activity).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
                         }
-                        1 ->{
+                        2 ->{
                             LocalDBhelper(activity).onCreate(sql_db)
                             LocalDBhelper(activity).LocalListMentalInsert(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
 
@@ -63,7 +63,7 @@ class ChartDivision{
                             LocalDBhelper(activity).mentalSaveLocal(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
 
                         }
-                        2 ->{
+                        3 ->{
                             LocalDBhelper(activity).onCreate(sql_db)
                             LocalDBhelper(activity).LocalListCognitiveInsert(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!)
 
@@ -71,7 +71,7 @@ class ChartDivision{
                             LocalDBhelper(activity).cognitiveSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COGNITIVE!!)
 
                         }
-                        3 ->{
+                        4 ->{
                             LocalDBhelper(activity).onCreate(sql_db)
                             LocalDBhelper(activity).LocalListElderlyInsert(sql_db!!, PaperArray.PaperList.Arr_ELDERLY!!)
 
@@ -79,7 +79,7 @@ class ChartDivision{
                             LocalDBhelper(activity).elderlySaveLocal(sql_db!!, PaperArray.PaperList.Arr_ELDERLY!!)
 
                         }
-                        4 ->{
+                        5 ->{
                             LocalDBhelper(activity).onCreate(sql_db)
                             LocalDBhelper(activity).LocalListDrinkingInsert(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!)
 
@@ -95,7 +95,7 @@ class ChartDivision{
                             LocalDBhelper(activity).drinkingCreate(sql_db)
                             LocalDBhelper(activity).drinkingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!)
                         }
-                        5 ->{
+                        6 ->{
                             LocalDBhelper(activity).onCreate(sql_db)
                             LocalDBhelper(activity).LocalListOralInsert(sql_db!!, PaperArray.PaperList.Arr_ORAL!!)
 
@@ -103,7 +103,7 @@ class ChartDivision{
                             LocalDBhelper(activity).oralSaveLocal(sql_db!!, PaperArray.PaperList.Arr_ORAL!!)
 
                         }
-                        6 ->{
+                        7 ->{
                             LocalDBhelper(activity).onCreate(sql_db)
                             LocalDBhelper(activity).LocalListCancerInsert(sql_db!!, PaperArray.PaperList.Arr_CANCER!!)
 

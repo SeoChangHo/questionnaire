@@ -314,11 +314,10 @@ class SmokingExaminationActivity : RootActivity(){
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
             ))
 
-            SavePaper.Total.Array.add(Paper_SMOKING(
+            SavePaper.Total.Array[7] = Paper_SMOKING(
                     exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
-            ))
+                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
 
         }else{
 
@@ -329,11 +328,10 @@ class SmokingExaminationActivity : RootActivity(){
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
             ))
 
-            SavePaper.Total.Array.add(Paper_SMOKING(
+            SavePaper.Total.Array[7] = Paper_SMOKING(
                     exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
-            ))
+                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
 
         }
 

@@ -1156,7 +1156,7 @@ class CommonExaminationActivity : RootActivity() {
                 mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1,
                 mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10))
 
-        SavePaper.Total.Array.add(Paper_COMMON(exam_date, exam_no, signature, name,
+        SavePaper.Total.Array[1] = Paper_COMMON(exam_date, exam_no, signature, name,
                 first_serial_text, last_serial_text, category,
                 mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
                 mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1,
@@ -1168,7 +1168,7 @@ class CommonExaminationActivity : RootActivity() {
                 mj7_1_54, mj7_1_etc, mj7_2_11, mj7_2_12, mj7_2_13, mj7_2_14, mj7_2_21, mj7_2_22,
                 mj7_2_23, mj7_2_24, mj7_2_31, mj7_2_32, mj7_2_33, mj7_2_34, mj7_2_41, mj7_2_42,
                 mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1,
-                mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10))
+                mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10)
 
         PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_COMMON!!)
 
