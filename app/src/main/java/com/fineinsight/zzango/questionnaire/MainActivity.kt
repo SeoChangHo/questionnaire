@@ -1019,9 +1019,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
-
-
-
         dialog.setOnDismissListener {
 
             popup = false
@@ -1196,7 +1193,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             null
         }
     }
-
 
     fun bitmapToFile(bitmap:Bitmap): Uri {
         // Get the context wrapper
@@ -1444,8 +1440,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     }
 
     fun setHospitalList(){
-
-
 
         if(manager_name == "fine"){
 

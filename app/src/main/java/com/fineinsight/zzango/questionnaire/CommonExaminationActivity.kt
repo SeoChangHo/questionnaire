@@ -2,6 +2,7 @@ package com.fineinsight.zzango.questionnaire
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
@@ -232,10 +233,14 @@ class CommonExaminationActivity : RootActivity() {
                 login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
 
-                if(ChartDivision.ChartDivision.next_or_save(0)){
-                    ChartDivision.ChartDivision.chart_array_insert(this, 0)
+                if(MainActivity.chart.isEmpty()){
+                    if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
+                        ChartDivision.ChartDivision.local_each_insert(this, 0)
+                    }else{
+                        ChartDivision.ChartDivision.server_insert(this)
+                    }
                 }else{
-                    ChartDivision.ChartDivision.each_insert(this, 0)
+                    ChartDivision.ChartDivision.chart_array_insert(this, 0)
                 }
 
             }
@@ -287,10 +292,14 @@ class CommonExaminationActivity : RootActivity() {
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
 
-            if(ChartDivision.ChartDivision.next_or_save(0)){
-                common_examination_save.text = "다음"
-            }else{
+            if(MainActivity.chart.isEmpty()){
                 common_examination_save.text = "저장"
+            }else{
+                if(ChartDivision.ChartDivision.next_or_save(0)){
+                    common_examination_save.text = "다음"
+                }else{
+                    common_examination_save.text = "저장"
+                }
             }
 
         }
@@ -500,30 +509,16 @@ class CommonExaminationActivity : RootActivity() {
 
         dialog_view.return_alert.setOnClickListener {
 
-            if(AdditionalArr.Page.isOralChecked){
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
 
-                startActivity(Intent(this@CommonExaminationActivity, OralExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                dialog.dismiss()
+            MainActivity.userLogin!!.text = "사용자 등록하기"
+            MainActivity.userImage!!.setImageResource(R.drawable.regi)
 
-            }else if(AdditionalArr.Page.isCancerChecked){
+            startActivity(Intent(this@CommonExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
-                startActivity(Intent(this@CommonExaminationActivity, CancerExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                dialog.dismiss()
-
-            }else{
-
-                MainActivity.login_user_name = ""
-                MainActivity.user_first_serial = ""
-                MainActivity.user_last_serial = ""
-
-                MainActivity.userLogin!!.text = "사용자 등록하기"
-                MainActivity.userImage!!.setImageResource(R.drawable.regi)
-
-                startActivity(Intent(this@CommonExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-                dialog.dismiss()
-
-            }
+            dialog.dismiss()
 
         }
 
