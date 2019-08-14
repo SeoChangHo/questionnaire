@@ -48,7 +48,7 @@ class MentalExaminationActivity : RootActivity(){
                 if(ChartDivision.ChartDivision.next_or_save(1)){
                     ChartDivision.ChartDivision.chart_array_insert(this, 1)
                 }else{
-                    ChartDivision.ChartDivision.each_insert(this, 1)
+                    ChartDivision.ChartDivision.local_each_insert(this, 1)
                 }
             }
 

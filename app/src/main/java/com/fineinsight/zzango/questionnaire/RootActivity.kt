@@ -111,268 +111,267 @@ open class RootActivity : AppCompatActivity() {
     //이동할때 해당 액티비티에 check2 메서드로 현재 수정사항을 저장함
     fun controlProgress(context : Context){
 
-//        when(MainActivity.chart){
-//
-//            "SET0" -> {
-//
-//                progress.visibility = View.VISIBLE
-//                progress2.visibility = View.VISIBLE
-//                progress3.visibility = View.VISIBLE
-//                progress4.visibility = View.VISIBLE
-//                progress_text.text = "운동"
-//                progress_text2.text = "영양"
-//                progress_text3.text = "흡연"
-//                progress_text4.text = "음주"
-//                var constraintSet = ConstraintSet()
-//                constraintSet.clone(questionnaire_progress_wrapper)
-//
-//                when(context.javaClass.kotlin.simpleName){
-//
-//                    "ExerciseExaminationActivity" -> {
-//
-//                        when {
-//                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
-//
-//                                progress2.isClickable = true
-//                                progress3.isClickable = true
-//                                progress4.isClickable = true
-//                                progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                                progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
-//
-//                                progress2.setOnClickListener {
-//                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//                                progress3.setOnClickListener {
-//                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//                                progress4.setOnClickListener {
-//                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//
-//                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
-//
-//                            }
-//                            PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0 -> {
-//
-//                                progress2.isClickable = true
-//                                progress3.isClickable = true
-//                                progress4.isClickable = false
-//                                progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
-//
-//                                progress2.setOnClickListener {
-//                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//                                progress3.setOnClickListener {
-//                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//
-//                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
-//
-//                            }
-//                            PaperArray.PaperList.temp_Arr_NUTRITION != null && PaperArray.PaperList.temp_Arr_NUTRITION!!.size != 0 -> {
-//
-//                                progress2.isClickable = true
-//                                progress3.isClickable = false
-//                                progress4.isClickable = false
-//                                progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
-//
-//                                progress2.setOnClickListener {
-//                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//
-//                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress.id, ConstraintSet.END)
-//
-//                            }
-//                            else -> {
-//
-//                                progress2.isClickable = false
-//                                progress3.isClickable = false
-//                                progress4.isClickable = false
-//
-//                            }
-//
-//                        }
-//
-//                        constraintSet.connect(triangle.id, ConstraintSet.START, progress.id, ConstraintSet.START)
-//                        constraintSet.connect(triangle.id, ConstraintSet.END, progress.id, ConstraintSet.END)
-//                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
-//                        constraintSet.applyTo(questionnaire_progress_wrapper)
-//
-//                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                        progress_text.textSize = 37f
-//                        progress_text.typeface = Typeface.DEFAULT_BOLD
-//
-//                    }
-//
-//                    "NutritionExaminationActivity" -> {
-//
-//                        when {
-//                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
-//
-//                                progress.isClickable = true
-//                                progress2.isClickable = true
-//                                progress3.isClickable = true
-//                                progress4.isClickable = true
-//                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                                progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
-//
-//                                progress.setOnClickListener {
-//                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//                                progress3.setOnClickListener {
-//                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//                                progress4.setOnClickListener {
-//                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//
-//                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
-//
-//                            }
-//                            PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0 -> {
-//
-//                                progress.isClickable = true
-//                                progress2.isClickable = true
-//                                progress3.isClickable = true
-//                                progress4.isClickable = false
-//                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
-//
-//                                progress.setOnClickListener {
-//                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//                                progress3.setOnClickListener {
-//                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//
-//                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
-//
-//                            }
-//                            else -> {
-//
-//                                progress.isClickable = true
-//                                progress2.isClickable = true
-//                                progress3.isClickable = false
-//                                progress4.isClickable = false
-//                                progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
-//
-//                                progress.setOnClickListener {
-//                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//
-//                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress.id, ConstraintSet.END)
-//
-//                            }
-//
-//                        }
-//
-//                        constraintSet.connect(triangle.id, ConstraintSet.START, progress2.id, ConstraintSet.START)
-//                        constraintSet.connect(triangle.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
-//                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
-//                        constraintSet.applyTo(questionnaire_progress_wrapper)
-//                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                        progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                        progress_text2.textSize = 37f
-//                        progress_text2.typeface = Typeface.DEFAULT_BOLD
-//
-//                    }
-//
-//                    "SmokingExaminationActivity" -> {
-//
-//                        when {
-//                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
-//
-//                                progress.isClickable = true
-//                                progress2.isClickable = true
-//                                progress3.isClickable = true
-//                                progress4.isClickable = true
-//                                progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
-//
-//                                progress.setOnClickListener {
-//                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//                                progress2.setOnClickListener {
-//                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//                                progress4.setOnClickListener {
-//                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//
-//                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
-//
-//                            }
-//                            else -> {
-//
-//                                progress.isClickable = true
-//                                progress2.isClickable = true
-//                                progress3.isClickable = true
-//                                progress4.isClickable = false
-//
-//                                progress.setOnClickListener {
-//                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//                                progress2.setOnClickListener {
-//                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                }
-//
-//                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
-//
-//                            }
-//
-//                        }
-//
-//                        constraintSet.connect(triangle.id, ConstraintSet.START, progress3.id, ConstraintSet.START)
-//                        constraintSet.connect(triangle.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
-//                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
-//                        constraintSet.applyTo(questionnaire_progress_wrapper)
-//                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                        progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                        progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                        progress_text3.textSize = 37f
-//                        progress_text3.typeface = Typeface.DEFAULT_BOLD
-//
-//                    }
-//
-//                    "DrinkingExaminationActivity" -> {
-//
-//                        progress.isClickable = true
-//                        progress2.isClickable = true
-//                        progress3.isClickable = true
-//                        progress4.isClickable = true
-//
-//                        progress.setOnClickListener {
-//                            startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                        }
-//                        progress2.setOnClickListener {
-//                            startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                        }
-//                        progress3.setOnClickListener {
-//                            startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                        }
-//
-//                        constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
-//                        constraintSet.connect(triangle.id, ConstraintSet.START, progress4.id, ConstraintSet.START)
-//                        constraintSet.connect(triangle.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
-//                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
-//                        constraintSet.applyTo(questionnaire_progress_wrapper)
-//                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                        progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                        progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                        progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
-//                        progress_text4.textSize = 37f
-//                        progress_text4.typeface = Typeface.DEFAULT_BOLD
-//
-//                    }
-//
-//                    else -> { questionnaire_progress_wrapper.visibility = View.GONE }
-//
-//                }
-//
-//            }
-//
-//            "SET1" -> { questionnaire_progress_wrapper.visibility = View.GONE }
-//
+        when(MainActivity.chart.isEmpty()){
+
+            //단일 문진 진행
+            true -> {
+
+                progress.visibility = View.VISIBLE
+                progress2.visibility = View.VISIBLE
+                progress3.visibility = View.VISIBLE
+                progress4.visibility = View.VISIBLE
+                progress_text.text = "운동"
+                progress_text2.text = "영양"
+                progress_text3.text = "흡연"
+                progress_text4.text = "음주"
+                var constraintSet = ConstraintSet()
+                constraintSet.clone(questionnaire_progress_wrapper)
+
+                when(context.javaClass.kotlin.simpleName){
+
+                    "ExerciseExaminationActivity" -> {
+
+                        when {
+                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
+
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = true
+                                progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
+                                progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
+
+                                progress2.setOnClickListener {
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress3.setOnClickListener {
+                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress4.setOnClickListener {
+                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
+
+                            }
+                            PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0 -> {
+
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = false
+                                progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
+
+                                progress2.setOnClickListener {
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress3.setOnClickListener {
+                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
+
+                            }
+                            PaperArray.PaperList.temp_Arr_NUTRITION != null && PaperArray.PaperList.temp_Arr_NUTRITION!!.size != 0 -> {
+
+                                progress2.isClickable = true
+                                progress3.isClickable = false
+                                progress4.isClickable = false
+                                progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+
+                                progress2.setOnClickListener {
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress.id, ConstraintSet.END)
+
+                            }
+                            else -> {
+
+                                progress2.isClickable = false
+                                progress3.isClickable = false
+                                progress4.isClickable = false
+
+                            }
+
+                        }
+
+                        constraintSet.connect(triangle.id, ConstraintSet.START, progress.id, ConstraintSet.START)
+                        constraintSet.connect(triangle.id, ConstraintSet.END, progress.id, ConstraintSet.END)
+                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
+                        constraintSet.applyTo(questionnaire_progress_wrapper)
+
+                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text.textSize = 26f
+                        progress_text.typeface = Typeface.DEFAULT_BOLD
+
+                    }
+
+                    "NutritionExaminationActivity" -> {
+
+                        when {
+                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
+
+                                progress.isClickable = true
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = true
+                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
+                                progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
+
+                                progress.setOnClickListener {
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress3.setOnClickListener {
+                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress4.setOnClickListener {
+                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
+
+                            }
+                            PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0 -> {
+
+                                progress.isClickable = true
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = false
+                                progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
+
+                                progress.setOnClickListener {
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress3.setOnClickListener {
+                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
+
+                            }
+                            else -> {
+
+                                progress.isClickable = true
+                                progress2.isClickable = true
+                                progress3.isClickable = false
+                                progress4.isClickable = false
+                                progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+
+                                progress.setOnClickListener {
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress.id, ConstraintSet.END)
+
+                            }
+
+                        }
+
+                        constraintSet.connect(triangle.id, ConstraintSet.START, progress2.id, ConstraintSet.START)
+                        constraintSet.connect(triangle.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
+                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
+                        constraintSet.applyTo(questionnaire_progress_wrapper)
+                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text2.textSize = 26f
+                        progress_text2.typeface = Typeface.DEFAULT_BOLD
+
+                    }
+
+                    "SmokingExaminationActivity" -> {
+
+                        when {
+                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
+
+                                progress.isClickable = true
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = true
+                                progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
+
+                                progress.setOnClickListener {
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress2.setOnClickListener {
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress4.setOnClickListener {
+                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
+
+                            }
+                            else -> {
+
+                                progress.isClickable = true
+                                progress2.isClickable = true
+                                progress3.isClickable = true
+                                progress4.isClickable = false
+
+                                progress.setOnClickListener {
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+                                progress2.setOnClickListener {
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                }
+
+                                constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
+
+                            }
+
+                        }
+
+                        constraintSet.connect(triangle.id, ConstraintSet.START, progress3.id, ConstraintSet.START)
+                        constraintSet.connect(triangle.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
+                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
+                        constraintSet.applyTo(questionnaire_progress_wrapper)
+                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text3.textSize = 26f
+                        progress_text3.typeface = Typeface.DEFAULT_BOLD
+
+                    }
+
+                    "DrinkingExaminationActivity" -> {
+
+                        progress.isClickable = true
+                        progress2.isClickable = true
+                        progress3.isClickable = true
+                        progress4.isClickable = true
+
+                        progress.setOnClickListener {
+                            startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        }
+                        progress2.setOnClickListener {
+                            startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        }
+                        progress3.setOnClickListener {
+                            startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        }
+
+                        constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
+                        constraintSet.connect(triangle.id, ConstraintSet.START, progress4.id, ConstraintSet.START)
+                        constraintSet.connect(triangle.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
+                        constraintSet.connect(questionnaire_progressbg.id, ConstraintSet.END, progress4.id, ConstraintSet.END)
+                        constraintSet.applyTo(questionnaire_progress_wrapper)
+                        progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
+                        progress_text4.textSize = 26f
+                        progress_text4.typeface = Typeface.DEFAULT_BOLD
+
+                    }
+
+                    else -> { questionnaire_progress_wrapper.visibility = View.GONE }
+
+                }
+
+            }
+
 //            "SET2" -> {
 //
 //                progress.visibility = View.VISIBLE
@@ -397,8 +396,15 @@ open class RootActivity : AppCompatActivity() {
 //                }
 //
 //            }
-//
-//        }
+
+            //세트 문진 진행
+            false -> {
+
+
+
+            }
+
+        }
 
     }
 

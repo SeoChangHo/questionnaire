@@ -78,13 +78,13 @@ class OralExaminationActivity : RootActivity() {
                     if(ChartDivision.ChartDivision.next_or_save(5)){
                         ChartDivision.ChartDivision.chart_array_insert(this, 5)
                     }else{
-                        ChartDivision.ChartDivision.each_insert(this, 5)
+                        ChartDivision.ChartDivision.local_each_insert(this, 5)
                     }
                 }else{
                     if(ChartDivision.ChartDivision.next_or_save(5)){
                         ChartDivision.ChartDivision.chart_array_insert(this, 5)
                     }else{
-                        ChartDivision.ChartDivision.each_insert(this, 5)
+                        ChartDivision.ChartDivision.local_each_insert(this, 5)
                     }
                 }
 
