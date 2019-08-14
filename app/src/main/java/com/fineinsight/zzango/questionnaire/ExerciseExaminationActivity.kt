@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
+import com.fineinsight.zzango.questionnaire.DataClass.SavedListObject
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_EXERCISE
@@ -966,15 +967,22 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         if(MainActivity.chart.isEmpty()){
-            if(!PaperArray.initCheck) {
-                PaperArray.PaperArrFunction.ArrayListInit()
-            }
+//            if(!PaperArray.initCheck) {
+//                PaperArray.PaperArrFunction.ArrayListInit()
+//            }
             exam_no = System.currentTimeMillis().toString()
             MainActivity.exam_no = exam_no
         }else{
             exam_no = MainActivity.exam_no
         }
 
+        SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+                sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
+                sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
+                sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
+                sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
+                sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum)
+/*
         //해당 배열이 존재할경우
         //clear 후 다시 문항을 체크하고 배열을 add한다
         //저장된 해당문진에서 수정하는 경우 대비
@@ -987,13 +995,6 @@ class ExerciseExaminationActivity : RootActivity() {
                     sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
                     sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
                     sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum))
-
-            SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
-                    sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
-                    sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
-                    sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
-                    sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
-                    sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum)
 
             //iterator를 써야 오류가 안난다
             //java.util.ConcurrentModificationException
@@ -1011,16 +1012,16 @@ class ExerciseExaminationActivity : RootActivity() {
                 }
             }
 
-//            for ((i, arr) in PaperArray.PaperList.Arr_RESULT!!.withIndex()) {
-//
-//                if ((arr as ArrayList<*>)[0] is Paper_EXERCISE) {
-//
-//                    PaperArray.PaperList.Arr_RESULT!!.remove(i)
-//                    PaperArray.PaperList.Arr_RESULT!!.add(i, PaperArray.PaperList.Arr_EXERCISE!!)
-//
-//                }
-//
-//            }
+            for ((i, arr) in PaperArray.PaperList.Arr_RESULT!!.withIndex()) {
+
+                if ((arr as ArrayList<*>)[0] is Paper_EXERCISE) {
+
+                    PaperArray.PaperList.Arr_RESULT!!.remove(i)
+                    PaperArray.PaperList.Arr_RESULT!!.add(i, PaperArray.PaperList.Arr_EXERCISE!!)
+
+                }
+
+            }
 
         }else {
 
@@ -1042,7 +1043,7 @@ class ExerciseExaminationActivity : RootActivity() {
             PaperArray.PaperList.temp_Arr_EXERCISE = ArrayList()
 
         }
-
+*/
         return true
 
     }
@@ -1291,16 +1292,24 @@ class ExerciseExaminationActivity : RootActivity() {
             else -> ""
         }
 
-        if(MainActivity.chart.isEmpty()){
-            if(!PaperArray.initCheck) {
-                PaperArray.PaperArrFunction.ArrayListInit()
-            }
-            exam_no = System.currentTimeMillis().toString()
-            MainActivity.exam_no = exam_no
-        }else{
-            exam_no = MainActivity.exam_no
-        }
+//        if(MainActivity.chart.isEmpty()){
+//            if(!PaperArray.initCheck) {
+//                PaperArray.PaperArrFunction.ArrayListInit()
+//            }
+//            exam_no = System.currentTimeMillis().toString()
+//            MainActivity.exam_no = exam_no
+//        }else{
+        exam_no = MainActivity.exam_no
+//        }
 
+        SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+                sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
+                sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
+                sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
+                sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
+                sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum)
+
+/*
         //해당 배열이 존재할경우
         //clear 후 다시 문항을 체크하고 배열을 add한다
         //저장된 해당문진에서 수정하는 경우 대비
@@ -1355,7 +1364,7 @@ class ExerciseExaminationActivity : RootActivity() {
             PaperArray.PaperList.temp_Arr_EXERCISE = ArrayList()
 
         }
-
+*/
     }
 
     fun whenTempLoad(paper:Paper_EXERCISE) {
@@ -1844,13 +1853,13 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
     }
-
+/*
     //해당 액티비티에 Exercise 배열이 저장안되어 있다면 temp_arr를 저장함
     //해당 액티비티를 정상적으로 완료하고 이동하면 temp_arr를 초기화함
     //PaperList Arr EXERCISE가 존재하면 check2를 실행한다
     override fun onPause() {
 
-        if(PaperArray.PaperList.Arr_EXERCISE != null && PaperArray.PaperList.Arr_EXERCISE!!.size != 0){
+        if(SavedListObject.SavedList.savedDataClass.exerciseSaved){
 
             PaperArray.PaperList.temp_Arr_EXERCISE = null
             check2()
@@ -1868,5 +1877,5 @@ class ExerciseExaminationActivity : RootActivity() {
         super.onPause()
 
     }
-
+*/
 }
