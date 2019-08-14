@@ -420,7 +420,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     //login_appbar_loading_progress.visibility = View.VISIBLE
                     //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-
                     SavePaper.Total.Array[1] = Paper_COMMON("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                     SavePaper.Total.Array[2] = Paper_MENTAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                     SavePaper.Total.Array[3] =Paper_COGNITIVE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
