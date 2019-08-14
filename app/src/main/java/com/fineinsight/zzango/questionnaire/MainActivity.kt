@@ -419,10 +419,13 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                     //login_appbar_loading_progress.visibility = View.VISIBLE
                     //login_appbar_loading_progress_bg.visibility = View.VISIBLE
+                    val eb = ByteArray(0)
 
+                    SavePaper.Total.Init()
+                    SavePaper.Total.Array[0] = ""
                     SavePaper.Total.Array[1] = Paper_COMMON("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                     SavePaper.Total.Array[2] = Paper_MENTAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "")
-                    SavePaper.Total.Array[3] =Paper_COGNITIVE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    SavePaper.Total.Array[3] = Paper_COGNITIVE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                     SavePaper.Total.Array[4] = Paper_ELDERLY("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                     SavePaper.Total.Array[5] = Paper_EXERCISE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                     SavePaper.Total.Array[6] = Paper_NUTRITION("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
