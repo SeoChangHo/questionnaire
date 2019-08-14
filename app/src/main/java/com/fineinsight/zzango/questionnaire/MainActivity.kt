@@ -420,6 +420,19 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     //login_appbar_loading_progress.visibility = View.VISIBLE
                     //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
+
+                    SavePaper.Total.Array[1] = Paper_COMMON("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    SavePaper.Total.Array[2] = Paper_MENTAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    SavePaper.Total.Array[3] =Paper_COGNITIVE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    SavePaper.Total.Array[4] = Paper_ELDERLY("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    SavePaper.Total.Array[5] = Paper_EXERCISE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    SavePaper.Total.Array[6] = Paper_NUTRITION("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    SavePaper.Total.Array[7] = Paper_SMOKING("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    SavePaper.Total.Array[8] = Paper_DRINKING("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    SavePaper.Total.Array[9] = Paper_ORAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    SavePaper.Total.Array[10] = Paper_CANCER("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+
+
                     when(startPage){
                         "CommonExaminationActivity" -> {
                             Handler().postDelayed({
@@ -819,7 +832,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
                 //초기화
-                SavePaper.Total.Array = ArrayList()
+                SavePaper.Total.Init()
+                SavePaper.Total.Array[0] = ""
 
 
                 for(item in chart)
@@ -872,42 +886,43 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                         when(item.chartName)
                         {
+
                             PaperNameInfo.PC.COMMON.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_COMMON("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array[1] = Paper_COMMON("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                             }
 
                             PaperNameInfo.PC.MENTAL.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_MENTAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array[2] = Paper_MENTAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                             }
 
                             PaperNameInfo.PC.COGNITIVE.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_COGNITIVE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array[3] =Paper_COGNITIVE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                             }
 
                             PaperNameInfo.PC.ELDERLY.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_ELDERLY("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array[4] = Paper_ELDERLY("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                             }
 
                             PaperNameInfo.PC.LIFE.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_EXERCISE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
-                                SavePaper.Total.Array.add(Paper_NUTRITION("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
-                                SavePaper.Total.Array.add(Paper_SMOKING("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", ""))
-                                SavePaper.Total.Array.add(Paper_DRINKING("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array[5] = Paper_EXERCISE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                                SavePaper.Total.Array[6] = Paper_NUTRITION("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                                SavePaper.Total.Array[7] = Paper_SMOKING("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "")
+                                SavePaper.Total.Array[8] = Paper_DRINKING("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                             }
 
                             PaperNameInfo.PC.ORAL.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_ORAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array[9] = Paper_ORAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                             }
 
                             PaperNameInfo.PC.CANCER.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_CANCER("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array[10] = Paper_CANCER("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                             }
                         }
                     }

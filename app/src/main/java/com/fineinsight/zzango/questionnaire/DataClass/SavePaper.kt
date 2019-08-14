@@ -4,7 +4,12 @@ class SavePaper {
 
     object Total
     {
-        var Array = ArrayList<Any>()
+        var Array = ArrayList<Any>(11)
+
+        fun Init()
+        {
+            Array = ArrayList(11)
+        }
     }
 
 }
