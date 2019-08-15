@@ -126,9 +126,6 @@ class ChartDivision{
 
         fun chart_array_insert(activity: Activity, index: Int){
 
-
-            var index = chart[index+1].index
-
             if(index+1 <= MainActivity.chart.size){
 
                 for(i in index+1..MainActivity.chart.size-1){
@@ -167,6 +164,8 @@ class ChartDivision{
                             }
 
                         }
+
+                        break
                     }
                     else
                     {
@@ -211,13 +210,17 @@ class ChartDivision{
                             PaperNameInfo.PC.CANCER.EN_NM ->
                             {
                                 SavePaper.Total.Array.add(Paper_CANCER("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
-                                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
-                                    local_insert(activity)
-                                }else{
-                                    server_insert(activity)
-                                }
+
+//                                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
+//                                    local_insert(activity)
+//                                }else{
+//                                    server_insert(activity)
+//                                }
+
+                                server_insert(activity)
                             }
                         }
+
                     }
 
 

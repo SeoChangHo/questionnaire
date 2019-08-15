@@ -751,6 +751,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var chkCancer = dialog_view.findViewById(R.id.chkCancer) as CheckBox
 
 
+
         for (item in arr)
         {
             //암검진 체크
@@ -766,6 +767,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             }
         }
 
+        chart(JUMIN1, chkOral.isChecked, chkCancer.isChecked)
 
         title.text = login_user_name+"님"
 
@@ -1480,3 +1482,4 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
 }
+
