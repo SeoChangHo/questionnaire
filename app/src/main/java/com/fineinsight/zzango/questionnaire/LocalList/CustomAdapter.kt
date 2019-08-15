@@ -39,34 +39,34 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
     object Category
     {
         //구강검진
-        var ORAL = "oral"
+        var ORAL = "ORAL"
 
         //공통검진
-        var COMMON = "common"
+        var COMMON = "COMMON"
 
         //정신건강
-        var MENTAL = "mental"
+        var MENTAL = "MENTAL"
 
         //인지기능
-        var COGNITIVE = "cognitive"
+        var COGNITIVE = "COGNITIVE"
 
         //노인기능
-        var ELDERLY = "elderly"
+        var ELDERLY = "ELDERLY"
 
         //흡연
-        var SMOKING = "smoking"
+        var SMOKING = "SMOKING"
 
         //음주
-        var DRINKING = "drinking"
+        var DRINKING = "DRINKING"
 
         //암
-        var CANCER = "cancer"
+        var CANCER = "CANCER"
 
         //운동
-        var EXERCISE = "exercise"
+        var EXERCISE = "EXERCISE"
 
         //영양
-        var NUTRITION = "nutrition"
+        var NUTRITION = "NUTRITION"
     }
 
 
