@@ -126,8 +126,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                     }
                     if(PaperArray.size>0)
                     {
-                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
                         Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         startActivity(Activity, Intent(Activity, OralExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
@@ -246,8 +246,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
 
                     if(PaperArray.size>0)
                     {
-                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
                         Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         startActivity(Activity, Intent(Activity, CommonExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
@@ -294,8 +294,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                     }
                     if(PaperArray.size>0)
                     {
-                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
                         Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         startActivity(Activity, Intent(Activity, CognitiveExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
@@ -335,8 +335,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                     }
                     if(PaperArray.size>0)
                     {
-                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
                         Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         startActivity(Activity, Intent(Activity, ElderlyExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
@@ -398,8 +398,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                     }
                     if(PaperArray.size>0)
                     {
-                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
                         Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         startActivity(Activity, Intent(Activity, ExerciseExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
@@ -450,8 +450,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                     }
                     if(PaperArray.size>0)
                     {
-                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
                         Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         startActivity(Activity, Intent(Activity, NutritionExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
@@ -493,8 +493,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                     }
                     if(PaperArray.size>0)
                     {
-                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
                         Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
@@ -534,8 +534,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                     }
                     if(PaperArray.size>0)
                     {
-                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
                         Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         startActivity(Activity, Intent(Activity, SmokingExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
@@ -578,8 +578,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                     }
                     if(PaperArray.size>0)
                     {
-                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
                         Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         startActivity(Activity, Intent(Activity, DrinkingExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
@@ -686,8 +686,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                     }
                     if(PaperArray.size>0)
                     {
-                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
+//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
                         Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         startActivity(Activity, Intent(Activity, CancerExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
