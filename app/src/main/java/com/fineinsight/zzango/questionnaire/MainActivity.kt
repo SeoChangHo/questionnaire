@@ -28,10 +28,7 @@ import android.util.DisplayMetrics
 import android.view.*
 import android.widget.*
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
-import com.fineinsight.zzango.questionnaire.DataClass.ChartInfo
-import com.fineinsight.zzango.questionnaire.DataClass.MokpoCheck
-import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.*
 import com.fineinsight.zzango.questionnaire.Network.NetworkCheck
 import com.fineinsight.zzango.questionnaire.Signature.CanvasView
@@ -421,6 +418,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
                     SavePaper.Total.Init()
+                    var PArray = ArrayList<PublicDataInfo>()
+                    var exam_no = System.currentTimeMillis().toString()
+                    SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
 
                     when(startPage){
                         "CommonExaminationActivity" -> {
@@ -822,7 +822,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 //초기화
                 SavePaper.Total.Init()
-                SavePaper.Total.Array[0] = ""
+                var PArray = ArrayList<PublicDataInfo>()
+                var exam_no = System.currentTimeMillis().toString()
+                SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
+
 
 
                 for(item in chart)
