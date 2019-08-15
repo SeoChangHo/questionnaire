@@ -22,11 +22,11 @@ class PaperNameInfo {
 
 
         //생활습관 4개항목 -> LIFE 1개로 합침
-        /*
+
         val EXERCISE = PC_Class("운동", "EXERCISE")
         val NUTRITION = PC_Class("영양", "NUTRITION")
         val SMOKING = PC_Class("흡연", "SMOKING")
         val DRINKING = PC_Class("음주", "DRINKING")
-         */
+
     }
 }

@@ -21,7 +21,7 @@ class ListDetailActivity : AppCompatActivity() {
 
             var paper = intent.getSerializableExtra("paper") as Paper
 
-            txtListTitle.text = paper.name+" 님의 문진표"
+            txtListTitle.text = "${paper.name} 님의 문진표"
 
             val adapter = CustomDetailAdapter(paper, this)
 
@@ -33,14 +33,24 @@ class ListDetailActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
 
-        login_appbar_loading_progress_bg.visibility = View.GONE
-        login_appbar_loading_progress.visibility = View.GONE
-        window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-        super.onResume()
 
+    fun ProgressAction(isShow:Boolean)
+    {
+        if(isShow)
+        {
+            Progress_circle.visibility = View.VISIBLE
+            Progress_bg.visibility = View.VISIBLE
+            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, 	WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        }
+        else
+        {
+            Progress_circle.visibility = View.GONE
+            Progress_bg.visibility = View.GONE
+            this.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+        }
     }
+
 
 }
 
