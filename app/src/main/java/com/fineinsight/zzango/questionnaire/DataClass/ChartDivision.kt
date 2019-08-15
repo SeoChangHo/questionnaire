@@ -280,10 +280,9 @@ class ChartDivision{
         fun server_insert(activity: Activity){
 
 
-            if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
+//            if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
 
-                this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-
+                activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
 
                 OracleUtill().newsave_papers().newsavePapersServer(SavePaper.Total.Array).enqueue(object : Callback<String> {
@@ -319,13 +318,13 @@ class ChartDivision{
 
                 })
 
-            }else{
-
-//                    login_appbar_loading_progress.visibility = View.GONE
-//                    login_appbar_loading_progress_bg.visibility = View.GONE
-                wifiCheck()
-
-            }
+//            }else{
+//
+////                    login_appbar_loading_progress.visibility = View.GONE
+////                    login_appbar_loading_progress_bg.visibility = View.GONE
+//                wifiCheck()
+//
+//            }
 
         }
 

@@ -74,18 +74,15 @@ class OralExaminationActivity : RootActivity() {
                 login_appbar_loading_progress.visibility = View.VISIBLE
                 login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
-                    if(ChartDivision.ChartDivision.next_or_save(5)){
-                        ChartDivision.ChartDivision.chart_array_insert(this, 5)
-                    }else{
+
+                if(MainActivity.chart.isEmpty()){
+                    if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
                         ChartDivision.ChartDivision.local_each_insert(this, 5)
+                    }else{
+                        ChartDivision.ChartDivision.server_insert(this)
                     }
                 }else{
-                    if(ChartDivision.ChartDivision.next_or_save(5)){
-                        ChartDivision.ChartDivision.chart_array_insert(this, 5)
-                    }else{
-                        ChartDivision.ChartDivision.local_each_insert(this, 5)
-                    }
+                    ChartDivision.ChartDivision.chart_array_insert(this, 5)
                 }
 
 

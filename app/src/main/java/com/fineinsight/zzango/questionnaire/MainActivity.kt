@@ -680,8 +680,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         if(view.text == login_user_name+"님"){
 
-
-
             var dialog = AlertDialog.Builder(this).create()
             var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_user_logout, null)
 
@@ -710,6 +708,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 canvas_motion = null
 
+                chart.clear()
                 dialog.dismiss()
             }
 
@@ -751,7 +750,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var chkCancer = dialog_view.findViewById(R.id.chkCancer) as CheckBox
 
 
-
         for (item in arr)
         {
             //암검진 체크
@@ -767,7 +765,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             }
         }
 
-        chart(JUMIN1, chkOral.isChecked, chkCancer.isChecked)
+        chart(JUMIN1)
 
         title.text = login_user_name+"님"
 
@@ -814,7 +812,18 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 AdditionalArr.Page.isCancerChecked = true
             }
 
-            chart(JUMIN1, chkOral.isChecked, chkCancer.isChecked)
+
+            if(chkOral.isChecked){
+                chart.add(ChartInfo(PaperNameInfo.PC.ORAL.EN_NM, true, 5))
+            }else{
+                chart.add(ChartInfo(PaperNameInfo.PC.ORAL.EN_NM, false, 5))
+            }
+
+            if(chkCancer.isChecked){
+                chart.add(ChartInfo(PaperNameInfo.PC.CANCER.EN_NM, true, 6))
+            }else{
+                chart.add(ChartInfo(PaperNameInfo.PC.CANCER.EN_NM, false, 6))
+            }
 
             dialog.dismiss()
 
@@ -1340,7 +1349,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     }
 
     @SuppressLint("NewApi")
-    fun chart(Jumin : String, oral:Boolean, cancer:Boolean){
+    fun chart(Jumin : String){
 
         var yy = Jumin.substring(0,2)
 
@@ -1415,18 +1424,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, false, 2))
             chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
             chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false, 4))
-        }
-
-        if(oral){
-            chart.add(ChartInfo(PaperNameInfo.PC.ORAL.EN_NM, true, 5))
-        }else{
-            chart.add(ChartInfo(PaperNameInfo.PC.ORAL.EN_NM, false, 5))
-        }
-
-        if(cancer){
-            chart.add(ChartInfo(PaperNameInfo.PC.CANCER.EN_NM, true, 6))
-        }else{
-            chart.add(ChartInfo(PaperNameInfo.PC.CANCER.EN_NM, false, 6))
         }
 
     }
