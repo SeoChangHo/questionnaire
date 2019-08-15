@@ -19,6 +19,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
+import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Elderly
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
@@ -60,8 +61,8 @@ class ElderlyExaminationActivity : RootActivity(){
 
             if(check()){
 
-                login_appbar_loading_progress.visibility = View.VISIBLE
-                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                login_appbar_loading_progress.visibility = View.VISIBLE
+//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
                 if(MainActivity.chart.isEmpty()){
                     if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
@@ -436,7 +437,7 @@ class ElderlyExaminationActivity : RootActivity(){
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
-        var category = "elderly"
+        var category = PaperNameInfo.PC.ELDERLY.EN_NM
         var mj66_1 = ""
         var mj66_2 = ""
         var mj66_3_1 = ""

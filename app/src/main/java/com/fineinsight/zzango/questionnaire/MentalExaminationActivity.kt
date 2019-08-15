@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
+import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Mental
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
@@ -43,8 +44,8 @@ class MentalExaminationActivity : RootActivity(){
 
             if(check()){
 
-                login_appbar_loading_progress.visibility = View.VISIBLE
-                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                login_appbar_loading_progress.visibility = View.VISIBLE
+//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
 
                 if(MainActivity.chart.isEmpty()){
@@ -405,7 +406,7 @@ class MentalExaminationActivity : RootActivity(){
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
-        var category = "mental"
+        var category = PaperNameInfo.PC.MENTAL.EN_NM
         var mj_mtl_1 = ""
         var mj_mtl_2 = ""
         var mj_mtl_3 = ""
