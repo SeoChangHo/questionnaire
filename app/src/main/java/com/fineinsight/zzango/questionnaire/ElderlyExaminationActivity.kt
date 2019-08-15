@@ -63,12 +63,15 @@ class ElderlyExaminationActivity : RootActivity(){
                 login_appbar_loading_progress.visibility = View.VISIBLE
                 login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-                if(ChartDivision.ChartDivision.next_or_save(3)){
+                if(MainActivity.chart.isEmpty()){
+                    if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
+                        ChartDivision.ChartDivision.local_each_insert(this, 3)
+                    }else{
+                        ChartDivision.ChartDivision.server_insert(this)
+                    }
+                }else{
                     ChartDivision.ChartDivision.chart_array_insert(this, 3)
-                }else {
-                    ChartDivision.ChartDivision.local_each_insert(this, 3)
                 }
-
             }
 
         }
@@ -117,10 +120,14 @@ class ElderlyExaminationActivity : RootActivity(){
             last_serial.text = MainActivity.user_last_serial
 
 
-            if(ChartDivision.ChartDivision.next_or_save(3)){
-                elderly_examination_save.text = "다음"
-            }else {
+            if(MainActivity.chart.isEmpty()){
                 elderly_examination_save.text = "저장"
+            }else{
+                if(ChartDivision.ChartDivision.next_or_save(0)){
+                    elderly_examination_save.text = "다음"
+                }else{
+                    elderly_examination_save.text = "저장"
+                }
             }
 
         }

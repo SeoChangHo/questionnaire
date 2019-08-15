@@ -212,7 +212,7 @@ class ChartDivision{
                             {
                                 SavePaper.Total.Array.add(Paper_CANCER("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                                 if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
-                                    local_insert(activity, 0)
+                                    local_insert(activity)
                                 }else{
                                     server_insert(activity)
                                 }
@@ -229,81 +229,46 @@ class ChartDivision{
 
         }
 
-        fun local_insert(activity : Activity, index : Int){
+        fun local_insert(activity : Activity){
 
             var sql_db = LocalDBhelper(activity).writableDatabase
 
             if(MainActivity.chart.isEmpty()){
 
-                when(index){
+                LocalDBhelper(activity).onCreate(sql_db)
+                LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[1] as ArrayList<Paper_COMMON>)
 
-                    0 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[1] as ArrayList<Paper_COMMON>)
+                LocalDBhelper(activity).commonExaminationDB(sql_db)
+                LocalDBhelper(activity).commonSaveLocal(sql_db!!, SavePaper.Total.Array[1] as ArrayList<Paper_COMMON>)
 
-                        LocalDBhelper(activity).commonExaminationDB(sql_db)
-                        LocalDBhelper(activity).commonSaveLocal(sql_db!!, SavePaper.Total.Array[1] as ArrayList<Paper_COMMON>)
-                        saveCompleteAlert(activity)
-                    }
-                    1 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListMentalInsert(sql_db!!, SavePaper.Total.Array[2] as ArrayList<Paper_MENTAL>)
+                LocalDBhelper(activity).mentalCreate(sql_db)
+                LocalDBhelper(activity).mentalSaveLocal(sql_db!!, SavePaper.Total.Array[2] as ArrayList<Paper_MENTAL>)
 
-                        LocalDBhelper(activity).mentalCreate(sql_db)
-                        LocalDBhelper(activity).mentalSaveLocal(sql_db!!, SavePaper.Total.Array[2] as ArrayList<Paper_MENTAL>)
-                        saveCompleteAlert(activity)
-                    }
-                    2 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListCognitiveInsert(sql_db!!, SavePaper.Total.Array[3] as ArrayList<Paper_COGNITIVE>)
+                LocalDBhelper(activity).cognitiveCreate(sql_db)
+                LocalDBhelper(activity).cognitiveSaveLocal(sql_db!!, SavePaper.Total.Array[3] as ArrayList<Paper_COGNITIVE>)
 
-                        LocalDBhelper(activity).cognitiveCreate(sql_db)
-                        LocalDBhelper(activity).cognitiveSaveLocal(sql_db!!, SavePaper.Total.Array[3] as ArrayList<Paper_COGNITIVE>)
-                        saveCompleteAlert(activity)
-                    }
-                    3 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListElderlyInsert(sql_db!!, SavePaper.Total.Array[4] as ArrayList<Paper_ELDERLY>)
+                LocalDBhelper(activity).elderlyCreate(sql_db)
+                LocalDBhelper(activity).elderlySaveLocal(sql_db!!, SavePaper.Total.Array[4] as ArrayList<Paper_ELDERLY>)
 
-                        LocalDBhelper(activity).elderlyCreate(sql_db)
-                        LocalDBhelper(activity).elderlySaveLocal(sql_db!!, SavePaper.Total.Array[4] as ArrayList<Paper_ELDERLY>)
-                        saveCompleteAlert(activity)
-                    }
-                    4 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListDrinkingInsert(sql_db!!, SavePaper.Total.Array[8] as ArrayList<Paper_DRINKING>)
+                LocalDBhelper(activity).exerciseCreate(sql_db)
+                LocalDBhelper(activity).exerciseSaveLocal(sql_db!!, SavePaper.Total.Array[5] as ArrayList<Paper_EXERCISE>)
 
-                        LocalDBhelper(activity).exerciseCreate(sql_db)
-                        LocalDBhelper(activity).exerciseSaveLocal(sql_db!!, SavePaper.Total.Array[5] as ArrayList<Paper_EXERCISE>)
+                LocalDBhelper(activity).nutritionCreate(sql_db)
+                LocalDBhelper(activity).nutritionSaveLocal(sql_db!!, SavePaper.Total.Array[6] as ArrayList<Paper_NUTRITION>)
 
-                        LocalDBhelper(activity).nutritionCreate(sql_db)
-                        LocalDBhelper(activity).nutritionSaveLocal(sql_db!!, SavePaper.Total.Array[6] as ArrayList<Paper_NUTRITION>)
+                LocalDBhelper(activity).smokingCreate(sql_db)
+                LocalDBhelper(activity).smokingSaveLocal(sql_db!!, SavePaper.Total.Array[7] as ArrayList<Paper_SMOKING>)
 
-                        LocalDBhelper(activity).smokingCreate(sql_db)
-                        LocalDBhelper(activity).smokingSaveLocal(sql_db!!, SavePaper.Total.Array[7] as ArrayList<Paper_SMOKING>)
+                LocalDBhelper(activity).drinkingCreate(sql_db)
+                LocalDBhelper(activity).drinkingSaveLocal(sql_db!!, SavePaper.Total.Array[8] as ArrayList<Paper_DRINKING>)
 
-                        LocalDBhelper(activity).drinkingCreate(sql_db)
-                        LocalDBhelper(activity).drinkingSaveLocal(sql_db!!, SavePaper.Total.Array[8] as ArrayList<Paper_DRINKING>)
-                        saveCompleteAlert(activity)
-                    }
-                    5 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListOralInsert(sql_db!!, SavePaper.Total.Array[9] as ArrayList<Paper_ORAL>)
+                LocalDBhelper(activity).oralCreate(sql_db)
+                LocalDBhelper(activity).oralSaveLocal(sql_db!!, SavePaper.Total.Array[9] as ArrayList<Paper_ORAL>)
 
-                        LocalDBhelper(activity).oralCreate(sql_db)
-                        LocalDBhelper(activity).oralSaveLocal(sql_db!!, SavePaper.Total.Array[9] as ArrayList<Paper_ORAL>)
-                        saveCompleteAlert(activity)
-                    }
-                    6 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListCancerInsert(sql_db!!, SavePaper.Total.Array[10] as ArrayList<Paper_CANCER>)
+                LocalDBhelper(activity).cancerCreate(sql_db)
+                LocalDBhelper(activity).cancerSaveLocal(sql_db!!, SavePaper.Total.Array[10] as ArrayList<Paper_CANCER>)
 
-                        LocalDBhelper(activity).cancerCreate(sql_db)
-                        LocalDBhelper(activity).cancerSaveLocal(sql_db!!, SavePaper.Total.Array[10] as ArrayList<Paper_CANCER>)
-                        saveCompleteAlert(activity)
-                    }
-
-                }
+                saveCompleteAlert(activity)
 
             }
 

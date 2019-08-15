@@ -72,10 +72,14 @@ class DrinkingExaminationActivity : RootActivity(){
             AdditionalArr.over.checkAll = false
             if(check()){
 
-                if(ChartDivision.ChartDivision.next_or_save(4)){
-                    ChartDivision.ChartDivision.chart_array_insert(this, 4)
+                if(MainActivity.chart.isEmpty()){
+                    if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
+                        ChartDivision.ChartDivision.local_each_insert(this, 4)
+                    }else{
+                        ChartDivision.ChartDivision.server_insert(this)
+                    }
                 }else{
-                    ChartDivision.ChartDivision.local_each_insert(this, 4)
+                    ChartDivision.ChartDivision.chart_array_insert(this, 4)
                 }
 
             }
@@ -127,10 +131,14 @@ class DrinkingExaminationActivity : RootActivity(){
             last_serial.text = MainActivity.user_last_serial
 
 
-            if(ChartDivision.ChartDivision.next_or_save(4)){
-                drinking_examination_save.text = "다음"
-            }else{
+            if(MainActivity.chart.isEmpty()){
                 drinking_examination_save.text = "저장"
+            }else{
+                if(ChartDivision.ChartDivision.next_or_save(4)){
+                    drinking_examination_save.text = "다음"
+                }else{
+                    drinking_examination_save.text = "저장"
+                }
             }
 
         }

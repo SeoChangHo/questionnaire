@@ -140,10 +140,14 @@ class OralExaminationActivity : RootActivity() {
 
             }else{
 
-                if(ChartDivision.ChartDivision.next_or_save(5)){
-                    oral_examination_save.text = "다음"
-                }else{
+                if(MainActivity.chart.isEmpty()){
                     oral_examination_save.text = "저장"
+                }else{
+                    if(ChartDivision.ChartDivision.next_or_save(5)){
+                        oral_examination_save.text = "다음"
+                    }else{
+                        oral_examination_save.text = "저장"
+                    }
                 }
 
             }

@@ -242,11 +242,20 @@ class CancerExaminationActivity : RootActivity(){
 
             if(check()){
 
-                if(ChartDivision.ChartDivision.next_or_save(6)){
-                    ChartDivision.ChartDivision.chart_array_insert(this, 6)
-                }else {
-                    ChartDivision.ChartDivision.local_each_insert(this, 6)
+                if(MainActivity.chart.isEmpty()){
+                    if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
+                        ChartDivision.ChartDivision.local_each_insert(this, 6)
+                    }else{
+                        ChartDivision.ChartDivision.server_insert(this)
+                    }
+                }else{
+                    if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
+                        ChartDivision.ChartDivision.local_insert(this)
+                    }else{
+                        ChartDivision.ChartDivision.server_insert(this)
+                    }
                 }
+
             }
 
         }
@@ -350,10 +359,14 @@ class CancerExaminationActivity : RootActivity(){
             first_serial.text = MainActivity.user_first_serial
             last_serial.text = MainActivity.user_last_serial
 
-            if(ChartDivision.ChartDivision.next_or_save(6)){
-                cancer_examination_save.text = "다음"
-            }else {
-                elderly_examination_save.text = "저장"
+            if(MainActivity.chart.isEmpty()){
+                cancer_examination_save.text = "저장"
+            }else{
+                if(ChartDivision.ChartDivision.next_or_save(6)){
+                    cancer_examination_save.text = "다음"
+                }else{
+                    cancer_examination_save.text = "저장"
+                }
             }
 
         }
