@@ -1287,7 +1287,7 @@ class CancerExaminationActivity : RootActivity(){
                 ck10, ck11, ck12, ck13, ck14
         ))
 
-        SavePaper.Total.Array[9] = Paper_CANCER(
+        SavePaper.Total.Array[10] = Paper_CANCER(
                 exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                 ck1, ck1_1, ck2, ck2_1,
                 ck3_1, ck3_1_1, ck3_1_2, ck3_1_3, ck3_1_4, ck3_1_5,
