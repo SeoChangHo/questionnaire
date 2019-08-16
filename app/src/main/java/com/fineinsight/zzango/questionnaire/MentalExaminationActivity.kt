@@ -82,9 +82,9 @@ class MentalExaminationActivity : RootActivity(){
                 GetPaper(paper)
 
                 try {
-                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
-
-                    Signature.setImageBitmap(bmp)
+//                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+//
+//                    Signature.setImageBitmap(bmp)
 
                 } catch (e: Exception) {
                     println(e.message)
@@ -565,12 +565,12 @@ class MentalExaminationActivity : RootActivity(){
         mj_mtl_sum = (mj_mtl_1.toInt() + mj_mtl_2.toInt() + mj_mtl_3.toInt() + mj_mtl_4.toInt() + mj_mtl_5.toInt() + mj_mtl_6.toInt() + mj_mtl_7.toInt() + mj_mtl_8.toInt() + mj_mtl_9.toInt()).toString()
 
         PaperArray.PaperList.Arr_MENTAL!!.add(Paper_MENTAL(
-                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                 mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum
         ))
 
         SavePaper.Total.Array[2] = Paper_MENTAL(
-                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                 mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum)
 
         PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_MENTAL!!)

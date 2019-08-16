@@ -102,9 +102,9 @@ class CognitiveExaminationActivity : RootActivity(){
                 GetPaper(paper)
 
                 try {
-                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
-
-                    Signature.setImageBitmap(bmp)
+//                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+//
+//                    Signature.setImageBitmap(bmp)
 
                 } catch (e: Exception) {
                     println(e.message)
@@ -649,13 +649,13 @@ class CognitiveExaminationActivity : RootActivity(){
         }
 
         PaperArray.PaperList.Arr_COGNITIVE!!.add(Paper_COGNITIVE(
-                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                 mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7, mj_inji_8, mj_inji_9,
                 mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum
         ))
 
         SavePaper.Total.Array[3] = Paper_COGNITIVE(
-                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                 mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7, mj_inji_8, mj_inji_9,
                 mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum)
 

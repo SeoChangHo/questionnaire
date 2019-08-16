@@ -153,9 +153,9 @@ class ExerciseExaminationActivity : RootActivity() {
                GetPaper(paper)
 
                try {
-                   var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
-
-                   Signature.setImageBitmap(bmp)
+//                   var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+//
+//                   Signature.setImageBitmap(bmp)
 
                } catch (e: Exception) {
                    println(e.message)
@@ -501,7 +501,7 @@ class ExerciseExaminationActivity : RootActivity() {
 
         if(PaperArray.PaperList.temp_Arr_EXERCISE!!.size < 1) {
 
-            PaperArray.PaperList.temp_Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+            PaperArray.PaperList.temp_Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
                     sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
                     sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
                     sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
@@ -511,7 +511,7 @@ class ExerciseExaminationActivity : RootActivity() {
         }else{
 
             PaperArray.PaperList.temp_Arr_EXERCISE!!.removeAt(0)
-            PaperArray.PaperList.temp_Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+            PaperArray.PaperList.temp_Arr_EXERCISE!!.add(Paper_EXERCISE(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
                     sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
                     sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
                     sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
@@ -976,7 +976,7 @@ class ExerciseExaminationActivity : RootActivity() {
             exam_no = MainActivity.exam_no
         }
 
-        SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+        SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
                 sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
                 sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
                 sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
@@ -1302,7 +1302,7 @@ class ExerciseExaminationActivity : RootActivity() {
         exam_no = MainActivity.exam_no
 //        }
 
-        SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+        SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
                 sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
                 sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
                 sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,

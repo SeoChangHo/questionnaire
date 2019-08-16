@@ -9,7 +9,6 @@ data class Paper(var isChecked: Boolean, var exam_no: String, var setno: String,
 data class Paper_ORAL(
 var exam_date:String,
 var exam_no:String,
-var signature: ByteArray,
 var name:String,
 var first_serial:String,
 var last_serial:String,
@@ -37,7 +36,6 @@ data class Paper_COMMON(
 
 var exam_date :String,
 var exam_no :String,
-var signature: ByteArray,
 var name :String,
 var first_serial :String,
 var last_serial :String,
@@ -136,7 +134,6 @@ var mj10 :String
 data class Paper_MENTAL(
 var exam_date:String,
 var exam_no:String,
-var signature: ByteArray,
 var name:String,
 var first_serial:String,
 var last_serial :String,
@@ -158,7 +155,6 @@ var mj_mtl_sum :String
 data class Paper_COGNITIVE(
 var exam_date :String,
 var exam_no :String,
-var signature: ByteArray,
 var name :String,
 var first_serial :String,
 var last_serial :String,
@@ -185,7 +181,6 @@ var mj_inji_sum :String
 data class Paper_ELDERLY(
 var exam_date:String,
 var exam_no :String,
-var signature: ByteArray,
 var name :String,
 var first_serial:String,
 var last_serial :String,
@@ -206,7 +201,6 @@ var mj66_5 :String
 data class Paper_SMOKING(
         var exam_date:String,
         var exam_no :String,
-        var signature: ByteArray,
         var name :String,
         var first_serial:String,
         var last_serial :String,
@@ -226,7 +220,6 @@ data class Paper_SMOKING(
 data class Paper_DRINKING(
         var exam_date:String,
         var exam_no :String,
-        var signature: ByteArray,
         var name :String,
         var first_serial:String,
         var last_serial :String,
@@ -249,7 +242,6 @@ data class Paper_DRINKING(
 data class Paper_CANCER(
         var exam_date:String,
         var exam_no :String,
-        var signature: ByteArray,
         var name :String,
         var first_serial:String,
         var last_serial :String,
@@ -334,7 +326,6 @@ data class Paper_CANCER(
 
 data class Paper_EXERCISE (var exam_date : String,
                      var exam_bun_no : String,
-                     var signature: ByteArray,
                      var name : String,
                      var first_serial : String,
                      var last_serial : String,
@@ -373,7 +364,6 @@ data class Paper_EXERCISE (var exam_date : String,
 
 data class Paper_NUTRITION (var exam_date : String,
                      var exam_bun_no : String,
-                     var signature: ByteArray,
                      var name : String,
                      var first_serial : String,
                      var last_serial : String,

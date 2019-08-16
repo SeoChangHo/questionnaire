@@ -100,8 +100,8 @@ class SmokingExaminationActivity : RootActivity(){
                 GetPaper(paper)
 
                 try {
-                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
-                    Signature.setImageBitmap(bmp)
+//                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+//                    Signature.setImageBitmap(bmp)
 
                 } catch (e: Exception) {
                     println(e.message)
@@ -309,13 +309,13 @@ class SmokingExaminationActivity : RootActivity(){
         if(PaperArray.PaperList.temp_Arr_SMOKING!!.size < 1) {
 
             PaperArray.PaperList.temp_Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
             ))
 
             SavePaper.Total.Array[7] = Paper_SMOKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
 
@@ -323,13 +323,13 @@ class SmokingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.temp_Arr_SMOKING!!.removeAt(0)
             PaperArray.PaperList.temp_Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
             ))
 
             SavePaper.Total.Array[7] = Paper_SMOKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
 
@@ -485,7 +485,7 @@ class SmokingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.Arr_SMOKING!!.clear()
             PaperArray.PaperList.Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
             ))
@@ -503,7 +503,7 @@ class SmokingExaminationActivity : RootActivity(){
         }else {
 
             PaperArray.PaperList.Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
             ))
@@ -621,7 +621,7 @@ class SmokingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.Arr_SMOKING!!.clear()
             PaperArray.PaperList.Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
             ))
@@ -639,7 +639,7 @@ class SmokingExaminationActivity : RootActivity(){
         }else {
 
             PaperArray.PaperList.Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                     sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
             ))

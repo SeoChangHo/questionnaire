@@ -169,47 +169,44 @@ class ChartDivision{
                     }
                     else
                     {
-                        //empty byte
-                        val eb = ByteArray(0)
-
                         when(chartName)
                         {
                             PaperNameInfo.PC.COMMON.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_COMMON("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_COMMON("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
 
                             PaperNameInfo.PC.MENTAL.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_MENTAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_MENTAL("", "","", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
 
                             PaperNameInfo.PC.COGNITIVE.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_COGNITIVE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_COGNITIVE("", "","", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
 
                             PaperNameInfo.PC.ELDERLY.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_ELDERLY("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_ELDERLY("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
 
                             PaperNameInfo.PC.LIFE.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_EXERCISE("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
-                                SavePaper.Total.Array.add(Paper_NUTRITION("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
-                                SavePaper.Total.Array.add(Paper_SMOKING("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", ""))
-                                SavePaper.Total.Array.add(Paper_DRINKING("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_EXERCISE("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_NUTRITION("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_SMOKING("", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_DRINKING("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
 
                             PaperNameInfo.PC.ORAL.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_ORAL("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_ORAL("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
                             }
 
                             PaperNameInfo.PC.CANCER.EN_NM ->
                             {
-                                SavePaper.Total.Array.add(Paper_CANCER("", "", eb, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
+                                SavePaper.Total.Array.add(Paper_CANCER("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
 
 //                                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
 //                                    local_insert(activity)

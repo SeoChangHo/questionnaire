@@ -92,9 +92,9 @@ class NutritionExaminationActivity :RootActivity() {
                 GetPaper(paper)
 
                 try {
-                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
-
-                    Signature.setImageBitmap(bmp)
+//                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+//
+//                    Signature.setImageBitmap(bmp)
 
                 } catch (e: Exception) {
                     println(e.message)
@@ -425,24 +425,24 @@ class NutritionExaminationActivity :RootActivity() {
 
         if(PaperArray.PaperList.temp_Arr_NUTRITION!!.size < 1) {
 
-            PaperArray.PaperList.temp_Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+            PaperArray.PaperList.temp_Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                     sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
             ))
 
-            SavePaper.Total.Array[6] = Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+            SavePaper.Total.Array[6] = Paper_NUTRITION(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                     sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3)
 
         }else{
 
             PaperArray.PaperList.temp_Arr_NUTRITION!!.removeAt(0)
-            PaperArray.PaperList.temp_Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+            PaperArray.PaperList.temp_Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                     sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
             ))
 
-            SavePaper.Total.Array[6] = Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+            SavePaper.Total.Array[6] = Paper_NUTRITION(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                     sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3)
 
@@ -749,7 +749,7 @@ class NutritionExaminationActivity :RootActivity() {
         if(PaperArray.PaperList.Arr_NUTRITION != null && PaperArray.PaperList.Arr_NUTRITION!!.size >= 1) {
 
             PaperArray.PaperList.Arr_NUTRITION!!.clear()
-            PaperArray.PaperList.Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+            PaperArray.PaperList.Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                     sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
             ))
@@ -766,7 +766,7 @@ class NutritionExaminationActivity :RootActivity() {
 
         }else {
 
-            PaperArray.PaperList.Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+            PaperArray.PaperList.Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                     sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
             ))
@@ -977,7 +977,7 @@ class NutritionExaminationActivity :RootActivity() {
         if(PaperArray.PaperList.Arr_NUTRITION != null && PaperArray.PaperList.Arr_NUTRITION!!.size >= 1) {
 
             PaperArray.PaperList.Arr_NUTRITION!!.clear()
-            PaperArray.PaperList.Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+            PaperArray.PaperList.Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                     sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
             ))
@@ -994,7 +994,7 @@ class NutritionExaminationActivity :RootActivity() {
 
         }else {
 
-            PaperArray.PaperList.Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+            PaperArray.PaperList.Arr_NUTRITION!!.add(Paper_NUTRITION(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
                     sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
             ))

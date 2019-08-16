@@ -336,9 +336,9 @@ class CancerExaminationActivity : RootActivity(){
                 GetPaper(paper)
 
                 try {
-                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
+                    //var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature,0, paper.signature.size)
 
-                    Signature.setImageBitmap(bmp)
+                    //Signature.setImageBitmap(bmp)
 
                 }
                 catch (e:Exception)
@@ -1272,7 +1272,7 @@ class CancerExaminationActivity : RootActivity(){
         exam_no = System.currentTimeMillis().toString()
 
         PaperArray.PaperList.Arr_CANCER!!.add(Paper_CANCER(
-                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                 ck1, ck1_1, ck2, ck2_1,
                 ck3_1, ck3_1_1, ck3_1_2, ck3_1_3, ck3_1_4, ck3_1_5,
                 ck3_2, ck3_2_1, ck3_2_2, ck3_2_3, ck3_2_4, ck3_2_5,
@@ -1287,7 +1287,7 @@ class CancerExaminationActivity : RootActivity(){
         ))
 
         SavePaper.Total.Array[9] = Paper_CANCER(
-                exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                 ck1, ck1_1, ck2, ck2_1,
                 ck3_1, ck3_1_1, ck3_1_2, ck3_1_3, ck3_1_4, ck3_1_5,
                 ck3_2, ck3_2_1, ck3_2_2, ck3_2_3, ck3_2_4, ck3_2_5,

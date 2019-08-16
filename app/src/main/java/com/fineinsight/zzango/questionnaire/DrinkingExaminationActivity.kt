@@ -109,9 +109,9 @@ class DrinkingExaminationActivity : RootActivity(){
                 GetPaper(paper)
 
                 try {
-                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
-
-                    Signature.setImageBitmap(bmp)
+//                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+//
+//                    Signature.setImageBitmap(bmp)
 
                 } catch (e: Exception) {
                     println(e.message)
@@ -607,7 +607,7 @@ class DrinkingExaminationActivity : RootActivity(){
         if(PaperArray.PaperList.temp_Arr_DRINKING!!.size < 1) {
 
             PaperArray.PaperList.temp_Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no,  name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
@@ -616,7 +616,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.temp_Arr_DRINKING!!.removeAt(0)
             PaperArray.PaperList.temp_Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no,  name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
@@ -838,7 +838,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.Arr_DRINKING!!.clear()
             PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
@@ -856,7 +856,7 @@ class DrinkingExaminationActivity : RootActivity(){
         }else {
 
             PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
@@ -1013,7 +1013,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.Arr_DRINKING!!.clear()
             PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
@@ -1031,7 +1031,7 @@ class DrinkingExaminationActivity : RootActivity(){
         }else {
 
             PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no, signature, name, first_serial_text, last_serial_text, category,
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))

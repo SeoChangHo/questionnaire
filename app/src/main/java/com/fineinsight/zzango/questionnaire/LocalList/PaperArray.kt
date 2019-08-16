@@ -48,39 +48,39 @@ class PaperArray {
 
             Companion.initCheck = !Companion.initCheck
 
-            PaperList.Arr_COMMON = ArrayList<Paper_COMMON>()
+            PaperList.Arr_COMMON = ArrayList()
 
-            PaperList.Arr_MENTAL = ArrayList<Paper_MENTAL>()
-            PaperList.Arr_COGNITIVE = ArrayList<Paper_COGNITIVE>()
-            PaperList.Arr_ELDERLY = ArrayList<Paper_ELDERLY>()
+            PaperList.Arr_MENTAL = ArrayList()
+            PaperList.Arr_COGNITIVE = ArrayList()
+            PaperList.Arr_ELDERLY = ArrayList()
 
-            PaperList.Arr_DRINKING = ArrayList<Paper_DRINKING>()
-            PaperList.Arr_EXERCISE = ArrayList<Paper_EXERCISE>()
-            PaperList.Arr_NUTRITION = ArrayList<Paper_NUTRITION>()
-            PaperList.Arr_SMOKING = ArrayList<Paper_SMOKING>()
+            PaperList.Arr_DRINKING = ArrayList()
+            PaperList.Arr_EXERCISE = ArrayList()
+            PaperList.Arr_NUTRITION = ArrayList()
+            PaperList.Arr_SMOKING = ArrayList()
 
-            PaperList.Arr_ORAL = ArrayList<Paper_ORAL>()
+            PaperList.Arr_ORAL = ArrayList()
 
-            PaperList.Arr_CANCER = ArrayList<Paper_CANCER>()
+            PaperList.Arr_CANCER = ArrayList()
 
-            PaperList.Arr_RESULT = ArrayList<Any>()
+            PaperList.Arr_RESULT = ArrayList()
 
-            PaperList.temp_Arr_COMMON = ArrayList<Paper_COMMON>()
+            PaperList.temp_Arr_COMMON = ArrayList()
 
-            PaperList.temp_Arr_MENTAL = ArrayList<Paper_MENTAL>()
-            PaperList.temp_Arr_COGNITIVE = ArrayList<Paper_COGNITIVE>()
-            PaperList.temp_Arr_ELDERLY = ArrayList<Paper_ELDERLY>()
+            PaperList.temp_Arr_MENTAL = ArrayList()
+            PaperList.temp_Arr_COGNITIVE = ArrayList()
+            PaperList.temp_Arr_ELDERLY = ArrayList()
 
-            PaperList.temp_Arr_DRINKING = ArrayList<Paper_DRINKING>()
-            PaperList.temp_Arr_EXERCISE = ArrayList<Paper_EXERCISE>()
-            PaperList.temp_Arr_NUTRITION = ArrayList<Paper_NUTRITION>()
-            PaperList.temp_Arr_SMOKING = ArrayList<Paper_SMOKING>()
+            PaperList.temp_Arr_DRINKING = ArrayList()
+            PaperList.temp_Arr_EXERCISE = ArrayList()
+            PaperList.temp_Arr_NUTRITION = ArrayList()
+            PaperList.temp_Arr_SMOKING = ArrayList()
 
-            PaperList.temp_Arr_ORAL = ArrayList<Paper_ORAL>()
+            PaperList.temp_Arr_ORAL = ArrayList()
 
-            PaperList.temp_Arr_CANCER = ArrayList<Paper_CANCER>()
+            PaperList.temp_Arr_CANCER = ArrayList()
 
-            PaperList.temp_Arr_RESULT = ArrayList<Any>()
+            PaperList.temp_Arr_RESULT = ArrayList()
         }
     }
 

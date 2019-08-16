@@ -28,7 +28,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         cv.put("exam_no", columnValue.exam_no)
         //cv.put("setno", setno)
-        cv.put("signature", columnValue.signature)
+        //cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
         db.insert("LOCALSAVELIST", null, cv)
@@ -113,7 +113,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         cv.put("exam_no", columnValue.exam_no)
         //cv.put("setno", set)
-        cv.put("signature", columnValue.signature)
+        //cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
         db.insert("LOCALSAVELIST", null, cv)
@@ -127,7 +127,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         cv.put("exam_no", columnValue.exam_no)
         //cv.put("setno", set)
-        cv.put("signature", columnValue.signature)
+        //cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
         db.insert("LOCALSAVELIST", null, cv)
@@ -141,7 +141,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         cv.put("exam_no", columnValue.exam_no)
         //cv.put("setno", set)
-        cv.put("signature", columnValue.signature)
+        //cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
         db.insert("LOCALSAVELIST", null, cv)
@@ -155,7 +155,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         cv.put("exam_no", columnValue.exam_no)
         //cv.put("setno", set)
-        cv.put("signature", columnValue.signature)
+        //cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
         db.insert("LOCALSAVELIST", null, cv)
@@ -169,7 +169,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         cv.put("exam_no", columnValue.exam_no)
         //cv.put("setno", set)
-        cv.put("signature", columnValue.signature)
+        //cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
         db.insert("LOCALSAVELIST", null, cv)
@@ -183,7 +183,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         cv.put("exam_no", columnValue.exam_no)
         //cv.put("setno", set)
-        cv.put("signature", columnValue.signature)
+        //cv.put("signature", columnValue.signature)
         cv.put("name", columnValue.name)
 
         db.insert("LOCALSAVELIST", null, cv)
