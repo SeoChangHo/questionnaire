@@ -647,9 +647,7 @@ class SmokingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_SMOKING!!)
             PaperArray.PaperList.temp_Arr_SMOKING = ArrayList()
-
         }
-
     }
 
     fun whenTempLoad(paper: Paper_SMOKING) {
