@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.SavedListObject
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
@@ -88,9 +89,8 @@ class ExerciseExaminationActivity : RootActivity() {
             //check function 리턴하는 boolean 값에 따라 진행
             if(check()){
 
-                //진행상태 표시
-                login_appbar_loading_progress.visibility = View.VISIBLE
-                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                login_appbar_loading_progress.visibility = View.VISIBLE
+//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
                 //메인 액티비티에서 네트워크 연결상태가 문자열로 저장돼있다 그걸로 구분한다.
                 if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
@@ -251,7 +251,7 @@ class ExerciseExaminationActivity : RootActivity() {
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
-        var category = "exercise"
+        var category = PaperNameInfo.PC.EXERCISE.EN_NM
         var sg2_spSports1_1 = ""
         var sg2_spSports1_2 = ""
         var sg2_spSports1_3_1 = ""

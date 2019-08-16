@@ -18,6 +18,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
+import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Common
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
@@ -229,8 +230,8 @@ class CommonExaminationActivity : RootActivity() {
 
                 Drinking()
 
-                login_appbar_loading_progress.visibility = View.VISIBLE
-                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                login_appbar_loading_progress.visibility = View.VISIBLE
+//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
 
                 if(MainActivity.chart.isEmpty()){
@@ -532,7 +533,7 @@ class CommonExaminationActivity : RootActivity() {
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
-        var category = "common"
+        var category = PaperNameInfo.PC.COMMON.EN_NM
         var mj1_1_1 = ""
         var mj1_1_2 = ""
         var mj1_2_1 = ""

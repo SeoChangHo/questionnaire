@@ -19,6 +19,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
+import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_DRINKING
@@ -472,7 +473,7 @@ class DrinkingExaminationActivity : RootActivity(){
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
-        var category = "drinking"
+        var category = PaperNameInfo.PC.DRINKING.EN_NM
         var sg2_spDrink1 = ""
         var sg2_spDrink2_1 = ""
         var sg2_spDrink2_2 = ""

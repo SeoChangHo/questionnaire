@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
@@ -67,8 +68,8 @@ class SmokingExaminationActivity : RootActivity(){
 
             if(check()){
 
-                login_appbar_loading_progress.visibility = View.VISIBLE
-                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                login_appbar_loading_progress.visibility = View.VISIBLE
+//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
                 if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
 
@@ -214,7 +215,7 @@ class SmokingExaminationActivity : RootActivity(){
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
-        var category = "smoking"
+        var category = PaperNameInfo.PC.SMOKING.EN_NM
         var sg2_spSmoke1 = ""
         var sg2_spSmoke2 = ""
         var sg2_spSmoke3 = ""

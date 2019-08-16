@@ -19,6 +19,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
+import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Cognitive
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
@@ -60,8 +61,8 @@ class CognitiveExaminationActivity : RootActivity(){
 
             if(check()){
 
-                login_appbar_loading_progress.visibility = View.VISIBLE
-                login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//                login_appbar_loading_progress.visibility = View.VISIBLE
+//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
 
                 if(MainActivity.chart.isEmpty()){
@@ -430,7 +431,7 @@ class CognitiveExaminationActivity : RootActivity(){
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
-        var category = "cognitive"
+        var category = PaperNameInfo.PC.COGNITIVE.EN_NM
         var mj_inji_1 = ""
         var mj_inji_2 = ""
         var mj_inji_3 = ""
