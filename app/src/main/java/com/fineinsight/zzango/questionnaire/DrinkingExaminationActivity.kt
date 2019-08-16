@@ -20,9 +20,11 @@ import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
 import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
+import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_DRINKING
+import com.fineinsight.zzango.questionnaire.LocalList.Paper_SMOKING
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -864,6 +866,12 @@ class DrinkingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_DRINKING!!)
             PaperArray.PaperList.temp_Arr_DRINKING = ArrayList()
+
+            SavePaper.Total.Array[8] = Paper_DRINKING(
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                    sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
+                    sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
+            )
 
         }
 

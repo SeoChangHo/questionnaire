@@ -771,6 +771,11 @@ class NutritionExaminationActivity :RootActivity() {
                     sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3
             ))
 
+            println("하이루")
+            SavePaper.Total.Array[6] = Paper_NUTRITION(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spFood1, sg2_spFood2,
+                    sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
+                    sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3)
+
             PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_NUTRITION!!)
             PaperArray.PaperList.temp_Arr_NUTRITION = ArrayList()
 

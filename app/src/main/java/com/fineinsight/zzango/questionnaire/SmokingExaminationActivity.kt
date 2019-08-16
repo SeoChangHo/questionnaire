@@ -512,6 +512,11 @@ class SmokingExaminationActivity : RootActivity(){
             PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_SMOKING!!)
             PaperArray.PaperList.temp_Arr_SMOKING = ArrayList()
 
+            SavePaper.Total.Array[7] = Paper_SMOKING(
+                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
+                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
+
         }
 
         return true
