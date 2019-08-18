@@ -82,7 +82,7 @@ class DrinkingExaminationActivity : RootActivity(){
                         ChartDivision.ChartDivision.server_insert(this)
                     }
                 }else{
-                    ChartDivision.ChartDivision.chart_array_insert(this, 4)
+                    ChartDivision.ChartDivision.chart_array_insert(this, 4, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
                 }
 
             }

@@ -83,7 +83,7 @@ class OralExaminationActivity : RootActivity() {
                         ChartDivision.ChartDivision.server_insert(this)
                     }
                 }else{
-                    ChartDivision.ChartDivision.chart_array_insert(this, 5)
+                    ChartDivision.ChartDivision.chart_array_insert(this, 5, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
                 }
 
 

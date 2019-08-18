@@ -6,6 +6,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.fineinsight.zzango.questionnaire.DataClass.PublicDataInfo
 import com.fineinsight.zzango.questionnaire.LocalList.*
 import com.fineinsight.zzango.questionnaire.UserList.UserList
 
@@ -21,15 +22,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "name TEXT);")
     }
 
-    fun LocalListInsert(db : SQLiteDatabase, ex : ArrayList<Paper_COMMON>) {
-        val columnValue = ex.get(0)
+    fun LocalListInsert(db : SQLiteDatabase, ex : PublicDataInfo) {
+
 
         val cv = ContentValues()
 
-        cv.put("exam_no", columnValue.exam_no)
-        //cv.put("setno", setno)
-        //cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
+        cv.put("exam_no", ex.exam_no)
+        cv.put("signature", ex.signature)
+        cv.put("name", ex.name)
 
         db.insert("LOCALSAVELIST", null, cv)
     }
@@ -106,85 +106,82 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
 
-    fun LocalListOralInsert(db : SQLiteDatabase, ex : ArrayList<Paper_ORAL>) {
-        val columnValue = ex.get(0)
+    fun LocalListOralInsert(db : SQLiteDatabase, ex : Paper_ORAL) {
 
         val cv = ContentValues()
 
-        cv.put("exam_no", columnValue.exam_no)
+        cv.put("exam_no", ex.exam_no)
         //cv.put("setno", set)
-        //cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
+        //cv.put("signature", ex.signature)
+        cv.put("name", ex.name)
 
         db.insert("LOCALSAVELIST", null, cv)
     }
 
 
-    fun LocalListCancerInsert(db : SQLiteDatabase, ex : ArrayList<Paper_CANCER>) {
-        val columnValue = ex.get(0)
-
+    fun LocalListCancerInsert(db : SQLiteDatabase, ex : Paper_CANCER) {
         val cv = ContentValues()
 
-        cv.put("exam_no", columnValue.exam_no)
+        cv.put("exam_no", ex.exam_no)
         //cv.put("setno", set)
-        //cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
+        //cv.put("signature", ex.signature)
+        cv.put("name", ex.name)
 
         db.insert("LOCALSAVELIST", null, cv)
     }
 
     //정신
-    fun LocalListMentalInsert(db : SQLiteDatabase, ex : ArrayList<Paper_MENTAL>) {
-        val columnValue = ex.get(0)
+    fun LocalListMentalInsert(db : SQLiteDatabase, ex : Paper_MENTAL) {
+
 
         val cv = ContentValues()
 
-        cv.put("exam_no", columnValue.exam_no)
+        cv.put("exam_no", ex.exam_no)
         //cv.put("setno", set)
-        //cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
+        //cv.put("signature", ex.signature)
+        cv.put("name", ex.name)
 
         db.insert("LOCALSAVELIST", null, cv)
     }
 
     //인지
-    fun LocalListCognitiveInsert(db : SQLiteDatabase, ex : ArrayList<Paper_COGNITIVE>) {
-        val columnValue = ex.get(0)
+    fun LocalListCognitiveInsert(db : SQLiteDatabase, ex : Paper_COGNITIVE) {
+
 
         val cv = ContentValues()
 
-        cv.put("exam_no", columnValue.exam_no)
+        cv.put("exam_no", ex.exam_no)
         //cv.put("setno", set)
-        //cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
+        //cv.put("signature", ex.signature)
+        cv.put("name", ex.name)
 
         db.insert("LOCALSAVELIST", null, cv)
     }
 
     //노인
-    fun LocalListElderlyInsert(db : SQLiteDatabase, ex : ArrayList<Paper_ELDERLY>) {
-        val columnValue = ex.get(0)
+    fun LocalListElderlyInsert(db : SQLiteDatabase, ex : Paper_ELDERLY) {
+
 
         val cv = ContentValues()
 
-        cv.put("exam_no", columnValue.exam_no)
+        cv.put("exam_no", ex.exam_no)
         //cv.put("setno", set)
-        //cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
+        //cv.put("signature", ex.signature)
+        cv.put("name", ex.name)
 
         db.insert("LOCALSAVELIST", null, cv)
     }
 
     //생활
-    fun LocalListDrinkingInsert(db : SQLiteDatabase, ex : ArrayList<Paper_DRINKING>) {
-        val columnValue = ex.get(0)
+    fun LocalListDrinkingInsert(db : SQLiteDatabase, ex : Paper_DRINKING) {
+
 
         val cv = ContentValues()
 
-        cv.put("exam_no", columnValue.exam_no)
+        cv.put("exam_no", ex.exam_no)
         //cv.put("setno", set)
-        //cv.put("signature", columnValue.signature)
-        cv.put("name", columnValue.name)
+        //cv.put("signature", ex.signature)
+        cv.put("name", ex.name)
 
         db.insert("LOCALSAVELIST", null, cv)
     }
@@ -611,10 +608,10 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun oralSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_ORAL>){
+    fun oralSaveLocal(db : SQLiteDatabase, ex : Paper_ORAL){
 
 
-        val columnValue = ex.get(0)
+
 
         db.execSQL("INSERT INTO ORAL_EXAM" +
                 "(exam_date," +
@@ -627,17 +624,17 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
                 "oral_15, oral_16)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.oral_1}', '${columnValue.oral_2}', '${columnValue.oral_3}', '${columnValue.oral_4}'" +
-                ", '${columnValue.oral_5}', '${columnValue.oral_6}', '${columnValue.oral_7}', '${columnValue.oral_8}'," +
-                " '${columnValue.oral_9}', '${columnValue.oral_10}', '${columnValue.oral_11}', '${columnValue.oral_12}'," +
-                " '${columnValue.oral_13}', '${columnValue.oral_14}', '${columnValue.oral_15}', '${columnValue.oral_16}'"
+                "'${ex.exam_date}', '${ex.exam_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
+                ", '${ex.category}', '${ex.oral_1}', '${ex.oral_2}', '${ex.oral_3}', '${ex.oral_4}'" +
+                ", '${ex.oral_5}', '${ex.oral_6}', '${ex.oral_7}', '${ex.oral_8}'," +
+                " '${ex.oral_9}', '${ex.oral_10}', '${ex.oral_11}', '${ex.oral_12}'," +
+                " '${ex.oral_13}', '${ex.oral_14}', '${ex.oral_15}', '${ex.oral_16}'"
                 +");")
     }
 
-    fun commonSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_COMMON>){
+    fun commonSaveLocal(db : SQLiteDatabase, ex : Paper_COMMON){
 
-        val columnValue = ex.get(0)
+
 
         db.execSQL("INSERT INTO COMMON_EXAM" +
                 "(exam_date, exam_no, name, first_serial, last_serial, category, " +
@@ -653,36 +650,36 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1," +
                 " mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.mj1_1_1}', '${columnValue.mj1_1_2}', '${columnValue.mj1_2_1}'" +
-                ", '${columnValue.mj1_2_2}', '${columnValue.mj1_3_1}', '${columnValue.mj1_3_2}', '${columnValue.mj1_4_1}'" +
-                ", '${columnValue.mj1_4_2}', '${columnValue.mj1_5_1}', '${columnValue.mj1_5_2}', '${columnValue.mj1_6_1}'" +
-                ", '${columnValue.mj1_6_2}', '${columnValue.mj1_7_1}', '${columnValue.mj1_7_2}'" +
-                ", '${columnValue.mj2_1}', '${columnValue.mj2_2}', '${columnValue.mj2_3}', '${columnValue.mj2_4}'" +
-                ", '${columnValue.mj2_5}', '${columnValue.mj3}', '${columnValue.mj4}'" +
-                ", '${columnValue.mj4_1_1}', '${columnValue.mj4_1_2}', '${columnValue.mj4_2_1}', '${columnValue.mj4_2_2}'" +
-                ", '${columnValue.mj4_2_3}', '${columnValue.mj5}', '${columnValue.mj5_1_1}'" +
-                ", '${columnValue.mj5_1_2}', '${columnValue.mj5_2_1}', '${columnValue.mj5_2_2}', '${columnValue.mj5_2_3}'" +
-                ", '${columnValue.mj6}', '${columnValue.mj6_1}', '${columnValue.mj71}', '${columnValue.mj72}'" +
-                ", '${columnValue.mj73}', '${columnValue.mj74}', '${columnValue.mj7_1_11}', '${columnValue.mj7_1_12}'" +
-                ", '${columnValue.mj7_1_13}', '${columnValue.mj7_1_14}', '${columnValue.mj7_1_21}', '${columnValue.mj7_1_22}'" +
-                ", '${columnValue.mj7_1_23}', '${columnValue.mj7_1_24}', '${columnValue.mj7_1_31}', '${columnValue.mj7_1_32}'" +
-                ", '${columnValue.mj7_1_33}', '${columnValue.mj7_1_34}', '${columnValue.mj7_1_41}', '${columnValue.mj7_1_42}'" +
-                ", '${columnValue.mj7_1_43}', '${columnValue.mj7_1_44}', '${columnValue.mj7_1_51}', '${columnValue.mj7_1_52}'" +
-                ", '${columnValue.mj7_1_53}', '${columnValue.mj7_1_54}', '${columnValue.mj7_1_etc}', '${columnValue.mj7_2_11}'" +
-                ", '${columnValue.mj7_2_12}', '${columnValue.mj7_2_13}', '${columnValue.mj7_2_14}', '${columnValue.mj7_2_21}'" +
-                ", '${columnValue.mj7_2_22}', '${columnValue.mj7_2_23}', '${columnValue.mj7_2_24}', '${columnValue.mj7_2_31}'" +
-                ", '${columnValue.mj7_2_32}', '${columnValue.mj7_2_33}', '${columnValue.mj7_2_34}', '${columnValue.mj7_2_41}'" +
-                ", '${columnValue.mj7_2_42}', '${columnValue.mj7_2_43}', '${columnValue.mj7_2_44}', '${columnValue.mj7_2_51}'" +
-                ", '${columnValue.mj7_2_52}', '${columnValue.mj7_2_53}', '${columnValue.mj7_2_54}', '${columnValue.mj7_2_etc}'" +
-                ", '${columnValue.mj8_1}', '${columnValue.mj8_2_1}', '${columnValue.mj8_2_2}', '${columnValue.mj9_1}'" +
-                ", '${columnValue.mj9_2_1}', '${columnValue.mj9_2_2}', '${columnValue.mj10}');")
+                "'${ex.exam_date}', '${ex.exam_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
+                ", '${ex.category}', '${ex.mj1_1_1}', '${ex.mj1_1_2}', '${ex.mj1_2_1}'" +
+                ", '${ex.mj1_2_2}', '${ex.mj1_3_1}', '${ex.mj1_3_2}', '${ex.mj1_4_1}'" +
+                ", '${ex.mj1_4_2}', '${ex.mj1_5_1}', '${ex.mj1_5_2}', '${ex.mj1_6_1}'" +
+                ", '${ex.mj1_6_2}', '${ex.mj1_7_1}', '${ex.mj1_7_2}'" +
+                ", '${ex.mj2_1}', '${ex.mj2_2}', '${ex.mj2_3}', '${ex.mj2_4}'" +
+                ", '${ex.mj2_5}', '${ex.mj3}', '${ex.mj4}'" +
+                ", '${ex.mj4_1_1}', '${ex.mj4_1_2}', '${ex.mj4_2_1}', '${ex.mj4_2_2}'" +
+                ", '${ex.mj4_2_3}', '${ex.mj5}', '${ex.mj5_1_1}'" +
+                ", '${ex.mj5_1_2}', '${ex.mj5_2_1}', '${ex.mj5_2_2}', '${ex.mj5_2_3}'" +
+                ", '${ex.mj6}', '${ex.mj6_1}', '${ex.mj71}', '${ex.mj72}'" +
+                ", '${ex.mj73}', '${ex.mj74}', '${ex.mj7_1_11}', '${ex.mj7_1_12}'" +
+                ", '${ex.mj7_1_13}', '${ex.mj7_1_14}', '${ex.mj7_1_21}', '${ex.mj7_1_22}'" +
+                ", '${ex.mj7_1_23}', '${ex.mj7_1_24}', '${ex.mj7_1_31}', '${ex.mj7_1_32}'" +
+                ", '${ex.mj7_1_33}', '${ex.mj7_1_34}', '${ex.mj7_1_41}', '${ex.mj7_1_42}'" +
+                ", '${ex.mj7_1_43}', '${ex.mj7_1_44}', '${ex.mj7_1_51}', '${ex.mj7_1_52}'" +
+                ", '${ex.mj7_1_53}', '${ex.mj7_1_54}', '${ex.mj7_1_etc}', '${ex.mj7_2_11}'" +
+                ", '${ex.mj7_2_12}', '${ex.mj7_2_13}', '${ex.mj7_2_14}', '${ex.mj7_2_21}'" +
+                ", '${ex.mj7_2_22}', '${ex.mj7_2_23}', '${ex.mj7_2_24}', '${ex.mj7_2_31}'" +
+                ", '${ex.mj7_2_32}', '${ex.mj7_2_33}', '${ex.mj7_2_34}', '${ex.mj7_2_41}'" +
+                ", '${ex.mj7_2_42}', '${ex.mj7_2_43}', '${ex.mj7_2_44}', '${ex.mj7_2_51}'" +
+                ", '${ex.mj7_2_52}', '${ex.mj7_2_53}', '${ex.mj7_2_54}', '${ex.mj7_2_etc}'" +
+                ", '${ex.mj8_1}', '${ex.mj8_2_1}', '${ex.mj8_2_2}', '${ex.mj9_1}'" +
+                ", '${ex.mj9_2_1}', '${ex.mj9_2_2}', '${ex.mj10}');")
     }
 
 
-    fun mentalSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_MENTAL>){
+    fun mentalSaveLocal(db : SQLiteDatabase, ex : Paper_MENTAL){
 
-        val columnValue = ex.get(0)
+
 
         db.execSQL("INSERT INTO MENTAL_EXAM" +
                 "(exam_date," +
@@ -694,16 +691,16 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7," +
                 "mj_mtl_8, mj_mtl_9, mj_mtl_sum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.mj_mtl_1}', '${columnValue.mj_mtl_2}', '${columnValue.mj_mtl_3}', '${columnValue.mj_mtl_4}'" +
-                ", '${columnValue.mj_mtl_5}', '${columnValue.mj_mtl_6}', '${columnValue.mj_mtl_7}', '${columnValue.mj_mtl_8}'" +
-                ", '${columnValue.mj_mtl_9}', '${columnValue.mj_mtl_sum}');")
+                "'${ex.exam_date}', '${ex.exam_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
+                ", '${ex.category}', '${ex.mj_mtl_1}', '${ex.mj_mtl_2}', '${ex.mj_mtl_3}', '${ex.mj_mtl_4}'" +
+                ", '${ex.mj_mtl_5}', '${ex.mj_mtl_6}', '${ex.mj_mtl_7}', '${ex.mj_mtl_8}'" +
+                ", '${ex.mj_mtl_9}', '${ex.mj_mtl_sum}');")
 
     }
 
-    fun cognitiveSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_COGNITIVE>){
+    fun cognitiveSaveLocal(db : SQLiteDatabase, ex : Paper_COGNITIVE){
 
-        val columnValue = ex.get(0)
+
 
         db.execSQL("INSERT INTO COGNITIVE_EXAM" +
                 "(exam_date," +
@@ -715,17 +712,17 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7," +
                 "mj_inji_8, mj_inji_9, mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.mj_inji_1}', '${columnValue.mj_inji_2}', '${columnValue.mj_inji_3}', '${columnValue.mj_inji_4}'" +
-                ", '${columnValue.mj_inji_5}', '${columnValue.mj_inji_6}', '${columnValue.mj_inji_7}', '${columnValue.mj_inji_8}'" +
-                ", '${columnValue.mj_inji_9}', '${columnValue.mj_inji_10}', '${columnValue.mj_inji_11}', '${columnValue.mj_inji_12}'" +
-                ", '${columnValue.mj_inji_13}', '${columnValue.mj_inji_14}', '${columnValue.mj_inji_15}', '${columnValue.mj_inji_sum}');")
+                "'${ex.exam_date}', '${ex.exam_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
+                ", '${ex.category}', '${ex.mj_inji_1}', '${ex.mj_inji_2}', '${ex.mj_inji_3}', '${ex.mj_inji_4}'" +
+                ", '${ex.mj_inji_5}', '${ex.mj_inji_6}', '${ex.mj_inji_7}', '${ex.mj_inji_8}'" +
+                ", '${ex.mj_inji_9}', '${ex.mj_inji_10}', '${ex.mj_inji_11}', '${ex.mj_inji_12}'" +
+                ", '${ex.mj_inji_13}', '${ex.mj_inji_14}', '${ex.mj_inji_15}', '${ex.mj_inji_sum}');")
 
     }
 
-    fun elderlySaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_ELDERLY>){
+    fun elderlySaveLocal(db : SQLiteDatabase, ex : Paper_ELDERLY){
 
-        val columnValue = ex.get(0)
+
 
         db.execSQL("INSERT INTO ELDERLY_EXAM" +
                 "(exam_date," +
@@ -737,15 +734,15 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5," +
                 "mj66_3_6, mj66_4, mj66_5)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.mj66_1}', '${columnValue.mj66_2}', '${columnValue.mj66_3_1}', '${columnValue.mj66_3_2}'" +
-                ", '${columnValue.mj66_3_3}', '${columnValue.mj66_3_4}', '${columnValue.mj66_3_5}', '${columnValue.mj66_3_6}'" +
-                ", '${columnValue.mj66_4}', '${columnValue.mj66_5}');")
+                "'${ex.exam_date}', '${ex.exam_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
+                ", '${ex.category}', '${ex.mj66_1}', '${ex.mj66_2}', '${ex.mj66_3_1}', '${ex.mj66_3_2}'" +
+                ", '${ex.mj66_3_3}', '${ex.mj66_3_4}', '${ex.mj66_3_5}', '${ex.mj66_3_6}'" +
+                ", '${ex.mj66_4}', '${ex.mj66_5}');")
     }
 
-    fun smokingSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_SMOKING>){
+    fun smokingSaveLocal(db : SQLiteDatabase, ex : Paper_SMOKING){
 
-        val columnValue = ex.get(0)
+
 
         db.execSQL("INSERT INTO SMOKING_EXAM" +
                 "(exam_date," +
@@ -757,16 +754,16 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6, sg2_spSmoke7," +
                 "sg2_spSmoke8, sg2_spSmokeSum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.sg2_spSmoke1}', '${columnValue.sg2_spSmoke2}', '${columnValue.sg2_spSmoke3}', '${columnValue.sg2_spSmoke4}'" +
-                ", '${columnValue.sg2_spSmoke5}', '${columnValue.sg2_spSmoke6}', '${columnValue.sg2_spSmoke7}', '${columnValue.sg2_spSmoke8}'" +
-                ", '${columnValue.sg2_spSmokeSum}');")
+                "'${ex.exam_date}', '${ex.exam_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
+                ", '${ex.category}', '${ex.sg2_spSmoke1}', '${ex.sg2_spSmoke2}', '${ex.sg2_spSmoke3}', '${ex.sg2_spSmoke4}'" +
+                ", '${ex.sg2_spSmoke5}', '${ex.sg2_spSmoke6}', '${ex.sg2_spSmoke7}', '${ex.sg2_spSmoke8}'" +
+                ", '${ex.sg2_spSmokeSum}');")
     }
 
 
-    fun drinkingSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_DRINKING>){
+    fun drinkingSaveLocal(db : SQLiteDatabase, ex : Paper_DRINKING){
 
-        val columnValue = ex.get(0)
+
 
         db.execSQL("INSERT INTO DRINKING_EXAM" +
                 "(exam_date," +
@@ -778,15 +775,15 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5, sg2_spDrink6," +
                 "sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.sg2_spDrink1}', '${columnValue.sg2_spDrink2_1}', '${columnValue.sg2_spDrink2_2}', '${columnValue.sg2_spDrink3}'" +
-                ", '${columnValue.sg2_spDrink4}', '${columnValue.sg2_spDrink5}', '${columnValue.sg2_spDrink6}', '${columnValue.sg2_spDrink7}'" +
-                ", '${columnValue.sg2_spDrink8}', '${columnValue.sg2_spDrink9}', '${columnValue.sg2_spDrink10}', '${columnValue.sg2_spDrinkSum}');")
+                "'${ex.exam_date}', '${ex.exam_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
+                ", '${ex.category}', '${ex.sg2_spDrink1}', '${ex.sg2_spDrink2_1}', '${ex.sg2_spDrink2_2}', '${ex.sg2_spDrink3}'" +
+                ", '${ex.sg2_spDrink4}', '${ex.sg2_spDrink5}', '${ex.sg2_spDrink6}', '${ex.sg2_spDrink7}'" +
+                ", '${ex.sg2_spDrink8}', '${ex.sg2_spDrink9}', '${ex.sg2_spDrink10}', '${ex.sg2_spDrinkSum}');")
     }
 
-    fun exerciseSaveLocal(db: SQLiteDatabase, ex : ArrayList<Paper_EXERCISE>){
+    fun exerciseSaveLocal(db: SQLiteDatabase, ex : Paper_EXERCISE){
 
-        val columnValue = ex.get(0)
+
 
         db.execSQL("INSERT INTO EXERCISE_EXAM" +
                 "(exam_date," +
@@ -801,23 +798,23 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "sg2_spSports3_6_1,sg2_spSports3_6_2,sg2_spSports4_1_1,sg2_spSports4_1_2,sg2_spSports5,sg2_spSports6," +
                 "sg2_spSports7,sg2_spSports8,sg2_spSports9,sg2_spSports10,sg2_spSports11,sg2_spSports12,sg2_spSportsSum)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.sg2_spSports1_1}', '${columnValue.sg2_spSports1_2}', '${columnValue.sg2_spSports1_3_1}'" +
-                ", '${columnValue.sg2_spSports1_3_2}', '${columnValue.sg2_spSports1_4}', '${columnValue.sg2_spSports1_5}'" +
-                ", '${columnValue.sg2_spSports1_6_1}', '${columnValue.sg2_spSports1_6_2}', '${columnValue.sg2_spSports2_1}'" +
-                ", '${columnValue.sg2_spSports2_2}', '${columnValue.sg2_spSports2_3_1}', '${columnValue.sg2_spSports2_3_2}'" +
-                ", '${columnValue.sg2_spSports3_1}', '${columnValue.sg2_spSports3_2}', '${columnValue.sg2_spSports3_3_1}'" +
-                ", '${columnValue.sg2_spSports3_3_2}', '${columnValue.sg2_spSports3_4}', '${columnValue.sg2_spSports3_5}'" +
-                ", '${columnValue.sg2_spSports3_6_1}', '${columnValue.sg2_spSports3_6_2}', '${columnValue.sg2_spSports4_1_1}'" +
-                ", '${columnValue.sg2_spSports4_1_2}', '${columnValue.sg2_spSports5}', '${columnValue.sg2_spSports6}'" +
-                ", '${columnValue.sg2_spSports7}', '${columnValue.sg2_spSports8}', '${columnValue.sg2_spSports9}'" +
-                ", '${columnValue.sg2_spSports10}', '${columnValue.sg2_spSports11}', '${columnValue.sg2_spSports12}', '${columnValue.sg2_spSportsSum}');")
+                "'${ex.exam_date}', '${ex.exam_bun_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
+                ", '${ex.category}', '${ex.sg2_spSports1_1}', '${ex.sg2_spSports1_2}', '${ex.sg2_spSports1_3_1}'" +
+                ", '${ex.sg2_spSports1_3_2}', '${ex.sg2_spSports1_4}', '${ex.sg2_spSports1_5}'" +
+                ", '${ex.sg2_spSports1_6_1}', '${ex.sg2_spSports1_6_2}', '${ex.sg2_spSports2_1}'" +
+                ", '${ex.sg2_spSports2_2}', '${ex.sg2_spSports2_3_1}', '${ex.sg2_spSports2_3_2}'" +
+                ", '${ex.sg2_spSports3_1}', '${ex.sg2_spSports3_2}', '${ex.sg2_spSports3_3_1}'" +
+                ", '${ex.sg2_spSports3_3_2}', '${ex.sg2_spSports3_4}', '${ex.sg2_spSports3_5}'" +
+                ", '${ex.sg2_spSports3_6_1}', '${ex.sg2_spSports3_6_2}', '${ex.sg2_spSports4_1_1}'" +
+                ", '${ex.sg2_spSports4_1_2}', '${ex.sg2_spSports5}', '${ex.sg2_spSports6}'" +
+                ", '${ex.sg2_spSports7}', '${ex.sg2_spSports8}', '${ex.sg2_spSports9}'" +
+                ", '${ex.sg2_spSports10}', '${ex.sg2_spSports11}', '${ex.sg2_spSports12}', '${ex.sg2_spSportsSum}');")
 
     }
 
-    fun nutritionSaveLocal(db: SQLiteDatabase, ex : ArrayList<Paper_NUTRITION>){
+    fun nutritionSaveLocal(db: SQLiteDatabase, ex : Paper_NUTRITION){
 
-        val columnValue = ex.get(0)
+
 
         db.execSQL("INSERT INTO NUTRITION_EXAM" +
                 "(exam_date," +
@@ -830,19 +827,19 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "sg2_spFood7,sg2_spFood8,sg2_spFood9,sg2_spFood10,sg2_spFood11,sg2_spFoodSum," +
                 "sg2_spFatHeight,sg2_spFatWeight,sg2_spFatWaistSize,sg2_spFatBmi,sg2_spFat1,sg2_spFat2,sg2_spFat3)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_bun_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.sg2_spFood1}', '${columnValue.sg2_spFood2}', '${columnValue.sg2_spFood3}'" +
-                ", '${columnValue.sg2_spFood4}', '${columnValue.sg2_spFood5}', '${columnValue.sg2_spFood6}'" +
-                ", '${columnValue.sg2_spFood7}', '${columnValue.sg2_spFood8}', '${columnValue.sg2_spFood9}'" +
-                ", '${columnValue.sg2_spFood10}', '${columnValue.sg2_spFood11}', '${columnValue.sg2_spFoodSum}'" +
-                ", '${columnValue.sg2_spHeight}', '${columnValue.sg2_spWeight}', '${columnValue.sg2_spWaistSize}', '${columnValue.sg2_spBmi}'" +
-                ", '${columnValue.sg2_spFat1}', '${columnValue.sg2_spFat2}', '${columnValue.sg2_spFat3}');")
+                "'${ex.exam_date}', '${ex.exam_bun_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
+                ", '${ex.category}', '${ex.sg2_spFood1}', '${ex.sg2_spFood2}', '${ex.sg2_spFood3}'" +
+                ", '${ex.sg2_spFood4}', '${ex.sg2_spFood5}', '${ex.sg2_spFood6}'" +
+                ", '${ex.sg2_spFood7}', '${ex.sg2_spFood8}', '${ex.sg2_spFood9}'" +
+                ", '${ex.sg2_spFood10}', '${ex.sg2_spFood11}', '${ex.sg2_spFoodSum}'" +
+                ", '${ex.sg2_spHeight}', '${ex.sg2_spWeight}', '${ex.sg2_spWaistSize}', '${ex.sg2_spBmi}'" +
+                ", '${ex.sg2_spFat1}', '${ex.sg2_spFat2}', '${ex.sg2_spFat3}');")
 
     }
 
-    fun cancerSaveLocal(db : SQLiteDatabase, ex : ArrayList<Paper_CANCER>){
+    fun cancerSaveLocal(db : SQLiteDatabase, ex : Paper_CANCER){
 
-        val columnValue = ex.get(0)
+
 
         db.execSQL("INSERT INTO CANCER_EXAM" +
                 "(exam_date," +
@@ -862,23 +859,23 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "ck5_6, ck6_1, ck6_2, ck6_3, ck6_4, ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2," +
                 "ck9_1, ck9_2, ck10, ck11, ck12, ck13, ck14)" +
                 " VALUES (" +
-                "'${columnValue.exam_date}', '${columnValue.exam_no}', '${columnValue.name}', '${columnValue.first_serial}', '${columnValue.last_serial}'" +
-                ", '${columnValue.category}', '${columnValue.ck1}', '${columnValue.ck1_1}', '${columnValue.ck2}', '${columnValue.ck2_1}'" +
-                ", '${columnValue.ck3_1}', '${columnValue.ck3_1_1}', '${columnValue.ck3_1_2}', '${columnValue.ck3_1_3}', '${columnValue.ck3_1_4}', '${columnValue.ck3_1_5}'" +
-                ", '${columnValue.ck3_2}', '${columnValue.ck3_2_1}', '${columnValue.ck3_2_2}', '${columnValue.ck3_2_3}', '${columnValue.ck3_2_4}', '${columnValue.ck3_2_5}'" +
-                ", '${columnValue.ck3_3}', '${columnValue.ck3_3_1}', '${columnValue.ck3_3_2}', '${columnValue.ck3_3_3}', '${columnValue.ck3_3_4}', '${columnValue.ck3_3_5}'" +
-                ", '${columnValue.ck3_4}', '${columnValue.ck3_4_1}', '${columnValue.ck3_4_2}', '${columnValue.ck3_4_3}', '${columnValue.ck3_4_4}', '${columnValue.ck3_4_5}'" +
-                ", '${columnValue.ck3_5}', '${columnValue.ck3_5_1}', '${columnValue.ck3_5_2}', '${columnValue.ck3_5_3}', '${columnValue.ck3_5_4}', '${columnValue.ck3_5_5}'" +
-                ", '${columnValue.ck3_6}', '${columnValue.ck3_6_1}', '${columnValue.ck3_6_2}', '${columnValue.ck3_6_3}', '${columnValue.ck3_6_4}', '${columnValue.ck3_6_5}', '${columnValue.ck3_6_kita}'" +
-                ", '${columnValue.ck4_1}', '${columnValue.ck4_2}', '${columnValue.ck4_3}', '${columnValue.ck4_4}'" +
-                ", '${columnValue.ck4_5}', '${columnValue.ck4_6}', '${columnValue.ck4_7}', '${columnValue.ck4_8}'" +
-                ", '${columnValue.ck5_1}', '${columnValue.ck5_2}', '${columnValue.ck5_3}', '${columnValue.ck5_4}'" +
-                ", '${columnValue.ck5_5}', '${columnValue.ck5_6}', '${columnValue.ck6_1}', '${columnValue.ck6_2}'" +
-                ", '${columnValue.ck6_3}', '${columnValue.ck6_4}', '${columnValue.ck6_5}', '${columnValue.ck6_6}'" +
-                ", '${columnValue.ck7_1}', '${columnValue.ck7_2}', '${columnValue.ck7_3}', '${columnValue.ck7_4}'" +
-                ", '${columnValue.ck7_5}', '${columnValue.ck7_6}', '${columnValue.ck8_1}', '${columnValue.ck8_2}'" +
-                ", '${columnValue.ck9_1}', '${columnValue.ck9_2}', '${columnValue.ck10}', '${columnValue.ck11}'" +
-                ", '${columnValue.ck12}', '${columnValue.ck13}', '${columnValue.ck14}');")
+                "'${ex.exam_date}', '${ex.exam_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
+                ", '${ex.category}', '${ex.ck1}', '${ex.ck1_1}', '${ex.ck2}', '${ex.ck2_1}'" +
+                ", '${ex.ck3_1}', '${ex.ck3_1_1}', '${ex.ck3_1_2}', '${ex.ck3_1_3}', '${ex.ck3_1_4}', '${ex.ck3_1_5}'" +
+                ", '${ex.ck3_2}', '${ex.ck3_2_1}', '${ex.ck3_2_2}', '${ex.ck3_2_3}', '${ex.ck3_2_4}', '${ex.ck3_2_5}'" +
+                ", '${ex.ck3_3}', '${ex.ck3_3_1}', '${ex.ck3_3_2}', '${ex.ck3_3_3}', '${ex.ck3_3_4}', '${ex.ck3_3_5}'" +
+                ", '${ex.ck3_4}', '${ex.ck3_4_1}', '${ex.ck3_4_2}', '${ex.ck3_4_3}', '${ex.ck3_4_4}', '${ex.ck3_4_5}'" +
+                ", '${ex.ck3_5}', '${ex.ck3_5_1}', '${ex.ck3_5_2}', '${ex.ck3_5_3}', '${ex.ck3_5_4}', '${ex.ck3_5_5}'" +
+                ", '${ex.ck3_6}', '${ex.ck3_6_1}', '${ex.ck3_6_2}', '${ex.ck3_6_3}', '${ex.ck3_6_4}', '${ex.ck3_6_5}', '${ex.ck3_6_kita}'" +
+                ", '${ex.ck4_1}', '${ex.ck4_2}', '${ex.ck4_3}', '${ex.ck4_4}'" +
+                ", '${ex.ck4_5}', '${ex.ck4_6}', '${ex.ck4_7}', '${ex.ck4_8}'" +
+                ", '${ex.ck5_1}', '${ex.ck5_2}', '${ex.ck5_3}', '${ex.ck5_4}'" +
+                ", '${ex.ck5_5}', '${ex.ck5_6}', '${ex.ck6_1}', '${ex.ck6_2}'" +
+                ", '${ex.ck6_3}', '${ex.ck6_4}', '${ex.ck6_5}', '${ex.ck6_6}'" +
+                ", '${ex.ck7_1}', '${ex.ck7_2}', '${ex.ck7_3}', '${ex.ck7_4}'" +
+                ", '${ex.ck7_5}', '${ex.ck7_6}', '${ex.ck8_1}', '${ex.ck8_2}'" +
+                ", '${ex.ck9_1}', '${ex.ck9_2}', '${ex.ck10}', '${ex.ck11}'" +
+                ", '${ex.ck12}', '${ex.ck13}', '${ex.ck14}');")
     }
 
     @SuppressLint("Recycle")

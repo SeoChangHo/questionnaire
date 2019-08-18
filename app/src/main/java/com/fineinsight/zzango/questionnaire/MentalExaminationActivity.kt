@@ -55,7 +55,7 @@ class MentalExaminationActivity : RootActivity(){
                         ChartDivision.ChartDivision.server_insert(this)
                     }
                 }else{
-                    ChartDivision.ChartDivision.chart_array_insert(this, 1)
+                    ChartDivision.ChartDivision.chart_array_insert(this, 1, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
                 }
             }
 

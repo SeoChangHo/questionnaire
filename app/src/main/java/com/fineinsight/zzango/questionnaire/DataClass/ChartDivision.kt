@@ -8,12 +8,15 @@ import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.NetworkCapabilities
+import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat.startActivity
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.*
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
@@ -54,67 +57,67 @@ class ChartDivision{
 
                     0 ->{
                         LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[1] as ArrayList<Paper_COMMON>)
+                        LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[0] as PublicDataInfo)
 
                         LocalDBhelper(activity).commonExaminationDB(sql_db)
-                        LocalDBhelper(activity).commonSaveLocal(sql_db!!, SavePaper.Total.Array[1] as ArrayList<Paper_COMMON>)
+                        LocalDBhelper(activity).commonSaveLocal(sql_db!!, SavePaper.Total.Array[1] as Paper_COMMON)
                         saveCompleteAlert(activity)
                     }
                     1 ->{
                         LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListMentalInsert(sql_db!!, SavePaper.Total.Array[2] as ArrayList<Paper_MENTAL>)
+                        LocalDBhelper(activity).LocalListMentalInsert(sql_db!!, SavePaper.Total.Array[2] as Paper_MENTAL)
 
                         LocalDBhelper(activity).mentalCreate(sql_db)
-                        LocalDBhelper(activity).mentalSaveLocal(sql_db!!, SavePaper.Total.Array[2] as ArrayList<Paper_MENTAL>)
+                        LocalDBhelper(activity).mentalSaveLocal(sql_db!!, SavePaper.Total.Array[2] as Paper_MENTAL)
                         saveCompleteAlert(activity)
                     }
                     2 ->{
                         LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListCognitiveInsert(sql_db!!, SavePaper.Total.Array[3] as ArrayList<Paper_COGNITIVE>)
+                        LocalDBhelper(activity).LocalListCognitiveInsert(sql_db!!, SavePaper.Total.Array[3] as Paper_COGNITIVE)
 
                         LocalDBhelper(activity).cognitiveCreate(sql_db)
-                        LocalDBhelper(activity).cognitiveSaveLocal(sql_db!!, SavePaper.Total.Array[3] as ArrayList<Paper_COGNITIVE>)
+                        LocalDBhelper(activity).cognitiveSaveLocal(sql_db!!, SavePaper.Total.Array[3] as Paper_COGNITIVE)
                         saveCompleteAlert(activity)
                     }
                     3 ->{
                         LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListElderlyInsert(sql_db!!, SavePaper.Total.Array[4] as ArrayList<Paper_ELDERLY>)
+                        LocalDBhelper(activity).LocalListElderlyInsert(sql_db!!, SavePaper.Total.Array[4] as Paper_ELDERLY)
 
                         LocalDBhelper(activity).elderlyCreate(sql_db)
-                        LocalDBhelper(activity).elderlySaveLocal(sql_db!!, SavePaper.Total.Array[4] as ArrayList<Paper_ELDERLY>)
+                        LocalDBhelper(activity).elderlySaveLocal(sql_db!!, SavePaper.Total.Array[4] as Paper_ELDERLY)
                         saveCompleteAlert(activity)
                     }
                     4 ->{
                         LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListDrinkingInsert(sql_db!!, SavePaper.Total.Array[8] as ArrayList<Paper_DRINKING>)
+                        LocalDBhelper(activity).LocalListDrinkingInsert(sql_db!!, SavePaper.Total.Array[8] as Paper_DRINKING)
 
                         LocalDBhelper(activity).exerciseCreate(sql_db)
-                        LocalDBhelper(activity).exerciseSaveLocal(sql_db!!, SavePaper.Total.Array[5] as ArrayList<Paper_EXERCISE>)
+                        LocalDBhelper(activity).exerciseSaveLocal(sql_db!!, SavePaper.Total.Array[5] as Paper_EXERCISE)
 
                         LocalDBhelper(activity).nutritionCreate(sql_db)
-                        LocalDBhelper(activity).nutritionSaveLocal(sql_db!!, SavePaper.Total.Array[6] as ArrayList<Paper_NUTRITION>)
+                        LocalDBhelper(activity).nutritionSaveLocal(sql_db!!, SavePaper.Total.Array[6] as Paper_NUTRITION)
 
                         LocalDBhelper(activity).smokingCreate(sql_db)
-                        LocalDBhelper(activity).smokingSaveLocal(sql_db!!, SavePaper.Total.Array[7] as ArrayList<Paper_SMOKING>)
+                        LocalDBhelper(activity).smokingSaveLocal(sql_db!!, SavePaper.Total.Array[7] as Paper_SMOKING)
 
                         LocalDBhelper(activity).drinkingCreate(sql_db)
-                        LocalDBhelper(activity).drinkingSaveLocal(sql_db!!, SavePaper.Total.Array[8] as ArrayList<Paper_DRINKING>)
+                        LocalDBhelper(activity).drinkingSaveLocal(sql_db!!, SavePaper.Total.Array[8] as Paper_DRINKING)
                         saveCompleteAlert(activity)
                     }
                     5 ->{
                         LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListOralInsert(sql_db!!, SavePaper.Total.Array[9] as ArrayList<Paper_ORAL>)
+                        LocalDBhelper(activity).LocalListOralInsert(sql_db!!, SavePaper.Total.Array[9] as Paper_ORAL)
 
                         LocalDBhelper(activity).oralCreate(sql_db)
-                        LocalDBhelper(activity).oralSaveLocal(sql_db!!, SavePaper.Total.Array[9] as ArrayList<Paper_ORAL>)
+                        LocalDBhelper(activity).oralSaveLocal(sql_db!!, SavePaper.Total.Array[9] as Paper_ORAL)
                         saveCompleteAlert(activity)
                     }
                     6 ->{
                         LocalDBhelper(activity).onCreate(sql_db)
-                        LocalDBhelper(activity).LocalListCancerInsert(sql_db!!, SavePaper.Total.Array[10] as ArrayList<Paper_CANCER>)
+                        LocalDBhelper(activity).LocalListCancerInsert(sql_db!!, SavePaper.Total.Array[10] as Paper_CANCER)
 
                         LocalDBhelper(activity).cancerCreate(sql_db)
-                        LocalDBhelper(activity).cancerSaveLocal(sql_db!!, SavePaper.Total.Array[10] as ArrayList<Paper_CANCER>)
+                        LocalDBhelper(activity).cancerSaveLocal(sql_db!!, SavePaper.Total.Array[10] as Paper_CANCER)
                         saveCompleteAlert(activity)
                     }
 
@@ -124,7 +127,7 @@ class ChartDivision{
 
         }
 
-        fun chart_array_insert(activity: Activity, index: Int){
+        fun chart_array_insert(activity: Activity, index: Int, isSaveAtLocal:Boolean){
 
             if(index+1 <= MainActivity.chart.size){
 
@@ -208,13 +211,14 @@ class ChartDivision{
                             {
                                 SavePaper.Total.Array[10] = Paper_CANCER("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
 
-//                                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
-//                                    local_insert(activity)
-//                                }else{
-//                                    server_insert(activity)
-//                                }
-
-                                server_insert(activity)
+                                if (isSaveAtLocal)
+                                {
+                                    local_insert(activity)
+                                }
+                                else
+                                {
+                                    server_insert(activity)
+                                }
                             }
                         }
 
@@ -231,45 +235,58 @@ class ChartDivision{
 
         fun local_insert(activity : Activity){
 
+            println("dd??")
+
             var sql_db = LocalDBhelper(activity).writableDatabase
 
-            if(MainActivity.chart.isEmpty()){
+            if(chart.isNotEmpty()){
 
-                LocalDBhelper(activity).onCreate(sql_db)
-                LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[1] as ArrayList<Paper_COMMON>)
+                try
+                {
 
-                LocalDBhelper(activity).commonExaminationDB(sql_db)
-                LocalDBhelper(activity).commonSaveLocal(sql_db!!, SavePaper.Total.Array[1] as ArrayList<Paper_COMMON>)
+                    LocalDBhelper(activity).onCreate(sql_db)
+                    LocalDBhelper(activity).LocalListInsert(sql_db, SavePaper.Total.Array[0] as PublicDataInfo)
 
-                LocalDBhelper(activity).mentalCreate(sql_db)
-                LocalDBhelper(activity).mentalSaveLocal(sql_db!!, SavePaper.Total.Array[2] as ArrayList<Paper_MENTAL>)
+                    LocalDBhelper(activity).commonExaminationDB(sql_db)
+                    LocalDBhelper(activity).commonSaveLocal(sql_db, SavePaper.Total.Array[1] as Paper_COMMON)
 
-                LocalDBhelper(activity).cognitiveCreate(sql_db)
-                LocalDBhelper(activity).cognitiveSaveLocal(sql_db!!, SavePaper.Total.Array[3] as ArrayList<Paper_COGNITIVE>)
+                    LocalDBhelper(activity).mentalCreate(sql_db)
+                    LocalDBhelper(activity).mentalSaveLocal(sql_db, SavePaper.Total.Array[2] as Paper_MENTAL)
 
-                LocalDBhelper(activity).elderlyCreate(sql_db)
-                LocalDBhelper(activity).elderlySaveLocal(sql_db!!, SavePaper.Total.Array[4] as ArrayList<Paper_ELDERLY>)
+                    LocalDBhelper(activity).cognitiveCreate(sql_db)
+                    LocalDBhelper(activity).cognitiveSaveLocal(sql_db, SavePaper.Total.Array[3] as Paper_COGNITIVE)
 
-                LocalDBhelper(activity).exerciseCreate(sql_db)
-                LocalDBhelper(activity).exerciseSaveLocal(sql_db!!, SavePaper.Total.Array[5] as ArrayList<Paper_EXERCISE>)
+                    LocalDBhelper(activity).elderlyCreate(sql_db)
+                    LocalDBhelper(activity).elderlySaveLocal(sql_db, SavePaper.Total.Array[4] as Paper_ELDERLY)
 
-                LocalDBhelper(activity).nutritionCreate(sql_db)
-                LocalDBhelper(activity).nutritionSaveLocal(sql_db!!, SavePaper.Total.Array[6] as ArrayList<Paper_NUTRITION>)
+                    LocalDBhelper(activity).exerciseCreate(sql_db)
+                    LocalDBhelper(activity).exerciseSaveLocal(sql_db, SavePaper.Total.Array[5] as Paper_EXERCISE)
 
-                LocalDBhelper(activity).smokingCreate(sql_db)
-                LocalDBhelper(activity).smokingSaveLocal(sql_db!!, SavePaper.Total.Array[7] as ArrayList<Paper_SMOKING>)
+                    LocalDBhelper(activity).nutritionCreate(sql_db)
+                    LocalDBhelper(activity).nutritionSaveLocal(sql_db, SavePaper.Total.Array[6] as Paper_NUTRITION)
 
-                LocalDBhelper(activity).drinkingCreate(sql_db)
-                LocalDBhelper(activity).drinkingSaveLocal(sql_db!!, SavePaper.Total.Array[8] as ArrayList<Paper_DRINKING>)
+                    LocalDBhelper(activity).smokingCreate(sql_db)
+                    LocalDBhelper(activity).smokingSaveLocal(sql_db, SavePaper.Total.Array[7] as Paper_SMOKING)
 
-                LocalDBhelper(activity).oralCreate(sql_db)
-                LocalDBhelper(activity).oralSaveLocal(sql_db!!, SavePaper.Total.Array[9] as ArrayList<Paper_ORAL>)
+                    LocalDBhelper(activity).drinkingCreate(sql_db)
+                    LocalDBhelper(activity).drinkingSaveLocal(sql_db, SavePaper.Total.Array[8] as Paper_DRINKING)
 
-                LocalDBhelper(activity).cancerCreate(sql_db)
-                LocalDBhelper(activity).cancerSaveLocal(sql_db!!, SavePaper.Total.Array[10] as ArrayList<Paper_CANCER>)
+                    LocalDBhelper(activity).oralCreate(sql_db)
+                    LocalDBhelper(activity).oralSaveLocal(sql_db, SavePaper.Total.Array[9] as Paper_ORAL)
 
-                saveCompleteAlert(activity)
+                    LocalDBhelper(activity).cancerCreate(sql_db)
+                    LocalDBhelper(activity).cancerSaveLocal(sql_db, SavePaper.Total.Array[10] as Paper_CANCER)
 
+                    saveCompleteAlert(activity)
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+            else
+            {
+                println("else..??")
             }
 
         }
@@ -289,8 +306,6 @@ class ChartDivision{
 
                             if (!response.body()!!.equals("S")) {
 
-//                                    login_appbar_loading_progress.visibility = View.GONE
-//                                    login_appbar_loading_progress_bg.visibility = View.GONE
                                 activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                                 Toast.makeText(activity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
@@ -306,8 +321,7 @@ class ChartDivision{
 
                     override fun onFailure(call: Call<String>, t: Throwable) {
 
-//                            login_appbar_loading_progress.visibility = View.GONE
-//                            login_appbar_loading_progress_bg.visibility = View.GONE
+
                         activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         Toast.makeText(activity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
                         println(t.toString())
@@ -327,8 +341,7 @@ class ChartDivision{
 
         fun saveCompleteAlert(activity: Activity) {
 
-//                login_appbar_loading_progress.visibility = View.GONE
-//                login_appbar_loading_progress_bg.visibility = View.GONE
+
             activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
             popup = false
@@ -409,6 +422,25 @@ class ChartDivision{
 
         }
 
+        fun ProgressAction(isShow:Boolean, activity: Activity)
+        {
+            val Progress_circle = activity.findViewById<ProgressBar>(R.id.Progress_circle)
+            val Progress_bg = activity.findViewById<ConstraintLayout>(R.id.Progress_bg)
+
+            if(isShow)
+            {
+
+                Progress_circle.visibility = View.VISIBLE
+                Progress_bg.visibility = View.VISIBLE
+                activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            }
+            else
+            {
+                Progress_circle.visibility = View.GONE
+                Progress_bg.visibility = View.GONE
+                activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            }
+        }
 
     }
 
