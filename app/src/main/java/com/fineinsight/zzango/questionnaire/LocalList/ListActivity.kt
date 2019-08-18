@@ -49,7 +49,6 @@ class ListActivity : RootActivity() {
         while(!data.isAfterLast){
                 papers.add(Paper(bool,
                         data.getString(data.getColumnIndex("exam_no")),
-                        data.getString(data.getColumnIndex("setno")),
                         data.getBlob(data.getColumnIndex("signature")),
                         data.getString(data.getColumnIndex("name"))))
 
@@ -89,119 +88,119 @@ class ListActivity : RootActivity() {
                 for (i in 0..removeArr.size - 1) {
                     var CategoryArr = ArrayList<Any>()
 
-                    println("SETNO: " + removeArr[i].setno)
-
-                    when (removeArr[i].setno) {
-                        PaperArray.SetList.SET1 -> {
-                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(COMMONArr)
-                        }
-                        PaperArray.SetList.SET2 -> {
-                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
-                            var MENTALArr = Return_MENTAL(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(COMMONArr)
-                            CategoryArr.add(MENTALArr)
-                        }
-                        PaperArray.SetList.SET3 -> {
-                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
-                            var MENTALArr = Return_MENTAL(removeArr[i].exam_no, removeArr[i].signature)
 
 
-                            var EXERCISEArr = Return_EXERCISE(removeArr[i].exam_no, removeArr[i].signature)
-                            var NUTRITIONArr = Return_NUTRITION(removeArr[i].exam_no, removeArr[i].signature)
-                            var SMOKING = Return_SMOKING(removeArr[i].exam_no, removeArr[i].signature)
-                            var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(COMMONArr)
-                            CategoryArr.add(MENTALArr)
-                            CategoryArr.add(EXERCISEArr)
-                            CategoryArr.add(NUTRITIONArr)
-                            CategoryArr.add(SMOKING)
-                            CategoryArr.add(DRINKINGArr)
-                        }
-                        PaperArray.SetList.SET4 -> {
-                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
-                            var COGNITIVEArr = Return_COGNITIVE(removeArr[i].exam_no, removeArr[i].signature)
-                            var ELDERLYArr = Return_ELDERLY(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(COMMONArr)
-                            CategoryArr.add(COGNITIVEArr)
-                            CategoryArr.add(ELDERLYArr)
-                        }
-                        PaperArray.SetList.SET5 -> {
-                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
-                            var COGNITIVEArr = Return_COGNITIVE(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(COMMONArr)
-                            CategoryArr.add(COGNITIVEArr)
-                        }
-                        PaperArray.SetList.SET6 -> {
-                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
-                            var COGNITIVEArr = Return_COGNITIVE(removeArr[i].exam_no, removeArr[i].signature)
-                            var MENTALArr = Return_MENTAL(removeArr[i].exam_no, removeArr[i].signature)
-
-
-                            var EXERCISEArr = Return_EXERCISE(removeArr[i].exam_no, removeArr[i].signature)
-                            var NUTRITIONArr = Return_NUTRITION(removeArr[i].exam_no, removeArr[i].signature)
-                            var SMOKING = Return_SMOKING(removeArr[i].exam_no, removeArr[i].signature)
-                            var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
-
-                            var ELDERLYArr = Return_ELDERLY(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(COMMONArr)
-                            CategoryArr.add(COGNITIVEArr)
-                            CategoryArr.add(MENTALArr)
-                            CategoryArr.add(EXERCISEArr)
-                            CategoryArr.add(NUTRITIONArr)
-                            CategoryArr.add(SMOKING)
-                            CategoryArr.add(DRINKINGArr)
-                            CategoryArr.add(ELDERLYArr)
-                        }
-                        PaperArray.SetList.SET7 -> {
-                            var ORALArr = Return_ORAL(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(ORALArr)
-                        }
-                        PaperArray.SetList.SET8 -> {
-                            var CANCERArr = Return_CANCER(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(CANCERArr)
-                        }
-                        PaperArray.SetList.SET9 -> {
-                            var COGNITIVEArr = Return_COGNITIVE(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(COGNITIVEArr)
-                        }
-                        PaperArray.SetList.SET10 -> {
-                            var MENTALArr = Return_MENTAL(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(MENTALArr)
-                        }
-                        PaperArray.SetList.SET11 -> {
-
-                            var EXERCISEArr = Return_EXERCISE(removeArr[i].exam_no, removeArr[i].signature)
-                            var NUTRITIONArr = Return_NUTRITION(removeArr[i].exam_no, removeArr[i].signature)
-                            var SMOKING = Return_SMOKING(removeArr[i].exam_no, removeArr[i].signature)
-                            var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(EXERCISEArr)
-                            CategoryArr.add(NUTRITIONArr)
-                            CategoryArr.add(SMOKING)
-                            CategoryArr.add(DRINKINGArr)
-                        }
-                        PaperArray.SetList.SET12 -> {
-                            var ELDERLYArr = Return_ELDERLY(removeArr[i].exam_no, removeArr[i].signature)
-
-                            CategoryArr.add(ELDERLYArr)
-                        }
-                        else -> {
-                            println("확인불가")
-                        }
-                    }
+//                    when (removeArr[i].setno) {
+//                        PaperArray.SetList.SET1 -> {
+//                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(COMMONArr)
+//                        }
+//                        PaperArray.SetList.SET2 -> {
+//                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
+//                            var MENTALArr = Return_MENTAL(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(COMMONArr)
+//                            CategoryArr.add(MENTALArr)
+//                        }
+//                        PaperArray.SetList.SET3 -> {
+//                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
+//                            var MENTALArr = Return_MENTAL(removeArr[i].exam_no, removeArr[i].signature)
+//
+//
+//                            var EXERCISEArr = Return_EXERCISE(removeArr[i].exam_no, removeArr[i].signature)
+//                            var NUTRITIONArr = Return_NUTRITION(removeArr[i].exam_no, removeArr[i].signature)
+//                            var SMOKING = Return_SMOKING(removeArr[i].exam_no, removeArr[i].signature)
+//                            var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(COMMONArr)
+//                            CategoryArr.add(MENTALArr)
+//                            CategoryArr.add(EXERCISEArr)
+//                            CategoryArr.add(NUTRITIONArr)
+//                            CategoryArr.add(SMOKING)
+//                            CategoryArr.add(DRINKINGArr)
+//                        }
+//                        PaperArray.SetList.SET4 -> {
+//                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
+//                            var COGNITIVEArr = Return_COGNITIVE(removeArr[i].exam_no, removeArr[i].signature)
+//                            var ELDERLYArr = Return_ELDERLY(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(COMMONArr)
+//                            CategoryArr.add(COGNITIVEArr)
+//                            CategoryArr.add(ELDERLYArr)
+//                        }
+//                        PaperArray.SetList.SET5 -> {
+//                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
+//                            var COGNITIVEArr = Return_COGNITIVE(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(COMMONArr)
+//                            CategoryArr.add(COGNITIVEArr)
+//                        }
+//                        PaperArray.SetList.SET6 -> {
+//                            var COMMONArr = Return_COMMON(removeArr[i].exam_no, removeArr[i].signature)
+//                            var COGNITIVEArr = Return_COGNITIVE(removeArr[i].exam_no, removeArr[i].signature)
+//                            var MENTALArr = Return_MENTAL(removeArr[i].exam_no, removeArr[i].signature)
+//
+//
+//                            var EXERCISEArr = Return_EXERCISE(removeArr[i].exam_no, removeArr[i].signature)
+//                            var NUTRITIONArr = Return_NUTRITION(removeArr[i].exam_no, removeArr[i].signature)
+//                            var SMOKING = Return_SMOKING(removeArr[i].exam_no, removeArr[i].signature)
+//                            var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            var ELDERLYArr = Return_ELDERLY(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(COMMONArr)
+//                            CategoryArr.add(COGNITIVEArr)
+//                            CategoryArr.add(MENTALArr)
+//                            CategoryArr.add(EXERCISEArr)
+//                            CategoryArr.add(NUTRITIONArr)
+//                            CategoryArr.add(SMOKING)
+//                            CategoryArr.add(DRINKINGArr)
+//                            CategoryArr.add(ELDERLYArr)
+//                        }
+//                        PaperArray.SetList.SET7 -> {
+//                            var ORALArr = Return_ORAL(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(ORALArr)
+//                        }
+//                        PaperArray.SetList.SET8 -> {
+//                            var CANCERArr = Return_CANCER(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(CANCERArr)
+//                        }
+//                        PaperArray.SetList.SET9 -> {
+//                            var COGNITIVEArr = Return_COGNITIVE(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(COGNITIVEArr)
+//                        }
+//                        PaperArray.SetList.SET10 -> {
+//                            var MENTALArr = Return_MENTAL(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(MENTALArr)
+//                        }
+//                        PaperArray.SetList.SET11 -> {
+//
+//                            var EXERCISEArr = Return_EXERCISE(removeArr[i].exam_no, removeArr[i].signature)
+//                            var NUTRITIONArr = Return_NUTRITION(removeArr[i].exam_no, removeArr[i].signature)
+//                            var SMOKING = Return_SMOKING(removeArr[i].exam_no, removeArr[i].signature)
+//                            var DRINKINGArr = Return_DRINKING(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(EXERCISEArr)
+//                            CategoryArr.add(NUTRITIONArr)
+//                            CategoryArr.add(SMOKING)
+//                            CategoryArr.add(DRINKINGArr)
+//                        }
+//                        PaperArray.SetList.SET12 -> {
+//                            var ELDERLYArr = Return_ELDERLY(removeArr[i].exam_no, removeArr[i].signature)
+//
+//                            CategoryArr.add(ELDERLYArr)
+//                        }
+//                        else -> {
+//                            println("확인불가")
+//                        }
+//                    }
                     SaveArr.add(CategoryArr)
-                    SetArr.add(removeArr[i].setno)
+//                    SetArr.add(removeArr[i].setno)
 //                    SetArr.add(MainActivity.hospital)
 
                 }

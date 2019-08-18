@@ -119,7 +119,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
         println(p1.toString()+"번째의 체크값은 "+paper.isChecked.toString()+"입니다.")
         p0.chkbox.isChecked = paper.isChecked
-        p0.txtCategory.text = getSetNo(paper.setno)
+//        p0.txtCategory.text = getSetNo(paper.setno)
         p0.txtName.text = paper.name
 
 

@@ -17,7 +17,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "LOCALSAVELIST" +
                 "(exam_no TEXT," +
-                "setno TEXT," +
                 "signature BLOB," +
                 "name TEXT);")
     }
@@ -1006,52 +1005,52 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             db.delete("LOCALSAVELIST", "exam_no=?", arrayOf(Paper[i].exam_no))
 
 
-            when (Paper[i].setno)
-            {
-                CustomAdapter.Category.COMMON -> {
-                    println("공통검진입니다.")
-                    db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-                }
-                CustomAdapter.Category.ORAL -> {
-                    println("구강검진입니다.")
-                    db.delete("ORAL_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-                }
-                CustomAdapter.Category.MENTAL -> {
-                    println("정신건강검진입니다.")
-                    db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-                }
-                CustomAdapter.Category.COGNITIVE -> {
-                    println("인지기능입니다.")
-                    db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-                }
-                CustomAdapter.Category.ELDERLY -> {
-                    println("노인기능입니다.")
-                    db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-                }
-                CustomAdapter.Category.EXERCISE -> {
-                    println("운동입니다..")
-                    db.delete("EXERCISE_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-                }
-                CustomAdapter.Category.NUTRITION -> {
-                    println("영양입니다..")
-                    db.delete("NUTRITION_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-                }
-                CustomAdapter.Category.DRINKING -> {
-                    println("음주입니다..")
-                    db.delete("DRINKING_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-                }
-                CustomAdapter.Category.SMOKING -> {
-                    println("흡연입니다..")
-                    db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-                }
-                CustomAdapter.Category.CANCER -> {
-                    println("암입니다..")
-                    db.delete("CANCER_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-                }
-                else -> {
-                    println("확인불가")
-                }
-            }
+//            when (Paper[i].setno)
+//            {
+//                CustomAdapter.Category.COMMON -> {
+//                    println("공통검진입니다.")
+//                    db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+//                }
+//                CustomAdapter.Category.ORAL -> {
+//                    println("구강검진입니다.")
+//                    db.delete("ORAL_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+//                }
+//                CustomAdapter.Category.MENTAL -> {
+//                    println("정신건강검진입니다.")
+//                    db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+//                }
+//                CustomAdapter.Category.COGNITIVE -> {
+//                    println("인지기능입니다.")
+//                    db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+//                }
+//                CustomAdapter.Category.ELDERLY -> {
+//                    println("노인기능입니다.")
+//                    db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+//                }
+//                CustomAdapter.Category.EXERCISE -> {
+//                    println("운동입니다..")
+//                    db.delete("EXERCISE_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+//                }
+//                CustomAdapter.Category.NUTRITION -> {
+//                    println("영양입니다..")
+//                    db.delete("NUTRITION_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+//                }
+//                CustomAdapter.Category.DRINKING -> {
+//                    println("음주입니다..")
+//                    db.delete("DRINKING_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+//                }
+//                CustomAdapter.Category.SMOKING -> {
+//                    println("흡연입니다..")
+//                    db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+//                }
+//                CustomAdapter.Category.CANCER -> {
+//                    println("암입니다..")
+//                    db.delete("CANCER_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
+//                }
+//                else -> {
+//                    println("확인불가")
+//                }
+//            }
 
 
 
@@ -1081,82 +1080,82 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     {
 
         println(Paper.name+"님의 문진표 삭제시도")
-        println(Paper.setno)
+
 
             db.delete("LOCALSAVELIST", "exam_no=?", arrayOf(Paper.exam_no))
 
 
-        when (Paper.setno)
-        {
-            PaperArray.SetList.SET1 -> {
-                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET2 -> {
-                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-
-                db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET3 -> {
-                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-
-                db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-
-                db.delete("EXERCISE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-                db.delete("NUTRITION_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-                db.delete("DRINKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-                db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET4 -> {
-                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-
-                db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-
-                db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET5 -> {
-                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-
-                db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET6 -> {
-                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-
-                db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-
-                db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-
-                db.delete("EXERCISE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-                db.delete("NUTRITION_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-                db.delete("DRINKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-                db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-
-                db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET7 -> {
-                db.delete("ORAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET8 -> {
-                db.delete("CANCER_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET9 -> {
-                db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET10 -> {
-                db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET11 -> {
-                db.delete("EXERCISE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-                db.delete("NUTRITION_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-                db.delete("DRINKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-                db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            PaperArray.SetList.SET12 -> {
-                db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
-            }
-            else -> {
-                println("확인불가")
-            }
-        }
-        db.close()
+//        when (Paper.setno)
+//        {
+//            PaperArray.SetList.SET1 -> {
+//                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET2 -> {
+//                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//
+//                db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET3 -> {
+//                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//
+//                db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//
+//                db.delete("EXERCISE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//                db.delete("NUTRITION_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//                db.delete("DRINKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//                db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET4 -> {
+//                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//
+//                db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//
+//                db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET5 -> {
+//                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//
+//                db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET6 -> {
+//                db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//
+//                db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//
+//                db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//
+//                db.delete("EXERCISE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//                db.delete("NUTRITION_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//                db.delete("DRINKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//                db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//
+//                db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET7 -> {
+//                db.delete("ORAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET8 -> {
+//                db.delete("CANCER_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET9 -> {
+//                db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET10 -> {
+//                db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET11 -> {
+//                db.delete("EXERCISE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//                db.delete("NUTRITION_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//                db.delete("DRINKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//                db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            PaperArray.SetList.SET12 -> {
+//                db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+//            }
+//            else -> {
+//                println("확인불가")
+//            }
+//        }
+//        db.close()
     }
 }

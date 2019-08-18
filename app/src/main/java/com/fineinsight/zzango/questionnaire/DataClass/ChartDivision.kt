@@ -243,39 +243,104 @@ class ChartDivision{
 
                 try
                 {
-
                     LocalDBhelper(activity).onCreate(sql_db)
                     LocalDBhelper(activity).LocalListInsert(sql_db, SavePaper.Total.Array[0] as PublicDataInfo)
 
-                    LocalDBhelper(activity).commonExaminationDB(sql_db)
-                    LocalDBhelper(activity).commonSaveLocal(sql_db, SavePaper.Total.Array[1] as Paper_COMMON)
+                    for (ChartItem in chart)
+                    {
+                        when(ChartItem.chartName)
+                        {
+                            PaperNameInfo.PC.COMMON.EN_NM ->
+                            {
+                                if (ChartItem.isbool)
+                                {
+                                    LocalDBhelper(activity).commonExaminationDB(sql_db)
+                                    LocalDBhelper(activity).commonSaveLocal(sql_db, SavePaper.Total.Array[1] as Paper_COMMON)
+                                }
+                            }
 
-                    LocalDBhelper(activity).mentalCreate(sql_db)
-                    LocalDBhelper(activity).mentalSaveLocal(sql_db, SavePaper.Total.Array[2] as Paper_MENTAL)
+                            PaperNameInfo.PC.MENTAL.EN_NM ->
+                            {
+                                if (ChartItem.isbool)
+                                {
+                                    LocalDBhelper(activity).mentalCreate(sql_db)
+                                    LocalDBhelper(activity).mentalSaveLocal(sql_db, SavePaper.Total.Array[2] as Paper_MENTAL)
+                                }
+                            }
 
-                    LocalDBhelper(activity).cognitiveCreate(sql_db)
-                    LocalDBhelper(activity).cognitiveSaveLocal(sql_db, SavePaper.Total.Array[3] as Paper_COGNITIVE)
+                            PaperNameInfo.PC.COGNITIVE.EN_NM ->
+                            {
+                                if (ChartItem.isbool)
+                                {
+                                    LocalDBhelper(activity).cognitiveCreate(sql_db)
+                                    LocalDBhelper(activity).cognitiveSaveLocal(sql_db, SavePaper.Total.Array[3] as Paper_COGNITIVE)
+                                }
+                            }
 
-                    LocalDBhelper(activity).elderlyCreate(sql_db)
-                    LocalDBhelper(activity).elderlySaveLocal(sql_db, SavePaper.Total.Array[4] as Paper_ELDERLY)
+                            PaperNameInfo.PC.ELDERLY.EN_NM ->
+                            {
+                                if (ChartItem.isbool)
+                                {
+                                    LocalDBhelper(activity).elderlyCreate(sql_db)
+                                    LocalDBhelper(activity).elderlySaveLocal(sql_db, SavePaper.Total.Array[4] as Paper_ELDERLY)
+                                }
+                            }
 
-                    LocalDBhelper(activity).exerciseCreate(sql_db)
-                    LocalDBhelper(activity).exerciseSaveLocal(sql_db, SavePaper.Total.Array[5] as Paper_EXERCISE)
+                            PaperNameInfo.PC.EXERCISE.EN_NM ->
+                            {
+                                if (ChartItem.isbool)
+                                {
+                                    LocalDBhelper(activity).exerciseCreate(sql_db)
+                                    LocalDBhelper(activity).exerciseSaveLocal(sql_db, SavePaper.Total.Array[5] as Paper_EXERCISE)
+                                }
+                            }
 
-                    LocalDBhelper(activity).nutritionCreate(sql_db)
-                    LocalDBhelper(activity).nutritionSaveLocal(sql_db, SavePaper.Total.Array[6] as Paper_NUTRITION)
+                            PaperNameInfo.PC.NUTRITION.EN_NM ->
+                            {
+                                if (ChartItem.isbool)
+                                {
+                                    LocalDBhelper(activity).nutritionCreate(sql_db)
+                                    LocalDBhelper(activity).nutritionSaveLocal(sql_db, SavePaper.Total.Array[6] as Paper_NUTRITION)
+                                }
+                            }
 
-                    LocalDBhelper(activity).smokingCreate(sql_db)
-                    LocalDBhelper(activity).smokingSaveLocal(sql_db, SavePaper.Total.Array[7] as Paper_SMOKING)
+                            PaperNameInfo.PC.SMOKING.EN_NM ->
+                            {
+                                if (ChartItem.isbool)
+                                {
+                                    LocalDBhelper(activity).smokingCreate(sql_db)
+                                    LocalDBhelper(activity).smokingSaveLocal(sql_db, SavePaper.Total.Array[7] as Paper_SMOKING)
+                                }
+                            }
 
-                    LocalDBhelper(activity).drinkingCreate(sql_db)
-                    LocalDBhelper(activity).drinkingSaveLocal(sql_db, SavePaper.Total.Array[8] as Paper_DRINKING)
+                            PaperNameInfo.PC.DRINKING.EN_NM ->
+                            {
+                                if (ChartItem.isbool)
+                                {
+                                    LocalDBhelper(activity).drinkingCreate(sql_db)
+                                    LocalDBhelper(activity).drinkingSaveLocal(sql_db, SavePaper.Total.Array[8] as Paper_DRINKING)
+                                }
+                            }
 
-                    LocalDBhelper(activity).oralCreate(sql_db)
-                    LocalDBhelper(activity).oralSaveLocal(sql_db, SavePaper.Total.Array[9] as Paper_ORAL)
+                            PaperNameInfo.PC.ORAL.EN_NM ->
+                            {
+                                if (ChartItem.isbool)
+                                {
+                                    LocalDBhelper(activity).oralCreate(sql_db)
+                                    LocalDBhelper(activity).oralSaveLocal(sql_db, SavePaper.Total.Array[9] as Paper_ORAL)
+                                }
+                            }
 
-                    LocalDBhelper(activity).cancerCreate(sql_db)
-                    LocalDBhelper(activity).cancerSaveLocal(sql_db, SavePaper.Total.Array[10] as Paper_CANCER)
+                            PaperNameInfo.PC.CANCER.EN_NM ->
+                            {
+                                if (ChartItem.isbool)
+                                {
+                                    LocalDBhelper(activity).cancerCreate(sql_db)
+                                    LocalDBhelper(activity).cancerSaveLocal(sql_db, SavePaper.Total.Array[10] as Paper_CANCER)
+                                }
+                            }
+                        }
+                    }
 
                     saveCompleteAlert(activity)
                 }

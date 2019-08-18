@@ -63,7 +63,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
 
     override fun getItemCount(): Int {
 
-        return SetToCount()
+        //return SetToCount()
+        return 1
     }
 
     override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
@@ -704,90 +705,90 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
         val constraint = itemView.findViewById(R.id.constraintDetailLayoutArea) as ConstraintLayout
     }
 
-    fun SetToCount():Int
-    {
-        var SET = PaperList.setno
-        CategoryArr = ArrayList()
-
-        when(SET)
-        {
-            PaperArray.SetList.SET1->
-            {
-                CategoryArr.add(Category.COMMON)
-            }
-            PaperArray.SetList.SET2->
-            {
-                CategoryArr.add(Category.COMMON)
-                CategoryArr.add(Category.MENTAL)
-            }
-            PaperArray.SetList.SET3->
-            {
-                CategoryArr.add(Category.COMMON)
-                CategoryArr.add(Category.MENTAL)
-                //생활습관 4개
-                CategoryArr.add(Category.EXERCISE)
-                CategoryArr.add(Category.NUTRITION)
-                CategoryArr.add(Category.SMOKING)
-                CategoryArr.add(Category.DRINKING)
-
-            }
-            PaperArray.SetList.SET4->
-            {
-                CategoryArr.add(Category.COMMON)
-                CategoryArr.add(Category.COGNITIVE)
-                CategoryArr.add(Category.ELDERLY)
-            }
-            PaperArray.SetList.SET5->
-            {
-                CategoryArr.add(Category.COMMON)
-                CategoryArr.add(Category.COGNITIVE)
-            }
-            PaperArray.SetList.SET6->
-            {
-                CategoryArr.add(Category.COMMON)
-                CategoryArr.add(Category.COGNITIVE)
-                CategoryArr.add(Category.MENTAL)
-                //생활습관 4개
-                CategoryArr.add(Category.EXERCISE)
-                CategoryArr.add(Category.NUTRITION)
-                CategoryArr.add(Category.SMOKING)
-                CategoryArr.add(Category.DRINKING)
-
-                CategoryArr.add(Category.ELDERLY)
-            }
-            PaperArray.SetList.SET7->
-            {
-                CategoryArr.add(Category.ORAL)
-            }
-            PaperArray.SetList.SET8->
-            {
-                CategoryArr.add(Category.CANCER)
-            }
-            PaperArray.SetList.SET9->
-            {
-                CategoryArr.add(Category.COGNITIVE)
-            }
-            PaperArray.SetList.SET10->
-            {
-                CategoryArr.add(Category.MENTAL)
-            }
-            PaperArray.SetList.SET11->
-            {
-                //생활습관 4개
-                CategoryArr.add(Category.EXERCISE)
-                CategoryArr.add(Category.NUTRITION)
-                CategoryArr.add(Category.SMOKING)
-                CategoryArr.add(Category.DRINKING)
-            }
-            PaperArray.SetList.SET12->
-            {
-                CategoryArr.add(Category.ELDERLY)
-            }
-            else->
-            {
-                return 0
-            }
-        }
-        return CategoryArr.size
-    }
+//    fun SetToCount():Int
+//    {
+//        var SET = PaperList.setno
+//        CategoryArr = ArrayList()
+//
+//        when(SET)
+//        {
+//            PaperArray.SetList.SET1->
+//            {
+//                CategoryArr.add(Category.COMMON)
+//            }
+//            PaperArray.SetList.SET2->
+//            {
+//                CategoryArr.add(Category.COMMON)
+//                CategoryArr.add(Category.MENTAL)
+//            }
+//            PaperArray.SetList.SET3->
+//            {
+//                CategoryArr.add(Category.COMMON)
+//                CategoryArr.add(Category.MENTAL)
+//                //생활습관 4개
+//                CategoryArr.add(Category.EXERCISE)
+//                CategoryArr.add(Category.NUTRITION)
+//                CategoryArr.add(Category.SMOKING)
+//                CategoryArr.add(Category.DRINKING)
+//
+//            }
+//            PaperArray.SetList.SET4->
+//            {
+//                CategoryArr.add(Category.COMMON)
+//                CategoryArr.add(Category.COGNITIVE)
+//                CategoryArr.add(Category.ELDERLY)
+//            }
+//            PaperArray.SetList.SET5->
+//            {
+//                CategoryArr.add(Category.COMMON)
+//                CategoryArr.add(Category.COGNITIVE)
+//            }
+//            PaperArray.SetList.SET6->
+//            {
+//                CategoryArr.add(Category.COMMON)
+//                CategoryArr.add(Category.COGNITIVE)
+//                CategoryArr.add(Category.MENTAL)
+//                //생활습관 4개
+//                CategoryArr.add(Category.EXERCISE)
+//                CategoryArr.add(Category.NUTRITION)
+//                CategoryArr.add(Category.SMOKING)
+//                CategoryArr.add(Category.DRINKING)
+//
+//                CategoryArr.add(Category.ELDERLY)
+//            }
+//            PaperArray.SetList.SET7->
+//            {
+//                CategoryArr.add(Category.ORAL)
+//            }
+//            PaperArray.SetList.SET8->
+//            {
+//                CategoryArr.add(Category.CANCER)
+//            }
+//            PaperArray.SetList.SET9->
+//            {
+//                CategoryArr.add(Category.COGNITIVE)
+//            }
+//            PaperArray.SetList.SET10->
+//            {
+//                CategoryArr.add(Category.MENTAL)
+//            }
+//            PaperArray.SetList.SET11->
+//            {
+//                //생활습관 4개
+//                CategoryArr.add(Category.EXERCISE)
+//                CategoryArr.add(Category.NUTRITION)
+//                CategoryArr.add(Category.SMOKING)
+//                CategoryArr.add(Category.DRINKING)
+//            }
+//            PaperArray.SetList.SET12->
+//            {
+//                CategoryArr.add(Category.ELDERLY)
+//            }
+//            else->
+//            {
+//                return 0
+//            }
+//        }
+//        return CategoryArr.size
+//    }
 }
