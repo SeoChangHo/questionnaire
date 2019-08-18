@@ -3,7 +3,14 @@ package com.fineinsight.zzango.questionnaire.LocalList
 import java.io.Serializable
 
 //로컬 저장 리스트
-data class Paper(var isChecked: Boolean, var exam_no: String, var signature: ByteArray, var name: String) : Serializable
+data class Paper(
+        var isChecked: Boolean,
+        var exam_no: String,
+        var signature: ByteArray,
+        var first_serial: String,
+        var last_serial: String,
+        var name: String) : Serializable
+
 
 //구강검진 리스트
 data class Paper_ORAL(

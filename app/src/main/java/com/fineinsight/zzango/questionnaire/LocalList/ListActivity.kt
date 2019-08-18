@@ -12,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.*
+import com.fineinsight.zzango.questionnaire.DataClass.PublicDataInfo
 import kotlinx.android.synthetic.main.activity_list.*
 import kotlinx.android.synthetic.main.progress_dialog.view.*
 import retrofit2.Call
@@ -50,6 +51,8 @@ class ListActivity : RootActivity() {
                 papers.add(Paper(bool,
                         data.getString(data.getColumnIndex("exam_no")),
                         data.getBlob(data.getColumnIndex("signature")),
+                        data.getString(data.getColumnIndex("first_serial")),
+                        data.getString(data.getColumnIndex("last_serial")),
                         data.getString(data.getColumnIndex("name"))))
 
             data.moveToNext()
@@ -78,30 +81,27 @@ class ListActivity : RootActivity() {
 
                 var removeArr = ArrayList<Paper>()
                 var SaveArr = ArrayList<Any>()
-                var SetArr = ArrayList<String>()
+
 
 
 
                 for (item in papers) {
                     if (item.isChecked == true) {
                         removeArr.add(item)
+
+                        println("&*&*&*&*&*&*")
+                        println(item)
+                        println("&*&*&*&*&*&*")
                     }
                 }
 
-                for (i in 0..removeArr.size - 1) {
+                for (i in 0 until removeArr.size) {
                     var CategoryArr = ArrayList<Any>()
 
                     SaveArr.add(CategoryArr)
                 }
 
-                println("**********SAVE ARRAY**********")
-                println(SaveArr)
-                println("**********SAVE ARRAY**********")
 
-
-                println("**********SET ARRAY**********")
-                println(SetArr)
-                println("**********SET ARRAY**********")
 
 
                 window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
@@ -117,7 +117,7 @@ class ListActivity : RootActivity() {
                 val mAlertDialog = mBuilder.show()
 
 
-                UploadPaper(SaveArr, SetArr, removeArr, 0, SaveArr.size, mdialogView, mAlertDialog)
+                UploadPaper(SaveArr, removeArr, 0, SaveArr.size, mdialogView, mAlertDialog)
 
             }else{
 
@@ -155,16 +155,13 @@ class ListActivity : RootActivity() {
 
 
     //재귀호출함수
-    fun UploadPaper(SaveArr:ArrayList<Any>, SetArr:ArrayList<String>, removeArr:ArrayList<Paper>, startIndex:Int, TotalIndex:Int, dialogView:View, Alertdialog:AlertDialog)
+    fun UploadPaper(SaveArr:ArrayList<Any>, removeArr:ArrayList<Paper>, startIndex:Int, TotalIndex:Int, dialogView:View, Alertdialog:AlertDialog)
     {
-
-
-        val sql_db = LocalDBhelper(this).writableDatabase
         println("업로드 들어옴")
         println("Array의 크기는 "+TotalIndex.toString()+" 개 입니다.")
         println("현재는 "+startIndex.toString()+" 번째 입니다.")
 
-        println("세트번호는 "+SetArr[startIndex]+" 입니다.")
+
 
         dialogView.txtMent.text = "${(startIndex+1)}/${TotalIndex} 저장중.."
 
@@ -175,23 +172,164 @@ class ListActivity : RootActivity() {
 
         println("진행률: ${(double_start_index/double_total_index)*100}")
 
-        var InfoArr = ArrayList<String>()
 
 
-        InfoArr.add(SetArr[startIndex])
-        InfoArr.add(MainActivity.hospital)
+
+
+
 
 
 
         var body = ArrayList<Any>()
 
-        body.add(InfoArr)
-        body.add(SaveArr[startIndex])
+
+        /*
+        body의 1번째 Row -> PublicDataInfo
+        val hospital: String,
+        val name: String,
+        val first_serial: String,
+        val last_serial: String,
+        val signature: ByteArray,
+        val exam_no: String
+         */
+
+
+
+        body.add(PublicDataInfo(
+                MainActivity.hospital,
+                removeArr[startIndex].name,
+                removeArr[startIndex].first_serial,
+                removeArr[startIndex].last_serial,
+                removeArr[startIndex].signature,
+                removeArr[startIndex].exam_no))
+
+        var SELECT_COMMON = Return_COMMON(removeArr[startIndex].exam_no)
+        var SELECT_MENTAL = Return_MENTAL(removeArr[startIndex].exam_no)
+        var SELECT_COGNITIVE = Return_COGNITIVE(removeArr[startIndex].exam_no)
+        var SELECT_ELDERLY = Return_ELDERLY(removeArr[startIndex].exam_no)
+        var SELECT_EXERCISE = Return_EXERCISE(removeArr[startIndex].exam_no)
+        var SELECT_NUTRITION = Return_NUTRITION(removeArr[startIndex].exam_no)
+        var SELECT_SMOKING = Return_SMOKING(removeArr[startIndex].exam_no)
+        var SELECT_DRINKING = Return_DRINKING(removeArr[startIndex].exam_no)
+        var SELECT_ORAL = Return_ORAL(removeArr[startIndex].exam_no)
+        var SELECT_CANCER = Return_CANCER(removeArr[startIndex].exam_no)
+
+
+
+        body.add(
+                if (SELECT_COMMON.size>0)
+                {
+                    SELECT_COMMON[0]
+                }
+                else
+                {
+                    Paper_COMMON("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                }
+        )
+
+        body.add(
+                if (SELECT_MENTAL.size>0)
+                {
+                    SELECT_MENTAL[0]
+                }
+                else
+                {
+                    Paper_MENTAL("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                }
+        )
+
+        body.add(
+                if (SELECT_COGNITIVE.size>0)
+                {
+                    SELECT_COGNITIVE[0]
+                }
+                else
+                {
+                    Paper_COGNITIVE("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                }
+        )
+
+        body.add(
+                if (SELECT_ELDERLY.size>0)
+                {
+                    SELECT_ELDERLY[0]
+                }
+                else
+                {
+                    Paper_ELDERLY("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                }
+        )
+
+        body.add(
+                if (SELECT_EXERCISE.size>0)
+                {
+                    SELECT_EXERCISE[0]
+                }
+                else
+                {
+                    Paper_EXERCISE("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                }
+        )
+
+        body.add(
+                if (SELECT_NUTRITION.size>0)
+                {
+                    SELECT_NUTRITION[0]
+                }
+                else
+                {
+                    Paper_NUTRITION("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                }
+        )
+
+        body.add(
+                if (SELECT_SMOKING.size>0)
+                {
+                    SELECT_SMOKING[0]
+                }
+                else
+                {
+                    Paper_SMOKING("", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                }
+        )
+
+        body.add(
+                if (SELECT_DRINKING.size>0)
+                {
+                    SELECT_DRINKING[0]
+                }
+                else
+                {
+                    Paper_DRINKING("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                }
+        )
+
+        body.add(
+                if (SELECT_ORAL.size>0)
+                {
+                    SELECT_ORAL[0]
+                }
+                else
+                {
+                    Paper_ORAL("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                }
+        )
+
+        body.add(
+                if (SELECT_CANCER.size>0)
+                {
+                    SELECT_CANCER[0]
+                }
+                else
+                {
+                    Paper_CANCER("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                }
+        )
 
 
 
 
-        OracleUtill().save_papers().savePapersServer(body).enqueue(object : Callback<String> {
+        OracleUtill().newsave_papers().newsavePapersServer(body).enqueue(object : Callback<String> {
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
 
@@ -214,7 +352,7 @@ class ListActivity : RootActivity() {
                             //할게 더 남아서 재귀호출
 
 
-                            UploadPaper(SaveArr, SetArr, removeArr, startIndex+1, TotalIndex, dialogView, Alertdialog)
+                            UploadPaper(SaveArr,  removeArr, startIndex+1, TotalIndex, dialogView, Alertdialog)
                         }
                         else
                         {

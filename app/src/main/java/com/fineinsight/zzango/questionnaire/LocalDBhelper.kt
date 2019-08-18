@@ -45,6 +45,8 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "LOCALSAVELIST" +
                 "(exam_no TEXT," +
                 "signature BLOB," +
+                "first_serial TEXT," +
+                "last_serial TEXT," +
                 "name TEXT);")
     }
 
@@ -55,7 +57,10 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         cv.put("exam_no", ex.exam_no)
         cv.put("signature", ex.signature)
+        cv.put("first_serial", ex.first_serial)
+        cv.put("last_serial", ex.last_serial)
         cv.put("name", ex.name)
+
 
         db.insert("LOCALSAVELIST", null, cv)
     }
