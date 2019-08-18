@@ -18,10 +18,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
-import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
-import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
-import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Elderly
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_ELDERLY
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -569,12 +566,12 @@ class ElderlyExaminationActivity : RootActivity(){
         }
 
         PaperArray.PaperList.Arr_ELDERLY!!.add(Paper_ELDERLY(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                 mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5, mj66_3_6, mj66_4, mj66_5
         ))
 
         SavePaper.Total.Array[4] = Paper_ELDERLY(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                 mj66_1, mj66_2, mj66_3_1, mj66_3_2, mj66_3_3, mj66_3_4, mj66_3_5, mj66_3_6, mj66_4, mj66_5)
 
         PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_ELDERLY!!)

@@ -53,6 +53,8 @@ import kotlin.collections.HashMap
 @SuppressLint("StaticFieldLeak")
 class MainActivity : AppCompatActivity() , View.OnClickListener {
 
+
+
     var popup = false
     lateinit var canvasView: CanvasView
     var sql_db : SQLiteDatabase? = null
@@ -61,6 +63,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        CreatePaperTable()
 
         NetworkCheck.Func.Check(this)
 
@@ -139,6 +143,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     }
 
+    fun CreatePaperTable()
+    {
+        val sql_db = LocalDBhelper(this).writableDatabase
+        LocalDBhelper(this).CreatePaperTable(sql_db)
+    }
+
     fun popuplogin(){
 
         var dialog = AlertDialog.Builder(this).create()
@@ -198,6 +208,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             }
         })
+
+        //개발용
+//        dialog_view.login_id.setText("bestian")
+//        dialog_view.login_password.setText("best1234")
 
         val login = dialog_view.findViewById(R.id.Login) as Button
         login.setOnClickListener{
@@ -419,7 +433,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                     SavePaper.Total.Init()
                     var PArray = ArrayList<PublicDataInfo>()
-                    var exam_no = System.currentTimeMillis().toString()
+                    exam_no = System.currentTimeMillis().toString()
+
+
                     SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
 
                     when(startPage){
@@ -834,7 +850,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 //초기화
                 SavePaper.Total.Init()
                 var PArray = ArrayList<PublicDataInfo>()
-                var exam_no = System.currentTimeMillis().toString()
+                exam_no = System.currentTimeMillis().toString()
                 SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
 
 

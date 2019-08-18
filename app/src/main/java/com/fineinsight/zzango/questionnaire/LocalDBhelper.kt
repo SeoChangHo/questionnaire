@@ -12,8 +12,33 @@ import com.fineinsight.zzango.questionnaire.UserList.UserList
 
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
 
-    override fun onCreate(db: SQLiteDatabase?) {
+    override fun onCreate(db: SQLiteDatabase) {
 
+
+
+
+    }
+
+
+
+
+    fun CreatePaperTable(db: SQLiteDatabase)
+    {
+        CreateLocalListTable(db)
+        commonCreate(db)
+        mentalCreate(db)
+        cognitiveCreate(db)
+        elderlyCreate(db)
+        exerciseCreate(db)
+        nutritionCreate(db)
+        smokingCreate(db)
+        drinkingCreate(db)
+        oralCreate(db)
+        cancerCreate(db)
+    }
+
+    fun CreateLocalListTable(db: SQLiteDatabase)
+    {
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "LOCALSAVELIST" +
                 "(exam_no TEXT," +
@@ -214,7 +239,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
-    fun commonExaminationDB(db: SQLiteDatabase?){
+    fun commonCreate(db: SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
                 "COMMON_EXAM" +

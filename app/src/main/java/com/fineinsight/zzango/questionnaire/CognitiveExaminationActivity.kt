@@ -18,10 +18,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
-import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
-import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
-import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Cognitive
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_COGNITIVE
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -650,13 +647,13 @@ class CognitiveExaminationActivity : RootActivity(){
         }
 
         PaperArray.PaperList.Arr_COGNITIVE!!.add(Paper_COGNITIVE(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                 mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7, mj_inji_8, mj_inji_9,
                 mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum
         ))
 
         SavePaper.Total.Array[3] = Paper_COGNITIVE(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                 mj_inji_1, mj_inji_2, mj_inji_3, mj_inji_4, mj_inji_5, mj_inji_6, mj_inji_7, mj_inji_8, mj_inji_9,
                 mj_inji_10, mj_inji_11, mj_inji_12, mj_inji_13, mj_inji_14, mj_inji_15, mj_inji_sum)
 

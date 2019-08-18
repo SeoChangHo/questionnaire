@@ -415,7 +415,7 @@ class ListActivity : RootActivity() {
     }
 
 
-    fun Return_ORAL(exam_no:String, signature:ByteArray): ArrayList<Paper_ORAL>
+    fun Return_ORAL(exam_no:String): ArrayList<Paper_ORAL>
     {
         var PaperArray = ArrayList<Paper_ORAL>()
 
@@ -456,7 +456,7 @@ class ListActivity : RootActivity() {
         return PaperArray
     }
 
-    fun Return_COMMON(exam_no:String, signature:ByteArray): ArrayList<Paper_COMMON>
+    fun Return_COMMON(exam_no:String): ArrayList<Paper_COMMON>
     {
         var PaperArray = ArrayList<Paper_COMMON>()
 
@@ -566,7 +566,7 @@ class ListActivity : RootActivity() {
         return PaperArray
     }
 
-    fun Return_COGNITIVE(exam_no:String, signature:ByteArray): ArrayList<Paper_COGNITIVE>
+    fun Return_COGNITIVE(exam_no:String): ArrayList<Paper_COGNITIVE>
     {
         var PaperArray = ArrayList<Paper_COGNITIVE>()
 
@@ -605,7 +605,7 @@ class ListActivity : RootActivity() {
     }
 
 
-    fun Return_MENTAL(exam_no:String, signature:ByteArray): ArrayList<Paper_MENTAL>
+    fun Return_MENTAL(exam_no:String): ArrayList<Paper_MENTAL>
     {
         var PaperArray = ArrayList<Paper_MENTAL>()
 
@@ -638,7 +638,7 @@ class ListActivity : RootActivity() {
     }
 
 
-    fun Return_ELDERLY(exam_no:String, signature:ByteArray): ArrayList<Paper_ELDERLY>
+    fun Return_ELDERLY(exam_no:String): ArrayList<Paper_ELDERLY>
     {
         var PaperArray = ArrayList<Paper_ELDERLY>()
 
@@ -670,7 +670,7 @@ class ListActivity : RootActivity() {
         return PaperArray
     }
 
-    fun Return_SMOKING(exam_no:String, signature:ByteArray): ArrayList<Paper_SMOKING>
+    fun Return_SMOKING(exam_no:String): ArrayList<Paper_SMOKING>
     {
         var PaperArray = ArrayList<Paper_SMOKING>()
 
@@ -701,7 +701,7 @@ class ListActivity : RootActivity() {
         return PaperArray
     }
 
-    fun Return_DRINKING(exam_no:String, signature:ByteArray): ArrayList<Paper_DRINKING>
+    fun Return_DRINKING(exam_no:String): ArrayList<Paper_DRINKING>
     {
         var PaperArray = ArrayList<Paper_DRINKING>()
 
@@ -735,15 +735,15 @@ class ListActivity : RootActivity() {
         return PaperArray
     }
 
-    fun Return_CANCER(exam_no:String, signature:ByteArray): ArrayList<Paper_CANCER>
+    fun Return_CANCER(exam_no:String): ArrayList<Paper_CANCER>
     {
-        var PaperArray = ArrayList<Paper_CANCER>()
+        var Paper = ArrayList<Paper_CANCER>()
 
         val data = LocalDBhelper(this).Select_Local_CANCER(sql_db!!, exam_no)
         data.moveToFirst()
 
         while(!data.isAfterLast){
-            PaperArray.add(Paper_CANCER(
+            Paper.add(Paper_CANCER(
                     data.getString(data.getColumnIndex("exam_date")),
                     data.getString(data.getColumnIndex("exam_no")),
                     data.getString(data.getColumnIndex("name")),
@@ -829,11 +829,10 @@ class ListActivity : RootActivity() {
             ))
             data.moveToNext()
         }
-
-        return PaperArray
+        return Paper
     }
 
-    fun Return_EXERCISE(exam_no:String, signature:ByteArray): ArrayList<Paper_EXERCISE>
+    fun Return_EXERCISE(exam_no:String): ArrayList<Paper_EXERCISE>
     {
         var PaperArray = ArrayList<Paper_EXERCISE>()
 
@@ -886,7 +885,7 @@ class ListActivity : RootActivity() {
         return PaperArray
     }
 
-    fun Return_NUTRITION(exam_no:String, signature:ByteArray): ArrayList<Paper_NUTRITION> {
+    fun Return_NUTRITION(exam_no:String): ArrayList<Paper_NUTRITION> {
         var PaperArray = ArrayList<Paper_NUTRITION>()
 
         val data = LocalDBhelper(this).Select_Local_NUTRITION(sql_db!!, exam_no)

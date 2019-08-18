@@ -21,7 +21,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var sql_db : SQLiteDatabase? = null
     var isFirstTime:Boolean = true
@@ -119,7 +119,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
 
         println(p1.toString()+"번째의 체크값은 "+paper.isChecked.toString()+"입니다.")
         p0.chkbox.isChecked = paper.isChecked
-//        p0.txtCategory.text = getSetNo(paper.setno)
+        p0.txtCategory.text = getPaperCount(paper.exam_no)
         p0.txtName.text = paper.name
 
 
@@ -144,11 +144,11 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
         p0.constraint.setOnClickListener{
 
 
-            sql_db = LocalDBhelper(Activity.applicationContext).writableDatabase
+            sql_db = LocalDBhelper(activity.applicationContext).writableDatabase
             println(paper.exam_no)
             println(paper.signature.size)
 
-            startActivity(Activity, Intent(Activity, ListDetailActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
+            startActivity(activity, Intent(activity, ListDetailActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
 
         }
 
@@ -178,12 +178,12 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
             //선택된 카운트가 0일때
             if (count == 0) {
                 //전체선택이 체크되어 있다면
-                if(Activity.select_all_checkbox.isChecked)
+                if(activity.select_all_checkbox.isChecked)
                 {
                     //전체선택 체크 해제
-                    Activity.select_all_checkbox.isChecked = false
+                    activity.select_all_checkbox.isChecked = false
                 }
-                Activity.constraintLayout_bottom.visibility = View.GONE
+                activity.constraintLayout_bottom.visibility = View.GONE
             }
             else//선택된 카운트가 0이 아닐 때
             {
@@ -195,29 +195,134 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var Activity: Activity): Re
                 if(count == myCheckBox.chk_each!!.size)
                 {
                     println("카운트와 체크박스의 수가 같습니다.")
-                    if(!Activity.select_all_checkbox.isChecked)
+                    if(!activity.select_all_checkbox.isChecked)
                     {
-                        Activity.select_all_checkbox.isChecked = true
+                        activity.select_all_checkbox.isChecked = true
                     }
                 }
                 else//전체갯수보다 적게 선택되어 있다면
                 {
                     println("카운트와 체크박스의 수가 다릅니다.")
-                    if(Activity.select_all_checkbox.isChecked)
+                    if(activity.select_all_checkbox.isChecked)
                     {
                         println("카운트의 수가 전체 갯수보다 작은데 전체선택이 활성화 되어있으므로 전체선택 해제")
-                        Activity.select_all_checkbox.isChecked = false
+                        activity.select_all_checkbox.isChecked = false
                     }
                 }
-                Activity.constraintLayout_bottom.visibility = View.VISIBLE
-                Activity.txtBottomMent.text = "선택한 " + count.toString() + "개의 문진표를"
-                Activity.btnSave.visibility = View.VISIBLE
-                Activity.btnDelete.visibility = View.VISIBLE
+                activity.constraintLayout_bottom.visibility = View.VISIBLE
+                activity.txtBottomMent.text = "선택한 " + count.toString() + "개의 문진표를"
+                activity.btnSave.visibility = View.VISIBLE
+                activity.btnDelete.visibility = View.VISIBLE
             }
             println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
             println("*******************************************************")
         }
     }
+
+    fun getPaperCount(ExamNo: String):String
+    {
+
+        var FirstPaper = ""
+        var count = -1
+
+
+
+        if (activity.Return_COMMON(ExamNo).size>0)
+        {
+            count++
+            if (FirstPaper.isEmpty())
+            {
+                FirstPaper = "공통"
+            }
+        }
+
+        if (activity.Return_MENTAL(ExamNo).size>0)
+        {
+            count++
+            if (FirstPaper.isEmpty())
+            {
+                FirstPaper = "정신건강"
+            }
+        }
+
+        if (activity.Return_COGNITIVE(ExamNo).size>0)
+        {
+            count++
+            if (FirstPaper.isEmpty())
+            {
+                FirstPaper = "인지기능"
+            }
+        }
+
+        if (activity.Return_ELDERLY(ExamNo).size>0)
+        {
+            count++
+            if (FirstPaper.isEmpty())
+            {
+                FirstPaper = "노인기능"
+            }
+        }
+
+        if (activity.Return_EXERCISE(ExamNo).size>0)
+        {
+            count++
+            if (FirstPaper.isEmpty())
+            {
+                FirstPaper = "운동"
+            }
+        }
+
+        if (activity.Return_NUTRITION(ExamNo).size>0)
+        {
+            count++
+            if (FirstPaper.isEmpty())
+            {
+                FirstPaper = "영양"
+            }
+        }
+
+        if (activity.Return_SMOKING(ExamNo).size>0)
+        {
+            count++
+            if (FirstPaper.isEmpty())
+            {
+                FirstPaper = "흡연"
+            }
+        }
+
+        if (activity.Return_DRINKING(ExamNo).size>0)
+        {
+            count++
+            if (FirstPaper.isEmpty())
+            {
+                FirstPaper = "음"
+            }
+        }
+
+        if (activity.Return_ORAL(ExamNo).size>0)
+        {
+            count++
+            if (FirstPaper.isEmpty())
+            {
+                FirstPaper = "구강"
+            }
+        }
+
+        if (activity.Return_CANCER(ExamNo).size>0)
+        {
+            count++
+            if (FirstPaper.isEmpty())
+            {
+                FirstPaper = "암"
+            }
+        }
+
+        println("count: ${count}")
+
+        if (count>0) return "${FirstPaper} 외 ${count}건" else return FirstPaper
+    }
+
+
 }
 
 class ContentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
@@ -235,61 +340,4 @@ class ContentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
 
 
-fun getSetNo(setno: String):String
-    {
-        when(setno)
-        {
-            PaperArray.SetList.SET1 ->
-            {
-                return "공통"
-            }
-            PaperArray.SetList.SET2 ->
-            {
-                return "공통 외 1건"
-            }
-            PaperArray.SetList.SET3 ->
-            {
-                return "공통 외 5건"
-            }
-            PaperArray.SetList.SET4 ->
-            {
-                return "공통 외 2건"
-            }
-            PaperArray.SetList.SET5 ->
-            {
-                return "공통 외 1건"
-            }
-            PaperArray.SetList.SET6 ->
-            {
-                return "공통 외 7건"
-            }
-            PaperArray.SetList.SET7 ->
-            {
-                return "구강"
-            }
-            PaperArray.SetList.SET8 ->
-            {
-                return "암"
-            }
-            PaperArray.SetList.SET9 ->
-            {
-                return "인지기능"
-            }
-            PaperArray.SetList.SET10 ->
-            {
-                return "우울증"
-            }
-            PaperArray.SetList.SET11 ->
-            {
-                return "생활습관"
-            }
-            PaperArray.SetList.SET12 ->
-            {
-                return "노인신체기능"
-            }
-            else ->
-            {
-                return "확인불가"
-            }
-        }
-    }
+

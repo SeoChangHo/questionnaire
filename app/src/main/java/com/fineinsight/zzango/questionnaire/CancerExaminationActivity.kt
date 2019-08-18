@@ -20,10 +20,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
-import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
-import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
-import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Cancer
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_CANCER
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -1273,7 +1270,7 @@ class CancerExaminationActivity : RootActivity(){
         exam_no = System.currentTimeMillis().toString()
 
         PaperArray.PaperList.Arr_CANCER!!.add(Paper_CANCER(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                 ck1, ck1_1, ck2, ck2_1,
                 ck3_1, ck3_1_1, ck3_1_2, ck3_1_3, ck3_1_4, ck3_1_5,
                 ck3_2, ck3_2_1, ck3_2_2, ck3_2_3, ck3_2_4, ck3_2_5,
@@ -1288,7 +1285,7 @@ class CancerExaminationActivity : RootActivity(){
         ))
 
         SavePaper.Total.Array[10] = Paper_CANCER(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                 ck1, ck1_1, ck2, ck2_1,
                 ck3_1, ck3_1_1, ck3_1_2, ck3_1_3, ck3_1_4, ck3_1_5,
                 ck3_2, ck3_2_1, ck3_2_2, ck3_2_3, ck3_2_4, ck3_2_5,

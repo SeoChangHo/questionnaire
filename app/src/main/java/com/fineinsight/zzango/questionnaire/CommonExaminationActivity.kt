@@ -17,10 +17,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
-import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
-import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
-import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Common
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_COMMON
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -1138,7 +1135,7 @@ class CommonExaminationActivity : RootActivity() {
 
         PaperArray.PaperArrFunction.ArrayListInit() //<--처음 이닛
 
-        PaperArray.PaperList.Arr_COMMON!!.add(Paper_COMMON(exam_date, exam_no, name,
+        PaperArray.PaperList.Arr_COMMON!!.add(Paper_COMMON(exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name,
                 first_serial_text, last_serial_text, category,
                 mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
                 mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1,
@@ -1152,7 +1149,7 @@ class CommonExaminationActivity : RootActivity() {
                 mj7_2_43, mj7_2_44, mj7_2_51, mj7_2_52, mj7_2_53, mj7_2_54, mj7_2_etc, mj8_1,
                 mj8_2_1, mj8_2_2, mj9_1, mj9_2_1, mj9_2_2, mj10))
 
-        SavePaper.Total.Array[1] = Paper_COMMON(exam_date, exam_no, name,
+        SavePaper.Total.Array[1] = Paper_COMMON(exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name,
                 first_serial_text, last_serial_text, category,
                 mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
                 mj1_5_1, mj1_5_2, mj1_6_1, mj1_6_2, mj1_7_1, mj1_7_2, mj2_1,

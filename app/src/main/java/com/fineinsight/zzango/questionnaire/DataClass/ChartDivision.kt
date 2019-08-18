@@ -56,67 +56,67 @@ class ChartDivision{
                 when(index){
 
                     0 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
+
                         LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[0] as PublicDataInfo)
 
-                        LocalDBhelper(activity).commonExaminationDB(sql_db)
+
                         LocalDBhelper(activity).commonSaveLocal(sql_db!!, SavePaper.Total.Array[1] as Paper_COMMON)
                         saveCompleteAlert(activity)
                     }
                     1 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
+
                         LocalDBhelper(activity).LocalListMentalInsert(sql_db!!, SavePaper.Total.Array[2] as Paper_MENTAL)
 
-                        LocalDBhelper(activity).mentalCreate(sql_db)
+
                         LocalDBhelper(activity).mentalSaveLocal(sql_db!!, SavePaper.Total.Array[2] as Paper_MENTAL)
                         saveCompleteAlert(activity)
                     }
                     2 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
+
                         LocalDBhelper(activity).LocalListCognitiveInsert(sql_db!!, SavePaper.Total.Array[3] as Paper_COGNITIVE)
 
-                        LocalDBhelper(activity).cognitiveCreate(sql_db)
+
                         LocalDBhelper(activity).cognitiveSaveLocal(sql_db!!, SavePaper.Total.Array[3] as Paper_COGNITIVE)
                         saveCompleteAlert(activity)
                     }
                     3 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
+
                         LocalDBhelper(activity).LocalListElderlyInsert(sql_db!!, SavePaper.Total.Array[4] as Paper_ELDERLY)
 
-                        LocalDBhelper(activity).elderlyCreate(sql_db)
+
                         LocalDBhelper(activity).elderlySaveLocal(sql_db!!, SavePaper.Total.Array[4] as Paper_ELDERLY)
                         saveCompleteAlert(activity)
                     }
                     4 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
+
                         LocalDBhelper(activity).LocalListDrinkingInsert(sql_db!!, SavePaper.Total.Array[8] as Paper_DRINKING)
 
-                        LocalDBhelper(activity).exerciseCreate(sql_db)
+
                         LocalDBhelper(activity).exerciseSaveLocal(sql_db!!, SavePaper.Total.Array[5] as Paper_EXERCISE)
 
-                        LocalDBhelper(activity).nutritionCreate(sql_db)
+
                         LocalDBhelper(activity).nutritionSaveLocal(sql_db!!, SavePaper.Total.Array[6] as Paper_NUTRITION)
 
-                        LocalDBhelper(activity).smokingCreate(sql_db)
+
                         LocalDBhelper(activity).smokingSaveLocal(sql_db!!, SavePaper.Total.Array[7] as Paper_SMOKING)
 
-                        LocalDBhelper(activity).drinkingCreate(sql_db)
+
                         LocalDBhelper(activity).drinkingSaveLocal(sql_db!!, SavePaper.Total.Array[8] as Paper_DRINKING)
                         saveCompleteAlert(activity)
                     }
                     5 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
+
                         LocalDBhelper(activity).LocalListOralInsert(sql_db!!, SavePaper.Total.Array[9] as Paper_ORAL)
 
-                        LocalDBhelper(activity).oralCreate(sql_db)
+
                         LocalDBhelper(activity).oralSaveLocal(sql_db!!, SavePaper.Total.Array[9] as Paper_ORAL)
                         saveCompleteAlert(activity)
                     }
                     6 ->{
-                        LocalDBhelper(activity).onCreate(sql_db)
+
                         LocalDBhelper(activity).LocalListCancerInsert(sql_db!!, SavePaper.Total.Array[10] as Paper_CANCER)
 
-                        LocalDBhelper(activity).cancerCreate(sql_db)
+
                         LocalDBhelper(activity).cancerSaveLocal(sql_db!!, SavePaper.Total.Array[10] as Paper_CANCER)
                         saveCompleteAlert(activity)
                     }
@@ -235,8 +235,6 @@ class ChartDivision{
 
         fun local_insert(activity : Activity){
 
-            println("dd??")
-
             var sql_db = LocalDBhelper(activity).writableDatabase
 
             if(chart.isNotEmpty()){
@@ -246,6 +244,8 @@ class ChartDivision{
                     LocalDBhelper(activity).onCreate(sql_db)
                     LocalDBhelper(activity).LocalListInsert(sql_db, SavePaper.Total.Array[0] as PublicDataInfo)
 
+                    println("PUBLIC_EXAMNO: ${(SavePaper.Total.Array[0] as PublicDataInfo).exam_no}")
+
                     for (ChartItem in chart)
                     {
                         when(ChartItem.chartName)
@@ -254,7 +254,8 @@ class ChartDivision{
                             {
                                 if (ChartItem.isbool)
                                 {
-                                    LocalDBhelper(activity).commonExaminationDB(sql_db)
+                                    println("공통 로컬 저장")
+                                    println("ExamNO: ${(SavePaper.Total.Array[1] as Paper_COMMON).exam_no}")
                                     LocalDBhelper(activity).commonSaveLocal(sql_db, SavePaper.Total.Array[1] as Paper_COMMON)
                                 }
                             }
@@ -263,7 +264,8 @@ class ChartDivision{
                             {
                                 if (ChartItem.isbool)
                                 {
-                                    LocalDBhelper(activity).mentalCreate(sql_db)
+                                    println("정신 로컬 저장")
+                                    println("ExamNO: ${(SavePaper.Total.Array[2] as Paper_MENTAL).exam_no}")
                                     LocalDBhelper(activity).mentalSaveLocal(sql_db, SavePaper.Total.Array[2] as Paper_MENTAL)
                                 }
                             }
@@ -272,7 +274,8 @@ class ChartDivision{
                             {
                                 if (ChartItem.isbool)
                                 {
-                                    LocalDBhelper(activity).cognitiveCreate(sql_db)
+                                    println("인지 로컬 저장")
+                                    println("ExamNO: ${(SavePaper.Total.Array[3] as Paper_COGNITIVE).exam_no}")
                                     LocalDBhelper(activity).cognitiveSaveLocal(sql_db, SavePaper.Total.Array[3] as Paper_COGNITIVE)
                                 }
                             }
@@ -281,43 +284,30 @@ class ChartDivision{
                             {
                                 if (ChartItem.isbool)
                                 {
-                                    LocalDBhelper(activity).elderlyCreate(sql_db)
+                                    println("노인 로컬 저장")
+                                    println("ExamNO: ${(SavePaper.Total.Array[4] as Paper_ELDERLY).exam_no}")
                                     LocalDBhelper(activity).elderlySaveLocal(sql_db, SavePaper.Total.Array[4] as Paper_ELDERLY)
                                 }
                             }
 
-                            PaperNameInfo.PC.EXERCISE.EN_NM ->
+                            PaperNameInfo.PC.LIFE.EN_NM ->
                             {
                                 if (ChartItem.isbool)
                                 {
-                                    LocalDBhelper(activity).exerciseCreate(sql_db)
+                                    println("운동 로컬 저장")
+                                    println("ExamNO: ${(SavePaper.Total.Array[5] as Paper_EXERCISE).exam_bun_no}")
                                     LocalDBhelper(activity).exerciseSaveLocal(sql_db, SavePaper.Total.Array[5] as Paper_EXERCISE)
-                                }
-                            }
 
-                            PaperNameInfo.PC.NUTRITION.EN_NM ->
-                            {
-                                if (ChartItem.isbool)
-                                {
-                                    LocalDBhelper(activity).nutritionCreate(sql_db)
+                                    println("영양 로컬 저장")
+                                    println("ExamNO: ${(SavePaper.Total.Array[6] as Paper_NUTRITION).exam_bun_no}")
                                     LocalDBhelper(activity).nutritionSaveLocal(sql_db, SavePaper.Total.Array[6] as Paper_NUTRITION)
-                                }
-                            }
 
-                            PaperNameInfo.PC.SMOKING.EN_NM ->
-                            {
-                                if (ChartItem.isbool)
-                                {
-                                    LocalDBhelper(activity).smokingCreate(sql_db)
+                                    println("흡연 로컬 저장")
+                                    println("ExamNO: ${(SavePaper.Total.Array[7] as Paper_SMOKING).exam_no}")
                                     LocalDBhelper(activity).smokingSaveLocal(sql_db, SavePaper.Total.Array[7] as Paper_SMOKING)
-                                }
-                            }
 
-                            PaperNameInfo.PC.DRINKING.EN_NM ->
-                            {
-                                if (ChartItem.isbool)
-                                {
-                                    LocalDBhelper(activity).drinkingCreate(sql_db)
+                                    println("음주 로컬 저장")
+                                    println("ExamNO: ${(SavePaper.Total.Array[8] as Paper_DRINKING).exam_no}")
                                     LocalDBhelper(activity).drinkingSaveLocal(sql_db, SavePaper.Total.Array[8] as Paper_DRINKING)
                                 }
                             }
@@ -326,7 +316,8 @@ class ChartDivision{
                             {
                                 if (ChartItem.isbool)
                                 {
-                                    LocalDBhelper(activity).oralCreate(sql_db)
+                                    println("구강 로컬 저장")
+                                    println("ExamNO: ${(SavePaper.Total.Array[9] as Paper_ORAL).exam_no}")
                                     LocalDBhelper(activity).oralSaveLocal(sql_db, SavePaper.Total.Array[9] as Paper_ORAL)
                                 }
                             }
@@ -335,7 +326,8 @@ class ChartDivision{
                             {
                                 if (ChartItem.isbool)
                                 {
-                                    LocalDBhelper(activity).cancerCreate(sql_db)
+                                    println("암 로컬 저장")
+                                    println("ExamNO: ${(SavePaper.Total.Array[10] as Paper_CANCER).exam_no}")
                                     LocalDBhelper(activity).cancerSaveLocal(sql_db, SavePaper.Total.Array[10] as Paper_CANCER)
                                 }
                             }

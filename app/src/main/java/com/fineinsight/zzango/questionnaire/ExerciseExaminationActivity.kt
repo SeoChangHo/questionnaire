@@ -10,10 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
-import com.fineinsight.zzango.questionnaire.DataClass.SavedListObject
-import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_EXERCISE
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -976,7 +973,7 @@ class ExerciseExaminationActivity : RootActivity() {
             exam_no = MainActivity.exam_no
         }
 
-        SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+        SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
                 sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
                 sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
                 sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
@@ -1302,7 +1299,7 @@ class ExerciseExaminationActivity : RootActivity() {
         exam_no = MainActivity.exam_no
 //        }
 
-        SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, exam_no, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
+        SavePaper.Total.Array[5] = Paper_EXERCISE(exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, sg2_spSports1_1, sg2_spSports1_2,
                 sg2_spSports1_3_1, sg2_spSports1_3_2, sg2_spSports1_4, sg2_spSports1_5, sg2_spSports1_6_1, sg2_spSports1_6_2,
                 sg2_spSports2_1, sg2_spSports2_2, sg2_spSports2_3_1, sg2_spSports2_3_2, sg2_spSports3_1, sg2_spSports3_2,
                 sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,

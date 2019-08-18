@@ -8,10 +8,7 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
-import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
-import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Mental
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_MENTAL
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -566,12 +563,12 @@ class MentalExaminationActivity : RootActivity(){
         mj_mtl_sum = (mj_mtl_1.toInt() + mj_mtl_2.toInt() + mj_mtl_3.toInt() + mj_mtl_4.toInt() + mj_mtl_5.toInt() + mj_mtl_6.toInt() + mj_mtl_7.toInt() + mj_mtl_8.toInt() + mj_mtl_9.toInt()).toString()
 
         PaperArray.PaperList.Arr_MENTAL!!.add(Paper_MENTAL(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                 mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum
         ))
 
         SavePaper.Total.Array[2] = Paper_MENTAL(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                 mj_mtl_1, mj_mtl_2, mj_mtl_3, mj_mtl_4, mj_mtl_5, mj_mtl_6, mj_mtl_7, mj_mtl_8, mj_mtl_9, mj_mtl_sum)
 
         PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_MENTAL!!)

@@ -20,10 +20,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
-import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
-import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
-import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Oral
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_ORAL
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -790,13 +787,13 @@ class OralExaminationActivity : RootActivity() {
 
 
         PaperArray.PaperList.Arr_ORAL!!.add(Paper_ORAL(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
                 oral_11, oral_12, oral_13, oral_14, oral_15, oral_16
         ))
 
         SavePaper.Total.Array[9] = Paper_ORAL(
-                exam_date, exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
                 oral_11, oral_12, oral_13, oral_14, oral_15, oral_16)
 

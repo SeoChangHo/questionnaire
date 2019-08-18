@@ -18,10 +18,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
-import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision
-import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
-import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_DRINKING
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_SMOKING
@@ -610,7 +607,7 @@ class DrinkingExaminationActivity : RootActivity(){
         if(PaperArray.PaperList.temp_Arr_DRINKING!!.size < 1) {
 
             PaperArray.PaperList.temp_Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no,  name, first_serial_text, last_serial_text, category,
+                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no,  name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
@@ -619,7 +616,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.temp_Arr_DRINKING!!.removeAt(0)
             PaperArray.PaperList.temp_Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no,  name, first_serial_text, last_serial_text, category,
+                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no,  name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
@@ -841,7 +838,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.Arr_DRINKING!!.clear()
             PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
@@ -859,7 +856,7 @@ class DrinkingExaminationActivity : RootActivity(){
         }else {
 
             PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
@@ -868,7 +865,7 @@ class DrinkingExaminationActivity : RootActivity(){
             PaperArray.PaperList.temp_Arr_DRINKING = ArrayList()
 
             SavePaper.Total.Array[8] = Paper_DRINKING(
-                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             )
@@ -1022,7 +1019,7 @@ class DrinkingExaminationActivity : RootActivity(){
 
             PaperArray.PaperList.Arr_DRINKING!!.clear()
             PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
@@ -1040,7 +1037,7 @@ class DrinkingExaminationActivity : RootActivity(){
         }else {
 
             PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, exam_no, name, first_serial_text, last_serial_text, category,
+                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
                     sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
                     sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
             ))
