@@ -35,6 +35,8 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         drinkingCreate(db)
         oralCreate(db)
         cancerCreate(db)
+
+        db.close()
     }
 
     fun CreateLocalListTable(db: SQLiteDatabase)
@@ -1016,6 +1018,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun checkLocalList(db : SQLiteDatabase): Cursor{
 
         var data = db.rawQuery("SELECT * FROM LOCALSAVELIST;", null)
+
 
 
 

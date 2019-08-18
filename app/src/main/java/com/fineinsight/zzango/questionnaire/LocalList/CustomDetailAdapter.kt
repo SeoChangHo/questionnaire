@@ -1,6 +1,6 @@
 package com.fineinsight.zzango.questionnaire.LocalList
 
-import android.app.Activity
+
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.support.constraint.ConstraintLayout
@@ -12,14 +12,14 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.TextView
 import com.fineinsight.zzango.questionnaire.*
+import com.fineinsight.zzango.questionnaire.PublicFunc.SelectPaper
 import kotlinx.android.synthetic.main.activity_list_detail.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var CategoryArr = ArrayList<String>()
-    var sql_db : SQLiteDatabase? = null
 
 
 
@@ -63,8 +63,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
 
     override fun getItemCount(): Int {
 
-        //return SetToCount()
-        return 1
+        return SetToCount(PaperList.exam_no)
+
     }
 
     override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
@@ -83,10 +83,8 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
         p0.constraint.setOnClickListener{
 
 
-            sql_db = LocalDBhelper(Activity.applicationContext).writableDatabase
+            val sql_db = LocalDBhelper(Activity.applicationContext).writableDatabase
             println(PaperList.exam_no)
-
-//            ContextCompat.startActivity(Activity, Intent(Activity, ListDetailActivity::class.java).putExtra("paper", PaperList).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
 
             when(CategoryArr[p1])
             {
@@ -124,11 +122,10 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                                 ))
                         data.moveToNext()
                     }
+                    sql_db.close()
                     if(PaperArray.size>0)
                     {
-//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                        Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Activity.ProgressAction(true)
                         startActivity(Activity, Intent(Activity, OralExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
                     else
@@ -242,12 +239,10 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
-
+                    sql_db.close()
                     if(PaperArray.size>0)
                     {
-//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                        Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Activity.ProgressAction(true)
                         startActivity(Activity, Intent(Activity, CommonExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
                     else
@@ -290,11 +285,10 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
+                    sql_db.close()
                     if(PaperArray.size>0)
                     {
-//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                        Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Activity.ProgressAction(true)
                         startActivity(Activity, Intent(Activity, CognitiveExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
                     else
@@ -330,11 +324,10 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
+                    sql_db.close()
                     if(PaperArray.size>0)
                     {
-//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                        Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Activity.ProgressAction(true)
                         startActivity(Activity, Intent(Activity, ElderlyExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
                     else
@@ -392,11 +385,10 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
+                    sql_db.close()
                     if(PaperArray.size>0)
                     {
-//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                        Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Activity.ProgressAction(true)
                         startActivity(Activity, Intent(Activity, ExerciseExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
                     else
@@ -443,11 +435,10 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
+                    sql_db.close()
                     if(PaperArray.size>0)
                     {
-//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                        Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Activity.ProgressAction(true)
                         startActivity(Activity, Intent(Activity, NutritionExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
                     else
@@ -485,11 +476,10 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
+                    sql_db.close()
                     if(PaperArray.size>0)
                     {
-//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                        Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Activity.ProgressAction(true)
                         startActivity(Activity, Intent(Activity, MentalExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
                     else
@@ -525,11 +515,10 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
+                    sql_db.close()
                     if(PaperArray.size>0)
                     {
-//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                        Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Activity.ProgressAction(true)
                         startActivity(Activity, Intent(Activity, SmokingExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
                     else
@@ -568,11 +557,10 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
+                    sql_db.close()
                     if(PaperArray.size>0)
                     {
-//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                        Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Activity.ProgressAction(true)
                         startActivity(Activity, Intent(Activity, DrinkingExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
                     else
@@ -675,11 +663,10 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                         ))
                         data.moveToNext()
                     }
+                    sql_db.close()
                     if(PaperArray.size>0)
                     {
-//                        Activity.login_appbar_loading_progress.visibility = View.VISIBLE
-//                        Activity.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-                        Activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                        Activity.ProgressAction(true)
                         startActivity(Activity, Intent(Activity, CancerExaminationActivity::class.java).putExtra("paper", PaperArray[0]).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
                     }
                     else
@@ -693,7 +680,9 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
                 {
                     println("확인되지 않습니다.")
                 }
+
             }
+
         }
     }
 
@@ -705,90 +694,65 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: Activity): Recycle
         val constraint = itemView.findViewById(R.id.constraintDetailLayoutArea) as ConstraintLayout
     }
 
-//    fun SetToCount():Int
-//    {
-//        var SET = PaperList.setno
-//        CategoryArr = ArrayList()
-//
-//        when(SET)
-//        {
-//            PaperArray.SetList.SET1->
-//            {
-//                CategoryArr.add(Category.COMMON)
-//            }
-//            PaperArray.SetList.SET2->
-//            {
-//                CategoryArr.add(Category.COMMON)
-//                CategoryArr.add(Category.MENTAL)
-//            }
-//            PaperArray.SetList.SET3->
-//            {
-//                CategoryArr.add(Category.COMMON)
-//                CategoryArr.add(Category.MENTAL)
-//                //생활습관 4개
-//                CategoryArr.add(Category.EXERCISE)
-//                CategoryArr.add(Category.NUTRITION)
-//                CategoryArr.add(Category.SMOKING)
-//                CategoryArr.add(Category.DRINKING)
-//
-//            }
-//            PaperArray.SetList.SET4->
-//            {
-//                CategoryArr.add(Category.COMMON)
-//                CategoryArr.add(Category.COGNITIVE)
-//                CategoryArr.add(Category.ELDERLY)
-//            }
-//            PaperArray.SetList.SET5->
-//            {
-//                CategoryArr.add(Category.COMMON)
-//                CategoryArr.add(Category.COGNITIVE)
-//            }
-//            PaperArray.SetList.SET6->
-//            {
-//                CategoryArr.add(Category.COMMON)
-//                CategoryArr.add(Category.COGNITIVE)
-//                CategoryArr.add(Category.MENTAL)
-//                //생활습관 4개
-//                CategoryArr.add(Category.EXERCISE)
-//                CategoryArr.add(Category.NUTRITION)
-//                CategoryArr.add(Category.SMOKING)
-//                CategoryArr.add(Category.DRINKING)
-//
-//                CategoryArr.add(Category.ELDERLY)
-//            }
-//            PaperArray.SetList.SET7->
-//            {
-//                CategoryArr.add(Category.ORAL)
-//            }
-//            PaperArray.SetList.SET8->
-//            {
-//                CategoryArr.add(Category.CANCER)
-//            }
-//            PaperArray.SetList.SET9->
-//            {
-//                CategoryArr.add(Category.COGNITIVE)
-//            }
-//            PaperArray.SetList.SET10->
-//            {
-//                CategoryArr.add(Category.MENTAL)
-//            }
-//            PaperArray.SetList.SET11->
-//            {
-//                //생활습관 4개
-//                CategoryArr.add(Category.EXERCISE)
-//                CategoryArr.add(Category.NUTRITION)
-//                CategoryArr.add(Category.SMOKING)
-//                CategoryArr.add(Category.DRINKING)
-//            }
-//            PaperArray.SetList.SET12->
-//            {
-//                CategoryArr.add(Category.ELDERLY)
-//            }
-//            else->
-//            {
-//                return 0
-//            }
-//        }
-//        return CategoryArr.size
-//    }
+    fun SetToCount(exam_no:String):Int
+    {
+        val sql_db = LocalDBhelper(Activity).writableDatabase
+        CategoryArr = ArrayList()
+
+
+
+        if (SelectPaper.Select.Return_COMMON(exam_no, sql_db, Activity).size>0)
+        {
+            CategoryArr.add(Category.COMMON)
+        }
+
+        if (SelectPaper.Select.Return_MENTAL(exam_no, sql_db, Activity).size>0)
+        {
+            CategoryArr.add(Category.MENTAL)
+        }
+
+        if (SelectPaper.Select.Return_COGNITIVE(exam_no, sql_db, Activity).size>0)
+        {
+            CategoryArr.add(Category.COGNITIVE)
+        }
+
+        if (SelectPaper.Select.Return_ELDERLY(exam_no, sql_db, Activity).size>0)
+        {
+            CategoryArr.add(Category.ELDERLY)
+        }
+
+        if (SelectPaper.Select.Return_EXERCISE(exam_no, sql_db, Activity).size>0)
+        {
+            CategoryArr.add(Category.EXERCISE)
+        }
+
+        if (SelectPaper.Select.Return_NUTRITION(exam_no, sql_db, Activity).size>0)
+        {
+            CategoryArr.add(Category.NUTRITION)
+        }
+
+        if (SelectPaper.Select.Return_SMOKING(exam_no, sql_db, Activity).size>0)
+        {
+            CategoryArr.add(Category.SMOKING)
+        }
+
+        if (SelectPaper.Select.Return_DRINKING(exam_no, sql_db, Activity).size>0)
+        {
+            CategoryArr.add(Category.DRINKING)
+        }
+
+        if (SelectPaper.Select.Return_ORAL(exam_no, sql_db, Activity).size>0)
+        {
+            CategoryArr.add(Category.ORAL)
+        }
+
+        if (SelectPaper.Select.Return_CANCER(exam_no, sql_db, Activity).size>0)
+        {
+            CategoryArr.add(Category.CANCER)
+        }
+
+        sql_db.close()
+
+        return CategoryArr.size
+    }
 }

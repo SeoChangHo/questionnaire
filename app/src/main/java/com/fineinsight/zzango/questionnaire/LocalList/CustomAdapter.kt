@@ -143,6 +143,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
         //Recyclerview Item Click
         p0.constraint.setOnClickListener{
 
+            activity.ProgressAction(true)
 
             sql_db = LocalDBhelper(activity.applicationContext).writableDatabase
             println(paper.exam_no)

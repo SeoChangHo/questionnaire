@@ -17,20 +17,24 @@ class ListDetailActivity : AppCompatActivity() {
 
         if(intent.hasExtra("paper")){
 
-            println("!!!!!!!!")
-
             var paper = intent.getSerializableExtra("paper") as Paper
 
             txtListTitle.text = "${paper.name} 님의 문진표"
 
             val adapter = CustomDetailAdapter(paper, this)
 
-            println("@@@")
+
             println(paper.signature.size)
             detail_recyclertView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
             detail_recyclertView.adapter = adapter
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        ProgressAction(false)
     }
 
 
