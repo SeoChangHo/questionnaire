@@ -334,7 +334,6 @@ class ListActivity : RootActivity() {
             override fun onResponse(call: Call<String>, response: Response<String>) {
 
                 if (response.isSuccessful) {
-
                     if (!response.body()!!.equals("S")) {
 
                         println(startIndex.toString()+"번째 요청 실패")
