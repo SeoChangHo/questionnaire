@@ -944,7 +944,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     {
         for(i in 0..Paper.size-1)
         {
-            db.delete("LOCALSAVELIST", "exam_no=?", arrayOf(Paper[i].exam_no))
             deletePaperEach(db, Paper[i])
         }
         db.close()
@@ -954,6 +953,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun deletePaperEach(db : SQLiteDatabase, Paper: Paper)
     {
         println(Paper.name+"님의 문진표 삭제시도")
+        db.delete("LOCALSAVELIST", "exam_no=?", arrayOf(Paper.exam_no))
         db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
         db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
         db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper.exam_no))

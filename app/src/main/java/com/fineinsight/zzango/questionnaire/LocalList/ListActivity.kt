@@ -345,7 +345,8 @@ class ListActivity : RootActivity() {
 
                     } else {
 
-                        //LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
+                        val sql_db = LocalDBhelper(this@ListActivity).writableDatabase
+                        LocalDBhelper(this@ListActivity).deletePaperEach(sql_db!!, removeArr[startIndex])
 
                         if(startIndex+1<TotalIndex)
                         {
