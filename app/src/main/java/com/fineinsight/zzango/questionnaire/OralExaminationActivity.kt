@@ -120,7 +120,7 @@ class OralExaminationActivity : RootActivity() {
 
             }else{
 
-                var paper = intent.getSerializableExtra("paper") as Paper_ORAL
+                var paper = intent.getSerializableExtra("paper") as ServerPaper_Oral
 
                 GetPaper(paper)
 
