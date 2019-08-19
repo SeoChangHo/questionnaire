@@ -19,6 +19,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.SavedListObject
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import kotlinx.android.synthetic.main.progressbar2.*
@@ -136,7 +137,7 @@ open class RootActivity : AppCompatActivity() {
                         //각 액티비티별로 check 메서드가 실행될 경우 해당 액티비티 temp data class 초기화
                         //temp data class SavedListObject에 해당 액티비티 boolean 값이 false 일 경우 실행
                         when {
-                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
+                            SavePaper.Total.temp_Drinking != null -> {
 
                                 progress2.isClickable = true
                                 progress3.isClickable = true
@@ -146,40 +147,31 @@ open class RootActivity : AppCompatActivity() {
                                 progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress2.setOnClickListener {
-                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
-//                                        (context as ExerciseExaminationActivity).check2()
-//                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                    }else{
-//                                        (context as ExerciseExaminationActivity).whenTempSave()
-//                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                    }
+                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
+                                        if((context as ExerciseExaminationActivity).check()) {
+                                            startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
                                 progress3.setOnClickListener {
-                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
-//                                        (context as ExerciseExaminationActivity).check()
-//                                        startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                    }else{
-//                                        (context as ExerciseExaminationActivity).whenTempSave()
-//                                        startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                    }
+                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
+                                        if ((context as ExerciseExaminationActivity).check()) {
+                                            startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
                                 progress4.setOnClickListener {
-                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
-//                                        (context as ExerciseExaminationActivity).check()
-//                                        startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                    }else{
-//                                        (context as ExerciseExaminationActivity).whenTempSave()
-//                                        startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-//                                    }
+                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
+                                        if ((context as ExerciseExaminationActivity).check()) {
+                                            startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
 
                                 constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
 
                             }
-                            PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0 -> {
+                            SavePaper.Total.temp_Smoking != null -> {
 
                                 progress2.isClickable = true
                                 progress3.isClickable = true
@@ -188,16 +180,24 @@ open class RootActivity : AppCompatActivity() {
                                 progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress2.setOnClickListener {
-                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
+                                        if ((context as ExerciseExaminationActivity).check()) {
+                                            startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
                                 progress3.setOnClickListener {
-                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
+                                        if ((context as ExerciseExaminationActivity).check()) {
+                                            startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
 
                                 constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
 
                             }
-                            PaperArray.PaperList.temp_Arr_NUTRITION != null && PaperArray.PaperList.temp_Arr_NUTRITION!!.size != 0 -> {
+                            SavePaper.Total.temp_Nutrition != null -> {
 
                                 progress2.isClickable = true
                                 progress3.isClickable = false
@@ -205,7 +205,11 @@ open class RootActivity : AppCompatActivity() {
                                 progress_text2.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress2.setOnClickListener {
-                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
+                                        if ((context as ExerciseExaminationActivity).check()) {
+                                            startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
 
                                 constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress.id, ConstraintSet.END)
@@ -235,7 +239,7 @@ open class RootActivity : AppCompatActivity() {
                     "NutritionExaminationActivity" -> {
 
                         when {
-                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
+                            SavePaper.Total.temp_Drinking != null -> {
 
                                 progress.isClickable = true
                                 progress2.isClickable = true
@@ -245,19 +249,31 @@ open class RootActivity : AppCompatActivity() {
                                 progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress.setOnClickListener {
-                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.nutritionSaved) {
+                                        if ((context as NutritionExaminationActivity).check()) {
+                                            startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
                                 progress3.setOnClickListener {
-                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.nutritionSaved) {
+                                        if ((context as NutritionExaminationActivity).check()) {
+                                            startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
                                 progress4.setOnClickListener {
-                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.nutritionSaved) {
+                                        if ((context as NutritionExaminationActivity).check()) {
+                                            startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
 
                                 constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
 
                             }
-                            PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0 -> {
+                            SavePaper.Total.temp_Smoking != null -> {
 
                                 progress.isClickable = true
                                 progress2.isClickable = true
@@ -266,10 +282,18 @@ open class RootActivity : AppCompatActivity() {
                                 progress_text3.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress.setOnClickListener {
-                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.nutritionSaved) {
+                                        if ((context as NutritionExaminationActivity).check()) {
+                                            startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
                                 progress3.setOnClickListener {
-                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.nutritionSaved) {
+                                        if ((context as NutritionExaminationActivity).check()) {
+                                            startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
 
                                 constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
@@ -284,6 +308,7 @@ open class RootActivity : AppCompatActivity() {
                                 progress_text.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress.setOnClickListener {
+                                    (context as NutritionExaminationActivity).whenTempSave()
                                     startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 }
 
@@ -307,7 +332,7 @@ open class RootActivity : AppCompatActivity() {
                     "SmokingExaminationActivity" -> {
 
                         when {
-                            PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0 -> {
+                            SavePaper.Total.temp_Drinking != null -> {
 
                                 progress.isClickable = true
                                 progress2.isClickable = true
@@ -316,13 +341,25 @@ open class RootActivity : AppCompatActivity() {
                                 progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress.setOnClickListener {
-                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.smokingSaved) {
+                                        if ((context as SmokingExaminationActivity).check()) {
+                                            startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
                                 progress2.setOnClickListener {
-                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.smokingSaved) {
+                                        if ((context as SmokingExaminationActivity).check()) {
+                                            startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
                                 progress4.setOnClickListener {
-                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.smokingSaved) {
+                                        if ((context as SmokingExaminationActivity).check()) {
+                                            startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                        }
+                                    }
                                 }
 
                                 constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
@@ -336,10 +373,20 @@ open class RootActivity : AppCompatActivity() {
                                 progress4.isClickable = false
 
                                 progress.setOnClickListener {
-                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.smokingSaved) {
+                                        if (!(context as SmokingExaminationActivity).check()) {
+                                            context.whenTempSave()
+                                        }
+                                        startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    }
                                 }
                                 progress2.setOnClickListener {
-                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    if(SavedListObject.SavedList.savedDataClass.smokingSaved) {
+                                        if (!(context as SmokingExaminationActivity).check()) {
+                                            context.whenTempSave()
+                                        }
+                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                                    }
                                 }
 
                                 constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
@@ -368,12 +415,21 @@ open class RootActivity : AppCompatActivity() {
                         progress4.isClickable = true
 
                         progress.setOnClickListener {
+                            if (!(context as DrinkingExaminationActivity).check()) {
+                                context.whenTempSave()
+                            }
                             startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                         }
                         progress2.setOnClickListener {
+                            if (!(context as DrinkingExaminationActivity).check()) {
+                                context.whenTempSave()
+                            }
                             startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                         }
                         progress3.setOnClickListener {
+                            if (!(context as DrinkingExaminationActivity).check()) {
+                                context.whenTempSave()
+                            }
                             startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                         }
 

@@ -7,16 +7,16 @@ class SavePaper {
     object Total
     {
         var Array = ArrayList<Any>()
-//        var temp_Common = Paper_COMMON("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
-//        var temp_Common = Paper_MENTAL("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
-//        var temp_Common = Paper_COGNITIVE("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
-//        var temp_Common = Paper_ELDERLY("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
-//        var temp_Common = Paper_EXERCISE("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
-//        var temp_Common = Paper_NUTRITION("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
-//        var temp_Common = Paper_SMOKING("", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
-//        var temp_Common = Paper_DRINKING("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
-//        var temp_Common = Paper_ORAL("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
-//        var temp_Common = Paper_CANCER("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+        var temp_Common : Paper_COMMON? = null
+        var temp_Mental : Paper_MENTAL? = null
+        var temp_Cognitive : Paper_COGNITIVE? = null
+        var temp_Elderly : Paper_ELDERLY? = null
+        var temp_Exercise : Paper_EXERCISE? = null
+        var temp_Nutrition : Paper_NUTRITION? = null
+        var temp_Smoking : Paper_SMOKING? = null
+        var temp_Drinking : Paper_DRINKING? = null
+        var temp_Oral : Paper_ORAL? = null
+        var temp_Cancer : Paper_CANCER? = null
 
         fun Init()
         {
