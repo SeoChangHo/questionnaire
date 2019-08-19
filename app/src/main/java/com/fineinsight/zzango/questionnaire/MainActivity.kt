@@ -259,10 +259,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     }
 
+    //개별 클릭했을 때 뜨는 팝업
     fun userlogin(view : Button, view2 : ImageView, context : Context, startPage : String){
-
         if(view.text == "사용자 등록하기"){
-
+            chart.clear()
             var dialog = AlertDialog.Builder(context).create()
             var dialog_view = LayoutInflater.from(context).inflate(R.layout.activity_user_login, null)
             alert_view = dialog_view
@@ -492,6 +492,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     }
 
 
+    //사용자 등록하기를 눌러서 뜨는 팝업
     fun userlogin2(view : Button, view2 : ImageView, context : Context){
 
         if(view.text == "사용자 등록하기"){
@@ -652,6 +653,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                     Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
                     view.text = login_user_name+"님"
+
+                    SavePaper.Total.Init()
+                    exam_no = System.currentTimeMillis().toString()
+                    SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
+
                     view2.setImageResource(R.drawable.exit)
                     dialog.dismiss()
 
@@ -849,7 +855,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 //초기화
                 SavePaper.Total.Init()
-                var PArray = ArrayList<PublicDataInfo>()
                 exam_no = System.currentTimeMillis().toString()
                 SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
 
@@ -1490,6 +1495,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        chart.clear()
+        println("Chart Clear!")
+    }
 
 }
 
