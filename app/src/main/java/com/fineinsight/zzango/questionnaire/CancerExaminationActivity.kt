@@ -30,10 +30,7 @@ import kotlinx.android.synthetic.main.activity_cancer_exam.*
 import kotlinx.android.synthetic.main.activity_cancer_exam.Signature
 import kotlinx.android.synthetic.main.activity_cancer_exam.first_serial
 import kotlinx.android.synthetic.main.activity_cancer_exam.last_serial
-import kotlinx.android.synthetic.main.activity_cancer_exam.login_appbar_loading_progress
-import kotlinx.android.synthetic.main.activity_cancer_exam.login_appbar_loading_progress_bg
 import kotlinx.android.synthetic.main.activity_cancer_exam.name_edit
-import kotlinx.android.synthetic.main.activity_elderly_exam.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -374,15 +371,13 @@ class CancerExaminationActivity : RootActivity(){
 
     override fun onResume() {
 
-        login_appbar_loading_progress.visibility = View.GONE
-        login_appbar_loading_progress_bg.visibility = View.GONE
         super.onResume()
 
     }
 
     override fun onBackPressed() {
 
-        if(login_appbar_loading_progress.visibility != View.VISIBLE){
+        if(Progress_circle.visibility != View.VISIBLE){
 
             cancelAlert()
 

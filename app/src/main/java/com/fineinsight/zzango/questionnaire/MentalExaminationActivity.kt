@@ -118,15 +118,13 @@ class MentalExaminationActivity : RootActivity(){
 
     override fun onResume() {
 
-        login_appbar_loading_progress.visibility = View.GONE
-        login_appbar_loading_progress_bg.visibility = View.GONE
         super.onResume()
 
     }
 
     override fun onBackPressed() {
 
-        if(login_appbar_loading_progress.visibility != View.VISIBLE){
+        if(Progress_circle.visibility != View.VISIBLE){
 
             super.onBackPressed()
 

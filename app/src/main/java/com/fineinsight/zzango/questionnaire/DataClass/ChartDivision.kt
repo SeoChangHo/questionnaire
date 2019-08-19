@@ -49,6 +49,9 @@ class ChartDivision{
 
         fun local_each_insert(activity: Activity, index: Int){
 
+
+            println("index: ${index}")
+
             var sql_db = LocalDBhelper(activity).writableDatabase
 
             if(MainActivity.chart.isEmpty()){
@@ -65,57 +68,52 @@ class ChartDivision{
                     }
                     1 ->{
 
-                        LocalDBhelper(activity).LocalListMentalInsert(sql_db!!, SavePaper.Total.Array[2] as Paper_MENTAL)
-
+                        //LocalDBhelper(activity).LocalListMentalInsert(sql_db!!, SavePaper.Total.Array[2] as Paper_MENTAL)
+                        LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[0] as PublicDataInfo)
 
                         LocalDBhelper(activity).mentalSaveLocal(sql_db!!, SavePaper.Total.Array[2] as Paper_MENTAL)
                         saveCompleteAlert(activity)
                     }
                     2 ->{
 
-                        LocalDBhelper(activity).LocalListCognitiveInsert(sql_db!!, SavePaper.Total.Array[3] as Paper_COGNITIVE)
-
+                        //LocalDBhelper(activity).LocalListCognitiveInsert(sql_db!!, SavePaper.Total.Array[3] as Paper_COGNITIVE)
+                        LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[0] as PublicDataInfo)
 
                         LocalDBhelper(activity).cognitiveSaveLocal(sql_db!!, SavePaper.Total.Array[3] as Paper_COGNITIVE)
                         saveCompleteAlert(activity)
                     }
                     3 ->{
 
-                        LocalDBhelper(activity).LocalListElderlyInsert(sql_db!!, SavePaper.Total.Array[4] as Paper_ELDERLY)
-
+                        //LocalDBhelper(activity).LocalListElderlyInsert(sql_db!!, SavePaper.Total.Array[4] as Paper_ELDERLY)
+                        LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[0] as PublicDataInfo)
 
                         LocalDBhelper(activity).elderlySaveLocal(sql_db!!, SavePaper.Total.Array[4] as Paper_ELDERLY)
                         saveCompleteAlert(activity)
                     }
                     4 ->{
 
-                        LocalDBhelper(activity).LocalListDrinkingInsert(sql_db!!, SavePaper.Total.Array[8] as Paper_DRINKING)
+                        //LocalDBhelper(activity).LocalListDrinkingInsert(sql_db!!, SavePaper.Total.Array[8] as Paper_DRINKING)
 
+                        LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[0] as PublicDataInfo)
 
                         LocalDBhelper(activity).exerciseSaveLocal(sql_db!!, SavePaper.Total.Array[5] as Paper_EXERCISE)
-
-
                         LocalDBhelper(activity).nutritionSaveLocal(sql_db!!, SavePaper.Total.Array[6] as Paper_NUTRITION)
-
-
                         LocalDBhelper(activity).smokingSaveLocal(sql_db!!, SavePaper.Total.Array[7] as Paper_SMOKING)
-
-
                         LocalDBhelper(activity).drinkingSaveLocal(sql_db!!, SavePaper.Total.Array[8] as Paper_DRINKING)
                         saveCompleteAlert(activity)
                     }
                     5 ->{
 
-                        LocalDBhelper(activity).LocalListOralInsert(sql_db!!, SavePaper.Total.Array[9] as Paper_ORAL)
-
+                        //LocalDBhelper(activity).LocalListOralInsert(sql_db!!, SavePaper.Total.Array[9] as Paper_ORAL)
+                        LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[0] as PublicDataInfo)
 
                         LocalDBhelper(activity).oralSaveLocal(sql_db!!, SavePaper.Total.Array[9] as Paper_ORAL)
                         saveCompleteAlert(activity)
                     }
                     6 ->{
 
-                        LocalDBhelper(activity).LocalListCancerInsert(sql_db!!, SavePaper.Total.Array[10] as Paper_CANCER)
-
+                        //LocalDBhelper(activity).LocalListCancerInsert(sql_db!!, SavePaper.Total.Array[10] as Paper_CANCER)
+                        LocalDBhelper(activity).LocalListInsert(sql_db!!, SavePaper.Total.Array[0] as PublicDataInfo)
 
                         LocalDBhelper(activity).cancerSaveLocal(sql_db!!, SavePaper.Total.Array[10] as Paper_CANCER)
                         saveCompleteAlert(activity)

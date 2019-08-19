@@ -19,13 +19,10 @@ import com.fineinsight.zzango.questionnaire.LocalList.Paper_SMOKING
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.synthetic.main.activity_drinking_exam.*
 import kotlinx.android.synthetic.main.activity_smoking_exam.*
 import kotlinx.android.synthetic.main.activity_smoking_exam.Signature
 import kotlinx.android.synthetic.main.activity_smoking_exam.first_serial
 import kotlinx.android.synthetic.main.activity_smoking_exam.last_serial
-import kotlinx.android.synthetic.main.activity_smoking_exam.login_appbar_loading_progress
-import kotlinx.android.synthetic.main.activity_smoking_exam.login_appbar_loading_progress_bg
 import kotlinx.android.synthetic.main.activity_smoking_exam.name_edit
 import kotlinx.android.synthetic.main.activity_smoking_exam.progress_constraintLayout
 import kotlinx.android.synthetic.main.progressbar2.*
@@ -175,15 +172,13 @@ class SmokingExaminationActivity : RootActivity(){
 
     override fun onResume() {
 
-        login_appbar_loading_progress.visibility = View.GONE
-        login_appbar_loading_progress_bg.visibility = View.GONE
         super.onResume()
 
     }
 
     override fun onBackPressed() {
 
-        if(login_appbar_loading_progress.visibility != View.VISIBLE){
+        if(Progress_circle.visibility != View.VISIBLE){
 
             cancelAlert()
 
