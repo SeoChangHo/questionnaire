@@ -979,6 +979,9 @@ class ExerciseExaminationActivity : RootActivity() {
                 sg2_spSports3_3_1, sg2_spSports3_3_2, sg2_spSports3_4, sg2_spSports3_5, sg2_spSports3_6_1, sg2_spSports3_6_2,
                 sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
                 sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum)
+
+        SavedListObject.SavedList.savedDataClass.exerciseSaved = true
+
 /*
         //해당 배열이 존재할경우
         //clear 후 다시 문항을 체크하고 배열을 add한다
@@ -1850,7 +1853,7 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
     }
-/*
+
     //해당 액티비티에 Exercise 배열이 저장안되어 있다면 temp_arr를 저장함
     //해당 액티비티를 정상적으로 완료하고 이동하면 temp_arr를 초기화함
     //PaperList Arr EXERCISE가 존재하면 check2를 실행한다
@@ -1858,8 +1861,8 @@ class ExerciseExaminationActivity : RootActivity() {
 
         if(SavedListObject.SavedList.savedDataClass.exerciseSaved){
 
-            PaperArray.PaperList.temp_Arr_EXERCISE = null
-            check2()
+
+            check()
 
         }else{
 
@@ -1874,5 +1877,5 @@ class ExerciseExaminationActivity : RootActivity() {
         super.onPause()
 
     }
-*/
+
 }

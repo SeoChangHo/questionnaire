@@ -131,7 +131,6 @@ open class RootActivity : AppCompatActivity() {
                 when(context.javaClass.kotlin.simpleName){
 
                     "ExerciseExaminationActivity" -> {
-                        //진행도 표시가 안될것이기에 달아놓은 주~~~~~~~~~~~~석
                         //PaperList 쓰지 않음 -> temp object를 따로 생성
                         //when문은 진행도를 표시하기 위함
                         //각 액티비티별로 check 메서드가 실행될 경우 해당 액티비티 temp data class 초기화
@@ -147,34 +146,34 @@ open class RootActivity : AppCompatActivity() {
                                 progress_text4.setTextColor(resources.getColor(R.color.mainBlue, null))
 
                                 progress2.setOnClickListener {
-//                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
-                                        (context as ExerciseExaminationActivity).check()
-                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }else{
-                                        (context as ExerciseExaminationActivity).whenTempSave()
-                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
+//                                        (context as ExerciseExaminationActivity).check2()
+//                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                                    }else{
+//                                        (context as ExerciseExaminationActivity).whenTempSave()
+//                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                                    }
                                 }
                                 progress3.setOnClickListener {
-//                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
-                                        (context as ExerciseExaminationActivity).check()
-                                        startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }else{
-                                        (context as ExerciseExaminationActivity).whenTempSave()
-                                        startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
+//                                        (context as ExerciseExaminationActivity).check()
+//                                        startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                                    }else{
+//                                        (context as ExerciseExaminationActivity).whenTempSave()
+//                                        startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                                    }
                                 }
                                 progress4.setOnClickListener {
-//                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
-                                        (context as ExerciseExaminationActivity).check()
-                                        startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }else{
-                                        (context as ExerciseExaminationActivity).whenTempSave()
-                                        startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                                    if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
+//                                        (context as ExerciseExaminationActivity).check()
+//                                        startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                                    }else{
+//                                        (context as ExerciseExaminationActivity).whenTempSave()
+//                                        startActivity(Intent(context, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                                    }
                                 }
 
                                 constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress3.id, ConstraintSet.END)
