@@ -262,7 +262,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     //개별 클릭했을 때 뜨는 팝업
     fun userlogin(view : Button, view2 : ImageView, context : Context, startPage : String){
         if(view.text == "사용자 등록하기"){
-
+            chart.clear()
             var dialog = AlertDialog.Builder(context).create()
             var dialog_view = LayoutInflater.from(context).inflate(R.layout.activity_user_login, null)
             alert_view = dialog_view
@@ -1495,6 +1495,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        chart.clear()
+        println("Chart Clear!")
+    }
 
 }
 
