@@ -13,14 +13,7 @@ import com.fineinsight.zzango.questionnaire.UserList.UserList
 class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db", null, 1){
 
     override fun onCreate(db: SQLiteDatabase) {
-
-
-
-
     }
-
-
-
 
     fun CreatePaperTable(db: SQLiteDatabase)
     {
@@ -136,86 +129,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         return data.count
     }
 
-
-    fun LocalListOralInsert(db : SQLiteDatabase, ex : Paper_ORAL) {
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", ex.exam_no)
-        //cv.put("setno", set)
-        //cv.put("signature", ex.signature)
-        cv.put("name", ex.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
-    }
-
-
-    fun LocalListCancerInsert(db : SQLiteDatabase, ex : Paper_CANCER) {
-        val cv = ContentValues()
-
-        cv.put("exam_no", ex.exam_no)
-        //cv.put("setno", set)
-        //cv.put("signature", ex.signature)
-        cv.put("name", ex.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
-    }
-
-    //정신
-    fun LocalListMentalInsert(db : SQLiteDatabase, ex : Paper_MENTAL) {
-
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", ex.exam_no)
-        //cv.put("setno", set)
-        //cv.put("signature", ex.signature)
-        cv.put("name", ex.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
-    }
-
-    //인지
-    fun LocalListCognitiveInsert(db : SQLiteDatabase, ex : Paper_COGNITIVE) {
-
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", ex.exam_no)
-        //cv.put("setno", set)
-        //cv.put("signature", ex.signature)
-        cv.put("name", ex.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
-    }
-
-    //노인
-    fun LocalListElderlyInsert(db : SQLiteDatabase, ex : Paper_ELDERLY) {
-
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", ex.exam_no)
-        //cv.put("setno", set)
-        //cv.put("signature", ex.signature)
-        cv.put("name", ex.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
-    }
-
-    //생활
-    fun LocalListDrinkingInsert(db : SQLiteDatabase, ex : Paper_DRINKING) {
-
-
-        val cv = ContentValues()
-
-        cv.put("exam_no", ex.exam_no)
-        //cv.put("setno", set)
-        //cv.put("signature", ex.signature)
-        cv.put("name", ex.name)
-
-        db.insert("LOCALSAVELIST", null, cv)
-    }
 
     fun oralCreate(db : SQLiteDatabase?){
 
@@ -910,7 +823,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_ORAL(db : SQLiteDatabase, getno: String): Cursor{
+    fun Select_Local_ORAL(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
 
         var sql = "SELECT * FROM ORAL_EXAM WHERE exam_no =?;"
 
@@ -922,99 +835,99 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_COMMON(db : SQLiteDatabase, getno: String): Cursor{
+    fun Select_Local_COMMON(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
 
 
-        var sql = "SELECT * FROM COMMON_EXAM WHERE exam_no =?;"
+        var sql = "SELECT * FROM COMMON_EXAM WHERE exam_no =? AND name=? AND first_serial=?;"
 
-        var data = db.rawQuery(sql, arrayOf(getno))
-
-        return data
-    }
-
-    @SuppressLint("Recycle")
-    fun Select_Local_COGNITIVE(db : SQLiteDatabase, getno: String): Cursor{
-
-
-        var sql = "SELECT * FROM COGNITIVE_EXAM WHERE exam_no =?;"
-
-        var data = db.rawQuery(sql, arrayOf(getno))
+        var data = db.rawQuery(sql, arrayOf(getno, getname, first_serial))
 
         return data
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_ELDERLY(db : SQLiteDatabase, getno: String): Cursor{
+    fun Select_Local_COGNITIVE(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
 
 
-        var sql = "SELECT * FROM ELDERLY_EXAM WHERE exam_no =?;"
+        var sql = "SELECT * FROM COGNITIVE_EXAM WHERE exam_no =? AND name=? AND first_serial=?;"
 
-        var data = db.rawQuery(sql, arrayOf(getno))
+        var data = db.rawQuery(sql, arrayOf(getno, getname, first_serial))
 
         return data
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_MENTAL(db : SQLiteDatabase, getno: String): Cursor{
+    fun Select_Local_ELDERLY(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
 
 
-        var sql = "SELECT * FROM MENTAL_EXAM WHERE exam_no =?;"
+        var sql = "SELECT * FROM ELDERLY_EXAM WHERE exam_no =? AND name=? AND first_serial=?;"
 
-        var data = db.rawQuery(sql, arrayOf(getno))
+        var data = db.rawQuery(sql, arrayOf(getno, getname, first_serial))
+
         return data
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_EXERCISE(db : SQLiteDatabase, getno: String): Cursor{
+    fun Select_Local_MENTAL(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
 
 
-        var sql = "SELECT * FROM EXERCISE_EXAM WHERE exam_no =?;"
+        var sql = "SELECT * FROM MENTAL_EXAM WHERE exam_no =? AND name=? AND first_serial=?;"
 
-        var data = db.rawQuery(sql, arrayOf(getno))
+        var data = db.rawQuery(sql, arrayOf(getno, getname, first_serial))
         return data
-
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_SMOKING(db : SQLiteDatabase, getno: String): Cursor{
+    fun Select_Local_EXERCISE(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
 
 
-        var sql = "SELECT * FROM SMOKING_EXAM WHERE exam_no =?;"
+        var sql = "SELECT * FROM EXERCISE_EXAM WHERE exam_no =? AND name=? AND first_serial=?;"
 
-        var data = db.rawQuery(sql, arrayOf(getno))
-        return data
-
-    }
-
-    @SuppressLint("Recycle")
-    fun Select_Local_DRINKING(db : SQLiteDatabase, getno: String): Cursor{
-
-
-        var sql = "SELECT * FROM DRINKING_EXAM WHERE exam_no =?;"
-
-        var data = db.rawQuery(sql, arrayOf(getno))
+        var data = db.rawQuery(sql, arrayOf(getno, getname, first_serial))
         return data
 
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_CANCER(db : SQLiteDatabase, getno: String): Cursor{
+    fun Select_Local_SMOKING(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
 
 
-        var sql = "SELECT * FROM CANCER_EXAM WHERE exam_no =?;"
+        var sql = "SELECT * FROM SMOKING_EXAM WHERE exam_no =? AND name=? AND first_serial=?;"
 
-        var data = db.rawQuery(sql, arrayOf(getno))
+        var data = db.rawQuery(sql, arrayOf(getno, getname, first_serial))
         return data
 
     }
 
     @SuppressLint("Recycle")
-    fun Select_Local_NUTRITION(db : SQLiteDatabase, getno: String): Cursor{
+    fun Select_Local_DRINKING(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
 
 
-        var sql = "SELECT * FROM NUTRITION_EXAM WHERE exam_no =?;"
+        var sql = "SELECT * FROM DRINKING_EXAM WHERE exam_no =? AND name=? AND first_serial=?;"
 
-        var data = db.rawQuery(sql, arrayOf(getno))
+        var data = db.rawQuery(sql, arrayOf(getno, getname, first_serial))
+        return data
+
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_CANCER(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
+
+
+        var sql = "SELECT * FROM CANCER_EXAM WHERE exam_no =? AND name=? AND first_serial=?;"
+
+        var data = db.rawQuery(sql, arrayOf(getno, getname, first_serial))
+        return data
+
+    }
+
+    @SuppressLint("Recycle")
+    fun Select_Local_NUTRITION(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
+
+
+        var sql = "SELECT * FROM NUTRITION_EXAM WHERE exam_no =? AND name=? AND first_serial=?;"
+
+        var data = db.rawQuery(sql, arrayOf(getno, getname, first_serial))
         return data
 
     }
@@ -1023,10 +936,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun checkLocalList(db : SQLiteDatabase): Cursor{
 
         var data = db.rawQuery("SELECT * FROM LOCALSAVELIST;", null)
-
-
-
-
         return data
 
     }
@@ -1036,77 +945,9 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         for(i in 0..Paper.size-1)
         {
             db.delete("LOCALSAVELIST", "exam_no=?", arrayOf(Paper[i].exam_no))
-
-
-//            when (Paper[i].setno)
-//            {
-//                CustomAdapter.Category.COMMON -> {
-//                    println("공통검진입니다.")
-//                    db.delete("COMMON_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-//                }
-//                CustomAdapter.Category.ORAL -> {
-//                    println("구강검진입니다.")
-//                    db.delete("ORAL_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-//                }
-//                CustomAdapter.Category.MENTAL -> {
-//                    println("정신건강검진입니다.")
-//                    db.delete("MENTAL_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-//                }
-//                CustomAdapter.Category.COGNITIVE -> {
-//                    println("인지기능입니다.")
-//                    db.delete("COGNITIVE_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-//                }
-//                CustomAdapter.Category.ELDERLY -> {
-//                    println("노인기능입니다.")
-//                    db.delete("ELDERLY_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-//                }
-//                CustomAdapter.Category.EXERCISE -> {
-//                    println("운동입니다..")
-//                    db.delete("EXERCISE_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-//                }
-//                CustomAdapter.Category.NUTRITION -> {
-//                    println("영양입니다..")
-//                    db.delete("NUTRITION_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-//                }
-//                CustomAdapter.Category.DRINKING -> {
-//                    println("음주입니다..")
-//                    db.delete("DRINKING_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-//                }
-//                CustomAdapter.Category.SMOKING -> {
-//                    println("흡연입니다..")
-//                    db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-//                }
-//                CustomAdapter.Category.CANCER -> {
-//                    println("암입니다..")
-//                    db.delete("CANCER_EXAM", "exam_no=?", arrayOf(Paper[i].exam_no))
-//                }
-//                else -> {
-//                    println("확인불가")
-//                }
-//            }
-
-
-
-
-
         }
-
         db.close()
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     fun deletePaperEach(db : SQLiteDatabase, Paper: Paper)
@@ -1115,7 +956,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         println(Paper.name+"님의 문진표 삭제시도")
 
 
-            db.delete("LOCALSAVELIST", "exam_no=?", arrayOf(Paper.exam_no))
+        db.delete("LOCALSAVELIST", "exam_no=?", arrayOf(Paper.exam_no))
 
 
 //        when (Paper.setno)

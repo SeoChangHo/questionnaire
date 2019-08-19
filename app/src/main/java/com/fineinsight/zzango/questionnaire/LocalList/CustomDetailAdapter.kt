@@ -63,7 +63,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
 
     override fun getItemCount(): Int {
 
-        return SetToCount(PaperList.exam_no)
+        return SetToCount(PaperList.exam_no, PaperList.name, PaperList.first_serial)
 
     }
 
@@ -92,7 +92,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
                 {
                     var PaperArray = ArrayList<Paper_ORAL>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_ORAL(sql_db!!, PaperList.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_ORAL(sql_db!!, PaperList.exam_no, PaperList.name, PaperList.first_serial)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -138,7 +138,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
 
                     var PaperArray = ArrayList<Paper_COMMON>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_COMMON(sql_db!!, PaperList.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_COMMON(sql_db!!, PaperList.exam_no, PaperList.name, PaperList.first_serial)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -255,7 +255,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
 
                     var PaperArray = ArrayList<Paper_COGNITIVE>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_COGNITIVE(sql_db!!, PaperList.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_COGNITIVE(sql_db!!, PaperList.exam_no, PaperList.name, PaperList.first_serial)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -300,7 +300,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
                 {
                     var PaperArray = ArrayList<Paper_ELDERLY>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_ELDERLY(sql_db!!, PaperList.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_ELDERLY(sql_db!!, PaperList.exam_no, PaperList.name, PaperList.first_serial)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -340,7 +340,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
 
                     var PaperArray = ArrayList<Paper_EXERCISE>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_EXERCISE(sql_db!!, PaperList.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_EXERCISE(sql_db!!, PaperList.exam_no, PaperList.name, PaperList.first_serial)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -402,7 +402,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
 
                     var PaperArray = ArrayList<Paper_NUTRITION>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_NUTRITION(sql_db!!, PaperList.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_NUTRITION(sql_db!!, PaperList.exam_no, PaperList.name, PaperList.first_serial)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -452,7 +452,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
 
                     var PaperArray = ArrayList<Paper_MENTAL>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_MENTAL(sql_db!!, PaperList.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_MENTAL(sql_db!!, PaperList.exam_no, PaperList.name, PaperList.first_serial)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -492,7 +492,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
 
                     var PaperArray = ArrayList<Paper_SMOKING>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_SMOKING(sql_db!!, PaperList.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_SMOKING(sql_db!!, PaperList.exam_no, PaperList.name, PaperList.first_serial)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -531,7 +531,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
 
                     var PaperArray = ArrayList<Paper_DRINKING>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_DRINKING(sql_db!!, PaperList.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_DRINKING(sql_db!!, PaperList.exam_no, PaperList.name, PaperList.first_serial)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -573,7 +573,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
 
                     var PaperArray = ArrayList<Paper_CANCER>()
 
-                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_CANCER(sql_db!!, PaperList.exam_no)
+                    val data = LocalDBhelper(Activity.applicationContext).Select_Local_CANCER(sql_db!!, PaperList.exam_no, PaperList.name, PaperList.first_serial)
                     data.moveToFirst()
 
                     while(!data.isAfterLast){
@@ -694,59 +694,59 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
         val constraint = itemView.findViewById(R.id.constraintDetailLayoutArea) as ConstraintLayout
     }
 
-    fun SetToCount(exam_no:String):Int
+    fun SetToCount(exam_no:String, name:String, jumin:String):Int
     {
         val sql_db = LocalDBhelper(Activity).writableDatabase
         CategoryArr = ArrayList()
 
 
 
-        if (SelectPaper.Select.Return_COMMON(exam_no, sql_db, Activity).size>0)
+        if (SelectPaper.Select.Return_COMMON(exam_no, name, jumin, sql_db, Activity).size>0)
         {
             CategoryArr.add(Category.COMMON)
         }
 
-        if (SelectPaper.Select.Return_MENTAL(exam_no, sql_db, Activity).size>0)
+        if (SelectPaper.Select.Return_MENTAL(exam_no, name, jumin, sql_db, Activity).size>0)
         {
             CategoryArr.add(Category.MENTAL)
         }
 
-        if (SelectPaper.Select.Return_COGNITIVE(exam_no, sql_db, Activity).size>0)
+        if (SelectPaper.Select.Return_COGNITIVE(exam_no, name, jumin, sql_db, Activity).size>0)
         {
             CategoryArr.add(Category.COGNITIVE)
         }
 
-        if (SelectPaper.Select.Return_ELDERLY(exam_no, sql_db, Activity).size>0)
+        if (SelectPaper.Select.Return_ELDERLY(exam_no, name, jumin, sql_db, Activity).size>0)
         {
             CategoryArr.add(Category.ELDERLY)
         }
 
-        if (SelectPaper.Select.Return_EXERCISE(exam_no, sql_db, Activity).size>0)
+        if (SelectPaper.Select.Return_EXERCISE(exam_no, name, jumin, sql_db, Activity).size>0)
         {
             CategoryArr.add(Category.EXERCISE)
         }
 
-        if (SelectPaper.Select.Return_NUTRITION(exam_no, sql_db, Activity).size>0)
+        if (SelectPaper.Select.Return_NUTRITION(exam_no, name, jumin,  sql_db, Activity).size>0)
         {
             CategoryArr.add(Category.NUTRITION)
         }
 
-        if (SelectPaper.Select.Return_SMOKING(exam_no, sql_db, Activity).size>0)
+        if (SelectPaper.Select.Return_SMOKING(exam_no, name, jumin, sql_db, Activity).size>0)
         {
             CategoryArr.add(Category.SMOKING)
         }
 
-        if (SelectPaper.Select.Return_DRINKING(exam_no, sql_db, Activity).size>0)
+        if (SelectPaper.Select.Return_DRINKING(exam_no, name, jumin, sql_db, Activity).size>0)
         {
             CategoryArr.add(Category.DRINKING)
         }
 
-        if (SelectPaper.Select.Return_ORAL(exam_no, sql_db, Activity).size>0)
+        if (SelectPaper.Select.Return_ORAL(exam_no, name, jumin, sql_db, Activity).size>0)
         {
             CategoryArr.add(Category.ORAL)
         }
 
-        if (SelectPaper.Select.Return_CANCER(exam_no, sql_db, Activity).size>0)
+        if (SelectPaper.Select.Return_CANCER(exam_no, name, jumin, sql_db, Activity).size>0)
         {
             CategoryArr.add(Category.CANCER)
         }

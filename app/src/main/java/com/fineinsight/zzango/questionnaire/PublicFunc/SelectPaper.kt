@@ -9,11 +9,11 @@ class SelectPaper {
 
     object Select{
 
-        fun Return_ORAL(exam_no:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_ORAL>
+        fun Return_ORAL(exam_no:String, name:String, jumin:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_ORAL>
         {
             var PaperArray = ArrayList<Paper_ORAL>()
 
-            val data = LocalDBhelper(activity).Select_Local_ORAL(sql_db!!, exam_no)
+            val data = LocalDBhelper(activity).Select_Local_ORAL(sql_db!!, exam_no, name, jumin)
             data.moveToFirst()
 
             while(!data.isAfterLast){
@@ -50,11 +50,11 @@ class SelectPaper {
             return PaperArray
         }
 
-        fun Return_COMMON(exam_no:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_COMMON>
+        fun Return_COMMON(exam_no:String, name:String, jumin:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_COMMON>
         {
             var PaperArray = ArrayList<Paper_COMMON>()
 
-            val data = LocalDBhelper(activity).Select_Local_COMMON(sql_db!!, exam_no)
+            val data = LocalDBhelper(activity).Select_Local_COMMON(sql_db!!, exam_no, name, jumin)
             data.moveToFirst()
 
             while(!data.isAfterLast){
@@ -160,11 +160,11 @@ class SelectPaper {
             return PaperArray
         }
 
-        fun Return_COGNITIVE(exam_no:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_COGNITIVE>
+        fun Return_COGNITIVE(exam_no:String, name:String, jumin:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_COGNITIVE>
         {
             var PaperArray = ArrayList<Paper_COGNITIVE>()
 
-            val data = LocalDBhelper(activity).Select_Local_COGNITIVE(sql_db!!, exam_no)
+            val data = LocalDBhelper(activity).Select_Local_COGNITIVE(sql_db!!, exam_no, name, jumin)
             data.moveToFirst()
 
             while(!data.isAfterLast){
@@ -199,11 +199,11 @@ class SelectPaper {
         }
 
 
-        fun Return_MENTAL(exam_no:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_MENTAL>
+        fun Return_MENTAL(exam_no:String, name:String, jumin:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_MENTAL>
         {
             var PaperArray = ArrayList<Paper_MENTAL>()
 
-            val data = LocalDBhelper(activity).Select_Local_MENTAL(sql_db!!, exam_no)
+            val data = LocalDBhelper(activity).Select_Local_MENTAL(sql_db!!, exam_no, name, jumin)
             data.moveToFirst()
 
             while(!data.isAfterLast){
@@ -232,11 +232,11 @@ class SelectPaper {
         }
 
 
-        fun Return_ELDERLY(exam_no:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_ELDERLY>
+        fun Return_ELDERLY(exam_no:String, name:String, jumin:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_ELDERLY>
         {
             var PaperArray = ArrayList<Paper_ELDERLY>()
 
-            val data = LocalDBhelper(activity).Select_Local_ELDERLY(sql_db!!, exam_no)
+            val data = LocalDBhelper(activity).Select_Local_ELDERLY(sql_db!!, exam_no, name, jumin)
             data.moveToFirst()
 
             while(!data.isAfterLast){
@@ -264,11 +264,11 @@ class SelectPaper {
             return PaperArray
         }
 
-        fun Return_SMOKING(exam_no:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_SMOKING>
+        fun Return_SMOKING(exam_no:String, name:String, jumin:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_SMOKING>
         {
             var PaperArray = ArrayList<Paper_SMOKING>()
 
-            val data = LocalDBhelper(activity).Select_Local_SMOKING(sql_db!!, exam_no)
+            val data = LocalDBhelper(activity).Select_Local_SMOKING(sql_db!!, exam_no, name, jumin)
             data.moveToFirst()
 
             while(!data.isAfterLast){
@@ -295,11 +295,11 @@ class SelectPaper {
             return PaperArray
         }
 
-        fun Return_DRINKING(exam_no:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_DRINKING>
+        fun Return_DRINKING(exam_no:String, name:String, jumin:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_DRINKING>
         {
             var PaperArray = ArrayList<Paper_DRINKING>()
 
-            val data = LocalDBhelper(activity).Select_Local_DRINKING(sql_db!!, exam_no)
+            val data = LocalDBhelper(activity).Select_Local_DRINKING(sql_db!!, exam_no, name, jumin)
             data.moveToFirst()
 
             while(!data.isAfterLast){
@@ -329,11 +329,11 @@ class SelectPaper {
             return PaperArray
         }
 
-        fun Return_CANCER(exam_no:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_CANCER>
+        fun Return_CANCER(exam_no:String, name:String, jumin:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_CANCER>
         {
             var Paper = ArrayList<Paper_CANCER>()
 
-            val data = LocalDBhelper(activity).Select_Local_CANCER(sql_db!!, exam_no)
+            val data = LocalDBhelper(activity).Select_Local_CANCER(sql_db!!, exam_no, name, jumin)
             data.moveToFirst()
 
             while(!data.isAfterLast){
@@ -426,11 +426,11 @@ class SelectPaper {
             return Paper
         }
 
-        fun Return_EXERCISE(exam_no:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_EXERCISE>
+        fun Return_EXERCISE(exam_no:String, name:String, jumin:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_EXERCISE>
         {
             var PaperArray = ArrayList<Paper_EXERCISE>()
 
-            val data = LocalDBhelper(activity).Select_Local_EXERCISE(sql_db!!, exam_no)
+            val data = LocalDBhelper(activity).Select_Local_EXERCISE(sql_db!!, exam_no, name, jumin)
             data.moveToFirst()
 
             while(!data.isAfterLast){
@@ -479,10 +479,10 @@ class SelectPaper {
             return PaperArray
         }
 
-        fun Return_NUTRITION(exam_no:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_NUTRITION> {
+        fun Return_NUTRITION(exam_no:String, name:String, jumin:String, sql_db:SQLiteDatabase, activity: Activity): ArrayList<Paper_NUTRITION> {
             var PaperArray = ArrayList<Paper_NUTRITION>()
 
-            val data = LocalDBhelper(activity).Select_Local_NUTRITION(sql_db!!, exam_no)
+            val data = LocalDBhelper(activity).Select_Local_NUTRITION(sql_db!!, exam_no, name, jumin)
             data.moveToFirst()
 
             while(!data.isAfterLast){

@@ -119,7 +119,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
 
         println(p1.toString()+"번째의 체크값은 "+paper.isChecked.toString()+"입니다.")
         p0.chkbox.isChecked = paper.isChecked
-        p0.txtCategory.text = getPaperCount(paper.exam_no)
+        p0.txtCategory.text = getPaperCount(paper.exam_no, paper.name, paper.first_serial)
         p0.txtName.text = paper.name
 
 
@@ -220,7 +220,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
         }
     }
 
-    fun getPaperCount(ExamNo: String):String
+    fun getPaperCount(ExamNo: String, Name:String, Jumin:String):String
     {
 
         var FirstPaper = ""
@@ -228,7 +228,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
 
 
 
-        if (activity.Return_COMMON(ExamNo).size>0)
+        if (activity.Return_COMMON(ExamNo, Name, Jumin).size>0)
         {
             count++
             if (FirstPaper.isEmpty())
@@ -237,7 +237,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
             }
         }
 
-        if (activity.Return_MENTAL(ExamNo).size>0)
+        if (activity.Return_MENTAL(ExamNo, Name, Jumin).size>0)
         {
             count++
             if (FirstPaper.isEmpty())
@@ -246,7 +246,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
             }
         }
 
-        if (activity.Return_COGNITIVE(ExamNo).size>0)
+        if (activity.Return_COGNITIVE(ExamNo, Name, Jumin).size>0)
         {
             count++
             if (FirstPaper.isEmpty())
@@ -255,7 +255,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
             }
         }
 
-        if (activity.Return_ELDERLY(ExamNo).size>0)
+        if (activity.Return_ELDERLY(ExamNo, Name, Jumin).size>0)
         {
             count++
             if (FirstPaper.isEmpty())
@@ -264,7 +264,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
             }
         }
 
-        if (activity.Return_EXERCISE(ExamNo).size>0)
+        if (activity.Return_EXERCISE(ExamNo, Name, Jumin).size>0)
         {
             count++
             if (FirstPaper.isEmpty())
@@ -273,7 +273,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
             }
         }
 
-        if (activity.Return_NUTRITION(ExamNo).size>0)
+        if (activity.Return_NUTRITION(ExamNo, Name, Jumin).size>0)
         {
             count++
             if (FirstPaper.isEmpty())
@@ -282,7 +282,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
             }
         }
 
-        if (activity.Return_SMOKING(ExamNo).size>0)
+        if (activity.Return_SMOKING(ExamNo, Name, Jumin).size>0)
         {
             count++
             if (FirstPaper.isEmpty())
@@ -291,7 +291,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
             }
         }
 
-        if (activity.Return_DRINKING(ExamNo).size>0)
+        if (activity.Return_DRINKING(ExamNo, Name, Jumin).size>0)
         {
             count++
             if (FirstPaper.isEmpty())
@@ -300,7 +300,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
             }
         }
 
-        if (activity.Return_ORAL(ExamNo).size>0)
+        if (activity.Return_ORAL(ExamNo, Name, Jumin).size>0)
         {
             count++
             if (FirstPaper.isEmpty())
@@ -309,7 +309,7 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
             }
         }
 
-        if (activity.Return_CANCER(ExamNo).size>0)
+        if (activity.Return_CANCER(ExamNo, Name, Jumin).size>0)
         {
             count++
             if (FirstPaper.isEmpty())
