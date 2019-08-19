@@ -49,7 +49,6 @@ class ChartDivision{
 
         fun local_each_insert(activity: Activity, index: Int){
 
-
             println("index: ${index}")
 
             var sql_db = LocalDBhelper(activity).writableDatabase
@@ -144,24 +143,31 @@ class ChartDivision{
 
                             PaperNameInfo.PC.COMMON.EN_NM -> {
                                 activity.startActivity(Intent(act, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                                ProgressAction(true, activity)
                             }
                             PaperNameInfo.PC.MENTAL.EN_NM -> {
                                 activity.startActivity(Intent(act, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                                ProgressAction(true, activity)
                             }
                             PaperNameInfo.PC.COGNITIVE.EN_NM -> {
                                 activity.startActivity(Intent(act, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                                ProgressAction(true, activity)
                             }
                             PaperNameInfo.PC.ELDERLY.EN_NM -> {
                                 activity.startActivity(Intent(act, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                                ProgressAction(true, activity)
                             }
                             PaperNameInfo.PC.LIFE.EN_NM -> {
                                 activity.startActivity(Intent(act, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                                ProgressAction(true, activity)
                             }
                             PaperNameInfo.PC.ORAL.EN_NM -> {
                                 activity.startActivity(Intent(act, OralExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                                ProgressAction(true, activity)
                             }
                             PaperNameInfo.PC.CANCER.EN_NM -> {
                                 activity.startActivity(Intent(act, CancerExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                                ProgressAction(true, activity)
                             }
 
                         }
@@ -348,41 +354,41 @@ class ChartDivision{
 
         fun server_insert(activity: Activity){
 
-
+            ProgressAction(true, activity)
 //            if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
 
-                activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+            activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
 
-                OracleUtill().newsave_papers().newsavePapersServer(SavePaper.Total.Array).enqueue(object : Callback<String> {
-                    override fun onResponse(call: Call<String>, response: Response<String>) {
+            OracleUtill().newsave_papers().newsavePapersServer(SavePaper.Total.Array).enqueue(object : Callback<String> {
+                override fun onResponse(call: Call<String>, response: Response<String>) {
 
-                        if (response.isSuccessful) {
+                    if (response.isSuccessful) {
 
-                            if (!response.body()!!.equals("S")) {
+                        if (!response.body()!!.equals("S")) {
+                            ProgressAction(false, activity)
+                            activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            Toast.makeText(activity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
 
-                                activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                                Toast.makeText(activity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-
-                            } else {
-
-                                saveCompleteAlert(activity)
-
-                            }
+                        } else {
+                            ProgressAction(false, activity)
+                            saveCompleteAlert(activity)
 
                         }
 
                     }
 
-                    override fun onFailure(call: Call<String>, t: Throwable) {
+                }
 
+                override fun onFailure(call: Call<String>, t: Throwable) {
 
-                        activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        Toast.makeText(activity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-                        println(t.toString())
-                    }
+                    ProgressAction(false, activity)
+                    activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Toast.makeText(activity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                    println(t.toString())
+                }
 
-                })
+            })
 
 //            }else{
 //
@@ -470,6 +476,7 @@ class ChartDivision{
                 MainActivity.userImage!!.setImageResource(R.drawable.regi)
 
                 activity.startActivity(Intent(activity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                ProgressAction(true, activity)
 
                 dialog.dismiss()
 
@@ -482,21 +489,22 @@ class ChartDivision{
             val Progress_circle = activity.findViewById<ProgressBar>(R.id.Progress_circle)
             val Progress_bg = activity.findViewById<ConstraintLayout>(R.id.Progress_bg)
 
-            if(isShow)
+            if(Progress_circle != null && Progress_bg != null)
             {
+                if(isShow)
+                {
 
-                Progress_circle.visibility = View.VISIBLE
-                Progress_bg.visibility = View.VISIBLE
-                activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-            }
-            else
-            {
-                Progress_circle.visibility = View.GONE
-                Progress_bg.visibility = View.GONE
-                activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                    Progress_circle.visibility = View.VISIBLE
+                    Progress_bg.visibility = View.VISIBLE
+                    activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                }
+                else
+                {
+                    Progress_circle.visibility = View.GONE
+                    Progress_bg.visibility = View.GONE
+                    activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                }
             }
         }
-
     }
-
 }

@@ -307,7 +307,7 @@ class CommonExaminationActivity : RootActivity() {
 
     override fun onResume() {
         super.onResume()
-
+        ChartDivision.ChartDivision.ProgressAction(false, this)
     }
 
     override fun onBackPressed() {
@@ -511,6 +511,7 @@ class CommonExaminationActivity : RootActivity() {
             MainActivity.userImage!!.setImageResource(R.drawable.regi)
 
             startActivity(Intent(this@CommonExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            ChartDivision.ChartDivision.ProgressAction(true, this)
 
             dialog.dismiss()
 

@@ -210,8 +210,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         })
 
         //개발용
-//        dialog_view.login_id.setText("bestian")
-//        dialog_view.login_password.setText("best1234")
+        dialog_view.login_id.setText("bestian")
+        dialog_view.login_password.setText("best1234")
 
         val login = dialog_view.findViewById(R.id.Login) as Button
         login.setOnClickListener{

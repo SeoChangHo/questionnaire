@@ -11,10 +11,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
-import com.fineinsight.zzango.questionnaire.DataClass.PaperNameInfo
-import com.fineinsight.zzango.questionnaire.DataClass.PublicDataInfo
-import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
-import com.fineinsight.zzango.questionnaire.DataClass.ServerPaper_Life
+import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_NUTRITION
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
@@ -195,9 +192,8 @@ class NutritionExaminationActivity :RootActivity() {
     }
 
     override fun onResume() {
-
         super.onResume()
-
+        ChartDivision.ChartDivision.ProgressAction(false, this)
     }
 
     override fun onBackPressed() {
@@ -213,18 +209,20 @@ class NutritionExaminationActivity :RootActivity() {
     fun nutrition_exam_local_insert(){
 
         startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+        ChartDivision.ChartDivision.ProgressAction(true, this)
 
     }
 
     fun nutrition_exam_server_insert(){
 
         startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
+        ChartDivision.ChartDivision.ProgressAction(true, this)
     }
 
     fun nutrition_exam_server_getPaper(){
 
         startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).putExtra("paper", intent.getSerializableExtra("paper") as ServerPaper_Life).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+        ChartDivision.ChartDivision.ProgressAction(true, this)
 
     }
 

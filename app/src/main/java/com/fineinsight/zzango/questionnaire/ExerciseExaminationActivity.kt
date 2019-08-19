@@ -206,9 +206,8 @@ class ExerciseExaminationActivity : RootActivity() {
     }
 
     override fun onResume() {
-
         super.onResume()
-
+        ChartDivision.ChartDivision.ProgressAction(false, this)
     }
 
     override fun onBackPressed() {
@@ -224,19 +223,20 @@ class ExerciseExaminationActivity : RootActivity() {
     fun exercise_exam_local_insert(){
 
         startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+        ChartDivision.ChartDivision.ProgressAction(true, this)
 
     }
 
     fun exercise_exam_server_insert() {
 
         startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
+        ChartDivision.ChartDivision.ProgressAction(true, this)
     }
 
     fun exercise_exam_server_getPaper(){
 
         startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).putExtra("paper", intent.getSerializableExtra("paper") as ServerPaper_Life).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
+        ChartDivision.ChartDivision.ProgressAction(true, this)
     }
 
     fun whenTempSave() {

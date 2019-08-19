@@ -179,9 +179,8 @@ class DrinkingExaminationActivity : RootActivity(){
     }
 
     override fun onResume() {
-
         super.onResume()
-
+        ChartDivision.ChartDivision.ProgressAction(false, this)
     }
 
     override fun onBackPressed() {

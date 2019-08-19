@@ -139,7 +139,7 @@ class CognitiveExaminationActivity : RootActivity(){
 
     override fun onResume() {
         super.onResume()
-
+        ChartDivision.ChartDivision.ProgressAction(false, this)
     }
 
     override fun onBackPressed() {
@@ -388,12 +388,15 @@ class CognitiveExaminationActivity : RootActivity(){
 
             if(AdditionalArr.Page.isOralChecked){
 
+
                 startActivity(Intent(this@CognitiveExaminationActivity, OralExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                ChartDivision.ChartDivision.ProgressAction(true, this)
                 dialog.dismiss()
 
             }else if(AdditionalArr.Page.isCancerChecked){
 
                 startActivity(Intent(this@CognitiveExaminationActivity, CancerExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                ChartDivision.ChartDivision.ProgressAction(true, this)
                 dialog.dismiss()
 
             }else{
@@ -406,7 +409,7 @@ class CognitiveExaminationActivity : RootActivity(){
                 MainActivity.userImage!!.setImageResource(R.drawable.regi)
 
                 startActivity(Intent(this@CognitiveExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
+                ChartDivision.ChartDivision.ProgressAction(true, this)
                 dialog.dismiss()
 
             }
