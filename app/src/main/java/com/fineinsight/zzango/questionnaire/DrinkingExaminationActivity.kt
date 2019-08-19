@@ -45,7 +45,6 @@ class DrinkingExaminationActivity : RootActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drinking_exam)
 
-//        controlProgress(this, questionnaire_progress_wrapper, progress_constraintLayout,questionnaire_progress, progress_guideline, progress_guideline2, progress_guideline3, progress_guideline4, progress_guideline5, progress_guideline6, progress_guideline7, progress_guideline8)
         controlProgress(this)
 
         //서명정보 가져오는거
@@ -68,10 +67,8 @@ class DrinkingExaminationActivity : RootActivity(){
         }
 
         drinking_examination_save.setOnClickListener {
-
             AdditionalArr.over.checkAll = false
             if(check()){
-
                 if(MainActivity.chart.isEmpty()){
                     if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
                         ChartDivision.ChartDivision.local_each_insert(this, 4)
@@ -81,9 +78,7 @@ class DrinkingExaminationActivity : RootActivity(){
                 }else{
                     ChartDivision.ChartDivision.chart_array_insert(this, 4, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
                 }
-
             }
-
         }
 
         drinking_examination_cancel.setOnClickListener {
@@ -97,6 +92,34 @@ class DrinkingExaminationActivity : RootActivity(){
             AdditionalArr.over.checkAll = false
             finish()
 
+        }
+
+        if(AdditionalArr.over.checkAll){
+            if(AdditionalArr.over.isDrinking){
+                drinking_0_true.isChecked = true
+                drinking_0_false.isChecked = false
+                drinking_0_true.isEnabled = false
+                drinking_0_false.isEnabled = false
+            }else if(AdditionalArr.over.isDrinking2){
+                drinking_0_true.isChecked = true
+                drinking_0_false.isChecked = false
+                drinking_0_true.isEnabled = false
+                drinking_0_false.isEnabled = false
+            }else{
+                drinking_0_true.isChecked = false
+                drinking_0_false.isChecked = true
+                drinking_0_true.isEnabled = false
+                drinking_0_false.isEnabled = false
+            }
+        }else{
+            drinking_0_true.isEnabled = true
+            drinking_0_false.isEnabled = true
+        }
+
+        if(SavePaper.Total.temp_Drinking != null){
+            whenTempLoad(SavePaper.Total.temp_Drinking!!)
+        }else if(SavedListObject.SavedList.savedDataClass.drinkingSaved){
+            whenTempLoad(SavePaper.Total.Array[8] as Paper_DRINKING)
         }
 
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
@@ -144,38 +167,6 @@ class DrinkingExaminationActivity : RootActivity(){
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        if(AdditionalArr.over.checkAll){
-            if(AdditionalArr.over.isDrinking){
-                drinking_0_true.isChecked = true
-                drinking_0_false.isChecked = false
-                drinking_0_true.isEnabled = false
-                drinking_0_false.isEnabled = false
-            }else if(AdditionalArr.over.isDrinking2){
-                drinking_0_true.isChecked = true
-                drinking_0_false.isChecked = false
-                drinking_0_true.isEnabled = false
-                drinking_0_false.isEnabled = false
-            }else{
-                drinking_0_true.isChecked = false
-                drinking_0_false.isChecked = true
-                drinking_0_true.isEnabled = false
-                drinking_0_false.isEnabled = false
-            }
-        }else{
-            drinking_0_true.isEnabled = true
-            drinking_0_false.isEnabled = true
-        }
-
-        if(PaperArray.PaperList.Arr_DRINKING != null && PaperArray.PaperList.Arr_DRINKING!!.size != 0){
-
-            whenTempLoad(PaperArray.PaperList.Arr_DRINKING!![0])
-
-        }else if(PaperArray.PaperList.temp_Arr_DRINKING != null && PaperArray.PaperList.temp_Arr_DRINKING!!.size != 0){
-
-            whenTempLoad(PaperArray.PaperList.temp_Arr_DRINKING!![0])
-
-        }
-
     }
 
     override fun onResume() {
@@ -193,279 +184,9 @@ class DrinkingExaminationActivity : RootActivity(){
 
     }
 
-//    fun drinking_exam_local_insert(){
-//
-//        println("로컬")
-//
-//        if(MainActivity.chart == "SET3"){
-//
-//            LocalDBhelper(this).onCreate(sql_db)
-//            LocalDBhelper(this).LocalListInsert(sql_db!!, PaperArray.PaperList.Arr_COMMON!!, MainActivity.chart)
-//
-//            LocalDBhelper(this).commonExaminationDB(sql_db)
-//            LocalDBhelper(this).commonSaveLocal(sql_db!!, PaperArray.PaperList.Arr_COMMON!!)
-//
-//            LocalDBhelper(this).mentalCreate(sql_db)
-//            LocalDBhelper(this).mentalSaveLocal(sql_db!!, PaperArray.PaperList.Arr_MENTAL!!)
-//
-//            LocalDBhelper(this).exerciseCreate(sql_db)
-//            LocalDBhelper(this).exerciseSaveLocal(sql_db!!, PaperArray.PaperList.Arr_EXERCISE!!)
-//
-//            LocalDBhelper(this).nutritionCreate(sql_db)
-//            LocalDBhelper(this).nutritionSaveLocal(sql_db!!, PaperArray.PaperList.Arr_NUTRITION!!)
-//
-//            LocalDBhelper(this).smokingCreate(sql_db)
-//            LocalDBhelper(this).smokingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_SMOKING!!)
-//
-//            LocalDBhelper(this).drinkingCreate(sql_db)
-//            LocalDBhelper(this).drinkingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!)
-//
-//            saveCompleteAlert()
-//
-//        }else if(MainActivity.chart == "SET6"){
-//
-//            startActivity(Intent(this@DrinkingExaminationActivity, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-//
-//        }else if(MainActivity.chart == "SET0"){
-//
-//            LocalDBhelper(this).onCreate(sql_db)
-//            LocalDBhelper(this).LocalListDrinkingInsert(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!, "SET11")
-//
-//            LocalDBhelper(this).exerciseCreate(sql_db)
-//            LocalDBhelper(this).exerciseSaveLocal(sql_db!!, PaperArray.PaperList.Arr_EXERCISE!!)
-//
-//            LocalDBhelper(this).nutritionCreate(sql_db)
-//            LocalDBhelper(this).nutritionSaveLocal(sql_db!!, PaperArray.PaperList.Arr_NUTRITION!!)
-//
-//            LocalDBhelper(this).smokingCreate(sql_db)
-//            LocalDBhelper(this).smokingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_SMOKING!!)
-//
-//            LocalDBhelper(this).drinkingCreate(sql_db)
-//            LocalDBhelper(this).drinkingSaveLocal(sql_db!!, PaperArray.PaperList.Arr_DRINKING!!)
-//            saveCompleteAlert()
-//        }
-//
-//    }
-//
-//    fun drinking_exam_server_insert(){
-//
-//        if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
-//
-//            login_appbar_loading_progress.visibility = View.VISIBLE
-//            login_appbar_loading_progress_bg.visibility = View.VISIBLE
-//            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//
-//            if (MainActivity.chart == "SET3") {
-//
-//                var SaveArr = ArrayList<Any>()
-//                var InfoArr = ArrayList<String>()
-//
-//
-//                InfoArr.add("SET3")
-//                InfoArr.add(MainActivity.hospital)
-//                SaveArr.add(InfoArr)
-//                SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
-//
-//
-//                OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
-//
-//                    override fun onResponse(call: Call<String>, response: Response<String>) {
-//
-//                        if (response.isSuccessful) {
-//
-//                            if (!response.body()!!.equals("S")) {
-//
-//                                login_appbar_loading_progress.visibility = View.GONE
-//                                login_appbar_loading_progress_bg.visibility = View.GONE
-//                                this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//                                Toast.makeText(this@DrinkingExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-//
-//                            } else {
-//
-//                                saveCompleteAlert()
-//
-//                            }
-//
-//                        }
-//
-//                    }
-//
-//                    override fun onFailure(call: Call<String>, t: Throwable) {
-//
-//                        login_appbar_loading_progress.visibility = View.GONE
-//                        login_appbar_loading_progress_bg.visibility = View.GONE
-//                        this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//                        Toast.makeText(this@DrinkingExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-//                        println(t.toString())
-//                    }
-//                })
-//
-//            } else if (MainActivity.chart == "SET6") {
-//
-//                startActivity(Intent(this@DrinkingExaminationActivity, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-//
-//            } else if (MainActivity.chart == "SET0") {
-//
-//
-//                println("들어옴")
-//                var SaveArr = ArrayList<Any>()
-//                var InfoArr = ArrayList<String>()
-//
-//
-//                InfoArr.add("SET11")
-//                InfoArr.add(MainActivity.hospital)
-//                SaveArr.add(InfoArr)
-//                SaveArr.add(PaperArray.PaperList.Arr_RESULT!!)
-//
-//
-//                OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
-//                    override fun onResponse(call: Call<String>, response: Response<String>) {
-//
-//                        if (response.isSuccessful) {
-//
-//                            if (!response.body()!!.equals("S")) {
-//
-//                                login_appbar_loading_progress.visibility = View.GONE
-//                                login_appbar_loading_progress_bg.visibility = View.GONE
-//                                this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//                                Toast.makeText(this@DrinkingExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-//
-//                            } else {
-//
-//                                saveCompleteAlert()
-//
-//                            }
-//
-//                        }
-//
-//                    }
-//
-//                    override fun onFailure(call: Call<String>, t: Throwable) {
-//
-//                        login_appbar_loading_progress.visibility = View.GONE
-//                        login_appbar_loading_progress_bg.visibility = View.GONE
-//                        this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//                        Toast.makeText(this@DrinkingExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-//                        println(t.toString())
-//                    }
-//
-//                })
-//
-//            }
-//
-//        }else{
-//
-//            wifiCheck()
-//
-//        }
-//
-//    }
-
-//    fun saveCompleteAlert(){
-//
-//        login_appbar_loading_progress.visibility = View.GONE
-//        login_appbar_loading_progress_bg.visibility = View.GONE
-//        this@DrinkingExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//
-//        popup = false
-//
-//        var dialog = AlertDialog.Builder(this).create()
-//        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
-//
-//        dialog.setCancelable(false)
-//        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-//
-//        dialog.setView(dialog_view)
-//        dialog_view.save_complete_alert_text.text = "저장이 완료 되었습니다"
-//
-//        if(!popup) {
-//
-//            dialog.show().let {
-//
-//                popup = true
-//
-//            }
-//
-//        }
-//
-//        var displayMetrics = DisplayMetrics()
-//        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-//        // The absolute width of the available display size in pixels.
-//        var displayWidth = displayMetrics.widthPixels
-//        // The absolute height of the available display size in pixels.
-//        var displayHeight = displayMetrics.heightPixels
-//
-//        // Initialize a new window manager layout parameters
-//        var layoutParams = WindowManager.LayoutParams()
-//
-//        // Copy the alert dialog window attributes to new layout parameter instance
-//        layoutParams.copyFrom(dialog.window.attributes)
-//
-//        // Set the alert dialog window width and height
-//        // Set alert dialog width equal to screen width 90%
-//        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-//        // Set alert dialog height equal to screen height 90%
-//        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-//
-//        // Set alert dialog width equal to screen width 70%
-//        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-//        // Set alert dialog height equal to screen height 70%
-//        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-//
-//        // Set the width and height for the layout parameters
-//        // This will bet the width and height of alert dialog
-//        layoutParams.width = dialogWindowWidth
-//        layoutParams.height = dialogWindowHeight
-//
-//        // Apply the newly created layout parameters to the alert dialog window
-//        dialog.window.attributes = layoutParams
-//
-//
-//        dialog.setOnDismissListener {
-//
-//            popup = false
-//            dialog = null
-//
-//        }
-//
-//        dialog_view.return_alert.setOnClickListener {
-//
-//            AdditionalArr.over.checkAll = false
-//            if(AdditionalArr.Page.isOralChecked){
-//
-//                startActivity(Intent(this@DrinkingExaminationActivity, OralExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-//                dialog.dismiss()
-//
-//            }else if(AdditionalArr.Page.isCancerChecked){
-//
-//                startActivity(Intent(this@DrinkingExaminationActivity, CancerExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-//                dialog.dismiss()
-//
-//            }else{
-//
-//                MainActivity.login_user_name = ""
-//                MainActivity.user_first_serial = ""
-//                MainActivity.user_last_serial = ""
-//
-//                MainActivity.userLogin!!.text = "사용자 등록하기"
-//                MainActivity.userImage!!.setImageResource(R.drawable.regi)
-//
-//                PaperArray.PaperArrFunction.ArrayListInit()
-//
-//                startActivity(Intent(this@DrinkingExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-//
-//                dialog.dismiss()
-//
-//            }
-//
-//        }
-//
-//    }
-
     fun whenTempSave() {
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -599,33 +320,17 @@ class DrinkingExaminationActivity : RootActivity(){
             }
         }
 
-        exam_no = MainActivity.exam_no
-
-        if(PaperArray.PaperList.temp_Arr_DRINKING!!.size < 1) {
-
-            PaperArray.PaperList.temp_Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no,  name, first_serial_text, last_serial_text, category,
-                    sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
-                    sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
-            ))
-
-        }else{
-
-            PaperArray.PaperList.temp_Arr_DRINKING!!.removeAt(0)
-            PaperArray.PaperList.temp_Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no,  name, first_serial_text, last_serial_text, category,
-                    sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
-                    sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
-            ))
-
-        }
+        SavePaper.Total.temp_Drinking = Paper_DRINKING(
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no,  name, first_serial_text, last_serial_text, category,
+                sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
+                sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
+        )
 
     }
 
     fun check() : Boolean {
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -829,220 +534,16 @@ class DrinkingExaminationActivity : RootActivity(){
             }
         }
 
-        exam_no = MainActivity.exam_no
+        SavePaper.Total.Array[8] = Paper_DRINKING(
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
+                sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
+                sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
+        )
 
-        if(PaperArray.PaperList.Arr_DRINKING != null && PaperArray.PaperList.Arr_DRINKING!!.size >= 1) {
-
-            PaperArray.PaperList.Arr_DRINKING!!.clear()
-            PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
-                    sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
-            ))
-
-            var iter = PaperArray.PaperList.Arr_RESULT?.listIterator()
-
-            while(iter!!.hasNext()){
-                var arr = iter.next()
-                if((arr as ArrayList<*>)[0] is Paper_DRINKING){
-                    iter.remove()
-                    iter.add(PaperArray.PaperList.Arr_DRINKING!!)
-                }
-            }
-
-        }else {
-
-            PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
-                    sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
-            ))
-
-            PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_DRINKING!!)
-            PaperArray.PaperList.temp_Arr_DRINKING = ArrayList()
-
-            SavePaper.Total.Array[8] = Paper_DRINKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
-                    sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
-            )
-
-        }
+        SavedListObject.SavedList.savedDataClass.drinkingSaved = true
+        SavePaper.Total.temp_Drinking = null
 
         return true
-
-    }
-
-    fun check2() {
-
-        var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = ""
-        var name = ""
-        var first_serial_text = ""
-        var last_serial_text = ""
-        var category = "drinking"
-        var sg2_spDrink1 = ""
-        var sg2_spDrink2_1 = ""
-        var sg2_spDrink2_2 = ""
-        var sg2_spDrink3 = ""
-        var sg2_spDrink4 = ""
-        var sg2_spDrink5 = ""
-        var sg2_spDrink6 = ""
-        var sg2_spDrink7 = ""
-        var sg2_spDrink8 = ""
-        var sg2_spDrink9 = ""
-        var sg2_spDrink10 = ""
-        var sg2_spDrinkSum = ""
-
-        if (!name_edit.text.isNullOrEmpty()) {
-            name = name_edit.text.toString()
-        }
-        if (!first_serial.text.isNullOrEmpty()) {
-            first_serial_text = first_serial.text.toString()
-        }
-
-        if (!last_serial.text.isNullOrEmpty()) {
-            last_serial_text = last_serial.text.toString()
-        }
-
-        when {
-            drinking_0_false.isChecked -> sg2_spDrinkSum = "0"
-            else -> {
-                sg2_spDrinkSum = "1"
-
-                sg2_spDrink1 = when {
-                    drinking_1_1.isChecked -> "1"
-                    drinking_1_2.isChecked -> "2"
-                    drinking_1_3.isChecked -> "3"
-                    drinking_1_4.isChecked -> "4"
-                    else -> ""
-                }
-
-                sg2_spDrink2_1 = when {
-                    drinking_2_1_1.isChecked -> "1"
-                    drinking_2_1_2.isChecked -> "2"
-                    drinking_2_1_3.isChecked -> "3"
-                    drinking_2_1_4.isChecked -> "4"
-                    drinking_2_1_5.isChecked -> "5"
-                    else -> ""
-                }
-
-                sg2_spDrink2_2 = when {
-                    drinking_2_2_1.isChecked -> "1"
-                    drinking_2_2_2.isChecked -> "2"
-                    drinking_2_2_3.isChecked -> "3"
-                    drinking_2_2_4.isChecked -> "4"
-                    drinking_2_2_5.isChecked -> "5"
-                    else -> ""
-                }
-
-                sg2_spDrink3 = when {
-                    drinking_3_1.isChecked -> "1"
-                    drinking_3_2.isChecked -> "2"
-                    drinking_3_3.isChecked -> "3"
-                    drinking_3_4.isChecked -> "4"
-                    drinking_3_5.isChecked -> "5"
-                    else -> ""
-                }
-
-                sg2_spDrink4 = when {
-                    drinking_4_1.isChecked -> "1"
-                    drinking_4_2.isChecked -> "2"
-                    drinking_4_3.isChecked -> "3"
-                    drinking_4_4.isChecked -> "4"
-                    drinking_4_5.isChecked -> "5"
-                    else -> ""
-                }
-
-                sg2_spDrink5 = when {
-                    drinking_5_1.isChecked -> "1"
-                    drinking_5_2.isChecked -> "2"
-                    drinking_5_3.isChecked -> "3"
-                    drinking_5_4.isChecked -> "4"
-                    drinking_5_5.isChecked -> "5"
-                    else -> ""
-                }
-
-
-                sg2_spDrink6 = when {
-                    drinking_6_1.isChecked -> "1"
-                    drinking_6_2.isChecked -> "2"
-                    drinking_6_3.isChecked -> "3"
-                    drinking_6_4.isChecked -> "4"
-                    drinking_6_5.isChecked -> "5"
-                    else -> ""
-                }
-
-
-                sg2_spDrink7 = when {
-                    drinking_7_1.isChecked -> "1"
-                    drinking_7_2.isChecked -> "2"
-                    drinking_7_3.isChecked -> "3"
-                    drinking_7_4.isChecked -> "4"
-                    drinking_7_5.isChecked -> "5"
-                    else -> ""
-                }
-
-
-                sg2_spDrink8 = when {
-                    drinking_8_1.isChecked -> "1"
-                    drinking_8_2.isChecked -> "2"
-                    drinking_8_3.isChecked -> "3"
-                    drinking_8_4.isChecked -> "4"
-                    drinking_8_5.isChecked -> "5"
-                    else -> ""
-                }
-
-                sg2_spDrink9 = when {
-                    drinking_9_1.isChecked -> "1"
-                    drinking_9_2.isChecked -> "2"
-                    drinking_9_3.isChecked -> "3"
-                    else -> ""
-                }
-
-
-                sg2_spDrink10 = when {
-                    drinking_10_1.isChecked -> "1"
-                    drinking_10_2.isChecked -> "2"
-                    drinking_10_3.isChecked -> "3"
-                    else -> ""
-                }
-            }
-        }
-
-        exam_no = MainActivity.exam_no
-
-        if(PaperArray.PaperList.Arr_DRINKING != null && PaperArray.PaperList.Arr_DRINKING!!.size >= 1) {
-
-            PaperArray.PaperList.Arr_DRINKING!!.clear()
-            PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
-                    sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
-            ))
-
-            var iter = PaperArray.PaperList.Arr_RESULT?.listIterator()
-
-            while(iter!!.hasNext()){
-                var arr = iter.next()
-                if((arr as ArrayList<*>)[0] is Paper_DRINKING){
-                    iter.remove()
-                    iter.add(PaperArray.PaperList.Arr_DRINKING!!)
-                }
-            }
-
-        }else {
-
-            PaperArray.PaperList.Arr_DRINKING!!.add(Paper_DRINKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spDrink1, sg2_spDrink2_1, sg2_spDrink2_2, sg2_spDrink3, sg2_spDrink4, sg2_spDrink5,
-                    sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
-            ))
-
-            PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_DRINKING!!)
-            PaperArray.PaperList.temp_Arr_DRINKING = ArrayList()
-
-        }
 
     }
 
@@ -1503,27 +1004,6 @@ class DrinkingExaminationActivity : RootActivity(){
         }else if(paper.sg2_spDrink10 == "3"){
             drinking_10_3.isChecked = true
         }
-
-    }
-
-    override fun onPause() {
-
-        if(PaperArray.PaperList.Arr_DRINKING != null && PaperArray.PaperList.Arr_DRINKING!!.size != 0){
-
-            PaperArray.PaperList.temp_Arr_DRINKING = null
-            check2()
-
-        }else{
-
-            if(state != "getPaper") {
-
-                whenTempSave()
-
-            }
-
-        }
-
-        super.onPause()
 
     }
 

@@ -1,6 +1,7 @@
 package com.fineinsight.zzango.questionnaire
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
@@ -77,24 +78,14 @@ class ExerciseExaminationActivity : RootActivity() {
         }
 
         exercise_examination_save.setOnClickListener {
-
             //check function 리턴하는 boolean 값에 따라 진행
             if(check()){
-
-                startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-//                if(MainActivity.chart.isEmpty()){
-//                    if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
-//                        ChartDivision.ChartDivision.local_each_insert(this, 4)
-//                    }else{
-//                        ChartDivision.ChartDivision.server_insert(this)
-//                    }
-//                }else{
-//                    ChartDivision.ChartDivision.chart_array_insert(this, 4, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
-//                }
-
+                if(MainActivity.chart.isEmpty()){
+                    startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }else{
+                    ChartDivision.ChartDivision.chart_array_insert(this, 4, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
+                }
             }
-
         }
 
         exercise_examination_cancel.setOnClickListener {
@@ -216,7 +207,6 @@ class ExerciseExaminationActivity : RootActivity() {
     fun whenTempSave() {
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""

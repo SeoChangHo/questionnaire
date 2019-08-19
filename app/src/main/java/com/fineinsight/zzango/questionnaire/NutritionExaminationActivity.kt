@@ -48,12 +48,14 @@ class NutritionExaminationActivity :RootActivity() {
         sql_db = LocalDBhelper(this).writableDatabase
 
         nutrition_examination_save.setOnClickListener {
-
             //check function 리턴하는 boolean 값에 따라 진행
             if(check()){
-                startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                if(MainActivity.chart.isEmpty()){
+                    startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }else{
+                    ChartDivision.ChartDivision.chart_array_insert(this, 4, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
+                }
             }
-
         }
 
         nutrition_examination_cancel.setOnClickListener {
@@ -195,7 +197,6 @@ class NutritionExaminationActivity :RootActivity() {
     fun whenTempSave(){
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -393,7 +394,6 @@ class NutritionExaminationActivity :RootActivity() {
     fun check() : Boolean{
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""

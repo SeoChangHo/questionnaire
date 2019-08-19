@@ -373,20 +373,12 @@ open class RootActivity : AppCompatActivity() {
                                 progress4.isClickable = false
 
                                 progress.setOnClickListener {
-                                    if(SavedListObject.SavedList.savedDataClass.smokingSaved) {
-                                        if (!(context as SmokingExaminationActivity).check()) {
-                                            context.whenTempSave()
-                                        }
-                                        startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    (context as SmokingExaminationActivity).whenTempSave()
+                                    startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 }
                                 progress2.setOnClickListener {
-                                    if(SavedListObject.SavedList.savedDataClass.smokingSaved) {
-                                        if (!(context as SmokingExaminationActivity).check()) {
-                                            context.whenTempSave()
-                                        }
-                                        startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                                    }
+                                    (context as SmokingExaminationActivity).whenTempSave()
+                                    startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                                 }
 
                                 constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, progress2.id, ConstraintSet.END)
@@ -415,21 +407,15 @@ open class RootActivity : AppCompatActivity() {
                         progress4.isClickable = true
 
                         progress.setOnClickListener {
-                            if (!(context as DrinkingExaminationActivity).check()) {
-                                context.whenTempSave()
-                            }
+                            (context as DrinkingExaminationActivity).whenTempSave()
                             startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                         }
                         progress2.setOnClickListener {
-                            if (!(context as DrinkingExaminationActivity).check()) {
-                                context.whenTempSave()
-                            }
+                            (context as DrinkingExaminationActivity).whenTempSave()
                             startActivity(Intent(context, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                         }
                         progress3.setOnClickListener {
-                            if (!(context as DrinkingExaminationActivity).check()) {
-                                context.whenTempSave()
-                            }
+                            (context as DrinkingExaminationActivity).whenTempSave()
                             startActivity(Intent(context, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                         }
 

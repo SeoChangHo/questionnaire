@@ -60,30 +60,42 @@ class SmokingExaminationActivity : RootActivity(){
         }
 
         smoking_examination_save.setOnClickListener {
-
             if(check()){
-
-//                login_appbar_loading_progress.visibility = View.VISIBLE
-//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
-
-                if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state","")!!.equals("local")){
-
-                    smoking_exam_local_insert()
-
+                if(MainActivity.chart.isEmpty()){
+                    startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                 }else{
-
-                    smoking_exam_server_insert()
-
+                    ChartDivision.ChartDivision.chart_array_insert(this, 4, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
                 }
-
             }
-
         }
 
         smoking_examination_cancel.setOnClickListener {
 
             cancelAlert()
 
+        }
+
+        if(AdditionalArr.over.checkAll){
+            if(AdditionalArr.over.isSmoking){
+                smoking_0_true.isChecked = true
+                smoking_0_false.isChecked = false
+                smoking_0_true.isEnabled = false
+                smoking_0_false.isEnabled = false
+            }else{
+                smoking_0_true.isChecked = false
+                smoking_0_false.isChecked = true
+                smoking_0_true.isEnabled = false
+                smoking_0_false.isEnabled = false
+            }
+        }else{
+            smoking_0_true.isEnabled = true
+            smoking_0_false.isEnabled = true
+        }
+
+        if(SavePaper.Total.temp_Smoking != null){
+            whenTempLoad(SavePaper.Total.temp_Smoking!!)
+        }else if(SavedListObject.SavedList.savedDataClass.smokingSaved){
+            whenTempLoad(SavePaper.Total.Array[7] as Paper_SMOKING)
         }
 
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
@@ -136,35 +148,6 @@ class SmokingExaminationActivity : RootActivity(){
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-        if(AdditionalArr.over.checkAll){
-            if(AdditionalArr.over.isSmoking){
-                smoking_0_true.isChecked = true
-                smoking_0_false.isChecked = false
-                smoking_0_true.isEnabled = false
-                smoking_0_false.isEnabled = false
-            }else{
-                smoking_0_true.isChecked = false
-                smoking_0_false.isChecked = true
-                smoking_0_true.isEnabled = false
-                smoking_0_false.isEnabled = false
-            }
-        }else{
-            smoking_0_true.isEnabled = true
-            smoking_0_false.isEnabled = true
-        }
-
-
-        if(PaperArray.PaperList.Arr_SMOKING != null && PaperArray.PaperList.Arr_SMOKING!!.size != 0){
-
-            whenTempLoad(PaperArray.PaperList.Arr_SMOKING!![0])
-
-        }else if(PaperArray.PaperList.temp_Arr_SMOKING != null && PaperArray.PaperList.temp_Arr_SMOKING!!.size != 0){
-
-            whenTempLoad(PaperArray.PaperList.temp_Arr_SMOKING!![0])
-
-        }
-
     }
 
     override fun onResume() {
@@ -183,20 +166,6 @@ class SmokingExaminationActivity : RootActivity(){
 
     }
 
-    fun smoking_exam_local_insert(){
-
-        startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-        ChartDivision.ChartDivision.ProgressAction(true, this)
-
-    }
-
-    fun smoking_exam_server_insert(){
-
-        startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-        ChartDivision.ChartDivision.ProgressAction(true, this)
-
-    }
-
     fun smoking_exam_server_getPaper(){
 
         startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).putExtra("paper", intent.getSerializableExtra("paper") as ServerPaper_Life).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
@@ -207,7 +176,6 @@ class SmokingExaminationActivity : RootActivity(){
     fun whenTempSave(){
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -301,43 +269,16 @@ class SmokingExaminationActivity : RootActivity(){
             }
         }
 
-        exam_no = MainActivity.exam_no
-
-        if(PaperArray.PaperList.temp_Arr_SMOKING!!.size < 1) {
-
-            PaperArray.PaperList.temp_Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
-            ))
-
-            SavePaper.Total.Array[7] = Paper_SMOKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
-
-        }else{
-
-            PaperArray.PaperList.temp_Arr_SMOKING!!.removeAt(0)
-            PaperArray.PaperList.temp_Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
-            ))
-
-            SavePaper.Total.Array[7] = Paper_SMOKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
-
-        }
+        SavePaper.Total.temp_Smoking = Paper_SMOKING(
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
+                sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
+                sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
 
     }
 
     fun check() : Boolean{
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -476,179 +417,16 @@ class SmokingExaminationActivity : RootActivity(){
             }
         }
 
-        exam_no = MainActivity.exam_no
+        SavePaper.Total.Array[7] = Paper_SMOKING(
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
+                sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
+                sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
 
-        if(PaperArray.PaperList.Arr_SMOKING != null && PaperArray.PaperList.Arr_SMOKING!!.size >= 1) {
-
-            PaperArray.PaperList.Arr_SMOKING!!.clear()
-            PaperArray.PaperList.Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
-            ))
-
-            var iter = PaperArray.PaperList.Arr_RESULT?.listIterator()
-
-            while(iter!!.hasNext()){
-                var arr = iter.next()
-                if((arr as ArrayList<*>)[0] is Paper_SMOKING){
-                    iter.remove()
-                    iter.add(PaperArray.PaperList.Arr_SMOKING!!)
-                }
-            }
-
-        }else {
-
-            PaperArray.PaperList.Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
-            ))
-
-            PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_SMOKING!!)
-            PaperArray.PaperList.temp_Arr_SMOKING = ArrayList()
-
-            SavePaper.Total.Array[7] = Paper_SMOKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
-
-        }
+        SavedListObject.SavedList.savedDataClass.smokingSaved = true
+        SavePaper.Total.temp_Smoking = null
 
         return true
 
-    }
-
-    fun check2(){
-
-        var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = ""
-        var name = ""
-        var first_serial_text = ""
-        var last_serial_text = ""
-        var category = "smoking"
-        var sg2_spSmoke1 = ""
-        var sg2_spSmoke2 = ""
-        var sg2_spSmoke3 = ""
-        var sg2_spSmoke4 = ""
-        var sg2_spSmoke5 = ""
-        var sg2_spSmoke6 = ""
-        var sg2_spSmoke7 = ""
-        var sg2_spSmoke8 = ""
-        var sg2_spSmokeSum = ""
-
-        if (!name_edit.text.isNullOrEmpty()) {
-            name = name_edit.text.toString()
-        }
-
-        if (!first_serial.text.isNullOrEmpty()) {
-            first_serial_text = first_serial.text.toString()
-        }
-
-        if (!last_serial.text.isNullOrEmpty()) {
-            last_serial_text = last_serial.text.toString()
-        }
-
-        when {
-            smoking_0_false.isChecked -> sg2_spSmokeSum = "0"
-            else -> {
-                sg2_spSmokeSum = "1"
-
-                sg2_spSmoke1 = when {
-                    smoking_1_1.isChecked -> "1"
-                    smoking_1_2.isChecked -> "2"
-                    smoking_1_3.isChecked -> "3"
-                    smoking_1_4.isChecked -> "4"
-                    else -> ""
-                }
-
-                sg2_spSmoke2 = when {
-                    smoking_2_1.isChecked -> "0"
-                    smoking_2_2.isChecked -> "1"
-                    smoking_2_3.isChecked -> "2"
-                    smoking_2_4.isChecked -> "3"
-                    smoking_2_5.isChecked -> "4"
-                    smoking_2_6.isChecked -> "5"
-                    smoking_2_7.isChecked -> "6"
-                    smoking_2_8.isChecked -> "7"
-                    else -> ""
-                }
-
-                sg2_spSmoke3 = when {
-                    smoking_3_1.isChecked -> "1"
-                    smoking_3_2.isChecked -> "2"
-                    smoking_3_3.isChecked -> "3"
-                    smoking_3_4.isChecked -> "4"
-                    else -> ""
-                }
-
-
-                sg2_spSmoke4 = when {
-                    smoking_4_1.isChecked -> "1"
-                    smoking_4_2.isChecked -> "2"
-                    else -> ""
-                }
-
-                sg2_spSmoke5 = when {
-                    smoking_5_1.isChecked -> "1"
-                    smoking_5_2.isChecked -> "2"
-                    else -> ""
-                }
-
-                sg2_spSmoke6 = when {
-                    smoking_6_1.isChecked -> "1"
-                    smoking_6_2.isChecked -> "2"
-                    smoking_6_3.isChecked -> "3"
-                    smoking_6_4.isChecked -> "4"
-                    else -> ""
-                }
-
-                sg2_spSmoke7 = when {
-                    smoking_7_1.isChecked -> "1"
-                    smoking_7_2.isChecked -> "2"
-                    else -> ""
-                }
-
-                sg2_spSmoke8 = when {
-                    smoking_8_1.isChecked -> "1"
-                    smoking_8_2.isChecked -> "2"
-                    else -> ""
-                }
-            }
-        }
-
-        exam_no = MainActivity.exam_no
-
-        if(PaperArray.PaperList.Arr_SMOKING != null && PaperArray.PaperList.Arr_SMOKING!!.size >= 1) {
-
-            PaperArray.PaperList.Arr_SMOKING!!.clear()
-            PaperArray.PaperList.Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
-            ))
-
-            var iter = PaperArray.PaperList.Arr_RESULT?.listIterator()
-
-            while(iter!!.hasNext()){
-                var arr = iter.next()
-                if((arr as ArrayList<*>)[0] is Paper_SMOKING){
-                    iter.remove()
-                    iter.add(PaperArray.PaperList.Arr_SMOKING!!)
-                }
-            }
-
-        }else {
-
-            PaperArray.PaperList.Arr_SMOKING!!.add(Paper_SMOKING(
-                    exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,
-                    sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
-                    sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum
-            ))
-
-            PaperArray.PaperList.Arr_RESULT!!.add(PaperArray.PaperList.Arr_SMOKING!!)
-            PaperArray.PaperList.temp_Arr_SMOKING = ArrayList()
-        }
     }
 
     fun whenTempLoad(paper: Paper_SMOKING) {
@@ -946,27 +724,6 @@ class SmokingExaminationActivity : RootActivity(){
         }else if(paper.sg2_spSmoke8 == "2"){
             smoking_8_2.isChecked = true
         }
-
-    }
-
-    override fun onPause() {
-
-        if(PaperArray.PaperList.Arr_SMOKING != null && PaperArray.PaperList.Arr_SMOKING!!.size != 0){
-
-            PaperArray.PaperList.temp_Arr_SMOKING = null
-            check2()
-
-        }else{
-
-            if(state != "getPaper") {
-
-                whenTempSave()
-
-            }
-
-        }
-
-        super.onPause()
 
     }
 
