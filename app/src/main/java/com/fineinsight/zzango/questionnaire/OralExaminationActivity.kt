@@ -34,6 +34,7 @@ import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
+@SuppressLint("NewApi")
 class OralExaminationActivity : RootActivity() {
 
     var sql_db : SQLiteDatabase? = null
@@ -68,10 +69,6 @@ class OralExaminationActivity : RootActivity() {
         oral_examination_save.setOnClickListener {
 
             if(check()){
-
-//                login_appbar_loading_progress.visibility = View.VISIBLE
-//                login_appbar_loading_progress_bg.visibility = View.VISIBLE
-
 
                 if(MainActivity.chart.isEmpty()){
                     if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
@@ -202,178 +199,185 @@ class OralExaminationActivity : RootActivity() {
 
     }
 
-//    fun oral_exam_local_insert(){
-//
-//        LocalDBhelper(this).LocalListOralInsert(sql_db!!, PaperArray.PaperList.Arr_ORAL!!, PaperArray.SetList.SET7)
-//
-//        LocalDBhelper(this).oralCreate(sql_db)
-//        LocalDBhelper(this).oralSaveLocal(sql_db!!, PaperArray.PaperList.Arr_ORAL!!)
-//
-//        saveCompleteAlert()
-//
-//    }
-//
-//    fun oral_exam_server_insert(){
-//
-//        if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
-//
-//            this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//
-//            var SaveArr = ArrayList<Any>()
-//            var OneArr = ArrayList<Any>()
-//            var InfoArr = ArrayList<String>()
-//
-//
-//            InfoArr.add("SET7")
-//            InfoArr.add(MainActivity.hospital)
-//
-//            OneArr.add(PaperArray.PaperList.Arr_ORAL!!)
-//            SaveArr.add(InfoArr)
-//            SaveArr.add(OneArr)
-//
-//
-//            OracleUtill().save_papers().savePapersServer(SaveArr).enqueue(object : Callback<String> {
-//
-//                override fun onResponse(call: Call<String>, response: Response<String>) {
-//
-//                    if (response.isSuccessful) {
-//
-//                        if (!response.body()!!.equals("S")) {
-//
-//                            login_appbar_loading_progress.visibility = View.GONE
-//                            login_appbar_loading_progress_bg.visibility = View.GONE
-//                            this@OralExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//                            Toast.makeText(this@OralExaminationActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
-//
-//                        } else {
-//
-//                            saveCompleteAlert()
-//
-//                        }
-//
-//                    }
-//
-//                }
-//
-//                override fun onFailure(call: Call<String>, t: Throwable) {
-//
-//                    login_appbar_loading_progress.visibility = View.GONE
-//                    login_appbar_loading_progress_bg.visibility = View.GONE
-//                    this@OralExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//                    Toast.makeText(this@OralExaminationActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
-//                    println(t.toString())
-//                }
-//
-//            })
-//
-//        }else{
-//
-//            login_appbar_loading_progress.visibility = View.GONE
-//            login_appbar_loading_progress_bg.visibility = View.GONE
-//            wifiCheck()
-//
-//        }
-//
-//    }
-//
-//    fun saveCompleteAlert(){
-//
-//        login_appbar_loading_progress.visibility = View.GONE
-//        login_appbar_loading_progress_bg.visibility = View.GONE
-//        this@OralExaminationActivity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-//
-//        popup = false
-//
-//        var dialog = AlertDialog.Builder(this).create()
-//        var dialog_view = LayoutInflater.from(this).inflate(R.layout.save_complete_alert, null)
-//
-//        dialog.setCancelable(false)
-//        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-//
-//        dialog.setView(dialog_view)
-//        dialog_view.save_complete_alert_text.text = "저장이 완료 되었습니다"
-//
-//        if(!popup) {
-//
-//            dialog.show().let {
-//
-//                popup = true
-//
-//            }
-//
-//        }
-//
-//        var displayMetrics = DisplayMetrics()
-//        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-//        // The absolute width of the available display size in pixels.
-//        var displayWidth = displayMetrics.widthPixels
-//        // The absolute height of the available display size in pixels.
-//        var displayHeight = displayMetrics.heightPixels
-//
-//        // Initialize a new window manager layout parameters
-//        var layoutParams = WindowManager.LayoutParams()
-//
-//        // Copy the alert dialog window attributes to new layout parameter instance
-//        layoutParams.copyFrom(dialog.window.attributes)
-//
-//        // Set the alert dialog window width and height
-//        // Set alert dialog width equal to screen width 90%
-//        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-//        // Set alert dialog height equal to screen height 90%
-//        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-//
-//        // Set alert dialog width equal to screen width 70%
-//        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-//        // Set alert dialog height equal to screen height 70%
-//        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-//
-//        // Set the width and height for the layout parameters
-//        // This will bet the width and height of alert dialog
-//        layoutParams.width = dialogWindowWidth
-//        layoutParams.height = dialogWindowHeight
-//
-//        // Apply the newly created layout parameters to the alert dialog window
-//        dialog.window.attributes = layoutParams
-//
-//
-//        dialog.setOnDismissListener {
-//
-//            popup = false
-//            dialog = null
-//
-//        }
-//
-//        dialog_view.return_alert.setOnClickListener {
-//
-//            if(AdditionalArr.Page.isCancerChecked){
-//
-//                startActivity(Intent(this@OralExaminationActivity, CancerExaminationActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-//                dialog.dismiss()
-//
-//            }else{
-//
-//                MainActivity.login_user_name = ""
-//                MainActivity.user_first_serial = ""
-//                MainActivity.user_last_serial = ""
-//
-//                MainActivity.userLogin!!.text = "사용자 등록하기"
-//                MainActivity.userImage!!.setImageResource(R.drawable.regi)
-//
-//                startActivity(Intent(this@OralExaminationActivity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-//
-//                dialog.dismiss()
-//
-//            }
-//
-//        }
-//
-//    }
+    fun whenTempSave() {
 
-    @SuppressLint("NewApi")
+        var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
+        var name = ""
+        var first_serial_text = ""
+        var last_serial_text = ""
+        var category = PaperNameInfo.PC.ORAL.EN_NM
+        var oral_1 = ""
+        var oral_2 = ""
+        var oral_3 = ""
+        var oral_4 = ""
+        var oral_5 = ""
+        var oral_6 = ""
+        var oral_7 = ""
+        var oral_8 = ""
+        var oral_9 = ""
+        var oral_10 = ""
+        var oral_11 = ""
+        var oral_12 = ""
+        var oral_13 = ""
+        var oral_14 = ""
+        var oral_15 = ""
+        var oral_16 = ""
+
+
+        //서명정보 가져오는거
+        if(MainActivity.user_stream!=null)
+        {
+            signature = MainActivity.user_stream!!
+        }
+
+
+
+        if(!name_edit.text.isNullOrEmpty()){
+
+            name = name_edit.text.toString()
+
+        }
+
+        if(!first_serial.text.isNullOrEmpty()){
+
+            first_serial_text = first_serial.text.toString()
+
+        }
+
+        if(!last_serial.text.isNullOrEmpty()){
+
+            last_serial_text = last_serial.text.toString()
+
+        }
+
+        oral_1 = when {
+            oral_1_true.isChecked -> "1"
+            oral_1_false.isChecked -> "2"
+            else -> ""
+        }
+
+        oral_2 = when {
+            oral_2_true.isChecked -> "1"
+            oral_2_false.isChecked -> "2"
+            oral_2_do_not_know.isChecked -> "3"
+            else -> ""
+        }
+
+        oral_3 = when {
+            oral_3_true.isChecked -> "1"
+            oral_3_false.isChecked -> "2"
+            oral_3_do_not_know.isChecked -> "3"
+            else -> ""
+        }
+
+        oral_4 = when {
+            oral_4_true.isChecked -> "1"
+            oral_4_false.isChecked -> "2"
+            else -> ""
+        }
+
+        oral_5 = when {
+            oral_5_true.isChecked -> "1"
+            oral_5_false.isChecked -> "2"
+            else -> ""
+        }
+
+        oral_6 = when {
+            oral_6_true.isChecked -> "1"
+            oral_6_false.isChecked -> "2"
+            else -> ""
+        }
+
+        oral_7 = when {
+            oral_7_very_good.isChecked -> "1"
+            oral_7_good.isChecked -> "2"
+            oral_7_normal.isChecked -> "3"
+            oral_7_bad.isChecked -> "4"
+            oral_7_very_bad.isChecked -> "5"
+            else -> ""
+        }
+
+        oral_8 = when {
+            oral_8_true.isChecked -> "1"
+            oral_8_false.isChecked -> "2"
+            else -> ""
+        }
+
+        oral_9 = when {
+            oral_9_5.isChecked -> "1"
+            oral_9_4.isChecked -> "2"
+            oral_9_3.isChecked -> "3"
+            oral_9_2.isChecked -> "4"
+            oral_9_1.isChecked -> "5"
+            oral_9_etc.isChecked -> oral_9_count.text.toString()
+            else -> ""
+        }
+
+        oral_10 = when {
+            oral_10_4.isChecked -> "4"
+            oral_10_3.isChecked -> "3"
+            oral_10_2.isChecked -> "2"
+            oral_10_1.isChecked -> "1"
+            else -> ""
+
+        }
+
+        oral_11 = when {
+            oral_11_5.isChecked -> "5"
+            oral_11_4.isChecked -> "4"
+            oral_11_3.isChecked -> "3"
+            oral_11_2.isChecked -> "2"
+            oral_11_1.isChecked -> "1"
+            else -> ""
+        }
+
+        oral_12 = when {
+            oral_12_true.isChecked -> "1"
+            oral_12_false.isChecked -> "2"
+            oral_12_do_not_know.isChecked -> "3"
+            else -> ""
+        }
+
+        oral_13 = when {
+            oral_13_5.isChecked -> "1"
+            oral_13_4.isChecked -> "2"
+            oral_13_3.isChecked -> "3"
+            oral_13_2.isChecked -> "4"
+            oral_13_1.isChecked -> "5"
+            else -> ""
+        }
+
+        oral_14 = when {
+            oral_14_5.isChecked -> "5"
+            oral_14_4.isChecked -> "4"
+            oral_14_3.isChecked -> "3"
+            oral_14_2.isChecked -> "2"
+            oral_14_1.isChecked -> "1"
+            else -> ""
+        }
+
+        oral_15 = when {
+            oral_15_true.isChecked -> "1"
+            oral_15_false.isChecked -> "2"
+            oral_15_do_not_know.isChecked -> "3"
+            else -> ""
+        }
+
+        oral_16 = when {
+            !remark_content.text.toString().isNullOrEmpty() -> remark_content.text.toString()
+            else -> ""
+        }
+
+        SavePaper.Total.temp_Oral = Paper_ORAL(
+                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
+                oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
+                oral_11, oral_12, oral_13, oral_14, oral_15, oral_16)
+
+    }
+
     fun check() : Boolean{
 
         var exam_date = SimpleDateFormat("yyyy-MM-dd").format(Date())
-        var exam_no = ""
         var name = ""
         var first_serial_text = ""
         var last_serial_text = ""
@@ -778,23 +782,284 @@ class OralExaminationActivity : RootActivity() {
 
         }
 
-
-        PaperArray.PaperArrFunction.ArrayListInit()
-        exam_no = System.currentTimeMillis().toString()
-
-
-        PaperArray.PaperList.Arr_ORAL!!.add(Paper_ORAL(
-                exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
-                oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
-                oral_11, oral_12, oral_13, oral_14, oral_15, oral_16
-        ))
-
         SavePaper.Total.Array[9] = Paper_ORAL(
                 exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
                 oral_11, oral_12, oral_13, oral_14, oral_15, oral_16)
 
+        if (ChartDivision.ChartDivision.next_or_save(5)) {
+            SavedListObject.SavedList.savedDataClass.oralSaved = true
+        }
+
+        SavePaper.Total.temp_Oral = null
+
         return true
+
+    }
+
+    fun whenTempLoad(paper:Paper_ORAL)
+    {
+
+        name_edit.text = paper.name
+        first_serial.text = paper.first_serial
+        last_serial.text = paper.last_serial
+
+        //1번
+        if(paper.oral_1=="1")
+        {
+            oral_1_true.isChecked = true
+        }
+        else if(paper.oral_1=="2")
+        {
+            oral_1_false.isChecked = true
+        }
+
+
+
+        //2번
+        if(paper.oral_2=="1")
+        {
+            oral_2_true.isChecked = true
+        }
+        else if(paper.oral_2=="2")
+        {
+            oral_2_false.isChecked = true
+        }
+        else if(paper.oral_2=="3")
+        {
+            oral_2_do_not_know.isChecked = true
+        }
+
+
+        //3번
+        if(paper.oral_3=="1")
+        {
+            oral_3_true.isChecked = true
+        }
+        else if(paper.oral_3=="2")
+        {
+            oral_3_false.isChecked = true
+        }
+        else if(paper.oral_3=="3")
+        {
+            oral_3_do_not_know.isChecked = true
+        }
+
+
+        //4번
+        if(paper.oral_4=="1")
+        {
+            oral_4_true.isChecked = true
+        }
+        else if(paper.oral_4=="2")
+        {
+            oral_4_false.isChecked = true
+        }
+
+        //5번
+        if(paper.oral_5=="1")
+        {
+            oral_5_true.isChecked = true
+        }
+        else if(paper.oral_5=="2")
+        {
+            oral_5_false.isChecked = true
+        }
+
+        //6번
+        if(paper.oral_6=="1")
+        {
+            oral_6_true.isChecked = true
+        }
+        else if(paper.oral_6=="2")
+        {
+            oral_6_false.isChecked = true
+        }
+
+
+        //7번
+        if(paper.oral_7=="1")
+        {
+            oral_7_very_good.isChecked = true
+        }
+        else if(paper.oral_7=="2")
+        {
+            oral_7_good.isChecked = true
+        }
+        else if(paper.oral_7=="3")
+        {
+            oral_7_normal.isChecked = true
+        }
+        else if(paper.oral_7=="4")
+        {
+            oral_7_bad.isChecked = true
+        }
+        else if(paper.oral_7=="5")
+        {
+            oral_7_very_bad.isChecked = true
+        }
+
+
+        //8번
+        if(paper.oral_8=="1")
+        {
+            oral_8_true.isChecked = true
+        }
+        else if(paper.oral_8=="2")
+        {
+            oral_8_false.isChecked = true
+        }
+
+
+        //9번
+        if(paper.oral_9=="1")
+        {
+            oral_9_1.isChecked = true
+        }
+        else if(paper.oral_9=="2")
+        {
+            oral_9_2.isChecked = true
+        }
+        else if(paper.oral_9=="3")
+        {
+            oral_9_3.isChecked = true
+        }
+        else if(paper.oral_9=="4")
+        {
+            oral_9_4.isChecked = true
+        }
+        else if(paper.oral_9=="5")
+        {
+            oral_9_5.isChecked = true
+        }
+        else if(!paper.oral_9.isNullOrEmpty())
+        {
+            oral_9_etc.isChecked = true
+            oral_9_count.setText(paper.oral_9.toString())
+        }
+
+
+        //10번
+        if(paper.oral_10=="1")
+        {
+            oral_10_1.isChecked = true
+        }
+        else if(paper.oral_10=="2")
+        {
+            oral_10_2.isChecked = true
+        }
+        else if(paper.oral_10=="3")
+        {
+            oral_10_3.isChecked = true
+        }
+        else if(paper.oral_10=="4")
+        {
+            oral_10_4.isChecked = true
+        }
+
+
+
+
+        //11번
+        if(paper.oral_11=="1")
+        {
+            oral_11_1.isChecked = true
+        }
+        else if(paper.oral_11=="2")
+        {
+            oral_11_2.isChecked = true
+        }
+        else if(paper.oral_11=="3")
+        {
+            oral_11_3.isChecked = true
+        }
+        else if(paper.oral_11=="4")
+        {
+            oral_11_4.isChecked = true
+        }
+        else if(paper.oral_11=="5")
+        {
+            oral_11_5.isChecked = true
+        }
+
+
+        //12번
+        if(paper.oral_12=="1")
+        {
+            oral_12_true.isChecked = true
+        }
+        else if(paper.oral_12=="2")
+        {
+            oral_12_false.isChecked = true
+        }
+        else if(paper.oral_12=="3")
+        {
+            oral_12_do_not_know.isChecked = true
+        }
+
+
+        //13번
+        if(paper.oral_13=="1")
+        {
+            oral_13_1.isChecked = true
+        }
+        else if(paper.oral_13=="2")
+        {
+            oral_13_2.isChecked = true
+        }
+        else if(paper.oral_13=="3")
+        {
+            oral_13_3.isChecked = true
+        }
+        else if(paper.oral_13=="4")
+        {
+            oral_13_4.isChecked = true
+        }
+        else if(paper.oral_13=="5")
+        {
+            oral_13_5.isChecked = true
+        }
+
+
+
+        //14번
+        if(paper.oral_14=="1")
+        {
+            oral_14_1.isChecked = true
+        }
+        else if(paper.oral_14=="2")
+        {
+            oral_14_2.isChecked = true
+        }
+        else if(paper.oral_14=="3")
+        {
+            oral_14_3.isChecked = true
+        }
+        else if(paper.oral_14=="4")
+        {
+            oral_14_4.isChecked = true
+        }
+        else if(paper.oral_14=="5")
+        {
+            oral_14_5.isChecked = true
+        }
+
+
+        //15번
+        if(paper.oral_15=="1")
+        {
+            oral_15_true.isChecked = true
+        }
+        else if(paper.oral_15=="2")
+        {
+            oral_15_false.isChecked = true
+        }
+        else if(paper.oral_15=="3")
+        {
+            oral_15_do_not_know.isChecked = true
+        }
+
+        remark_content.setText(paper.oral_16)
 
     }
 

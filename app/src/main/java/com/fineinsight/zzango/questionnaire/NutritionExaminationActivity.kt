@@ -50,11 +50,7 @@ class NutritionExaminationActivity :RootActivity() {
         nutrition_examination_save.setOnClickListener {
             //check function 리턴하는 boolean 값에 따라 진행
             if(check()){
-                if(MainActivity.chart.isEmpty()){
-                    startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                }else{
-                    ChartDivision.ChartDivision.chart_array_insert(this, 4, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
-                }
+                startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
             }
         }
 
@@ -63,58 +59,6 @@ class NutritionExaminationActivity :RootActivity() {
             cancelAlert()
 
         }
-
-
-        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
-        if(intent.hasExtra("paper")){
-
-            if(intent.getSerializableExtra("paper") is Paper_NUTRITION) {
-
-                var paper = intent.getSerializableExtra("paper") as Paper_NUTRITION
-
-                GetPaper(paper)
-
-                try {
-//                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
-//
-//                    Signature.setImageBitmap(bmp)
-
-                } catch (e: Exception) {
-                    println(e.message)
-                }
-
-                nutrition_edit_submit.setOnClickListener {
-
-                    finish()
-
-                }
-
-            }else{
-
-                var paper = intent.getSerializableExtra("paper") as ServerPaper_Life
-
-                GetPaper(paper)
-
-                nutrition_edit_submit.text = "다음"
-
-                nutrition_edit_submit.setOnClickListener {
-
-                    nutrition_exam_server_getPaper()
-                    finish()
-
-                }
-
-            }
-
-        }else{
-
-            name_edit.text = MainActivity.login_user_name
-            first_serial.text = MainActivity.user_first_serial
-            last_serial.text = MainActivity.user_last_serial
-            nutrition_examination_save.text = "다음"
-
-        }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //BMI 지수
 
@@ -169,6 +113,57 @@ class NutritionExaminationActivity :RootActivity() {
         }else if(SavedListObject.SavedList.savedDataClass.nutritionSaved){
             whenTempLoad(SavePaper.Total.Array[6] as Paper_NUTRITION)
         }
+
+        //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
+        if(intent.hasExtra("paper")){
+
+            if(intent.getSerializableExtra("paper") is Paper_NUTRITION) {
+
+                var paper = intent.getSerializableExtra("paper") as Paper_NUTRITION
+
+                GetPaper(paper)
+
+                try {
+//                    var bmp: Bitmap = BitmapFactory.decodeByteArray(paper.signature, 0, paper.signature.size)
+//
+//                    Signature.setImageBitmap(bmp)
+
+                } catch (e: Exception) {
+                    println(e.message)
+                }
+
+                nutrition_edit_submit.setOnClickListener {
+
+                    finish()
+
+                }
+
+            }else{
+
+                var paper = intent.getSerializableExtra("paper") as ServerPaper_Life
+
+                GetPaper(paper)
+
+                nutrition_edit_submit.text = "다음"
+
+                nutrition_edit_submit.setOnClickListener {
+
+                    nutrition_exam_server_getPaper()
+                    finish()
+
+                }
+
+            }
+
+        }else{
+
+            name_edit.text = MainActivity.login_user_name
+            first_serial.text = MainActivity.user_first_serial
+            last_serial.text = MainActivity.user_last_serial
+            nutrition_examination_save.text = "다음"
+
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
 
@@ -688,7 +683,10 @@ class NutritionExaminationActivity :RootActivity() {
         sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
         sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3)
 
-        SavedListObject.SavedList.savedDataClass.nutritionSaved = true
+        if(ChartDivision.ChartDivision.next_or_save(5)) {
+            SavedListObject.SavedList.savedDataClass.nutritionSaved = true
+        }
+
         SavePaper.Total.temp_Nutrition = null
 
         return true
@@ -696,6 +694,8 @@ class NutritionExaminationActivity :RootActivity() {
     }
 
     fun whenTempLoad(paper:Paper_NUTRITION){
+
+        ChartDivision.ChartDivision.ProgressAction(true, this)
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial

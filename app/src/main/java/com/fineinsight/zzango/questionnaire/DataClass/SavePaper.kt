@@ -7,7 +7,6 @@ class SavePaper {
     object Total
     {
         var Array = ArrayList<Any>()
-        var temp_Common : Paper_COMMON? = null
         var temp_Mental : Paper_MENTAL? = null
         var temp_Cognitive : Paper_COGNITIVE? = null
         var temp_Elderly : Paper_ELDERLY? = null

@@ -80,11 +80,7 @@ class ExerciseExaminationActivity : RootActivity() {
         exercise_examination_save.setOnClickListener {
             //check function 리턴하는 boolean 값에 따라 진행
             if(check()){
-                if(MainActivity.chart.isEmpty()){
-                    startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                }else{
-                    ChartDivision.ChartDivision.chart_array_insert(this, 4, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
-                }
+                startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
             }
         }
 
@@ -120,7 +116,13 @@ class ExerciseExaminationActivity : RootActivity() {
                         android.R.layout.simple_list_item_1,
                         arrayListOf("0일", "1일", "2일", "3일", "4일", "5일", "6일", "7일"))
 
-
+        //초기화 or 완료된 문진 액티비티로 다시 왔을때
+        //표시되는 뷰 (수정가능)
+        if(SavePaper.Total.temp_Exercise != null){
+            whenTempLoad(SavePaper.Total.temp_Exercise!!)
+        }else if(SavedListObject.SavedList.savedDataClass.exerciseSaved){
+            whenTempLoad(SavePaper.Total.Array[5] as Paper_EXERCISE)
+        }
 
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
@@ -172,14 +174,6 @@ class ExerciseExaminationActivity : RootActivity() {
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        //초기화 or 완료된 문진 액티비티로 다시 왔을때
-        //표시되는 뷰 (수정가능)
-        if(SavePaper.Total.temp_Exercise != null){
-            whenTempLoad(SavePaper.Total.temp_Exercise!!)
-        }else if(SavedListObject.SavedList.savedDataClass.exerciseSaved){
-            whenTempLoad(SavePaper.Total.Array[5] as Paper_EXERCISE)
-        }
 
     }
 
@@ -904,7 +898,10 @@ class ExerciseExaminationActivity : RootActivity() {
                 sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
                 sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum)
 
-        SavedListObject.SavedList.savedDataClass.exerciseSaved = true
+        if(ChartDivision.ChartDivision.next_or_save(4)) {
+            SavedListObject.SavedList.savedDataClass.exerciseSaved = true
+        }
+
         SavePaper.Total.temp_Exercise = null
 
         return true

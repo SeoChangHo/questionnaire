@@ -61,11 +61,7 @@ class SmokingExaminationActivity : RootActivity(){
 
         smoking_examination_save.setOnClickListener {
             if(check()){
-                if(MainActivity.chart.isEmpty()){
-                    startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-                }else{
-                    ChartDivision.ChartDivision.chart_array_insert(this, 4, getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local"))
-                }
+                startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
             }
         }
 
@@ -422,7 +418,10 @@ class SmokingExaminationActivity : RootActivity(){
                 sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                 sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
 
-        SavedListObject.SavedList.savedDataClass.smokingSaved = true
+        if(ChartDivision.ChartDivision.next_or_save(6)) {
+            SavedListObject.SavedList.savedDataClass.smokingSaved = true
+        }
+
         SavePaper.Total.temp_Smoking = null
 
         return true
@@ -430,6 +429,8 @@ class SmokingExaminationActivity : RootActivity(){
     }
 
     fun whenTempLoad(paper: Paper_SMOKING) {
+
+        ChartDivision.ChartDivision.ProgressAction(true, this)
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial

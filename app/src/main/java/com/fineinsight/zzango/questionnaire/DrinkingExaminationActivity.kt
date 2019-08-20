@@ -67,7 +67,7 @@ class DrinkingExaminationActivity : RootActivity(){
         }
 
         drinking_examination_save.setOnClickListener {
-            AdditionalArr.over.checkAll = false
+//            AdditionalArr.over.checkAll = false
             if(check()){
                 if(MainActivity.chart.isEmpty()){
                     if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
@@ -540,7 +540,10 @@ class DrinkingExaminationActivity : RootActivity(){
                 sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
         )
 
-        SavedListObject.SavedList.savedDataClass.drinkingSaved = true
+        if (ChartDivision.ChartDivision.next_or_save(7)) {
+            SavedListObject.SavedList.savedDataClass.drinkingSaved = true
+        }
+
         SavePaper.Total.temp_Drinking = null
 
         return true
@@ -548,6 +551,8 @@ class DrinkingExaminationActivity : RootActivity(){
     }
 
     fun whenTempLoad(paper: Paper_DRINKING) {
+
+        ChartDivision.ChartDivision.ProgressAction(true, this)
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial

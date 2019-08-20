@@ -475,6 +475,17 @@ class ChartDivision{
                 MainActivity.userLogin!!.text = "사용자 등록하기"
                 MainActivity.userImage!!.setImageResource(R.drawable.regi)
 
+                SavedListObject.SavedList.savedDataClass.commonSaved = false
+                SavedListObject.SavedList.savedDataClass.mentalSaved = false
+                SavedListObject.SavedList.savedDataClass.cognitiveSaved = false
+                SavedListObject.SavedList.savedDataClass.elderlySaved = false
+                SavedListObject.SavedList.savedDataClass.exerciseSaved = false
+                SavedListObject.SavedList.savedDataClass.nutritionSaved = false
+                SavedListObject.SavedList.savedDataClass.smokingSaved = false
+                SavedListObject.SavedList.savedDataClass.drinkingSaved = false
+                SavedListObject.SavedList.savedDataClass.oralSaved = false
+                SavedListObject.SavedList.savedDataClass.cancerSaved = false
+
                 activity.startActivity(Intent(activity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                 ProgressAction(true, activity)
 
