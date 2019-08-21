@@ -213,8 +213,8 @@
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/progress8"
-        app:layout_constraintStart_toEndOf="@+id/progress10"
+        app:layout_constraintEnd_toStartOf="@+id/progress10"
+        app:layout_constraintStart_toEndOf="@+id/progress8"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView

@@ -941,6 +941,8 @@ class CommonExaminationActivity : RootActivity() {
             SavedListObject.SavedList.savedDataClass.commonSaved = true
         }
 
+        Drinking()
+
         return true
     }
 
