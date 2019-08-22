@@ -540,7 +540,7 @@ class DrinkingExaminationActivity : RootActivity(){
                 sg2_spDrink6, sg2_spDrink7, sg2_spDrink8, sg2_spDrink9, sg2_spDrink10, sg2_spDrinkSum
         )
 
-        if (ChartDivision.ChartDivision.next_or_save(7)) {
+        if (ChartDivision.ChartDivision.next_or_save(4)) {
             SavedListObject.SavedList.savedDataClass.drinkingSaved = true
         }
 

@@ -898,9 +898,7 @@ class ExerciseExaminationActivity : RootActivity() {
                 sg2_spSports4_1_1, sg2_spSports4_1_2, sg2_spSports5, sg2_spSports6, sg2_spSports7, sg2_spSports8,
                 sg2_spSports9, sg2_spSports10, sg2_spSports11, sg2_spSports12, sg2_spSportsSum)
 
-        if(ChartDivision.ChartDivision.next_or_save(4)) {
-            SavedListObject.SavedList.savedDataClass.exerciseSaved = true
-        }
+        SavedListObject.SavedList.savedDataClass.exerciseSaved = true
 
         SavePaper.Total.temp_Exercise = null
 

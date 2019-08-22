@@ -15,22 +15,23 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/progress"
+        android:id="@+id/common"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/progress2"
+        app:layout_constraintEnd_toStartOf="@+id/mental"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/progress_text"
+            android:id="@+id/common_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/progressGray"
             android:textSize="18dp"
+            android:text="공통"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,22 +40,23 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/progress2"
+        android:id="@+id/mental"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/progress3"
-        app:layout_constraintStart_toEndOf="@+id/progress"
+        app:layout_constraintEnd_toStartOf="@+id/cognitive"
+        app:layout_constraintStart_toEndOf="@+id/common"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/progress_text2"
+            android:id="@+id/mental_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/progressGray"
             android:textSize="18dp"
+            android:text="우울증"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,22 +65,23 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/progress3"
+        android:id="@+id/cognitive"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/progress4"
-        app:layout_constraintStart_toEndOf="@+id/progress2"
+        app:layout_constraintEnd_toStartOf="@+id/elderly"
+        app:layout_constraintStart_toEndOf="@+id/mental"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/progress_text3"
+            android:id="@+id/cognitive_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/progressGray"
             android:textSize="18dp"
+            android:text="인지기능"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,22 +90,23 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/progress4"
+        android:id="@+id/elderly"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/progress5"
-        app:layout_constraintStart_toEndOf="@+id/progress3"
+        app:layout_constraintEnd_toStartOf="@+id/exercise"
+        app:layout_constraintStart_toEndOf="@+id/cognitive"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/progress_text4"
+            android:id="@+id/elderly_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/progressGray"
             android:textSize="18dp"
+            android:text="노인기능"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -111,22 +115,23 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/progress5"
+        android:id="@+id/exercise"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/progress6"
-        app:layout_constraintStart_toEndOf="@+id/progress4"
+        app:layout_constraintEnd_toStartOf="@+id/nutrition"
+        app:layout_constraintStart_toEndOf="@+id/elderly"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/progress_text5"
+            android:id="@+id/exercise_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/progressGray"
             android:textSize="18dp"
+            android:text="운동"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -135,22 +140,23 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/progress6"
+        android:id="@+id/nutrition"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/progress7"
-        app:layout_constraintStart_toEndOf="@+id/progress5"
+        app:layout_constraintEnd_toStartOf="@+id/smoking"
+        app:layout_constraintStart_toEndOf="@+id/exercise"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/progress_text6"
+            android:id="@+id/nutrition_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/progressGray"
             android:textSize="18dp"
+            android:text="영양"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -159,22 +165,23 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/progress7"
+        android:id="@+id/smoking"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/progress8"
-        app:layout_constraintStart_toEndOf="@+id/progress6"
+        app:layout_constraintEnd_toStartOf="@+id/drinking"
+        app:layout_constraintStart_toEndOf="@+id/nutrition"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/progress_text7"
+            android:id="@+id/smoking_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/progressGray"
             android:textSize="18dp"
+            android:text="흡연"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -183,22 +190,23 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/progress8"
+        android:id="@+id/drinking"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/progress9"
-        app:layout_constraintStart_toEndOf="@+id/progress7"
+        app:layout_constraintEnd_toStartOf="@+id/oral"
+        app:layout_constraintStart_toEndOf="@+id/smoking"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/progress_text8"
+            android:id="@+id/drinking_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/progressGray"
             android:textSize="18dp"
+            android:text="음주"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -207,22 +215,23 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/progress9"
+        android:id="@+id/oral"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/progress10"
-        app:layout_constraintStart_toEndOf="@+id/progress8"
+        app:layout_constraintEnd_toStartOf="@+id/cancer"
+        app:layout_constraintStart_toEndOf="@+id/drinking"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/progress_text9"
+            android:id="@+id/oral_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/progressGray"
             android:textSize="18dp"
+            android:text="구강"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -231,22 +240,23 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/progress10"
+        android:id="@+id/cancer"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/progress9"
+        app:layout_constraintStart_toEndOf="@+id/oral"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/progress_text10"
+            android:id="@+id/cancer_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/progressGray"
             android:textSize="18dp"
+            android:text="암"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

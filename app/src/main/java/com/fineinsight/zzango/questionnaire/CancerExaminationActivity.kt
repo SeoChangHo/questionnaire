@@ -48,6 +48,7 @@ class CancerExaminationActivity : RootActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cancer_exam)
 
+        controlProgress(this)
 
         var gender = ""
         if(AdditionalArr.Gender.isFemale)
@@ -1743,6 +1744,10 @@ class CancerExaminationActivity : RootActivity(){
                 ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck5_6, ck6_1, ck6_2, ck6_3, ck6_4,
                 ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2, ck9_1, ck9_2,
                 ck10, ck11, ck12, ck13, ck14)
+
+        if(ChartDivision.ChartDivision.next_or_save(6)){
+            SavedListObject.SavedList.savedDataClass.cancerSaved = true
+        }
 
         return true
 
