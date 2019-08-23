@@ -180,48 +180,94 @@ open class RootActivity : AppCompatActivity() {
         if(SavedListObject.SavedList.savedDataClass.drinkingSaved) {
             oral.isClickable = true
             oral_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            when{
+                cancer.visibility == View.VISIBLE -> { cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+            }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, drinking.id, ConstraintSet.END)
         }
 
         if(SavedListObject.SavedList.savedDataClass.smokingSaved) {
             drinking.isClickable = true
             drinking_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            when{
+                oral.visibility == View.VISIBLE -> { oral_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                cancer.visibility == View.VISIBLE -> { cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+            }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, smoking.id, ConstraintSet.END)
         }
 
         if(SavedListObject.SavedList.savedDataClass.nutritionSaved) {
             nutrition.isClickable = true
             nutrition_text.setTextColor(resources.getColor(R.color.mainBlue, null))
-            constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, exercise.id, ConstraintSet.END)
+            when{
+                smoking.visibility == View.VISIBLE -> { smoking_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                drinking.visibility == View.VISIBLE -> { drinking_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                oral.visibility == View.VISIBLE -> { oral_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                cancer.visibility == View.VISIBLE -> { cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+            }
+            constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, nutrition.id, ConstraintSet.END)
         }
 
         if(SavedListObject.SavedList.savedDataClass.exerciseSaved) {
             exercise.isClickable = true
             exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            when{
+                nutrition.visibility == View.VISIBLE -> { nutrition_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                smoking.visibility == View.VISIBLE -> { smoking_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                drinking.visibility == View.VISIBLE -> { drinking_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                oral.visibility == View.VISIBLE -> { oral_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                cancer.visibility == View.VISIBLE -> { cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+            }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, exercise.id, ConstraintSet.END)
         }
 
         if(SavedListObject.SavedList.savedDataClass.elderlySaved) {
             elderly.isClickable = true
             elderly_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            when{
+                exercise.visibility == View.VISIBLE -> { exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                oral.visibility == View.VISIBLE -> { oral_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                cancer.visibility == View.VISIBLE -> { cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+            }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, elderly.id, ConstraintSet.END)
         }
 
         if(SavedListObject.SavedList.savedDataClass.cognitiveSaved) {
             cognitive.isClickable = true
             cognitive_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            when{
+                elderly.visibility == View.VISIBLE -> { elderly_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                exercise.visibility == View.VISIBLE -> { exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                oral.visibility == View.VISIBLE -> { oral_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                cancer.visibility == View.VISIBLE -> { cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+            }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, cognitive.id, ConstraintSet.END)
         }
 
         if(SavedListObject.SavedList.savedDataClass.mentalSaved) {
             mental.isClickable = true
             mental_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            when{
+                cognitive.visibility == View.VISIBLE -> { cognitive_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                elderly.visibility == View.VISIBLE -> { elderly_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                exercise.visibility == View.VISIBLE -> { exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                oral.visibility == View.VISIBLE -> { oral_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                cancer.visibility == View.VISIBLE -> { cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+            }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, mental.id, ConstraintSet.END)
         }
 
         if(SavedListObject.SavedList.savedDataClass.commonSaved) {
             common.isClickable = true
             common_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            when{
+                mental.visibility == View.VISIBLE -> { mental_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                cognitive.visibility == View.VISIBLE -> { cognitive_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                elderly.visibility == View.VISIBLE -> { elderly_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                exercise.visibility == View.VISIBLE -> { exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                oral.visibility == View.VISIBLE -> { oral_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+                cancer.visibility == View.VISIBLE -> { cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null)) }
+            }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, common.id, ConstraintSet.END)
         }
 
@@ -338,7 +384,7 @@ open class RootActivity : AppCompatActivity() {
 
         }
 
-        constraintSet.applyTo(questionnaire_progress_wrapper)
+        with(constraintSet) { applyTo(questionnaire_progress_wrapper) }
 
     }
 
@@ -1407,7 +1453,7 @@ open class RootActivity : AppCompatActivity() {
             dialog_view.finish.setOnClickListener {
 
                 //MainActivity.chart = "SET0"
-                PaperArray.PaperArrFunction.ArrayListInit()
+                SavePaper.Total.Init()
                 startActivity(Intent(this, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
             }

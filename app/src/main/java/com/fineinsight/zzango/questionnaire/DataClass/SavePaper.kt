@@ -22,6 +22,17 @@ class SavePaper {
             Array = ArrayList()
             Array.clear()
 
+
+            var temp_Mental = null
+            var temp_Cognitive = null
+            var temp_Elderly = null
+            var temp_Exercise = null
+            var temp_Nutrition = null
+            var temp_Smoking = null
+            var temp_Drinking = null
+            var temp_Oral = null
+            var temp_Cancer = null
+
             SavePaper.Total.Array.add("")
             SavePaper.Total.Array.add(Paper_COMMON("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
             SavePaper.Total.Array.add(Paper_MENTAL("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""))
