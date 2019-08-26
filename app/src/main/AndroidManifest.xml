@@ -16,7 +16,8 @@
         <activity android:name=".ServerList.ServerListDetailActivity"></activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,46 +26,60 @@
         </activity>
         <activity
             android:name=".OralExaminationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".LocalList.ListActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".CommonExaminationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".ServerList.ServerListActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".MentalExaminationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".ElderlyExaminationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".CognitiveExaminationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".SmokingExaminationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".ExerciseExaminationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".DrinkingExaminationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".CancerExaminationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".NutritionExaminationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".SettingActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".LocalList.ListDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
     </application>
 
 </manifest>

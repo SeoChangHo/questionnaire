@@ -321,6 +321,12 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
+        if(SavePaper.Total.temp_Cancer != null){
+            whenTempLoad(SavePaper.Total.temp_Cancer!!)
+        }else if(SavedListObject.SavedList.savedDataClass.cancerSaved){
+            whenTempLoad(SavePaper.Total.Array[10] as Paper_CANCER)
+        }
+
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         //서버에서 들어온것 일때 구분 사인은 안보이게 처리
         if(intent.hasExtra("paper")){
@@ -1753,7 +1759,7 @@ class CancerExaminationActivity : RootActivity(){
 
     }
 
-    fun whenTempSave(paper: Paper_CANCER) {
+    fun whenTempLoad(paper: Paper_CANCER) {
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial

@@ -99,6 +99,12 @@ class OralExaminationActivity : RootActivity() {
 
         }
 
+        if(SavePaper.Total.temp_Oral != null){
+            whenTempLoad(SavePaper.Total.temp_Oral!!)
+        }else if(SavedListObject.SavedList.savedDataClass.oralSaved){
+            whenTempLoad(SavePaper.Total.Array[9] as Paper_ORAL)
+        }
+
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
         if(intent.hasExtra("paper")){
 

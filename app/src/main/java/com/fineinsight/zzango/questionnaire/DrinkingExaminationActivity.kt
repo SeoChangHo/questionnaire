@@ -100,16 +100,31 @@ class DrinkingExaminationActivity : RootActivity(){
                 drinking_0_false.isChecked = false
                 drinking_0_true.isEnabled = false
                 drinking_0_false.isEnabled = false
+                if(SavePaper.Total.temp_Drinking != null){
+                    SavePaper.Total.temp_Drinking!!.sg2_spDrinkSum = "1"
+                }else if((SavePaper.Total.Array[8] as Paper_DRINKING).sg2_spDrinkSum.isNotEmpty()){
+                    (SavePaper.Total.Array[8] as Paper_DRINKING).sg2_spDrinkSum = "1"
+                }
             }else if(AdditionalArr.over.isDrinking2){
                 drinking_0_true.isChecked = true
                 drinking_0_false.isChecked = false
                 drinking_0_true.isEnabled = false
                 drinking_0_false.isEnabled = false
+                if(SavePaper.Total.temp_Drinking != null){
+                    SavePaper.Total.temp_Drinking!!.sg2_spDrinkSum = "1"
+                }else if((SavePaper.Total.Array[8] as Paper_DRINKING).sg2_spDrinkSum.isNotEmpty()){
+                    (SavePaper.Total.Array[8] as Paper_DRINKING).sg2_spDrinkSum = "1"
+                }
             }else{
                 drinking_0_true.isChecked = false
                 drinking_0_false.isChecked = true
                 drinking_0_true.isEnabled = false
                 drinking_0_false.isEnabled = false
+                if(SavePaper.Total.temp_Drinking != null){
+                    SavePaper.Total.temp_Drinking!!.sg2_spDrinkSum = "1"
+                }else if((SavePaper.Total.Array[8] as Paper_DRINKING).sg2_spDrinkSum.isNotEmpty()){
+                    (SavePaper.Total.Array[8] as Paper_DRINKING).sg2_spDrinkSum = "0"
+                }
             }
         }else{
             drinking_0_true.isEnabled = true
