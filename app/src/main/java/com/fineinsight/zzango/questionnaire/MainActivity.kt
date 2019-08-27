@@ -53,12 +53,11 @@ import kotlin.collections.HashMap
 @SuppressLint("StaticFieldLeak")
 class MainActivity : AppCompatActivity() , View.OnClickListener {
 
-
-
     var popup = false
     lateinit var canvasView: CanvasView
     var sql_db : SQLiteDatabase? = null
     var validationInside = false
+    var userlogin_buttonClick = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -130,7 +129,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button5.setOnClickListener(this)
 
         user_login.setOnClickListener{
-            userlogin2(user_login, user_image,this@MainActivity)
+            if(userlogin_buttonClick){
+                userlogin_buttonClick = false
+                userlogin2(user_login, user_image,this@MainActivity)
+            }
         }
 
         if(login_user_name != ""){
@@ -509,6 +511,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             dialog.setCanceledOnTouchOutside(false)
             dialog_view.user_login_button.isEnabled = false
 
+            dialog.setOnDismissListener {
+                userlogin_buttonClick = true
+            }
+
 //            //////////😎😎😎서명을 위한 공간😎😎😎/////// ///
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
             canvasView = dialog_view.canvas
@@ -694,10 +700,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     Toast.makeText(this, "주민번호 형식을 확인해주세요.", Toast.LENGTH_LONG).show()
                 }
 
+                userlogin_buttonClick = true
 
             }
 
             dialog.show()
+
         }
 
         if(view.text == login_user_name+"님"){
@@ -732,12 +740,13 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 chart.clear()
                 dialog.dismiss()
+                userlogin_buttonClick = true
             }
 
             cancel.setOnClickListener {
 
                 canvas_motion = null
-
+                userlogin_buttonClick = true
                 dialog.dismiss()
             }
 
@@ -1107,6 +1116,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     override fun onBackPressed() {
 
+        userlogin_buttonClick = true
 
         var dialog = android.app.AlertDialog.Builder(this).create()
         var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
@@ -1500,6 +1510,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         chart.clear()
         println("Chart Clear!")
     }
+
+
 
 }
 
