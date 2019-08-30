@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fineinsight.zzango.questionnaire">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/questionnaire_logo3"
@@ -13,7 +9,11 @@
         android:roundIcon="@drawable/questionnaire_logo3"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ServerList.ServerListDetailActivity"></activity>
+        <activity android:name=".StartActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim">
+        </activity>
+        <activity android:name=".ServerList.ServerListDetailActivity" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
@@ -81,5 +81,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/noAnim" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

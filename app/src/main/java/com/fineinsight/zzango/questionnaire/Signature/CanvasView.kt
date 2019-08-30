@@ -76,12 +76,12 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
 
         MainActivity.canvas_motion = event
 
-        if(MainActivity.alert_view!!.user_name.text.toString() != "" && MainActivity.ValidationBool && MainActivity.canvas_motion != null && MainActivity.isJuminValidated){
-            MainActivity.alert_view!!.user_login_button.isEnabled = true
-            MainActivity.alert_view!!.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+        if(MainActivity.userName!!.text.toString() != "" && MainActivity.ValidationBool && MainActivity.canvas_motion != null && MainActivity.isJuminValidated){
+            MainActivity.userLoginButton!!.isEnabled = true
+            MainActivity.userLoginButton!!.user_login_button.setBackgroundResource(R.drawable.start_login_button)
         }else{
-            MainActivity.alert_view!!.user_login_button.isEnabled = false
-            MainActivity.alert_view!!.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+            MainActivity.userLoginButton!!.user_login_button.isEnabled = false
+            MainActivity.userLoginButton!!.user_login_button.setBackgroundResource(R.drawable.start_login_back)
         }
 
         when(event.action) {

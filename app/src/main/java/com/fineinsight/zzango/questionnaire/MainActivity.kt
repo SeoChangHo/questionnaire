@@ -1,8 +1,8 @@
 package com.fineinsight.zzango.questionnaire
 
 
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
@@ -36,6 +36,8 @@ import com.fineinsight.zzango.questionnaire.UserList.User
 import com.fineinsight.zzango.questionnaire.UserList.UserList
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.first_serial
+import kotlinx.android.synthetic.main.activity_main.last_serial
 import kotlinx.android.synthetic.main.activity_user_login.view.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_location.view.*
@@ -67,8 +69,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         NetworkCheck.Func.Check(this)
 
-
-
         //앱을 구동하는 동안 화면이 절대 꺼지지 않도록 함
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
@@ -79,10 +79,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         var wfm = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
 
+
         if(!this.intent.hasExtra("from")) {
-
-            popuplogin()
-
+            startLogin()
+        }else{
+            userlogin2(this@MainActivity)
         }
 
 
@@ -117,9 +118,13 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         selected_button1.visibility = View.VISIBLE
 
         listButton.setOnClickListener{
-
             popuplogin()
+        }
 
+        btnList.setOnClickListener {
+            main_start_list.visibility = View.VISIBLE
+            main_start_login1.visibility = View.GONE
+            main_start_login2.visibility = View.GONE
         }
 
 
@@ -129,12 +134,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button4.setOnClickListener(this)
         button5.setOnClickListener(this)
 
-        user_login.setOnClickListener{
-            if(userlogin_buttonClick){
-                userlogin_buttonClick = false
-                userlogin2(user_login, user_image,this@MainActivity)
-            }
-        }
 
         if(login_user_name != ""){
             user_login.text = login_user_name+"님"
@@ -262,6 +261,130 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     }
 
+    fun startLogin(){
+
+        main_start_login1.visibility = View.VISIBLE
+        main_start_login2.visibility = View.GONE
+
+        login_id.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if(login_id.text.toString() != "" && login_password.text.toString() != ""){
+                    Login.isEnabled = true
+                    Login.setBackgroundResource(R.drawable.start_login_button)
+                }else{
+                    Login.isEnabled = false
+                    Login.setBackgroundResource(R.drawable.start_login_back)
+                }
+
+                if(login_id.text.toString() != ""){
+                    login_id.setTextColor(Color.GRAY)
+                    login_id.setBackgroundResource(R.drawable.start_login_back2)
+                }else{
+                    login_id.setTextColor(Color.WHITE)
+                    login_id.setBackgroundResource(R.drawable.start_login_back)
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(login_id.text.toString() != ""){
+                    login_id.setTextColor(Color.GRAY)
+                    login_id.setBackgroundResource(R.drawable.start_login_back2)
+                }else{
+                    login_id.setTextColor(Color.WHITE)
+                    login_id.setBackgroundResource(R.drawable.start_login_back)
+                }
+            }
+        })
+
+        login_password.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if(login_id.text.toString() != "" && login_password.text.toString() != ""){
+                    Login.isEnabled = true
+                    Login.setBackgroundResource(R.drawable.start_login_button)
+                }else{
+                    Login.isEnabled = false
+                    Login.setBackgroundResource(R.drawable.start_login_back)
+                }
+
+                if(login_password.text.toString() != ""){
+                    login_password.setTextColor(Color.GRAY)
+                    login_password.setBackgroundResource(R.drawable.start_login_back2)
+                }else{
+                    login_password.setTextColor(Color.WHITE)
+                    login_password.setBackgroundResource(R.drawable.start_login_back)
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(login_password.text.toString() != ""){
+                    login_password.setTextColor(Color.GRAY)
+                    login_password.setBackgroundResource(R.drawable.start_login_back2)
+                }else{
+                    login_password.setTextColor(Color.WHITE)
+                    login_password.setBackgroundResource(R.drawable.start_login_back)
+                }
+            }
+        })
+
+        //개발용
+        login_id.setText("bestian")
+        login_password.setText("best1234")
+
+        Login.setOnClickListener{
+
+            if(login_id.text.toString() != ""){
+
+                var UserArray:ArrayList<UserList> = ArrayList()
+
+                val user = login_id.text.toString()
+                var pass = login_password.text.toString()
+
+                UserArray.add(UserList(user, pass))
+
+                val sql_db = LocalDBhelper(this).writableDatabase
+
+                val datacount = LocalDBhelper(this).UserCheck(sql_db!!, UserArray)
+
+                if(datacount==0)
+                {
+                    Toast.makeText(applicationContext, "유저정보를 확인해주세요.", Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    if(manager_name == ""){
+                        manager_name = user
+                        setHospitalList()
+                        Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
+
+                        main_start_login1.visibility = View.GONE
+                        main_start_login2.visibility = View.VISIBLE
+                        userlogin2(this@MainActivity)
+
+                    }else{
+
+                        main_start_login1.visibility = View.VISIBLE
+                        main_start_login2.visibility = View.GONE
+                        Handler().postDelayed({
+                            startActivity(Intent(this@MainActivity, SettingActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        },125)
+
+                    }
+
+                }
+            }
+
+        }
+
+    }
+
     //개별 클릭했을 때 뜨는 팝업
     fun userlogin(view : Button, view2 : ImageView, context : Context, startPage : String){
         if(view.text == "사용자 등록하기"){
@@ -308,8 +431,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
             dialog_view.first_serial.addTextChangedListener(object : TextWatcher {
-
-
 
                 override fun afterTextChanged(s: Editable?) {
                     if(dialog_view.user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
@@ -495,42 +616,43 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     }
 
 
-    //사용자 등록하기를 눌러서 뜨는 팝업
-    fun userlogin2(view : Button, view2 : ImageView, context : Context){
+    //기본 로그인 화면
+    fun userlogin2(context : Context){
 
-        if(view.text == "사용자 등록하기"){
+        main_start_login1.visibility = View.GONE
+        main_start_login2.visibility = View.VISIBLE
 
-            var dialog = AlertDialog.Builder(context).create()
-            var dialog_view = LayoutInflater.from(context).inflate(R.layout.activity_user_login, null)
-            alert_view = dialog_view
+        if(user_login.text == "사용자 등록하기"){
+
+            userLoginButton = user_login_button
+            userName = user_name
+
             ValidationBool = false
             canvas_motion = null
 
-            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-            dialog.setView(dialog_view)
-            dialog.setCanceledOnTouchOutside(false)
-            dialog_view.user_login_button.isEnabled = false
-
-            dialog.setOnDismissListener {
-                userlogin_buttonClick = true
-            }
+            user_login_button.isEnabled = false
 
 //            //////////😎😎😎서명을 위한 공간😎😎😎/////// ///
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
-            canvasView = dialog_view.canvas
+            canvasView = canvas
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
 
-            dialog_view.user_name.addTextChangedListener(object : TextWatcher {
+            user_name.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
-                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
-                        dialog_view.user_login_button.isEnabled = true
-                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                    if(user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
+                        user_login_button.isEnabled = true
+                        user_login_button.setBackgroundResource(R.drawable.start_login_button)
                     }else{
-                        dialog_view.user_login_button.isEnabled = false
-                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                        user_login_button.isEnabled = false
+                        user_login_button.setBackgroundResource(R.drawable.start_login_back)
+                    }
+
+                    if(user_name.text.toString() != ""){
+                        user_name.setBackgroundResource(R.drawable.start_login_back2)
+                    }else{
+                        user_name.setBackgroundResource(R.drawable.start_login_back)
                     }
                 }
 
@@ -545,17 +667,21 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             })
 
 
-            dialog_view.first_serial.addTextChangedListener(object : TextWatcher {
-
-
+            first_serial.addTextChangedListener(object : TextWatcher {
 
                 override fun afterTextChanged(s: Editable?) {
-                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
-                        dialog_view.user_login_button.isEnabled = true
-                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                    if(user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
+                        user_login_button.isEnabled = true
+                        user_login_button.setBackgroundResource(R.drawable.start_login_button)
                     }else{
-                        dialog_view.user_login_button.isEnabled = false
-                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                        user_login_button.isEnabled = false
+                        user_login_button.setBackgroundResource(R.drawable.start_login_back)
+                    }
+
+                    if(first_serial.text.toString() != ""){
+                        first_serial.setBackgroundResource(R.drawable.start_login_back2)
+                    }else{
+                        first_serial.setBackgroundResource(R.drawable.start_login_back)
                     }
                 }
 
@@ -566,18 +692,18 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     if(s!!.length==6){
 
-                        var Jumin = dialog_view.first_serial.text.toString()
+                        var Jumin = first_serial.text.toString()
 
                         validationInside = JuminValidation(Jumin, context)
 
                         if(validationInside)
                         {
-                            dialog_view.last_serial.requestFocus()
+                            last_serial.requestFocus()
                         }
                         else
                         {
-                            dialog_view.user_login_button.isEnabled = false
-                            dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                            user_login_button.isEnabled = false
+                            user_login_button.setBackgroundResource(R.drawable.start_login_back)
                         }
 
                     }
@@ -585,20 +711,26 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     {
                         isJuminValidated = false
                         validationInside = false
-                        dialog_view.user_login_button.isEnabled = false
-                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                        user_login_button.isEnabled = false
+                        user_login_button.setBackgroundResource(R.drawable.start_login_back)
                     }
                 }
             })
 
-            dialog_view.last_serial.addTextChangedListener(object : TextWatcher {
+            last_serial.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
-                    if(dialog_view.user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
-                        dialog_view.user_login_button.isEnabled = true
-                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                    if(user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
+                        user_login_button.isEnabled = true
+                        user_login_button.setBackgroundResource(R.drawable.start_login_button)
                     }else{
-                        dialog_view.user_login_button.isEnabled = false
-                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                        user_login_button.isEnabled = false
+                        user_login_button.setBackgroundResource(R.drawable.start_login_back)
+                    }
+
+                    if(last_serial.text.toString() != ""){
+                        last_serial.setBackgroundResource(R.drawable.start_login_back2)
+                    }else{
+                        last_serial.setBackgroundResource(R.drawable.start_login_back)
                     }
                 }
 
@@ -610,29 +742,28 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     if(s!!.length == 1){
 
                         ValidationBool = true
-                        dialog_view.user_login_button.isEnabled = true
-                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button_blue)
+                        user_login_button.isEnabled = true
+                        user_login_button.setBackgroundResource(R.drawable.start_login_button)
 
                     }
                     else if(s.length<1)
                     {
                         ValidationBool = false
-                        dialog_view.user_login_button.isEnabled = false
-                        dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                        user_login_button.isEnabled = false
+                        user_login_button.setBackgroundResource(R.drawable.start_login_back)
                     }
+
+                    println(user_name.text.toString() + "," + ValidationBool + "," + canvas_motion + "," + isJuminValidated)
                 }
             })
 
-            val login = dialog_view.findViewById(R.id.user_login_button) as Button
-            var reSign = dialog_view.findViewById(R.id.btnReSign) as ImageView
-
-            reSign.setOnClickListener {
+            btnReSign.setOnClickListener {
                 canvasView.ClearCanvas()
-                dialog_view.user_login_button.isEnabled = false
-                dialog_view.user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                user_login_button.isEnabled = false
+                user_login_button.setBackgroundResource(R.drawable.start_login_back)
             }
 
-            login.setOnClickListener{
+            user_login_button.setOnClickListener{
 
                 if(isJuminValidated)
                 {
@@ -653,20 +784,19 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
 
-                    login_user_name = dialog_view.user_name.text.toString()
-                    user_first_serial = dialog_view.first_serial.text.toString()
-                    user_last_serial = dialog_view.last_serial.text.toString()
+                    login_user_name = user_name.text.toString()
+                    user_first_serial = first_serial.text.toString()
+                    user_last_serial = last_serial.text.toString()
 
 
                     Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
-                    view.text = login_user_name+"님"
+                    user_login.text = login_user_name+"님"
 
                     SavePaper.Total.Init()
                     exam_no = System.currentTimeMillis().toString()
                     SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
 
-                    view2.setImageResource(R.drawable.exit)
-                    dialog.dismiss()
+                    user_image.setImageResource(R.drawable.exit)
 
                     //login_appbar_loading_progress.visibility = View.VISIBLE
                     //login_appbar_loading_progress_bg.visibility = View.VISIBLE
@@ -705,81 +835,93 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             }
 
-            dialog.show()
-
         }
 
-        if(view.text == login_user_name+"님"){
+        //로그아웃시 옮김
 
-            var dialog = AlertDialog.Builder(this).create()
-            var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_user_logout, null)
-
-            //다이얼로그 뒤로가기 버튼 막기
-            dialog.setCancelable(false)
-
-            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-            dialog.setView(dialog_view)
-            dialog.setCanceledOnTouchOutside(false)
-
-            val logout = dialog_view.findViewById(R.id.user_logout) as Button
-            val cancel = dialog_view.findViewById(R.id.user_logout_cancel) as Button
-
-            dialog.show()
-
-            logout.setOnClickListener {
-
-                login_user_name = ""
-                user_first_serial = ""
-                user_last_serial = ""
-
-                Toast.makeText(context, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
-                view.text = "사용자 등록하기"
-                view2.setImageResource(R.drawable.regi)
-
-                canvas_motion = null
-
-                chart.clear()
-                dialog.dismiss()
-                userlogin_buttonClick = true
-            }
-
-            cancel.setOnClickListener {
-
-                canvas_motion = null
-                userlogin_buttonClick = true
-                dialog.dismiss()
-            }
-
-        }
+//        if(view.text == login_user_name+"님"){
+//
+//            var dialog = AlertDialog.Builder(this).create()
+//            var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_user_logout, null)
+//
+//            //다이얼로그 뒤로가기 버튼 막기
+//            dialog.setCancelable(false)
+//
+//            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//
+//            dialog.setView(dialog_view)
+//            dialog.setCanceledOnTouchOutside(false)
+//
+//            val logout = dialog_view.findViewById(R.id.user_logout) as Button
+//            val cancel = dialog_view.findViewById(R.id.user_logout_cancel) as Button
+//
+//            dialog.show()
+//
+//            logout.setOnClickListener {
+//
+//                login_user_name = ""
+//                user_first_serial = ""
+//                user_last_serial = ""
+//
+//                Toast.makeText(context, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
+//                view.text = "사용자 등록하기"
+//                view2.setImageResource(R.drawable.regi)
+//
+//                canvas_motion = null
+//
+//                chart.clear()
+//                dialog.dismiss()
+//                userlogin_buttonClick = true
+//            }
+//
+//            cancel.setOnClickListener {
+//
+//                canvas_motion = null
+//                userlogin_buttonClick = true
+//                dialog.dismiss()
+//            }
+//
+//        }
 
     }
 
     fun ShowPaperDIALOG(context: Context, arr:ArrayList<String>, JUMIN1:String)
     {
 
-        //사용자
-        var dialog = AlertDialog.Builder(context).create()
-        var dialog_view = LayoutInflater.from(context).inflate(R.layout.notice_alert, null)
 
-        //다이얼로그 뒤로가기 버튼 막기
-        dialog.setCancelable(false)
+        first_view.visibility = View.GONE
 
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        starticon.animate().alpha(1f).duration = 1000
 
-        dialog.setView(dialog_view)
-        dialog.setCanceledOnTouchOutside(false)
+        ObjectAnimator.ofFloat(starticon, View.Y, 500f, 2000f).apply{
+            duration = 1000
+            start()
+        }
 
-        val ok = dialog_view.findViewById(R.id.user_ok) as Button
-        val cancel = dialog_view.findViewById(R.id.user_cancel) as Button
-        val title = dialog_view.findViewById(R.id.notice_Title) as TextView
-        val text = dialog_view.findViewById(R.id.notice_textView) as TextView
-        val text2 = dialog_view.findViewById(R.id.notice_textView2) as TextView
-        val text3 = dialog_view.findViewById(R.id.notice_textView3) as TextView
-        val text4 = dialog_view.findViewById(R.id.notice_textView4) as TextView
-        val text5 = dialog_view.findViewById(R.id.notice_textView5) as TextView
-        var chkOral = dialog_view.findViewById(R.id.chkOral) as CheckBox
-        var chkCancer = dialog_view.findViewById(R.id.chkCancer) as CheckBox
+        Handler().postDelayed({
+            ObjectAnimator.ofFloat(starticon, View.Y, 2000f, 500f).apply{
+                duration = 1000
+                start()
+            }
+
+            second_view.visibility=View.VISIBLE
+            ObjectAnimator.ofFloat(second_view, View.Y, 2200f, 700f).apply{
+                duration = 1000
+                start()
+            }
+
+        }, 1000)
+
+
+        val ok = findViewById(R.id.user_ok) as Button
+        val title = findViewById(R.id.notice_Title) as TextView
+        val text = findViewById(R.id.notice_textView) as TextView
+        val text2 = findViewById(R.id.notice_textView2) as TextView
+        val text3 = findViewById(R.id.notice_textView3) as TextView
+        val text4 = findViewById(R.id.notice_textView4) as TextView
+        val text5 = findViewById(R.id.notice_textView5) as TextView
+        var chkOral = findViewById(R.id.chkOral) as CheckBox
+        var chkCancer = findViewById(R.id.chkCancer) as CheckBox
 
 
         for (item in arr)
@@ -830,9 +972,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         }
 
 
-        dialog.show()
-
         ok.setOnClickListener {
+
+            ProgressAction(true)
 
             AdditionalArr.Page.init()
             if(chkOral.isChecked)
@@ -856,8 +998,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             }else{
                 chart.add(ChartInfo(PaperNameInfo.PC.CANCER.EN_NM, false, 6))
             }
-
-            dialog.dismiss()
 
             Handler().postDelayed({
                 //startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
@@ -963,16 +1103,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
-        cancel.setOnClickListener {
-            chart.clear()
-            dialog.dismiss()
-        }
+        ProgressAction(false)
+
     }
 
     fun MokpoCheckPaper(context:Context, DATE:String, NAME:String, JUMIN1:String, JUMIN2:String)
     {
-
-        ProgressAction(true)
 
         val MokpoCheckParam = HashMap<String, String>()
         MokpoCheckParam["DATE"] = DATE.trim()
@@ -1082,35 +1218,32 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         selected_button5.visibility = View.GONE
 
         var fragment: Fragment? = null
-
         when (v!!.id) {
             R.id.button1 -> {
                 fragment = FirstFragment()
                 selected_button1.visibility = View.VISIBLE
             }
-
             R.id.button2 -> {
                 fragment = SecondFragment()
                 selected_button2.visibility = View.VISIBLE
             }
-
             R.id.button3 -> {
                 fragment = ThirdFragment()
                 selected_button3.visibility = View.VISIBLE
             }
-
             R.id.button4 -> {
                 fragment = FourthFragment()
                 selected_button4.visibility = View.VISIBLE
             }
-
             R.id.button5 -> {
                 fragment = FiveFragment()
                 selected_button5.visibility = View.VISIBLE
             }
         }
-
         //v.setBackgroundColor(Color.parseColor("#2B53A2"))
+
+
+
 
         if (fragment != null) {
 
@@ -1217,6 +1350,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var hospital = ""
         var userLogin : Button? = null
         var userImage : ImageView? = null
+        var userLoginButton : Button? = null
+        var userName : TextView? = null
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{
@@ -1355,7 +1490,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             while(!data.isAfterLast){
 
                 SqlArray.add(UserList(data.getString(data.getColumnIndex("user")),
-                                      data.getString(data.getColumnIndex("pass"))))
+                        data.getString(data.getColumnIndex("pass"))))
                 data.moveToNext()
             }
 
@@ -1464,26 +1599,26 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     fun setHospitalList(){
 
-        if(manager_name == "fine"){
-
-            hospital = HospitalList.hospital.test
-            main_logo.setImageResource(R.drawable.logo)
-
-        }else if(manager_name == "mokpohos"){
-
-            hospital = HospitalList.hospital.Mokpo
-            main_logo.setImageResource(R.drawable.logo2)
-
-        }else if(manager_name == "hanshin"){
-
-            hospital = HospitalList.hospital.Banpo
-
-        }else if(manager_name == "bestian"){
-
-            hospital = HospitalList.hospital.Osong
-            main_logo.setImageResource(R.drawable.bestianlogo)
-
-        }
+//        if(manager_name == "fine"){
+//
+//            hospital = HospitalList.hospital.test
+//            main_logo.setImageResource(R.drawable.logo)
+//
+//        }else if(manager_name == "mokpohos"){
+//
+//            hospital = HospitalList.hospital.Mokpo
+//            main_logo.setImageResource(R.drawable.logo2)
+//
+//        }else if(manager_name == "hanshin"){
+//
+//            hospital = HospitalList.hospital.Banpo
+//
+//        }else if(manager_name == "bestian"){
+//
+//            hospital = HospitalList.hospital.Osong
+//            main_logo.setImageResource(R.drawable.bestianlogo)
+//
+//        }
 
     }
 
@@ -1520,4 +1655,3 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
 }
-
