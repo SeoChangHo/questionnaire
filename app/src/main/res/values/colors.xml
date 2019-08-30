@@ -2,9 +2,10 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#2B53A2</color>
-    <color name="mainBlue">#3C6FD1</color>
-    <color name="navy">#2B53A2</color>
+    <color name="colorAccent">#303e9f</color>
+    <color name="mainBlue">#293a54</color>
+    <color name="navy">#303e9f</color>
+    <color name="barBlue">#3760B2</color>
     <color name="shadow">#D7DFF1</color>
     <color name="backBlue">#FBFCFF</color>
     <color name="backGround">#FEFEFE</color>
@@ -13,4 +14,5 @@
     <color name="whiteGray">#eaeaea</color>
     <color name="progressGray">#D9E1E9</color>
     <color name="white">#ffffff</color>
+    <color name="settingGray">#DCE1E8</color>
 </resources>

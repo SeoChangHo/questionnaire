@@ -113,7 +113,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         supportFragmentManager.beginTransaction()
                 .add(R.id.fragment_right, FirstFragment()).commit()
 
-        button1.setBackgroundColor(Color.parseColor("#2B53A2"))
+        //button1.setBackgroundColor(Color.parseColor("#2B53A2"))
+        selected_button1.visibility = View.VISIBLE
 
         listButton.setOnClickListener{
 
@@ -1074,37 +1075,42 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     override fun onClick(v: View?) {
 
-        button1.setBackgroundColor(Color.parseColor("#3C6FD1"))
-        button2.setBackgroundColor(Color.parseColor("#3C6FD1"))
-        button3.setBackgroundColor(Color.parseColor("#3C6FD1"))
-        button4.setBackgroundColor(Color.parseColor("#3C6FD1"))
-        button5.setBackgroundColor(Color.parseColor("#3C6FD1"))
+        selected_button1.visibility = View.GONE
+        selected_button2.visibility = View.GONE
+        selected_button3.visibility = View.GONE
+        selected_button4.visibility = View.GONE
+        selected_button5.visibility = View.GONE
 
         var fragment: Fragment? = null
 
         when (v!!.id) {
             R.id.button1 -> {
                 fragment = FirstFragment()
+                selected_button1.visibility = View.VISIBLE
             }
 
             R.id.button2 -> {
                 fragment = SecondFragment()
+                selected_button2.visibility = View.VISIBLE
             }
 
             R.id.button3 -> {
                 fragment = ThirdFragment()
+                selected_button3.visibility = View.VISIBLE
             }
 
             R.id.button4 -> {
                 fragment = FourthFragment()
+                selected_button4.visibility = View.VISIBLE
             }
 
             R.id.button5 -> {
                 fragment = FiveFragment()
+                selected_button5.visibility = View.VISIBLE
             }
         }
 
-        v.setBackgroundColor(Color.parseColor("#2B53A2"))
+        //v.setBackgroundColor(Color.parseColor("#2B53A2"))
 
         if (fragment != null) {
 
