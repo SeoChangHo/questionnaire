@@ -26,6 +26,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
 import android.view.*
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.*
@@ -225,6 +226,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             if(dialog_view.login_id.text.toString() != ""){
 
+
+
                 var UserArray:ArrayList<UserList> = ArrayList()
 
                 val user = dialog_view.login_id.text.toString()
@@ -347,6 +350,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             if(login_id.text.toString() != ""){
 
+                CloseKeyboard()
+                println("..??")
                 var UserArray:ArrayList<UserList> = ArrayList()
 
                 val user = login_id.text.toString()
@@ -727,9 +732,23 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     if(user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
                         user_login_button.isEnabled = true
                         user_login_button.setBackgroundResource(R.drawable.start_login_button)
+
+                        if (user_name.text.toString() != "" && ValidationBool)
+                        {
+                            println("aaa")
+                            CloseKeyboard()
+                        }
+
                     }else{
                         user_login_button.isEnabled = false
                         user_login_button.setBackgroundResource(R.drawable.start_login_back)
+
+
+                        if (user_name.text.toString() != "" && ValidationBool)
+                        {
+                            println("bbb")
+                            CloseKeyboard()
+                        }
                     }
 
                     if(last_serial.text.toString() != ""){
@@ -1357,6 +1376,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         var userImage : ImageView? = null
         var userLoginButton : Button? = null
         var userName : TextView? = null
+
+
     }
 
     fun assetsToBitmap(fileName:String):Bitmap?{
@@ -1626,6 +1647,18 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 //        }
 
     }
+
+    fun CloseKeyboard()
+    {
+        var view = this.currentFocus
+
+        if(view != null)
+        {
+            val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+    }
+
 
     private fun isNetworkAvailable(): Boolean {
         val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE)

@@ -76,6 +76,8 @@ class CanvasView(internal var context: Context, attrs : AttributeSet?) : View(co
 
         MainActivity.canvas_motion = event
 
+
+
         if(MainActivity.userName!!.text.toString() != "" && MainActivity.ValidationBool && MainActivity.canvas_motion != null && MainActivity.isJuminValidated){
             MainActivity.userLoginButton!!.isEnabled = true
             MainActivity.userLoginButton!!.user_login_button.setBackgroundResource(R.drawable.start_login_button)
