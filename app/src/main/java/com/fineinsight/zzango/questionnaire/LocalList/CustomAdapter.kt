@@ -69,7 +69,6 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
         var NUTRITION = "NUTRITION"
     }
 
-
     fun CheckBoxInit(count:Int)
     {
 
