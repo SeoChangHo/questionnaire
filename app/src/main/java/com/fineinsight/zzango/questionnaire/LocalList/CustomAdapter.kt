@@ -73,7 +73,6 @@ class CustomAdapter(var PaperList: ArrayList<Paper>, var activity: ListActivity)
     fun CheckBoxInit(count:Int)
     {
 
-
         println("[CheckBox Init] Count:"+count.toString())
         myCheckBox.chk_each = ArrayList<CheckBox>(PaperList.size)
     }
