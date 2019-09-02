@@ -121,6 +121,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             popuplogin()
         }
 
+
         btnList.setOnClickListener {
             main_start_list.visibility = View.VISIBLE
             main_start_login1.visibility = View.GONE
@@ -135,12 +136,16 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button5.setOnClickListener(this)
 
 
-        if(login_user_name != ""){
+        if(login_user_name != login_user_name+"님"){
             user_login.text = login_user_name+"님"
             user_image.setImageResource(R.drawable.exit)
+            first_view.visibility = View.VISIBLE
+            second_view.visibility = View.GONE
         }else{
             user_login.text = "사용자 등록하기"
             user_image.setImageResource(R.drawable.regi)
+            first_view.visibility = View.GONE
+            second_view.visibility = View.VISIBLE
         }
 
     }
@@ -622,7 +627,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         main_start_login1.visibility = View.GONE
         main_start_login2.visibility = View.VISIBLE
 
-        if(user_login.text == "사용자 등록하기"){
+        if(user_login.text == "님"){
 
             userLoginButton = user_login_button
             userName = user_name
@@ -790,7 +795,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
                     Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
-                    user_login.text = login_user_name+"님"
+//                    user_login.text = login_user_name+"님"
 
                     SavePaper.Total.Init()
                     exam_no = System.currentTimeMillis().toString()
@@ -942,7 +947,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         chart(JUMIN1)
 
         title.text = login_user_name+"님"
-
+        user_login.text = login_user_name+"님"
 
         for(i in chart){
 
