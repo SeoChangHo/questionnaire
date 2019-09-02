@@ -1638,26 +1638,26 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     fun setHospitalList(){
 
-//        if(manager_name == "fine"){
-//
-//            hospital = HospitalList.hospital.test
-//            main_logo.setImageResource(R.drawable.logo)
-//
-//        }else if(manager_name == "mokpohos"){
-//
-//            hospital = HospitalList.hospital.Mokpo
-//            main_logo.setImageResource(R.drawable.logo2)
-//
-//        }else if(manager_name == "hanshin"){
-//
-//            hospital = HospitalList.hospital.Banpo
-//
-//        }else if(manager_name == "bestian"){
-//
-//            hospital = HospitalList.hospital.Osong
-//            main_logo.setImageResource(R.drawable.bestianlogo)
-//
-//        }
+        if(manager_name == "fine"){
+
+            hospital = HospitalList.hospital.test
+            //main_logo.setImageResource(R.drawable.logo)
+
+        }else if(manager_name == "mokpohos"){
+
+            hospital = HospitalList.hospital.Mokpo
+            //main_logo.setImageResource(R.drawable.logo2)
+
+        }else if(manager_name == "hanshin"){
+
+            hospital = HospitalList.hospital.Banpo
+
+        }else if(manager_name == "bestian"){
+
+            hospital = HospitalList.hospital.Osong
+            //main_logo.setImageResource(R.drawable.bestianlogo)
+
+        }
 
     }
 

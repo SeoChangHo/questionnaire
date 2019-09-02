@@ -357,7 +357,12 @@ class ChartDivision{
             ProgressAction(true, activity)
 //            if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
 
+
+            println("INFO: ${(SavePaper.Total.Array[0] as PublicDataInfo)}")
+
+
             activity.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+
 
 
             OracleUtill().newsave_papers().newsavePapersServer(SavePaper.Total.Array).enqueue(object : Callback<String> {
