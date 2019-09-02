@@ -62,9 +62,13 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     var validationInside = false
     var userlogin_buttonClick = true
 
+    var isUserLogin:Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        println("MAIN!!!")
 
         CreatePaperTable()
 
@@ -351,7 +355,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             if(login_id.text.toString() != ""){
 
                 CloseKeyboard()
-                println("..??")
                 var UserArray:ArrayList<UserList> = ArrayList()
 
                 val user = login_id.text.toString()
@@ -629,10 +632,16 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     //기본 로그인 화면
     fun userlogin2(context : Context){
 
+
+
         main_start_login1.visibility = View.GONE
         main_start_login2.visibility = View.VISIBLE
 
-        if(user_login.text == "님"){
+        println("user_login.text : ${user_login.text}")
+
+
+        //if(user_login.text == "님"){
+        if(!isUserLogin){
 
             userLoginButton = user_login_button
             userName = user_name
@@ -648,9 +657,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
+            println("aaaa")
 
             user_name.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
+
+                    println("bbbb")
                     if(user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
                         user_login_button.isEnabled = true
                         user_login_button.setBackgroundResource(R.drawable.start_login_button)
@@ -680,6 +692,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             first_serial.addTextChangedListener(object : TextWatcher {
 
                 override fun afterTextChanged(s: Editable?) {
+
                     if(user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
                         user_login_button.isEnabled = true
                         user_login_button.setBackgroundResource(R.drawable.start_login_button)
