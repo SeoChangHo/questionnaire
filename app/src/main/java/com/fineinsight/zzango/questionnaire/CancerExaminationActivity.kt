@@ -48,6 +48,7 @@ class CancerExaminationActivity : RootActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cancer_exam)
 
+        controlProgress(this)
 
         var gender = ""
         if(AdditionalArr.Gender.isFemale)
@@ -318,6 +319,12 @@ class CancerExaminationActivity : RootActivity(){
             cancer_13_radio.visibility = View.VISIBLE
             cancer_14_radio.visibility = View.VISIBLE
 
+        }
+
+        if(SavePaper.Total.temp_Cancer != null){
+            whenTempLoad(SavePaper.Total.temp_Cancer!!)
+        }else if(SavedListObject.SavedList.savedDataClass.cancerSaved){
+            whenTempLoad(SavePaper.Total.Array[10] as Paper_CANCER)
         }
 
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
@@ -1744,11 +1751,15 @@ class CancerExaminationActivity : RootActivity(){
                 ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2, ck9_1, ck9_2,
                 ck10, ck11, ck12, ck13, ck14)
 
+        if(ChartDivision.ChartDivision.next_or_save(6)){
+            SavedListObject.SavedList.savedDataClass.cancerSaved = true
+        }
+
         return true
 
     }
 
-    fun whenTempSave(paper: Paper_CANCER) {
+    fun whenTempLoad(paper: Paper_CANCER) {
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial

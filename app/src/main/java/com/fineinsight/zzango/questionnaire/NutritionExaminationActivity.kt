@@ -683,9 +683,7 @@ class NutritionExaminationActivity :RootActivity() {
         sg2_spFood3, sg2_spFood4, sg2_spFood5, sg2_spFood6, sg2_spFood7, sg2_spFood8, sg2_spFood9, sg2_spFood10,
         sg2_spFood11, sg2_spFoodSum, sg2_spFatHeight, sg2_spFatWeight, sg2_spFatWaistSize, sg2_spFatBmi, sg2_spFat1, sg2_spFat2, sg2_spFat3)
 
-        if(ChartDivision.ChartDivision.next_or_save(5)) {
-            SavedListObject.SavedList.savedDataClass.nutritionSaved = true
-        }
+        SavedListObject.SavedList.savedDataClass.nutritionSaved = true
 
         SavePaper.Total.temp_Nutrition = null
 

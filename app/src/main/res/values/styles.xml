@@ -11,4 +11,8 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="noAnim" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
 </resources>

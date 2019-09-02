@@ -402,7 +402,6 @@ class ChartDivision{
 
         fun saveCompleteAlert(activity: Activity) {
 
-
             activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
             popup = false
@@ -474,6 +473,8 @@ class ChartDivision{
 
                 MainActivity.userLogin!!.text = "사용자 등록하기"
                 MainActivity.userImage!!.setImageResource(R.drawable.regi)
+
+                SavePaper.Total.Init()
 
                 SavedListObject.SavedList.savedDataClass.commonSaved = false
                 SavedListObject.SavedList.savedDataClass.mentalSaved = false

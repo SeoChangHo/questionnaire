@@ -77,11 +77,21 @@ class SmokingExaminationActivity : RootActivity(){
                 smoking_0_false.isChecked = false
                 smoking_0_true.isEnabled = false
                 smoking_0_false.isEnabled = false
+                if(SavePaper.Total.temp_Smoking != null){
+                    SavePaper.Total.temp_Smoking!!.sg2_spSmokeSum = "1"
+                }else if((SavePaper.Total.Array[7] as Paper_SMOKING).sg2_spSmokeSum.isNotEmpty()){
+                    (SavePaper.Total.Array[7] as Paper_SMOKING).sg2_spSmokeSum = "1"
+                }
             }else{
                 smoking_0_true.isChecked = false
                 smoking_0_false.isChecked = true
                 smoking_0_true.isEnabled = false
                 smoking_0_false.isEnabled = false
+                if(SavePaper.Total.temp_Smoking != null){
+                    SavePaper.Total.temp_Smoking!!.sg2_spSmokeSum = "0"
+                }else if((SavePaper.Total.Array[7] as Paper_SMOKING).sg2_spSmokeSum.isNotEmpty()){
+                    (SavePaper.Total.Array[7] as Paper_SMOKING).sg2_spSmokeSum = "0"
+                }
             }
         }else{
             smoking_0_true.isEnabled = true
@@ -418,9 +428,7 @@ class SmokingExaminationActivity : RootActivity(){
                 sg2_spSmoke1, sg2_spSmoke2, sg2_spSmoke3, sg2_spSmoke4, sg2_spSmoke5, sg2_spSmoke6,
                 sg2_spSmoke7, sg2_spSmoke8, sg2_spSmokeSum)
 
-        if(ChartDivision.ChartDivision.next_or_save(6)) {
-            SavedListObject.SavedList.savedDataClass.smokingSaved = true
-        }
+        SavedListObject.SavedList.savedDataClass.smokingSaved = true
 
         SavePaper.Total.temp_Smoking = null
 

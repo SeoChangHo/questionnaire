@@ -43,7 +43,7 @@ class CognitiveExaminationActivity : RootActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cognitive_exam)
 
-//        controlProgress(this, questionnaire_progress_wrapper, progress_constraintLayout, questionnaire_progress, progress_guideline, progress_guideline2, progress_guideline3, progress_guideline4, progress_guideline5, progress_guideline6, progress_guideline7, progress_guideline8)
+        controlProgress(this)
 
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
@@ -302,7 +302,8 @@ class CognitiveExaminationActivity : RootActivity(){
             else -> ""
         }
 
-        mj_inji_sum = (mj_inji_1.toInt() + mj_inji_2.toInt() + + mj_inji_3.toInt() + + mj_inji_4.toInt() + mj_inji_5.toInt()+ mj_inji_6.toInt()+ mj_inji_7.toInt()+ mj_inji_8.toInt()+ mj_inji_9.toInt()+ mj_inji_10.toInt() + mj_inji_11.toInt()+ mj_inji_12.toInt()+ mj_inji_13.toInt()+ mj_inji_14.toInt()+ mj_inji_15.toInt()).toString()
+//        mj_inji_sum = (mj_inji_1.toInt() + mj_inji_2.toInt() + + mj_inji_3.toInt() + + mj_inji_4.toInt() + mj_inji_5.toInt()+ mj_inji_6.toInt()+ mj_inji_7.toInt()+ mj_inji_8.toInt()+ mj_inji_9.toInt()+ mj_inji_10.toInt() + mj_inji_11.toInt()+ mj_inji_12.toInt()+ mj_inji_13.toInt()+ mj_inji_14.toInt()+ mj_inji_15.toInt()).toString()
+        mj_inji_sum = "0"
 
         SavePaper.Total.temp_Cognitive = Paper_COGNITIVE(
                 exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category,

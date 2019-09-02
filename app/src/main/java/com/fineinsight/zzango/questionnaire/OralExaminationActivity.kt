@@ -45,6 +45,8 @@ class OralExaminationActivity : RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oral_exam)
 
+        controlProgress(this)
+
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
@@ -95,6 +97,12 @@ class OralExaminationActivity : RootActivity() {
 
             finish()
 
+        }
+
+        if(SavePaper.Total.temp_Oral != null){
+            whenTempLoad(SavePaper.Total.temp_Oral!!)
+        }else if(SavedListObject.SavedList.savedDataClass.oralSaved){
+            whenTempLoad(SavePaper.Total.Array[9] as Paper_ORAL)
         }
 
         //로컬 리스트로부터 들어온 것일 때/////////////////////////////////////////////////////////////////////////////////
