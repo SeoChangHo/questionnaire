@@ -1,34 +1,22 @@
 package com.fineinsight.zzango.questionnaire
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
-import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.*
-import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_COMMON
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
 import kotlinx.android.synthetic.main.activity_common_exam.*
-import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-@SuppressLint("NewApi")
+@SuppressLint("NewApi", "SimpleDateFormat")
 class CommonExaminationActivity : RootActivity() {
 
     var sql_db : SQLiteDatabase? = null
@@ -55,6 +43,8 @@ class CommonExaminationActivity : RootActivity() {
 
             checkCondition(isChecked, constraintLayout4_wrapper)
 
+            doNotSmoke(isChecked)
+
         }
 
         common_4_1_true.setOnCheckedChangeListener {
@@ -78,6 +68,8 @@ class CommonExaminationActivity : RootActivity() {
             buttonView, isChecked ->
 
             checkCondition(isChecked, constraintLayout5_wrapper)
+
+            doNotElectronicSmoke(isChecked)
 
         }
 
@@ -138,6 +130,8 @@ class CommonExaminationActivity : RootActivity() {
             checkCondition1(isChecked, table_view_1)
             checkCondition1(isChecked, textView28)
             checkCondition1(isChecked, table_view_2)
+
+            doNotDrink(isChecked)
 
         }
 
@@ -413,6 +407,22 @@ class CommonExaminationActivity : RootActivity() {
         var mj9_2_2 = ""
         var mj10 = ""
 
+        var common1 = 0.00
+        var common2 = 0.00
+        var common3 = 0.00
+
+        var num1 = 0.00
+        var num2 = 0.00
+        var num3 = 0.00
+        var num4 = 0.00
+        var num5 = 0.00
+
+        var num6 = 0.00
+        var num7 = 0.00
+        var num8 = 0.00
+        var num9 = 0.00
+        var num10 = 0.00
+
         if(!name_edit.text.isNullOrEmpty()){
             name = name_edit.text.toString()
         }else{
@@ -661,21 +671,31 @@ class CommonExaminationActivity : RootActivity() {
             if(common_7_1_editText.text.isNullOrEmpty()){
                 Toast.makeText(this, "7번 문항 첫번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
                 return false
+            }else{
+                common1 = common_7_1_editText.text.toString().toDouble()
             }
         }else if(common_7_2.isChecked){
             mj72 = common_7_2_editText.text.toString()
             if(common_7_2_editText.text.isNullOrEmpty()){
                 Toast.makeText(this, "7번 문항 두번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
                 return false
+            }else{
+                var numbering = common_7_2_editText.text.toString().toDouble()/4
+                common1 = String.format("%.2f", numbering).toDouble()
             }
         }else if(common_7_3.isChecked){
             mj73 = common_7_3_editText.text.toString()
             if(common_7_3_editText.text.isNullOrEmpty()){
                 Toast.makeText(this, "7번 문항 세번째 항목을 작성해주세요", Toast.LENGTH_LONG).show()
                 return false
+            }else{
+                var numbering = common_7_3_editText.text.toString().toDouble()/48
+                common1 = String.format("%.2f", numbering).toDouble()
             }
         }else if(common_7_4.isChecked){
             mj74 = "1"
+            AdditionalArr.over.isDrinking = false
+            AdditionalArr.over.isDrinking2 = false
         }else{
             Toast.makeText(this, "7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
@@ -684,12 +704,30 @@ class CommonExaminationActivity : RootActivity() {
         if(checkBox1.isChecked){
             if(common_7_1_1_1.isChecked){
                 mj7_1_11 = table_edit_1.text.toString()
+                if(table_edit_1.text.toString().isNotEmpty()) {
+                    num1 = (table_edit_1.text.toString().toDouble() * 4) / 7
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_1_2.isChecked){
                 mj7_1_12 = table_edit_1.text.toString()
+                if(table_edit_1.text.toString().isNotEmpty()) {
+                    num1 = (table_edit_1.text.toString().toDouble() * 4)
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_1_3.isChecked){
                 mj7_1_13 = table_edit_1.text.toString()
             }else if(common_7_1_1_4.isChecked){
                 mj7_1_14 = table_edit_1.text.toString()
+                if(table_edit_1.text.toString().isNotEmpty()) {
+                    num1 = (table_edit_1.text.toString().toDouble() * 90)
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
                 Toast.makeText(this, "7-1번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
@@ -699,12 +737,36 @@ class CommonExaminationActivity : RootActivity() {
         if(checkBox2.isChecked){
             if(common_7_1_2_1.isChecked){
                 mj7_1_21 = table_edit_2.text.toString()
+                if(table_edit_2.text.toString().isNotEmpty()) {
+                    num2 = (table_edit_2.text.toString().toDouble() * 200)/350
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_2_2.isChecked){
                 mj7_1_22 = table_edit_2.text.toString()
+                if(table_edit_2.text.toString().isNotEmpty()) {
+                    num2 = (table_edit_2.text.toString().toDouble() * 500)/350
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_2_3.isChecked){
                 mj7_1_23 = table_edit_2.text.toString()
+                if(table_edit_2.text.toString().isNotEmpty()) {
+                    num2 = table_edit_2.text.toString().toDouble()
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_2_4.isChecked){
                 mj7_1_24 = table_edit_2.text.toString()
+                if(table_edit_2.text.toString().isNotEmpty()) {
+                    num2 = table_edit_2.text.toString().toDouble() / 350
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
                 Toast.makeText(this, "7-1번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
@@ -714,12 +776,30 @@ class CommonExaminationActivity : RootActivity() {
         if(checkBox3.isChecked){
             if(common_7_1_3_1.isChecked){
                 mj7_1_31 = table_edit_3.text.toString()
+                if(table_edit_3.text.toString().isNotEmpty()) {
+                    num3 = table_edit_3.text.toString().toDouble()
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_3_2.isChecked){
                 mj7_1_32 = table_edit_3.text.toString()
+                if(table_edit_3.text.toString().isNotEmpty()) {
+                    num3 = (table_edit_3.text.toString().toDouble() * 500)/45
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_3_3.isChecked){
                 mj7_1_33 = table_edit_3.text.toString()
             }else if(common_7_1_3_4.isChecked){
                 mj7_1_34 = table_edit_3.text.toString()
+                if(table_edit_3.text.toString().isNotEmpty()) {
+                    num3 = table_edit_3.text.toString().toDouble()/45
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
                 Toast.makeText(this, "7-1번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
@@ -729,12 +809,30 @@ class CommonExaminationActivity : RootActivity() {
         if(checkBox4.isChecked){
             if(common_7_1_4_1.isChecked){
                 mj7_1_41 = table_edit_4.text.toString()
+                if(table_edit_4.text.toString().isNotEmpty()) {
+                    num4 = table_edit_4.text.toString().toDouble()
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_4_2.isChecked){
                 mj7_1_42 = table_edit_4.text.toString()
+                if(table_edit_4.text.toString().isNotEmpty()) {
+                    num4 = (table_edit_4.text.toString().toDouble() * 750)/300
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_4_3.isChecked){
                 mj7_1_43 = table_edit_4.text.toString()
             }else if(common_7_1_4_4.isChecked){
                 mj7_1_44 = table_edit_4.text.toString()
+                if(table_edit_4.text.toString().isNotEmpty()) {
+                    num4 = table_edit_4.text.toString().toDouble()/300
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
                 Toast.makeText(this, "7-1번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
@@ -744,28 +842,66 @@ class CommonExaminationActivity : RootActivity() {
         if(checkBox5.isChecked){
             if(common_7_1_5_1.isChecked){
                 mj7_1_51 = table_edit_5.text.toString()
+                if(table_edit_5.text.toString().isNotEmpty()) {
+                    num5 = table_edit_5.text.toString().toDouble()
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_5_2.isChecked){
                 mj7_1_52 = table_edit_5.text.toString()
+                if(table_edit_5.text.toString().isNotEmpty()) {
+                    num5 = (table_edit_5.text.toString().toDouble() * 750)/300
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_1_5_3.isChecked){
                 mj7_1_53 = table_edit_5.text.toString()
             }else if(common_7_1_5_4.isChecked){
                 mj7_1_54 = table_edit_5.text.toString()
+                if(table_edit_5.text.toString().isNotEmpty()) {
+                    num5 = table_edit_5.text.toString().toDouble()/150
+                }else{
+                    Toast.makeText(this, "7-1번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
                 Toast.makeText(this, "7-1번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
             }
         }
 
+        var numbering = (num1 + num2 + num3 + num4 + num5) * common1
+        common2 = String.format("%.2f", numbering).toDouble()
 
         if(checkBox6.isChecked){
             if(common_7_2_1_1.isChecked){
                 mj7_2_11 = table_edit_6.text.toString()
+                if(table_edit_6.text.toString().isNotEmpty()) {
+                    num6 = (table_edit_6.text.toString().toDouble() * 4) / 7
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_1_2.isChecked){
                 mj7_2_12 = table_edit_6.text.toString()
+                if(table_edit_6.text.toString().isNotEmpty()) {
+                    num6 = table_edit_6.text.toString().toDouble() * 4
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_1_3.isChecked){
                 mj7_2_13 = table_edit_6.text.toString()
             }else if(common_7_2_1_4.isChecked){
                 mj7_2_14 = table_edit_6.text.toString()
+                if(table_edit_6.text.toString().isNotEmpty()) {
+                    num6 = table_edit_6.text.toString().toDouble() * 90
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
                 Toast.makeText(this, "7-2번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
@@ -775,12 +911,36 @@ class CommonExaminationActivity : RootActivity() {
         if(checkBox7.isChecked){
             if(common_7_2_2_1.isChecked){
                 mj7_2_21 = table_edit_7.text.toString()
+                if(table_edit_7.text.toString().isNotEmpty()) {
+                    num7 = (table_edit_7.text.toString().toDouble() * 200)/350
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_2_2.isChecked){
                 mj7_2_22 = table_edit_7.text.toString()
+                if(table_edit_7.text.toString().isNotEmpty()) {
+                    num7 = (table_edit_7.text.toString().toDouble() * 500)/350
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_2_3.isChecked){
                 mj7_2_23 = table_edit_7.text.toString()
+                if(table_edit_7.text.toString().isNotEmpty()) {
+                    num7 = table_edit_7.text.toString().toDouble()
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_2_4.isChecked){
                 mj7_2_24 = table_edit_7.text.toString()
+                if(table_edit_7.text.toString().isNotEmpty()) {
+                    num7 = table_edit_7.text.toString().toDouble()/350
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
                 Toast.makeText(this, "7-2번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
@@ -790,12 +950,30 @@ class CommonExaminationActivity : RootActivity() {
         if(checkBox8.isChecked){
             if(common_7_2_3_1.isChecked){
                 mj7_2_31 = table_edit_8.text.toString()
+                if(table_edit_8.text.toString().isNotEmpty()) {
+                    num8 = table_edit_8.text.toString().toDouble()
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_3_2.isChecked){
                 mj7_2_32 = table_edit_8.text.toString()
+                if(table_edit_8.text.toString().isNotEmpty()) {
+                    num8 = (table_edit_8.text.toString().toDouble() * 500)/45
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_3_3.isChecked){
                 mj7_2_33 = table_edit_8.text.toString()
             }else if(common_7_2_3_4.isChecked){
                 mj7_2_34 = table_edit_8.text.toString()
+                if(table_edit_8.text.toString().isNotEmpty()) {
+                    num8 = table_edit_8.text.toString().toDouble() / 45
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
                 Toast.makeText(this, "7-2번 체크 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
@@ -805,12 +983,30 @@ class CommonExaminationActivity : RootActivity() {
         if(checkBox9.isChecked){
             if(common_7_2_4_1.isChecked){
                 mj7_2_41 = table_edit_9.text.toString()
+                if(table_edit_9.text.toString().isNotEmpty()) {
+                    num9 = table_edit_9.text.toString().toDouble()
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_4_2.isChecked){
                 mj7_2_42 = table_edit_9.text.toString()
+                if(table_edit_9.text.toString().isNotEmpty()) {
+                    num9 = (table_edit_9.text.toString().toDouble() * 750)/300
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_4_3.isChecked){
                 mj7_2_43 = table_edit_9.text.toString()
             }else if(common_7_2_4_4.isChecked){
                 mj7_2_44 = table_edit_9.text.toString()
+                if(table_edit_9.text.toString().isNotEmpty()) {
+                    num9 = table_edit_9.text.toString().toDouble()/300
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
                 Toast.makeText(this, "7-2번 체크 된 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
@@ -820,17 +1016,49 @@ class CommonExaminationActivity : RootActivity() {
         if(checkBox10.isChecked){
             if(common_7_2_5_1.isChecked){
                 mj7_2_51 = table_edit_10.text.toString()
+                if(table_edit_10.text.toString().isNotEmpty()) {
+                    num10 = table_edit_10.text.toString().toDouble()
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_5_2.isChecked){
                 mj7_2_52 = table_edit_10.text.toString()
+                if(table_edit_10.text.toString().isNotEmpty()) {
+                    num10 = (table_edit_10.text.toString().toDouble() * 750)/150
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else if(common_7_2_5_3.isChecked){
                 mj7_2_53 = table_edit_10.text.toString()
             }else if(common_7_2_5_4.isChecked){
                 mj7_2_54 = table_edit_10.text.toString()
+                if(table_edit_10.text.toString().isNotEmpty()) {
+                    num10 = table_edit_10.text.toString().toDouble()/150
+                }else{
+                    Toast.makeText(this, "7-2번 음주량 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
+                    return false
+                }
             }else{
                 Toast.makeText(this, "7-2번 체크 된 문항을 작성해주세요.", Toast.LENGTH_LONG).show()
                 return false
             }
         }
+
+        if(common_7_1.isChecked || common_7_2.isChecked || common_7_3.isChecked){
+            if(!checkBox1.isChecked && !checkBox2.isChecked && !checkBox3.isChecked && !checkBox4.isChecked && !checkBox5.isChecked){
+                Toast.makeText(this, "7-1번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
+                return false
+            }
+            if(!checkBox6.isChecked && !checkBox7.isChecked && !checkBox8.isChecked && !checkBox9.isChecked && !checkBox10.isChecked){
+                Toast.makeText(this, "7-2번 문항을 체크해주세요.", Toast.LENGTH_LONG).show()
+                return false
+            }
+        }
+
+        var numbering2 = (num6 + num7 + num8 + num9 + num10)
+        common3 = String.format("%.1f", numbering2).toDouble()
 
         if(common_8_1_0.isChecked) {
             mj8_1 = "0"
@@ -923,6 +1151,21 @@ class CommonExaminationActivity : RootActivity() {
             return false
         }
 
+        var gender = "M"
+
+        if(AdditionalArr.Gender.isFemale){
+            gender = "F"
+        }else{
+            gender = "M"
+        }
+
+        var yyStr = MainActivity.user_first_serial.substring(0,2)
+        var birthyear = ("19"+yyStr).toInt()
+        var nowyear = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy")).toInt()
+        var age =  nowyear - birthyear
+
+        Run(gender, age ,common2, common3)
+
         SavePaper.Total.Array[1] = Paper_COMMON(exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name,
                 first_serial_text, last_serial_text, category,
                 mj1_1_1, mj1_1_2, mj1_2_1, mj1_2_2, mj1_3_1, mj1_3_2, mj1_4_1, mj1_4_2,
@@ -941,7 +1184,7 @@ class CommonExaminationActivity : RootActivity() {
             SavedListObject.SavedList.savedDataClass.commonSaved = true
         }
 
-        Drinking()
+        Run(gender, age ,common2, common3)
 
         return true
     }
@@ -1239,76 +1482,76 @@ class CommonExaminationActivity : RootActivity() {
         table_text_10.visibility = View.VISIBLE
 
 
-        if(!paper.mj7_1_11.isNullOrEmpty()){
+        if(paper.mj7_1_11.isNotEmpty()){
             checkBox1.isChecked = true
             common_7_1_1_1.isChecked = true
             table_edit_1.setText(paper.mj7_1_11)
-        }else if(!paper.mj7_1_12.isNullOrEmpty()){
+        }else if(paper.mj7_1_12.isNotEmpty()){
             checkBox1.isChecked = true
             common_7_1_1_2.isChecked = true
             table_edit_1.setText(paper.mj7_1_12)
-        }else if(!paper.mj7_1_13.isNullOrEmpty()){
+        }else if(paper.mj7_1_13.isNotEmpty()){
             checkBox1.isChecked = true
             common_7_1_1_3.isChecked = true
             table_edit_1.setText(paper.mj7_1_13)
-        }else if(!paper.mj7_1_14.isNullOrEmpty()){
+        }else if(paper.mj7_1_14.isNotEmpty()){
             checkBox1.isChecked = true
             common_7_1_1_4.isChecked = true
             table_edit_1.setText(paper.mj7_1_14)
         }
 
 
-        if(!paper.mj7_1_21.isNullOrEmpty()){
+        if(paper.mj7_1_21.isNotEmpty()){
             checkBox2.isChecked = true
             common_7_1_2_1.isChecked = true
             table_edit_2.setText(paper.mj7_1_21)
-        }else if(!paper.mj7_1_22.isNullOrEmpty()){
+        }else if(paper.mj7_1_22.isNotEmpty()){
             checkBox2.isChecked = true
             common_7_1_2_2.isChecked = true
             table_edit_2.setText(paper.mj7_1_22)
-        }else if(!paper.mj7_1_23.isNullOrEmpty()){
+        }else if(paper.mj7_1_23.isNotEmpty()){
             checkBox2.isChecked = true
             common_7_1_2_3.isChecked = true
             table_edit_2.setText(paper.mj7_1_23)
-        }else if(!paper.mj7_1_24.isNullOrEmpty()){
+        }else if(paper.mj7_1_24.isNotEmpty()){
             checkBox2.isChecked = true
             common_7_1_2_4.isChecked = true
             table_edit_2.setText(paper.mj7_1_24)
         }
 
 
-        if(!paper.mj7_1_31.isNullOrEmpty()){
+        if(paper.mj7_1_31.isNotEmpty()){
             checkBox3.isChecked = true
             common_7_1_3_1.isChecked = true
             table_edit_3.setText(paper.mj7_1_31)
-        }else if(!paper.mj7_1_32.isNullOrEmpty()){
+        }else if(paper.mj7_1_32.isNotEmpty()){
             checkBox3.isChecked = true
             common_7_1_3_2.isChecked = true
             table_edit_3.setText(paper.mj7_1_32)
-        }else if(!paper.mj7_1_33.isNullOrEmpty()){
+        }else if(paper.mj7_1_33.isNotEmpty()){
             checkBox3.isChecked = true
             common_7_1_3_3.isChecked = true
             table_edit_3.setText(paper.mj7_1_33)
-        }else if(!paper.mj7_1_34.isNullOrEmpty()){
+        }else if(paper.mj7_1_34.isNotEmpty()){
             checkBox3.isChecked = true
             common_7_1_3_4.isChecked = true
             table_edit_3.setText(paper.mj7_1_34)
         }
 
 
-        if(!paper.mj7_1_41.isNullOrEmpty()){
+        if (paper.mj7_1_41.isNotEmpty()) {
             checkBox4.isChecked = true
             common_7_1_4_1.isChecked = true
             table_edit_4.setText(paper.mj7_1_41)
-        }else if(!paper.mj7_1_42.isNullOrEmpty()){
+        } else if (paper.mj7_1_42.isNotEmpty()) {
             checkBox4.isChecked = true
             common_7_1_4_2.isChecked = true
             table_edit_4.setText(paper.mj7_1_42)
-        }else if(!paper.mj7_1_43.isNullOrEmpty()){
+        } else if (paper.mj7_1_43.isNotEmpty()) {
             checkBox4.isChecked = true
             common_7_1_4_3.isChecked = true
             table_edit_4.setText(paper.mj7_1_43)
-        }else if(!paper.mj7_1_44.isNullOrEmpty()){
+        } else if (paper.mj7_1_44.isNotEmpty()) {
             checkBox4.isChecked = true
             common_7_1_4_4.isChecked = true
             table_edit_4.setText(paper.mj7_1_44)
@@ -1316,114 +1559,114 @@ class CommonExaminationActivity : RootActivity() {
 
 
 
-        if(!paper.mj7_1_51.isNullOrEmpty()){
+        if (!paper.mj7_1_51.isNullOrEmpty()) {
             checkBox5.isChecked = true
             common_7_1_5_1.isChecked = true
             table_edit_5.setText(paper.mj7_1_51)
-        }else if(!paper.mj7_1_52.isNullOrEmpty()){
+        } else if (!paper.mj7_1_52.isNullOrEmpty()) {
             checkBox5.isChecked = true
             common_7_1_5_2.isChecked = true
             table_edit_5.setText(paper.mj7_1_52)
-        }else if(!paper.mj7_1_53.isNullOrEmpty()){
+        } else if (!paper.mj7_1_53.isNullOrEmpty()) {
             checkBox5.isChecked = true
             common_7_1_5_3.isChecked = true
             table_edit_5.setText(paper.mj7_1_53)
-        }else if(!paper.mj7_1_54.isNullOrEmpty()){
+        } else if (!paper.mj7_1_54.isNullOrEmpty()) {
             checkBox5.isChecked = true
             common_7_1_5_4.isChecked = true
             table_edit_5.setText(paper.mj7_1_54)
         }
 
 
-        if(!paper.mj7_2_11.isNullOrEmpty()){
+        if (!paper.mj7_2_11.isNullOrEmpty()) {
             checkBox6.isChecked = true
             common_7_2_1_1.isChecked = true
             table_edit_6.setText(paper.mj7_2_11)
-        }else if(!paper.mj7_2_12.isNullOrEmpty()){
+        } else if (!paper.mj7_2_12.isNullOrEmpty()) {
             checkBox6.isChecked = true
             common_7_2_1_2.isChecked = true
             table_edit_6.setText(paper.mj7_2_12)
-        }else if(!paper.mj7_2_13.isNullOrEmpty()){
+        } else if (!paper.mj7_2_13.isNullOrEmpty()) {
             checkBox6.isChecked = true
             common_7_2_1_3.isChecked = true
             table_edit_6.setText(paper.mj7_2_13)
-        }else if(!paper.mj7_2_14.isNullOrEmpty()){
+        } else if (!paper.mj7_2_14.isNullOrEmpty()) {
             checkBox6.isChecked = true
             common_7_2_1_4.isChecked = true
             table_edit_6.setText(paper.mj7_2_14)
         }
 
 
-        if(!paper.mj7_2_21.isNullOrEmpty()){
+        if (!paper.mj7_2_21.isNullOrEmpty()) {
             checkBox7.isChecked = true
             common_7_2_2_1.isChecked = true
             table_edit_7.setText(paper.mj7_2_21)
-        }else if(!paper.mj7_2_22.isNullOrEmpty()){
+        } else if (!paper.mj7_2_22.isNullOrEmpty()) {
             checkBox7.isChecked = true
             common_7_2_2_2.isChecked = true
             table_edit_7.setText(paper.mj7_2_22)
-        }else if(!paper.mj7_2_23.isNullOrEmpty()){
+        } else if (!paper.mj7_2_23.isNullOrEmpty()) {
             checkBox7.isChecked = true
             common_7_2_2_3.isChecked = true
             table_edit_7.setText(paper.mj7_2_23)
-        }else if(!paper.mj7_2_24.isNullOrEmpty()){
+        } else if (!paper.mj7_2_24.isNullOrEmpty()) {
             checkBox7.isChecked = true
             common_7_2_2_4.isChecked = true
             table_edit_7.setText(paper.mj7_2_24)
         }
 
 
-        if(!paper.mj7_2_31.isNullOrEmpty()){
+        if (!paper.mj7_2_31.isNullOrEmpty()) {
             checkBox8.isChecked = true
             common_7_2_3_1.isChecked = true
             table_edit_8.setText(paper.mj7_2_31)
-        }else if(!paper.mj7_2_32.isNullOrEmpty()){
+        } else if (!paper.mj7_2_32.isNullOrEmpty()) {
             checkBox8.isChecked = true
             common_7_2_3_2.isChecked = true
             table_edit_8.setText(paper.mj7_2_32)
-        }else if(!paper.mj7_2_33.isNullOrEmpty()){
+        } else if (!paper.mj7_2_33.isNullOrEmpty()) {
             checkBox8.isChecked = true
             common_7_2_3_3.isChecked = true
             table_edit_8.setText(paper.mj7_2_33)
-        }else if(!paper.mj7_2_34.isNullOrEmpty()){
+        } else if (!paper.mj7_2_34.isNullOrEmpty()) {
             checkBox8.isChecked = true
             common_7_2_3_4.isChecked = true
             table_edit_8.setText(paper.mj7_2_34)
         }
 
 
-        if(!paper.mj7_2_41.isNullOrEmpty()){
+        if (!paper.mj7_2_41.isNullOrEmpty()) {
             checkBox9.isChecked = true
             common_7_2_4_1.isChecked = true
             table_edit_9.setText(paper.mj7_2_41)
-        }else if(!paper.mj7_2_42.isNullOrEmpty()){
+        } else if (!paper.mj7_2_42.isNullOrEmpty()) {
             checkBox9.isChecked = true
             common_7_2_4_2.isChecked = true
             table_edit_9.setText(paper.mj7_2_42)
-        }else if(!paper.mj7_2_43.isNullOrEmpty()){
+        } else if (!paper.mj7_2_43.isNullOrEmpty()) {
             checkBox9.isChecked = true
             common_7_2_4_3.isChecked = true
             table_edit_9.setText(paper.mj7_2_43)
-        }else if(!paper.mj7_2_44.isNullOrEmpty()){
+        } else if (!paper.mj7_2_44.isNullOrEmpty()) {
             checkBox9.isChecked = true
             common_7_2_4_4.isChecked = true
             table_edit_9.setText(paper.mj7_2_44)
         }
 
 
-        if(!paper.mj7_2_51.isNullOrEmpty()){
+        if (!paper.mj7_2_51.isNullOrEmpty()) {
             checkBox10.isChecked = true
             common_7_2_5_1.isChecked = true
             table_edit_10.setText(paper.mj7_2_51)
-        }else if(!paper.mj7_2_52.isNullOrEmpty()){
+        } else if (!paper.mj7_2_52.isNullOrEmpty()) {
             checkBox10.isChecked = true
             common_7_2_5_2.isChecked = true
             table_edit_10.setText(paper.mj7_2_52)
-        }else if(!paper.mj7_2_53.isNullOrEmpty()){
+        } else if (!paper.mj7_2_53.isNullOrEmpty()) {
             checkBox10.isChecked = true
             common_7_2_5_3.isChecked = true
             table_edit_10.setText(paper.mj7_2_53)
-        }else if(!paper.mj7_2_54.isNullOrEmpty()){
+        } else if (!paper.mj7_2_54.isNullOrEmpty()) {
             checkBox10.isChecked = true
             common_7_2_5_4.isChecked = true
             table_edit_10.setText(paper.mj7_2_54)
@@ -2665,14 +2908,14 @@ class CommonExaminationActivity : RootActivity() {
         var num10 = 0.00
 
 
-        if(common_7_1.isChecked){
+        if(common_7_1.isChecked && common_7_1_editText.text.toString().isNotEmpty()){
             common1 = common_7_1_editText.text.toString().toDouble()
 
-        }else if(common_7_2.isChecked){
+        }else if(common_7_2.isChecked && common_7_2_editText.text.toString().isNotEmpty()){
             var numbering = common_7_2_editText.text.toString().toDouble()/4
             common1 = String.format("%.2f", numbering).toDouble()
 
-        }else if(common_7_3.isChecked){
+        }else if(common_7_3.isChecked && common_7_3_editText.text.toString().isNotEmpty()){
             var numbering = common_7_3_editText.text.toString().toDouble()/48
             common1 = String.format("%.2f", numbering).toDouble()
 
@@ -2911,6 +3154,80 @@ class CommonExaminationActivity : RootActivity() {
         AdditionalArr.over.isDrinking = isOverDrink
         AdditionalArr.over.isDrinking2 = isManyDrink
         AdditionalArr.over.checkAll = true
+
+    }
+
+    fun doNotDrink(isChecked : Boolean){
+
+        if(isChecked) {
+
+            checkBox1.isChecked = false
+            checkBox2.isChecked = false
+            checkBox3.isChecked = false
+            checkBox4.isChecked = false
+            checkBox5.isChecked = false
+            checkBox6.isChecked = false
+            checkBox7.isChecked = false
+            checkBox8.isChecked = false
+            checkBox9.isChecked = false
+            checkBox10.isChecked = false
+
+            common_7_1_1_radio.clearCheck()
+            common_7_1_2_radio.clearCheck()
+            common_7_1_3_radio.clearCheck()
+            common_7_1_4_radio.clearCheck()
+            common_7_1_5_radio.clearCheck()
+
+            common_7_2_1_radio.clearCheck()
+            common_7_2_2_radio.clearCheck()
+            common_7_2_3_radio.clearCheck()
+            common_7_2_4_radio.clearCheck()
+            common_7_2_5_radio.clearCheck()
+
+            common_7_1_editText.setText("")
+            common_7_2_editText.setText("")
+            common_7_3_editText.setText("")
+
+            table_edit_1.setText("")
+            table_edit_2.setText("")
+            table_edit_3.setText("")
+            table_edit_4.setText("")
+            table_edit_5.setText("")
+            table_edit_6.setText("")
+            table_edit_7.setText("")
+            table_edit_8.setText("")
+            table_edit_9.setText("")
+            table_edit_10.setText("")
+
+        }
+
+    }
+
+    fun doNotSmoke(isChecked : Boolean){
+
+        if(!isChecked) {
+
+            editText_4_1_1.setText("")
+            editText_4_1_2.setText("")
+            editText_4_1_3.setText("")
+            editText_4_1_4.setText("")
+            editText_4_1_5.setText("")
+
+        }
+
+    }
+
+    fun doNotElectronicSmoke(isChecked : Boolean){
+
+        if(!isChecked) {
+
+            editText_5_1_1.setText("")
+            editText_5_1_2.setText("")
+            editText_5_1_3.setText("")
+            editText_5_1_4.setText("")
+            editText_5_1_5.setText("")
+
+        }
 
     }
 

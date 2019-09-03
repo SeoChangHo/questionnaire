@@ -43,6 +43,8 @@ class ExerciseExaminationActivity : RootActivity() {
 
             checkCondition(isChecked, constraintLayout)
 
+            selectedCondition(buttonView, isChecked)
+
         }
 
         exercise_2_true.setOnCheckedChangeListener {
@@ -50,6 +52,8 @@ class ExerciseExaminationActivity : RootActivity() {
             buttonView, isChecked ->
 
             checkCondition(isChecked, constraintLayout2)
+
+            selectedCondition(buttonView, isChecked)
 
         }
 
@@ -59,6 +63,8 @@ class ExerciseExaminationActivity : RootActivity() {
 
             checkCondition(isChecked, constraintLayout3)
 
+            selectedCondition(buttonView, isChecked)
+
         }
 
         exercise_4_true.setOnCheckedChangeListener {
@@ -67,6 +73,8 @@ class ExerciseExaminationActivity : RootActivity() {
 
             checkCondition(isChecked, constraintLayout4)
 
+            selectedCondition(buttonView, isChecked)
+
         }
 
         exercise_5_true.setOnCheckedChangeListener {
@@ -74,6 +82,8 @@ class ExerciseExaminationActivity : RootActivity() {
             buttonView, isChecked ->
 
             checkCondition(isChecked, constraintLayout5)
+
+            selectedCondition(buttonView, isChecked)
 
         }
 
@@ -1390,6 +1400,74 @@ class ExerciseExaminationActivity : RootActivity() {
         }else{
 
             exercise_13_false.isChecked = true
+
+        }
+
+    }
+
+    fun selectedCondition(buttonView : View, isChecked : Boolean){
+
+        when(buttonView.id){
+
+            R.id.exercise_1_true -> {
+
+                if(!isChecked){
+
+                    pick_time.setSelection(0)
+                    exercise_1_3_hour.setText("")
+                    exercise_1_3_minute.setText("")
+
+                }
+
+            }
+
+            R.id.exercise_2_true -> {
+
+                if(!isChecked){
+
+                    pick_time2.setSelection(0)
+                    exercise_1_6_hour.setText("")
+                    exercise_1_6_minute.setText("")
+
+                }
+
+            }
+
+            R.id.exercise_3_true -> {
+
+                if(!isChecked){
+
+                    pick_time3.setSelection(0)
+                    exercise_2_3_hour.setText("")
+                    exercise_2_3_minute.setText("")
+
+                }
+
+            }
+
+            R.id.exercise_4_true -> {
+
+                if(!isChecked){
+
+                    pick_time4.setSelection(0)
+                    exercise_3_3_hour.setText("")
+                    exercise_3_3_minute.setText("")
+
+                }
+
+            }
+
+            R.id.exercise_5_true -> {
+
+                if(!isChecked){
+
+                    pick_time5.setSelection(0)
+                    exercise_3_6_hour.setText("")
+                    exercise_3_6_minute.setText("")
+
+                }
+
+            }
 
         }
 

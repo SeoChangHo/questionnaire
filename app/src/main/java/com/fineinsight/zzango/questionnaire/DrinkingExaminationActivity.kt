@@ -121,7 +121,7 @@ class DrinkingExaminationActivity : RootActivity(){
                 drinking_0_true.isEnabled = false
                 drinking_0_false.isEnabled = false
                 if(SavePaper.Total.temp_Drinking != null){
-                    SavePaper.Total.temp_Drinking!!.sg2_spDrinkSum = "1"
+                    SavePaper.Total.temp_Drinking!!.sg2_spDrinkSum = "0"
                 }else if((SavePaper.Total.Array[8] as Paper_DRINKING).sg2_spDrinkSum.isNotEmpty()){
                     (SavePaper.Total.Array[8] as Paper_DRINKING).sg2_spDrinkSum = "0"
                 }
