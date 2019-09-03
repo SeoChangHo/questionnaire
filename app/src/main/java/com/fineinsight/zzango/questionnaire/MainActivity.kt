@@ -1662,6 +1662,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         {
             1->
             {
+                btnList.setImageResource(R.drawable.listicon)
                 CurrentPage = 1
                 main_start_login1.visibility = View.VISIBLE
                 main_start_login2.visibility = View.GONE
@@ -1669,6 +1670,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             }
             2->
             {
+                btnList.setImageResource(R.drawable.listicon)
                 CurrentPage = 2
                 main_start_login1.visibility = View.GONE
                 main_start_login2.visibility = View.VISIBLE
@@ -1676,10 +1678,27 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             }
             3->
             {
-                CurrentPage = 3
-                main_start_login1.visibility = View.GONE
-                main_start_login2.visibility = View.GONE
-                main_start_list.visibility = View.VISIBLE
+                when(CurrentPage)
+                {
+                    1->
+                    {
+                        println("관리자 로그인안되서 리스트 페이지 못감")
+                    }
+                    2->
+                    {
+                        CurrentPage = 3
+                        btnList.setImageResource(R.drawable.listicon)
+                        main_start_login1.visibility = View.GONE
+                        main_start_login2.visibility = View.GONE
+                        main_start_list.visibility = View.VISIBLE
+                    }
+                    3->
+                    {
+                        println("3페이지에서 버튼 누르면 이전페이지로 이동")
+                        btnList.setImageResource(R.drawable.listicon)
+                        ShowPage(2)
+                    }
+                }
             }
         }
     }
