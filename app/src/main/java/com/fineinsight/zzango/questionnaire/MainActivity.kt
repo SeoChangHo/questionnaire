@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     var sql_db : SQLiteDatabase? = null
     var validationInside = false
     var userlogin_buttonClick = true
+    var CurrentPage:Int = 1
 
     var isUserLogin:Boolean = false
 
@@ -128,9 +129,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
         btnList.setOnClickListener {
-            main_start_list.visibility = View.VISIBLE
-            main_start_login1.visibility = View.GONE
-            main_start_login2.visibility = View.GONE
+            ShowPage(3)
         }
 
 
@@ -275,8 +274,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     fun startLogin(){
 
-        main_start_login1.visibility = View.VISIBLE
-        main_start_login2.visibility = View.GONE
+        ShowPage(1)
 
         login_id.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -377,14 +375,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                         setHospitalList()
                         Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
 
-                        main_start_login1.visibility = View.GONE
-                        main_start_login2.visibility = View.VISIBLE
+                        ShowPage(2)
                         userlogin2(this@MainActivity)
 
                     }else{
 
-                        main_start_login1.visibility = View.VISIBLE
-                        main_start_login2.visibility = View.GONE
+                        ShowPage(1)
                         Handler().postDelayed({
                             startActivity(Intent(this@MainActivity, SettingActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                         },125)
@@ -634,8 +630,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
 
-        main_start_login1.visibility = View.GONE
-        main_start_login2.visibility = View.VISIBLE
+        ShowPage(2)
 
         println("user_login.text : ${user_login.text}")
 
@@ -657,12 +652,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 //            //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
-            println("aaaa")
+
 
             user_name.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
 
-                    println("bbbb")
+
                     if(user_name.text.toString() != "" && ValidationBool && canvas_motion != null && isJuminValidated){
                         user_login_button.isEnabled = true
                         user_login_button.setBackgroundResource(R.drawable.start_login_button)
@@ -1659,6 +1654,53 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
+    }
+
+    fun ShowPage(Index:Int)
+    {
+        when(Index)
+        {
+            1->
+            {
+                btnList.setImageResource(R.drawable.listicon)
+                CurrentPage = 1
+                main_start_login1.visibility = View.VISIBLE
+                main_start_login2.visibility = View.GONE
+                main_start_list.visibility = View.GONE
+            }
+            2->
+            {
+                btnList.setImageResource(R.drawable.listicon)
+                CurrentPage = 2
+                main_start_login1.visibility = View.GONE
+                main_start_login2.visibility = View.VISIBLE
+                main_start_list.visibility = View.GONE
+            }
+            3->
+            {
+                when(CurrentPage)
+                {
+                    1->
+                    {
+                        println("관리자 로그인안되서 리스트 페이지 못감")
+                    }
+                    2->
+                    {
+                        CurrentPage = 3
+                        btnList.setImageResource(R.drawable.listicon)
+                        main_start_login1.visibility = View.GONE
+                        main_start_login2.visibility = View.GONE
+                        main_start_list.visibility = View.VISIBLE
+                    }
+                    3->
+                    {
+                        println("3페이지에서 버튼 누르면 이전페이지로 이동")
+                        btnList.setImageResource(R.drawable.listicon)
+                        ShowPage(2)
+                    }
+                }
+            }
+        }
     }
 
     fun CloseKeyboard()
