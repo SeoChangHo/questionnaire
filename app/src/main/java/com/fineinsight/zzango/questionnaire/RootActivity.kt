@@ -308,33 +308,34 @@ open class RootActivity : AppCompatActivity() {
     //SavedList boolean을 통해서 현재 진행도를 처리하는 메서드
     fun proressRoute(context : Context, constraintSet : ConstraintSet) {
 
+        common_text.setTextColor(resources.getColor(R.color.examBlue, null))
+
         if (SavedListObject.SavedList.savedDataClass.commonSaved) {
             common.isEnabled = true
-            common_text.setTextColor(resources.getColor(R.color.mainBlue, null))
             when {
                 mental.visibility == View.VISIBLE -> {
                     mental.isEnabled = true
-                    mental_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    mental_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 cognitive.visibility == View.VISIBLE -> {
                     cognitive.isEnabled = true
-                    cognitive_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    cognitive_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 elderly.visibility == View.VISIBLE -> {
                     elderly.isEnabled = true
-                    elderly_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    elderly_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 exercise.visibility == View.VISIBLE -> {
                     exercise.isEnabled = true
-                    exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    exercise_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 oral.visibility == View.VISIBLE -> {
                     oral.isEnabled = true
-                    oral_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    oral_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 cancer.visibility == View.VISIBLE -> {
                     cancer.isEnabled = true
-                    cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    cancer_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
             }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, common.id, ConstraintSet.END)
@@ -342,27 +343,27 @@ open class RootActivity : AppCompatActivity() {
 
         if (SavedListObject.SavedList.savedDataClass.mentalSaved) {
             mental.isEnabled = true
-            mental_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            mental_text.setTextColor(resources.getColor(R.color.examBlue, null))
             when {
                 cognitive.visibility == View.VISIBLE -> {
                     cognitive.isEnabled = true
-                    cognitive_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    cognitive_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 elderly.visibility == View.VISIBLE -> {
                     elderly.isEnabled = true
-                    elderly_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    elderly_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 exercise.visibility == View.VISIBLE -> {
                     exercise.isEnabled = true
-                    exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    exercise_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 oral.visibility == View.VISIBLE -> {
                     oral.isEnabled = true
-                    oral_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    oral_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 cancer.visibility == View.VISIBLE -> {
                     cancer.isEnabled = true
-                    cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    cancer_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
             }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, mental.id, ConstraintSet.END)
@@ -370,23 +371,23 @@ open class RootActivity : AppCompatActivity() {
 
         if (SavedListObject.SavedList.savedDataClass.cognitiveSaved) {
             cognitive.isEnabled = true
-            cognitive_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            cognitive_text.setTextColor(resources.getColor(R.color.examBlue, null))
             when {
                 elderly.visibility == View.VISIBLE -> {
                     elderly.isEnabled = true
-                    elderly_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    elderly_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 exercise.visibility == View.VISIBLE -> {
                     exercise.isEnabled = true
-                    exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    exercise_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 oral.visibility == View.VISIBLE -> {
                     oral.isEnabled = true
-                    oral_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    oral_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 cancer.visibility == View.VISIBLE -> {
                     cancer.isEnabled = true
-                    cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    cancer_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
             }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, cognitive.id, ConstraintSet.END)
@@ -394,19 +395,19 @@ open class RootActivity : AppCompatActivity() {
 
         if (SavedListObject.SavedList.savedDataClass.elderlySaved) {
             elderly.isEnabled = true
-            elderly_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            elderly_text.setTextColor(resources.getColor(R.color.examBlue, null))
             when {
                 exercise.visibility == View.VISIBLE -> {
                     exercise.isEnabled = true
-                    exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    exercise_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 oral.visibility == View.VISIBLE -> {
                     oral.isEnabled = true
-                    oral_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    oral_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
                 cancer.visibility == View.VISIBLE -> {
                     cancer.isEnabled = true
-                    cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                    cancer_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 }
             }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, elderly.id, ConstraintSet.END)
@@ -414,42 +415,42 @@ open class RootActivity : AppCompatActivity() {
 
         if (SavedListObject.SavedList.savedDataClass.exerciseSaved) {
             exercise.isEnabled = true
-            exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            exercise_text.setTextColor(resources.getColor(R.color.examBlue, null))
             nutrition.isEnabled = true
-            nutrition_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            nutrition_text.setTextColor(resources.getColor(R.color.examBlue, null))
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, exercise.id, ConstraintSet.END)
         }
 
         if (SavedListObject.SavedList.savedDataClass.nutritionSaved) {
             nutrition.isEnabled = true
-            nutrition_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            nutrition_text.setTextColor(resources.getColor(R.color.examBlue, null))
             smoking.isEnabled = true
-            smoking_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            smoking_text.setTextColor(resources.getColor(R.color.examBlue, null))
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, nutrition.id, ConstraintSet.END)
         }
 
         if (SavedListObject.SavedList.savedDataClass.smokingSaved) {
             smoking.isEnabled = true
-            smoking_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            smoking_text.setTextColor(resources.getColor(R.color.examBlue, null))
             drinking.isEnabled = true
-            drinking_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            drinking_text.setTextColor(resources.getColor(R.color.examBlue, null))
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, smoking.id, ConstraintSet.END)
         }
 
         if (SavedListObject.SavedList.savedDataClass.drinkingSaved) {
             if (oral.visibility == View.VISIBLE) {
                 oral.isEnabled = true
-                oral_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                oral_text.setTextColor(resources.getColor(R.color.examBlue, null))
             } else {
                 cancer.isEnabled = true
-                cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                cancer_text.setTextColor(resources.getColor(R.color.examBlue, null))
             }
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, drinking.id, ConstraintSet.END)
         }
 
         if (SavedListObject.SavedList.savedDataClass.oralSaved) {
             cancer.isEnabled = true
-            cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+            cancer_text.setTextColor(resources.getColor(R.color.examBlue, null))
             constraintSet.connect(questionnaire_progress.id, ConstraintSet.END, oral.id, ConstraintSet.END)
         }
 
@@ -470,7 +471,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.START, mental.id, ConstraintSet.START)
                 constraintSet.connect(triangle.id, ConstraintSet.END, mental.id, ConstraintSet.END)
 
-                mental_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                mental_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 mental_text.textSize = 26f
                 mental_text.typeface = Typeface.DEFAULT_BOLD
 
@@ -481,7 +482,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.START, cognitive.id, ConstraintSet.START)
                 constraintSet.connect(triangle.id, ConstraintSet.END, cognitive.id, ConstraintSet.END)
 
-                cognitive_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                cognitive_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 cognitive_text.textSize = 26f
                 cognitive_text.typeface = Typeface.DEFAULT_BOLD
 
@@ -492,7 +493,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.START, elderly.id, ConstraintSet.START)
                 constraintSet.connect(triangle.id, ConstraintSet.END, elderly.id, ConstraintSet.END)
 
-                elderly_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                elderly_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 elderly_text.textSize = 26f
                 elderly_text.typeface = Typeface.DEFAULT_BOLD
 
@@ -503,7 +504,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.START, exercise.id, ConstraintSet.START)
                 constraintSet.connect(triangle.id, ConstraintSet.END, exercise.id, ConstraintSet.END)
 
-                exercise_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                exercise_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 exercise_text.textSize = 26f
                 exercise_text.typeface = Typeface.DEFAULT_BOLD
 
@@ -514,7 +515,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.START, nutrition.id, ConstraintSet.START)
                 constraintSet.connect(triangle.id, ConstraintSet.END, nutrition.id, ConstraintSet.END)
 
-                nutrition_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                nutrition_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 nutrition_text.textSize = 26f
                 nutrition_text.typeface = Typeface.DEFAULT_BOLD
 
@@ -525,7 +526,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.START, smoking.id, ConstraintSet.START)
                 constraintSet.connect(triangle.id, ConstraintSet.END, smoking.id, ConstraintSet.END)
 
-                smoking_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                smoking_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 smoking_text.textSize = 26f
                 smoking_text.typeface = Typeface.DEFAULT_BOLD
 
@@ -536,7 +537,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.START, drinking.id, ConstraintSet.START)
                 constraintSet.connect(triangle.id, ConstraintSet.END, drinking.id, ConstraintSet.END)
 
-                drinking_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                drinking_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 drinking_text.textSize = 26f
                 drinking_text.typeface = Typeface.DEFAULT_BOLD
 
@@ -547,7 +548,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.START, oral.id, ConstraintSet.START)
                 constraintSet.connect(triangle.id, ConstraintSet.END, oral.id, ConstraintSet.END)
 
-                oral_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                oral_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 oral_text.textSize = 26f
                 oral_text.typeface = Typeface.DEFAULT_BOLD
 
@@ -558,7 +559,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.START, cancer.id, ConstraintSet.START)
                 constraintSet.connect(triangle.id, ConstraintSet.END, cancer.id, ConstraintSet.END)
 
-                cancer_text.setTextColor(resources.getColor(R.color.mainBlue, null))
+                cancer_text.setTextColor(resources.getColor(R.color.examBlue, null))
                 cancer_text.textSize = 26f
                 cancer_text.typeface = Typeface.DEFAULT_BOLD
 

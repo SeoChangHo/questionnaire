@@ -45,8 +45,7 @@
         android:id="@+id/questionnaire_progress"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/mainBlue"
-        android:alpha="0.5"
+        android:background="@color/progressGray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
