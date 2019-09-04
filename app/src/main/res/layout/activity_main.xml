@@ -579,7 +579,7 @@
         android:id="@+id/main_start_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -593,6 +593,109 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/button1"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="120dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="start"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="건강검진 공통 문진표"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/layout_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button2"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="건강검진 추가 문진표"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/layout_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button1" />
+
+            <Button
+                android:id="@+id/button3"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="생활습관 평가도구"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/layout_left"
+                app:layout_constraintStart_toStartOf="@+id/layout_left"
+                app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+            <Button
+                android:id="@+id/button4"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="구강검진 문진표"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/layout_left"
+                app:layout_constraintStart_toStartOf="@+id/layout_left"
+                app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+            <Button
+                android:id="@+id/button5"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="암검진 문진표"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/layout_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+            <FrameLayout
+                android:id="@+id/fragment_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layout_left"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.67">
+
+            </FrameLayout>
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/layout_left"
@@ -703,109 +806,6 @@
                 app:layout_constraintStart_toStartOf="@+id/button1"
                 app:layout_constraintTop_toTopOf="@+id/button1"
                 app:layout_constraintWidth_percent="0.34" />
-
-            <Button
-                android:id="@+id/button1"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="120dp"
-                android:background="@android:color/transparent"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="start"
-                android:paddingLeft="30dp"
-                android:paddingTop="15dp"
-                android:text="건강검진 공통 문진표"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/layout_left"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/button2"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="8dp"
-                android:background="@android:color/transparent"
-                android:gravity="start"
-                android:paddingLeft="30dp"
-                android:paddingTop="15dp"
-                android:text="건강검진 추가 문진표"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/layout_left"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button1" />
-
-            <Button
-                android:id="@+id/button3"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="8dp"
-                android:background="@android:color/transparent"
-                android:gravity="start"
-                android:paddingLeft="30dp"
-                android:paddingTop="15dp"
-                android:text="생활습관 평가도구"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/layout_left"
-                app:layout_constraintStart_toStartOf="@+id/layout_left"
-                app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-            <Button
-                android:id="@+id/button4"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="8dp"
-                android:background="@android:color/transparent"
-                android:gravity="start"
-                android:paddingLeft="30dp"
-                android:paddingTop="15dp"
-                android:text="구강검진 문진표"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/layout_left"
-                app:layout_constraintStart_toStartOf="@+id/layout_left"
-                app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-            <Button
-                android:id="@+id/button5"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="8dp"
-                android:background="@android:color/transparent"
-                android:gravity="start"
-                android:paddingLeft="30dp"
-                android:paddingTop="15dp"
-                android:text="암검진 문진표"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/layout_left"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-            <FrameLayout
-                android:id="@+id/fragment_right"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/layout_left"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.67">
-
-            </FrameLayout>
 
         </android.support.constraint.ConstraintLayout>
 
