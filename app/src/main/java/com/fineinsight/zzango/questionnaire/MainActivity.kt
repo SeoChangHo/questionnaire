@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button5.setOnClickListener(this)
 
 
-        if(isUserLogin){
+        if(user_login.text.toString() != user_login.text.toString()+"님"){
             user_login.text = login_user_name+"님"
             user_image.setImageResource(R.drawable.exit)
             first_view.visibility = View.VISIBLE
