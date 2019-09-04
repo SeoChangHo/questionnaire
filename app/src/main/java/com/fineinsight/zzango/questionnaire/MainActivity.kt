@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button5.setOnClickListener(this)
 
 
-        if(login_user_name != login_user_name+"님"){
+        if(isUserLogin){
             user_login.text = login_user_name+"님"
             user_image.setImageResource(R.drawable.exit)
             first_view.visibility = View.VISIBLE
@@ -150,6 +150,18 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             user_image.setImageResource(R.drawable.regi)
             first_view.visibility = View.GONE
             second_view.visibility = View.VISIBLE
+        }
+
+        user_image.setOnClickListener {
+            if (isUserLogin)
+            {
+                UserHandler(false)
+                ShowPage(2)
+            }
+            else
+            {
+
+            }
         }
 
     }
@@ -396,7 +408,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     //개별 클릭했을 때 뜨는 팝업
     fun userlogin(view : Button, view2 : ImageView, context : Context, startPage : String){
-        if(view.text == "사용자 등록하기"){
+        if(!isUserLogin){
             chart.clear()
             var dialog = AlertDialog.Builder(context).create()
             var dialog_view = LayoutInflater.from(context).inflate(R.layout.activity_user_login, null)
@@ -614,9 +626,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 {
                     Toast.makeText(this, "주민번호 형식을 확인해주세요.", Toast.LENGTH_LONG).show()
                 }
-
-
-
             }
 
             dialog.show()
@@ -819,6 +828,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     login_user_name = user_name.text.toString()
                     user_first_serial = first_serial.text.toString()
                     user_last_serial = last_serial.text.toString()
+
+                    UserHandler(true)
 
 
                     Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
@@ -1700,6 +1711,34 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     }
                 }
             }
+        }
+    }
+
+    fun UserHandler(isLogin:Boolean)
+    {
+        isUserLogin = isLogin
+
+
+
+        if (isLogin)
+        {
+            user_login.text = login_user_name+"님"
+            user_image.setImageResource(R.drawable.exit)
+            first_view.visibility = View.VISIBLE
+            second_view.visibility = View.GONE
+        }
+        else
+        {
+            user_login.text = "사용자 등록하기"
+            user_image.setImageResource(R.drawable.regi)
+            first_view.visibility = View.GONE
+            second_view.visibility = View.VISIBLE
+
+            login_user_name = ""
+            user_first_serial = ""
+            user_last_serial = ""
+            Toast.makeText(this, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
+            chart.clear()
         }
     }
 
