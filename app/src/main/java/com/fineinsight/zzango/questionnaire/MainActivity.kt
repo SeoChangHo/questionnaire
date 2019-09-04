@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         button5.setOnClickListener(this)
 
 
-        if(user_login.text.toString() != user_login.text.toString()+"님"){
+        if(!isUserLogin){
             user_login.text = login_user_name+"님"
             user_image.setImageResource(R.drawable.exit)
             first_view.visibility = View.VISIBLE
@@ -408,6 +408,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     //개별 클릭했을 때 뜨는 팝업
     fun userlogin(view : Button, view2 : ImageView, context : Context, startPage : String){
+
+        println("isUserLogin: ${isUserLogin}")
+
+
+
         if(!isUserLogin){
             chart.clear()
             var dialog = AlertDialog.Builder(context).create()
@@ -561,6 +566,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
                     //chart(user_first_serial, false, false)
+                    chart.clear()
 
 
                     println("user_last_serial.toInt(): ${user_last_serial.toInt()}")
@@ -630,8 +636,58 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             dialog.show()
         }
+        else
+        {
+            chart.clear()
 
+
+            SavePaper.Total.Init()
+            exam_no = System.currentTimeMillis().toString()
+
+
+            SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
+
+            when(startPage){
+                "CommonExaminationActivity" -> {
+                    Handler().postDelayed({
+                        startActivity(Intent(context, CommonExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                    },125)
+                }
+                "MentalExaminationActivity" -> {
+                    Handler().postDelayed({
+                        startActivity(Intent(context, MentalExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                    },125)
+                }
+                "CognitiveExaminationActivity" -> {
+                    Handler().postDelayed({
+                        startActivity(Intent(context, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                    },125)
+                }
+                "ElderlyExaminationActivity" -> {
+                    Handler().postDelayed({
+                        startActivity(Intent(context, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                    },125)
+                }
+                "ExerciseExaminationActivity" -> {
+                    Handler().postDelayed({
+                        startActivity(Intent(context, ExerciseExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                    },125)
+                }
+                "OralExaminationActivity" -> {
+                    Handler().postDelayed({
+                        startActivity(Intent(context, OralExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                    },125)
+                }
+                "CancerExaminationActivity" -> {
+                    Handler().postDelayed({
+                        startActivity(Intent(context, CancerExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                    },125)
+                }
+
+            }
+        }
     }
+
 
 
     //기본 로그인 화면
@@ -1565,6 +1621,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     @SuppressLint("NewApi")
     fun chart(Jumin : String){
 
+
         var yy = Jumin.substring(0,2)
 
         var currentDateTime = LocalDateTime.now()
@@ -1639,6 +1696,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
             chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false, 4))
         }
+
+
+
 
     }
 
@@ -1724,15 +1784,15 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         {
             user_login.text = login_user_name+"님"
             user_image.setImageResource(R.drawable.exit)
-            first_view.visibility = View.VISIBLE
-            second_view.visibility = View.GONE
+//            first_view.visibility = View.VISIBLE
+//            second_view.visibility = View.GONE
         }
         else
         {
             user_login.text = "사용자 등록하기"
             user_image.setImageResource(R.drawable.regi)
-            first_view.visibility = View.GONE
-            second_view.visibility = View.VISIBLE
+//            first_view.visibility = View.GONE
+//            second_view.visibility = View.VISIBLE
 
             login_user_name = ""
             user_first_serial = ""

@@ -266,6 +266,7 @@ open class RootActivity : AppCompatActivity() {
         //세트진행시
         if(MainActivity.chart.isNotEmpty()) {
 
+            println("?")
             var charts = MainActivity.chart
 
             for ((i, chart) in charts.withIndex()) {
@@ -286,6 +287,9 @@ open class RootActivity : AppCompatActivity() {
             }
         //단일 진행시
         }else{
+
+            println("??")
+
 
             when(context.javaClass.kotlin.simpleName){
 

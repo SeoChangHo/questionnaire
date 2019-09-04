@@ -18,18 +18,18 @@ class FiveFragment : Fragment(){
 
         view.five_imageButton1.setOnClickListener {
 
-            if(activity!!.user_login.text != "사용자 등록하기") {
-
-                activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
-                activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-
-                startActivity(Intent(activity!!, CancerExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-            }else{
+//            if(activity!!.user_login.text != "사용자 등록하기") {
+//
+//                activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
+//                activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//
+//                startActivity(Intent(activity!!, CancerExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//
+//            }else{
 
                 (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context, "CancerExaminationActivity")
 
-            }
+            //}
 
         }
 
