@@ -2325,7 +2325,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/family_medical_history2" />
 
             <CheckBox
-                android:id="@+id/cancer_5_1_checkBox"
+                android:id="@+id/cancer_5_0_checkBox"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -2341,7 +2341,7 @@
                 android:onClick="focusControl" />
 
             <CheckBox
-                android:id="@+id/cancer_5_2_checkBox"
+                android:id="@+id/cancer_5_1_checkBox"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -2351,6 +2351,22 @@
                 android:scaleX="1.3"
                 android:scaleY="1.3"
                 android:text="위궤양"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
+                app:layout_constraintTop_toBottomOf="@+id/cancer_5_0_checkBox"
+                android:onClick="focusControl" />
+
+            <CheckBox
+                android:id="@+id/cancer_5_2_checkBox"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="24dp"
+                android:buttonTint="@color/examBlue"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                android:text="위축성 위염"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_5_1_checkBox"
@@ -2366,7 +2382,7 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="위축성 위염"
+                android:text="장상피화생"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_5_2_checkBox"
@@ -2382,7 +2398,7 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="장상피화생"
+                android:text="위용종"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_5_3_checkBox"
@@ -2398,26 +2414,10 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="위용종"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_5_4_checkBox"
-                android:onClick="focusControl" />
-
-            <CheckBox
-                android:id="@+id/cancer_5_6_checkBox"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="24dp"
-                android:buttonTint="@color/examBlue"
-                android:scaleX="1.3"
-                android:scaleY="1.3"
                 android:text="기타"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_5"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_5_5_checkBox"
+                app:layout_constraintTop_toBottomOf="@+id/cancer_5_4_checkBox"
                 android:onClick="focusControl" />
 
 
@@ -2435,10 +2435,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_5_6_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_5_5_checkBox" />
 
             <CheckBox
-                android:id="@+id/cancer_6_1_checkBox"
+                android:id="@+id/cancer_6_0_checkBox"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -2454,7 +2454,7 @@
                 android:onClick="focusControl" />
 
             <CheckBox
-                android:id="@+id/cancer_6_2_checkBox"
+                android:id="@+id/cancer_6_1_checkBox"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -2464,6 +2464,22 @@
                 android:scaleX="1.3"
                 android:scaleY="1.3"
                 android:text="대장용종(폴립)"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
+                app:layout_constraintTop_toBottomOf="@+id/cancer_6_0_checkBox"
+                android:onClick="focusControl" />
+
+            <CheckBox
+                android:id="@+id/cancer_6_2_checkBox"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="24dp"
+                android:buttonTint="@color/examBlue"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                android:text="궤양성 대장염"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_6_1_checkBox"
@@ -2479,7 +2495,7 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="궤양성 대장염"
+                android:text="크론병"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_6_2_checkBox"
@@ -2495,7 +2511,7 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="크론병"
+                android:text="치질(치핵, 치열)"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_6_3_checkBox"
@@ -2511,26 +2527,10 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="치질(치핵, 치열)"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_6_4_checkBox"
-                android:onClick="focusControl" />
-
-            <CheckBox
-                android:id="@+id/cancer_6_6_checkBox"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="24dp"
-                android:buttonTint="@color/examBlue"
-                android:scaleX="1.3"
-                android:scaleY="1.3"
                 android:text="기타"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_6"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_6_5_checkBox"
+                app:layout_constraintTop_toBottomOf="@+id/cancer_6_4_checkBox"
                 android:onClick="focusControl" />
 
 
@@ -2548,10 +2548,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_6_6_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_6_5_checkBox" />
 
             <CheckBox
-                android:id="@+id/cancer_7_1_checkBox"
+                android:id="@+id/cancer_7_0_checkBox"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -2567,7 +2567,7 @@
                 android:onClick="focusControl" />
 
             <CheckBox
-                android:id="@+id/cancer_7_2_checkBox"
+                android:id="@+id/cancer_7_1_checkBox"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -2577,6 +2577,22 @@
                 android:scaleX="1.3"
                 android:scaleY="1.3"
                 android:text="B형간염바이러스 보유자"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
+                app:layout_constraintTop_toBottomOf="@+id/cancer_7_0_checkBox"
+                android:onClick="focusControl" />
+
+            <CheckBox
+                android:id="@+id/cancer_7_2_checkBox"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="24dp"
+                android:buttonTint="@color/examBlue"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                android:text="만성 B형간염"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_7_1_checkBox"
@@ -2592,7 +2608,7 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="만성 B형간염"
+                android:text="만성 C형간염"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_7_2_checkBox"
@@ -2608,7 +2624,7 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="만성 C형간염"
+                android:text="간경변"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_7_3_checkBox"
@@ -2624,26 +2640,10 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="간경변"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_7_4_checkBox"
-                android:onClick="focusControl" />
-
-            <CheckBox
-                android:id="@+id/cancer_7_6_checkBox"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="24dp"
-                android:buttonTint="@color/examBlue"
-                android:scaleX="1.3"
-                android:scaleY="1.3"
                 android:text="기타"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_7"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_7_5_checkBox"
+                app:layout_constraintTop_toBottomOf="@+id/cancer_7_4_checkBox"
                 android:onClick="focusControl" />
 
 
@@ -2662,10 +2662,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_7_6_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_7_5_checkBox" />
 
             <CheckBox
-                android:id="@+id/cancer_16_1_checkBox"
+                android:id="@+id/cancer_16_0_checkBox"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -2681,7 +2681,7 @@
                 android:onClick="focusControl" />
 
             <CheckBox
-                android:id="@+id/cancer_16_2_checkBox"
+                android:id="@+id/cancer_16_1_checkBox"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -2691,6 +2691,22 @@
                 android:scaleX="1.3"
                 android:scaleY="1.3"
                 android:text="만성폐쇄성폐질환(만성기관지염,폐기종 등)"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@+id/cancer_question_16"
+                app:layout_constraintTop_toBottomOf="@+id/cancer_16_0_checkBox"
+                android:onClick="focusControl" />
+
+            <CheckBox
+                android:id="@+id/cancer_16_2_checkBox"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="24dp"
+                android:buttonTint="@color/examBlue"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                android:text="폐결핵"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_16"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_16_1_checkBox"
@@ -2706,7 +2722,7 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="폐결핵"
+                android:text="폐결절"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_16"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_16_2_checkBox"
@@ -2722,7 +2738,7 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="폐결절"
+                android:text="간질성폐질환"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_16"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_16_3_checkBox"
@@ -2738,11 +2754,12 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="간질성폐질환"
+                android:text="진폐증"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_16"
                 app:layout_constraintTop_toBottomOf="@+id/cancer_16_4_checkBox"
                 android:onClick="focusControl" />
+
 
             <CheckBox
                 android:id="@+id/cancer_16_6_checkBox"
@@ -2754,27 +2771,10 @@
                 android:buttonTint="@color/examBlue"
                 android:scaleX="1.3"
                 android:scaleY="1.3"
-                android:text="진폐증"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/cancer_question_16"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_16_5_checkBox"
-                android:onClick="focusControl" />
-
-
-            <CheckBox
-                android:id="@+id/cancer_16_7_checkBox"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="24dp"
-                android:buttonTint="@color/examBlue"
-                android:scaleX="1.3"
-                android:scaleY="1.3"
                 android:text="기타"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/cancer_question_16"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_16_6_checkBox"
+                app:layout_constraintTop_toBottomOf="@+id/cancer_16_5_checkBox"
                 android:onClick="focusControl" />
 
 
@@ -2794,7 +2794,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cancer_16_7_checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/cancer_16_6_checkBox" />
 
             <TextView
                 android:id="@+id/cancer_question_8"

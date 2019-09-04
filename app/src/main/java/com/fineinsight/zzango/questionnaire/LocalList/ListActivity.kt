@@ -322,7 +322,7 @@ class ListActivity : RootActivity() {
                 }
                 else
                 {
-                    Paper_CANCER("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                    Paper_CANCER("","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","", "","")
                 }
         )
 
@@ -841,24 +841,22 @@ class ListActivity : RootActivity() {
                     data.getString(data.getColumnIndex("ck4_6")),
                     data.getString(data.getColumnIndex("ck4_7")),
                     data.getString(data.getColumnIndex("ck4_8")),
+                    data.getString(data.getColumnIndex("ck4_9")),
                     data.getString(data.getColumnIndex("ck5_1")),
                     data.getString(data.getColumnIndex("ck5_2")),
                     data.getString(data.getColumnIndex("ck5_3")),
                     data.getString(data.getColumnIndex("ck5_4")),
                     data.getString(data.getColumnIndex("ck5_5")),
-                    data.getString(data.getColumnIndex("ck5_6")),
                     data.getString(data.getColumnIndex("ck6_1")),
                     data.getString(data.getColumnIndex("ck6_2")),
                     data.getString(data.getColumnIndex("ck6_3")),
                     data.getString(data.getColumnIndex("ck6_4")),
                     data.getString(data.getColumnIndex("ck6_5")),
-                    data.getString(data.getColumnIndex("ck6_6")),
                     data.getString(data.getColumnIndex("ck7_1")),
                     data.getString(data.getColumnIndex("ck7_2")),
                     data.getString(data.getColumnIndex("ck7_3")),
                     data.getString(data.getColumnIndex("ck7_4")),
                     data.getString(data.getColumnIndex("ck7_5")),
-                    data.getString(data.getColumnIndex("ck7_6")),
                     data.getString(data.getColumnIndex("ck8_1")),
                     data.getString(data.getColumnIndex("ck8_2")),
                     data.getString(data.getColumnIndex("ck9_1")),
@@ -867,7 +865,19 @@ class ListActivity : RootActivity() {
                     data.getString(data.getColumnIndex("ck11")),
                     data.getString(data.getColumnIndex("ck12")),
                     data.getString(data.getColumnIndex("ck13")),
-                    data.getString(data.getColumnIndex("ck14"))
+                    data.getString(data.getColumnIndex("ck14")),
+                    data.getString(data.getColumnIndex("ck15_5")),
+                    data.getString(data.getColumnIndex("ck15_5_1")),
+                    data.getString(data.getColumnIndex("ck15_5_2")),
+                    data.getString(data.getColumnIndex("ck15_5_3")),
+                    data.getString(data.getColumnIndex("ck15_5_4")),
+                    data.getString(data.getColumnIndex("ck15_5_5")),
+                    data.getString(data.getColumnIndex("ck16_1")),
+                    data.getString(data.getColumnIndex("ck16_2")),
+                    data.getString(data.getColumnIndex("ck16_3")),
+                    data.getString(data.getColumnIndex("ck16_4")),
+                    data.getString(data.getColumnIndex("ck16_5")),
+                    data.getString(data.getColumnIndex("ck16_6"))
             ))
             data.moveToNext()
         }

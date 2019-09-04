@@ -1,40 +1,20 @@
 package com.fineinsight.zzango.questionnaire
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
-import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.net.ConnectivityManager
-import android.net.Network
-import android.net.NetworkCapabilities
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.*
-import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_CANCER
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_cancer_exam.*
 import kotlinx.android.synthetic.main.activity_cancer_exam.Signature
 import kotlinx.android.synthetic.main.activity_cancer_exam.first_serial
 import kotlinx.android.synthetic.main.activity_cancer_exam.last_serial
 import kotlinx.android.synthetic.main.activity_cancer_exam.name_edit
-import kotlinx.android.synthetic.main.save_complete_alert.view.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -96,6 +76,8 @@ class CancerExaminationActivity : RootActivity(){
 
             checkCondition(isChecked, cancer_3_1_wrapper)
 
+            whenRadioChanged(buttonView, isChecked)
+
         }
 
         cancer_3_2_3.setOnCheckedChangeListener {
@@ -103,6 +85,8 @@ class CancerExaminationActivity : RootActivity(){
             buttonView, isChecked ->
 
             checkCondition(isChecked, cancer_3_2_wrapper)
+
+            whenRadioChanged(buttonView, isChecked)
 
         }
 
@@ -112,6 +96,8 @@ class CancerExaminationActivity : RootActivity(){
 
             checkCondition(isChecked, cancer_3_3_wrapper)
 
+            whenRadioChanged(buttonView, isChecked)
+
         }
 
         cancer_3_4_3.setOnCheckedChangeListener {
@@ -120,6 +106,8 @@ class CancerExaminationActivity : RootActivity(){
 
             checkCondition(isChecked, cancer_3_4_wrapper)
 
+            whenRadioChanged(buttonView, isChecked)
+
         }
 
         cancer_3_5_3.setOnCheckedChangeListener {
@@ -127,6 +115,18 @@ class CancerExaminationActivity : RootActivity(){
             buttonView, isChecked ->
 
             checkCondition(isChecked, cancer_3_5_wrapper)
+
+            whenRadioChanged(buttonView, isChecked)
+
+        }
+
+        cancer_15_5_3.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            checkCondition(isChecked, cancer_15_5_wrapper)
+
+            whenRadioChanged(buttonView, isChecked)
 
         }
 
@@ -140,78 +140,187 @@ class CancerExaminationActivity : RootActivity(){
 
             editTextCondition(isChecked, cancer_3_6_1_editText)
 
+            whenRadioChanged(buttonView, isChecked)
+
         }
 
-        cancer_5_1_checkBox.setOnClickListener {
-            cancer_5_2_checkBox.isChecked = false
-            cancer_5_3_checkBox.isChecked = false
-            cancer_5_4_checkBox.isChecked = false
-            cancer_5_5_checkBox.isChecked = false
-            cancer_5_6_checkBox.isChecked = false
+        cancer_5_0_checkBox.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
         }
 
-        cancer_5_2_checkBox.setOnClickListener {
-            cancer_5_1_checkBox.isChecked = false
-        }
-        cancer_5_3_checkBox.setOnClickListener {
-            cancer_5_1_checkBox.isChecked = false
-        }
-        cancer_5_4_checkBox.setOnClickListener {
-            cancer_5_1_checkBox.isChecked = false
-        }
-        cancer_5_5_checkBox.setOnClickListener {
-            cancer_5_1_checkBox.isChecked = false
-        }
-        cancer_5_6_checkBox.setOnClickListener {
-            cancer_5_1_checkBox.isChecked = false
+        cancer_5_1_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
         }
 
-        cancer_6_1_checkBox.setOnClickListener {
-            cancer_6_2_checkBox.isChecked = false
-            cancer_6_3_checkBox.isChecked = false
-            cancer_6_4_checkBox.isChecked = false
-            cancer_6_5_checkBox.isChecked = false
-            cancer_6_6_checkBox.isChecked = false
+        cancer_5_2_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
         }
 
-        cancer_6_2_checkBox.setOnClickListener {
-            cancer_6_1_checkBox.isChecked = false
-        }
-        cancer_6_3_checkBox.setOnClickListener {
-            cancer_6_1_checkBox.isChecked = false
-        }
-        cancer_6_4_checkBox.setOnClickListener {
-            cancer_6_1_checkBox.isChecked = false
-        }
-        cancer_6_5_checkBox.setOnClickListener {
-            cancer_6_1_checkBox.isChecked = false
-        }
-        cancer_6_6_checkBox.setOnClickListener {
-            cancer_6_1_checkBox.isChecked = false
+        cancer_5_3_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
         }
 
-        cancer_7_1_checkBox.setOnClickListener {
-            cancer_7_2_checkBox.isChecked = false
-            cancer_7_3_checkBox.isChecked = false
-            cancer_7_4_checkBox.isChecked = false
-            cancer_7_5_checkBox.isChecked = false
-            cancer_7_6_checkBox.isChecked = false
+        cancer_5_4_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
         }
 
-        cancer_7_2_checkBox.setOnClickListener {
-            cancer_7_1_checkBox.isChecked = false
+        cancer_5_5_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
         }
-        cancer_7_3_checkBox.setOnClickListener {
-            cancer_7_1_checkBox.isChecked = false
+
+        cancer_6_0_checkBox.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
         }
-        cancer_7_4_checkBox.setOnClickListener {
-            cancer_7_1_checkBox.isChecked = false
+
+        cancer_6_1_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
         }
-        cancer_7_5_checkBox.setOnClickListener {
-            cancer_7_1_checkBox.isChecked = false
+
+        cancer_6_2_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
         }
-        cancer_7_6_checkBox.setOnClickListener {
-            cancer_7_1_checkBox.isChecked = false
+
+        cancer_6_3_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_6_4_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_6_5_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_7_0_checkBox.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_7_1_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_7_2_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_7_3_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_7_4_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_7_5_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_16_0_checkBox.setOnCheckedChangeListener {
+
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_16_1_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_16_2_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_16_3_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_16_4_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_16_5_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
+        }
+
+        cancer_16_6_checkBox.setOnCheckedChangeListener {
+            buttonView, isChecked ->
+
+            cancerCheckCondition(buttonView, isChecked)
+
         }
 
         cancer_8_1.setOnCheckedChangeListener {
@@ -448,24 +557,22 @@ class CancerExaminationActivity : RootActivity(){
         var ck4_6 = ""
         var ck4_7 = ""
         var ck4_8 = ""
+        var ck4_9 = ""
         var ck5_1 = ""
         var ck5_2 = ""
         var ck5_3 = ""
         var ck5_4 = ""
         var ck5_5 = ""
-        var ck5_6 = ""
         var ck6_1 = ""
         var ck6_2 = ""
         var ck6_3 = ""
         var ck6_4 = ""
         var ck6_5 = ""
-        var ck6_6 = ""
         var ck7_1 = ""
         var ck7_2 = ""
         var ck7_3 = ""
         var ck7_4 = ""
         var ck7_5 = ""
-        var ck7_6 = ""
         var ck8_1 = ""
         var ck8_2 = ""
         var ck9_1 = ""
@@ -475,6 +582,18 @@ class CancerExaminationActivity : RootActivity(){
         var ck12 = ""
         var ck13 = ""
         var ck14 = ""
+        var ck15_5 = ""
+        var ck15_5_1 = ""
+        var ck15_5_2 = ""
+        var ck15_5_3 = ""
+        var ck15_5_4 = ""
+        var ck15_5_5 = ""
+        var ck16_1 = ""
+        var ck16_2 = ""
+        var ck16_3 = ""
+        var ck16_4 = ""
+        var ck16_5 = ""
+        var ck16_6 = ""
 
 
         if (!name_edit.text.isNullOrEmpty()) {
@@ -842,99 +961,122 @@ class CancerExaminationActivity : RootActivity(){
         }
 
         when {
+            cancer_4_9_1.isChecked -> ck4_9 = "1"
+            cancer_4_9_2.isChecked -> ck4_9 = "2"
+            cancer_4_9_3.isChecked -> ck4_9 = "3"
+            cancer_4_9_4.isChecked -> ck4_9 = "4"
+        }
+
+        when {
             cancer_4_8_1.isChecked -> ck4_8 = "1"
             cancer_4_8_2.isChecked -> ck4_8 = "2"
             cancer_4_8_3.isChecked -> ck4_8 = "3"
             cancer_4_8_4.isChecked -> ck4_8 = "4"
         }
 
-        ck5_6 = when {
+        ck5_1 = when {
             cancer_5_1_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck5_1 = when {
+        ck5_2 = when {
             cancer_5_2_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck5_2 = when {
+        ck5_3 = when {
             cancer_5_3_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck5_3 = when {
+        ck5_4 = when {
             cancer_5_4_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck5_4 = when {
+        ck5_5 = when {
             cancer_5_5_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck5_5 = when {
-            cancer_5_6_checkBox.isChecked -> "2"
-            else -> "1"
-        }
-
-        ck6_6 = when {
+        ck6_1 = when {
             cancer_6_1_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck6_1 = when {
+        ck6_2 = when {
             cancer_6_2_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck6_2 = when {
+        ck6_3 = when {
             cancer_6_3_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck6_3 = when {
+        ck6_4 = when {
             cancer_6_4_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck6_4 = when {
+        ck6_5 = when {
             cancer_6_5_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck6_5 = when {
-            cancer_6_6_checkBox.isChecked -> "2"
-            else -> "1"
-        }
-
-        ck7_6 = when {
+        ck7_1 = when {
             cancer_7_1_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck7_1 = when {
+        ck7_2 = when {
             cancer_7_2_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck7_2 = when {
+        ck7_3 = when {
             cancer_7_3_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck7_3 = when {
+        ck7_4 = when {
             cancer_7_4_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck7_4 = when {
+        ck7_5 = when {
             cancer_7_5_checkBox.isChecked -> "2"
             else -> "1"
         }
 
-        ck7_5 = when {
-            cancer_7_6_checkBox.isChecked -> "2"
+
+        ck16_1 = when {
+            cancer_16_1_checkBox.isChecked -> "2"
+            else -> "1"
+        }
+
+        ck16_2 = when {
+            cancer_16_2_checkBox.isChecked -> "2"
+            else -> "1"
+        }
+
+        ck16_3 = when {
+            cancer_16_3_checkBox.isChecked -> "2"
+            else -> "1"
+        }
+
+        ck16_4 = when {
+            cancer_16_4_checkBox.isChecked -> "2"
+            else -> "1"
+        }
+
+        ck16_5 = when {
+            cancer_16_5_checkBox.isChecked -> "2"
+            else -> "1"
+        }
+
+        ck16_6 = when {
+            cancer_16_6_checkBox.isChecked -> "2"
             else -> "1"
         }
 
@@ -1016,9 +1158,7 @@ class CancerExaminationActivity : RootActivity(){
                 ck3_5, ck3_5_1, ck3_5_2, ck3_5_3, ck3_5_4, ck3_5_5,
                 ck3_6, ck3_6_1, ck3_6_2, ck3_6_3, ck3_6_4, ck3_6_5, ck3_6_kita,
                 ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6,
-                ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck5_6, ck6_1, ck6_2, ck6_3, ck6_4,
-                ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2, ck9_1, ck9_2,
-                ck10, ck11, ck12, ck13, ck14)
+                ck4_7, ck4_8, ck4_9, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck6_1, ck6_2, ck6_3, ck6_4, ck6_5, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck8_1, ck8_2, ck9_1, ck9_2, ck10, ck11, ck12, ck13, ck14, ck15_5, ck15_5_1, ck15_5_2, ck15_5_3, ck15_5_4, ck15_5_5, ck16_1, ck16_2, ck16_3, ck16_4, ck16_5, ck16_6)
 
     }
 
@@ -1078,24 +1218,22 @@ class CancerExaminationActivity : RootActivity(){
         var ck4_6 = ""
         var ck4_7 = ""
         var ck4_8 = ""
+        var ck4_9 = ""
         var ck5_1 = ""
         var ck5_2 = ""
         var ck5_3 = ""
         var ck5_4 = ""
         var ck5_5 = ""
-        var ck5_6 = ""
         var ck6_1 = ""
         var ck6_2 = ""
         var ck6_3 = ""
         var ck6_4 = ""
         var ck6_5 = ""
-        var ck6_6 = ""
         var ck7_1 = ""
         var ck7_2 = ""
         var ck7_3 = ""
         var ck7_4 = ""
         var ck7_5 = ""
-        var ck7_6 = ""
         var ck8_1 = ""
         var ck8_2 = ""
         var ck9_1 = ""
@@ -1105,7 +1243,18 @@ class CancerExaminationActivity : RootActivity(){
         var ck12 = ""
         var ck13 = ""
         var ck14 = ""
-
+        var ck15_5 = ""
+        var ck15_5_1 = ""
+        var ck15_5_2 = ""
+        var ck15_5_3 = ""
+        var ck15_5_4 = ""
+        var ck15_5_5 = ""
+        var ck16_1 = ""
+        var ck16_2 = ""
+        var ck16_3 = ""
+        var ck16_4 = ""
+        var ck16_5 = ""
+        var ck16_6 = ""
 
         if (!name_edit.text.isNullOrEmpty()) {
             name = name_edit.text.toString()
@@ -1396,6 +1545,53 @@ class CancerExaminationActivity : RootActivity(){
             return false
         }
 
+        if(cancer_15_5_1.isChecked){
+            ck15_5 = "1"
+        }else if(cancer_15_5_2.isChecked){
+            ck15_5 = "3"
+        }else if(cancer_15_5_3.isChecked){
+            ck15_5 = "2"
+            if(cancer_15_5_checkBox1.isChecked){
+            }else if(cancer_15_5_checkBox2.isChecked){
+            }else if(cancer_15_5_checkBox3.isChecked){
+            }else if(cancer_15_5_checkBox4.isChecked){
+            }else if(cancer_15_5_checkBox5.isChecked){
+            }else{
+                Toast.makeText(this, "3-6번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
+            }
+
+            if(cancer_15_5_checkBox1.isChecked){
+                ck15_5_1 = "2"
+            }else{
+                ck15_5_1 = "1"
+            }
+            if(cancer_15_5_checkBox2.isChecked){
+                ck15_5_2 = "2"
+            }else{
+                ck15_5_2 = "1"
+            }
+            if(cancer_15_5_checkBox3.isChecked){
+                ck15_5_3 = "2"
+            }else{
+                ck15_5_3 = "1"
+            }
+            if(cancer_15_5_checkBox4.isChecked){
+                ck15_5_4 = "2"
+            }else{
+                ck15_5_4 = "1"
+            }
+            if(cancer_15_5_checkBox5.isChecked){
+                ck15_5_5 = "2"
+            }else{
+                ck15_5_5 = "1"
+            }
+
+        }else{
+            Toast.makeText(this, "3-6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
+        }
+
         if(cancer_3_6_1.isChecked){
             ck3_6 = "1"
         }else if(cancer_3_6_2.isChecked){
@@ -1408,7 +1604,7 @@ class CancerExaminationActivity : RootActivity(){
             }else if(cancer_3_6_checkBox4.isChecked){
             }else if(cancer_3_6_checkBox5.isChecked){
             }else{
-                Toast.makeText(this, "3-6번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "3-7번 가족관계를 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
 
@@ -1443,7 +1639,7 @@ class CancerExaminationActivity : RootActivity(){
             }
 
         }else{
-            Toast.makeText(this, "3-6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "3-7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
             return false
         }
 
@@ -1455,6 +1651,9 @@ class CancerExaminationActivity : RootActivity(){
             ck4_1 = "3"
         }else if(cancer_4_1_4.isChecked){
             ck4_1 = "4"
+        }else{
+            Toast.makeText(this, "4-1번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(cancer_4_2_1.isChecked){
@@ -1465,6 +1664,9 @@ class CancerExaminationActivity : RootActivity(){
             ck4_2 = "3"
         }else if(cancer_4_2_4.isChecked){
             ck4_2 = "4"
+        }else{
+            Toast.makeText(this, "4-2번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(AdditionalArr.Gender.isFemale){
@@ -1477,6 +1679,9 @@ class CancerExaminationActivity : RootActivity(){
             }else if(cancer_4_3_4.isChecked){
                 ck4_3 = "4"
             }
+        }else{
+            Toast.makeText(this, "4-3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(cancer_4_4_1.isChecked){
@@ -1487,6 +1692,9 @@ class CancerExaminationActivity : RootActivity(){
             ck4_4 = "3"
         }else if(cancer_4_4_4.isChecked){
             ck4_4 = "4"
+        }else{
+            Toast.makeText(this, "4-4번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(cancer_4_5_1.isChecked){
@@ -1497,6 +1705,9 @@ class CancerExaminationActivity : RootActivity(){
             ck4_5 = "3"
         }else if(cancer_4_5_4.isChecked){
             ck4_5 = "4"
+        }else{
+            Toast.makeText(this, "4-5번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
 
@@ -1508,6 +1719,9 @@ class CancerExaminationActivity : RootActivity(){
             ck4_6 = "3"
         }else if(cancer_4_6_4.isChecked){
             ck4_6 = "4"
+        }else{
+            Toast.makeText(this, "4-6번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(AdditionalArr.Gender.isFemale){
@@ -1519,7 +1733,23 @@ class CancerExaminationActivity : RootActivity(){
                 ck4_7 = "3"
             }else if(cancer_4_7_4.isChecked){
                 ck4_7 = "4"
+            }else{
+                Toast.makeText(this, "4-7번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
             }
+        }
+
+        if(cancer_4_9_1.isChecked){
+            ck4_9 = "1"
+        }else if(cancer_4_9_2.isChecked){
+            ck4_9 = "2"
+        }else if(cancer_4_9_3.isChecked){
+            ck4_9 = "3"
+        }else if(cancer_4_9_4.isChecked){
+            ck4_9 = "4"
+        }else{
+            Toast.makeText(this, "4-8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(cancer_4_8_1.isChecked){
@@ -1530,114 +1760,135 @@ class CancerExaminationActivity : RootActivity(){
             ck4_8 = "3"
         }else if(cancer_4_8_4.isChecked){
             ck4_8 = "4"
+        }else{
+            Toast.makeText(this, "4-9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+            return false
         }
 
         if(cancer_5_1_checkBox.isChecked){
-            ck5_6 = "2"
-        }else{
-            ck5_6 = "1"
-        }
-
-        if(cancer_5_2_checkBox.isChecked){
             ck5_1 = "2"
         }else{
             ck5_1 = "1"
         }
 
-        if(cancer_5_3_checkBox.isChecked){
+        if(cancer_5_2_checkBox.isChecked){
             ck5_2 = "2"
         }else{
             ck5_2 = "1"
         }
 
-        if(cancer_5_4_checkBox.isChecked){
+        if(cancer_5_3_checkBox.isChecked){
             ck5_3 = "2"
         }else{
             ck5_3 = "1"
         }
 
-        if(cancer_5_5_checkBox.isChecked){
+        if(cancer_5_4_checkBox.isChecked){
             ck5_4 = "2"
         }else{
             ck5_4 = "1"
         }
 
-        if(cancer_5_6_checkBox.isChecked){
+        if(cancer_5_5_checkBox.isChecked){
             ck5_5 = "2"
         }else{
             ck5_5 = "1"
         }
 
         if(cancer_6_1_checkBox.isChecked){
-            ck6_6 = "2"
-        }else{
-            ck6_6 = "1"
-        }
-
-        if(cancer_6_2_checkBox.isChecked){
             ck6_1 = "2"
         }else{
             ck6_1 = "1"
         }
 
-        if(cancer_6_3_checkBox.isChecked){
+        if(cancer_6_2_checkBox.isChecked){
             ck6_2 = "2"
         }else{
             ck6_2 = "1"
         }
 
-        if(cancer_6_4_checkBox.isChecked){
+        if(cancer_6_3_checkBox.isChecked){
             ck6_3 = "2"
         }else{
             ck6_3 = "1"
         }
 
-        if(cancer_6_5_checkBox.isChecked){
+        if(cancer_6_4_checkBox.isChecked){
             ck6_4 = "2"
         }else{
             ck6_4 = "1"
         }
 
-        if(cancer_6_6_checkBox.isChecked){
+        if(cancer_6_5_checkBox.isChecked){
             ck6_5 = "2"
         }else{
             ck6_5 = "1"
         }
 
         if(cancer_7_1_checkBox.isChecked){
-            ck7_6 = "2"
-        }else{
-            ck7_6 = "1"
-        }
-
-        if(cancer_7_2_checkBox.isChecked){
             ck7_1 = "2"
         }else{
             ck7_1 = "1"
         }
 
-        if(cancer_7_3_checkBox.isChecked){
+        if(cancer_7_2_checkBox.isChecked){
             ck7_2 = "2"
         }else{
             ck7_2 = "1"
         }
 
-        if(cancer_7_4_checkBox.isChecked){
+        if(cancer_7_3_checkBox.isChecked){
             ck7_3 = "2"
         }else{
             ck7_3 = "1"
         }
 
-        if(cancer_7_5_checkBox.isChecked){
+        if(cancer_7_4_checkBox.isChecked){
             ck7_4 = "2"
         }else{
             ck7_4 = "1"
         }
 
-        if(cancer_7_6_checkBox.isChecked){
+        if(cancer_7_5_checkBox.isChecked){
             ck7_5 = "2"
         }else{
             ck7_5 = "1"
+        }
+
+        if(cancer_16_1_checkBox.isChecked){
+            ck16_1 = "2"
+        }else{
+            ck16_1 = "1"
+        }
+
+        if(cancer_16_2_checkBox.isChecked){
+            ck16_2 = "2"
+        }else{
+            ck16_2 = "1"
+        }
+
+        if(cancer_16_3_checkBox.isChecked){
+            ck16_3 = "2"
+        }else{
+            ck16_3 = "1"
+        }
+
+        if(cancer_16_4_checkBox.isChecked){
+            ck16_4 = "2"
+        }else{
+            ck16_4 = "1"
+        }
+
+        if(cancer_16_5_checkBox.isChecked){
+            ck16_5 = "2"
+        }else{
+            ck16_5 = "1"
+        }
+
+        if(cancer_16_6_checkBox.isChecked){
+            ck16_6 = "2"
+        }else{
+            ck16_6 = "1"
         }
 
         if(AdditionalArr.Gender.isFemale){
@@ -1747,9 +1998,9 @@ class CancerExaminationActivity : RootActivity(){
                 ck3_5, ck3_5_1, ck3_5_2, ck3_5_3, ck3_5_4, ck3_5_5,
                 ck3_6, ck3_6_1, ck3_6_2, ck3_6_3, ck3_6_4, ck3_6_5, ck3_6_kita,
                 ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6,
-                ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck5_6, ck6_1, ck6_2, ck6_3, ck6_4,
-                ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2, ck9_1, ck9_2,
-                ck10, ck11, ck12, ck13, ck14)
+                ck4_7, ck4_8, ck4_9, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5, ck6_1, ck6_2, ck6_3, ck6_4,
+                ck6_5, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck8_1, ck8_2, ck9_1, ck9_2,
+                ck10, ck11, ck12, ck13, ck14, ck15_5, ck15_5_1, ck15_5_2, ck15_5_3, ck15_5_4, ck15_5_5, ck16_1, ck16_2, ck16_3, ck16_4, ck16_5, ck16_6)
 
         if(ChartDivision.ChartDivision.next_or_save(6)){
             SavedListObject.SavedList.savedDataClass.cancerSaved = true
@@ -1956,6 +2207,38 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
+        if(paper.ck15_5 == "1"){
+            cancer_15_5_1.isChecked = true
+
+        }else if(paper.ck15_5 == "3"){
+            cancer_15_5_2.isChecked = true
+
+        }else if(paper.ck15_5 == "2"){
+            cancer_15_5_2.isChecked = true
+
+            cancer_15_5_checkBox1.visibility = View.VISIBLE
+            cancer_15_5_checkBox2.visibility = View.VISIBLE
+            cancer_15_5_checkBox3.visibility = View.VISIBLE
+            cancer_15_5_checkBox4.visibility = View.VISIBLE
+            cancer_15_5_checkBox5.visibility = View.VISIBLE
+
+            if(paper.ck15_5_1 == "1"){
+                cancer_15_5_checkBox1.isChecked = true
+            }
+            if(paper.ck15_5_2 == "2"){
+                cancer_15_5_checkBox2.isChecked = true
+            }
+            if(paper.ck15_5_3 == "3"){
+                cancer_15_5_checkBox3.isChecked = true
+            }
+            if(paper.ck15_5_4 == "4"){
+                cancer_15_5_checkBox4.isChecked = true
+            }
+            if(paper.ck15_5_5 == "5"){
+                cancer_15_5_checkBox5.isChecked = true
+            }
+
+        }
 
         if(paper.ck3_6 == "1"){
             cancer_3_6_1.isChecked = true
@@ -1994,7 +2277,6 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
-
         if(paper.ck4_1 == "1"){
             cancer_4_1_1.isChecked = true
         }else if(paper.ck4_1 == "2"){
@@ -2027,7 +2309,6 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_3_4.isChecked = true
         }
 
-
         if(paper.ck4_4 == "1"){
             cancer_4_4_1.isChecked = true
         }else if(paper.ck4_4 == "2"){
@@ -2037,7 +2318,6 @@ class CancerExaminationActivity : RootActivity(){
         }else if(paper.ck4_4 == "4"){
             cancer_4_4_4.isChecked = true
         }
-
 
         if(paper.ck4_5 == "1"){
             cancer_4_5_1.isChecked = true
@@ -2049,7 +2329,6 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_5_4.isChecked = true
         }
 
-
         if(paper.ck4_6 == "1"){
             cancer_4_6_1.isChecked = true
         }else if(paper.ck4_6 == "2"){
@@ -2059,7 +2338,6 @@ class CancerExaminationActivity : RootActivity(){
         }else if(paper.ck4_6 == "4"){
             cancer_4_6_4.isChecked = true
         }
-
 
         if(paper.ck4_7 == "1"){
             cancer_4_7_1.isChecked = true
@@ -2071,6 +2349,15 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_7_4.isChecked = true
         }
 
+        if(paper.ck4_9 == "1"){
+            cancer_4_9_1.isChecked = true
+        }else if(paper.ck4_8 == "2"){
+            cancer_4_9_2.isChecked = true
+        }else if(paper.ck4_8 == "3"){
+            cancer_4_9_3.isChecked = true
+        }else if(paper.ck4_8 == "4"){
+            cancer_4_9_4.isChecked = true
+        }
 
         if(paper.ck4_8 == "1"){
             cancer_4_8_1.isChecked = true
@@ -2082,65 +2369,85 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_8_4.isChecked = true
         }
 
+        if(paper.ck5_1 != "2" && paper.ck5_2 != "2" && paper.ck5_3 != "2" && paper.ck5_4 != "2" && paper.ck5_5 != "2"){
+            cancer_5_0_checkBox.isChecked = true
+        }
         if(paper.ck5_1 == "2"){
-            cancer_5_2_checkBox.isChecked = true
-        }
-        if(paper.ck5_2 == "2"){
-            cancer_5_3_checkBox.isChecked = true
-        }
-        if(paper.ck5_3 == "2"){
-            cancer_5_4_checkBox.isChecked = true
-        }
-        if(paper.ck5_4 == "2"){
-            cancer_5_5_checkBox.isChecked = true
-        }
-        if(paper.ck5_5 == "2"){
-            cancer_5_6_checkBox.isChecked = true
-        }
-        if(paper.ck5_6 == "2"){
             cancer_5_1_checkBox.isChecked = true
         }
+        if(paper.ck5_2 == "2"){
+            cancer_5_2_checkBox.isChecked = true
+        }
+        if(paper.ck5_3 == "2"){
+            cancer_5_3_checkBox.isChecked = true
+        }
+        if(paper.ck5_4 == "2"){
+            cancer_5_4_checkBox.isChecked = true
+        }
+        if(paper.ck5_5 == "2"){
+            cancer_5_5_checkBox.isChecked = true
+        }
 
-
+        if(paper.ck6_1 != "2" && paper.ck6_2 != "2" && paper.ck6_3 != "2" && paper.ck6_4 != "2" && paper.ck6_5 != "2"){
+            cancer_6_0_checkBox.isChecked = true
+        }
         if(paper.ck6_1 == "2"){
-            cancer_6_2_checkBox.isChecked = true
-        }
-        if(paper.ck6_2 == "2"){
-            cancer_6_3_checkBox.isChecked = true
-        }
-        if(paper.ck6_3 == "2"){
-            cancer_6_4_checkBox.isChecked = true
-        }
-        if(paper.ck6_4 == "2"){
-            cancer_6_5_checkBox.isChecked = true
-        }
-        if(paper.ck6_5 == "2"){
-            cancer_6_6_checkBox.isChecked = true
-        }
-        if(paper.ck6_6 == "2"){
             cancer_6_1_checkBox.isChecked = true
         }
+        if(paper.ck6_2 == "2"){
+            cancer_6_2_checkBox.isChecked = true
+        }
+        if(paper.ck6_3 == "2"){
+            cancer_6_3_checkBox.isChecked = true
+        }
+        if(paper.ck6_4 == "2"){
+            cancer_6_4_checkBox.isChecked = true
+        }
+        if(paper.ck6_5 == "2"){
+            cancer_6_5_checkBox.isChecked = true
+        }
 
+
+        if(paper.ck7_1 != "2" && paper.ck7_2 != "2" && paper.ck7_3 != "2" && paper.ck7_4 != "2" && paper.ck7_5 != "2"){
+            cancer_7_0_checkBox.isChecked = true
+        }
         if(paper.ck7_1 == "2"){
-            cancer_7_2_checkBox.isChecked = true
-        }
-        if(paper.ck7_2 == "2"){
-            cancer_7_3_checkBox.isChecked = true
-        }
-        if(paper.ck7_3 == "2"){
-            cancer_7_4_checkBox.isChecked = true
-        }
-        if(paper.ck7_4 == "2"){
-            cancer_7_5_checkBox.isChecked = true
-        }
-        if(paper.ck7_5 == "2"){
-            cancer_7_6_checkBox.isChecked = true
-        }
-        if(paper.ck7_6 == "2"){
             cancer_7_1_checkBox.isChecked = true
         }
+        if(paper.ck7_2 == "2"){
+            cancer_7_2_checkBox.isChecked = true
+        }
+        if(paper.ck7_3 == "2"){
+            cancer_7_3_checkBox.isChecked = true
+        }
+        if(paper.ck7_4 == "2"){
+            cancer_7_4_checkBox.isChecked = true
+        }
+        if(paper.ck7_5 == "2"){
+            cancer_7_5_checkBox.isChecked = true
+        }
 
-
+        if(paper.ck16_1 != "2" && paper.ck16_2 != "2" && paper.ck16_3 != "2" && paper.ck16_4 != "2" && paper.ck16_5 != "2" && paper.ck16_6 != "2"){
+            cancer_16_0_checkBox.isChecked = true
+        }
+        if(paper.ck16_1 == "2"){
+            cancer_16_1_checkBox.isChecked = true
+        }
+        if(paper.ck16_2 == "2"){
+            cancer_16_2_checkBox.isChecked = true
+        }
+        if(paper.ck16_3 == "2"){
+            cancer_16_3_checkBox.isChecked = true
+        }
+        if(paper.ck16_4 == "2"){
+            cancer_16_4_checkBox.isChecked = true
+        }
+        if(paper.ck16_5 == "2"){
+            cancer_16_5_checkBox.isChecked = true
+        }
+        if(paper.ck16_6 == "2"){
+            cancer_16_6_checkBox.isChecked = true
+        }
 
         if(paper.ck8_1 == "1"){
             cancer_8_1.isChecked = true
@@ -2539,6 +2846,16 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_7_4.isChecked = true
         }
 
+        if(paper.ck4_9 == "1"){
+            cancer_4_9_1.isChecked = true
+        }else if(paper.ck4_8 == "2"){
+            cancer_4_9_2.isChecked = true
+        }else if(paper.ck4_8 == "3"){
+            cancer_4_9_3.isChecked = true
+        }else if(paper.ck4_8 == "4"){
+            cancer_4_9_4.isChecked = true
+        }
+
 
         if(paper.ck4_8 == "1"){
             cancer_4_8_1.isChecked = true
@@ -2550,65 +2867,85 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_8_4.isChecked = true
         }
 
+        if(paper.ck5_1 != "2" && paper.ck5_2 != "2" && paper.ck5_3 != "2" && paper.ck5_4 != "2" && paper.ck5_5 != "2"){
+            cancer_5_0_checkBox.isChecked = true
+        }
         if(paper.ck5_1 == "2"){
-            cancer_5_2_checkBox.isChecked = true
-        }
-        if(paper.ck5_2 == "2"){
-            cancer_5_3_checkBox.isChecked = true
-        }
-        if(paper.ck5_3 == "2"){
-            cancer_5_4_checkBox.isChecked = true
-        }
-        if(paper.ck5_4 == "2"){
-            cancer_5_5_checkBox.isChecked = true
-        }
-        if(paper.ck5_5 == "2"){
-            cancer_5_6_checkBox.isChecked = true
-        }
-        if(paper.ck5_6 == "2"){
             cancer_5_1_checkBox.isChecked = true
         }
+        if(paper.ck5_2 == "2"){
+            cancer_5_2_checkBox.isChecked = true
+        }
+        if(paper.ck5_3 == "2"){
+            cancer_5_3_checkBox.isChecked = true
+        }
+        if(paper.ck5_4 == "2"){
+            cancer_5_4_checkBox.isChecked = true
+        }
+        if(paper.ck5_5 == "2"){
+            cancer_5_5_checkBox.isChecked = true
+        }
 
-
+        if(paper.ck6_1 != "2" && paper.ck6_2 != "2" && paper.ck6_3 != "2" && paper.ck6_4 != "2" && paper.ck6_5 != "2"){
+            cancer_6_0_checkBox.isChecked = true
+        }
         if(paper.ck6_1 == "2"){
-            cancer_6_2_checkBox.isChecked = true
-        }
-        if(paper.ck6_2 == "2"){
-            cancer_6_3_checkBox.isChecked = true
-        }
-        if(paper.ck6_3 == "2"){
-            cancer_6_4_checkBox.isChecked = true
-        }
-        if(paper.ck6_4 == "2"){
-            cancer_6_5_checkBox.isChecked = true
-        }
-        if(paper.ck6_5 == "2"){
-            cancer_6_6_checkBox.isChecked = true
-        }
-        if(paper.ck6_6 == "2"){
             cancer_6_1_checkBox.isChecked = true
         }
+        if(paper.ck6_2 == "2"){
+            cancer_6_2_checkBox.isChecked = true
+        }
+        if(paper.ck6_3 == "2"){
+            cancer_6_3_checkBox.isChecked = true
+        }
+        if(paper.ck6_4 == "2"){
+            cancer_6_4_checkBox.isChecked = true
+        }
+        if(paper.ck6_5 == "2"){
+            cancer_6_5_checkBox.isChecked = true
+        }
 
+
+        if(paper.ck7_1 != "2" && paper.ck7_2 != "2" && paper.ck7_3 != "2" && paper.ck7_4 != "2" && paper.ck7_5 != "2"){
+            cancer_7_0_checkBox.isChecked = true
+        }
         if(paper.ck7_1 == "2"){
-            cancer_7_2_checkBox.isChecked = true
-        }
-        if(paper.ck7_2 == "2"){
-            cancer_7_3_checkBox.isChecked = true
-        }
-        if(paper.ck7_3 == "2"){
-            cancer_7_4_checkBox.isChecked = true
-        }
-        if(paper.ck7_4 == "2"){
-            cancer_7_5_checkBox.isChecked = true
-        }
-        if(paper.ck7_5 == "2"){
-            cancer_7_6_checkBox.isChecked = true
-        }
-        if(paper.ck7_6 == "2"){
             cancer_7_1_checkBox.isChecked = true
         }
+        if(paper.ck7_2 == "2"){
+            cancer_7_2_checkBox.isChecked = true
+        }
+        if(paper.ck7_3 == "2"){
+            cancer_7_3_checkBox.isChecked = true
+        }
+        if(paper.ck7_4 == "2"){
+            cancer_7_4_checkBox.isChecked = true
+        }
+        if(paper.ck7_5 == "2"){
+            cancer_7_5_checkBox.isChecked = true
+        }
 
-
+        if(paper.ck16_1 != "2" && paper.ck16_2 != "2" && paper.ck16_3 != "2" && paper.ck16_4 != "2" && paper.ck16_5 != "2" && paper.ck16_6 != "2"){
+            cancer_16_0_checkBox.isChecked = true
+        }
+        if(paper.ck16_1 == "2"){
+            cancer_16_1_checkBox.isChecked = true
+        }
+        if(paper.ck16_2 == "2"){
+            cancer_16_2_checkBox.isChecked = true
+        }
+        if(paper.ck16_3 == "2"){
+            cancer_16_3_checkBox.isChecked = true
+        }
+        if(paper.ck16_4 == "2"){
+            cancer_16_4_checkBox.isChecked = true
+        }
+        if(paper.ck16_5 == "2"){
+            cancer_16_5_checkBox.isChecked = true
+        }
+        if(paper.ck16_6 == "2"){
+            cancer_16_6_checkBox.isChecked = true
+        }
 
         if(paper.ck8_1 == "1"){
             cancer_8_1.isChecked = true
@@ -2700,7 +3037,6 @@ class CancerExaminationActivity : RootActivity(){
         cancer_examination_save.visibility = View.GONE
         cancer_examination_cancel.visibility = View.GONE
         cancer_edit_submit.visibility = View.VISIBLE
-
 
         if(paper.ck1 == "1"){
             cancer_1_1.isChecked = true
@@ -2893,6 +3229,38 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
+        if(paper.ck15_5 == "1"){
+            cancer_15_5_1.isChecked = true
+
+        }else if(paper.ck15_5 == "3"){
+            cancer_15_5_2.isChecked = true
+
+        }else if(paper.ck15_5 == "2"){
+            cancer_15_5_2.isChecked = true
+
+            cancer_15_5_checkBox1.visibility = View.VISIBLE
+            cancer_15_5_checkBox2.visibility = View.VISIBLE
+            cancer_15_5_checkBox3.visibility = View.VISIBLE
+            cancer_15_5_checkBox4.visibility = View.VISIBLE
+            cancer_15_5_checkBox5.visibility = View.VISIBLE
+
+            if(paper.ck15_5_1 == "1"){
+                cancer_15_5_checkBox1.isChecked = true
+            }
+            if(paper.ck15_5_2 == "2"){
+                cancer_15_5_checkBox2.isChecked = true
+            }
+            if(paper.ck15_5_3 == "3"){
+                cancer_15_5_checkBox3.isChecked = true
+            }
+            if(paper.ck15_5_4 == "4"){
+                cancer_15_5_checkBox4.isChecked = true
+            }
+            if(paper.ck15_5_5 == "5"){
+                cancer_15_5_checkBox5.isChecked = true
+            }
+
+        }
 
         if(paper.ck3_6 == "1"){
             cancer_3_6_1.isChecked = true
@@ -2931,7 +3299,6 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
-
         if(paper.ck4_1 == "1"){
             cancer_4_1_1.isChecked = true
         }else if(paper.ck4_1 == "2"){
@@ -2964,7 +3331,6 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_3_4.isChecked = true
         }
 
-
         if(paper.ck4_4 == "1"){
             cancer_4_4_1.isChecked = true
         }else if(paper.ck4_4 == "2"){
@@ -2974,7 +3340,6 @@ class CancerExaminationActivity : RootActivity(){
         }else if(paper.ck4_4 == "4"){
             cancer_4_4_4.isChecked = true
         }
-
 
         if(paper.ck4_5 == "1"){
             cancer_4_5_1.isChecked = true
@@ -2986,7 +3351,6 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_5_4.isChecked = true
         }
 
-
         if(paper.ck4_6 == "1"){
             cancer_4_6_1.isChecked = true
         }else if(paper.ck4_6 == "2"){
@@ -2996,7 +3360,6 @@ class CancerExaminationActivity : RootActivity(){
         }else if(paper.ck4_6 == "4"){
             cancer_4_6_4.isChecked = true
         }
-
 
         if(paper.ck4_7 == "1"){
             cancer_4_7_1.isChecked = true
@@ -3008,6 +3371,15 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_7_4.isChecked = true
         }
 
+        if(paper.ck4_9 == "1"){
+            cancer_4_9_1.isChecked = true
+        }else if(paper.ck4_8 == "2"){
+            cancer_4_9_2.isChecked = true
+        }else if(paper.ck4_8 == "3"){
+            cancer_4_9_3.isChecked = true
+        }else if(paper.ck4_8 == "4"){
+            cancer_4_9_4.isChecked = true
+        }
 
         if(paper.ck4_8 == "1"){
             cancer_4_8_1.isChecked = true
@@ -3019,65 +3391,85 @@ class CancerExaminationActivity : RootActivity(){
             cancer_4_8_4.isChecked = true
         }
 
+        if(paper.ck5_1 != "2" && paper.ck5_2 != "2" && paper.ck5_3 != "2" && paper.ck5_4 != "2" && paper.ck5_5 != "2"){
+            cancer_5_0_checkBox.isChecked = true
+        }
         if(paper.ck5_1 == "2"){
-            cancer_5_2_checkBox.isChecked = true
-        }
-        if(paper.ck5_2 == "2"){
-            cancer_5_3_checkBox.isChecked = true
-        }
-        if(paper.ck5_3 == "2"){
-            cancer_5_4_checkBox.isChecked = true
-        }
-        if(paper.ck5_4 == "2"){
-            cancer_5_5_checkBox.isChecked = true
-        }
-        if(paper.ck5_5 == "2"){
-            cancer_5_6_checkBox.isChecked = true
-        }
-        if(paper.ck5_6 == "2"){
             cancer_5_1_checkBox.isChecked = true
         }
+        if(paper.ck5_2 == "2"){
+            cancer_5_2_checkBox.isChecked = true
+        }
+        if(paper.ck5_3 == "2"){
+            cancer_5_3_checkBox.isChecked = true
+        }
+        if(paper.ck5_4 == "2"){
+            cancer_5_4_checkBox.isChecked = true
+        }
+        if(paper.ck5_5 == "2"){
+            cancer_5_5_checkBox.isChecked = true
+        }
 
-
+        if(paper.ck6_1 != "2" && paper.ck6_2 != "2" && paper.ck6_3 != "2" && paper.ck6_4 != "2" && paper.ck6_5 != "2"){
+            cancer_6_0_checkBox.isChecked = true
+        }
         if(paper.ck6_1 == "2"){
-            cancer_6_2_checkBox.isChecked = true
-        }
-        if(paper.ck6_2 == "2"){
-            cancer_6_3_checkBox.isChecked = true
-        }
-        if(paper.ck6_3 == "2"){
-            cancer_6_4_checkBox.isChecked = true
-        }
-        if(paper.ck6_4 == "2"){
-            cancer_6_5_checkBox.isChecked = true
-        }
-        if(paper.ck6_5 == "2"){
-            cancer_6_6_checkBox.isChecked = true
-        }
-        if(paper.ck6_6 == "2"){
             cancer_6_1_checkBox.isChecked = true
         }
+        if(paper.ck6_2 == "2"){
+            cancer_6_2_checkBox.isChecked = true
+        }
+        if(paper.ck6_3 == "2"){
+            cancer_6_3_checkBox.isChecked = true
+        }
+        if(paper.ck6_4 == "2"){
+            cancer_6_4_checkBox.isChecked = true
+        }
+        if(paper.ck6_5 == "2"){
+            cancer_6_5_checkBox.isChecked = true
+        }
 
+
+        if(paper.ck7_1 != "2" && paper.ck7_2 != "2" && paper.ck7_3 != "2" && paper.ck7_4 != "2" && paper.ck7_5 != "2"){
+            cancer_7_0_checkBox.isChecked = true
+        }
         if(paper.ck7_1 == "2"){
-            cancer_7_2_checkBox.isChecked = true
-        }
-        if(paper.ck7_2 == "2"){
-            cancer_7_3_checkBox.isChecked = true
-        }
-        if(paper.ck7_3 == "2"){
-            cancer_7_4_checkBox.isChecked = true
-        }
-        if(paper.ck7_4 == "2"){
-            cancer_7_5_checkBox.isChecked = true
-        }
-        if(paper.ck7_5 == "2"){
-            cancer_7_6_checkBox.isChecked = true
-        }
-        if(paper.ck7_6 == "2"){
             cancer_7_1_checkBox.isChecked = true
         }
+        if(paper.ck7_2 == "2"){
+            cancer_7_2_checkBox.isChecked = true
+        }
+        if(paper.ck7_3 == "2"){
+            cancer_7_3_checkBox.isChecked = true
+        }
+        if(paper.ck7_4 == "2"){
+            cancer_7_4_checkBox.isChecked = true
+        }
+        if(paper.ck7_5 == "2"){
+            cancer_7_5_checkBox.isChecked = true
+        }
 
-
+        if(paper.ck16_1 != "2" && paper.ck16_2 != "2" && paper.ck16_3 != "2" && paper.ck16_4 != "2" && paper.ck16_5 != "2" && paper.ck16_6 != "2"){
+            cancer_16_0_checkBox.isChecked = true
+        }
+        if(paper.ck16_1 == "2"){
+            cancer_16_1_checkBox.isChecked = true
+        }
+        if(paper.ck16_2 == "2"){
+            cancer_16_2_checkBox.isChecked = true
+        }
+        if(paper.ck16_3 == "2"){
+            cancer_16_3_checkBox.isChecked = true
+        }
+        if(paper.ck16_4 == "2"){
+            cancer_16_4_checkBox.isChecked = true
+        }
+        if(paper.ck16_5 == "2"){
+            cancer_16_5_checkBox.isChecked = true
+        }
+        if(paper.ck16_6 == "2"){
+            cancer_16_6_checkBox.isChecked = true
+        }
 
         if(paper.ck8_1 == "1"){
             cancer_8_1.isChecked = true
@@ -3151,6 +3543,117 @@ class CancerExaminationActivity : RootActivity(){
             cancer_14_3.isChecked = true
         }
 
+    }
+
+    fun whenRadioChanged(buttonView : View, isChecked : Boolean){
+
+        when(buttonView.id){
+
+            R.id.cancer_3_1_3 -> {
+                if(!isChecked){
+                    cancer_3_1_checkBox1.isChecked = false
+                    cancer_3_1_checkBox2.isChecked = false
+                    cancer_3_1_checkBox3.isChecked = false
+                    cancer_3_1_checkBox4.isChecked = false
+                    cancer_3_1_checkBox5.isChecked = false
+                }
+            }
+            R.id.cancer_3_2_3 -> {
+                if(!isChecked){
+                    cancer_3_2_checkBox1.isChecked = false
+                    cancer_3_2_checkBox2.isChecked = false
+                    cancer_3_2_checkBox3.isChecked = false
+                    cancer_3_2_checkBox4.isChecked = false
+                    cancer_3_2_checkBox5.isChecked = false
+                }
+            }
+            R.id.cancer_3_3_3 -> {
+                if(!isChecked){
+                    cancer_3_3_checkBox1.isChecked = false
+                    cancer_3_3_checkBox2.isChecked = false
+                    cancer_3_3_checkBox3.isChecked = false
+                    cancer_3_3_checkBox4.isChecked = false
+                    cancer_3_3_checkBox5.isChecked = false
+                }
+            }
+            R.id.cancer_3_4_3 -> {
+                if(!isChecked){
+                    cancer_3_4_checkBox1.isChecked = false
+                    cancer_3_4_checkBox2.isChecked = false
+                    cancer_3_4_checkBox3.isChecked = false
+                    cancer_3_4_checkBox4.isChecked = false
+                    cancer_3_4_checkBox5.isChecked = false
+                }
+            }
+            R.id.cancer_3_5_3 -> {
+                if(!isChecked){
+                    cancer_3_5_checkBox1.isChecked = false
+                    cancer_3_5_checkBox2.isChecked = false
+                    cancer_3_5_checkBox3.isChecked = false
+                    cancer_3_5_checkBox4.isChecked = false
+                    cancer_3_5_checkBox5.isChecked = false
+                }
+            }
+            R.id.cancer_3_6_3 -> {
+                if(!isChecked){
+                    cancer_3_6_checkBox1.isChecked = false
+                    cancer_3_6_checkBox2.isChecked = false
+                    cancer_3_6_checkBox3.isChecked = false
+                    cancer_3_6_checkBox4.isChecked = false
+                    cancer_3_6_checkBox5.isChecked = false
+                }
+            }
+        }
+
+    }
+
+    fun cancerCheckCondition(buttonView: View, isChecked: Boolean){
+        when(buttonView.id){
+            R.id.cancer_5_0_checkBox -> {
+                if(isChecked){
+                    cancer_5_1_checkBox.isChecked = false
+                    cancer_5_2_checkBox.isChecked = false
+                    cancer_5_3_checkBox.isChecked = false
+                    cancer_5_4_checkBox.isChecked = false
+                    cancer_5_5_checkBox.isChecked = false
+                }
+            }
+            R.id.cancer_5_1_checkBox or R.id.cancer_5_2_checkBox or
+            R.id.cancer_5_3_checkBox or R.id.cancer_5_4_checkBox or R.id.cancer_5_5_checkBox -> { cancer_5_0_checkBox.isChecked = false }
+            R.id.cancer_6_0_checkBox -> {
+                if(isChecked){
+                    cancer_6_1_checkBox.isChecked = false
+                    cancer_6_2_checkBox.isChecked = false
+                    cancer_6_3_checkBox.isChecked = false
+                    cancer_6_4_checkBox.isChecked = false
+                    cancer_6_5_checkBox.isChecked = false
+                }
+            }
+            R.id.cancer_6_1_checkBox or R.id.cancer_6_2_checkBox or
+            R.id.cancer_6_3_checkBox or R.id.cancer_6_4_checkBox or R.id.cancer_6_5_checkBox -> { cancer_6_0_checkBox.isChecked = false }
+            R.id.cancer_7_0_checkBox -> {
+                if(isChecked){
+                    cancer_7_1_checkBox.isChecked = false
+                    cancer_7_2_checkBox.isChecked = false
+                    cancer_7_3_checkBox.isChecked = false
+                    cancer_7_4_checkBox.isChecked = false
+                    cancer_7_5_checkBox.isChecked = false
+                }
+            }
+            R.id.cancer_7_1_checkBox or R.id.cancer_7_2_checkBox or
+            R.id.cancer_7_3_checkBox or R.id.cancer_7_4_checkBox or R.id.cancer_7_5_checkBox -> { cancer_7_0_checkBox.isChecked = false }
+            R.id.cancer_16_0_checkBox -> {
+                if(isChecked){
+                    cancer_16_1_checkBox.isChecked = false
+                    cancer_16_2_checkBox.isChecked = false
+                    cancer_16_3_checkBox.isChecked = false
+                    cancer_16_4_checkBox.isChecked = false
+                    cancer_16_5_checkBox.isChecked = false
+                }
+            }
+            R.id.cancer_16_1_checkBox or R.id.cancer_16_2_checkBox or R.id.cancer_16_3_checkBox
+            or R.id.cancer_16_4_checkBox or R.id.cancer_16_5_checkBox or R.id.cancer_16_6_checkBox -> { cancer_16_0_checkBox.isChecked = false }
+        }
     }
 
 }

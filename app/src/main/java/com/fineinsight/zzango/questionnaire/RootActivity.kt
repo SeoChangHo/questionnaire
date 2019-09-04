@@ -297,7 +297,7 @@ open class RootActivity : AppCompatActivity() {
                     drinking.visibility = View.VISIBLE
                 }
 
-                else -> { questionnaire_progress_wrapper.visibility = View.GONE }
+                else -> { (questionnaire_progress_wrapper.parent as View).visibility = View.GONE }
 
             }
 

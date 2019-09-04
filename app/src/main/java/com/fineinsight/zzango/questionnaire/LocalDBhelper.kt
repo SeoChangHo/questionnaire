@@ -799,9 +799,9 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "ck3_4, ck3_4_1, ck3_4_2, ck3_4_3, ck3_4_4, ck3_4_5," +
                 "ck3_5, ck3_5_1, ck3_5_2, ck3_5_3, ck3_5_4, ck3_5_5," +
                 "ck3_6, ck3_6_1, ck3_6_2, ck3_6_3, ck3_6_4, ck3_6_5, ck3_6_kita," +
-                "ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6, ck4_7, ck4_8, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5," +
-                "ck5_6, ck6_1, ck6_2, ck6_3, ck6_4, ck6_5, ck6_6, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck7_6, ck8_1, ck8_2," +
-                "ck9_1, ck9_2, ck10, ck11, ck12, ck13, ck14)" +
+                "ck4_1, ck4_2, ck4_3, ck4_4, ck4_5, ck4_6, ck4_7, ck4_8, ck4_9, ck5_1, ck5_2, ck5_3, ck5_4, ck5_5," +
+                "ck6_1, ck6_2, ck6_3, ck6_4, ck6_5, ck7_1, ck7_2, ck7_3, ck7_4, ck7_5, ck8_1, ck8_2," +
+                "ck9_1, ck9_2, ck10, ck11, ck12, ck13, ck14, ck15_5, ck15_5_1, ck15_5_2, ck15_5_3, ck15_5_4, ck15_5_5, ck16_1, ck16_2, ck16_3, ck16_4, ck16_5, ck16_6)" +
                 " VALUES (" +
                 "'${ex.exam_date}', '${ex.exam_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
                 ", '${ex.category}', '${ex.ck1}', '${ex.ck1_1}', '${ex.ck2}', '${ex.ck2_1}'" +
@@ -812,14 +812,15 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${ex.ck3_5}', '${ex.ck3_5_1}', '${ex.ck3_5_2}', '${ex.ck3_5_3}', '${ex.ck3_5_4}', '${ex.ck3_5_5}'" +
                 ", '${ex.ck3_6}', '${ex.ck3_6_1}', '${ex.ck3_6_2}', '${ex.ck3_6_3}', '${ex.ck3_6_4}', '${ex.ck3_6_5}', '${ex.ck3_6_kita}'" +
                 ", '${ex.ck4_1}', '${ex.ck4_2}', '${ex.ck4_3}', '${ex.ck4_4}'" +
-                ", '${ex.ck4_5}', '${ex.ck4_6}', '${ex.ck4_7}', '${ex.ck4_8}'" +
+                ", '${ex.ck4_5}', '${ex.ck4_6}', '${ex.ck4_7}', '${ex.ck4_8}', '${ex.ck4_9}" +
                 ", '${ex.ck5_1}', '${ex.ck5_2}', '${ex.ck5_3}', '${ex.ck5_4}'" +
-                ", '${ex.ck5_5}', '${ex.ck5_6}', '${ex.ck6_1}', '${ex.ck6_2}'" +
-                ", '${ex.ck6_3}', '${ex.ck6_4}', '${ex.ck6_5}', '${ex.ck6_6}'" +
+                ", '${ex.ck5_5}', '${ex.ck6_1}', '${ex.ck6_2}'" +
+                ", '${ex.ck6_3}', '${ex.ck6_4}', '${ex.ck6_5}'" +
                 ", '${ex.ck7_1}', '${ex.ck7_2}', '${ex.ck7_3}', '${ex.ck7_4}'" +
-                ", '${ex.ck7_5}', '${ex.ck7_6}', '${ex.ck8_1}', '${ex.ck8_2}'" +
+                ", '${ex.ck7_5}', '${ex.ck8_1}', '${ex.ck8_2}'" +
                 ", '${ex.ck9_1}', '${ex.ck9_2}', '${ex.ck10}', '${ex.ck11}'" +
-                ", '${ex.ck12}', '${ex.ck13}', '${ex.ck14}');")
+                ", '${ex.ck12}', '${ex.ck13}', '${ex.ck14}' , '${ex.ck15_5}', '${ex.ck15_5_1}', '${ex.ck15_5_2}', '${ex.ck15_5_3}', '${ex.ck15_5_4}', '${ex.ck15_5_5}'" +
+                ", '${ex.ck16_1}', '${ex.ck16_2}', '${ex.ck16_3}', '${ex.ck16_4}', '${ex.ck16_5}', '${ex.ck16_6}');")
     }
 
     @SuppressLint("Recycle")
