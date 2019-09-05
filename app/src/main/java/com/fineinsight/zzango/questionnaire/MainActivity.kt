@@ -372,7 +372,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         Login.setOnClickListener{
 
             if(login_id.text.toString() != ""){
-
                 CloseKeyboard()
                 var UserArray:ArrayList<UserList> = ArrayList()
 
