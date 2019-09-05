@@ -155,6 +155,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " oral_13 TEXT," +
                 " oral_14 TEXT," +
                 " oral_15 TEXT," +
+                " oral_16 TEXT," +
                 " oral_Remark TEXT);")
 
     }
@@ -576,13 +577,13 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "category, " +
                 "oral_1, oral_2, oral_3, oral_4, oral_5, oral_6, oral_7," +
                 "oral_8, oral_9, oral_10, oral_11, oral_12, oral_13, oral_14," +
-                "oral_15, oral_Remark)" +
+                "oral_15, oral_16, oral_Remark)" +
                 " VALUES (" +
                 "'${ex.exam_date}', '${ex.exam_no}', '${ex.name}', '${ex.first_serial}', '${ex.last_serial}'" +
                 ", '${ex.category}', '${ex.oral_1}', '${ex.oral_2}', '${ex.oral_3}', '${ex.oral_4}'" +
                 ", '${ex.oral_5}', '${ex.oral_6}', '${ex.oral_7}', '${ex.oral_8}'," +
                 " '${ex.oral_9}', '${ex.oral_10}', '${ex.oral_11}', '${ex.oral_12}'," +
-                " '${ex.oral_13}', '${ex.oral_14}', '${ex.oral_15}', '${ex.oral_Remark}'"
+                " '${ex.oral_13}', '${ex.oral_14}', '${ex.oral_15}', '${ex.oral_16}', '${ex.oral_Remark}'"
                 +");")
     }
 

@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.view.WindowManager
+import android.widget.Switch
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.*
 import com.fineinsight.zzango.questionnaire.DataClass.*
+import com.fineinsight.zzango.questionnaire.LocalList.Paper_CANCER
 import kotlinx.android.synthetic.main.activity_server_list_detail.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -851,7 +853,7 @@ class ServerListDetailActivity : AppCompatActivity() {
                                                 if(response.body()!![i].oral_13 .isNullOrBlank()) "" else response.body()!![i].oral_13,
                                                 if(response.body()!![i].oral_14.isNullOrBlank()) "" else response.body()!![i].oral_14,
                                                 if(response.body()!![i].oral_15.isNullOrBlank()) "" else response.body()!![i].oral_15,
-                                                if(response.body()!![i].oral_Remark.isNullOrBlank()) "" else response.body()!![i].oral_Remark,
+                                                if(response.body()!![i].oral_16.isNullOrBlank()) "" else response.body()!![i].oral_16,
                                                 if(response.body()!![i].oral_17.isNullOrBlank()) "" else response.body()!![i].oral_17,
                                                 if(response.body()!![i].oral_18.isNullOrBlank()) "" else response.body()!![i].oral_18,
                                                 if(response.body()!![i].oral_19 .isNullOrBlank()) "" else response.body()!![i].oral_19,

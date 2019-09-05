@@ -22,10 +22,11 @@ data class ServerPaper_Oral (
         var oral_13:String,
         var oral_14:String,
         var oral_15:String,
-        var oral_Remark:String,
+        var oral_16:String,
         var oral_17:String,
         var oral_18:String,
         var oral_19:String,
+        var oral_Remark:String,
         var oral_name:String,
         var oral_jumin:String
 ):Serializable
