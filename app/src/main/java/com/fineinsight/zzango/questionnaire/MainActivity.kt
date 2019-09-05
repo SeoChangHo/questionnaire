@@ -65,11 +65,14 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     var isUserLogin:Boolean = false
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         println("MAIN!!!")
+        println("user_login.text : ${user_login.text}")
 
         CreatePaperTable()
 
@@ -886,6 +889,16 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     user_last_serial = last_serial.text.toString()
 
                     UserHandler(true)
+
+
+                    //입력창 초기화
+                    user_name.text.clear()
+                    first_serial.text.clear()
+                    last_serial.text.clear()
+                    canvasView.ClearCanvas()
+                    user_login_button.isEnabled = false
+                    user_login_button.setBackgroundResource(R.drawable.user_login_button)
+
 
 
                     Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
@@ -1757,11 +1770,19 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     }
                     2->
                     {
-                        CurrentPage = 3
-                        btnList.setImageResource(R.drawable.listicon)
-                        main_start_login1.visibility = View.GONE
-                        main_start_login2.visibility = View.GONE
-                        main_start_list.visibility = View.VISIBLE
+                        if(first_view.visibility==View.VISIBLE)
+                        {
+                            println("로그인하지 않은 상태라서 안됨")
+                        }
+                        else
+                        {
+                            CurrentPage = 3
+                            btnList.setImageResource(R.drawable.listicon)
+                            main_start_login1.visibility = View.GONE
+                            main_start_login2.visibility = View.GONE
+                            main_start_list.visibility = View.VISIBLE
+                        }
+
                     }
                     3->
                     {
@@ -1791,8 +1812,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         {
             user_login.text = "사용자 등록하기"
             user_image.setImageResource(R.drawable.regi)
-//            first_view.visibility = View.GONE
-//            second_view.visibility = View.VISIBLE
+            first_view.visibility = View.VISIBLE
+            second_view.visibility = View.GONE
 
             login_user_name = ""
             user_first_serial = ""
