@@ -210,6 +210,7 @@ class OralExaminationActivity : RootActivity() {
         var oral_13 = ""
         var oral_14 = ""
         var oral_15 = ""
+        var oral_16 = ""
         var oral_Remark = ""
 
 
@@ -360,7 +361,7 @@ class OralExaminationActivity : RootActivity() {
         SavePaper.Total.temp_Oral = Paper_ORAL(
                 exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
-                oral_11, oral_12, oral_13, oral_14, oral_15, oral_Remark)
+                oral_11, oral_12, oral_13, oral_14, oral_15, oral_16, oral_Remark)
 
     }
 
@@ -386,6 +387,7 @@ class OralExaminationActivity : RootActivity() {
         var oral_13 = ""
         var oral_14 = ""
         var oral_15 = ""
+        var oral_16 = ""
         var oral_Remark = ""
 
 
@@ -774,7 +776,7 @@ class OralExaminationActivity : RootActivity() {
         SavePaper.Total.Array[9] = Paper_ORAL(
                 exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
-                oral_11, oral_12, oral_13, oral_14, oral_15, oral_Remark)
+                oral_11, oral_12, oral_13, oral_14, oral_15, oral_16, oral_Remark)
 
         if (ChartDivision.ChartDivision.next_or_save(5)) {
             SavedListObject.SavedList.savedDataClass.oralSaved = true

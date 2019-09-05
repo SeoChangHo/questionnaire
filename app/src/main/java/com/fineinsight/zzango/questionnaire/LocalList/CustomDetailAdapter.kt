@@ -118,6 +118,7 @@ class CustomDetailAdapter(var PaperList: Paper, var Activity: ListDetailActivity
                                 data.getString(data.getColumnIndex("oral_13")),
                                 data.getString(data.getColumnIndex("oral_14")),
                                 data.getString(data.getColumnIndex("oral_15")),
+                                data.getString(data.getColumnIndex("oral_16")),
                                 data.getString(data.getColumnIndex("oral_Remark"))
                                 ))
                         data.moveToNext()

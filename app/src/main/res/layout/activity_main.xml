@@ -594,6 +594,116 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/layout_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@color/mainBlue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.33">
+
+                <Button
+                    android:id="@+id/user_login"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@drawable/user_login_border"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:text="사용자 등록하기"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/user_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/user_login"
+                    app:layout_constraintEnd_toEndOf="@+id/user_login"
+                    app:layout_constraintTop_toTopOf="@+id/user_login"
+                    app:srcCompat="@drawable/regi" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/selected_button1"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selected_questionnaire"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button1"
+                app:layout_constraintEnd_toEndOf="@+id/button1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button1"
+                app:layout_constraintTop_toTopOf="@+id/button1"
+                app:layout_constraintWidth_percent="0.34" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/selected_button3"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selected_questionnaire"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button3"
+                app:layout_constraintEnd_toEndOf="@+id/button3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button3"
+                app:layout_constraintTop_toTopOf="@+id/button3"
+                app:layout_constraintWidth_percent="0.34" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/selected_button2"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selected_questionnaire"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="@+id/button2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button2"
+                app:layout_constraintTop_toTopOf="@+id/button2"
+                app:layout_constraintWidth_percent="0.34" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/selected_button5"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selected_questionnaire"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button5"
+                app:layout_constraintEnd_toEndOf="@+id/button5"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button5"
+                app:layout_constraintTop_toTopOf="@+id/button5"
+                app:layout_constraintWidth_percent="0.34" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/selected_button4"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selected_questionnaire"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button4"
+                app:layout_constraintEnd_toEndOf="@+id/button4"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button4"
+                app:layout_constraintTop_toTopOf="@+id/button4"
+                app:layout_constraintWidth_percent="0.34" />
+
             <Button
                 android:id="@+id/button1"
                 style="?android:attr/borderlessButtonStyle"
@@ -696,116 +806,6 @@
                 app:layout_constraintWidth_percent="0.67">
 
             </FrameLayout>
-
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/layout_left"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:background="@color/mainBlue"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.33">
-
-                <Button
-                    android:id="@+id/user_login"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="220dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginEnd="18dp"
-                    android:background="@drawable/user_login_border"
-                    android:ellipsize="end"
-                    android:gravity="left"
-                    android:maxLines="1"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="10dp"
-                    android:text="사용자 등록하기"
-                    android:textAllCaps="false"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/user_image"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/user_login"
-                    app:layout_constraintEnd_toEndOf="@+id/user_login"
-                    app:layout_constraintTop_toTopOf="@+id/user_login"
-                    app:srcCompat="@drawable/regi" />
-
-
-            </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/selected_button5"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:background="@drawable/selected_questionnaire"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/button5"
-                app:layout_constraintEnd_toEndOf="@+id/button5"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/button5"
-                app:layout_constraintTop_toTopOf="@+id/button5"
-                app:layout_constraintWidth_percent="0.34" />
-
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/selected_button3"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:background="@drawable/selected_questionnaire"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/button3"
-                app:layout_constraintEnd_toEndOf="@+id/button3"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/button3"
-                app:layout_constraintTop_toTopOf="@+id/button3"
-                app:layout_constraintWidth_percent="0.34" />
-
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/selected_button2"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:background="@drawable/selected_questionnaire"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/button2"
-                app:layout_constraintEnd_toEndOf="@+id/button2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/button2"
-                app:layout_constraintTop_toTopOf="@+id/button2"
-                app:layout_constraintWidth_percent="0.34" />
-
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/selected_button4"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:background="@drawable/selected_questionnaire"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/button4"
-                app:layout_constraintEnd_toEndOf="@+id/button4"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/button4"
-                app:layout_constraintTop_toTopOf="@+id/button4"
-                app:layout_constraintWidth_percent="0.34" />
-
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/selected_button1"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:background="@drawable/selected_questionnaire"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/button1"
-                app:layout_constraintEnd_toEndOf="@+id/button1"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/button1"
-                app:layout_constraintTop_toTopOf="@+id/button1"
-                app:layout_constraintWidth_percent="0.34" />
 
         </android.support.constraint.ConstraintLayout>
 
