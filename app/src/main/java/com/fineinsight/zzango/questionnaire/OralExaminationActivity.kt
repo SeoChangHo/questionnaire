@@ -1603,7 +1603,7 @@ class OralExaminationActivity : RootActivity() {
             oral_15_do_not_know.isChecked = true
         }
 
-        remark_content.setText(paper.oral_16)
+        remark_content.setText(paper.oral_Remark)
 
     }
 

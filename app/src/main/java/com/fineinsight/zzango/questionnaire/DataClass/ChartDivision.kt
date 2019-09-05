@@ -208,7 +208,7 @@ class ChartDivision{
 
                             PaperNameInfo.PC.ORAL.EN_NM ->
                             {
-                                SavePaper.Total.Array[9] = Paper_ORAL("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+                                SavePaper.Total.Array[9] = Paper_ORAL("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
                             }
 
                             PaperNameInfo.PC.CANCER.EN_NM ->
