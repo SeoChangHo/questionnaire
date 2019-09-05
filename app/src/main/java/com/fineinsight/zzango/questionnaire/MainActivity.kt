@@ -79,6 +79,15 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             listButton.visibility = View.GONE
         }
 
+        if (!isUserLogin)
+        {
+            btnList.visibility = View.GONE
+        }
+        else
+        {
+            btnList.visibility = View.VISIBLE
+        }
+
         CreatePaperTable()
 
         NetworkCheck.Func.Check(this)
@@ -1814,6 +1823,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             user_image.setImageResource(R.drawable.exit)
 //            first_view.visibility = View.VISIBLE
 //            second_view.visibility = View.GONE
+            btnList.visibility = View.VISIBLE
+
         }
         else
         {
@@ -1827,6 +1838,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             user_last_serial = ""
             Toast.makeText(this, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
             chart.clear()
+
+            btnList.visibility = View.GONE
         }
     }
 
