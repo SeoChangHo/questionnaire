@@ -3665,6 +3665,7 @@ class CancerExaminationActivity : RootActivity(){
 
     fun cancerCheckCondition(buttonView: View, isChecked: Boolean){
         when(buttonView.id){
+
             R.id.cancer_5_0_checkBox -> {
                 if(isChecked){
                     cancer_5_1_checkBox.isChecked = false
@@ -3674,8 +3675,12 @@ class CancerExaminationActivity : RootActivity(){
                     cancer_5_5_checkBox.isChecked = false
                 }
             }
-            R.id.cancer_5_1_checkBox or R.id.cancer_5_2_checkBox or
-            R.id.cancer_5_3_checkBox or R.id.cancer_5_4_checkBox or R.id.cancer_5_5_checkBox -> { cancer_5_0_checkBox.isChecked = false }
+            R.id.cancer_5_1_checkBox -> { if (isChecked) cancer_5_0_checkBox.isChecked = false }
+            R.id.cancer_5_2_checkBox -> { if (isChecked) cancer_5_0_checkBox.isChecked = false }
+            R.id.cancer_5_3_checkBox -> { if (isChecked) cancer_5_0_checkBox.isChecked = false }
+            R.id.cancer_5_4_checkBox -> { if (isChecked) cancer_5_0_checkBox.isChecked = false }
+            R.id.cancer_5_5_checkBox -> { if (isChecked) cancer_5_0_checkBox.isChecked = false }
+
             R.id.cancer_6_0_checkBox -> {
                 if(isChecked){
                     cancer_6_1_checkBox.isChecked = false
@@ -3685,8 +3690,12 @@ class CancerExaminationActivity : RootActivity(){
                     cancer_6_5_checkBox.isChecked = false
                 }
             }
-            R.id.cancer_6_1_checkBox or R.id.cancer_6_2_checkBox or
-            R.id.cancer_6_3_checkBox or R.id.cancer_6_4_checkBox or R.id.cancer_6_5_checkBox -> { cancer_6_0_checkBox.isChecked = false }
+            R.id.cancer_6_1_checkBox -> { if (isChecked) cancer_6_0_checkBox.isChecked = false }
+            R.id.cancer_6_2_checkBox -> { if (isChecked) cancer_6_0_checkBox.isChecked = false }
+            R.id.cancer_6_3_checkBox -> { if (isChecked) cancer_6_0_checkBox.isChecked = false }
+            R.id.cancer_6_4_checkBox -> { if (isChecked) cancer_6_0_checkBox.isChecked = false }
+            R.id.cancer_6_5_checkBox -> { if (isChecked) cancer_6_0_checkBox.isChecked = false }
+
             R.id.cancer_7_0_checkBox -> {
                 if(isChecked){
                     cancer_7_1_checkBox.isChecked = false
@@ -3696,8 +3705,12 @@ class CancerExaminationActivity : RootActivity(){
                     cancer_7_5_checkBox.isChecked = false
                 }
             }
-            R.id.cancer_7_1_checkBox or R.id.cancer_7_2_checkBox or
-            R.id.cancer_7_3_checkBox or R.id.cancer_7_4_checkBox or R.id.cancer_7_5_checkBox -> { cancer_7_0_checkBox.isChecked = false }
+            R.id.cancer_7_1_checkBox -> {if (isChecked) cancer_7_0_checkBox.isChecked = false }
+            R.id.cancer_7_2_checkBox -> {if (isChecked) cancer_7_0_checkBox.isChecked = false }
+            R.id.cancer_7_3_checkBox -> {if (isChecked) cancer_7_0_checkBox.isChecked = false }
+            R.id.cancer_7_4_checkBox -> {if (isChecked) cancer_7_0_checkBox.isChecked = false }
+            R.id.cancer_7_5_checkBox -> {if (isChecked) cancer_7_0_checkBox.isChecked = false }
+
             R.id.cancer_16_0_checkBox -> {
                 if(isChecked){
                     cancer_16_1_checkBox.isChecked = false
@@ -3707,8 +3720,12 @@ class CancerExaminationActivity : RootActivity(){
                     cancer_16_5_checkBox.isChecked = false
                 }
             }
-            R.id.cancer_16_1_checkBox or R.id.cancer_16_2_checkBox or R.id.cancer_16_3_checkBox
-            or R.id.cancer_16_4_checkBox or R.id.cancer_16_5_checkBox or R.id.cancer_16_6_checkBox -> { cancer_16_0_checkBox.isChecked = false }
+            R.id.cancer_16_1_checkBox -> { if (isChecked) cancer_16_0_checkBox.isChecked = false }
+            R.id.cancer_16_2_checkBox -> { if (isChecked) cancer_16_0_checkBox.isChecked = false }
+            R.id.cancer_16_3_checkBox -> { if (isChecked) cancer_16_0_checkBox.isChecked = false }
+            R.id.cancer_16_4_checkBox -> { if (isChecked) cancer_16_0_checkBox.isChecked = false }
+            R.id.cancer_16_5_checkBox -> { if (isChecked) cancer_16_0_checkBox.isChecked = false }
+            R.id.cancer_16_6_checkBox -> { if (isChecked) cancer_16_0_checkBox.isChecked = false }
         }
     }
 

@@ -35,7 +35,7 @@ var oral_12:String,
 var oral_13:String,
 var oral_14:String,
 var oral_15:String,
-var oral_16 :String
+var oral_Remark :String
 ): Serializable
 
 //공통 리스트

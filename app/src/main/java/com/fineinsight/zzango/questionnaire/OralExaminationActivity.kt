@@ -1,36 +1,17 @@
 package com.fineinsight.zzango.questionnaire
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
-import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.net.NetworkCapabilities
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
-import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.*
-import com.fineinsight.zzango.questionnaire.LocalList.PaperArray
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_ORAL
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_oral_exam.*
-import kotlinx.android.synthetic.main.save_complete_alert.view.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -229,7 +210,7 @@ class OralExaminationActivity : RootActivity() {
         var oral_13 = ""
         var oral_14 = ""
         var oral_15 = ""
-        var oral_16 = ""
+        var oral_Remark = ""
 
 
         //서명정보 가져오는거
@@ -371,7 +352,7 @@ class OralExaminationActivity : RootActivity() {
             else -> ""
         }
 
-        oral_16 = when {
+        oral_Remark = when {
             !remark_content.text.toString().isNullOrEmpty() -> remark_content.text.toString()
             else -> ""
         }
@@ -379,7 +360,7 @@ class OralExaminationActivity : RootActivity() {
         SavePaper.Total.temp_Oral = Paper_ORAL(
                 exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
-                oral_11, oral_12, oral_13, oral_14, oral_15, oral_16)
+                oral_11, oral_12, oral_13, oral_14, oral_15, oral_Remark)
 
     }
 
@@ -405,7 +386,7 @@ class OralExaminationActivity : RootActivity() {
         var oral_13 = ""
         var oral_14 = ""
         var oral_15 = ""
-        var oral_16 = ""
+        var oral_Remark = ""
 
 
         //서명정보 가져오는거
@@ -782,18 +763,18 @@ class OralExaminationActivity : RootActivity() {
 
         if(!remark_content.text.toString().isNullOrEmpty()){
 
-            oral_16 = remark_content.text.toString()
+            oral_Remark = remark_content.text.toString()
 
         }else{
 
-            oral_16 = ""
+            oral_Remark = ""
 
         }
 
         SavePaper.Total.Array[9] = Paper_ORAL(
                 exam_date, (SavePaper.Total.Array[0] as PublicDataInfo).exam_no, name, first_serial_text, last_serial_text, category, oral_1, oral_2,
                 oral_3, oral_4, oral_5, oral_6, oral_7, oral_8, oral_9, oral_10,
-                oral_11, oral_12, oral_13, oral_14, oral_15, oral_16)
+                oral_11, oral_12, oral_13, oral_14, oral_15, oral_Remark)
 
         if (ChartDivision.ChartDivision.next_or_save(5)) {
             SavedListObject.SavedList.savedDataClass.oralSaved = true
@@ -1067,7 +1048,7 @@ class OralExaminationActivity : RootActivity() {
             oral_15_do_not_know.isChecked = true
         }
 
-        remark_content.setText(paper.oral_16)
+        remark_content.setText(paper.oral_Remark)
 
     }
 
@@ -1343,7 +1324,7 @@ class OralExaminationActivity : RootActivity() {
             oral_15_do_not_know.isChecked = true
         }
 
-        remark_content.setText(paper.oral_16)
+        remark_content.setText(paper.oral_Remark)
 
     }
 
@@ -1620,7 +1601,7 @@ class OralExaminationActivity : RootActivity() {
             oral_15_do_not_know.isChecked = true
         }
 
-        remark_content.setText(paper.oral_16)
+        remark_content.setText(paper.oral_Remark)
 
     }
 
