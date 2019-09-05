@@ -1840,7 +1840,13 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             chart.clear()
 
             btnList.visibility = View.GONE
+
+            //추가
+            canvas_motion = null
+            userlogin_buttonClick = true
         }
+
+
     }
 
     fun CloseKeyboard()
