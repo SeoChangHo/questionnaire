@@ -517,24 +517,22 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " ck4_6 TEXT," +
                 " ck4_7 TEXT," +
                 " ck4_8 TEXT," +
+                " ck4_9 TEXT," +
                 " ck5_1 TEXT," +
                 " ck5_2 TEXT," +
                 " ck5_3 TEXT," +
                 " ck5_4 TEXT," +
                 " ck5_5 TEXT," +
-                " ck5_6 TEXT," +
                 " ck6_1 TEXT," +
                 " ck6_2 TEXT," +
                 " ck6_3 TEXT," +
                 " ck6_4 TEXT," +
                 " ck6_5 TEXT," +
-                " ck6_6 TEXT," +
                 " ck7_1 TEXT," +
                 " ck7_2 TEXT," +
                 " ck7_3 TEXT," +
                 " ck7_4 TEXT," +
                 " ck7_5 TEXT," +
-                " ck7_6 TEXT," +
                 " ck8_1 TEXT," +
                 " ck8_2 TEXT," +
                 " ck9_1 TEXT," +
@@ -543,7 +541,19 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " ck11 TEXT," +
                 " ck12 TEXT," +
                 " ck13 TEXT," +
-                " ck14 TEXT);")
+                " ck14 TEXT," +
+                " ck15_5 TEXT," +
+                " ck15_5_1 TEXT," +
+                " ck15_5_2 TEXT," +
+                " ck15_5_3 TEXT," +
+                " ck15_5_4 TEXT," +
+                " ck15_5_5 TEXT," +
+                " ck16_1 TEXT," +
+                " ck16_2 TEXT," +
+                " ck16_3 TEXT," +
+                " ck16_4 TEXT," +
+                " ck16_5 TEXT," +
+                " ck16_6 TEXT);")
 
     }
 
@@ -782,12 +792,9 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     }
 
     fun cancerSaveLocal(db : SQLiteDatabase, ex : Paper_CANCER){
-
-
-
         db.execSQL("INSERT INTO CANCER_EXAM" +
                 "(exam_date," +
-                "exam_no,"  +
+                "exam_no," +
                 "name," +
                 "first_serial," +
                 "last_serial," +
@@ -812,14 +819,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${ex.ck3_5}', '${ex.ck3_5_1}', '${ex.ck3_5_2}', '${ex.ck3_5_3}', '${ex.ck3_5_4}', '${ex.ck3_5_5}'" +
                 ", '${ex.ck3_6}', '${ex.ck3_6_1}', '${ex.ck3_6_2}', '${ex.ck3_6_3}', '${ex.ck3_6_4}', '${ex.ck3_6_5}', '${ex.ck3_6_kita}'" +
                 ", '${ex.ck4_1}', '${ex.ck4_2}', '${ex.ck4_3}', '${ex.ck4_4}'" +
-                ", '${ex.ck4_5}', '${ex.ck4_6}', '${ex.ck4_7}', '${ex.ck4_8}', '${ex.ck4_9}" +
+                ", '${ex.ck4_5}', '${ex.ck4_6}', '${ex.ck4_7}', '${ex.ck4_8}', '${ex.ck4_9}'" +
                 ", '${ex.ck5_1}', '${ex.ck5_2}', '${ex.ck5_3}', '${ex.ck5_4}'" +
                 ", '${ex.ck5_5}', '${ex.ck6_1}', '${ex.ck6_2}'" +
                 ", '${ex.ck6_3}', '${ex.ck6_4}', '${ex.ck6_5}'" +
                 ", '${ex.ck7_1}', '${ex.ck7_2}', '${ex.ck7_3}', '${ex.ck7_4}'" +
                 ", '${ex.ck7_5}', '${ex.ck8_1}', '${ex.ck8_2}'" +
                 ", '${ex.ck9_1}', '${ex.ck9_2}', '${ex.ck10}', '${ex.ck11}'" +
-                ", '${ex.ck12}', '${ex.ck13}', '${ex.ck14}' , '${ex.ck15_5}', '${ex.ck15_5_1}', '${ex.ck15_5_2}', '${ex.ck15_5_3}', '${ex.ck15_5_4}', '${ex.ck15_5_5}'" +
+                ", '${ex.ck12}', '${ex.ck13}', '${ex.ck14}', '${ex.ck15_5}', '${ex.ck15_5_1}', '${ex.ck15_5_2}', '${ex.ck15_5_3}', '${ex.ck15_5_4}', '${ex.ck15_5_5}'" +
                 ", '${ex.ck16_1}', '${ex.ck16_2}', '${ex.ck16_3}', '${ex.ck16_4}', '${ex.ck16_5}', '${ex.ck16_6}');")
     }
 

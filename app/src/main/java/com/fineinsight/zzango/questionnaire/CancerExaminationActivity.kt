@@ -377,59 +377,6 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
-        if(!AdditionalArr.Gender.isFemale){
-
-            cancer_question_4_3.visibility = View.GONE
-            cancer_4_3_radio.visibility = View.GONE
-
-            cancer_question_4_7.visibility = View.GONE
-            cancer_4_7_radio.visibility = View.GONE
-
-            family_medical_history3.visibility = View.GONE
-
-            cancer_question_8.visibility = View.GONE
-            cancer_question_9.visibility = View.GONE
-            cancer_question_10.visibility = View.GONE
-            cancer_question_11.visibility = View.GONE
-            cancer_question_12.visibility = View.GONE
-            cancer_question_13.visibility = View.GONE
-            cancer_question_14.visibility = View.GONE
-
-            cancer_8_radio.visibility = View.GONE
-            cancer_9_radio.visibility = View.GONE
-            cancer_10_radio.visibility = View.GONE
-            cancer_11_radio.visibility = View.GONE
-            cancer_12_radio.visibility = View.GONE
-            cancer_13_radio.visibility = View.GONE
-            cancer_14_radio.visibility = View.GONE
-
-        }else{
-            cancer_question_4_3.visibility = View.VISIBLE
-            cancer_4_3_radio.visibility = View.VISIBLE
-
-            cancer_question_4_7.visibility = View.VISIBLE
-            cancer_4_7_radio.visibility = View.VISIBLE
-
-            family_medical_history3.visibility = View.VISIBLE
-
-            cancer_question_8.visibility = View.VISIBLE
-            cancer_question_9.visibility = View.VISIBLE
-            cancer_question_10.visibility = View.VISIBLE
-            cancer_question_11.visibility = View.VISIBLE
-            cancer_question_12.visibility = View.VISIBLE
-            cancer_question_13.visibility = View.VISIBLE
-            cancer_question_14.visibility = View.VISIBLE
-
-            cancer_8_radio.visibility = View.VISIBLE
-            cancer_9_radio.visibility = View.VISIBLE
-            cancer_10_radio.visibility = View.VISIBLE
-            cancer_11_radio.visibility = View.VISIBLE
-            cancer_12_radio.visibility = View.VISIBLE
-            cancer_13_radio.visibility = View.VISIBLE
-            cancer_14_radio.visibility = View.VISIBLE
-
-        }
-
         if(SavePaper.Total.temp_Cancer != null){
             whenTempLoad(SavePaper.Total.temp_Cancer!!)
         }else if(SavedListObject.SavedList.savedDataClass.cancerSaved){
@@ -482,6 +429,59 @@ class CancerExaminationActivity : RootActivity(){
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        if(!AdditionalArr.Gender.isFemale){
+
+            cancer_question_4_3.visibility = View.GONE
+            cancer_4_3_radio.visibility = View.GONE
+
+            cancer_question_4_7.visibility = View.GONE
+            cancer_4_7_radio.visibility = View.GONE
+
+            family_medical_history3.visibility = View.GONE
+
+            cancer_question_8.visibility = View.GONE
+            cancer_question_9.visibility = View.GONE
+            cancer_question_10.visibility = View.GONE
+            cancer_question_11.visibility = View.GONE
+            cancer_question_12.visibility = View.GONE
+            cancer_question_13.visibility = View.GONE
+            cancer_question_14.visibility = View.GONE
+
+            cancer_8_radio.visibility = View.GONE
+            cancer_9_radio.visibility = View.GONE
+            cancer_10_radio.visibility = View.GONE
+            cancer_11_radio.visibility = View.GONE
+            cancer_12_radio.visibility = View.GONE
+            cancer_13_radio.visibility = View.GONE
+            cancer_14_radio.visibility = View.GONE
+
+        }else{
+            cancer_question_4_3.visibility = View.VISIBLE
+            cancer_4_3_radio.visibility = View.VISIBLE
+
+            cancer_question_4_7.visibility = View.VISIBLE
+            cancer_4_7_radio.visibility = View.VISIBLE
+
+            family_medical_history3.visibility = View.VISIBLE
+
+            cancer_question_8.visibility = View.VISIBLE
+            cancer_question_9.visibility = View.VISIBLE
+            cancer_question_10.visibility = View.VISIBLE
+            cancer_question_11.visibility = View.VISIBLE
+            cancer_question_12.visibility = View.VISIBLE
+            cancer_question_13.visibility = View.VISIBLE
+            cancer_question_14.visibility = View.VISIBLE
+
+            cancer_8_radio.visibility = View.VISIBLE
+            cancer_9_radio.visibility = View.VISIBLE
+            cancer_10_radio.visibility = View.VISIBLE
+            cancer_11_radio.visibility = View.VISIBLE
+            cancer_12_radio.visibility = View.VISIBLE
+            cancer_13_radio.visibility = View.VISIBLE
+            cancer_14_radio.visibility = View.VISIBLE
+
+        }
 
     }
 
@@ -1678,10 +1678,10 @@ class CancerExaminationActivity : RootActivity(){
                 ck4_3 = "3"
             }else if(cancer_4_3_4.isChecked){
                 ck4_3 = "4"
+            }else{
+                Toast.makeText(this, "4-3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                return false
             }
-        }else{
-            Toast.makeText(this, "4-3번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
-            return false
         }
 
         if(cancer_4_4_1.isChecked){
@@ -1897,13 +1897,13 @@ class CancerExaminationActivity : RootActivity(){
                 if(!cancer_editText3.text.isNullOrEmpty()){
                     ck8_2 = cancer_editText3.text.toString()
                 }else{
-                    Toast.makeText(this, "8번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "9번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
                     return false
                 }
             }else if(cancer_8_2.isChecked){
                 ck8_1 = "2"
             }else{
-                Toast.makeText(this, "8번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
 
@@ -1916,11 +1916,11 @@ class CancerExaminationActivity : RootActivity(){
                 if(!cancer_editText4.text.isNullOrEmpty()){
                     ck9_2 = cancer_editText4.text.toString()
                 }else{
-                    Toast.makeText(this, "9번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "10번 문항을 작성해주세요", Toast.LENGTH_LONG).show()
                     return false
                 }
             }else{
-                Toast.makeText(this, "9번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "10번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
 
@@ -1935,7 +1935,7 @@ class CancerExaminationActivity : RootActivity(){
             }else if(cancer_10_5.isChecked){
                 ck10 = "5"
             }else{
-                Toast.makeText(this, "10번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "11번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
 
@@ -1946,7 +1946,7 @@ class CancerExaminationActivity : RootActivity(){
             }else if(cancer_11_3.isChecked){
                 ck11 = "3"
             }else{
-                Toast.makeText(this, "11번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "12번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
 
@@ -1959,7 +1959,7 @@ class CancerExaminationActivity : RootActivity(){
             }else if(cancer_12_4.isChecked){
                 ck12 = "4"
             }else{
-                Toast.makeText(this, "12번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "13번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
 
@@ -1970,7 +1970,7 @@ class CancerExaminationActivity : RootActivity(){
             }else if(cancer_13_3.isChecked){
                 ck13 = "3"
             }else{
-                Toast.makeText(this, "13번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "14번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
 
@@ -1983,7 +1983,7 @@ class CancerExaminationActivity : RootActivity(){
             }else if(cancer_14_4.isChecked){
                 ck14 = "4"
             }else{
-                Toast.makeText(this, "14번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "15번 문항을 체크해주세요", Toast.LENGTH_LONG).show()
                 return false
             }
         }
@@ -2015,6 +2015,10 @@ class CancerExaminationActivity : RootActivity(){
         name_edit.text = paper.name
         first_serial.text = paper.first_serial
         last_serial.text = paper.last_serial
+
+        if(paper.last_serial == "2" || paper.last_serial == "4"){
+            AdditionalArr.Gender.isFemale = true
+        }
 
         if(paper.ck1 == "1"){
             cancer_1_1.isChecked = true
@@ -2539,6 +2543,9 @@ class CancerExaminationActivity : RootActivity(){
         cancer_examination_cancel.visibility = View.GONE
         cancer_edit_submit.visibility = View.VISIBLE
 
+        if(paper.last_serial == "2" || paper.last_serial == "4"){
+            AdditionalArr.Gender.isFemale = true
+        }
 
         if(paper.ck1 == "1"){
             cancer_1_1.isChecked = true
@@ -2731,6 +2738,38 @@ class CancerExaminationActivity : RootActivity(){
 
         }
 
+        if(paper.ck15_5 == "1"){
+            cancer_15_5_1.isChecked = true
+
+        }else if(paper.ck15_5 == "3"){
+            cancer_15_5_2.isChecked = true
+
+        }else if(paper.ck15_5 == "2"){
+            cancer_15_5_3.isChecked = true
+
+            cancer_15_5_checkBox1.visibility = View.VISIBLE
+            cancer_15_5_checkBox2.visibility = View.VISIBLE
+            cancer_15_5_checkBox3.visibility = View.VISIBLE
+            cancer_15_5_checkBox4.visibility = View.VISIBLE
+            cancer_15_5_checkBox5.visibility = View.VISIBLE
+
+            if(paper.ck15_5_1 == "1"){
+                cancer_15_5_checkBox1.isChecked = true
+            }
+            if(paper.ck15_5_2 == "2"){
+                cancer_15_5_checkBox2.isChecked = true
+            }
+            if(paper.ck15_5_3 == "3"){
+                cancer_15_5_checkBox3.isChecked = true
+            }
+            if(paper.ck15_5_4 == "4"){
+                cancer_15_5_checkBox4.isChecked = true
+            }
+            if(paper.ck15_5_5 == "5"){
+                cancer_15_5_checkBox5.isChecked = true
+            }
+
+        }
 
         if(paper.ck3_6 == "1"){
             cancer_3_6_1.isChecked = true
@@ -3017,6 +3056,8 @@ class CancerExaminationActivity : RootActivity(){
             cancer_14_2.isChecked = true
         }else if(paper.ck14 == "3"){
             cancer_14_3.isChecked = true
+        }else if(paper.ck14 == "4"){
+            cancer_14_4.isChecked = true
         }
 
     }
@@ -3037,6 +3078,10 @@ class CancerExaminationActivity : RootActivity(){
         cancer_examination_save.visibility = View.GONE
         cancer_examination_cancel.visibility = View.GONE
         cancer_edit_submit.visibility = View.VISIBLE
+
+        if(last_serial.text == "2" || last_serial.text == "4"){
+            AdditionalArr.Gender.isFemale = true
+        }
 
         if(paper.ck1 == "1"){
             cancer_1_1.isChecked = true
@@ -3236,7 +3281,7 @@ class CancerExaminationActivity : RootActivity(){
             cancer_15_5_2.isChecked = true
 
         }else if(paper.ck15_5 == "2"){
-            cancer_15_5_2.isChecked = true
+            cancer_15_5_3.isChecked = true
 
             cancer_15_5_checkBox1.visibility = View.VISIBLE
             cancer_15_5_checkBox2.visibility = View.VISIBLE
@@ -3541,6 +3586,8 @@ class CancerExaminationActivity : RootActivity(){
             cancer_14_2.isChecked = true
         }else if(paper.ck14 == "3"){
             cancer_14_3.isChecked = true
+        }else if(paper.ck14 == "4"){
+            cancer_14_4.isChecked = true
         }
 
     }
@@ -3601,6 +3648,15 @@ class CancerExaminationActivity : RootActivity(){
                     cancer_3_6_checkBox3.isChecked = false
                     cancer_3_6_checkBox4.isChecked = false
                     cancer_3_6_checkBox5.isChecked = false
+                }
+            }
+            R.id.cancer_15_5_3 -> {
+                if(!isChecked){
+                    cancer_15_5_checkBox1.isChecked = false
+                    cancer_15_5_checkBox2.isChecked = false
+                    cancer_15_5_checkBox3.isChecked = false
+                    cancer_15_5_checkBox4.isChecked = false
+                    cancer_15_5_checkBox5.isChecked = false
                 }
             }
         }
