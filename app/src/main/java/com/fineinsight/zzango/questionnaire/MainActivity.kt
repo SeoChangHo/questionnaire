@@ -890,7 +890,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                     UserHandler(true)
 
-
                     //입력창 초기화
                     user_name.text.clear()
                     first_serial.text.clear()
