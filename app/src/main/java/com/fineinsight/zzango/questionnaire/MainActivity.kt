@@ -266,6 +266,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     if(manager_name == ""){
                         manager_name = user
                         setHospitalList()
+                        listButton.visibility = View.VISIBLE
                         Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
                         dialog.dismiss()
                     }else{
@@ -388,6 +389,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     if(manager_name == ""){
                         manager_name = user
                         setHospitalList()
+                        listButton.visibility = View.VISIBLE
                         Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
 
                         ShowPage(2)
