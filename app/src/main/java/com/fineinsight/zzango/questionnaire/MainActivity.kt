@@ -74,6 +74,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         println("MAIN!!!")
         println("user_login.text : ${user_login.text}")
 
+        if(manager_name.isNullOrEmpty())
+        {
+            listButton.visibility = View.GONE
+        }
+
         CreatePaperTable()
 
         NetworkCheck.Func.Check(this)
@@ -899,6 +904,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     canvasView.ClearCanvas()
                     user_login_button.isEnabled = false
                     user_login_button.setBackgroundResource(R.drawable.user_login_button)
+
+                    chart.clear()
 
 
 
@@ -1862,8 +1869,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     override fun onResume() {
         super.onResume()
-        chart.clear()
-        println("Chart Clear!")
+//        chart.clear()
+//        println("Chart Clear!")
     }
 
 
