@@ -35,35 +35,35 @@ class SecondFragment : Fragment(){
 
         view.second_imageButton2.setOnClickListener {
 
-            if(activity!!.user_login.text != "사용자 등록하기") {
-
-                activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
-                activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-
-                startActivity(Intent(activity!!, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-            }else{
+//            if(activity!!.user_login.text != "사용자 등록하기") {
+//
+//                activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
+//                activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//
+//                startActivity(Intent(activity!!, CognitiveExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//
+//            }else{
 
                 (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context, "CognitiveExaminationActivity")
 
-            }
+//            }
 
         }
 
         view.second_imageButton3.setOnClickListener {
 
-            if(activity!!.user_login.text != "사용자 등록하기") {
-
-                activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
-                activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
-
-                startActivity(Intent(activity!!, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-            }else{
+//            if(activity!!.user_login.text != "사용자 등록하기") {
+//
+//                activity!!.login_appbar_loading_progress.visibility = View.VISIBLE
+//                activity!!.login_appbar_loading_progress_bg.visibility = View.VISIBLE
+//
+//                startActivity(Intent(activity!!, ElderlyExaminationActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//
+//            }else{
 
                 (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context, "ElderlyExaminationActivity")
 
-            }
+//            }
 
         }
 

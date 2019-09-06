@@ -938,6 +938,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     //현재 접속병원이 목포한국병원이면서 네트워크가 켜져 있을 때
                     if(hospital == HospitalList.hospital.Mokpo && isNetworkAvailable())
                     {
+
+
+
                         var now = LocalDate.now()
 
                         var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
@@ -946,6 +949,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                         var JUMIN2 = user_last_serial
 
                         MokpoCheckPaper(context, Strnow, NAME, JUMIN, JUMIN2)
+
+
                     }
                     else
                     {
@@ -1102,6 +1107,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         ok.setOnClickListener {
 
+
             ProgressAction(true)
 
             AdditionalArr.Page.init()
@@ -1245,6 +1251,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         var CheckArr = ArrayList<String>()
 
+        ProgressAction(true)
+        MokpoControlHandler(true)
+
+
 
         OracleUtill().getMokpoCheck().SelectMokpoCheckPaper(MokpoCheckParam).enqueue(object : Callback<List<MokpoCheck>> {
 
@@ -1263,12 +1273,14 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                             CheckArr.add(document.gj_jong)
                         }
                         ProgressAction(false)
+                        MokpoControlHandler(false)
                         ShowPaperDIALOG(context, CheckArr, JUMIN1)
                     }
                     else//값이 없음
                     {
                         println("값이 없음")
                         ProgressAction(false)
+                        MokpoControlHandler(false)
                         ShowPaperDIALOG(context, CheckArr, JUMIN1)
                     }
 
@@ -1277,6 +1289,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 {
                     println("값이 없음")
                     ProgressAction(false)
+                    MokpoControlHandler(false)
                     ShowPaperDIALOG(context, CheckArr, JUMIN1)
                 }
             }
@@ -1286,6 +1299,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                 println("값이 없음")
                 ProgressAction(false)
+                MokpoControlHandler(false)
                 ShowPaperDIALOG(context, CheckArr, JUMIN1)
 
             }
@@ -1884,6 +1898,35 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             login_appbar_loading_progress_bg.visibility = View.GONE
             this.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
         }
+    }
+
+    fun MokpoControlHandler(isHide:Boolean)
+    {
+        if(isHide)
+        {
+            user_name.visibility = View.GONE
+            first_serial.visibility = View.GONE
+            last_serial.visibility = View.GONE
+            textView261.visibility = View.GONE
+            textView72.visibility = View.GONE
+            canvas.visibility = View.GONE
+            user_login_button.visibility = View.GONE
+            btnReSign.visibility = View.GONE
+            constraintLayout16.visibility = View.GONE
+        }
+        else
+        {
+            user_name.visibility = View.VISIBLE
+            first_serial.visibility = View.VISIBLE
+            last_serial.visibility = View.VISIBLE
+            textView261.visibility = View.VISIBLE
+            textView72.visibility = View.VISIBLE
+            canvas.visibility = View.VISIBLE
+            user_login_button.visibility = View.VISIBLE
+            btnReSign.visibility = View.VISIBLE
+            constraintLayout16.visibility = View.VISIBLE
+        }
+
     }
 
     override fun onResume() {
