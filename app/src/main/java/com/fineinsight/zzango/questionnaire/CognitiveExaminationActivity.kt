@@ -55,7 +55,6 @@ class CognitiveExaminationActivity : RootActivity(){
         cognitive_examination_save.setOnClickListener {
 
             if(check()){
-
                 if(MainActivity.chart.isEmpty()){
                     if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
                         ChartDivision.ChartDivision.local_each_insert(this, 2)
@@ -538,6 +537,8 @@ class CognitiveExaminationActivity : RootActivity(){
 
         SavePaper.Total.temp_Cognitive = null
 
+        ChartDivision.ChartDivision.ProgressAction(true, this)
+
         return true
 
     }
@@ -991,7 +992,6 @@ class CognitiveExaminationActivity : RootActivity(){
         }else if(paper.mj_inji_15 == "2"){
             cognitive_15_3.isChecked = true
         }
-
 
     }
 

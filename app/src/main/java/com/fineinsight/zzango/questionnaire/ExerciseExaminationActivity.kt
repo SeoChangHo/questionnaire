@@ -205,7 +205,7 @@ class ExerciseExaminationActivity : RootActivity() {
     fun exercise_exam_server_getPaper(){
 
         startActivity(Intent(this@ExerciseExaminationActivity, NutritionExaminationActivity::class.java).putExtra("paper", intent.getSerializableExtra("paper") as ServerPaper_Life).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-        ChartDivision.ChartDivision.ProgressAction(true, this)
+
     }
 
     fun whenTempSave() {
@@ -912,13 +912,13 @@ class ExerciseExaminationActivity : RootActivity() {
 
         SavePaper.Total.temp_Exercise = null
 
+        ChartDivision.ChartDivision.ProgressAction(true, this)
+
         return true
 
     }
 
     fun whenTempLoad(paper:Paper_EXERCISE) {
-
-        ChartDivision.ChartDivision.ProgressAction(true, this)
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial

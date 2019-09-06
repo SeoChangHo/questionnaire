@@ -561,13 +561,13 @@ class DrinkingExaminationActivity : RootActivity(){
 
         SavePaper.Total.temp_Drinking = null
 
+        ChartDivision.ChartDivision.ProgressAction(true, this)
+
         return true
 
     }
 
     fun whenTempLoad(paper: Paper_DRINKING) {
-
-        ChartDivision.ChartDivision.ProgressAction(true, this)
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial

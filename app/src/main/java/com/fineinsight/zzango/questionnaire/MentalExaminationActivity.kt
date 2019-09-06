@@ -406,13 +406,13 @@ class MentalExaminationActivity : RootActivity(){
 
         SavePaper.Total.temp_Mental = null
 
+        ChartDivision.ChartDivision.ProgressAction(true, this)
+
         return true
 
     }
 
     fun whenTempLoad(paper:Paper_MENTAL){
-
-        ChartDivision.ChartDivision.ProgressAction(true, this)
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial
@@ -756,7 +756,6 @@ class MentalExaminationActivity : RootActivity(){
         }else if(paper.mj_mtl_9 == "3"){
             mental_9_4.isChecked = true
         }
-
 
     }
 

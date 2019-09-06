@@ -185,7 +185,6 @@ class NutritionExaminationActivity :RootActivity() {
     fun nutrition_exam_server_getPaper(){
 
         startActivity(Intent(this@NutritionExaminationActivity, SmokingExaminationActivity::class.java).putExtra("paper", intent.getSerializableExtra("paper") as ServerPaper_Life).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-        ChartDivision.ChartDivision.ProgressAction(true, this)
 
     }
 
@@ -687,13 +686,13 @@ class NutritionExaminationActivity :RootActivity() {
 
         SavePaper.Total.temp_Nutrition = null
 
+        ChartDivision.ChartDivision.ProgressAction(true, this)
+
         return true
 
     }
 
     fun whenTempLoad(paper:Paper_NUTRITION){
-
-        ChartDivision.ChartDivision.ProgressAction(true, this)
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial

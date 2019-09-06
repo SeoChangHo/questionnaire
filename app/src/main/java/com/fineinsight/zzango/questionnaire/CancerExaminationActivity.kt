@@ -344,7 +344,6 @@ class CancerExaminationActivity : RootActivity(){
         cancer_examination_save.setOnClickListener {
 
             if(check()){
-
                 if(MainActivity.chart.isEmpty()){
                     if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
                         ChartDivision.ChartDivision.local_each_insert(this, 6)
@@ -2005,6 +2004,8 @@ class CancerExaminationActivity : RootActivity(){
         if(ChartDivision.ChartDivision.next_or_save(6)){
             SavedListObject.SavedList.savedDataClass.cancerSaved = true
         }
+
+        ChartDivision.ChartDivision.ProgressAction(true, this)
 
         return true
 

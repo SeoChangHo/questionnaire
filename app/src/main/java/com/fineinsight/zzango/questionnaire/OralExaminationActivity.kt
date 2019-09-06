@@ -784,6 +784,8 @@ class OralExaminationActivity : RootActivity() {
 
         SavePaper.Total.temp_Oral = null
 
+        ChartDivision.ChartDivision.ProgressAction(true, this)
+
         return true
 
     }

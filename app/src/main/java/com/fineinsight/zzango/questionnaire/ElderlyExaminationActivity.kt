@@ -392,6 +392,8 @@ class ElderlyExaminationActivity : RootActivity(){
 
         SavePaper.Total.temp_Elderly = null
 
+        ChartDivision.ChartDivision.ProgressAction(true, this)
+
         return true
 
     }

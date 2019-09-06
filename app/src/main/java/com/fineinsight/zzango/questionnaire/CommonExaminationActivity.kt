@@ -216,7 +216,6 @@ class CommonExaminationActivity : RootActivity() {
         common_examination_save.setOnClickListener{
 
             if(check()){
-
                 if(MainActivity.chart.isEmpty()){
                     if(getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "")!!.equals("local")){
                         ChartDivision.ChartDivision.local_each_insert(this, 0)
@@ -1186,12 +1185,12 @@ class CommonExaminationActivity : RootActivity() {
 
         Run(gender, age ,common2, common3)
 
+        ChartDivision.ChartDivision.ProgressAction(true, this)
+
         return true
     }
 
     fun whenTempLoad(paper: Paper_COMMON) {
-
-        ChartDivision.ChartDivision.ProgressAction(true, this)
 
         name_edit.text = paper.name
         first_serial.text = paper.first_serial

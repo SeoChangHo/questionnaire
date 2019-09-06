@@ -175,7 +175,6 @@ class SmokingExaminationActivity : RootActivity(){
     fun smoking_exam_server_getPaper(){
 
         startActivity(Intent(this@SmokingExaminationActivity, DrinkingExaminationActivity::class.java).putExtra("paper", intent.getSerializableExtra("paper") as ServerPaper_Life).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-        ChartDivision.ChartDivision.ProgressAction(true, this)
 
     }
 
@@ -431,6 +430,8 @@ class SmokingExaminationActivity : RootActivity(){
         SavedListObject.SavedList.savedDataClass.smokingSaved = true
 
         SavePaper.Total.temp_Smoking = null
+
+        ChartDivision.ChartDivision.ProgressAction(true, this)
 
         return true
 

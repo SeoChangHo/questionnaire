@@ -466,7 +466,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.START, common.id, ConstraintSet.START)
                 constraintSet.connect(triangle.id, ConstraintSet.END, common.id, ConstraintSet.END)
 
-                common_text.textSize = 26f
+                common_text.textSize = 24f
                 common_text.typeface = Typeface.DEFAULT_BOLD
 
             }
@@ -477,7 +477,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.END, mental.id, ConstraintSet.END)
 
                 mental_text.setTextColor(resources.getColor(R.color.examBlue, null))
-                mental_text.textSize = 26f
+                mental_text.textSize = 24f
                 mental_text.typeface = Typeface.DEFAULT_BOLD
 
             }
@@ -488,7 +488,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.END, cognitive.id, ConstraintSet.END)
 
                 cognitive_text.setTextColor(resources.getColor(R.color.examBlue, null))
-                cognitive_text.textSize = 26f
+                cognitive_text.textSize = 24f
                 cognitive_text.typeface = Typeface.DEFAULT_BOLD
 
             }
@@ -499,7 +499,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.END, elderly.id, ConstraintSet.END)
 
                 elderly_text.setTextColor(resources.getColor(R.color.examBlue, null))
-                elderly_text.textSize = 26f
+                elderly_text.textSize = 24f
                 elderly_text.typeface = Typeface.DEFAULT_BOLD
 
             }
@@ -510,7 +510,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.END, exercise.id, ConstraintSet.END)
 
                 exercise_text.setTextColor(resources.getColor(R.color.examBlue, null))
-                exercise_text.textSize = 26f
+                exercise_text.textSize = 24f
                 exercise_text.typeface = Typeface.DEFAULT_BOLD
 
             }
@@ -521,7 +521,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.END, nutrition.id, ConstraintSet.END)
 
                 nutrition_text.setTextColor(resources.getColor(R.color.examBlue, null))
-                nutrition_text.textSize = 26f
+                nutrition_text.textSize = 24f
                 nutrition_text.typeface = Typeface.DEFAULT_BOLD
 
             }
@@ -532,7 +532,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.END, smoking.id, ConstraintSet.END)
 
                 smoking_text.setTextColor(resources.getColor(R.color.examBlue, null))
-                smoking_text.textSize = 26f
+                smoking_text.textSize = 24f
                 smoking_text.typeface = Typeface.DEFAULT_BOLD
 
             }
@@ -543,7 +543,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.END, drinking.id, ConstraintSet.END)
 
                 drinking_text.setTextColor(resources.getColor(R.color.examBlue, null))
-                drinking_text.textSize = 26f
+                drinking_text.textSize = 24f
                 drinking_text.typeface = Typeface.DEFAULT_BOLD
 
             }
@@ -554,7 +554,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.END, oral.id, ConstraintSet.END)
 
                 oral_text.setTextColor(resources.getColor(R.color.examBlue, null))
-                oral_text.textSize = 26f
+                oral_text.textSize = 24f
                 oral_text.typeface = Typeface.DEFAULT_BOLD
 
             }
@@ -565,7 +565,7 @@ open class RootActivity : AppCompatActivity() {
                 constraintSet.connect(triangle.id, ConstraintSet.END, cancer.id, ConstraintSet.END)
 
                 cancer_text.setTextColor(resources.getColor(R.color.examBlue, null))
-                cancer_text.textSize = 26f
+                cancer_text.textSize = 24f
                 cancer_text.typeface = Typeface.DEFAULT_BOLD
 
             }
