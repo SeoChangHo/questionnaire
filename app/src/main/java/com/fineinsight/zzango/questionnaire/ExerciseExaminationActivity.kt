@@ -26,8 +26,6 @@ class ExerciseExaminationActivity : RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise_exam)
 
-        controlProgress(this)
-
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
@@ -184,6 +182,8 @@ class ExerciseExaminationActivity : RootActivity() {
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        controlProgress(this)
 
     }
 

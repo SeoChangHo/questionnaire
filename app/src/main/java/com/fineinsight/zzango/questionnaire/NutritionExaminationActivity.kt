@@ -36,8 +36,6 @@ class NutritionExaminationActivity :RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nutrition_exam)
 
-        controlProgress(this)
-
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
@@ -164,6 +162,8 @@ class NutritionExaminationActivity :RootActivity() {
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        controlProgress(this)
 
     }
 

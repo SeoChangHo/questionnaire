@@ -38,8 +38,6 @@ class SmokingExaminationActivity : RootActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_smoking_exam)
 
-        controlProgress(this)
-
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
@@ -153,6 +151,8 @@ class SmokingExaminationActivity : RootActivity(){
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        controlProgress(this)
 
     }
 

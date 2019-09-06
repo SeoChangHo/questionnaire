@@ -288,9 +288,6 @@ open class RootActivity : AppCompatActivity() {
         //단일 진행시
         }else{
 
-            println("??")
-
-
             when(context.javaClass.kotlin.simpleName){
 
                 "ExerciseExaminationActivity" ,"NutritionExaminationActivity",
@@ -305,6 +302,10 @@ open class RootActivity : AppCompatActivity() {
 
             }
 
+        }
+
+        if(state != "getPaper"){
+            (questionnaire_progress_wrapper.parent as View).visibility = View.GONE
         }
 
     }

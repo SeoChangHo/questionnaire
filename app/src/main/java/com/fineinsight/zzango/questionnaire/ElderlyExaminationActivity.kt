@@ -43,8 +43,6 @@ class ElderlyExaminationActivity : RootActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_elderly_exam)
 
-        controlProgress(this)
-
         //서명정보 가져오는거
         if(MainActivity.user_stream!=null)
         {
@@ -137,6 +135,8 @@ class ElderlyExaminationActivity : RootActivity(){
 
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        controlProgress(this)
 
     }
 
