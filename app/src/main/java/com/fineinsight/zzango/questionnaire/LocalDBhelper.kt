@@ -18,19 +18,42 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun CreatePaperTable(db: SQLiteDatabase)
     {
         CreateLocalListTable(db)
+
         commonCreate(db)
+        commontableCheck(db)
+
         mentalCreate(db)
+        mentaltableCheck(db)
+
         cognitiveCreate(db)
+        cognitivetableCheck(db)
+
         elderlyCreate(db)
+        elderlytableCheck(db)
+
         exerciseCreate(db)
+        exercisetableCheck(db)
+
         nutritionCreate(db)
+        nutritiontableCheck(db)
+
         smokingCreate(db)
+        smokingtableCheck(db)
+
         drinkingCreate(db)
+        drinkingtableCheck(db)
+
         oralCreate(db)
+        oraltableCheck(db)
+
         cancerCreate(db)
+        cancertableCheck(db)
 
         db.close()
     }
+
+
+
 
     fun CreateLocalListTable(db: SQLiteDatabase)
     {
@@ -160,6 +183,57 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun oraltableCheck(db: SQLiteDatabase)
+    {
+
+        println("oraltableCheck")
+
+        var cursor = db.query("ORAL_EXAM", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+        Array.add("exam_date")
+        Array.add("exam_no")
+        Array.add("name")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("category")
+        Array.add("oral_1")
+        Array.add("oral_2")
+        Array.add("oral_3")
+        Array.add("oral_4")
+        Array.add("oral_5")
+        Array.add("oral_6")
+        Array.add("oral_7")
+        Array.add("oral_8")
+        Array.add("oral_9")
+        Array.add("oral_10")
+        Array.add("oral_11")
+        Array.add("oral_12")
+        Array.add("oral_13")
+        Array.add("oral_14")
+        Array.add("oral_15")
+        Array.add("oral_16")
+        Array.add("oral_Remark")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE ORAL_EXAM ADD COLUMN "+item+" TEXT default null");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
+    }
+
     fun commonCreate(db: SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
@@ -260,6 +334,129 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+
+    fun commontableCheck(db: SQLiteDatabase)
+    {
+
+        println("commontableCheck")
+
+
+        var cursor = db.query("COMMON_EXAM", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+        Array.add("exam_date")
+        Array.add("exam_no")
+        Array.add("name")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("category")
+        Array.add("mj1_1_1")
+        Array.add("mj1_1_2")
+        Array.add("mj1_2_1")
+        Array.add("mj1_2_2")
+        Array.add("mj1_3_1")
+        Array.add("mj1_3_2")
+        Array.add("mj1_4_1")
+        Array.add("mj1_4_2")
+        Array.add("mj1_5_1")
+        Array.add("mj1_5_2")
+        Array.add("mj1_6_1")
+        Array.add("mj1_6_2")
+        Array.add("mj1_7_1")
+        Array.add("mj1_7_2")
+        Array.add("mj2_1")
+        Array.add("mj2_2")
+        Array.add("mj2_3")
+        Array.add("mj2_4")
+        Array.add("mj2_5")
+        Array.add("mj3")
+        Array.add("mj4")
+        Array.add("mj4_1_1")
+        Array.add("mj4_1_2")
+        Array.add("mj4_2_1")
+        Array.add("mj4_2_2")
+        Array.add("mj4_2_3")
+        Array.add("mj5")
+        Array.add("mj5_1_1")
+        Array.add("mj5_1_2")
+        Array.add("mj5_2_1")
+        Array.add("mj5_2_2")
+        Array.add("mj5_2_3")
+        Array.add("mj6")
+        Array.add("mj6_1")
+        Array.add("mj71")
+        Array.add("mj72")
+        Array.add("mj73")
+        Array.add("mj74")
+        Array.add("mj7_1_11")
+        Array.add("mj7_1_12")
+        Array.add("mj7_1_13")
+        Array.add("mj7_1_14")
+        Array.add("mj7_1_21")
+        Array.add("mj7_1_22")
+        Array.add("mj7_1_23")
+        Array.add("mj7_1_24")
+        Array.add("mj7_1_31")
+        Array.add("mj7_1_32")
+        Array.add("mj7_1_33")
+        Array.add("mj7_1_34")
+        Array.add("mj7_1_41")
+        Array.add("mj7_1_42")
+        Array.add("mj7_1_43")
+        Array.add("mj7_1_44")
+        Array.add("mj7_1_51")
+        Array.add("mj7_1_52")
+        Array.add("mj7_1_53")
+        Array.add("mj7_1_54")
+        Array.add("mj7_1_etc")
+        Array.add("mj7_2_11")
+        Array.add("mj7_2_12")
+        Array.add("mj7_2_13")
+        Array.add("mj7_2_14")
+        Array.add("mj7_2_21")
+        Array.add("mj7_2_22")
+        Array.add("mj7_2_23")
+        Array.add("mj7_2_24")
+        Array.add("mj7_2_31")
+        Array.add("mj7_2_32")
+        Array.add("mj7_2_33")
+        Array.add("mj7_2_34")
+        Array.add("mj7_2_41")
+        Array.add("mj7_2_42")
+        Array.add("mj7_2_43")
+        Array.add("mj7_2_44")
+        Array.add("mj7_2_51")
+        Array.add("mj7_2_52")
+        Array.add("mj7_2_53")
+        Array.add("mj7_2_54")
+        Array.add("mj7_2_etc")
+        Array.add("mj8_1")
+        Array.add("mj8_2_1")
+        Array.add("mj8_2_2")
+        Array.add("mj9_1")
+        Array.add("mj9_2_1")
+        Array.add("mj9_2_2")
+        Array.add("mj10")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE COMMON_EXAM ADD COLUMN "+item+" TEXT default null");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
+    }
+
     fun mentalCreate(db : SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
@@ -280,7 +477,53 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " mj_mtl_8 TEXT," +
                 " mj_mtl_9 TEXT," +
                 " mj_mtl_sum TEXT);")
+    }
 
+
+    fun mentaltableCheck(db: SQLiteDatabase)
+    {
+
+        println("mentaltableCheck")
+
+
+        var cursor = db.query("MENTAL_EXAM", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+
+        Array.add("exam_date")
+        Array.add("exam_no")
+        Array.add("name")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("category")
+        Array.add("mj_mtl_1")
+        Array.add("mj_mtl_2")
+        Array.add("mj_mtl_3")
+        Array.add("mj_mtl_4")
+        Array.add("mj_mtl_5")
+        Array.add("mj_mtl_6")
+        Array.add("mj_mtl_7")
+        Array.add("mj_mtl_8")
+        Array.add("mj_mtl_9")
+        Array.add("mj_mtl_sum")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE MENTAL_EXAM ADD COLUMN "+item+" TEXT default null");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
     }
 
     fun cognitiveCreate(db : SQLiteDatabase?){
@@ -312,6 +555,58 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun cognitivetableCheck(db: SQLiteDatabase)
+    {
+
+        println("cognitivetableCheck")
+
+
+        var cursor = db.query("COGNITIVE_EXAM", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+
+        Array.add("exam_date")
+        Array.add("exam_no")
+        Array.add("name")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("category")
+        Array.add("mj_inji_1")
+        Array.add("mj_inji_2")
+        Array.add("mj_inji_3")
+        Array.add("mj_inji_4")
+        Array.add("mj_inji_5")
+        Array.add("mj_inji_6")
+        Array.add("mj_inji_7")
+        Array.add("mj_inji_8")
+        Array.add("mj_inji_9")
+        Array.add("mj_inji_10")
+        Array.add("mj_inji_11")
+        Array.add("mj_inji_12")
+        Array.add("mj_inji_13")
+        Array.add("mj_inji_14")
+        Array.add("mj_inji_15")
+        Array.add("mj_inji_sum")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE COGNITIVE_EXAM ADD COLUMN "+item+" TEXT default null");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
+    }
+
     fun elderlyCreate(db : SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
@@ -335,6 +630,53 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun elderlytableCheck(db: SQLiteDatabase)
+    {
+
+
+        println("elderlytableCheck")
+
+
+        var cursor = db.query("ELDERLY_EXAM", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+
+        Array.add("exam_date")
+        Array.add("exam_no")
+        Array.add("name")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("category")
+        Array.add("mj66_1")
+        Array.add("mj66_2")
+        Array.add("mj66_3_1")
+        Array.add("mj66_3_2")
+        Array.add("mj66_3_3")
+        Array.add("mj66_3_4")
+        Array.add("mj66_3_5")
+        Array.add("mj66_3_6")
+        Array.add("mj66_4")
+        Array.add("mj66_5")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE ELDERLY_EXAM ADD COLUMN "+item+" TEXT default null");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
+    }
+
     fun smokingCreate(db : SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
@@ -355,6 +697,50 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " sg2_spSmoke8 TEXT," +
                 " sg2_spSmokeSum TEXT);")
 
+    }
+
+    fun smokingtableCheck(db: SQLiteDatabase)
+    {
+
+        println("smokingtableCheck")
+
+
+        var cursor = db.query("SMOKING_EXAM", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+        Array.add("exam_date")
+        Array.add("exam_no")
+        Array.add("name")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("category")
+        Array.add("sg2_spSmoke1")
+        Array.add("sg2_spSmoke2")
+        Array.add("sg2_spSmoke3")
+        Array.add("sg2_spSmoke4")
+        Array.add("sg2_spSmoke5")
+        Array.add("sg2_spSmoke6")
+        Array.add("sg2_spSmoke7")
+        Array.add("sg2_spSmoke8")
+        Array.add("sg2_spSmokeSum")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE SMOKING_EXAM ADD COLUMN "+item+" TEXT default null");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
     }
 
     fun drinkingCreate(db : SQLiteDatabase?){
@@ -380,6 +766,54 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " sg2_spDrink10 TEXT," +
                 " sg2_spDrinkSum TEXT);")
 
+    }
+
+    fun drinkingtableCheck(db: SQLiteDatabase)
+    {
+
+        println("drinkingtableCheck")
+
+
+        var cursor = db.query("DRINKING_EXAM", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+
+        Array.add("exam_date")
+        Array.add("exam_no")
+        Array.add("name")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("category")
+        Array.add("sg2_spDrink1")
+        Array.add("sg2_spDrink2_1")
+        Array.add("sg2_spDrink2_2")
+        Array.add("sg2_spDrink3")
+        Array.add("sg2_spDrink4")
+        Array.add("sg2_spDrink5")
+        Array.add("sg2_spDrink6")
+        Array.add("sg2_spDrink7")
+        Array.add("sg2_spDrink8")
+        Array.add("sg2_spDrink9")
+        Array.add("sg2_spDrink10")
+        Array.add("sg2_spDrinkSum")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE DRINKING_EXAM ADD COLUMN "+item+" TEXT default null");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
     }
 
     fun exerciseCreate(db : SQLiteDatabase?){
@@ -426,6 +860,73 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun exercisetableCheck(db: SQLiteDatabase)
+    {
+
+        println("exercisetableCheck")
+
+
+        var cursor = db.query("EXERCISE_EXAM", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+
+        Array.add("exam_date")
+        Array.add("exam_no")
+        Array.add("name")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("category")
+        Array.add("sg2_spSports1_1")
+        Array.add("sg2_spSports1_2")
+        Array.add("sg2_spSports1_3_1")
+        Array.add("sg2_spSports1_3_2")
+        Array.add("sg2_spSports1_4")
+        Array.add("sg2_spSports1_5")
+        Array.add("sg2_spSports1_6_1")
+        Array.add("sg2_spSports1_6_2")
+        Array.add("sg2_spSports2_1")
+        Array.add("sg2_spSports2_2")
+        Array.add("sg2_spSports2_3_1")
+        Array.add("sg2_spSports2_3_2")
+        Array.add("sg2_spSports3_1")
+        Array.add("sg2_spSports3_2")
+        Array.add("sg2_spSports3_3_1")
+        Array.add("sg2_spSports3_3_2")
+        Array.add("sg2_spSports3_4")
+        Array.add("sg2_spSports3_5")
+        Array.add("sg2_spSports3_6_1")
+        Array.add("sg2_spSports3_6_2")
+        Array.add("sg2_spSports4_1_1")
+        Array.add("sg2_spSports4_1_2")
+        Array.add("sg2_spSports5")
+        Array.add("sg2_spSports6")
+        Array.add("sg2_spSports7")
+        Array.add("sg2_spSports8")
+        Array.add("sg2_spSports9")
+        Array.add("sg2_spSports10")
+        Array.add("sg2_spSports11")
+        Array.add("sg2_spSports12")
+        Array.add("sg2_spSportsSum")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE EXERCISE_EXAM ADD COLUMN "+item+" TEXT default null");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
+    }
+
     fun nutritionCreate(db : SQLiteDatabase?){
 
         db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
@@ -457,6 +958,62 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " sg2_spFat3 TEXT," +
                 " sg2_spFatSum TEXT);")
 
+    }
+
+    fun nutritiontableCheck(db: SQLiteDatabase)
+    {
+
+        println("nutritiontableCheck")
+
+
+        var cursor = db.query("NUTRITION_EXAM", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+
+        Array.add("exam_date")
+        Array.add("exam_no")
+        Array.add("name")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("category")
+        Array.add("sg2_spFood1")
+        Array.add("sg2_spFood2")
+        Array.add("sg2_spFood3")
+        Array.add("sg2_spFood4")
+        Array.add("sg2_spFood5")
+        Array.add("sg2_spFood6")
+        Array.add("sg2_spFood7")
+        Array.add("sg2_spFood8")
+        Array.add("sg2_spFood9")
+        Array.add("sg2_spFood10")
+        Array.add("sg2_spFood11")
+        Array.add("sg2_spFoodSum")
+        Array.add("sg2_spFatHeight")
+        Array.add("sg2_spFatWeight")
+        Array.add("sg2_spFatWaistSize")
+        Array.add("sg2_spFatBmi")
+        Array.add("sg2_spFat1")
+        Array.add("sg2_spFat2")
+        Array.add("sg2_spFat3")
+        Array.add("sg2_spFatSum")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE NUTRITION_EXAM ADD COLUMN "+item+" TEXT default null");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
     }
 
     fun cancerCreate(db : SQLiteDatabase?){
@@ -556,6 +1113,129 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 " ck16_5 TEXT," +
                 " ck16_6 TEXT);")
 
+    }
+
+    fun cancertableCheck(db: SQLiteDatabase)
+    {
+
+        println("cancertableCheck")
+
+
+
+        var cursor = db.query("CANCER_EXAM", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+
+        Array.add("exam_date")
+        Array.add("exam_no")
+        Array.add("name")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("category")
+        Array.add("ck1")
+        Array.add("ck1_1")
+        Array.add("ck2")
+        Array.add("ck2_1")
+        Array.add("ck3_1")
+        Array.add("ck3_1_1")
+        Array.add("ck3_1_2")
+        Array.add("ck3_1_3")
+        Array.add("ck3_1_4")
+        Array.add("ck3_1_5")
+        Array.add("ck3_2")
+        Array.add("ck3_2_1")
+        Array.add("ck3_2_2")
+        Array.add("ck3_2_3")
+        Array.add("ck3_2_4")
+        Array.add("ck3_2_5")
+        Array.add("ck3_3")
+        Array.add("ck3_3_1")
+        Array.add("ck3_3_2")
+        Array.add("ck3_3_3")
+        Array.add("ck3_3_4")
+        Array.add("ck3_3_5")
+        Array.add("ck3_4")
+        Array.add("ck3_4_1")
+        Array.add("ck3_4_2")
+        Array.add("ck3_4_3")
+        Array.add("ck3_4_4")
+        Array.add("ck3_4_5")
+        Array.add("ck3_5")
+        Array.add("ck3_5_1")
+        Array.add("ck3_5_2")
+        Array.add("ck3_5_3")
+        Array.add("ck3_5_4")
+        Array.add("ck3_5_5")
+        Array.add("ck3_6")
+        Array.add("ck3_6_1")
+        Array.add("ck3_6_2")
+        Array.add("ck3_6_3")
+        Array.add("ck3_6_4")
+        Array.add("ck3_6_5")
+        Array.add("ck3_6_kita")
+        Array.add("ck4_1")
+        Array.add("ck4_2")
+        Array.add("ck4_3")
+        Array.add("ck4_4")
+        Array.add("ck4_5")
+        Array.add("ck4_6")
+        Array.add("ck4_7")
+        Array.add("ck4_8")
+        Array.add("ck4_9")
+        Array.add("ck5_1")
+        Array.add("ck5_2")
+        Array.add("ck5_3")
+        Array.add("ck5_4")
+        Array.add("ck5_5")
+        Array.add("ck6_1")
+        Array.add("ck6_2")
+        Array.add("ck6_3")
+        Array.add("ck6_4")
+        Array.add("ck6_5")
+        Array.add("ck7_1")
+        Array.add("ck7_2")
+        Array.add("ck7_3")
+        Array.add("ck7_4")
+        Array.add("ck7_5")
+        Array.add("ck8_1")
+        Array.add("ck8_2")
+        Array.add("ck9_1")
+        Array.add("ck9_2")
+        Array.add("ck10")
+        Array.add("ck11")
+        Array.add("ck12")
+        Array.add("ck13")
+        Array.add("ck14")
+        Array.add("ck15_5")
+        Array.add("ck15_5_1")
+        Array.add("ck15_5_2")
+        Array.add("ck15_5_3")
+        Array.add("ck15_5_4")
+        Array.add("ck15_5_5")
+        Array.add("ck16_1")
+        Array.add("ck16_2")
+        Array.add("ck16_3")
+        Array.add("ck16_4")
+        Array.add("ck16_5")
+        Array.add("ck16_6")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE CANCER_EXAM ADD COLUMN "+item+" TEXT default null");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
     }
 
 
