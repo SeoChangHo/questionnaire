@@ -304,7 +304,7 @@ open class RootActivity : AppCompatActivity() {
 
         }
 
-        if(state != "getPaper"){
+        if(state == "getPaper"){
             (questionnaire_progress_wrapper.parent as View).visibility = View.GONE
         }
 
