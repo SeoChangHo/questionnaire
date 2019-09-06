@@ -224,7 +224,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 try {
                     println("${item} 컬럼이 없어서 추가합니다.")
-                    db.execSQL("ALTER TABLE ORAL_EXAM ADD COLUMN "+item+" TEXT default null");
+                    db.execSQL("ALTER TABLE ORAL_EXAM ADD COLUMN "+item+" TEXT default ''");
                 }
                 catch (e:Exception)
                 {
@@ -447,7 +447,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 try {
                     println("${item} 컬럼이 없어서 추가합니다.")
-                    db.execSQL("ALTER TABLE COMMON_EXAM ADD COLUMN "+item+" TEXT default null");
+                    db.execSQL("ALTER TABLE COMMON_EXAM ADD COLUMN "+item+" TEXT default ''");
                 }
                 catch (e:Exception)
                 {
@@ -516,7 +516,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 try {
                     println("${item} 컬럼이 없어서 추가합니다.")
-                    db.execSQL("ALTER TABLE MENTAL_EXAM ADD COLUMN "+item+" TEXT default null");
+                    db.execSQL("ALTER TABLE MENTAL_EXAM ADD COLUMN "+item+" TEXT default ''");
                 }
                 catch (e:Exception)
                 {
@@ -597,7 +597,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 try {
                     println("${item} 컬럼이 없어서 추가합니다.")
-                    db.execSQL("ALTER TABLE COGNITIVE_EXAM ADD COLUMN "+item+" TEXT default null");
+                    db.execSQL("ALTER TABLE COGNITIVE_EXAM ADD COLUMN "+item+" TEXT default ''");
                 }
                 catch (e:Exception)
                 {
@@ -667,7 +667,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 try {
                     println("${item} 컬럼이 없어서 추가합니다.")
-                    db.execSQL("ALTER TABLE ELDERLY_EXAM ADD COLUMN "+item+" TEXT default null");
+                    db.execSQL("ALTER TABLE ELDERLY_EXAM ADD COLUMN "+item+" TEXT default ''");
                 }
                 catch (e:Exception)
                 {
@@ -733,7 +733,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 try {
                     println("${item} 컬럼이 없어서 추가합니다.")
-                    db.execSQL("ALTER TABLE SMOKING_EXAM ADD COLUMN "+item+" TEXT default null");
+                    db.execSQL("ALTER TABLE SMOKING_EXAM ADD COLUMN "+item+" TEXT default ''");
                 }
                 catch (e:Exception)
                 {
@@ -806,7 +806,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 try {
                     println("${item} 컬럼이 없어서 추가합니다.")
-                    db.execSQL("ALTER TABLE DRINKING_EXAM ADD COLUMN "+item+" TEXT default null");
+                    db.execSQL("ALTER TABLE DRINKING_EXAM ADD COLUMN "+item+" TEXT default ''");
                 }
                 catch (e:Exception)
                 {
@@ -917,7 +917,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 try {
                     println("${item} 컬럼이 없어서 추가합니다.")
-                    db.execSQL("ALTER TABLE EXERCISE_EXAM ADD COLUMN "+item+" TEXT default null");
+                    db.execSQL("ALTER TABLE EXERCISE_EXAM ADD COLUMN "+item+" TEXT default ''");
                 }
                 catch (e:Exception)
                 {
@@ -1006,7 +1006,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 try {
                     println("${item} 컬럼이 없어서 추가합니다.")
-                    db.execSQL("ALTER TABLE NUTRITION_EXAM ADD COLUMN "+item+" TEXT default null");
+                    db.execSQL("ALTER TABLE NUTRITION_EXAM ADD COLUMN "+item+" TEXT default ''");
                 }
                 catch (e:Exception)
                 {
@@ -1228,7 +1228,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
             {
                 try {
                     println("${item} 컬럼이 없어서 추가합니다.")
-                    db.execSQL("ALTER TABLE CANCER_EXAM ADD COLUMN "+item+" TEXT default null");
+                    db.execSQL("ALTER TABLE CANCER_EXAM ADD COLUMN "+item+" TEXT default ''");
                 }
                 catch (e:Exception)
                 {
