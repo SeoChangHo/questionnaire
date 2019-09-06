@@ -1794,7 +1794,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                         {
                             CurrentPage = 3
                             //여기여기
-                            btnList.setImageResource(R.drawable.listicon)
+                            btnList.setImageResource(R.drawable.btn_back)
                             main_start_login1.visibility = View.GONE
                             main_start_login2.visibility = View.GONE
                             main_start_list.visibility = View.VISIBLE

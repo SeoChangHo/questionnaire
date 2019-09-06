@@ -51,6 +51,11 @@ class SettingActivity : AppCompatActivity() {
         }
 
 
+        button_back.setOnClickListener {
+            finish()
+        }
+
+
 //        switch1.isChecked = num == "wifi"
 
         listViewButton.setOnClickListener {
