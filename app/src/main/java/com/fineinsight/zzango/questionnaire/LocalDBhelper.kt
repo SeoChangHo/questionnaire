@@ -102,7 +102,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                     }
                     else
                     {
-                        db.execSQL("ALTER TABLE ORAL_EXAM ADD COLUMN "+item+" TEXT default ''");
+                        db.execSQL("ALTER TABLE LOCALSAVELIST ADD COLUMN "+item+" TEXT default ''");
                     }
                 }
                 catch (e:Exception)
