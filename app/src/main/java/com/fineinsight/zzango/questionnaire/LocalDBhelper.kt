@@ -18,6 +18,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun CreatePaperTable(db: SQLiteDatabase)
     {
         CreateLocalListTable(db)
+        CheckLocalListTable(db)
 
         commonCreate(db)
         commontableCheck(db)
@@ -65,6 +66,54 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "last_serial TEXT," +
                 "name TEXT);")
     }
+
+
+
+    fun CheckLocalListTable(db: SQLiteDatabase)
+    {
+
+        println("oraltableCheck")
+
+        var cursor = db.query("LOCALSAVELIST", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+
+        Array.add("exam_no")
+        Array.add("signature")
+        Array.add("first_serial")
+        Array.add("last_serial")
+        Array.add("last_serial")
+        Array.add("name")
+
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+
+                    if(item == "signature")
+                    {
+                        db.execSQL("ALTER TABLE ORAL_EXAM ADD COLUMN "+item+" BLOB default ''");
+                    }
+                    else
+                    {
+                        db.execSQL("ALTER TABLE ORAL_EXAM ADD COLUMN "+item+" TEXT default ''");
+                    }
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
+    }
+
+
 
     fun LocalListInsert(db : SQLiteDatabase, ex : PublicDataInfo) {
 
