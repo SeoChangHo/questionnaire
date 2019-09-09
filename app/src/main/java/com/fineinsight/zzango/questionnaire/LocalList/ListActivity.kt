@@ -1,6 +1,7 @@
 package com.fineinsight.zzango.questionnaire.LocalList
 
 import android.database.sqlite.SQLiteDatabase
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
@@ -77,13 +78,10 @@ class ListActivity : RootActivity() {
         //저장하는거
         btnSave.setOnClickListener {
 
-            if(wfm!!.isWifiEnabled) {
+            if(wfm!!.isWifiEnabled || (connectivityManager!!.activeNetwork != null && connectivityManager!!.getNetworkCapabilities(connectivityManager!!.activeNetwork).hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
 
                 var removeArr = ArrayList<Paper>()
                 var SaveArr = ArrayList<Any>()
-
-
-
 
                 for (item in papers) {
                     if (item.isChecked == true) {
