@@ -98,7 +98,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
                     if(item == "signature")
                     {
-                        db.execSQL("ALTER TABLE ORAL_EXAM ADD COLUMN "+item+" BLOB default ''");
+//                        db.execSQL("ALTER TABLE ORAL_EXAM ADD COLUMN "+item+" BLOB default ''");
                     }
                     else
                     {
