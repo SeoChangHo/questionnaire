@@ -181,6 +181,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             }
         }
 
+
     }
 
     fun CreatePaperTable()
@@ -1768,6 +1769,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         }
 
+
     }
 
     fun ShowPage(Index:Int)
@@ -1781,6 +1783,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 main_start_login1.visibility = View.VISIBLE
                 main_start_login2.visibility = View.GONE
                 main_start_list.visibility = View.GONE
+                main_image_logo.visibility = View.GONE
             }
             2->
             {
@@ -1789,6 +1792,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 main_start_login1.visibility = View.GONE
                 main_start_login2.visibility = View.VISIBLE
                 main_start_list.visibility = View.GONE
+                main_image_logo.visibility = View.GONE
             }
             3->
             {
@@ -1812,6 +1816,16 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                             main_start_login1.visibility = View.GONE
                             main_start_login2.visibility = View.GONE
                             main_start_list.visibility = View.VISIBLE
+
+                            main_image_logo.visibility = View.VISIBLE
+
+                            if(hospital == HospitalList.hospital.Mokpo){
+                                main_image_logo.setImageResource(R.drawable.logo2)
+                            }else if(hospital == HospitalList.hospital.test){
+                                main_image_logo.setImageResource(R.drawable.logo)
+                            }else if(hospital == HospitalList.hospital.Osong){
+                                main_image_logo.setImageResource(R.drawable.bestianlogo)
+                            }
                         }
 
                     }
@@ -1820,6 +1834,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                         println("3페이지에서 버튼 누르면 이전페이지로 이동")
                         btnList.setImageResource(R.drawable.listicon)
                         ShowPage(2)
+
                     }
                 }
             }

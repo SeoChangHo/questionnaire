@@ -105,7 +105,7 @@
         android:id="@+id/main_start_login2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -841,6 +841,13 @@
             app:srcCompat="@drawable/listicon" />
 
     </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/main_image_logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ProgressBar
         android:id="@+id/login_appbar_loading_progress"
