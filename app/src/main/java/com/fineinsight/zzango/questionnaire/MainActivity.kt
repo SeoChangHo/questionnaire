@@ -314,7 +314,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     Login.setBackgroundResource(R.drawable.start_login_button)
                 }else{
                     Login.isEnabled = false
-                    Login.setBackgroundResource(R.drawable.start_login_back)
+                    Login.setBackgroundResource(R.drawable.start_login_button_default)
                 }
 
                 if(login_id.text.toString() != ""){
@@ -348,7 +348,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     Login.setBackgroundResource(R.drawable.start_login_button)
                 }else{
                     Login.isEnabled = false
-                    Login.setBackgroundResource(R.drawable.start_login_back)
+                    Login.setBackgroundResource(R.drawable.start_login_button_default)
                 }
 
                 if(login_password.text.toString() != ""){
@@ -366,8 +366,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if(login_password.text.toString() != ""){
-                    login_password.setTextColor(Color.GRAY)
-                    login_password.setBackgroundResource(R.drawable.start_login_back2)
+                    login_password.setTextColor(getColor(R.color.loginGray))
+                    login_password.setBackgroundResource(R.drawable.start_login_button_default)
                 }else{
                     login_password.setTextColor(Color.WHITE)
                     login_password.setBackgroundResource(R.drawable.start_login_back)
@@ -1075,7 +1075,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         chart(JUMIN1)
 
-        title.text = login_user_name+"님"
+        title.text = login_user_name
         user_login.text = login_user_name+"님"
 
         for(i in chart){
@@ -1778,21 +1778,23 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         {
             1->
             {
-                btnList.setImageResource(R.drawable.listicon)
                 CurrentPage = 1
                 main_start_login1.visibility = View.VISIBLE
                 main_start_login2.visibility = View.GONE
                 main_start_list.visibility = View.GONE
                 main_image_logo.visibility = View.GONE
+                menu_bottom_bar.visibility = View.GONE
             }
             2->
             {
-                btnList.setImageResource(R.drawable.listicon)
+                btnList.setImageResource(R.drawable.list)
                 CurrentPage = 2
                 main_start_login1.visibility = View.GONE
                 main_start_login2.visibility = View.VISIBLE
                 main_start_list.visibility = View.GONE
                 main_image_logo.visibility = View.GONE
+                menu_bottom_bar.visibility = View.VISIBLE
+                menu_bottom_bar.setBackgroundColor(getColor(R.color.mainBlue))
             }
             3->
             {
@@ -1812,7 +1814,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                         {
                             CurrentPage = 3
                             //여기여기
-                            btnList.setImageResource(R.drawable.btn_back)
+                            btnList.setImageResource(R.drawable.user_register)
                             main_start_login1.visibility = View.GONE
                             main_start_login2.visibility = View.GONE
                             main_start_list.visibility = View.VISIBLE
@@ -1826,13 +1828,17 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                             }else if(hospital == HospitalList.hospital.Osong){
                                 main_image_logo.setImageResource(R.drawable.bestianlogo)
                             }
+
+                            menu_bottom_bar.visibility = View.VISIBLE
+                            menu_bottom_bar.setBackgroundColor(getColor(R.color.loginGray))
+
                         }
 
                     }
                     3->
                     {
                         println("3페이지에서 버튼 누르면 이전페이지로 이동")
-                        btnList.setImageResource(R.drawable.listicon)
+                        btnList.setImageResource(R.drawable.list)
                         ShowPage(2)
 
                     }

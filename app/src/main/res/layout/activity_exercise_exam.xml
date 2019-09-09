@@ -416,7 +416,7 @@
             </RadioGroup>
 
             <android.support.constraint.ConstraintLayout
-                android:id="@+id/constraintLayout"
+                android:id="@+id/menu_bottom_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
@@ -631,8 +631,8 @@
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="1-4. "
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"/>
+                app:layout_constraintStart_toStartOf="@+id/menu_bottom_bar"
+                app:layout_constraintTop_toBottomOf="@+id/menu_bottom_bar"/>
 
             <TextView
                 android:id="@+id/textView107"

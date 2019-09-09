@@ -1,7 +1,6 @@
 package com.fineinsight.zzango.questionnaire
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
@@ -39,7 +38,7 @@ class ExerciseExaminationActivity : RootActivity() {
 
             buttonView, isChecked ->
 
-            checkCondition(isChecked, constraintLayout)
+            checkCondition(isChecked, menu_bottom_bar)
 
             selectedCondition(buttonView, isChecked)
 

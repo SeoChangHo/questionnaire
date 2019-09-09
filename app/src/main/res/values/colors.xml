@@ -13,6 +13,7 @@
     <color name="gray">#89888C</color>
     <color name="lightGray">#B1B1B1</color>
     <color name="whiteGray">#EAEAEA</color>
+    <color name="loginGray">#EDEFF3</color>
     <color name="progressGray">#D9E1E9</color>
     <color name="white">#FFFFFF</color>
     <color name="settingGray">#DCE1E8</color>
