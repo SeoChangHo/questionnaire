@@ -1078,9 +1078,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         title.text = login_user_name
         user_login.text = login_user_name+"님"
 
+        var count = 0
+
         for(i in chart){
 
             if(i.isbool){
+                count++
                 when(i.chartName){
                     PaperNameInfo.PC.COMMON.EN_NM -> {
 
@@ -1104,6 +1107,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             }
 
         }
+
+        noticeCount_textView.text = count.toString()+"개"
+
 
 
         ok.setOnClickListener {
