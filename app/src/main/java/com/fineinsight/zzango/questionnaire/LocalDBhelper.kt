@@ -72,7 +72,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun CheckLocalListTable(db: SQLiteDatabase)
     {
 
-        println("oraltableCheck")
+        println("LOCALLISTtableCheck")
 
         var cursor = db.query("LOCALSAVELIST", null, null, null, null, null, null)
 
@@ -84,7 +84,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         Array.add("exam_no")
         Array.add("signature")
         Array.add("first_serial")
-        Array.add("last_serial")
         Array.add("last_serial")
         Array.add("name")
 
