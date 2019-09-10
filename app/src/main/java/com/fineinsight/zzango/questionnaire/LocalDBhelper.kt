@@ -1673,7 +1673,6 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
     fun Select_Local_AGREE(db : SQLiteDatabase, NAME: String, JUMIN:String, SYSDATE:String): Cursor{
 
         var sql = "SELECT * FROM AGREE_LIST WHERE NAME =? AND JUMIN=? AND SYSDATE=?;"
-
         var data = db.rawQuery(sql, arrayOf(NAME, JUMIN, SYSDATE))
 
         return data
