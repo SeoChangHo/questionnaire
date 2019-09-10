@@ -25,6 +25,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".AgreementActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
+        <activity
             android:name=".OralExaminationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/noAnim" />
