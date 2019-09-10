@@ -45,8 +45,8 @@
 
             <ImageView
                 android:id="@+id/imageView14"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/manager_logout"
@@ -207,7 +207,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/btn_back" />
+            app:srcCompat="@drawable/back2" />
     </android.support.constraint.ConstraintLayout>
 
     <ImageView
