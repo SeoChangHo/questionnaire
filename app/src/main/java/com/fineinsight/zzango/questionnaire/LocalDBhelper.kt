@@ -20,6 +20,9 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         CreateLocalListTable(db)
         CheckLocalListTable(db)
 
+        AgreeCreate(db)
+        AgreetableCheck(db)
+
         commonCreate(db)
         commontableCheck(db)
 
@@ -198,6 +201,82 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
 
         return data.count
+    }
+
+
+    fun AgreeCreate(db : SQLiteDatabase?){
+
+        db!!.execSQL("CREATE TABLE IF NOT EXISTS " +
+                "AGREE_LIST" +
+                "(" +
+                "SYS_DATE TEXT," +
+                "USER_ID TEXT," +
+                "UPD_DATE TEXT," +
+                "BUNHO TEXT," +
+                "IO_GUBUN TEXT," +
+                "BASIC TEXT," +
+                "GUNJIN TEXT," +
+                "MOBILE TEXT," +
+                "EVENT TEXT," +
+                "SMS TEXT," +
+                "CONSULT TEXT," +
+                "DAERI TEXT," +
+                "GOYU TEXT," +
+                "MINGAM TEXT," +
+                "SCAN TEXT," +
+                "CAR_NO TEXT," +
+                "NAME TEXT," +
+                "JUMIN TEXT," +
+                "SIGN BLOB," +
+                ");")
+
+    }
+
+    fun AgreetableCheck(db: SQLiteDatabase)
+    {
+
+        println("AGREEtableCheck")
+
+        var cursor = db.query("AGREE_LIST", null, null, null, null, null, null)
+
+        var columnArr = cursor.columnNames
+
+        var Array = ArrayList<String>()
+
+        Array.add("SYS_DATE")
+        Array.add("USER_ID")
+        Array.add("UPD_DATE")
+        Array.add("BUNHO")
+        Array.add("IO_GUBUN")
+        Array.add("BASIC")
+        Array.add("GUNJIN")
+        Array.add("MOBILE")
+        Array.add("EVENT")
+        Array.add("SMS")
+        Array.add("CONSULT")
+        Array.add("DAERI")
+        Array.add("GOYU")
+        Array.add("MINGAM")
+        Array.add("SCAN")
+        Array.add("CAR_NO")
+        Array.add("NAME")
+        Array.add("JUMIN")
+        Array.add("SIGN")
+
+        for(item in Array)
+        {
+            if(!columnArr.contains(item))
+            {
+                try {
+                    println("${item} 컬럼이 없어서 추가합니다.")
+                    db.execSQL("ALTER TABLE AGREE_LIST ADD COLUMN "+item+" TEXT default ''");
+                }
+                catch (e:Exception)
+                {
+                    println(e.message)
+                }
+            }
+        }
     }
 
 
@@ -1291,6 +1370,38 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     }
 
+    fun AgreeSaveLocal(db : SQLiteDatabase, ex : Paper_AGREE){
+
+        db.execSQL("INSERT INTO AGREE_LIST" +
+                "("+
+                "SYS_DATE, " +
+                "USER_ID, " +
+                "UPD_DATE, " +
+                "BUNHO, " +
+                "IO_GUBUN, " +
+                "BASIC, " +
+                "GUNJIN, " +
+                "MOBILE, " +
+                "EVENT, " +
+                "SMS, " +
+                "CONSULT, " +
+                "DAERI, " +
+                "GOYU, " +
+                "MINGAM, " +
+                "SCAN, " +
+                "CAR_NO, " +
+                "NAME, " +
+                "JUMIN, " +
+                "SIGN " +
+                ")" +
+                " VALUES (" +
+                "'${ex.SYS_DATE}', '${ex.USER_ID}', '${ex.UPD_DATE}', '${ex.BUNHO}', '${ex.IO_GUBUN}'" +
+                ", '${ex.BASIC}', '${ex.GUNJIN}', '${ex.MOBILE}', '${ex.EVENT}', '${ex.SMS}'" +
+                ", '${ex.CONSULT}', '${ex.DAERI}', '${ex.GOYU}', '${ex.MINGAM}'," +
+                " '${ex.SCAN}', '${ex.CAR_NO}', '${ex.NAME}', '${ex.JUMIN}', '${ex.SIGN}'" +
+                ");")
+    }
+
     fun oralSaveLocal(db : SQLiteDatabase, ex : Paper_ORAL){
 
 
@@ -1557,6 +1668,15 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 ", '${ex.ck9_1}', '${ex.ck9_2}', '${ex.ck10}', '${ex.ck11}'" +
                 ", '${ex.ck12}', '${ex.ck13}', '${ex.ck14}', '${ex.ck15_5}', '${ex.ck15_5_1}', '${ex.ck15_5_2}', '${ex.ck15_5_3}', '${ex.ck15_5_4}', '${ex.ck15_5_5}'" +
                 ", '${ex.ck16_1}', '${ex.ck16_2}', '${ex.ck16_3}', '${ex.ck16_4}', '${ex.ck16_5}', '${ex.ck16_6}');")
+    }
+
+    fun Select_Local_AGREE(db : SQLiteDatabase, NAME: String, JUMIN:String, SYSDATE:String): Cursor{
+
+        var sql = "SELECT * FROM AGREE_LIST WHERE NAME =? AND JUMIN=? AND SYSDATE=?;"
+
+        var data = db.rawQuery(sql, arrayOf(NAME, JUMIN, SYSDATE))
+
+        return data
     }
 
     @SuppressLint("Recycle")
