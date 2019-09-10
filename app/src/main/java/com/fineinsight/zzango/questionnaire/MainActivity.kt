@@ -406,8 +406,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                         listButton.visibility = View.VISIBLE
                         Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
 
-                        ShowPage(2)
-                        userlogin2(this@MainActivity)
+//                        ShowPage(2)
+//                        userlogin2(this@MainActivity)
+                        startActivity(Intent(this, Main2Activity::class.java))
 
                     }else{
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main2Activity">
+
+    <Button
+        android:id="@+id/btn_agreement"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/save_list_btn"
+        android:text="개인정보 수집/이용 동의서"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_exam"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_exam"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@drawable/save_list_btn2"
+        android:text="건강검진 문진"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_agreement"
+        app:layout_constraintTop_toTopOf="@+id/btn_agreement" />
+</android.support.constraint.ConstraintLayout>
