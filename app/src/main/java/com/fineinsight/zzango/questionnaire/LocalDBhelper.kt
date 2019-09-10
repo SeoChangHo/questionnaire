@@ -227,7 +227,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
                 "CAR_NO TEXT," +
                 "NAME TEXT," +
                 "JUMIN TEXT," +
-                "SIGN BLOB," +
+                "SIGN BLOB" +
                 ");")
 
     }
