@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/server_list_layout_back"
@@ -15,6 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,6 @@
             android:id="@+id/constraintLayoutArea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -37,7 +36,7 @@
                 android:layout_marginStart="8dp"
                 android:text="900703"
                 android:textColor="@color/mainBlue"
-                android:textSize="22dp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView63"
                 app:layout_constraintStart_toEndOf="@+id/textView63"
                 app:layout_constraintTop_toTopOf="@+id/textView63" />
@@ -49,7 +48,7 @@
                 android:layout_marginStart="8dp"
                 android:text="남성"
                 android:textColor="@color/mainBlue"
-                android:textSize="22dp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView62"
                 app:layout_constraintStart_toEndOf="@+id/textView62"
                 app:layout_constraintTop_toTopOf="@+id/textView62" />
@@ -58,12 +57,12 @@
                 android:id="@+id/textView62"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="성별 :"
                 android:textColor="@color/mainBlue"
-                android:textSize="22dp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout19"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -72,18 +71,30 @@
                 android:id="@+id/textView63"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
+                android:layout_marginStart="24dp"
                 android:text="생년월일 :"
                 android:textColor="@color/mainBlue"
-                android:textSize="22dp"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/constraintLayout31"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout31"
+                android:layout_width="2dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/whiteGray"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/constraintLayout18"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout18"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
@@ -100,11 +111,11 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
+                    android:maxLines="1"
                     android:text="홍길동"
                     android:textColor="#FFFFFF"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"
-                    android:maxLines="1"
 
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -115,16 +126,14 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout19"
                 android:layout_width="2dp"
-                android:layout_height="35dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@color/whiteGray"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/txtJumin"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </android.support.constraint.ConstraintLayout>
+                app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
