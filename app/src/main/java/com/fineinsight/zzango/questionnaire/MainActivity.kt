@@ -1648,8 +1648,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             //로컬 기기 USER 정보 가져오기
             for (item in User.Map)
             {
-                println(item.key)
-                println(item.value)
+//                println(item.key)
+//                println(item.value)
 
                 UserListArray.add(UserList(item.key, item.value))
             }

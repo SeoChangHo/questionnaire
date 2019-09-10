@@ -192,9 +192,9 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
         var data = db.rawQuery(sql, arrayOf(arr[0].user, arr[0].pass))
 
-        println("user:" + arr[0].user)
-        println("pass:" + arr[0].pass)
-        println("count: "+data.count)
+//        println("user:" + arr[0].user)
+//        println("pass:" + arr[0].pass)
+//        println("count: "+data.count)
 
 
         return data.count
