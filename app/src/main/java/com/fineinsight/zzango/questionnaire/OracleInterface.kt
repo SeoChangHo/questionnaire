@@ -55,6 +55,11 @@ interface OracleInterface {
     @Headers("Content-type: application/json")
     fun savePapersServer(@Body examInfo: Any) : Call<String>
 
+    @POST("https://finepaper.herokuapp.com/SaveAgreePaper")
+    @Headers("Content-type: application/json")
+    fun SaveAgreePapers(@Body examInfo: Any) : Call<String>
+
+
     @POST("https://finepaper.herokuapp.com/NewSavePapers")
     @Headers("Content-type: application/json")
     fun newsavePapersServer(@Body examInfo: Any) : Call<String>

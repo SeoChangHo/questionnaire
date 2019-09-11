@@ -82,6 +82,13 @@ class OracleUtill {
 
     }
 
+
+
+    val save_agreepaper_url : String = "https://finepaper.herokuapp.com//SaveAgreePaper/"
+    fun save_agreepaper() : OracleInterface {
+        return OracleRequest().getStringResponse(save_agreepaper_url)!!.create(OracleInterface::class.java)
+    }
+
     val save_papers_url : String = "https://finepaper.herokuapp.com//SavePapers/"
     fun save_papers() : OracleInterface {
         return OracleRequest().getStringResponse(save_papers_url)!!.create(OracleInterface::class.java)

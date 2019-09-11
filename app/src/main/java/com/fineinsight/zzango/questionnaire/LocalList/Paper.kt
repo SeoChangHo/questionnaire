@@ -413,6 +413,7 @@ var sg2_spFat3 : String
 
 
 data class Paper_AGREE (
+var HOSPITAL:String,
 var SYS_DATE:String,
 var USER_ID:String,
 var UPD_DATE:String,
