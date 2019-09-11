@@ -154,6 +154,8 @@ class SettingActivity : AppCompatActivity() {
 
         }
 
+
+
         if(MainActivity.hospital == HospitalList.hospital.Mokpo){
             setting_image.setImageResource(R.drawable.logo2)
         }else if(MainActivity.hospital == HospitalList.hospital.test){

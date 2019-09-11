@@ -218,6 +218,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout33"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/border_top"
@@ -302,6 +303,7 @@
             app:layout_constraintEnd_toEndOf="@+id/local_imageView"
             app:layout_constraintStart_toStartOf="@+id/local_imageView"
             app:layout_constraintTop_toBottomOf="@+id/local_imageView" />
+
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -332,5 +334,21 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnAgreeLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동의서 - 로컬"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgreeServer" />
+
+    <Button
+        android:id="@+id/btnAgreeServer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동의서 - 서버"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout33" />
 
 </android.support.constraint.ConstraintLayout>

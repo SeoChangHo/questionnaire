@@ -40,7 +40,7 @@ class AgreementActivity : RootActivity() {
                         now,
                         "",
                         now,
-                        "",
+                        now,
                         "0",
                         if(noticeWarningAgree.isChecked) "Y" else "N",          //개인정보 최소정보 제공동의
                         if(beforeAfterInfoProvideAgree.isChecked) "Y" else "N", //건진실시 따른 사전사후 서비스 관련 정보 제공
