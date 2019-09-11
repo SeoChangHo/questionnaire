@@ -343,7 +343,7 @@
                 android:id="@+id/textView60"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="● 진료/검진 예약, 조회 및 진료를 위한 본인확인 절차"
+                android:text="● 진료/건진 예약, 조회 및 진료를 위한 본인확인 절차"
                 android:textSize="13dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView59"
@@ -371,7 +371,7 @@
                 android:id="@+id/textView65"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="● 진료비계산서, 내역서, 제 증명서 발송 및 약품/검진 물품 및 결과 발송"
+                android:text="● 진료비계산서, 내역서, 제 증명서 발송 및 약품/건진 물품 및 결과 발송"
                 android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="@+id/textView60"
                 app:layout_constraintTop_toBottomOf="@+id/textView64" />
@@ -491,7 +491,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="▣ 검진 실시에 따른 사전 사후 서비스 관련 정보 제공\n    1. 개인정보 이용 항목 : 원무정보, 의무기록에 포함된 내용\n    2. 개인정보 이용 기간 : 법정보관연도"
+                android:text="▣ 건진 실시에 따른 사전 사후 서비스 관련 정보 제공\n    1. 개인정보 이용 항목 : 원무정보, 의무기록에 포함된 내용\n    2. 개인정보 이용 기간 : 법정보관연도"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="@+id/textView57"
                 app:layout_constraintTop_toBottomOf="@+id/textView81" />
