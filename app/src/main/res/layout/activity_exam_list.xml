@@ -4,6 +4,303 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ExamListActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/main_start_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout_left"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/layout_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@color/mainBlue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.33">
+
+                <Button
+                    android:id="@+id/user_login"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="220dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@drawable/user_login_border"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:maxLines="1"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:text="사용자 등록하기"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/user_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/user_login"
+                    app:layout_constraintEnd_toEndOf="@+id/user_login"
+                    app:layout_constraintTop_toTopOf="@+id/user_login"
+                    app:srcCompat="@drawable/regi" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <FrameLayout
+                android:id="@+id/fragment_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layout_left"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.67">
+
+            </FrameLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/selected_button3"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selected_questionnaire"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button3"
+                app:layout_constraintEnd_toEndOf="@+id/button3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button3"
+                app:layout_constraintTop_toTopOf="@+id/button3"
+                app:layout_constraintWidth_percent="0.34" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/selected_button5"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selected_questionnaire"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button5"
+                app:layout_constraintEnd_toEndOf="@+id/button5"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button5"
+                app:layout_constraintTop_toTopOf="@+id/button5"
+                app:layout_constraintWidth_percent="0.34" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/selected_button4"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selected_questionnaire"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button4"
+                app:layout_constraintEnd_toEndOf="@+id/button4"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button4"
+                app:layout_constraintTop_toTopOf="@+id/button4"
+                app:layout_constraintWidth_percent="0.34" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/selected_button2"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selected_questionnaire"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="@+id/button2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button2"
+                app:layout_constraintTop_toTopOf="@+id/button2"
+                app:layout_constraintWidth_percent="0.34" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/selected_button1"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selected_questionnaire"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/button1"
+                app:layout_constraintEnd_toEndOf="@+id/button1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button1"
+                app:layout_constraintTop_toTopOf="@+id/button1"
+                app:layout_constraintWidth_percent="0.34" />
+
+            <Button
+                android:id="@+id/button1"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="120dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="start"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="건강검진 공통 문진표"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/layout_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button2"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="건강검진 추가 문진표"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/layout_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button1" />
+
+            <Button
+                android:id="@+id/button3"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="생활습관 평가도구"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/layout_left"
+                app:layout_constraintStart_toStartOf="@+id/layout_left"
+                app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+            <Button
+                android:id="@+id/button4"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="구강검진 문진표"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/layout_left"
+                app:layout_constraintStart_toStartOf="@+id/layout_left"
+                app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+            <Button
+                android:id="@+id/button5"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:text="암검진 문진표"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/layout_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/menu_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/settingGray"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/listButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/setting" />
+
+        <ImageView
+            android:id="@+id/btnList"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/user_register" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/main_image_logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/menu_bottom_bar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/login_appbar_loading_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/mainBlue"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/login_appbar_loading_progress_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:background="#000000"
+        android:visibility="gone">
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
