@@ -11,7 +11,9 @@ import android.view.LayoutInflater
 import android.widget.Button
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.LocalList.ListActivity
+import com.fineinsight.zzango.questionnaire.LocalList.ListAgreeActivity
 import com.fineinsight.zzango.questionnaire.ServerList.ServerListActivity
+import com.fineinsight.zzango.questionnaire.ServerList.ServerListAgreeActivity
 import kotlinx.android.synthetic.main.activity_setting_back.*
 import kotlinx.android.synthetic.main.activity_setting_back.listViewButton
 import kotlinx.android.synthetic.main.activity_setting_back.manager_logout
@@ -58,16 +60,24 @@ class SettingActivity : AppCompatActivity() {
 
 //        switch1.isChecked = num == "wifi"
 
+        //문진 - 로컬리스트
         listViewButton.setOnClickListener {
-
             startActivity(Intent(this@SettingActivity, ListActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
         }
 
+        //문진 - 서버리스트
         listViewButton2.setOnClickListener {
-
             startActivity(Intent(this@SettingActivity, ServerListActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+        }
 
+        //개인정보동의서 - 로컬리스트
+        btnAgreeLocal.setOnClickListener {
+            startActivity(Intent(this@SettingActivity, ListAgreeActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+        }
+
+        //개인정보동의서 - 서버리스트
+        btnAgreeServer.setOnClickListener {
+            startActivity(Intent(this@SettingActivity, ServerListAgreeActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
         }
 
 //        switch1.setOnClickListener {

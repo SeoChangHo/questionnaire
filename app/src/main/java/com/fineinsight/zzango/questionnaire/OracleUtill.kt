@@ -108,15 +108,26 @@ class OracleUtill {
     }
 
     val list_view_url : String = "https://finepaper.herokuapp.com//SelectList/"
-
     fun getUserCheck() : OracleInterface{
-
         return OracleRequest().getResponse(list_view_url)!!.create(OracleInterface::class.java)
 
     }
 
     val listdetail_view_url : String = "https://finepaper.herokuapp.com//SelectListDetail/"
     fun getUserDetailCheck() : OracleInterface{
+        return OracleRequest().getResponse(listdetail_view_url)!!.create(OracleInterface::class.java)
+    }
+
+
+
+    val agreelist_view_url : String = "https://finepaper.herokuapp.com//SelectAgreeList/"
+    fun getUserAgreeCheck() : OracleInterface{
+        return OracleRequest().getResponse(list_view_url)!!.create(OracleInterface::class.java)
+
+    }
+
+    val agreelistdetail_view_url : String = "https://finepaper.herokuapp.com//SelectListAgreeDetail/"
+    fun getUserAgreeDetailCheck() : OracleInterface{
         return OracleRequest().getResponse(listdetail_view_url)!!.create(OracleInterface::class.java)
     }
 

@@ -215,9 +215,6 @@ class ServerListActivity : Activity() {
             this.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
         }
     }
-
-
-
 }
 
 
