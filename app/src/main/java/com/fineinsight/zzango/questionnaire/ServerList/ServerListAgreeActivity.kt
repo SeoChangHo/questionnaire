@@ -119,6 +119,7 @@ class ServerListAgreeActivity : AppCompatActivity() {
                             )
                         }
 
+
                         server_recyclertView.layoutManager = LinearLayoutManager(this@ServerListAgreeActivity)
                         server_recyclertView.adapter = ServerListAgreeAdapter(userList, this@ServerListAgreeActivity)
 
