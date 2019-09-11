@@ -17,12 +17,11 @@ class Main2Activity : AppCompatActivity() {
     fun btnSetting(){
 
         btn_agreement.setOnClickListener {
-
+            startActivity(Intent(this, AgreementActivity::class.java))
         }
 
         btn_exam.setOnClickListener {
             startActivity(Intent(this, LoginExamActivity::class.java))
         }
-
     }
 }
