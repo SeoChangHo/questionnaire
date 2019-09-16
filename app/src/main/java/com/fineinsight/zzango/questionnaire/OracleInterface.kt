@@ -78,7 +78,7 @@ interface OracleInterface {
 
     @POST("https://finepaper.herokuapp.com/SelectAgreeList")
     @FormUrlEncoded
-    fun SelectAgreeList(@FieldMap sql : Map<String, String>) : Call<ArrayList<Paper_AGREE>>
+    fun SelectAgreeList(@FieldMap sql : Map<String, String>) : Call<ArrayList<SelectInfo>>
 
     @POST("https://finepaper.herokuapp.com/SelectAgreeListDetail")
     @FormUrlEncoded

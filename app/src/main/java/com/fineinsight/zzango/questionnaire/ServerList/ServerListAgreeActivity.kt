@@ -92,34 +92,24 @@ class ServerListAgreeActivity : AppCompatActivity() {
 
         ProgressAction(true)
 
-        OracleUtill().getUserAgreeCheck().SelectAgreeList(selectDate).enqueue(object : Callback<ArrayList<Paper_AGREE>> {
-
-            override fun onResponse(call: Call<ArrayList<Paper_AGREE>>, response: Response<ArrayList<Paper_AGREE>>) {
-
+        OracleUtill().getUserAgreeCheck().SelectAgreeList(selectDate).enqueue(object : Callback<ArrayList<SelectInfo>> {
+            override fun onResponse(call: Call<ArrayList<SelectInfo>>, response: Response<ArrayList<SelectInfo>>) {
                 if(response.isSuccessful){
-
                     if(response.body()!!.size == 0){
-
-                        println("사이즈 0")
                         Toast.makeText(this@ServerListAgreeActivity, "저장된 정보가 없습니다.", Toast.LENGTH_SHORT).show()
                         ProgressAction(false)
 
                     }else{
-
-                        println("성공..?")
                         var userList = ArrayList<SelectInfo>()
-
                         for(i in 0 until response.body()!!.size){
                             userList.add(
                                     SelectInfo(
-                                            response.body()!!.get(i).NAME,
-                                            response.body()!!.get(i).JUMIN,
-                                            response.body()!!.get(i).SYS_DATE
+                                            response.body()!!.get(i).userName,
+                                            response.body()!!.get(i).userNumber,
+                                            response.body()!!.get(i).dateInfo
                                     )
                             )
                         }
-
-
                         server_recyclertView.layoutManager = LinearLayoutManager(this@ServerListAgreeActivity)
                         server_recyclertView.adapter = ServerListAgreeAdapter(userList, this@ServerListAgreeActivity)
 
@@ -132,8 +122,7 @@ class ServerListAgreeActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<ArrayList<Paper_AGREE>>, t: Throwable) {
-
+            override fun onFailure(call: Call<ArrayList<SelectInfo>>, t: Throwable) {
                 ProgressAction(false)
             }
         })
@@ -167,7 +156,7 @@ class ServerListAgreeActivity : AppCompatActivity() {
                         println("성공")
                         var userDetailList = ArrayList<SelectDetailInfo>()
 
-                        for(i in 0..response.body()!!.size - 1){
+                        for(i in 0 until response.body()!!.size){
                             userDetailList.add(
                                     SelectDetailInfo(
                                             response.body()!!.get(i).TableName,
