@@ -21,15 +21,13 @@ class AgreementActivity : RootActivity() {
 
         BtnSetting()
 
-//        if(intent.hasExtra("AgreeListArr")){
-//
-//            var paper = intent.getSerializableExtra("AgreeListArr") as ArrayList<*>
-//
-//            getPaper()
-//
-//        }
-//
-//        intent
+        if(intent.hasExtra("AgreeListArr")){
+
+            var paper = (intent.getSerializableExtra("AgreeListArr") as ArrayList<*>)[0] as READ_AGREE
+
+            getPaper(paper)
+
+        }
 
     }
 
@@ -188,6 +186,57 @@ class AgreementActivity : RootActivity() {
 
         agreeAll.visibility = View.GONE
         disAgreeAll.visibility = View.GONE
+
+        cannotEditQuestionnaire(insideAgreementLayout)
+
+        patientName.setText(paperAgree.NAME)
+        pid.setText(paperAgree.BUNHO)
+        ageGender.setText(paperAgree.JUMIN)
+
+        when(paperAgree.BASIC){
+            "Y" -> noticeWarningAgree.isChecked = true
+            "N" -> noticeWarningDisAgree.isChecked = true
+        }
+
+        when(paperAgree.GOYU){
+            "Y" -> uniqueInfoAgree.isChecked = true
+            "N" -> uniqueInfoDisAgree.isChecked = true
+        }
+
+        when(paperAgree.MINGAM){
+            "Y" -> sensitiveInfoAgree.isChecked = true
+            "N" -> sensitiveInfoDisAgree.isChecked = true
+        }
+
+        when(paperAgree.GUNJIN){
+            "Y" -> beforeAfterInfoProvideAgree.isChecked = true
+            "N" -> beforeAfterInfoProvideDisAgree.isChecked = true
+        }
+
+        when(paperAgree.MOBILE){
+            "Y" -> mobileInfoAgree.isChecked = true
+            "N" -> mobileInfoDisAgree.isChecked = true
+        }
+
+        when(paperAgree.EVENT){
+            "Y" -> hospitalEventInfoAgree.isChecked = true
+            "N" -> hospitalEventInfoDisAgree.isChecked = true
+        }
+
+        when(paperAgree.SMS){
+            "Y" -> sendSMSAgree.isChecked = true
+            "N" -> sendSMSDisAgree.isChecked = true
+        }
+
+        when(paperAgree.CONSULT){
+            "Y" -> MedicalCooperationInfoAgree.isChecked = true
+            "N" -> MedicalCooperationInfoDisAgree.isChecked = true
+        }
+
+        when(paperAgree.DAERI){
+            "Y" -> patientInfoAgree.isChecked = true
+            "N" -> patientInfoDisAgree.isChecked = true
+        }
 
     }
 
