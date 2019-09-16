@@ -1,6 +1,8 @@
 package com.fineinsight.zzango.questionnaire
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
@@ -137,7 +139,15 @@ class AgreementActivity : RootActivity() {
         if(!intent.hasExtra("AgreeListArr")) {
 
             if (AgreeValidation()) {
-                var stream = ByteArrayOutputStream()
+
+
+                //빈 bytearray만들기
+                var bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
+                var baos = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
+                var emptyByteArray = baos.toByteArray()
+
+
 
                 var now = System.currentTimeMillis().toString()
                 var AgreeInfo: Paper_AGREE = Paper_AGREE(
@@ -160,7 +170,7 @@ class AgreementActivity : RootActivity() {
                         "",
                         "TESTNAME",
                         "9005051020123",
-                        stream.toByteArray())
+                        emptyByteArray)
 
                 if (getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "") == "local") {
                     LocalUpload(AgreeInfo)

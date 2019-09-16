@@ -1678,6 +1678,14 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         return data
     }
 
+    fun Select_Local_AGREE_ALL(db : SQLiteDatabase): Cursor{
+
+        var sql = "SELECT * FROM AGREE_LIST;"
+        var data = db.rawQuery(sql, null)
+
+        return data
+    }
+
     @SuppressLint("Recycle")
     fun Select_Local_ORAL(db : SQLiteDatabase, getno: String, getname:String, first_serial:String): Cursor{
 

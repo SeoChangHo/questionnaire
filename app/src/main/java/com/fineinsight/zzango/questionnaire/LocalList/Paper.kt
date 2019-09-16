@@ -437,6 +437,32 @@ data class Paper_AGREE (
 ) : Serializable
 
 
+data class Paper_AGREE_Check (
+        var isChecked: Boolean,
+        var HOSPITAL:String,
+        var SYS_DATE:String,
+        var USER_ID:String,
+        var UPD_DATE:String,
+        var BUNHO:String,
+        var IO_GUBUN:String,
+        var BASIC:String,
+        var GUNJIN:String,
+        var MOBILE:String,
+        var EVENT:String,
+        var SMS:String,
+        var CONSULT:String,
+        var DAERI:String,
+        var GOYU:String,
+        var MINGAM:String,
+        var SCAN:String,
+        var CAR_NO:String,
+        var NAME:String,
+        var JUMIN:String,
+        var SIGN:ByteArray
+) : Serializable
+
+
+
 
 
 
