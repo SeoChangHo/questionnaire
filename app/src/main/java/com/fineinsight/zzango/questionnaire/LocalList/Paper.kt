@@ -2,6 +2,7 @@ package com.fineinsight.zzango.questionnaire.LocalList
 
 import java.io.Serializable
 
+
 //로컬 저장 리스트
 data class Paper(
 var isChecked: Boolean,
@@ -413,24 +414,65 @@ var sg2_spFat3 : String
 
 
 data class Paper_AGREE (
-var HOSPITAL:String,
-var SYS_DATE:String,
-var USER_ID:String,
-var UPD_DATE:String,
-var BUNHO:String,
-var IO_GUBUN:String,
-var BASIC:String,
-var GUNJIN:String,
-var MOBILE:String,
-var EVENT:String,
-var SMS:String,
-var CONSULT:String,
-var DAERI:String,
-var GOYU:String,
-var MINGAM:String,
-var SCAN:String,
-var CAR_NO:String,
-var NAME:String,
-var JUMIN:String,
-var SIGN:ByteArray
+        var HOSPITAL:String,
+        var SYS_DATE:String,
+        var USER_ID:String,
+        var UPD_DATE:String,
+        var BUNHO:String,
+        var IO_GUBUN:String,
+        var BASIC:String,
+        var GUNJIN:String,
+        var MOBILE:String,
+        var EVENT:String,
+        var SMS:String,
+        var CONSULT:String,
+        var DAERI:String,
+        var GOYU:String,
+        var MINGAM:String,
+        var SCAN:String,
+        var CAR_NO:String,
+        var NAME:String,
+        var JUMIN:String,
+        var SIGN:ByteArray
+) : Serializable
+
+
+
+
+
+
+
+
+
+
+
+
+
+data class READ_AGREE (
+        var HOSPITAL:String,
+        var SYS_DATE:String,
+        var USER_ID:String,
+        var UPD_DATE:String,
+        var BUNHO:String,
+        var IO_GUBUN:String,
+        var BASIC:String,     //개인정보 최소정보 제공동의
+        var GUNJIN:String,    //건진실시 따른 사전사후 서비스 관련 정보 제공
+        var MOBILE:String,    //진료예약, 입원 및 검사예정에 따른 모바일 안내
+        var EVENT:String,     //병원이용 및 병원의 새로운 서비스, 행사정보안내
+        var SMS:String,       //건강정보 발송을 위한 휴대폰 SMS 발송
+        var CONSULT:String,   //병원간의 상호 진료협력을 위해 의료정보 제공
+        var DAERI:String,     //환자대리인 정보이용 동의
+        var GOYU:String,      //고유식별 정보
+        var MINGAM:String,    //민감정보
+        var SCAN:String,
+        var CAR_NO:String,
+        var NAME:String,
+        var JUMIN:String,
+        var SIGN: SIGNINFO
+) : Serializable
+
+
+data class SIGNINFO(
+        val type:String,
+        val data:ByteArray
 ) : Serializable

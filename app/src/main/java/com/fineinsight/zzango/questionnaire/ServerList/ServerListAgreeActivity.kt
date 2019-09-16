@@ -9,9 +9,11 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.AgreementActivity
 import com.fineinsight.zzango.questionnaire.DataClass.SelectDetailInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SelectInfo
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_AGREE
+import com.fineinsight.zzango.questionnaire.LocalList.READ_AGREE
 import com.fineinsight.zzango.questionnaire.MainActivity
 import com.fineinsight.zzango.questionnaire.OracleUtill
 import com.fineinsight.zzango.questionnaire.R
@@ -140,13 +142,13 @@ class ServerListAgreeActivity : AppCompatActivity() {
 
         ProgressAction(true)
 
-        OracleUtill().getUserDetailCheck().SelectListDetail(MAP).enqueue(object : Callback<ArrayList<SelectDetailInfo>> {
+        OracleUtill().getUserAgreeDetailCheck().SelectAgreeListDetail(MAP).enqueue(object : Callback<ArrayList<READ_AGREE>> {
 
-            override fun onResponse(call: Call<ArrayList<SelectDetailInfo>>, response: Response<ArrayList<SelectDetailInfo>>) {
+            override fun onResponse(call: Call<ArrayList<READ_AGREE>>, response: Response<ArrayList<READ_AGREE>>) {
 
                 if(response.isSuccessful){
 
-                    if(response.body()!!.size == 0){
+                    if(response.body()!!.size < 1){
 
                         Toast.makeText(this@ServerListAgreeActivity, "저장된 정보가 없습니다.", Toast.LENGTH_SHORT).show()
                         ProgressAction(false)
@@ -154,38 +156,60 @@ class ServerListAgreeActivity : AppCompatActivity() {
                     }else{
 
                         println("성공")
-                        var userDetailList = ArrayList<SelectDetailInfo>()
 
-                        for(i in 0 until response.body()!!.size){
-                            userDetailList.add(
-                                    SelectDetailInfo(
-                                            response.body()!!.get(i).TableName,
-                                            response.body()!!.get(i).seq,
-                                            response.body()!!.get(i).userName,
-                                            response.body()!!.get(i).userNumber,
-                                            response.body()!!.get(i).dateInfo
-                                    )
-                            )
+                        try{
+                            var AgreeListArr = ArrayList<READ_AGREE>()
+
+                            for(i in 0 until response.body()!!.size){
+                                AgreeListArr.add(
+                                        READ_AGREE(
+                                                response.body()!!.get(i).HOSPITAL,
+                                                response.body()!!.get(i).SYS_DATE,
+                                                response.body()!!.get(i).USER_ID,
+                                                response.body()!!.get(i).UPD_DATE,
+                                                response.body()!!.get(i).BUNHO,
+                                                response.body()!!.get(i).IO_GUBUN,
+                                                response.body()!!.get(i).BASIC,
+                                                response.body()!!.get(i).GUNJIN,
+                                                response.body()!!.get(i).MOBILE,
+                                                response.body()!!.get(i).EVENT,
+                                                response.body()!!.get(i).SMS,
+                                                response.body()!!.get(i).CONSULT,
+                                                response.body()!!.get(i).DAERI,
+                                                response.body()!!.get(i).GOYU,
+                                                response.body()!!.get(i).MINGAM,
+                                                response.body()!!.get(i).SCAN,
+                                                response.body()!!.get(i).CAR_NO,
+                                                response.body()!!.get(i).NAME,
+                                                response.body()!!.get(i).JUMIN,
+                                                response.body()!!.get(i).SIGN
+                                        )
+                                )
+                            }
+
+
+                            val AgreementActivity = Intent(this@ServerListAgreeActivity, AgreementActivity::class.java).putExtra("AgreeListArr", AgreeListArr)
+                            startActivity(AgreementActivity)
+                            ProgressAction(false)
                         }
-
-                        for (item in userDetailList)
+                        catch (e:Exception)
                         {
-                            println(item.TableName)
+                            println("e.message: ${e.message}")
                         }
 
-                        val ServerListDetailActivity = Intent(this@ServerListAgreeActivity, ServerListDetailActivity::class.java).putExtra("ARR", userDetailList)
-                        startActivity(ServerListDetailActivity)
-                        ProgressAction(false)
+
                     }
 
 
                 }else{
+                    println("?")
                     ProgressAction(false)
                 }
             }
 
-            override fun onFailure(call: Call<ArrayList<SelectDetailInfo>>, t: Throwable) {
-
+            override fun onFailure(call: Call<ArrayList<READ_AGREE>>, t: Throwable) {
+                println("??")
+                println(t.message)
                 ProgressAction(false)
             }
         })
