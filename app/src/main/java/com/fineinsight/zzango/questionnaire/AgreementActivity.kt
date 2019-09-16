@@ -1,9 +1,11 @@
 package com.fineinsight.zzango.questionnaire
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_AGREE
+import com.fineinsight.zzango.questionnaire.LocalList.READ_AGREE
 import kotlinx.android.synthetic.main.activity_agreement.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,6 +20,17 @@ class AgreementActivity : RootActivity() {
         setContentView(R.layout.activity_agreement)
 
         BtnSetting()
+
+//        if(intent.hasExtra("AgreeListArr")){
+//
+//            var paper = intent.getSerializableExtra("AgreeListArr") as ArrayList<*>
+//
+//            getPaper()
+//
+//        }
+//
+//        intent
+
     }
 
     fun BtnSetting()
@@ -29,59 +42,7 @@ class AgreementActivity : RootActivity() {
         disAgreeAll.setOnClickListener { disAgreeAll() }
 
         //확인
-        agreementSubmit.setOnClickListener {
-            if (AgreeValidation())
-            {
-                var stream = ByteArrayOutputStream()
-
-                var now = System.currentTimeMillis().toString()
-                var AgreeInfo:Paper_AGREE = Paper_AGREE(
-                        MainActivity.hospital,
-                        now,
-                        "",
-                        now,
-                        "",
-                        "0",
-                        if(noticeWarningAgree.isChecked) "Y" else "N",          //개인정보 최소정보 제공동의
-                        if(beforeAfterInfoProvideAgree.isChecked) "Y" else "N", //건진실시 따른 사전사후 서비스 관련 정보 제공
-                        if(mobileInfoAgree.isChecked) "Y" else "N",             //진료예약, 입원 및 검사예정에 따른 모바일 안내
-                        if(hospitalEventInfoAgree.isChecked) "Y" else "N",      //병원이용 및 병원의 새로운 서비스, 행사정보안내
-                        if(sendSMSAgree.isChecked) "Y" else "N",                //건강정보 발송을 위한 휴대폰 SMS 발송
-                        if(MedicalCooperationInfoAgree.isChecked) "Y" else "N", //병원간의 상호 진료협력을 위해 의료정보 제공
-                        if(patientInfoAgree.isChecked) "Y" else "N",            //환자대리인 정보이용 동의
-                        if(uniqueInfoAgree.isChecked) "Y" else "N",             //고유식별 정보
-                        if(sensitiveInfoAgree.isChecked) "Y" else "N",          //민감정보
-                        "",
-                        "",
-                        "TESTNAME",
-                        "9005051020123",
-                        stream.toByteArray())
-
-
-
-
-                var SERVER = "SERVER"
-                var LOCAL = "LOCAL"
-
-                var MODE = LOCAL
-
-                if (MODE == SERVER)
-                {
-                    LocalUpload(AgreeInfo)
-                }
-                else
-                {
-                    ServerUpload(AgreeInfo)
-                }
-
-
-            }
-            else
-            {
-                //전체동의해야 넘어갈 수 있음
-                println("ㄴㄴ")
-            }
-        }
+        agreementSubmit.setOnClickListener { submitCondition() }
     }
 
     fun LocalUpload(AgreeInfo:Paper_AGREE)
@@ -173,5 +134,61 @@ class AgreementActivity : RootActivity() {
         }
     }
 
+    fun submitCondition(){
+
+        if(!intent.hasExtra("AgreeListArr")) {
+
+            if (AgreeValidation()) {
+                var stream = ByteArrayOutputStream()
+
+                var now = System.currentTimeMillis().toString()
+                var AgreeInfo: Paper_AGREE = Paper_AGREE(
+                        MainActivity.hospital,
+                        now,
+                        "",
+                        now,
+                        "",
+                        "0",
+                        if (noticeWarningAgree.isChecked) "Y" else "N",          //개인정보 최소정보 제공동의
+                        if (beforeAfterInfoProvideAgree.isChecked) "Y" else "N", //건진실시 따른 사전사후 서비스 관련 정보 제공
+                        if (mobileInfoAgree.isChecked) "Y" else "N",             //진료예약, 입원 및 검사예정에 따른 모바일 안내
+                        if (hospitalEventInfoAgree.isChecked) "Y" else "N",      //병원이용 및 병원의 새로운 서비스, 행사정보안내
+                        if (sendSMSAgree.isChecked) "Y" else "N",                //건강정보 발송을 위한 휴대폰 SMS 발송
+                        if (MedicalCooperationInfoAgree.isChecked) "Y" else "N", //병원간의 상호 진료협력을 위해 의료정보 제공
+                        if (patientInfoAgree.isChecked) "Y" else "N",            //환자대리인 정보이용 동의
+                        if (uniqueInfoAgree.isChecked) "Y" else "N",             //고유식별 정보
+                        if (sensitiveInfoAgree.isChecked) "Y" else "N",          //민감정보
+                        "",
+                        "",
+                        "TESTNAME",
+                        "9005051020123",
+                        stream.toByteArray())
+
+                if (getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "") == "local") {
+                    LocalUpload(AgreeInfo)
+                } else {
+                    ServerUpload(AgreeInfo)
+                }
+
+
+            } else {
+                //전체동의해야 넘어갈 수 있음
+                println("ㄴㄴ")
+            }
+
+        }else{
+
+            finish()
+
+        }
+
+    }
+
+    fun getPaper(paperAgree: READ_AGREE){
+
+        agreeAll.visibility = View.GONE
+        disAgreeAll.visibility = View.GONE
+
+    }
 
 }

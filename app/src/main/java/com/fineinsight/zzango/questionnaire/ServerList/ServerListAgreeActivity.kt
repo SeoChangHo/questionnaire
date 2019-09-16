@@ -188,7 +188,7 @@ class ServerListAgreeActivity : AppCompatActivity() {
                             }
 
 
-                            val AgreementActivity = Intent(this@ServerListAgreeActivity, AgreementActivity::class.java).putExtra("AgreeListArr", AgreeListArr)
+                            val AgreementActivity = Intent(this@ServerListAgreeActivity, AgreementActivity::class.java).putExtra("AgreeListArr", AgreeListArr).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
                             startActivity(AgreementActivity)
                             ProgressAction(false)
                         }
