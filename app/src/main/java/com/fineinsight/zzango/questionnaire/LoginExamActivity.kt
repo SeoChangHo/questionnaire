@@ -6,42 +6,32 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
 import android.os.Handler
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.MotionEvent
+import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
-import android.widget.*
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.TextView
+import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.*
-import com.fineinsight.zzango.questionnaire.DataClass.ChartDivision.ChartDivision.ProgressAction
 import com.fineinsight.zzango.questionnaire.LocalList.*
 import com.fineinsight.zzango.questionnaire.MainActivity.Companion.chart
 import com.fineinsight.zzango.questionnaire.Signature.CanvasView
+import com.fineinsight.zzango.questionnaire.UserList.UserList
+import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_login_exam.*
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.btnList
-import kotlinx.android.synthetic.main.activity_main.btnReSign
-import kotlinx.android.synthetic.main.activity_main.canvas
-import kotlinx.android.synthetic.main.activity_main.constraintLayout16
-import kotlinx.android.synthetic.main.activity_main.first_serial
-import kotlinx.android.synthetic.main.activity_main.first_view
-import kotlinx.android.synthetic.main.activity_main.last_serial
-import kotlinx.android.synthetic.main.activity_main.login_appbar_loading_progress
-import kotlinx.android.synthetic.main.activity_main.login_appbar_loading_progress_bg
-import kotlinx.android.synthetic.main.activity_main.noticeCount_textView
-import kotlinx.android.synthetic.main.activity_main.second_view
-import kotlinx.android.synthetic.main.activity_main.starticon
-import kotlinx.android.synthetic.main.activity_main.textView261
-import kotlinx.android.synthetic.main.activity_main.textView72
-import kotlinx.android.synthetic.main.activity_main.user_login_button
-import kotlinx.android.synthetic.main.activity_main.user_name
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -67,10 +57,14 @@ class LoginExamActivity : AppCompatActivity() {
         btnList.setOnClickListener {
             startActivity(Intent(this, ExamListActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
         }
+
+        listButton.setOnClickListener {
+            popuplogin()
+        }
+
     }
 
     fun userlogin2(context: Context) {
-
 
 
         //if(user_login.text == "님"){
@@ -676,76 +670,76 @@ class LoginExamActivity : AppCompatActivity() {
     }
 
     @SuppressLint("NewApi")
-    fun chart(Jumin : String){
+    fun chart(Jumin: String) {
 
 
-        var yy = Jumin.substring(0,2)
+        var yy = Jumin.substring(0, 2)
 
         var currentDateTime = LocalDateTime.now()
         var currentYear = currentDateTime.year
 
         //만 20세, 30세
-        var two = (currentYear - 20).toString().substring(2,4)
-        var two2 = (currentYear - 30).toString().substring(2,4)
+        var two = (currentYear - 20).toString().substring(2, 4)
+        var two2 = (currentYear - 30).toString().substring(2, 4)
         //만 40세, 50세, 60세
-        var three = (currentYear - 40).toString().substring(2,4)
-        var three2 = (currentYear - 50).toString().substring(2,4)
-        var three3 = (currentYear - 60).toString().substring(2,4)
+        var three = (currentYear - 40).toString().substring(2, 4)
+        var three2 = (currentYear - 50).toString().substring(2, 4)
+        var three3 = (currentYear - 60).toString().substring(2, 4)
         //만 66세, 80세
-        var four = (currentYear - 66).toString().substring(2,4)
-        var four2 = (currentYear - 80).toString().substring(2,4)
+        var four = (currentYear - 66).toString().substring(2, 4)
+        var four2 = (currentYear - 80).toString().substring(2, 4)
         //만 68세, 72세, 74세, 76세, 77세, 82세, 84세, 86세
-        var five = (currentYear - 68).toString().substring(2,4)
-        var five2 = (currentYear - 72).toString().substring(2,4)
-        var five3 = (currentYear - 74).toString().substring(2,4)
-        var five4 = (currentYear - 76).toString().substring(2,4)
-        var five5 = (currentYear - 77).toString().substring(2,4)
-        var five6 = (currentYear - 82).toString().substring(2,4)
-        var five7= (currentYear - 84).toString().substring(2,4)
-        var five8 = (currentYear - 86).toString().substring(2,4)
+        var five = (currentYear - 68).toString().substring(2, 4)
+        var five2 = (currentYear - 72).toString().substring(2, 4)
+        var five3 = (currentYear - 74).toString().substring(2, 4)
+        var five4 = (currentYear - 76).toString().substring(2, 4)
+        var five5 = (currentYear - 77).toString().substring(2, 4)
+        var five6 = (currentYear - 82).toString().substring(2, 4)
+        var five7 = (currentYear - 84).toString().substring(2, 4)
+        var five8 = (currentYear - 86).toString().substring(2, 4)
         //만 70세
-        var six = (currentYear - 70).toString().substring(2,4)
+        var six = (currentYear - 70).toString().substring(2, 4)
 
         println(two + two2)
 
 
-        if(yy == two || yy == two2){
+        if (yy == two || yy == two2) {
             //우울증 포함
             //chart = PaperArray.SetList.SET2
             chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
             chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, true, 1))
             chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, false, 2))
             chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
-            chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false,  4))
-        }else if(yy == three || yy == three2 || yy == three3 ){
+            chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false, 4))
+        } else if (yy == three || yy == three2 || yy == three3) {
             //우울증 생활습관 포함
             chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
             chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, true, 1))
             chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, false, 2))
             chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
             chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, true, 4))
-        }else if(yy == four || yy == four2){
+        } else if (yy == four || yy == four2) {
             //인지기능 노인신체기능검사 포함
             chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
             chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, false, 1))
             chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, true, 2))
             chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, true, 3))
             chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false, 4))
-        }else if(yy == five || yy == five2 || yy == five3 || yy == five4 || yy == five5 || yy == five6 || yy == five7 || yy == five8){
+        } else if (yy == five || yy == five2 || yy == five3 || yy == five4 || yy == five5 || yy == five6 || yy == five7 || yy == five8) {
             //인지기능 포함
             chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
             chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, false, 1))
             chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, true, 2))
             chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
             chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false, 4))
-        }else if(yy == six){
+        } else if (yy == six) {
             //인지기능 우울증 생활습관 노인신체기능검사 포함
             chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
             chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, true, 1))
             chart.add(ChartInfo(PaperNameInfo.PC.COGNITIVE.EN_NM, true, 2))
             chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, true, 3))
             chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, true, 4))
-        }else{
+        } else {
             //기본검사
             chart.add(ChartInfo(PaperNameInfo.PC.COMMON.EN_NM, true, 0))
             chart.add(ChartInfo(PaperNameInfo.PC.MENTAL.EN_NM, false, 1))
@@ -753,8 +747,6 @@ class LoginExamActivity : AppCompatActivity() {
             chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
             chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false, 4))
         }
-
-
 
 
     }
@@ -803,10 +795,8 @@ class LoginExamActivity : AppCompatActivity() {
 
     }
 
-    fun MokpoControlHandler(isHide:Boolean)
-    {
-        if(isHide)
-        {
+    fun MokpoControlHandler(isHide: Boolean) {
+        if (isHide) {
             user_name.visibility = View.GONE
             first_serial.visibility = View.GONE
             last_serial.visibility = View.GONE
@@ -816,9 +806,7 @@ class LoginExamActivity : AppCompatActivity() {
             user_login_button.visibility = View.GONE
             btnReSign.visibility = View.GONE
             constraintLayout16.visibility = View.GONE
-        }
-        else
-        {
+        } else {
             user_name.visibility = View.VISIBLE
             first_serial.visibility = View.VISIBLE
             last_serial.visibility = View.VISIBLE
@@ -832,16 +820,144 @@ class LoginExamActivity : AppCompatActivity() {
 
     }
 
-    fun ProgressAction(isShow:Boolean)
-    {
-        if(isShow)
-        {
+    fun popuplogin() {
+
+        var dialog = AlertDialog.Builder(this).create()
+        var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_login, null)
+
+        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        dialog.setView(dialog_view)
+
+        if (MainActivity.manager_name == "") {
+            //다이얼로그 뒤로가기 버튼 막기
+            dialog.setCancelable(false)
+            //밖에부분 터치 막기
+            dialog.setCanceledOnTouchOutside(false)
+        } else {
+            dialog_view.login_id.setText(MainActivity.manager_name)
+            dialog_view.login_id.isFocusableInTouchMode = false
+            dialog_view.login_password.isFocusableInTouchMode = true
+        }
+
+        dialog_view.login_id.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if (dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != "") {
+                    dialog_view.Login.isEnabled = true
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button_blue)
+                } else {
+                    dialog_view.Login.isEnabled = false
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button)
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
+
+        dialog_view.login_password.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if (dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != "") {
+                    dialog_view.Login.isEnabled = true
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button_blue)
+                } else {
+                    dialog_view.Login.isEnabled = false
+                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button)
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+        })
+
+        //개발용
+        dialog_view.login_id.setText("hanshin")
+        dialog_view.login_password.setText("hanshin1678")
+
+        val login = dialog_view.findViewById(R.id.Login) as Button
+        login.setOnClickListener {
+
+            if (dialog_view.login_id.text.toString() != "") {
+
+
+                var UserArray: ArrayList<UserList> = ArrayList()
+
+                val user = dialog_view.login_id.text.toString()
+                var pass = dialog_view.login_password.text.toString()
+
+                UserArray.add(UserList(user, pass))
+
+                val sql_db = LocalDBhelper(this).writableDatabase
+
+                val datacount = LocalDBhelper(this).UserCheck(sql_db!!, UserArray)
+
+                if (datacount == 0) {
+                    Toast.makeText(applicationContext, "유저정보를 확인해주세요.", Toast.LENGTH_SHORT).show()
+                } else {
+                    if (MainActivity.manager_name == "") {
+                        MainActivity.manager_name = user
+                        setHospitalList()
+                        listButton.visibility = View.VISIBLE
+                        Toast.makeText(applicationContext, "로그인되었습니다.", Toast.LENGTH_SHORT).show()
+                        dialog.dismiss()
+                    } else {
+                        dialog.dismiss()
+                        Handler().postDelayed({
+                            startActivity(Intent(this, SettingActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        }, 125)
+
+                    }
+
+                }
+            }
+
+
+        }
+
+        dialog.show()
+
+    }
+
+    fun setHospitalList(){
+
+        if(MainActivity.manager_name == "fine"){
+
+            MainActivity.hospital = HospitalList.hospital.test
+            //main_logo.setImageResource(R.drawable.logo)
+
+        }else if(MainActivity.manager_name == "mokpohos"){
+
+            MainActivity.hospital = HospitalList.hospital.Mokpo
+            //main_logo.setImageResource(R.drawable.logo2)
+
+        }else if(MainActivity.manager_name == "hanshin"){
+
+            MainActivity.hospital = HospitalList.hospital.Banpo
+
+        }else if(MainActivity.manager_name == "bestian"){
+
+            MainActivity.hospital = HospitalList.hospital.Osong
+            //main_logo.setImageResource(R.drawable.bestianlogo)
+        }
+    }
+
+
+    fun ProgressAction(isShow: Boolean) {
+        if (isShow) {
             login_appbar_loading_progress.visibility = View.VISIBLE
             login_appbar_loading_progress_bg.visibility = View.VISIBLE
             this.window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-        }
-        else
-        {
+        } else {
             login_appbar_loading_progress.visibility = View.GONE
             login_appbar_loading_progress_bg.visibility = View.GONE
             this.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
