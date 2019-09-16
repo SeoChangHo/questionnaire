@@ -408,7 +408,14 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 //                        ShowPage(2)
 //                        userlogin2(this@MainActivity)
-                        startActivity(Intent(this, Main2Activity::class.java))
+
+                        if(user == "bestian"){
+                            startActivity(Intent(this, LoginExamActivity::class.java))
+
+                        } else {
+                            startActivity(Intent(this, Main2Activity::class.java))
+
+                        }
 
                     }else{
 

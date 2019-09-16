@@ -14,20 +14,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.UserList.UserList
 import kotlinx.android.synthetic.main.activity_exam_list.*
+import kotlinx.android.synthetic.main.activity_exam_list.btnList
+import kotlinx.android.synthetic.main.activity_exam_list.button1
+import kotlinx.android.synthetic.main.activity_exam_list.button2
+import kotlinx.android.synthetic.main.activity_exam_list.button3
+import kotlinx.android.synthetic.main.activity_exam_list.button4
+import kotlinx.android.synthetic.main.activity_exam_list.button5
+import kotlinx.android.synthetic.main.activity_exam_list.main_image_logo
+import kotlinx.android.synthetic.main.activity_exam_list.selected_button1
+import kotlinx.android.synthetic.main.activity_exam_list.selected_button2
+import kotlinx.android.synthetic.main.activity_exam_list.selected_button3
+import kotlinx.android.synthetic.main.activity_exam_list.selected_button4
+import kotlinx.android.synthetic.main.activity_exam_list.selected_button5
+import kotlinx.android.synthetic.main.activity_exam_list.user_image
+import kotlinx.android.synthetic.main.activity_exam_list.user_login
 import kotlinx.android.synthetic.main.activity_login.view.*
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.button1
-import kotlinx.android.synthetic.main.activity_main.button2
-import kotlinx.android.synthetic.main.activity_main.button3
-import kotlinx.android.synthetic.main.activity_main.button4
-import kotlinx.android.synthetic.main.activity_main.button5
-import kotlinx.android.synthetic.main.activity_main.selected_button1
-import kotlinx.android.synthetic.main.activity_main.selected_button2
-import kotlinx.android.synthetic.main.activity_main.selected_button3
-import kotlinx.android.synthetic.main.activity_main.selected_button4
-import kotlinx.android.synthetic.main.activity_main.selected_button5
 
 class ExamListActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -40,12 +44,54 @@ class ExamListActivity : AppCompatActivity(), View.OnClickListener {
         button3.setOnClickListener(this)
         button4.setOnClickListener(this)
         button5.setOnClickListener(this)
+        listButton.setOnClickListener(this)
 
+        // 초기 화면 설정
         selected_button1.visibility = View.VISIBLE
-
         supportFragmentManager.beginTransaction().add(R.id.fragment_right, FirstFragment()).commit()
+        logoSetting()
+        user_login.text = MainActivity.login_user_name +"님"
+
+        btnList.setOnClickListener {
+            finish()
+        }
+
+        user_image.setOnClickListener {
+            user_login.text = "사용자 등록하기"
+            user_image.setImageResource(R.drawable.regi)
+
+            MainActivity.login_user_name = ""
+            MainActivity.user_first_serial = ""
+            MainActivity.user_last_serial = ""
+            Toast.makeText(this, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
+            MainActivity.chart.clear()
+
+            //추가
+            MainActivity.canvas_motion = null
+
+            if(MainActivity.manager_name == "bestian"){
+                startActivity(Intent(this, LoginExamActivity::class.java))
+            } else {
+                startActivity(Intent(this, Main2Activity::class.java))
+            }
+        }
 
     }
+
+    fun logoSetting(){
+
+        main_image_logo.visibility = View.VISIBLE
+
+        if(MainActivity.hospital == HospitalList.hospital.Mokpo){
+            main_image_logo.setImageResource(R.drawable.logo2)
+        }else if(MainActivity.hospital == HospitalList.hospital.test){
+            main_image_logo.setImageResource(R.drawable.logo)
+        }else if(MainActivity.hospital == HospitalList.hospital.Osong){
+            main_image_logo.setImageResource(R.drawable.bestianlogo)
+        }
+    }
+
+
 
     override fun onClick(v: View?) {
 

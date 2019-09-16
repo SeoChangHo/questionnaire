@@ -12,12 +12,15 @@ import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
 import android.os.Handler
+import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -32,6 +35,7 @@ import com.fineinsight.zzango.questionnaire.Signature.CanvasView
 import com.fineinsight.zzango.questionnaire.UserList.UserList
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_login_exam.*
+import kotlinx.android.synthetic.main.quit_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,6 +50,7 @@ class LoginExamActivity : AppCompatActivity() {
     lateinit var canvasView: CanvasView
     var validationInside = false
     var userlogin_buttonClick = true
+    var popup = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -951,6 +956,66 @@ class LoginExamActivity : AppCompatActivity() {
         }
     }
 
+
+    override fun onBackPressed() {
+        var dialog = android.app.AlertDialog.Builder(this).create()
+        var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
+
+        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        dialog.setView(dialog_view)
+        dialog_view.notice.text = "앱을 종료하시겠습니까?"
+
+        if(!popup) {
+
+            dialog.show().let {
+
+                popup = true
+
+            }
+
+        }
+
+        var displayMetrics = DisplayMetrics()
+        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
+        var displayWidth = displayMetrics.widthPixels
+        var displayHeight = displayMetrics.heightPixels
+
+        var layoutParams = WindowManager.LayoutParams()
+
+        layoutParams.copyFrom(dialog.window.attributes)
+
+        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
+        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
+
+        layoutParams.width = dialogWindowWidth
+        layoutParams.height = dialogWindowHeight
+
+        dialog.window.attributes = layoutParams
+
+        dialog.setOnDismissListener {
+            popup = false
+            dialog = null
+
+        }
+
+        dialog_view.cancel.setOnClickListener {
+
+            dialog.dismiss()
+
+        }
+
+        dialog_view.finish.setOnClickListener {
+
+            ActivityCompat.finishAffinity(this)
+
+            System.runFinalization()
+            System.exit(0)
+            dialog.dismiss()
+
+        }
+
+    }
 
     fun ProgressAction(isShow: Boolean) {
         if (isShow) {
