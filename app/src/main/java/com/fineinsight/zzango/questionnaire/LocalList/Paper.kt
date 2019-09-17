@@ -463,17 +463,6 @@ data class Paper_AGREE_Check (
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 data class READ_AGREE (
         var HOSPITAL:String,
         var SYS_DATE:String,

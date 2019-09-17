@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
+import com.fineinsight.zzango.questionnaire.AgreementActivity
 import com.fineinsight.zzango.questionnaire.LocalDBhelper
 import com.fineinsight.zzango.questionnaire.R
 import kotlinx.android.synthetic.main.activity_list.*
@@ -25,48 +26,12 @@ class CustomAgreeAdapter(var PaperList: ArrayList<Paper_AGREE_Check>, var activi
 
     var sql_db : SQLiteDatabase? = null
     var isFirstTime:Boolean = true
-    val EmptyBytes:ByteArray = ByteArray(0)
-
-
 
 
     @SuppressLint("StaticFieldLeak")
     object myCheckBox {
         var chk_each :ArrayList<CheckBox>? = null
         var chk_All = ArrayList<CheckBox>()
-    }
-
-    object Category
-    {
-        //구강검진
-        var ORAL = "ORAL"
-
-        //공통검진
-        var COMMON = "COMMON"
-
-        //정신건강
-        var MENTAL = "MENTAL"
-
-        //인지기능
-        var COGNITIVE = "COGNITIVE"
-
-        //노인기능
-        var ELDERLY = "ELDERLY"
-
-        //흡연
-        var SMOKING = "SMOKING"
-
-        //음주
-        var DRINKING = "DRINKING"
-
-        //암
-        var CANCER = "CANCER"
-
-        //운동
-        var EXERCISE = "EXERCISE"
-
-        //영양
-        var NUTRITION = "NUTRITION"
     }
 
     fun CheckBoxInit(count:Int)
@@ -82,7 +47,7 @@ class CustomAgreeAdapter(var PaperList: ArrayList<Paper_AGREE_Check>, var activi
         return position
     }
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
-        var v : View = LayoutInflater.from(p0.context).inflate(R.layout.list_layout, p0, false)
+        var v : View = LayoutInflater.from(p0.context).inflate(R.layout.agree_list_layout, p0, false)
         return ContentAgreeViewHolder(v)
     }
     override fun getItemCount(): Int {
@@ -117,7 +82,7 @@ class CustomAgreeAdapter(var PaperList: ArrayList<Paper_AGREE_Check>, var activi
 
         println(p1.toString()+"번째의 체크값은 "+paper.isChecked.toString()+"입니다.")
         p0.chkbox.isChecked = paper.isChecked
-        //p0.txtCategory.text = getPaperCount(paper, paper.NAME, paper.first_serial)
+        p0.txtCategory.text = "개인정보 수집/이용 동의서"
         p0.txtName.text = paper.NAME
 
 
@@ -134,23 +99,38 @@ class CustomAgreeAdapter(var PaperList: ArrayList<Paper_AGREE_Check>, var activi
         }
 
 
-        //var date = SimpleDateFormat("yyyy-MM-dd").format(Date(paper.SYS_DATE.toLong()))
+        var date = SimpleDateFormat("yyyy-MM-dd").format(Date(paper.SYS_DATE.toLong()))
 
-        p0.txtDate.text = paper.SYS_DATE
+        p0.txtDate.text = date
 
         //Recyclerview Item Click
-
-
-
         p0.constraint.setOnClickListener{
+            var AgreeListArr = ArrayList<READ_AGREE>()
 
-            activity.ProgressAction(true)
-
-            sql_db = LocalDBhelper(activity.applicationContext).writableDatabase
-
-
-            startActivity(activity, Intent(activity, ListDetailActivity::class.java).putExtra("paper", paper).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), null)
-
+            AgreeListArr.add(READ_AGREE(
+                    PaperList[p1].HOSPITAL,
+                    PaperList[p1].SYS_DATE,
+                    PaperList[p1].USER_ID,
+                    PaperList[p1].UPD_DATE,
+                    PaperList[p1].BUNHO,
+                    PaperList[p1].IO_GUBUN,
+                    PaperList[p1].BASIC,
+                    PaperList[p1].GUNJIN,
+                    PaperList[p1].MOBILE,
+                    PaperList[p1].EVENT,
+                    PaperList[p1].SMS,
+                    PaperList[p1].CONSULT,
+                    PaperList[p1].DAERI,
+                    PaperList[p1].GOYU,
+                    PaperList[p1].MINGAM,
+                    PaperList[p1].SCAN,
+                    PaperList[p1].CAR_NO,
+                    PaperList[p1].NAME,
+                    PaperList[p1].JUMIN,
+                    SIGNINFO("Buffer", PaperList[p1].SIGN)
+            ))
+            val AgreementActivity = Intent(activity, AgreementActivity::class.java).putExtra("AgreeListArr", AgreeListArr).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            activity.startActivity(AgreementActivity)
         }
 
         p0.chkbox.setOnCheckedChangeListener(null)
@@ -337,7 +317,8 @@ class ContentAgreeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
     val txtName = itemView.findViewById(R.id.txtName) as TextView
     val txtDate = itemView.findViewById(R.id.txtDate) as TextView
 
-    //var ImgTest = itemView.findViewById(R.id.imageView12) as ImageView
+
+
 
     val constraint = itemView.findViewById(R.id.constraintLayoutArea) as ConstraintLayout
 }

@@ -229,7 +229,7 @@ class ListAgreeActivity : RootActivity() {
                             ListSetting(false)
                             btnSave.visibility = View.GONE
                             btnDelete.visibility = View.GONE
-                            txtBottomMent.text = "문진표를 선택해주세요."
+                            txtBottomMent.text = "동의서를 선택해주세요."
                             select_all_checkbox.isChecked = false
                             constraintLayout_bottom.visibility = View.GONE
                         }
@@ -266,7 +266,7 @@ class ListAgreeActivity : RootActivity() {
                     if(count>0)
                     {
                         constraintLayout_bottom.visibility = View.VISIBLE
-                        txtBottomMent.text = "선택한 " + count.toString() + "개의 문진표를"
+                        txtBottomMent.text = "선택한 " + count.toString() + "개의 동의서를"
                         btnSave.visibility = View.VISIBLE
                         btnDelete.visibility = View.VISIBLE
                     }
@@ -290,7 +290,7 @@ class ListAgreeActivity : RootActivity() {
 
                     btnSave.visibility = View.GONE
                     btnDelete.visibility = View.GONE
-                    txtBottomMent.text = "문진표를 선택해주세요."
+                    txtBottomMent.text = "동의서를 선택해주세요."
                     constraintLayout_bottom.visibility = View.GONE
                 }
             }
