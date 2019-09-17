@@ -166,7 +166,7 @@ class ListAgreeActivity : RootActivity() {
         println("진행률: ${(double_start_index/double_total_index)*100}")
 
 
-        var UploadAgreeInfo:Paper_AGREE = Paper_AGREE(
+        var UploadAgreeInfo = Paper_AGREE(
                 removeArr[startIndex].HOSPITAL,
                 removeArr[startIndex].SYS_DATE,
                 removeArr[startIndex].USER_ID,
