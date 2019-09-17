@@ -1680,7 +1680,7 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
 
     fun Select_Local_AGREE_ALL(db : SQLiteDatabase): Cursor{
 
-        var sql = "SELECT * FROM AGREE_LIST;"
+        var sql = "SELECT SYS_DATE, USER_ID, UPD_DATE, BUNHO, IO_GUBUN, BASIC, GUNJIN, MOBILE, EVENT, SMS, CONSULT, DAERI, GOYU, MINGAM, SCAN, CAR_NO, NAME, JUMIN, SIGN  FROM AGREE_LIST;"
         var data = db.rawQuery(sql, null)
 
         return data
@@ -1828,5 +1828,19 @@ class LocalDBhelper(context : Context) : SQLiteOpenHelper(context, "oraltest.db"
         db.delete("SMOKING_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
         db.delete("ORAL_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
         db.delete("CANCER_EXAM", "exam_no=?", arrayOf(Paper.exam_no))
+    }
+
+    fun deleteAgreeMent(db : SQLiteDatabase, AgreeList: ArrayList<Paper_AGREE_Check>) {
+        //AGREE_LIST
+        for(item in AgreeList)
+        {
+            deleteAgreeEach(db, item)
         }
+        db.close()
+    }
+
+    fun deleteAgreeEach(db : SQLiteDatabase, Agreee: Paper_AGREE_Check)
+    {
+        db.delete("AGREE_LIST", "SYS_DATE=? AND JUMIN=?", arrayOf(Agreee.SYS_DATE, Agreee.JUMIN))
+    }
 }

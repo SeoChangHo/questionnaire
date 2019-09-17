@@ -113,7 +113,7 @@ class CustomAgreeAdapter(var PaperList: ArrayList<Paper_AGREE_Check>, var activi
 
 
         var paper: Paper_AGREE_Check = PaperList[p1]
-
+        println("paper.SYS_DATE: ${paper.SYS_DATE}")
 
         println(p1.toString()+"번째의 체크값은 "+paper.isChecked.toString()+"입니다.")
         p0.chkbox.isChecked = paper.isChecked
@@ -136,11 +136,11 @@ class CustomAgreeAdapter(var PaperList: ArrayList<Paper_AGREE_Check>, var activi
 
         //var date = SimpleDateFormat("yyyy-MM-dd").format(Date(paper.SYS_DATE.toLong()))
 
-        //p0.txtDate.text = date
+        p0.txtDate.text = paper.SYS_DATE
 
         //Recyclerview Item Click
 
-        println("paper.SYS_DATE: ${paper.SYS_DATE}")
+
 
         p0.constraint.setOnClickListener{
 
