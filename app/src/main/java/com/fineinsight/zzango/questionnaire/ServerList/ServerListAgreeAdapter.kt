@@ -58,6 +58,4 @@ class ServerListAgreeAdapter (var userList: ArrayList<SelectInfo>, val Activity 
 
         val listlayoutBack: ConstraintLayout = itemView.findViewById(R.id.server_list_layout_back)
     }
-
-
 }
