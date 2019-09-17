@@ -303,51 +303,6 @@ class ListAgreeActivity : RootActivity() {
     //    }
 
 
-        fun Return_ORAL(exam_no:String, name:String, jumin:String): ArrayList<Paper_ORAL>
-        {
-            val sql_db = LocalDBhelper(this).writableDatabase
-            var PaperArray = ArrayList<Paper_ORAL>()
-
-            val data = LocalDBhelper(this).Select_Local_ORAL(sql_db!!, exam_no, name, jumin)
-            data.moveToFirst()
-
-            while(!data.isAfterLast){
-                PaperArray.add(Paper_ORAL(
-                        data.getString(data.getColumnIndex("exam_date")),
-                        data.getString(data.getColumnIndex("exam_no")),
-                        data.getString(data.getColumnIndex("name")),
-                        data.getString(data.getColumnIndex("first_serial")),
-                        data.getString(data.getColumnIndex("last_serial")),
-                        data.getString(data.getColumnIndex("category")),
-                        data.getString(data.getColumnIndex("oral_1")),
-                        data.getString(data.getColumnIndex("oral_2")),
-                        data.getString(data.getColumnIndex("oral_3")),
-                        data.getString(data.getColumnIndex("oral_4")),
-                        data.getString(data.getColumnIndex("oral_5")),
-                        data.getString(data.getColumnIndex("oral_6")),
-                        data.getString(data.getColumnIndex("oral_7")),
-                        data.getString(data.getColumnIndex("oral_8")),
-                        data.getString(data.getColumnIndex("oral_9")),
-                        data.getString(data.getColumnIndex("oral_10")),
-                        data.getString(data.getColumnIndex("oral_11")),
-                        data.getString(data.getColumnIndex("oral_12")),
-                        data.getString(data.getColumnIndex("oral_13")),
-                        data.getString(data.getColumnIndex("oral_14")),
-                        data.getString(data.getColumnIndex("oral_15")),
-                        data.getString(data.getColumnIndex("oral_16")),
-                        data.getString(data.getColumnIndex("oral_Remark"))
-                ))
-                data.moveToNext()
-            }
-
-
-            sql_db.close()
-
-
-            return PaperArray
-        }
-
-
 
         override fun onResume() {
             super.onResume()
@@ -371,7 +326,11 @@ class ListAgreeActivity : RootActivity() {
         }
     }
 
+
+
 }
+
+
 
 
 
