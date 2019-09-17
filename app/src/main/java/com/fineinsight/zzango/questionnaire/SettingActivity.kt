@@ -32,21 +32,21 @@ class SettingActivity : AppCompatActivity() {
 
         if(num != "wifi"){
 
-            local_button.setBackgroundResource(R.drawable.setting_save_select)
+            local_button.setBackgroundResource(R.drawable.setting_save_select_left)
             local_imageView.setImageResource(R.drawable.local)
             local_textView.setTextColor(Color.parseColor("#FFFFFF"))
 
-            server_button.setBackgroundResource(R.drawable.setting_save_unselect)
+            server_button.setBackgroundResource(R.drawable.setting_save_unselect_right)
             server_imageView.setImageResource(R.drawable.server_blue)
             server_textView.setTextColor(Color.parseColor("#2B53A2"))
 
         }else{
 
-            local_button.setBackgroundResource(R.drawable.setting_save_unselect)
+            local_button.setBackgroundResource(R.drawable.setting_save_unselect_left)
             local_imageView.setImageResource(R.drawable.local_blue)
             local_textView.setTextColor(Color.parseColor("#2B53A2"))
 
-            server_button.setBackgroundResource(R.drawable.setting_save_select)
+            server_button.setBackgroundResource(R.drawable.setting_save_select_right)
             server_imageView.setImageResource(R.drawable.server)
             server_textView.setTextColor(Color.parseColor("#FFFFFF"))
 
@@ -94,11 +94,11 @@ class SettingActivity : AppCompatActivity() {
 
             getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "local").apply()
 
-            local_button.setBackgroundResource(R.drawable.setting_save_select)
+            local_button.setBackgroundResource(R.drawable.setting_save_select_left)
             local_imageView.setImageResource(R.drawable.local)
             local_textView.setTextColor(Color.parseColor("#FFFFFF"))
 
-            server_button.setBackgroundResource(R.drawable.setting_save_unselect)
+            server_button.setBackgroundResource(R.drawable.setting_save_unselect_right)
             server_imageView.setImageResource(R.drawable.server_blue)
             server_textView.setTextColor(Color.parseColor("#2B53A2"))
 
@@ -109,11 +109,11 @@ class SettingActivity : AppCompatActivity() {
 
             getSharedPreferences("connection", Context.MODE_PRIVATE).edit().putString("state", "wifi").apply()
 
-            local_button.setBackgroundResource(R.drawable.setting_save_unselect)
+            local_button.setBackgroundResource(R.drawable.setting_save_unselect_left)
             local_imageView.setImageResource(R.drawable.local_blue)
             local_textView.setTextColor(Color.parseColor("#2B53A2"))
 
-            server_button.setBackgroundResource(R.drawable.setting_save_select)
+            server_button.setBackgroundResource(R.drawable.setting_save_select_right)
             server_imageView.setImageResource(R.drawable.server)
             server_textView.setTextColor(Color.parseColor("#FFFFFF"))
 

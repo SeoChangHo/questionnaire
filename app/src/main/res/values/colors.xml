@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#3C6FD1</color>
     <color name="colorAccent">#303E9F</color>
     <color name="mainBlue">#293A54</color>
     <color name="navy">#303E9F</color>
@@ -16,9 +16,11 @@
     <color name="loginGray">#EDEFF3</color>
     <color name="progressGray">#D9E1E9</color>
     <color name="white">#FFFFFF</color>
-    <color name="settingGray">#DCE1E8</color>
+    <color name="settingGray">#C6CEDB</color>
     <color name="gra_start">#1D8BCB</color>
     <color name="gra_end">#3C6FD1</color>
     <color name="saveListGray">#EDEFF3</color>
     <color name="saveListBtnBlue">#2c53a2</color>
+    <color name="managerNameGray">#77879A</color>
+    <color name="shadowGray">#D3DDEE</color>
 </resources>

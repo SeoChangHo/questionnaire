@@ -31,6 +31,7 @@ import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.*
 import com.fineinsight.zzango.questionnaire.MainActivity.Companion.chart
+import com.fineinsight.zzango.questionnaire.MainActivity.Companion.manager_name
 import com.fineinsight.zzango.questionnaire.Signature.CanvasView
 import com.fineinsight.zzango.questionnaire.UserList.UserList
 import kotlinx.android.synthetic.main.activity_login.view.*
@@ -253,7 +254,7 @@ class LoginExamActivity : AppCompatActivity() {
                     last_serial.text.clear()
                     canvasView.ClearCanvas()
                     user_login_button.isEnabled = false
-                    user_login_button.setBackgroundResource(R.drawable.user_login_button)
+                    user_login_button.setBackgroundResource(R.drawable.start_login_back)
 
                     MainActivity.chart.clear()
 
@@ -933,23 +934,23 @@ class LoginExamActivity : AppCompatActivity() {
 
     }
 
-    fun setHospitalList(){
+    fun setHospitalList() {
 
-        if(MainActivity.manager_name == "fine"){
+        if (MainActivity.manager_name == "fine") {
 
             MainActivity.hospital = HospitalList.hospital.test
             //main_logo.setImageResource(R.drawable.logo)
 
-        }else if(MainActivity.manager_name == "mokpohos"){
+        } else if (MainActivity.manager_name == "mokpohos") {
 
             MainActivity.hospital = HospitalList.hospital.Mokpo
             //main_logo.setImageResource(R.drawable.logo2)
 
-        }else if(MainActivity.manager_name == "hanshin"){
+        } else if (MainActivity.manager_name == "hanshin") {
 
             MainActivity.hospital = HospitalList.hospital.Banpo
 
-        }else if(MainActivity.manager_name == "bestian"){
+        } else if (MainActivity.manager_name == "bestian") {
 
             MainActivity.hospital = HospitalList.hospital.Osong
             //main_logo.setImageResource(R.drawable.bestianlogo)
@@ -958,60 +959,124 @@ class LoginExamActivity : AppCompatActivity() {
 
 
     override fun onBackPressed() {
-        var dialog = android.app.AlertDialog.Builder(this).create()
-        var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
 
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        if (first_view.visibility == View.GONE) {
+            var dialog = android.app.AlertDialog.Builder(this).create()
+            var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
 
-        dialog.setView(dialog_view)
-        dialog_view.notice.text = "앱을 종료하시겠습니까?"
+            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        if(!popup) {
+            dialog.setView(dialog_view)
+            dialog_view.notice.text = "사용자 등록을 취소하시겠습니까?"
+            dialog_view.finish.text = "확인"
 
-            dialog.show().let {
+            if (!popup) {
 
-                popup = true
+                dialog.show().let {
+
+                    popup = true
+
+                }
 
             }
 
-        }
+            var displayMetrics = DisplayMetrics()
+            dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
+            var displayWidth = displayMetrics.widthPixels
+            var displayHeight = displayMetrics.heightPixels
 
-        var displayMetrics = DisplayMetrics()
-        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-        var displayWidth = displayMetrics.widthPixels
-        var displayHeight = displayMetrics.heightPixels
+            var layoutParams = WindowManager.LayoutParams()
 
-        var layoutParams = WindowManager.LayoutParams()
+            layoutParams.copyFrom(dialog.window.attributes)
 
-        layoutParams.copyFrom(dialog.window.attributes)
+            var dialogWindowWidth = (displayWidth * 0.7f).toInt()
+            var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
 
-        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
+            layoutParams.width = dialogWindowWidth
+            layoutParams.height = dialogWindowHeight
 
-        layoutParams.width = dialogWindowWidth
-        layoutParams.height = dialogWindowHeight
+            dialog.window.attributes = layoutParams
 
-        dialog.window.attributes = layoutParams
+            dialog.setOnDismissListener {
+                popup = false
+                dialog = null
 
-        dialog.setOnDismissListener {
-            popup = false
-            dialog = null
+            }
 
-        }
+            dialog_view.cancel.setOnClickListener {
 
-        dialog_view.cancel.setOnClickListener {
+                dialog.dismiss()
 
-            dialog.dismiss()
+            }
 
-        }
+            dialog_view.finish.setOnClickListener {
 
-        dialog_view.finish.setOnClickListener {
+                UserHandler(false)
+                dialog.dismiss()
 
-            ActivityCompat.finishAffinity(this)
+            }
 
-            System.runFinalization()
-            System.exit(0)
-            dialog.dismiss()
+        } else if (MainActivity.manager_name == "bestian") {
+
+            var dialog = android.app.AlertDialog.Builder(this).create()
+            var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
+
+            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            dialog.setView(dialog_view)
+            dialog_view.notice.text = "앱을 종료하시겠습니까?"
+
+            if (!popup) {
+
+                dialog.show().let {
+
+                    popup = true
+
+                }
+
+            }
+
+            var displayMetrics = DisplayMetrics()
+            dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
+            var displayWidth = displayMetrics.widthPixels
+            var displayHeight = displayMetrics.heightPixels
+
+            var layoutParams = WindowManager.LayoutParams()
+
+            layoutParams.copyFrom(dialog.window.attributes)
+
+            var dialogWindowWidth = (displayWidth * 0.7f).toInt()
+            var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
+
+            layoutParams.width = dialogWindowWidth
+            layoutParams.height = dialogWindowHeight
+
+            dialog.window.attributes = layoutParams
+
+            dialog.setOnDismissListener {
+                popup = false
+                dialog = null
+
+            }
+
+            dialog_view.cancel.setOnClickListener {
+
+                dialog.dismiss()
+
+            }
+
+            dialog_view.finish.setOnClickListener {
+
+                ActivityCompat.finishAffinity(this)
+
+                System.runFinalization()
+                System.exit(0)
+                dialog.dismiss()
+
+            }
+
+        } else {
+            super.onBackPressed()
 
         }
 

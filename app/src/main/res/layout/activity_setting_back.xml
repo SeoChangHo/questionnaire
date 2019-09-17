@@ -15,13 +15,70 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/setting_blue" />
+
+        <!--        <android.support.constraint.ConstraintLayout-->
+        <!--            android:id="@+id/constraintLayout22"-->
+        <!--            android:layout_width="115dp"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:background="@color/navy"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/textView71"-->
+        <!--            app:layout_constraintEnd_toStartOf="@+id/constraintLayout23"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/textView71">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView75"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="관리자 ID"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="18dp"-->
+        <!--                android:textStyle="bold"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent" />-->
+        <!--        </android.support.constraint.ConstraintLayout>-->
+
+        <TextView
+            android:id="@+id/textView71"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="환경설정"
+            android:textColor="@color/mainBlue"
+            android:textSize="36dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="관리자 페이지 입니다."
+            android:textColor="@color/mainBlue"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView71"
+            app:layout_constraintTop_toBottomOf="@+id/textView71" />
+
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout23"
             android:layout_width="200dp"
             android:layout_height="48dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/setting_id_border"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -36,12 +93,14 @@
                 android:paddingLeft="32dp"
                 android:text="118522278"
                 android:textAllCaps="false"
-                android:textColor="@color/mainBlue"
+                android:textColor="@color/managerNameGray"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
                 android:id="@+id/imageView14"
@@ -53,82 +112,30 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/logout_blue" />
         </android.support.constraint.ConstraintLayout>
-
-<!--        <android.support.constraint.ConstraintLayout-->
-<!--            android:id="@+id/constraintLayout22"-->
-<!--            android:layout_width="115dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:background="@color/navy"-->
-<!--            app:layout_constraintBottom_toBottomOf="@+id/textView71"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/constraintLayout23"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/textView71">-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/textView75"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="관리자 ID"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-<!--        </android.support.constraint.ConstraintLayout>-->
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/setting_blue" />
-
-        <TextView
-            android:id="@+id/textView71"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="환경설정"
-            android:textColor="@color/mainBlue"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-            app:layout_constraintStart_toEndOf="@+id/imageView8"
-            app:layout_constraintTop_toTopOf="@+id/imageView8" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="관리자 페이지 입니다."
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/textView71"
-            app:layout_constraintTop_toBottomOf="@+id/textView71" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout14"
+        android:id="@+id/constraintLayout24"
         android:layout_width="0dp"
         android:layout_height="70dp"
+        android:background="@drawable/border_top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout13">
 
+
         <Button
-            android:id="@+id/listViewButton"
+            android:id="@+id/button"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@drawable/border_top"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
             android:gravity="start"
             android:paddingLeft="32dp"
             android:paddingTop="20dp"
-            android:text="완료된 문진 리스트"
+            android:text="로컬/서버 저장위치 선택"
+            android:textAlignment="center"
             android:textColor="@color/mainBlue"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -137,105 +144,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="10dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/arrow_right" />
-
-
     </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout30"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14">
-
-        <Button
-            android:id="@+id/listViewButton2"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/border_top"
-            android:gravity="start"
-            android:paddingLeft="32dp"
-            android:paddingTop="20dp"
-            android:text="서버 문진 리스트"
-            android:textColor="@color/mainBlue"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView17"
-            android:layout_width="10dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/arrow_right" />
-
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout15"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:background="@color/settingGray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/button_back"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/back2" />
-    </android.support.constraint.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/setting_image"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout15"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout33"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_top"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout24">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="26dp"
+            android:background="@drawable/setting_shadow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/server_button"
+            app:layout_constraintStart_toStartOf="@+id/local_button"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/server_button"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="250dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_height="175dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/setting_save_unselect"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/setting_save_unselect_right"
             android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/local_button"
@@ -245,12 +187,12 @@
             android:id="@+id/local_button"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="250dp"
+            android:layout_height="175dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/setting_save_select"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/setting_save_select_left"
             android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/server_button"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -262,7 +204,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="@+id/server_button"
             app:layout_constraintStart_toStartOf="@+id/server_button"
@@ -273,7 +215,7 @@
             android:id="@+id/local_imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="@+id/local_button"
             app:layout_constraintStart_toStartOf="@+id/local_button"
@@ -307,16 +249,15 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout24"
+        android:id="@+id/constraintLayout14"
         android:layout_width="0dp"
         android:layout_height="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout30">
-
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout33">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/listViewButton"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -324,7 +265,7 @@
             android:gravity="start"
             android:paddingLeft="32dp"
             android:paddingTop="20dp"
-            android:text="기기/서버 저장위치 선택"
+            android:text="문진 로컬 리스트"
             android:textColor="@color/mainBlue"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -333,22 +274,158 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="12dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_right" />
+
+
     </android.support.constraint.ConstraintLayout>
 
-    <Button
-        android:id="@+id/btnAgreeLocal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="동의서 - 로컬"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout30"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAgreeServer" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14">
 
-    <Button
-        android:id="@+id/btnAgreeServer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="동의서 - 서버"
+        <Button
+            android:id="@+id/listViewButton2"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/border_top"
+            android:gravity="start"
+            android:paddingLeft="32dp"
+            android:paddingTop="20dp"
+            android:text="문진 서버 리스트"
+            android:textColor="@color/mainBlue"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="12dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_right" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout32"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout33" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout30">
+
+        <Button
+            android:id="@+id/btnAgreeLocal"
+
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/border_top"
+            android:gravity="start"
+            android:paddingLeft="32dp"
+            android:paddingTop="20dp"
+            android:text="동의서 로컬 리스트"
+            android:textColor="@color/mainBlue"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_right" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout32">
+
+        <Button
+            android:id="@+id/btnAgreeServer"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/border_top_bottom"
+            android:gravity="start"
+            android:paddingLeft="32dp"
+            android:paddingTop="20dp"
+            android:text="동의서 서버 리스트"
+            android:textColor="@color/mainBlue"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_right" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout15"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/settingGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/button_back"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back2" />
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/setting_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout15"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
