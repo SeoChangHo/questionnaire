@@ -1,20 +1,16 @@
 package com.fineinsight.zzango.questionnaire.LocalList
 
 import android.net.NetworkCapabilities
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.WindowManager
-import android.widget.Button
 import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.*
-import com.fineinsight.zzango.questionnaire.DataClass.PublicDataInfo
-import kotlinx.android.synthetic.main.activity_list.*
+import kotlinx.android.synthetic.main.activity_list_agree.*
 import kotlinx.android.synthetic.main.progress_dialog.view.*
 import retrofit2.Call
 import retrofit2.Callback

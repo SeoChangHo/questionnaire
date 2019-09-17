@@ -129,6 +129,8 @@ class CustomAgreeAdapter(var PaperList: ArrayList<Paper_AGREE_Check>, var activi
                     PaperList[p1].JUMIN,
                     SIGNINFO("Buffer", PaperList[p1].SIGN)
             ))
+
+            activity.ProgressAction(true)
             val AgreementActivity = Intent(activity, AgreementActivity::class.java).putExtra("AgreeListArr", AgreeListArr).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             activity.startActivity(AgreementActivity)
         }
