@@ -33,15 +33,9 @@ class ServerListAgreeAdapter (var userList: ArrayList<SelectInfo>, val Activity 
             if (LASTNUM %2 == 0) p0.userGender.text="여자" else p0.userGender.text="남자"
         }
 
-
-
         p0.userName.text = userList[p1].userName
         p0.userJumin.text = JUMIN.substring(0, JUMIN.length-1)
-
-
-
         p0.listlayoutBack.setOnClickListener {
-
 
             Activity.loadDetailList(
                     userList[p1].userName,
