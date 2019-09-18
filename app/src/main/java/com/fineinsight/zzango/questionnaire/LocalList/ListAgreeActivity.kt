@@ -108,13 +108,14 @@ class ListAgreeActivity : RootActivity() {
                     }
                 }
 
-                val mdialogView = layoutInflater.inflate(R.layout.progress_dialog, null)
-                val mBuilder = AlertDialog.Builder(this)
-                        .setView(mdialogView)
-                        .setCancelable(false)
-                val mAlertDialog = mBuilder.show()
+//                val mdialogView = layoutInflater.inflate(R.layout.progress_dialog, null)
+//                val mBuilder = AlertDialog.Builder(this)
+//                        .setView(mdialogView)
+//                        .setCancelable(false)
+//                val mAlertDialog = mBuilder.show()
 
-                UploadAgree(removeArr, 0, removeArr.size, mdialogView, mAlertDialog)
+                //UploadAgree(removeArr, 0, removeArr.size, mdialogView, mAlertDialog)
+                BulkInsert(removeArr)
             }else{
                 wifiCheck()
             }
@@ -139,6 +140,89 @@ class ListAgreeActivity : RootActivity() {
             txtBottomMent.text = "동의서를 선택해주세요."
             select_all_checkbox.isChecked = false
         }
+    }
+
+
+    fun BulkInsert(Arr:ArrayList<Paper_AGREE_Check>)
+    {
+
+        ProgressAction(true)
+
+        var body = ArrayList<Paper_AGREE>()
+
+        for(item in Arr)
+        {
+            var UploadAgreeInfo = Paper_AGREE(
+                   item.HOSPITAL,
+                   item.SYS_DATE,
+                   item.USER_ID,
+                   item.UPD_DATE,
+                   item.BUNHO,
+                   item.IO_GUBUN,
+                   item.BASIC,
+                   item.GUNJIN,
+                   item.MOBILE,
+                   item.EVENT,
+                   item.SMS,
+                   item.CONSULT,
+                   item.DAERI,
+                   item.GOYU,
+                   item.MINGAM,
+                   item.SCAN,
+                   item.CAR_NO,
+                   item.NAME,
+                   item.JUMIN,
+                   item.SIGN
+            )
+            body.add(UploadAgreeInfo)
+        }
+
+
+        OracleUtill().save_agreepaper().SaveAgreePapers(body).enqueue(object : Callback<String> {
+
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+
+                if (response.isSuccessful) {
+                    if (!response.body()!!.equals("S")) {
+
+                        ProgressAction(false)
+
+
+                        Toast.makeText(this@ListAgreeActivity, "전송을 실패하였습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show()
+
+                    } else {
+
+                        val sql_db = LocalDBhelper(this@ListAgreeActivity).writableDatabase
+                        LocalDBhelper(this@ListAgreeActivity).deleteAgreeMent(sql_db!!, Arr)
+
+
+                        //끝
+                        println("모든 업로드가 완료되었습니다.")
+                        ProgressAction(false)
+
+
+
+                        Toast.makeText(this@ListAgreeActivity, "전송 완료", Toast.LENGTH_LONG).show()
+
+
+
+                        ListSetting(false)
+                        btnSave.visibility = View.GONE
+                        btnDelete.visibility = View.GONE
+                        txtBottomMent.text = "동의서를 선택해주세요."
+                        select_all_checkbox.isChecked = false
+                        constraintLayout_bottom.visibility = View.GONE
+
+                    }
+                }
+            }
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                ProgressAction(false)
+                Toast.makeText(this@ListAgreeActivity, "오류 발생 : " + t.toString(), Toast.LENGTH_LONG).show()
+                println(t.toString())
+            }
+        })
     }
 
 

@@ -24,6 +24,8 @@ import kotlin.collections.ArrayList
 
 class ServerListActivity : Activity() {
 
+    var SelectDate = LocalDate.now().toString()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,8 @@ class ServerListActivity : Activity() {
     fun DateSetting()
     {
         var now = LocalDate.now().toString()
+        SelectDate = now
+        println("SelectDate: ${SelectDate}")
         txtDate.text = "${now.split("-")[0]} 년   ${(now.split("-")[1]).toString().padStart(2, '0')} 월   ${now.split("-")[2].toString().padStart(2, '0')} 일"
 
 
@@ -64,6 +68,7 @@ class ServerListActivity : Activity() {
 
                 val dp = DatePickerDialog(this, AlertDialog.THEME_HOLO_DARK, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                     txtDate.text = "${year} 년   ${(month+1).toString().padStart(2, '0')} 월   ${dayOfMonth.toString().padStart(2, '0')} 일"
+                    SelectDate = "${year}-${(month+1).toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}"
                     loadList()
                 }, MYyear, MYmonth, MYday)
 
@@ -87,7 +92,7 @@ class ServerListActivity : Activity() {
 
 
         var selectDate = java.util.HashMap<String, String>()
-        selectDate["DATE"] = txtDate.text.toString()
+        selectDate["DATE"] = SelectDate
         selectDate["AREA"] = MainActivity.hospital
 
         ProgressAction(true)
