@@ -60,7 +60,10 @@ class AgreementActivity : RootActivity() {
         ProgressAction(true)
 
 
-        OracleUtill().save_agreepaper().SaveAgreePapers(AgreeInfo).enqueue(object : Callback<String> {
+        var body = ArrayList<Paper_AGREE>()
+        body.add(AgreeInfo)
+
+        OracleUtill().save_agreepaper().SaveAgreePapers(body).enqueue(object : Callback<String> {
 
             override fun onResponse(call: Call<String>, response: Response<String>) {
 
