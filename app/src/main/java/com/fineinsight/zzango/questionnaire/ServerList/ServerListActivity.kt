@@ -50,7 +50,7 @@ class ServerListActivity : Activity() {
             var MYday = 0
 
 
-            var splitdate = now.split("-")
+            var splitdate = SelectDate.split("-")
             var CheckMYyear = splitdate[0].toIntOrNull()
             var CheckMYmonth = splitdate[1].toIntOrNull()
             var CheckMYday = splitdate[2].toIntOrNull()
