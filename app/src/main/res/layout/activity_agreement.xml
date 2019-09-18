@@ -6,9 +6,11 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/agreementScroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_marginBottom="150dp"
+        android:overScrollMode="never">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/insideAgreementLayout"
@@ -19,7 +21,8 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout29"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -28,7 +31,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="개인정보 수집/이용 동의서"
-                    android:textSize="30dp"
+                    android:textColor="@color/gra_end"
+                    android:textSize="45dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -40,582 +44,1245 @@
                 android:id="@+id/textView57"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="32dp"
                 android:text="성명"
-                android:textSize="25dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/gra_end"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/textView337"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout29" />
 
-            <EditText
+            <TextView
                 android:id="@+id/patientName"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="16dp"
-                android:background="@drawable/square_edit_text"
-                android:padding="6dp"
-                android:maxLines="1"
-                android:maxLength="8"
-                android:textSize="16dp"
-                android:inputType="textNoSuggestions"
+                android:background="@drawable/user_sign_background"
+                android:gravity="center"
+                android:textSize="24dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView57"
-                app:layout_constraintStart_toEndOf="@+id/textView57"
+                app:layout_constraintStart_toStartOf="@+id/ResidentRegistrationNumber"
                 app:layout_constraintTop_toTopOf="@+id/textView57" />
+
+            <TextView
+                android:id="@+id/textView337"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="16dp"
+                android:text="주민등록번호"
+                android:textColor="@color/gra_end"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView57" />
+
+            <TextView
+                android:id="@+id/ResidentRegistrationNumber"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/user_sign_background"
+                android:gravity="center"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView337"
+                app:layout_constraintEnd_toStartOf="@+id/textView338"
+                app:layout_constraintTop_toTopOf="@+id/textView337" />
+
+            <TextView
+                android:id="@+id/textView338"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="-"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ResidentRegistrationNumber"
+                app:layout_constraintEnd_toStartOf="@+id/ResidentRegistrationNumber2"
+                app:layout_constraintTop_toTopOf="@+id/ResidentRegistrationNumber" />
+
+            <TextView
+                android:id="@+id/ResidentRegistrationNumber2"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="200dp"
+                android:background="@drawable/user_sign_background"
+                android:gravity="center"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ResidentRegistrationNumber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ResidentRegistrationNumber" />
 
             <TextView
                 android:id="@+id/textView58"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
                 android:text="환자번호"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView57"
-                app:layout_constraintEnd_toStartOf="@+id/pid"
-                app:layout_constraintTop_toTopOf="@+id/textView57" />
+                android:textColor="@color/gra_end"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView337"
+                app:layout_constraintTop_toBottomOf="@+id/textView337" />
 
-            <EditText
+            <TextView
                 android:id="@+id/pid"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/square_edit_text"
-                android:padding="6dp"
-                android:maxLines="1"
-                android:maxLength="10"
-                android:textSize="16dp"
-                android:inputType="textNoSuggestions"
-                app:layout_constraintBottom_toBottomOf="@+id/textView57"
-                app:layout_constraintEnd_toStartOf="@+id/ageGender"
-                app:layout_constraintTop_toTopOf="@+id/textView57" />
+                android:textSize="24dp"
+                android:background="@drawable/user_sign_background"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/textView58"
+                app:layout_constraintStart_toStartOf="@+id/ResidentRegistrationNumber"
+                app:layout_constraintTop_toTopOf="@+id/textView58" />
 
-            <EditText
+            <TextView
                 android:id="@+id/ageGender"
                 android:layout_width="70dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/square_edit_text"
-                android:padding="6dp"
-                android:maxLines="1"
-                android:maxLength="5"
-                android:textSize="16dp"
-                android:inputType="textNoSuggestions"
-                app:layout_constraintBottom_toBottomOf="@+id/textView57"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView57" />
-
-            <TextView
-                android:id="@+id/textView59"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="1. 개인정보의 수집 목적\n    (이용목적)"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/textView57" />
-
-            <TextView
-                android:id="@+id/textView60"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="● 진료/건진 예약, 조회 및 진료를 위한 본인확인 절차"
-                android:textSize="13dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView59"
-                app:layout_constraintTop_toTopOf="@+id/textView59" />
-
-            <TextView
-                android:id="@+id/textView61"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="● 진단 및 치료를 위한 서비스\n     (협력병원, 협의진료에 필요한 개인정보 및 진료정보 공유)"
-                android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/textView60"
-                app:layout_constraintTop_toBottomOf="@+id/textView60" />
-
-            <TextView
-                android:id="@+id/textView64"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="● 진료비 청구, 수납, 환불 등의 원무 서비스"
-                android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/textView60"
-                app:layout_constraintTop_toBottomOf="@+id/textView61" />
-
-            <TextView
-                android:id="@+id/textView65"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="● 진료비계산서, 내역서, 제 증명서 발송 및 약품/건진 물품 및 결과 발송"
-                android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/textView60"
-                app:layout_constraintTop_toBottomOf="@+id/textView64" />
-
-            <TextView
-                android:id="@+id/textView66"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="● 온라인/오프라인 수락, 외부검사 의뢰"
-                android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/textView60"
-                app:layout_constraintTop_toBottomOf="@+id/textView65" />
-
-            <TextView
-                android:id="@+id/textView68"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="2. 개인정보 수집 항목\n    (민감정보, 고유식별정보 포함)"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView59"
-                app:layout_constraintTop_toBottomOf="@+id/textView66" />
-
-            <TextView
-                android:id="@+id/textView67"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="● 이름, 주소, 주민등록번호 등 의료법 제 22조에 따라 의무기록에 명시되는 항목"
-                android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/textView60"
-                app:layout_constraintTop_toBottomOf="@+id/textView66" />
-
-            <TextView
-                android:id="@+id/textView70"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="● 전화번호, E-mail 등 진료신청서 내 기재항목"
-                android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/textView60"
-                app:layout_constraintTop_toBottomOf="@+id/textView67" />
-
-            <TextView
-                android:id="@+id/textView69"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="3. 개인정보보유/이용시간"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView59"
-                app:layout_constraintTop_toBottomOf="@+id/textView68" />
-
-            <TextView
-                android:id="@+id/textView76"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="● 의료법 및 기타 관련 법령기준에 따라 보유하며 환자의 건강을 위한\n     의료서비스에 필요성이 있는 경우에는 영구 보관할 수 있습니다."
-                android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/textView60"
-                app:layout_constraintTop_toTopOf="@+id/textView69" />
-
-            <TextView
-                android:id="@+id/textView78"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="4. 개인정보의 제 3자 제공"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView59"
-                app:layout_constraintTop_toBottomOf="@+id/textView69" />
-
-            <TextView
-                android:id="@+id/textView77"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="● 본원은 의료법 21조 및 기타 다른 법률에서 개인정보의 제공규정이 있는 경우\n     이외에 개인정보를 제공하는 경우에는 별도 동의를 받고 있습니다."
-                android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/textView60"
-                app:layout_constraintTop_toTopOf="@+id/textView78" />
-
-            <TextView
-                android:id="@+id/textView79"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                android:text="● 상기 내용은 본원에서 의료서비스를 제공하는데 필요한 최소한의 정보에 해당하므로 상기내용에 대하여\n    본인이 동의하지 않을 수 있으나 그러할 경우 의료서비스 제공이 원할하지 않을 수 있음을 알려드립니다"
-                android:textSize="17dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/textView77"
-                app:layout_constraintStart_toStartOf="@+id/textView78"
-                app:layout_constraintTop_toBottomOf="@+id/textView77" />
-
-            <RadioGroup
-                android:id="@+id/noticeWarning"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:textSize="24dp"
+                android:background="@drawable/user_sign_background"
                 android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/textView79"
-                app:layout_constraintStart_toStartOf="@+id/textView79"
-                app:layout_constraintTop_toBottomOf="@+id/textView79">
+                app:layout_constraintBottom_toBottomOf="@+id/textView58"
+                app:layout_constraintStart_toEndOf="@+id/pid"
+                app:layout_constraintTop_toTopOf="@+id/textView58" />
 
-                <RadioButton
-                    android:id="@+id/noticeWarningAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="동의"
-                    android:onClick="focusControl" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout32"
+                android:background="@color/whiteGray"/>
 
-                <RadioButton
-                    android:id="@+id/noticeWarningDisAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="동의하지 않음"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView80"
-                android:layout_width="wrap_content"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout32"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="▣ 고유식별정보\n    1. 주민등록번호, 외국인등록번호 등"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/noticeWarning" />
-
-            <RadioGroup
-                android:id="@+id/uniqueInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/textView80"
-                app:layout_constraintEnd_toEndOf="@+id/ageGender"
-                app:layout_constraintTop_toTopOf="@+id/textView80">
-
-                <RadioButton
-                    android:id="@+id/uniqueInfoAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="동의"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/uniqueInfoDisAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="동의하지 않음"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView81"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="▣ 민감정보\n    1. 의무기록정보, 진료비 등"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/textView80" />
-
-            <RadioGroup
-                android:id="@+id/sensitiveInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/textView81"
-                app:layout_constraintEnd_toEndOf="@+id/ageGender"
-                app:layout_constraintTop_toTopOf="@+id/textView81">
-
-                <RadioButton
-                    android:id="@+id/sensitiveInfoAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="동의"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/sensitiveInfoDisAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="동의하지 않음"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView82"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="▣ 건진 실시에 따른 사전 사후 서비스 관련 정보 제공\n    1. 개인정보 이용 항목 : 원무정보, 의무기록에 포함된 내용\n    2. 개인정보 이용 기간 : 법정보관연도"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/textView81" />
-
-            <RadioGroup
-                android:id="@+id/beforeAfterInfoProvide"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/textView82"
-                app:layout_constraintEnd_toEndOf="@+id/ageGender"
-                app:layout_constraintTop_toTopOf="@+id/textView82">
-
-                <RadioButton
-                    android:id="@+id/beforeAfterInfoProvideAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="동의"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/beforeAfterInfoProvideDisAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="동의하지 않음"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView83"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="▣ 진료예약, 입원 및 검사 예정에 대한 Mobile 안내\n    1. 개인정보 이용 항목 : 원무정보, 의무기록에 포함된 내용\n    2. 개인정보 이용 기간 : 법정보관연도"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/textView82" />
-
-            <RadioGroup
-                android:id="@+id/mobileInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/textView83"
-                app:layout_constraintEnd_toEndOf="@+id/ageGender"
-                app:layout_constraintTop_toTopOf="@+id/textView83">
-
-                <RadioButton
-                    android:id="@+id/mobileInfoAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="동의"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/mobileInfoDisAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="동의하지 않음"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView84"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="▣ 병원이용 및 병원의 새로운 서비스, 행사정보 안내\n    1. 개인정보 이용 항목 : 원무정보, 의무기록에 포함된 내용\n    2. 개인정보 이용 기간 : 법정보관연도"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/textView83" />
-
-            <RadioGroup
-                android:id="@+id/sendSMS"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/textView84"
-                app:layout_constraintEnd_toEndOf="@+id/ageGender"
-                app:layout_constraintTop_toTopOf="@+id/textView84">
-
-                <RadioButton
-                    android:id="@+id/sendSMSAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="동의"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/sendSMSDisAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="동의하지 않음"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView104"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="▣ 건강정보발송을 위한 휴대폰 SMS 발송\n    위의 병원 서비스를 제공하기 위하여 아래와 같이 업무를 위탁합니다.\n    - 수탁자 : 본원과 휴대폰 SMS 수탁협약을 체결한 자\n    - 위탁업무내용 : 병원 서비스 및 진료정보(예약 및 병원이용 등) 제공"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/textView84" />
-
-            <RadioGroup
-                android:id="@+id/hospitalEventInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/textView104"
-                app:layout_constraintEnd_toEndOf="@+id/ageGender"
-                app:layout_constraintTop_toTopOf="@+id/textView104">
-
-                <RadioButton
-                    android:id="@+id/hospitalEventInfoAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="동의"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/hospitalEventInfoDisAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="동의하지 않음"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView105"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="▣ 병원간의 상호 진료 협력을 위하여 의료정보 제공(협력병원 등)\n    1. 개인정보를 제공받는 자 : 본원과 협약을 체결한 협력병원\n    2. 개인정보를 제공받는 자의 개인정보 이용 목적 : 진료 협력 서비스\n    3. 제공하는 개인정보의 항목 : 원무정보, 의무기록정보\n    4. 개인정보를 제공 받는 자의 개인정보 보유 및 이용기간 : 법적보관연도"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/textView104" />
-
-            <RadioGroup
-                android:id="@+id/MedicalCooperationInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/textView105"
-                app:layout_constraintEnd_toEndOf="@+id/ageGender"
-                app:layout_constraintTop_toTopOf="@+id/textView105">
-
-                <RadioButton
-                    android:id="@+id/MedicalCooperationInfoAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="동의"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/MedicalCooperationInfoDisAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="동의하지 않음"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView127"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="▣ 환자대리인 정보이용 동의 (제 45조 대리인의 범위 등)\n    1. 이용 목적 : 환자의 진료 혹은 기타의 이유로 환자에게 연락이 불가한 경우 이용\n    2. 이용 항목 : 원무 정보\n    3. 이용기간 : 법적보관연도"
-                android:textSize="15dp"
-                app:layout_constraintStart_toStartOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/textView105" />
-
-            <RadioGroup
-                android:id="@+id/patientInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/textView127"
-                app:layout_constraintEnd_toEndOf="@+id/ageGender"
-                app:layout_constraintTop_toTopOf="@+id/textView127">
-
-                <RadioButton
-                    android:id="@+id/patientInfoAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="동의"
-                    android:onClick="focusControl" />
-
-                <RadioButton
-                    android:id="@+id/patientInfoDisAgree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="동의하지 않음"
-                    android:onClick="focusControl" />
-
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/agreeAll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="전체동의"
-                app:layout_constraintEnd_toStartOf="@+id/disAgreeAll"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView127" />
-
-            <Button
-                android:id="@+id/disAgreeAll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="전체동의하지않음"
-                app:layout_constraintBottom_toBottomOf="@+id/agreeAll"
-                app:layout_constraintEnd_toStartOf="@+id/agreementSubmit"
-                app:layout_constraintStart_toEndOf="@+id/agreeAll"
-                app:layout_constraintTop_toTopOf="@+id/agreeAll" />
-
-            <Button
-                android:id="@+id/agreementSubmit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="확인"
-                app:layout_constraintBottom_toBottomOf="@+id/agreeAll"
+                android:layout_marginTop="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/disAgreeAll"
-                app:layout_constraintTop_toTopOf="@+id/agreeAll" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pid">
+
+                <TextView
+                    android:id="@+id/textView59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:text="1. 개인정보의 수집 목적"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:text="(이용목적)"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView59"
+                    app:layout_constraintTop_toBottomOf="@+id/textView59" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.35"/>
+
+                <TextView
+                    android:id="@+id/textView60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- 진료/건진 예약, 조회 및 진료를 위한 본인확인 절차"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/textView59" />
+
+                <TextView
+                    android:id="@+id/textView61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="- 진단 및 치료를 위한 서비스\n  (협력병원, 협의진료에 필요한 개인정보 및 진료정보 공유)"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView60"
+                    app:layout_constraintTop_toBottomOf="@+id/textView60" />
+
+                <TextView
+                    android:id="@+id/textView64"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="- 진료비 청구, 수납, 환불 등의 원무 서비스"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView60"
+                    app:layout_constraintTop_toBottomOf="@+id/textView61" />
+
+                <TextView
+                    android:id="@+id/textView65"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="- 진료비계산서, 내역서, 제 증명서 발송 및 약품/건진 물품 및 결과 발송"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView60"
+                    app:layout_constraintTop_toBottomOf="@+id/textView64" />
+
+                <TextView
+                    android:id="@+id/textView66"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="- 온라인/오프라인 수락, 외부검사 의뢰"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView60"
+                    app:layout_constraintTop_toBottomOf="@+id/textView65" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@color/whiteGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout34" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout32">
+
+                <TextView
+                    android:id="@+id/textView68"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:text="2. 개인정보 수집 항목"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="(민감정보, 고유식별정보 포함)"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView68"
+                    app:layout_constraintTop_toBottomOf="@+id/textView68" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.35"/>
+
+                <TextView
+                    android:id="@+id/textView67"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- 이름, 주소, 주민등록번호 등 의료법 제 22조에 따라 의무기록에 명시되는 항목"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="@+id/textView68" />
+
+                <TextView
+                    android:id="@+id/textView70"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="- 전화번호, E-mail 등 진료신청서 내 기재항목"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView67"
+                    app:layout_constraintTop_toBottomOf="@+id/textView67" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/whiteGray"
+                app:layout_constraintEnd_toEndOf="@+id/view6"
+                app:layout_constraintStart_toStartOf="@+id/view6"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout35" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout34">
+
+                <TextView
+                    android:id="@+id/textView69"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:text="3. 개인정보보유/이용시간"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.35"/>
+
+                <TextView
+                    android:id="@+id/textView76"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:text="- 의료법 및 기타 관련 법령기준에 따라 보유하며 환자의 건강을 위한\n     의료서비스에 필요성이 있는 경우에는 영구 보관할 수 있습니다."
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/textView69" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/whiteGray"
+                app:layout_constraintEnd_toEndOf="@+id/view6"
+                app:layout_constraintStart_toStartOf="@+id/view6"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout36" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout35">
+
+                <TextView
+                    android:id="@+id/textView78"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:text="4. 개인정보의 제 3자 제공"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.35"/>
+
+                <TextView
+                    android:id="@+id/textView77"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:text="- 본원은 의료법 21조 및 기타 다른 법률에서 개인정보의 제공규정이 있는 경우\n     이외에 개인정보를 제공하는 경우에는 별도 동의를 받고 있습니다."
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline4"
+                    app:layout_constraintTop_toTopOf="@+id/textView78" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/whiteGray"
+                app:layout_constraintEnd_toEndOf="@+id/view6"
+                app:layout_constraintStart_toStartOf="@+id/view6"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout37" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout36">
+
+                <RadioGroup
+                    android:id="@+id/noticeWarning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView79"
+                    app:layout_constraintStart_toStartOf="@+id/textView79"
+                    app:layout_constraintTop_toBottomOf="@+id/textView79">
+
+                    <RadioButton
+                        android:id="@+id/noticeWarningAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:onClick="focusControl"
+                        android:text="동의" />
+
+                    <RadioButton
+                        android:id="@+id/noticeWarningDisAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="15dp"
+                        android:onClick="focusControl"
+                        android:text="동의하지 않음" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView79"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="상기 내용은 본원에서 의료서비스를 제공하는데 필요한 최소한의 정보에 해당하므로\n 상기내용에 대하여 본인이 동의하지 않을 수 있으나\n그러할 경우 의료서비스 제공이 원할하지 않을 수 있음을 알려드립니다"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout38"
+                android:background="@color/whiteGray"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout37">
+
+                <RadioGroup
+                    android:id="@+id/uniqueInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/uniqueInfoAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의"
+                        android:textSize="15dp" />
+
+                    <RadioButton
+                        android:id="@+id/uniqueInfoDisAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="30dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의하지 않음"
+                        android:textSize="15dp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView339"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="1. 주민등록번호, 외국인등록번호 등"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView80"
+                    app:layout_constraintTop_toBottomOf="@+id/textView80" />
+
+                <TextView
+                    android:id="@+id/textView80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="고유식별정보"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout39"
+                android:background="@color/whiteGray"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout38">
+
+                <RadioGroup
+                    android:id="@+id/sensitiveInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/sensitiveInfoAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의"
+                        android:textSize="15dp" />
+
+                    <RadioButton
+                        android:id="@+id/sensitiveInfoDisAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="30dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의하지 않음"
+                        android:textSize="15dp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="1. 의무기록정보, 진료비 등"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView81"
+                    app:layout_constraintTop_toBottomOf="@+id/textView81" />
+
+                <TextView
+                    android:id="@+id/textView81"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="민감정보"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout40"
+                android:background="@color/whiteGray"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout39">
+
+                <RadioGroup
+                    android:id="@+id/beforeAfterInfoProvide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/beforeAfterInfoProvideAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의"
+                        android:textSize="15dp" />
+
+                    <RadioButton
+                        android:id="@+id/beforeAfterInfoProvideDisAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="30dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의하지 않음"
+                        android:textSize="15dp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView340"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="1. 개인정보 이용 항목 : 원무정보, 의무기록에 포함된 내용"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView82"
+                    app:layout_constraintTop_toBottomOf="@id/textView82" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="2. 개인정보 이용 기간 : 법정보관연도"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView340"
+                    app:layout_constraintTop_toBottomOf="@+id/textView340" />
+
+                <TextView
+                    android:id="@+id/textView82"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="건진 실시에 따른 사전 사후 서비스 관련 정보 제공"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout41"
+                android:background="@color/whiteGray"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout40">
+
+                <RadioGroup
+                    android:id="@+id/mobileInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/mobileInfoAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의"
+                        android:textSize="15dp" />
+
+                    <RadioButton
+                        android:id="@+id/mobileInfoDisAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="30dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의하지 않음"
+                        android:textSize="15dp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView341"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="1. 개인정보 이용 항목 : 원무정보, 의무기록에 포함된 내용"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView83"
+                    app:layout_constraintTop_toBottomOf="@+id/textView83" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="2. 개인정보 이용 기간 : 법정보관연도"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView83"
+                    app:layout_constraintTop_toBottomOf="@+id/textView341" />
+
+                <TextView
+                    android:id="@+id/textView83"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="진료예약, 입원 및 검사 예정에 대한 Mobile 안내"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout42"
+                android:background="@color/whiteGray"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout41">
+
+                <RadioGroup
+                    android:id="@+id/sendSMS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/sendSMSAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의"
+                        android:textSize="15dp" />
+
+                    <RadioButton
+                        android:id="@+id/sendSMSDisAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="30dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의하지 않음"
+                        android:textSize="15dp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView342"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1. 개인정보 이용 항목 : 원무정보, 의무기록에 포함된 내용"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView84"
+                    app:layout_constraintTop_toBottomOf="@+id/textView84" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="2. 개인정보 이용 기간 : 법정보관연도"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView84"
+                    app:layout_constraintTop_toBottomOf="@+id/textView342" />
+
+                <TextView
+                    android:id="@+id/textView84"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="병원이용 및 병원의 새로운 서비스, 행사정보 안내"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout43"
+                android:background="@color/whiteGray"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout42">
+
+                <TextView
+                    android:id="@+id/textView104"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="건강정보발송을 위한 휴대폰 SMS 발송"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView343"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="위의 병원 서비스를 제공하기 위하여 아래와 같이 업무를 위탁합니다."
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView104"
+                    app:layout_constraintTop_toBottomOf="@+id/textView104" />
+
+                <TextView
+                    android:id="@+id/textView344"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="- 수탁자 : 본원과 휴대폰 SMS 수탁협약을 체결한 자"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView104"
+                    app:layout_constraintTop_toBottomOf="@+id/textView343" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="- 위탁업무내용 : 병원 서비스 및 진료정보(예약 및 병원이용 등) 제공"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView104"
+                    app:layout_constraintTop_toBottomOf="@+id/textView344" />
+
+                <RadioGroup
+                    android:id="@+id/hospitalEventInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/hospitalEventInfoAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의"
+                        android:textSize="15dp" />
+
+                    <RadioButton
+                        android:id="@+id/hospitalEventInfoDisAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="30dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의하지 않음"
+                        android:textSize="15dp" />
+
+                </RadioGroup>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout44"
+                android:background="@color/whiteGray"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout43"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" >
+
+                <TextView
+                    android:id="@+id/textView105"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="병원간의 상호 진료 협력을 위하여 의료정보 제공"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(협력병원 등)"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/textView105"
+                    app:layout_constraintBottom_toBottomOf="@id/textView105"/>
+
+                <TextView
+                    android:id="@+id/textView345"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1. 개인정보를 제공받는 자 : 본원과 협약을 체결한 협력병원"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/textView105"
+                    app:layout_constraintTop_toBottomOf="@id/textView105" />
+
+                <TextView
+                    android:id="@+id/textView346"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="2. 개인정보를 제공받는 자의 개인정보 이용 목적 : 진료 협력 서비스"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/textView105"
+                    app:layout_constraintTop_toBottomOf="@+id/textView345" />
+
+                <TextView
+                    android:id="@+id/textView347"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="3. 제공하는 개인정보의 항목 : 원무정보, 의무기록정보"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView105"
+                    app:layout_constraintTop_toBottomOf="@+id/textView346" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="4. 개인정보를 제공 받는 자의 개인정보 보유 및 이용기간 : 법적보관연도"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textView105"
+                    app:layout_constraintTop_toBottomOf="@+id/textView347" />
+
+                <RadioGroup
+                    android:id="@+id/MedicalCooperationInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/MedicalCooperationInfoAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의"
+                        android:textSize="15dp" />
+
+                    <RadioButton
+                        android:id="@+id/MedicalCooperationInfoDisAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="30dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의하지 않음"
+                        android:textSize="15dp" />
+
+                </RadioGroup>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout45"
+                android:background="@color/whiteGray"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout44">
+
+                <TextView
+                    android:id="@+id/textView127"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="환자대리인 정보이용 동의 (제 45조 대리인의 범위 등)"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView348"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1. 이용 목적 : 환자의 진료 혹은 기타의 이유로 환자에게 연락이 불가한 경우 이용"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/textView127"
+                    app:layout_constraintTop_toBottomOf="@id/textView127" />
+
+                <TextView
+                    android:id="@+id/textView349"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="2. 이용 항목 : 원무 정보"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toStartOf="@id/textView127"
+                    app:layout_constraintTop_toBottomOf="@id/textView348" />
+
+                <TextView
+                    android:id="@+id/textView350"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="3. 이용기간 : 법적보관연도"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView127"
+                    app:layout_constraintTop_toBottomOf="@+id/textView349" />
+
+                <RadioGroup
+                    android:id="@+id/patientInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/patientInfoAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의"
+                        android:textSize="15dp" />
+
+                    <RadioButton
+                        android:id="@+id/patientInfoDisAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="30dp"
+                        android:onClick="focusControl"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:text="동의하지 않음"
+                        android:textSize="15dp" />
+
+                </RadioGroup>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout46"
+                android:background="@color/whiteGray"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout46"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout45">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/end_round"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </android.support.constraint.ConstraintLayout>
 
         </android.support.constraint.ConstraintLayout>
 
     </ScrollView>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/Progress_bg"
+        android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.4"
-        android:elevation="4dp"
-        android:background="#000000"
-        android:visibility="gone">
+        android:layout_height="150dp"
+        android:background="@drawable/save_list_bottom_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/agreeAll"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/save_list_btn2"
+            android:text="전체동의"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/disAgreeAll"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/disAgreeAll"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/save_list_btn2"
+            android:text="전체동의하지않음"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/agreeAll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/agreeAll"
+            app:layout_constraintTop_toTopOf="@+id/agreeAll" />
+
+        <Button
+            android:id="@+id/agreementSubmit"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="64dp"
+            android:background="@drawable/save_list_btn"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/agreeAll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/disAgreeAll"
+            app:layout_constraintTop_toTopOf="@+id/agreeAll" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -623,13 +1290,24 @@
         android:id="@+id/Progress_circle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:elevation="4dp"
         android:indeterminateTint="@color/colorPrimaryDark"
         android:visibility="gone"
-        android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/Progress_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:background="#000000"
+        android:elevation="4dp"
+        android:visibility="gone">
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
 

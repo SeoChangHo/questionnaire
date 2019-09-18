@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_AGREE
 import com.fineinsight.zzango.questionnaire.LocalList.READ_AGREE
@@ -197,11 +198,15 @@ class AgreementActivity : RootActivity() {
         agreeAll.visibility = View.GONE
         disAgreeAll.visibility = View.GONE
 
+        bottomBar.visibility = View.GONE
+
+        (agreementScroll.layoutParams as ViewGroup.MarginLayoutParams).bottomMargin = 0
+
         cannotEditQuestionnaire(insideAgreementLayout)
 
-        patientName.setText(paperAgree.NAME)
-        pid.setText(paperAgree.BUNHO)
-        ageGender.setText(paperAgree.JUMIN)
+        patientName.text = paperAgree.NAME
+        pid.text = paperAgree.BUNHO
+        ageGender.text = paperAgree.JUMIN
 
         when(paperAgree.BASIC){
             "Y" -> noticeWarningAgree.isChecked = true
