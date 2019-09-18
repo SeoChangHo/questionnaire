@@ -27,6 +27,8 @@ import kotlin.collections.ArrayList
 
 class ServerListAgreeActivity : AppCompatActivity() {
 
+    var SelectDate:String = LocalDate.now().toString()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_server_list_agree)
@@ -47,7 +49,7 @@ class ServerListAgreeActivity : AppCompatActivity() {
             var MYday = 0
 
 
-            var splitdate = txtDate.text.toString().split("-")
+            var splitdate = SelectDate.split("-")
             var CheckMYyear = splitdate[0].toIntOrNull()
             var CheckMYmonth = splitdate[1].toIntOrNull()
             var CheckMYday = splitdate[2].toIntOrNull()
@@ -65,6 +67,7 @@ class ServerListAgreeActivity : AppCompatActivity() {
 
                 val dp = DatePickerDialog(this, AlertDialog.THEME_HOLO_DARK, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                     txtDate.text = "${year}-${(month+1).toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}"
+                    SelectDate = "${year}-${(month+1).toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}"
                     loadList()
                 }, MYyear, MYmonth, MYday)
 
@@ -89,7 +92,7 @@ class ServerListAgreeActivity : AppCompatActivity() {
 
 
         var selectDate = HashMap<String, String>()
-        selectDate["DATE"] = txtDate.text.toString()
+        selectDate["DATE"] = SelectDate
         selectDate["AREA"] = MainActivity.hospital
 
         ProgressAction(true)
