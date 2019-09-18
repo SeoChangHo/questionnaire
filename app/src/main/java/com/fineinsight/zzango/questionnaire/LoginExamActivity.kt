@@ -27,6 +27,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.*
@@ -36,6 +37,7 @@ import com.fineinsight.zzango.questionnaire.Signature.CanvasView
 import com.fineinsight.zzango.questionnaire.UserList.UserList
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_login_exam.*
+import kotlinx.android.synthetic.main.fragment_second.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -474,29 +476,35 @@ class LoginExamActivity : AppCompatActivity() {
 
     fun ShowPaperDIALOG(context: Context, arr: ArrayList<String>, JUMIN1: String) {
 
+//        Glide.with(this).load(R.drawable.check).into(starticon)
 
         first_view.visibility = View.GONE
 
-        starticon.animate().alpha(1f).duration = 1000
+//        Handler().postDelayed({
+//            starticon.setImageDrawable(getDrawable(R.drawable.usericon))
 
-        ObjectAnimator.ofFloat(starticon, View.Y, 500f, 2000f).apply {
-            duration = 1000
-            start()
-        }
+            starticon.animate().alpha(1f).duration = 1000
 
-        Handler().postDelayed({
-            ObjectAnimator.ofFloat(starticon, View.Y, 2000f, 500f).apply {
+            ObjectAnimator.ofFloat(starticon, View.Y, 500f, 2000f).apply {
                 duration = 1000
                 start()
             }
 
-            second_view.visibility = View.VISIBLE
-            ObjectAnimator.ofFloat(second_view, View.Y, 2200f, 700f).apply {
-                duration = 1000
-                start()
-            }
+            Handler().postDelayed({
+                ObjectAnimator.ofFloat(starticon, View.Y, 2000f, 500f).apply {
+                    duration = 1000
+                    start()
+                }
 
-        }, 1000)
+                second_view.visibility = View.VISIBLE
+                ObjectAnimator.ofFloat(second_view, View.Y, 2200f, 700f).apply {
+                    duration = 1000
+                    start()
+                }
+
+            }, 1000)
+
+//        }, 1000)
 
 
         val ok = findViewById(R.id.user_ok) as Button

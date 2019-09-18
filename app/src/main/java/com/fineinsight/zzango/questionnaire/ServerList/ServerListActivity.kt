@@ -35,7 +35,8 @@ class ServerListActivity : Activity() {
 
     fun DateSetting()
     {
-        txtDate.text = LocalDate.now().toString()
+        var now = LocalDate.now().toString()
+        txtDate.text = "${now.split("-")[0]} 년   ${(now.split("-")[1]).toString().padStart(2, '0')} 월   ${now.split("-")[2].toString().padStart(2, '0')} 일"
 
 
         txtDate.setOnClickListener {
@@ -45,7 +46,7 @@ class ServerListActivity : Activity() {
             var MYday = 0
 
 
-            var splitdate = txtDate.text.toString().split("-")
+            var splitdate = now.split("-")
             var CheckMYyear = splitdate[0].toIntOrNull()
             var CheckMYmonth = splitdate[1].toIntOrNull()
             var CheckMYday = splitdate[2].toIntOrNull()
@@ -62,7 +63,7 @@ class ServerListActivity : Activity() {
                 MYday = splitdate[2].toInt()
 
                 val dp = DatePickerDialog(this, AlertDialog.THEME_HOLO_DARK, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                    txtDate.text = "${year}-${(month+1).toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}"
+                    txtDate.text = "${year} 년   ${(month+1).toString().padStart(2, '0')} 월   ${dayOfMonth.toString().padStart(2, '0')} 일"
                     loadList()
                 }, MYyear, MYmonth, MYday)
 
@@ -102,7 +103,13 @@ class ServerListActivity : Activity() {
                         Toast.makeText(this@ServerListActivity, "저장된 정보가 없습니다.", Toast.LENGTH_SHORT).show()
                         ProgressAction(false)
 
+                        constraintLayout6.visibility = View.GONE
+                        constraint_null.visibility = View.VISIBLE
+
                     }else{
+
+                        constraintLayout6.visibility = View.VISIBLE
+                        constraint_null.visibility = View.GONE
 
                         println("성공")
                         var userList = ArrayList<SelectInfo>()
