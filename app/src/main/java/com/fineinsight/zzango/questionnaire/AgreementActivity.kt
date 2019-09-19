@@ -5,22 +5,19 @@ import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.view.*
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_AGREE
 import com.fineinsight.zzango.questionnaire.LocalList.READ_AGREE
 import kotlinx.android.synthetic.main.activity_agreement.*
 import kotlinx.android.synthetic.main.quit_alert.*
-import kotlinx.android.synthetic.main.quit_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.ByteArrayOutputStream
+import java.util.*
+import kotlin.collections.ArrayList
 
 @SuppressLint("SetTextI18n")
 class AgreementActivity : RootActivity() {
@@ -185,7 +182,7 @@ class AgreementActivity : RootActivity() {
                     "",
                     "",
                     "${patientName.text}",
-                    "${MainActivity.user_first_serial}+${MainActivity.user_last_serial}",
+                    MainActivity.user_first_serial + MainActivity.user_last_serial,
                     emptyByteArray)
 
             if (getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "") == "local") {
@@ -213,17 +210,17 @@ class AgreementActivity : RootActivity() {
         cannotEditQuestionnaire(insideAgreementLayout)
 
         patientName.text = paperAgree.NAME
-        ResidentRegistrationNumber.text = paperAgree.JUMIN.substring(0,5)
-        ResidentRegistrationNumber2.text = paperAgree.JUMIN.substring(6,12)
+        ResidentRegistrationNumber.text = paperAgree.JUMIN.substring(0,6)
+//        ResidentRegistrationNumber2.text = paperAgree.JUMIN.substring(6,13)
         pid.text = paperAgree.BUNHO
         if(paperAgree.JUMIN[6] == '1' || paperAgree.JUMIN[6] == '3' || paperAgree.JUMIN[6] == '5' || paperAgree.JUMIN[6] == '7'|| paperAgree.JUMIN[6] == '9'){
 
-            ageGender.text = "남"
+            ageGender.text = "남" + "/${getAge(paperAgree.JUMIN)}"
 
 
         }else{
 
-            ageGender.text = "여"
+            ageGender.text = "여" + "/${getAge(paperAgree.JUMIN)}"
 
         }
 
@@ -315,14 +312,30 @@ class AgreementActivity : RootActivity() {
 
     }
 
-    fun getAge(birth : String) : Int {
+    fun getAge(registrationNumber : String) : Int{
 
-        var result = 0
+        var current = Calendar.getInstance()
+        var currentYear  = current.get(Calendar.YEAR)
+        var currentMonth = current.get(Calendar.MONTH) + 1
+        var currentDay   = current.get(Calendar.DAY_OF_MONTH)
 
+        var birthYear = ""
 
+        when(registrationNumber[6]) {
 
-        return result
+            '1', '2', '5', '6' -> { birthYear = "19"+ registrationNumber.substring(0, 2)}
+            '3', '4', '7', '8' -> { birthYear = "20"+ registrationNumber.substring(0, 2)}
+            '9', '0' -> { birthYear = "18"+ registrationNumber.substring(0, 2)}
 
+        }
+
+        var age = currentYear - birthYear.toInt()
+
+        // 생일 안 지난 경우 -1
+        if (registrationNumber.substring(3, 4).toInt() * 100 + registrationNumber.substring(5, 6).toInt() > currentMonth * 100 + currentDay)
+            age--
+
+        return age
     }
 
 }

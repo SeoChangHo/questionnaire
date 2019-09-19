@@ -2,9 +2,8 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/alert_shape"
+    android:layout_width="380dp"
+    android:layout_height="280dp"
     >
 
     <TextView
@@ -15,7 +14,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="16dp"
         android:text=""
-        android:textSize="16dp"
+        android:textColor="@color/gra_end"
+        android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,13 +25,14 @@
 
     <TextView
         android:id="@+id/return_alert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="32dp"
-        android:text="확인"
-        android:textSize="16dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:background="@drawable/save_list_btn2"
+        android:gravity="center"
         android:padding="5dp"
+        android:text="종료"
+        android:textColor="@color/white"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/save_complete_alert_text"
         app:layout_constraintStart_toStartOf="@+id/save_complete_alert_text"
