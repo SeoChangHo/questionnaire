@@ -184,7 +184,6 @@ class LoginExamActivity : AppCompatActivity() {
                         user_login_button.isEnabled = false
                         user_login_button.setBackgroundResource(R.drawable.start_login_back)
 
-
                         if (user_name.text.toString() != "" && MainActivity.ValidationBool) {
                             println("bbb")
                             CloseKeyboard()

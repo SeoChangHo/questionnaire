@@ -366,7 +366,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if(login_password.text.toString() != ""){
-                    login_password.setTextColor(getColor(R.color.loginGray))
+                    login_password.setTextColor(getColor(R.color.backgroundGray))
                     login_password.setBackgroundResource(R.drawable.start_login_button_default)
                 }else{
                     login_password.setTextColor(Color.WHITE)
@@ -1844,7 +1844,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                             }
 
                             menu_bottom_bar.visibility = View.VISIBLE
-                            menu_bottom_bar.setBackgroundColor(getColor(R.color.loginGray))
+                            menu_bottom_bar.setBackgroundColor(getColor(R.color.backgroundGray))
 
                         }
 

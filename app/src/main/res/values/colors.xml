@@ -13,7 +13,7 @@
     <color name="gray">#89888C</color>
     <color name="lightGray">#B1B1B1</color>
     <color name="whiteGray">#EAEAEA</color>
-    <color name="loginGray">#EDEFF3</color>
+    <color name="backgroundGray">#EDEFF3</color>
     <color name="progressGray">#D9E1E9</color>
     <color name="white">#FFFFFF</color>
     <color name="settingGray">#C6CEDB</color>
@@ -22,6 +22,6 @@
     <color name="saveListGray">#EDEFF3</color>
     <color name="saveListBtnBlue">#2c53a2</color>
     <color name="managerNameGray">#77879A</color>
-    <color name="shadowGray">#D3DDEE</color>
+    <color name="shadowGray">#50D3DDEE</color>
 
 </resources>

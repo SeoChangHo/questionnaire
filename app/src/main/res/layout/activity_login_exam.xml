@@ -14,8 +14,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <ImageView
             android:id="@+id/starticon"
@@ -32,8 +34,7 @@
             android:id="@+id/first_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:visibility="visible"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/starticon">
@@ -56,8 +57,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="사용자 등록"
-                    android:textColor="@color/gra_end"
-                    android:textSize="25dp"
+                    android:textColor="@color/mainBlue"
+                    android:textSize="28dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -68,11 +69,9 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout12"
                 android:layout_width="500dp"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 android:background="@color/backGround"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -83,18 +82,15 @@
                     android:layout_width="0dp"
                     android:layout_height="55dp"
                     android:layout_marginStart="60dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="60dp"
-                    android:layout_marginBottom="8dp"
                     android:background="@drawable/start_login_back"
                     android:ems="10"
                     android:hint="이름"
                     android:inputType="text"
                     android:textAlignment="center"
                     android:textSize="20dp"
-                    app:layout_constraintBottom_toTopOf="@+id/first_serial"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -103,16 +99,16 @@
                     android:layout_width="0dp"
                     android:layout_height="55dp"
                     android:layout_marginStart="60dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="35dp"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/start_login_back"
-                    android:ems="10"
-                    android:hint="주민번호 앞자리"
                     android:inputType="number"
                     android:maxLength="6"
                     android:textAlignment="center"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView261"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/user_name" />
 
@@ -123,29 +119,42 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="60dp"
                     android:background="@drawable/start_login_back"
-                    android:ems="10"
-                    android:hint="뒤에1자리"
+                    android:hint="첫번째 자리"
                     android:inputType="number"
                     android:maxLength="1"
                     android:textAlignment="center"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="@+id/first_serial"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/textView261"
                     app:layout_constraintTop_toTopOf="@+id/first_serial" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="주민번호"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toTopOf="@+id/first_serial"
+                    app:layout_constraintStart_toStartOf="@+id/first_serial"
+                    app:layout_constraintTop_toBottomOf="@+id/user_name" />
 
                 <TextView
                     android:id="@+id/textView261"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="-"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/first_serial"
+                    app:layout_constraintEnd_toStartOf="@+id/last_serial"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/first_serial"
                     app:layout_constraintTop_toTopOf="@+id/first_serial" />
             </android.support.constraint.ConstraintLayout>
@@ -161,11 +170,11 @@
 
                 <ImageView
                     android:id="@+id/btnReSign"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/refreash"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/constraintLayout27" />
 
@@ -175,7 +184,7 @@
                     android:layout_height="0dp"
                     android:layout_marginStart="62dp"
                     android:layout_marginEnd="62dp"
-                    android:background="@drawable/user_sign_back"
+                    android:background="@drawable/start_login_back2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -205,8 +214,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="62dp"
                         android:text="* 아래에 서명해주세요."
-                        android:textColor="@color/gra_end"
+                        android:textColor="@color/mainBlue"
                         android:textSize="18dp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -236,8 +246,9 @@
                     android:background="@drawable/start_login_back"
                     android:enabled="false"
                     android:text="확인"
-                    android:textColor="@color/backGround"
+                    android:textColor="@color/white"
                     android:textSize="20dp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -465,7 +476,7 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout25"
                 android:layout_width="500dp"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/login_radius2"
@@ -478,16 +489,37 @@
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
+                    android:layout_marginTop="50dp"
                     android:background="@drawable/start_login_button"
                     android:clickable="false"
                     android:text="문진 시작하기"
                     android:textColor="@color/backGround"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/user_logout"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/user_logout"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/start_login_back2"
+                    android:clickable="false"
+                    android:text="로그아웃"
+                    android:textColor="@color/gra_end"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/user_ok" />
+
 
                 <ImageView
                     android:layout_width="45dp"
@@ -498,6 +530,17 @@
                     app:layout_constraintTop_toTopOf="@+id/user_ok"
                     app:layout_constraintVertical_bias="0.375"
                     app:srcCompat="@drawable/arrow_white" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/user_logout"
+                    app:layout_constraintEnd_toEndOf="@+id/user_logout"
+                    app:layout_constraintTop_toTopOf="@+id/user_logout"
+                    app:layout_constraintVertical_bias="0.375"
+                    app:srcCompat="@drawable/logout_blue" />
+
 
             </android.support.constraint.ConstraintLayout>
 

@@ -27,7 +27,7 @@ class Main2Activity : AppCompatActivity() {
     fun btnSetting(){
 
         btn_agreement.setOnClickListener {
-            startActivity(Intent(this, AgreementActivity::class.java))
+            startActivity(Intent(this, LoginAgreeActivity::class.java))
         }
 
         btn_exam.setOnClickListener {
