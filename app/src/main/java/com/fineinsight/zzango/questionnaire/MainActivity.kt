@@ -3,6 +3,7 @@ package com.fineinsight.zzango.questionnaire
 
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
@@ -40,6 +41,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.first_serial
 import kotlinx.android.synthetic.main.activity_main.last_serial
 import kotlinx.android.synthetic.main.activity_user_login.view.*
+import kotlinx.android.synthetic.main.quit_alert.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import kotlinx.android.synthetic.main.save_location.view.*
 import retrofit2.Call
@@ -1414,77 +1416,42 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         userlogin_buttonClick = true
 
-        var dialog = android.app.AlertDialog.Builder(this).create()
-        var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
+        var customDialog = Dialog(this)
+        customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        customDialog.setContentView(R.layout.quit_alert)
+        customDialog.window!!.decorView.setBackgroundResource(R.drawable.alert_shape)
+        customDialog.create()
 
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        dialog.setView(dialog_view)
-        dialog_view.notice.text = "앱을 종료하시겠습니까?"
+        customDialog.notice.text = "앱을 종료하시겠습니까?"
+        customDialog.finish.text = "네"
+        customDialog.cancel.text = "아니요"
 
         if(!popup) {
 
-            dialog.show().let {
-
-                popup = true
-
-            }
+            customDialog.show().let { popup = true }
 
         }
 
-        var displayMetrics = DisplayMetrics()
-        dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-        // The absolute width of the available display size in pixels.
-        var displayWidth = displayMetrics.widthPixels
-        // The absolute height of the available display size in pixels.
-        var displayHeight = displayMetrics.heightPixels
-
-        // Initialize a new window manager layout parameters
-        var layoutParams = WindowManager.LayoutParams()
-
-        // Copy the alert dialog window attributes to new layout parameter instance
-        layoutParams.copyFrom(dialog.window.attributes)
-
-        // Set the alert dialog window width and height
-        // Set alert dialog width equal to screen width 90%
-        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-        // Set alert dialog height equal to screen height 90%
-        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-
-        // Set alert dialog width equal to screen width 70%
-        var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-        // Set alert dialog height equal to screen height 70%
-        var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-
-        // Set the width and height for the layout parameters
-        // This will bet the width and height of alert dialog
-        layoutParams.width = dialogWindowWidth
-        layoutParams.height = dialogWindowHeight
-
-        // Apply the newly created layout parameters to the alert dialog window
-        dialog.window.attributes = layoutParams
-
-
-        dialog.setOnDismissListener {
+        customDialog.setOnDismissListener {
 
             popup = false
-            dialog = null
+            customDialog = Dialog(this)
 
         }
 
-        dialog_view.cancel.setOnClickListener {
-
-            dialog.dismiss()
-
-        }
-
-        dialog_view.finish.setOnClickListener {
+        customDialog.finish.setOnClickListener {
 
             ActivityCompat.finishAffinity(this)
 
             System.runFinalization()
             System.exit(0)
-            dialog.dismiss()
+            customDialog.dismiss()
+
+        }
+
+        customDialog.cancel.setOnClickListener {
+
+            customDialog.dismiss()
 
         }
 

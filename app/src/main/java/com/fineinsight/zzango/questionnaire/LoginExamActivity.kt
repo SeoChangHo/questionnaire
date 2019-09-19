@@ -2,6 +2,7 @@ package com.fineinsight.zzango.questionnaire
 
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
@@ -18,10 +19,7 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.DisplayMetrics
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.CheckBox
@@ -38,6 +36,7 @@ import com.fineinsight.zzango.questionnaire.UserList.UserList
 import kotlinx.android.synthetic.main.activity_login.view.*
 import kotlinx.android.synthetic.main.activity_login_exam.*
 import kotlinx.android.synthetic.main.fragment_second.*
+import kotlinx.android.synthetic.main.quit_alert.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -69,6 +68,10 @@ class LoginExamActivity : AppCompatActivity() {
         listButton.setOnClickListener {
             popuplogin()
         }
+
+        if(MainActivity.login_user_name.isNotEmpty()){ user_name.setText((MainActivity.login_user_name)) }
+        if(MainActivity.user_first_serial.isNotEmpty()){ first_serial.setText(MainActivity.user_first_serial) }
+        if(MainActivity.user_last_serial.isNotEmpty()){ last_serial.setText(MainActivity.user_last_serial) }
 
     }
 
@@ -968,123 +971,87 @@ class LoginExamActivity : AppCompatActivity() {
     override fun onBackPressed() {
 
         if (first_view.visibility == View.GONE) {
-            var dialog = android.app.AlertDialog.Builder(this).create()
-            var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
 
-            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            var customDialog = Dialog(this)
+            customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            customDialog.setContentView(R.layout.quit_alert)
+            customDialog.window!!.decorView.setBackgroundResource(R.drawable.alert_shape)
+            customDialog.create()
 
-            dialog.setView(dialog_view)
-            dialog_view.notice.text = "사용자 등록을 취소하시겠습니까?"
-            dialog_view.finish.text = "확인"
+            customDialog.notice.text = "사용자 등록을 취소하시겠습니까?"
+            customDialog.finish.text = "네"
+            customDialog.cancel.text = "아니요"
 
-            if (!popup) {
+            if(!popup) {
 
-                dialog.show().let {
-
-                    popup = true
-
-                }
+                customDialog.show().let { popup = true }
 
             }
 
-            var displayMetrics = DisplayMetrics()
-            dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-            var displayWidth = displayMetrics.widthPixels
-            var displayHeight = displayMetrics.heightPixels
+            customDialog.setOnDismissListener {
 
-            var layoutParams = WindowManager.LayoutParams()
-
-            layoutParams.copyFrom(dialog.window.attributes)
-
-            var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-            var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-
-            layoutParams.width = dialogWindowWidth
-            layoutParams.height = dialogWindowHeight
-
-            dialog.window.attributes = layoutParams
-
-            dialog.setOnDismissListener {
                 popup = false
-                dialog = null
+                customDialog = Dialog(this)
 
             }
 
-            dialog_view.cancel.setOnClickListener {
-
-                dialog.dismiss()
-
-            }
-
-            dialog_view.finish.setOnClickListener {
+            customDialog.finish.setOnClickListener {
 
                 UserHandler(false)
-                dialog.dismiss()
+                customDialog.dismiss()
 
             }
+
+            customDialog.cancel.setOnClickListener {
+
+                customDialog.dismiss()
+
+            }
+
 
         } else if (MainActivity.manager_name == "bestian") {
 
-            var dialog = android.app.AlertDialog.Builder(this).create()
-            var dialog_view = LayoutInflater.from(this).inflate(R.layout.quit_alert, null)
+            var customDialog = Dialog(this)
+            customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            customDialog.setContentView(R.layout.quit_alert)
+            customDialog.window!!.decorView.setBackgroundResource(R.drawable.alert_shape)
+            customDialog.create()
 
-            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            customDialog.notice.text = "앱을 종료하시겠습니까?"
+            customDialog.finish.text = "네"
+            customDialog.cancel.text = "아니요"
 
-            dialog.setView(dialog_view)
-            dialog_view.notice.text = "앱을 종료하시겠습니까?"
+            if(!popup) {
 
-            if (!popup) {
-
-                dialog.show().let {
-
-                    popup = true
-
-                }
+                customDialog.show().let { popup = true }
 
             }
 
-            var displayMetrics = DisplayMetrics()
-            dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-            var displayWidth = displayMetrics.widthPixels
-            var displayHeight = displayMetrics.heightPixels
+            customDialog.setOnDismissListener {
 
-            var layoutParams = WindowManager.LayoutParams()
-
-            layoutParams.copyFrom(dialog.window.attributes)
-
-            var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-            var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-
-            layoutParams.width = dialogWindowWidth
-            layoutParams.height = dialogWindowHeight
-
-            dialog.window.attributes = layoutParams
-
-            dialog.setOnDismissListener {
                 popup = false
-                dialog = null
+                customDialog = Dialog(this)
 
             }
 
-            dialog_view.cancel.setOnClickListener {
-
-                dialog.dismiss()
-
-            }
-
-            dialog_view.finish.setOnClickListener {
+            customDialog.finish.setOnClickListener {
 
                 ActivityCompat.finishAffinity(this)
 
                 System.runFinalization()
                 System.exit(0)
-                dialog.dismiss()
+                customDialog.dismiss()
+
+            }
+
+            customDialog.cancel.setOnClickListener {
+
+                customDialog.dismiss()
 
             }
 
         } else {
-            super.onBackPressed()
-
+            startActivity(Intent(this, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
         }
 
     }
