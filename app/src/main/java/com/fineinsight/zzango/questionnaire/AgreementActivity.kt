@@ -216,7 +216,7 @@ class AgreementActivity : RootActivity() {
         ResidentRegistrationNumber.text = paperAgree.JUMIN.substring(0,5)
         ResidentRegistrationNumber2.text = paperAgree.JUMIN.substring(6,12)
         pid.text = paperAgree.BUNHO
-        if(paperAgree.JUMIN[6] == '1' || paperAgree.JUMIN[6] == '3'){
+        if(paperAgree.JUMIN[6] == '1' || paperAgree.JUMIN[6] == '3' || paperAgree.JUMIN[6] == '5' || paperAgree.JUMIN[6] == '7'|| paperAgree.JUMIN[6] == '9'){
 
             ageGender.text = "남"
 
@@ -312,6 +312,16 @@ class AgreementActivity : RootActivity() {
             customDialog.dismiss()
 
         }
+
+    }
+
+    fun getAge(birth : String) : Int {
+
+        var result = 0
+
+
+
+        return result
 
     }
 
