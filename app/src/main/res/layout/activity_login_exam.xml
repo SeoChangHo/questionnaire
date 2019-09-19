@@ -37,7 +37,8 @@
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/starticon">
+            app:layout_constraintTop_toBottomOf="@+id/starticon"
+            tools:visibility="visible">
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout11"
@@ -313,9 +314,11 @@
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout21"
-                android:layout_width="400dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/user_list_back"
                 android:paddingTop="60dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -398,8 +401,7 @@
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:paddingTop="50dp"
+                    android:paddingTop="75dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

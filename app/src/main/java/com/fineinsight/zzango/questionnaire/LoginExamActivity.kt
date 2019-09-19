@@ -857,10 +857,10 @@ class LoginExamActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 if (dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != "") {
                     dialog_view.Login.isEnabled = true
-                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button_blue)
+                    dialog_view.Login.setBackgroundResource(R.drawable.start_login_button)
                 } else {
                     dialog_view.Login.isEnabled = false
-                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button)
+                    dialog_view.Login.setBackgroundResource(R.drawable.start_login_button_default)
                 }
             }
 
@@ -877,10 +877,10 @@ class LoginExamActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 if (dialog_view.login_id.text.toString() != "" && dialog_view.login_password.text.toString() != "") {
                     dialog_view.Login.isEnabled = true
-                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button_blue)
+                    dialog_view.Login.setBackgroundResource(R.drawable.start_login_button)
                 } else {
                     dialog_view.Login.isEnabled = false
-                    dialog_view.Login.setBackgroundResource(R.drawable.user_login_button)
+                    dialog_view.Login.setBackgroundResource(R.drawable.start_login_button_default)
                 }
             }
 

@@ -70,9 +70,9 @@ class ExamListActivity : AppCompatActivity(), View.OnClickListener {
             MainActivity.canvas_motion = null
 
             if(MainActivity.manager_name == "bestian"){
-                startActivity(Intent(this, LoginExamActivity::class.java))
+                startActivity(Intent(this, LoginExamActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
             } else {
-                startActivity(Intent(this, Main2Activity::class.java))
+                startActivity(Intent(this, Main2Activity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
             }
         }
 

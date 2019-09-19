@@ -410,10 +410,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 //                        userlogin2(this@MainActivity)
 
                         if(user == "bestian"){
-                            startActivity(Intent(this, LoginExamActivity::class.java))
+                            startActivity(Intent(this, LoginExamActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
                         } else {
-                            startActivity(Intent(this, Main2Activity::class.java))
+                            startActivity(Intent(this, Main2Activity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
                         }
 
