@@ -14,6 +14,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.DataClass.Examinee
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.UserList.UserList
 import kotlinx.android.synthetic.main.activity_exam_list.*
@@ -50,7 +51,7 @@ class ExamListActivity : AppCompatActivity(), View.OnClickListener {
         selected_button1.visibility = View.VISIBLE
         supportFragmentManager.beginTransaction().add(R.id.fragment_right, FirstFragment()).commit()
         logoSetting()
-        user_login.text = MainActivity.login_user_name +"님"
+        user_login.text = Examinee.USER.info.NAME +"님"
 
         btnList.setOnClickListener {
             finish()
@@ -60,9 +61,8 @@ class ExamListActivity : AppCompatActivity(), View.OnClickListener {
             user_login.text = "사용자 등록하기"
             user_image.setImageResource(R.drawable.regi)
 
-            MainActivity.login_user_name = ""
-            MainActivity.user_first_serial = ""
-            MainActivity.user_last_serial = ""
+            Examinee.USER.init()
+
             Toast.makeText(this, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
             MainActivity.chart.clear()
 

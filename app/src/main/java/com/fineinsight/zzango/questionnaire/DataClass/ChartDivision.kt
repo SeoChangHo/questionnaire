@@ -472,9 +472,7 @@ class ChartDivision{
 
             dialog_view.return_alert.setOnClickListener {
 
-                MainActivity.login_user_name = ""
-                MainActivity.user_first_serial = ""
-                MainActivity.user_last_serial = ""
+                Examinee.USER.init()
 
                 MainActivity.userLogin!!.text = "사용자 등록하기"
                 MainActivity.userImage!!.setImageResource(R.drawable.regi)

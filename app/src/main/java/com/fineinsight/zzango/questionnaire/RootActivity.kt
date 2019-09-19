@@ -16,6 +16,7 @@ import android.util.DisplayMetrics
 import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import com.fineinsight.zzango.questionnaire.DataClass.Examinee
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.SavedListObject
 import kotlinx.android.synthetic.main.progressbar2.*
@@ -1620,9 +1621,7 @@ open class RootActivity : AppCompatActivity() {
 
         }else{
 
-            MainActivity.login_user_name = ""
-            MainActivity.user_first_serial = ""
-            MainActivity.user_last_serial = ""
+            Examinee.USER.init()
 
             MainActivity.userLogin!!.text = "사용자 등록하기"
             MainActivity.userImage!!.setImageResource(R.drawable.regi)

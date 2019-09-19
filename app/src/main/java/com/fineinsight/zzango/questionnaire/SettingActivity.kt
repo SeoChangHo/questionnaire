@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.widget.Button
+import com.fineinsight.zzango.questionnaire.DataClass.Examinee
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
 import com.fineinsight.zzango.questionnaire.LocalList.ListActivity
 import com.fineinsight.zzango.questionnaire.LocalList.ListAgreeActivity
@@ -140,9 +141,9 @@ class SettingActivity : AppCompatActivity() {
 
             logout.setOnClickListener {
 
-                MainActivity.login_user_name = ""
-                MainActivity.user_first_serial = ""
-                MainActivity.user_last_serial = ""
+
+                Examinee.USER.init()
+
                 MainActivity.manager_name = ""
                 MainActivity.chart.clear()
                 MainActivity.manager_name = ""

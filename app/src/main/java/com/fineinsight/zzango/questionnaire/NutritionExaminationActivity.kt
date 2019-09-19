@@ -17,7 +17,15 @@ import com.fineinsight.zzango.questionnaire.LocalList.Paper_NUTRITION
 import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.synthetic.main.activity_cognitive_exam.*
 import kotlinx.android.synthetic.main.activity_nutrition_exam.*
+import kotlinx.android.synthetic.main.activity_nutrition_exam.Progress_circle
+import kotlinx.android.synthetic.main.activity_nutrition_exam.Signature
+import kotlinx.android.synthetic.main.activity_nutrition_exam.first_serial
+import kotlinx.android.synthetic.main.activity_nutrition_exam.last_serial
+import kotlinx.android.synthetic.main.activity_nutrition_exam.name_edit
+import kotlinx.android.synthetic.main.activity_nutrition_exam.name_text
+import kotlinx.android.synthetic.main.activity_nutrition_exam.progress_constraintLayout
 import kotlinx.android.synthetic.main.progressbar2.*
 import java.io.Serializable
 import java.text.DecimalFormat
@@ -37,10 +45,10 @@ class NutritionExaminationActivity :RootActivity() {
         setContentView(R.layout.activity_nutrition_exam)
 
         //서명정보 가져오는거
-        if(MainActivity.user_stream!=null)
+        if(!Examinee.USER.info.SIGN.contentEquals(Examinee.USER.EMPTY_BYTE_ARRAY))
         {
-            signature = MainActivity.user_stream!!
-            Signature.setImageBitmap(BitmapFun.Fuc.getImage(MainActivity.user_stream!!))
+            signature = Examinee.USER.info.SIGN
+            Signature.setImageBitmap(BitmapFun.Fuc.getImage(Examinee.USER.info.SIGN))
         }
 
         sql_db = LocalDBhelper(this).writableDatabase
@@ -155,9 +163,11 @@ class NutritionExaminationActivity :RootActivity() {
 
         }else{
 
-            name_edit.text = MainActivity.login_user_name
-            first_serial.text = MainActivity.user_first_serial
-            last_serial.text = MainActivity.user_last_serial
+            name_edit.text = Examinee.USER.info.NAME
+            first_serial.text = Examinee.USER.info.JUMIN1
+            last_serial.text = Examinee.USER.info.JUMIN2
+
+
             nutrition_examination_save.text = "다음"
 
         }

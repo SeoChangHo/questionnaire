@@ -20,6 +20,8 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
+import com.fineinsight.zzango.questionnaire.DataClass.Examinee
+import com.fineinsight.zzango.questionnaire.DataClass.ExamineeInfo
 import com.fineinsight.zzango.questionnaire.DataClass.PublicDataInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
@@ -35,6 +37,7 @@ import kotlinx.android.synthetic.main.activity_login_agree.last_serial
 import kotlinx.android.synthetic.main.activity_login_agree.listButton
 import kotlinx.android.synthetic.main.activity_login_agree.user_login_button
 import kotlinx.android.synthetic.main.activity_login_agree.user_name
+import kotlinx.android.synthetic.main.activity_login_exam.*
 import java.io.ByteArrayOutputStream
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -225,23 +228,40 @@ class LoginAgreeActivity : AppCompatActivity() {
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
                     //MainActivity.user_signature = bitmap
 
-                    MainActivity.user_stream = stream.toByteArray()
+
                     //////////😎😎😎서명을 위한 공간😎😎😎//////////
                     //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
 
-                    MainActivity.login_user_name = user_name.text.toString()
-                    MainActivity.user_first_serial = first_serial.text.toString()
-                    MainActivity.user_last_serial = last_serial.text.toString()
+                    Examinee.USER.info= ExamineeInfo(
+                            user_name.text.toString(),
+                            first_serial.text.toString(),
+                            last_serial.text.toString(),
+                            "",
+                            stream.toByteArray(),
+                            false,
+                            true
+                    )
 
                     //UserHandler(true)
 
                     Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
 //                    user_login.text = login_user_name+"님"
 
+                    Examinee.USER.info= ExamineeInfo(
+                            user_name.text.toString(),
+                            first_serial.text.toString(),
+                            last_serial.text.toString(),
+                            "",
+                            stream.toByteArray(),
+                            true,
+                            true
+                    )
+
+
                     SavePaper.Total.Init()
                     MainActivity.exam_no = System.currentTimeMillis().toString()
-                    SavePaper.Total.Array[0] = PublicDataInfo(MainActivity.hospital, MainActivity.login_user_name, MainActivity.user_first_serial, MainActivity.user_last_serial, MainActivity.user_stream!!, MainActivity.exam_no)
+                    SavePaper.Total.Array[0] = PublicDataInfo(MainActivity.hospital, Examinee.USER.info.NAME, Examinee.USER.info.JUMIN1, Examinee.USER.info.JUMIN2, Examinee.USER.info.SIGN, MainActivity.exam_no)
 
                     //user_image.setImageResource(R.drawable.exit)
 
@@ -249,10 +269,10 @@ class LoginAgreeActivity : AppCompatActivity() {
                     //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
 
-                    println("user_last_serial.toInt(): ${MainActivity.user_last_serial.toInt()}")
-                    println("user_last_serial.toInt()%2: ${MainActivity.user_last_serial.toInt() % 2}")
-                    println("user_last_serial.toInt()%2 == 0 : ->${MainActivity.user_last_serial.toInt() % 2 == 0}")
-                    AdditionalArr.Gender.isFemale = MainActivity.user_last_serial.toInt() % 2 == 0
+                    println("user_last_serial.toInt(): ${Examinee.USER.info.JUMIN1.toInt()}")
+                    println("user_last_serial.toInt()%2: ${Examinee.USER.info.JUMIN1.toInt() % 2}")
+                    println("user_last_serial.toInt()%2 == 0 : ->${Examinee.USER.info.JUMIN1.toInt() % 2 == 0}")
+                    AdditionalArr.Gender.isFemale = Examinee.USER.info.JUMIN1.toInt() % 2 == 0
 
                 } else {
                     Toast.makeText(this, "주민번호 형식을 확인해주세요.", Toast.LENGTH_LONG).show()

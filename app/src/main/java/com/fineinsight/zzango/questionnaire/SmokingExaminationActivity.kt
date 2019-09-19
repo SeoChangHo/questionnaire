@@ -39,10 +39,10 @@ class SmokingExaminationActivity : RootActivity(){
         setContentView(R.layout.activity_smoking_exam)
 
         //서명정보 가져오는거
-        if(MainActivity.user_stream!=null)
+        if(!Examinee.USER.info.SIGN.contentEquals(Examinee.USER.EMPTY_BYTE_ARRAY))
         {
-            signature = MainActivity.user_stream!!
-            Signature.setImageBitmap(BitmapFun.Fuc.getImage(MainActivity.user_stream!!))
+            signature = Examinee.USER.info.SIGN
+            Signature.setImageBitmap(BitmapFun.Fuc.getImage(Examinee.USER.info.SIGN))
         }
 
         sql_db = LocalDBhelper(this).writableDatabase
@@ -144,9 +144,9 @@ class SmokingExaminationActivity : RootActivity(){
 
         }else{
 
-            name_edit.text = MainActivity.login_user_name
-            first_serial.text = MainActivity.user_first_serial
-            last_serial.text = MainActivity.user_last_serial
+            name_edit.text = Examinee.USER.info.NAME
+            first_serial.text = Examinee.USER.info.JUMIN1
+            last_serial.text = Examinee.USER.info.JUMIN2
             smoking_examination_save.text = "다음"
 
         }

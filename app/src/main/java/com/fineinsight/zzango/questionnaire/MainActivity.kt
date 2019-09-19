@@ -37,9 +37,27 @@ import com.fineinsight.zzango.questionnaire.Signature.CanvasView
 import com.fineinsight.zzango.questionnaire.UserList.User
 import com.fineinsight.zzango.questionnaire.UserList.UserList
 import kotlinx.android.synthetic.main.activity_login.view.*
+import kotlinx.android.synthetic.main.activity_login_exam.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.btnList
+import kotlinx.android.synthetic.main.activity_main.btnReSign
+import kotlinx.android.synthetic.main.activity_main.canvas
+import kotlinx.android.synthetic.main.activity_main.constraintLayout16
 import kotlinx.android.synthetic.main.activity_main.first_serial
+import kotlinx.android.synthetic.main.activity_main.first_view
 import kotlinx.android.synthetic.main.activity_main.last_serial
+import kotlinx.android.synthetic.main.activity_main.listButton
+import kotlinx.android.synthetic.main.activity_main.login_appbar_loading_progress
+import kotlinx.android.synthetic.main.activity_main.login_appbar_loading_progress_bg
+import kotlinx.android.synthetic.main.activity_main.main_start_login2
+import kotlinx.android.synthetic.main.activity_main.menu_bottom_bar
+import kotlinx.android.synthetic.main.activity_main.noticeCount_textView
+import kotlinx.android.synthetic.main.activity_main.second_view
+import kotlinx.android.synthetic.main.activity_main.starticon
+import kotlinx.android.synthetic.main.activity_main.textView261
+import kotlinx.android.synthetic.main.activity_main.textView72
+import kotlinx.android.synthetic.main.activity_main.user_login_button
+import kotlinx.android.synthetic.main.activity_main.user_name
 import kotlinx.android.synthetic.main.activity_user_login.view.*
 import kotlinx.android.synthetic.main.quit_alert.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
@@ -160,7 +178,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
 
         if(!isUserLogin){
-            user_login.text = login_user_name+"님"
+            user_login.text = Examinee.USER.info.NAME+"님"
             user_image.setImageResource(R.drawable.exit)
             first_view.visibility = View.VISIBLE
             second_view.visibility = View.GONE
@@ -584,27 +602,35 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
                     //MainActivity.user_signature = bitmap
 
-                    user_stream = stream.toByteArray()
+
                     //////////😎😎😎서명을 위한 공간😎😎😎//////////
                     //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
 
-                    login_user_name = dialog_view.user_name.text.toString()
-                    user_first_serial = dialog_view.first_serial.text.toString()
-                    user_last_serial = dialog_view.last_serial.text.toString()
+
+
+                    Examinee.USER.info= ExamineeInfo(
+                            dialog_view.user_name.text.toString(),
+                            dialog_view.first_serial.text.toString(),
+                            dialog_view.last_serial.text.toString(),
+                            "",
+                            stream.toByteArray(),
+                            false,
+                            true
+                    )
 
 
                     //chart(user_first_serial, false, false)
                     chart.clear()
 
 
-                    println("user_last_serial.toInt(): ${user_last_serial.toInt()}")
-                    println("user_last_serial.toInt()%2: ${user_last_serial.toInt()%2}")
-                    println("user_last_serial.toInt()%2 == 0 : ->${user_last_serial.toInt()%2==0}")
-                    AdditionalArr.Gender.isFemale = user_last_serial.toInt()%2 == 0
+                    println("user_last_serial.toInt(): ${Examinee.USER.info.JUMIN1.toInt()}")
+                    println("user_last_serial.toInt()%2: ${Examinee.USER.info.JUMIN1.toInt()%2}")
+                    println("user_last_serial.toInt()%2 == 0 : ->${Examinee.USER.info.JUMIN1.toInt()%2==0}")
+                    AdditionalArr.Gender.isFemale = Examinee.USER.info.JUMIN1.toInt()%2 == 0
 
                     Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
-                    view.text = login_user_name+"님"
+                    view.text = Examinee.USER.info.NAME+"님"
                     view2.setImageResource(R.drawable.exit)
                     dialog.dismiss()
 
@@ -616,7 +642,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     exam_no = System.currentTimeMillis().toString()
 
 
-                    SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
+                    SavePaper.Total.Array[0] = PublicDataInfo(hospital, Examinee.USER.info.NAME, Examinee.USER.info.JUMIN1, Examinee.USER.info.JUMIN2, Examinee.USER.info.SIGN, exam_no)
 
                     when(startPage){
                         "CommonExaminationActivity" -> {
@@ -674,7 +700,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             exam_no = System.currentTimeMillis().toString()
 
 
-            SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
+            SavePaper.Total.Array[0] = PublicDataInfo(hospital, Examinee.USER.info.NAME, Examinee.USER.info.JUMIN1, Examinee.USER.info.JUMIN2, Examinee.USER.info.SIGN, exam_no)
 
             when(startPage){
                 "CommonExaminationActivity" -> {
@@ -904,15 +930,21 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
                     //MainActivity.user_signature = bitmap
 
-                    user_stream = stream.toByteArray()
+
                     //////////😎😎😎서명을 위한 공간😎😎😎//////////
                     //////////😎😎😎서명을 위한 공간😎😎😎//////////
 
 
+                    Examinee.USER.info= ExamineeInfo(
+                            user_name.text.toString(),
+                            first_serial.text.toString(),
+                            last_serial.text.toString(),
+                            "",
+                            stream.toByteArray(),
+                            false,
+                            true
+                    )
 
-                    login_user_name = user_name.text.toString()
-                    user_first_serial = first_serial.text.toString()
-                    user_last_serial = last_serial.text.toString()
 
                     UserHandler(true)
 
@@ -933,7 +965,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
                     SavePaper.Total.Init()
                     exam_no = System.currentTimeMillis().toString()
-                    SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
+                    SavePaper.Total.Array[0] = PublicDataInfo(hospital, Examinee.USER.info.NAME, Examinee.USER.info.JUMIN1, Examinee.USER.info.JUMIN2, Examinee.USER.info.SIGN, exam_no)
 
                     user_image.setImageResource(R.drawable.exit)
 
@@ -941,10 +973,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
 
-                    println("user_last_serial.toInt(): ${user_last_serial.toInt()}")
-                    println("user_last_serial.toInt()%2: ${user_last_serial.toInt()%2}")
-                    println("user_last_serial.toInt()%2 == 0 : ->${user_last_serial.toInt()%2==0}")
-                    AdditionalArr.Gender.isFemale = user_last_serial.toInt()%2 == 0
+                    println("user_last_serial.toInt(): ${Examinee.USER.info.JUMIN1.toInt()}")
+                    println("user_last_serial.toInt()%2: ${Examinee.USER.info.JUMIN1.toInt()%2}")
+                    println("user_last_serial.toInt()%2 == 0 : ->${Examinee.USER.info.JUMIN1.toInt()%2==0}")
+                    AdditionalArr.Gender.isFemale = Examinee.USER.info.JUMIN1.toInt()%2 == 0
 
                     //현재 접속병원이 목포한국병원이면서 네트워크가 켜져 있을 때
                     if(hospital == HospitalList.hospital.Mokpo && isNetworkAvailable())
@@ -955,9 +987,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                         var now = LocalDate.now()
 
                         var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
-                        var NAME = login_user_name
-                        var JUMIN = user_first_serial
-                        var JUMIN2 = user_last_serial
+                        var NAME = Examinee.USER.info.NAME
+                        var JUMIN = Examinee.USER.info.JUMIN1
+                        var JUMIN2 = Examinee.USER.info.JUMIN2
 
                         MokpoCheckPaper(context, Strnow, NAME, JUMIN, JUMIN2)
 
@@ -967,7 +999,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                     {
                         println("목포병원이 아니거나 네트워크가 꺼져있습니다")
                         var EmptyStringArr = ArrayList<String>()
-                        ShowPaperDIALOG(context, EmptyStringArr, user_first_serial)
+                        ShowPaperDIALOG(context, EmptyStringArr, Examinee.USER.info.JUMIN1)
                     }
                 }
                 else
@@ -1085,8 +1117,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         chart(JUMIN1)
 
-        title.text = login_user_name
-        user_login.text = login_user_name+"님"
+        title.text = Examinee.USER.info.NAME
+        user_login.text = Examinee.USER.info.NAME+"님"
 
         var count = 0
 
@@ -1157,7 +1189,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
                 //초기화
                 SavePaper.Total.Init()
                 exam_no = System.currentTimeMillis().toString()
-                SavePaper.Total.Array[0] = PublicDataInfo(hospital, login_user_name, user_first_serial, user_last_serial, user_stream!!, exam_no)
+                SavePaper.Total.Array[0] = PublicDataInfo(hospital, Examinee.USER.info.NAME, Examinee.USER.info.JUMIN1, Examinee.USER.info.JUMIN2, Examinee.USER.info.SIGN, exam_no)
 
 
 
@@ -1459,10 +1491,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
     companion object {
         var isJuminValidated = false
-        var login_user_name = ""
-        var user_first_serial = ""
-        var user_last_serial = ""
-        var user_stream:ByteArray? = null
         var chart = ArrayList<ChartInfo>()
         var chartNumber = 0
         var manager_name = ""
@@ -1836,7 +1864,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         if (isLogin)
         {
-            user_login.text = login_user_name+"님"
+            user_login.text = Examinee.USER.info.NAME+"님"
             user_image.setImageResource(R.drawable.exit)
 //            first_view.visibility = View.VISIBLE
 //            second_view.visibility = View.GONE
@@ -1850,9 +1878,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             first_view.visibility = View.VISIBLE
             second_view.visibility = View.GONE
 
-            login_user_name = ""
-            user_first_serial = ""
-            user_last_serial = ""
+            Examinee.USER.init()
+
+
             Toast.makeText(this, "사용자가 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
             chart.clear()
 

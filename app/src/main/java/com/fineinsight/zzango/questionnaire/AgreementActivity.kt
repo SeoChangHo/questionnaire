@@ -8,6 +8,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
+import com.fineinsight.zzango.questionnaire.DataClass.Examinee
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_AGREE
 import com.fineinsight.zzango.questionnaire.LocalList.READ_AGREE
 import kotlinx.android.synthetic.main.activity_agreement.*
@@ -37,8 +38,8 @@ class AgreementActivity : RootActivity() {
 
         }
 
-        patientName.text = MainActivity.login_user_name
-        ResidentRegistrationNumber.text = MainActivity.user_first_serial
+        patientName.text = Examinee.USER.info.NAME
+        ResidentRegistrationNumber.text = Examinee.USER.info.JUMIN1
 //        ResidentRegistrationNumber2.text = MainActivity.user_last_serial
         pid
         ageGender
@@ -182,7 +183,7 @@ class AgreementActivity : RootActivity() {
                     "",
                     "",
                     "${patientName.text}",
-                    MainActivity.user_first_serial + MainActivity.user_last_serial,
+                    Examinee.USER.info.JUMIN1 + Examinee.USER.info.JUMIN2,
                     emptyByteArray)
 
             if (getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "") == "local") {
