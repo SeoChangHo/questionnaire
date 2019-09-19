@@ -1051,7 +1051,7 @@ class LoginExamActivity : AppCompatActivity() {
             }
 
         } else {
-            startActivity(Intent(this, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            startActivity(Intent(this, Main2Activity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
         }
 
     }
