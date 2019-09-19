@@ -53,10 +53,6 @@ class LoginAgreeActivity : AppCompatActivity() {
 
         userlogin2(this)
 
-        btnList.setOnClickListener {
-            startActivity(Intent(this, ExamListActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-        }
-
         listButton.setOnClickListener {
             popuplogin()
         }
@@ -240,18 +236,6 @@ class LoginAgreeActivity : AppCompatActivity() {
 
                     //UserHandler(true)
 
-                    //입력창 초기화
-                    user_name.text.clear()
-                    first_serial.text.clear()
-                    last_serial.text.clear()
-                    canvasView.ClearCanvas()
-                    user_login_button.isEnabled = false
-                    user_login_button.setBackgroundResource(R.drawable.start_login_back)
-
-                    MainActivity.chart.clear()
-
-
-
                     Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
 //                    user_login.text = login_user_name+"님"
 
@@ -270,32 +254,24 @@ class LoginAgreeActivity : AppCompatActivity() {
                     println("user_last_serial.toInt()%2 == 0 : ->${MainActivity.user_last_serial.toInt() % 2 == 0}")
                     AdditionalArr.Gender.isFemale = MainActivity.user_last_serial.toInt() % 2 == 0
 
-                    //현재 접속병원이 목포한국병원이면서 네트워크가 켜져 있을 때
-                    if (MainActivity.hospital == HospitalList.hospital.Mokpo && isNetworkAvailable()) {
-
-
-                        var now = LocalDate.now()
-
-                        var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
-                        var NAME = MainActivity.login_user_name
-                        var JUMIN = MainActivity.user_first_serial
-                        var JUMIN2 = MainActivity.user_last_serial
-
-                        //MokpoCheckPaper(context, Strnow, NAME, JUMIN, JUMIN2)
-
-
-                    } else {
-                        println("목포병원이 아니거나 네트워크가 꺼져있습니다")
-                        var EmptyStringArr = ArrayList<String>()
-                        //ShowPaperDIALOG(context, EmptyStringArr, MainActivity.user_first_serial)
-                    }
                 } else {
                     Toast.makeText(this, "주민번호 형식을 확인해주세요.", Toast.LENGTH_LONG).show()
                 }
 
                 userlogin_buttonClick = true
 
-                startActivity(Intent(this, AgreementActivity::class.java))
+                startActivity(Intent(this, AgreementActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+                //입력창 초기화
+                user_name.text.clear()
+                first_serial.text.clear()
+                last_serial.text.clear()
+                canvasView.ClearCanvas()
+                user_login_button.isEnabled = false
+                user_login_button.setBackgroundResource(R.drawable.start_login_back)
+
+                MainActivity.chart.clear()
+
             }
 
         }

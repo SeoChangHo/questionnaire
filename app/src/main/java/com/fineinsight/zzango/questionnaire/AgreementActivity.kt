@@ -1,20 +1,28 @@
 package com.fineinsight.zzango.questionnaire
 
+import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.util.DisplayMetrics
+import android.view.*
+import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.LocalList.Paper_AGREE
 import com.fineinsight.zzango.questionnaire.LocalList.READ_AGREE
 import kotlinx.android.synthetic.main.activity_agreement.*
+import kotlinx.android.synthetic.main.quit_alert.*
+import kotlinx.android.synthetic.main.quit_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.ByteArrayOutputStream
 
+@SuppressLint("SetTextI18n")
 class AgreementActivity : RootActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +40,12 @@ class AgreementActivity : RootActivity() {
 
         }
 
+        patientName.text = MainActivity.login_user_name
+        ResidentRegistrationNumber.text = MainActivity.user_first_serial
+//        ResidentRegistrationNumber2.text = MainActivity.user_last_serial
+        pid
+        ageGender
+
     }
 
     fun BtnSetting()
@@ -43,7 +57,7 @@ class AgreementActivity : RootActivity() {
         disAgreeAll.setOnClickListener { disAgreeAll() }
 
         //확인
-        agreementSubmit.setOnClickListener { submitCondition() }
+        agreementSubmit.setOnClickListener { if(AgreeValidation())agreeAlert()else{ Toast.makeText(this, "동의함에 체크해주세요.", Toast.LENGTH_LONG).show()} }
     }
 
     fun LocalUpload(AgreeInfo:Paper_AGREE)
@@ -140,58 +154,49 @@ class AgreementActivity : RootActivity() {
 
     fun submitCondition(){
 
-        if(!intent.hasExtra("AgreeListArr")) {
-
-            if (AgreeValidation()) {
+        if (AgreeValidation()) {
 
 
-                //빈 bytearray만들기
-                var bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
-                var baos = ByteArrayOutputStream()
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
-                var emptyByteArray = baos.toByteArray()
+            //빈 bytearray만들기
+            var bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
+            var baos = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
+            var emptyByteArray = baos.toByteArray()
 
 
 
-                var now = System.currentTimeMillis().toString()
-                var AgreeInfo: Paper_AGREE = Paper_AGREE(
-                        MainActivity.hospital,
-                        now,
-                        "",
-                        now,
-                        "",
-                        "0",
-                        if (noticeWarningAgree.isChecked) "Y" else "N",          //개인정보 최소정보 제공동의
-                        if (beforeAfterInfoProvideAgree.isChecked) "Y" else "N", //건진실시 따른 사전사후 서비스 관련 정보 제공
-                        if (mobileInfoAgree.isChecked) "Y" else "N",             //진료예약, 입원 및 검사예정에 따른 모바일 안내
-                        if (hospitalEventInfoAgree.isChecked) "Y" else "N",      //병원이용 및 병원의 새로운 서비스, 행사정보안내
-                        if (sendSMSAgree.isChecked) "Y" else "N",                //건강정보 발송을 위한 휴대폰 SMS 발송
-                        if (MedicalCooperationInfoAgree.isChecked) "Y" else "N", //병원간의 상호 진료협력을 위해 의료정보 제공
-                        if (patientInfoAgree.isChecked) "Y" else "N",            //환자대리인 정보이용 동의
-                        if (uniqueInfoAgree.isChecked) "Y" else "N",             //고유식별 정보
-                        if (sensitiveInfoAgree.isChecked) "Y" else "N",          //민감정보
-                        "",
-                        "",
-                        "TESTNAME",
-                        "9005051020123",
-                        emptyByteArray)
+            var now = System.currentTimeMillis().toString()
+            var AgreeInfo: Paper_AGREE = Paper_AGREE(
+                    MainActivity.hospital,
+                    now,
+                    "",
+                    now,
+                    "",
+                    "0",
+                    if (noticeWarningAgree.isChecked) "Y" else "N",          //개인정보 최소정보 제공동의
+                    if (beforeAfterInfoProvideAgree.isChecked) "Y" else "N", //건진실시 따른 사전사후 서비스 관련 정보 제공
+                    if (mobileInfoAgree.isChecked) "Y" else "N",             //진료예약, 입원 및 검사예정에 따른 모바일 안내
+                    if (hospitalEventInfoAgree.isChecked) "Y" else "N",      //병원이용 및 병원의 새로운 서비스, 행사정보안내
+                    if (sendSMSAgree.isChecked) "Y" else "N",                //건강정보 발송을 위한 휴대폰 SMS 발송
+                    if (MedicalCooperationInfoAgree.isChecked) "Y" else "N", //병원간의 상호 진료협력을 위해 의료정보 제공
+                    if (patientInfoAgree.isChecked) "Y" else "N",            //환자대리인 정보이용 동의
+                    if (uniqueInfoAgree.isChecked) "Y" else "N",             //고유식별 정보
+                    if (sensitiveInfoAgree.isChecked) "Y" else "N",          //민감정보
+                    "",
+                    "",
+                    "${patientName.text}",
+                    "${MainActivity.user_first_serial}+${MainActivity.user_last_serial}",
+                    emptyByteArray)
 
-                if (getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "") == "local") {
-                    LocalUpload(AgreeInfo)
-                } else {
-                    ServerUpload(AgreeInfo)
-                }
-
-
+            if (getSharedPreferences("connection", Context.MODE_PRIVATE).getString("state", "") == "local") {
+                LocalUpload(AgreeInfo)
             } else {
-                //전체동의해야 넘어갈 수 있음
-                println("ㄴㄴ")
+                ServerUpload(AgreeInfo)
             }
 
-        }else{
-
-            finish()
-
+        } else {
+            //전체동의해야 넘어갈 수 있음
+            println("ㄴㄴ")
         }
 
     }
@@ -208,8 +213,19 @@ class AgreementActivity : RootActivity() {
         cannotEditQuestionnaire(insideAgreementLayout)
 
         patientName.text = paperAgree.NAME
+        ResidentRegistrationNumber.text = paperAgree.JUMIN.substring(0,5)
+        ResidentRegistrationNumber2.text = paperAgree.JUMIN.substring(6,12)
         pid.text = paperAgree.BUNHO
-        ageGender.text = paperAgree.JUMIN
+        if(paperAgree.JUMIN[6] == '1' || paperAgree.JUMIN[6] == '3'){
+
+            ageGender.text = "남"
+
+
+        }else{
+
+            ageGender.text = "여"
+
+        }
 
         when(paperAgree.BASIC){
             "Y" -> noticeWarningAgree.isChecked = true
@@ -254,6 +270,47 @@ class AgreementActivity : RootActivity() {
         when(paperAgree.DAERI){
             "Y" -> patientInfoAgree.isChecked = true
             "N" -> patientInfoDisAgree.isChecked = true
+        }
+
+    }
+
+    fun agreeAlert(){
+
+        var customDialog = Dialog(this)
+        customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        customDialog.setContentView(R.layout.quit_alert)
+        customDialog.window!!.decorView.setBackgroundResource(R.drawable.alert_shape)
+        customDialog.create()
+
+        customDialog.notice.text = "문진표를\n작성하시겠습니까?"
+        customDialog.finish.text = "네"
+        customDialog.cancel.text = "아니요"
+
+        if(!popup) {
+
+            customDialog.show().let { popup = true }
+
+        }
+
+        customDialog.setOnDismissListener {
+
+            popup = false
+            customDialog = Dialog(this)
+
+        }
+
+        customDialog.finish.setOnClickListener {
+
+            submitCondition()
+            startActivity(Intent(this, LoginExamActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            customDialog.dismiss()
+
+        }
+
+        customDialog.cancel.setOnClickListener {
+
+            customDialog.dismiss()
+
         }
 
     }
