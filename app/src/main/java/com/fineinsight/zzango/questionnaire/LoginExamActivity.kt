@@ -287,6 +287,16 @@ class LoginExamActivity : AppCompatActivity() {
                             true
                     )
 
+                    //입력창 초기화
+                    user_name.text.clear()
+                    first_serial.text.clear()
+                    last_serial.text.clear()
+                    canvasView.ClearCanvas()
+                    user_login_button.isEnabled = false
+                    user_login_button.setBackgroundResource(R.drawable.start_login_back)
+
+                    MainActivity.chart.clear()
+
                     SavePaper.Total.Init()
                     MainActivity.exam_no = System.currentTimeMillis().toString()
                     SavePaper.Total.Array[0] = PublicDataInfo(MainActivity.hospital, Examinee.USER.info.NAME, Examinee.USER.info.JUMIN1, Examinee.USER.info.JUMIN2, Examinee.USER.info.SIGN, MainActivity.exam_no)
@@ -345,15 +355,7 @@ class LoginExamActivity : AppCompatActivity() {
 
                 userlogin_buttonClick = true
 
-                //입력창 초기화
-                user_name.text.clear()
-                first_serial.text.clear()
-                last_serial.text.clear()
-                canvasView.ClearCanvas()
-                user_login_button.isEnabled = false
-                user_login_button.setBackgroundResource(R.drawable.start_login_back)
 
-                MainActivity.chart.clear()
 
             }
 
@@ -526,6 +528,8 @@ class LoginExamActivity : AppCompatActivity() {
 
     fun ShowPaperDIALOG(context: Context, arr: ArrayList<String>, JUMIN1: String) {
 
+
+
 //        Glide.with(this).load(R.drawable.check).into(starticon)
 
         first_view.visibility = View.GONE
@@ -587,7 +591,9 @@ class LoginExamActivity : AppCompatActivity() {
 
         var count = 0
 
-        for (i in MainActivity.chart) {
+
+
+        for (i in chart) {
 
             if (i.isbool) {
                 count++
@@ -620,6 +626,8 @@ class LoginExamActivity : AppCompatActivity() {
 
 
         ok.setOnClickListener {
+
+
 
 
             ProgressAction(true)
@@ -656,7 +664,9 @@ class LoginExamActivity : AppCompatActivity() {
 
 
 
-                for (item in MainActivity.chart) {
+                for (item in chart) {
+                    println("CHART.name: ${item.chartName}")
+                    println("${item.chartName}.bool: ${item.isbool}")
                     if (item.isbool) {
                         when (item.chartName) {
                             PaperNameInfo.PC.COMMON.EN_NM -> {
@@ -811,6 +821,8 @@ class LoginExamActivity : AppCompatActivity() {
             chart.add(ChartInfo(PaperNameInfo.PC.ELDERLY.EN_NM, false, 3))
             chart.add(ChartInfo(PaperNameInfo.PC.LIFE.EN_NM, false, 4))
         }
+
+
 
 
     }
