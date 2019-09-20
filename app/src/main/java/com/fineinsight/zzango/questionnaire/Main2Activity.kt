@@ -30,11 +30,11 @@ class Main2Activity : AppCompatActivity() {
     fun btnSetting(){
 
         btn_agreement.setOnClickListener {
-            startActivity(Intent(this, LoginAgreeActivity::class.java))
+            startActivity(Intent(this, LoginAgreeActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
         }
 
         btn_exam.setOnClickListener {
-            startActivity(Intent(this, LoginExamActivity::class.java))
+            startActivity(Intent(this, LoginExamActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
         }
     }
 
