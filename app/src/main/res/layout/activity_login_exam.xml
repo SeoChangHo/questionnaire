@@ -511,7 +511,7 @@
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="315dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/user_logout_border"
                     android:clickable="false"
                     android:text="로그아웃"
@@ -536,7 +536,7 @@
                     app:srcCompat="@drawable/arrow_white" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="35dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="32dp"
                     app:layout_constraintBottom_toBottomOf="@+id/user_logout"

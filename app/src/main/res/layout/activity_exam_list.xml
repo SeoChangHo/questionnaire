@@ -48,7 +48,7 @@
                     android:ellipsize="end"
                     android:gravity="left"
                     android:maxLines="1"
-                    android:paddingLeft="15dp"
+                    android:paddingLeft="22dp"
                     android:paddingTop="10dp"
                     android:text="홍길동님"
                     android:textAllCaps="false"
@@ -61,9 +61,9 @@
 
                 <ImageView
                     android:id="@+id/user_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="20dp"
                     app:layout_constraintBottom_toBottomOf="@+id/user_login"
                     app:layout_constraintEnd_toEndOf="@+id/user_login"
                     app:layout_constraintTop_toTopOf="@+id/user_login"
