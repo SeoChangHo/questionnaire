@@ -9,12 +9,16 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/questionnaire_logo3"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name=".LoginAgreeActivity"></activity>
-        <activity android:name=".ServerList.ServerListAgreeActivity" />
-        <activity android:name=".ServerList.ServerAgreeListActivity" />
-        <activity android:name=".LocalList.ListAgreeActivity" />
+        android:theme="@style/AppTheme">
+        <activity android:name=".LoginAgreeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim"/>
+        <activity android:name=".ServerList.ServerListAgreeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
+        <activity android:name=".LocalList.ListAgreeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".ExamListActivity"
             android:screenOrientation="portrait"
@@ -27,11 +31,6 @@
             />
         <activity
             android:name=".Main2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/noAnim"
-            />
-        <activity
-            android:name=".StartActivity"
             android:screenOrientation="portrait"
             android:theme="@style/noAnim"
             />

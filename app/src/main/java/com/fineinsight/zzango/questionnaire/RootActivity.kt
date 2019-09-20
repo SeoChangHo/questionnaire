@@ -1608,7 +1608,8 @@ open class RootActivity : AppCompatActivity() {
                 SavedListObject.SavedList.savedDataClass.drinkingSaved = false
                 SavedListObject.SavedList.savedDataClass.oralSaved = false
                 SavedListObject.SavedList.savedDataClass.cancerSaved = false
-                startActivity(Intent(this, MainActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                Examinee.USER.init()
+                startActivity(Intent(this, Main2Activity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                 customDialog.dismiss()
 
             }
