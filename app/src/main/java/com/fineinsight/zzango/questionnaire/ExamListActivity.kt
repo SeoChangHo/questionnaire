@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.app.AlertDialog
 import android.text.Editable
 import android.text.TextWatcher
@@ -45,7 +46,6 @@ class ExamListActivity : AppCompatActivity(), View.OnClickListener {
         button3.setOnClickListener(this)
         button4.setOnClickListener(this)
         button5.setOnClickListener(this)
-        listButton.setOnClickListener(this)
 
         // 초기 화면 설정
         selected_button1.visibility = View.VISIBLE
@@ -58,7 +58,7 @@ class ExamListActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         user_image.setOnClickListener {
-            user_login.text = "사용자 등록하기"
+            user_login.text = ""
             user_image.setImageResource(R.drawable.regi)
 
             Examinee.USER.init()
@@ -74,6 +74,10 @@ class ExamListActivity : AppCompatActivity(), View.OnClickListener {
             } else {
                 startActivity(Intent(this, Main2Activity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
             }
+        }
+
+        listButton.setOnClickListener {
+            popuplogin()
         }
 
     }
@@ -123,9 +127,7 @@ class ExamListActivity : AppCompatActivity(), View.OnClickListener {
                 fragment = FiveFragment()
                 selected_button5.visibility = View.VISIBLE
             }
-            R.id.listButton -> {
-                popuplogin()
-            }
+
         }
         //v.setBackgroundColor(Color.parseColor("#2B53A2"))
 

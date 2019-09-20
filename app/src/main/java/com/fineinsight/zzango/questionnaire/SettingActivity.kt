@@ -1,5 +1,6 @@
 package com.fineinsight.zzango.questionnaire
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -8,6 +9,8 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
+import android.view.View
+import android.view.Window
 import android.widget.Button
 import com.fineinsight.zzango.questionnaire.DataClass.Examinee
 import com.fineinsight.zzango.questionnaire.LocalList.HospitalList
@@ -19,6 +22,8 @@ import kotlinx.android.synthetic.main.activity_setting_back.*
 import kotlinx.android.synthetic.main.activity_setting_back.listViewButton
 import kotlinx.android.synthetic.main.activity_setting_back.manager_logout
 import kotlinx.android.synthetic.main.activity_setting_back.setting_image
+import kotlinx.android.synthetic.main.quit_alert.*
+import kotlinx.android.synthetic.main.quit_alert.view.*
 
 class SettingActivity : AppCompatActivity() {
 
@@ -123,23 +128,24 @@ class SettingActivity : AppCompatActivity() {
 
         manager_logout.setOnClickListener {
 
-            var dialog = AlertDialog.Builder(this).create()
-            var dialog_view = LayoutInflater.from(this).inflate(R.layout.activity_user_logout, null)
+            var dialog = Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setContentView(R.layout.quit_alert)
+            dialog.window!!.decorView.setBackgroundResource(R.drawable.alert_shape)
+            dialog.create()
 
             //다이얼로그 뒤로가기 버튼 막기
             dialog.setCancelable(false)
 
-            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-            dialog.setView(dialog_view)
             dialog.setCanceledOnTouchOutside(false)
 
-            val logout = dialog_view.findViewById(R.id.user_logout) as Button
-            val cancel = dialog_view.findViewById(R.id.user_logout_cancel) as Button
+            dialog.notice.text = "로그아웃 하시겠습니까?"
+            dialog.finish.text = "확인"
+
 
             dialog.show()
 
-            logout.setOnClickListener {
+            dialog.finish.setOnClickListener {
 
 
                 Examinee.USER.init()
@@ -159,7 +165,7 @@ class SettingActivity : AppCompatActivity() {
 
             }
 
-            cancel.setOnClickListener {
+            dialog.cancel.setOnClickListener {
                 dialog.dismiss()
             }
 
@@ -169,10 +175,21 @@ class SettingActivity : AppCompatActivity() {
 
         if(MainActivity.hospital == HospitalList.hospital.Mokpo){
             setting_image.setImageResource(R.drawable.logo2)
+            layout_local_agree.visibility = View.VISIBLE
+            layout_server_agree.visibility = View.VISIBLE
+            listViewButton2.setBackgroundResource(R.drawable.border_top)
+
         }else if(MainActivity.hospital == HospitalList.hospital.test){
             setting_image.setImageResource(R.drawable.logo)
+            layout_local_agree.visibility = View.VISIBLE
+            layout_server_agree.visibility = View.VISIBLE
+            listViewButton2.setBackgroundResource(R.drawable.border_top)
+
         }else if(MainActivity.hospital == HospitalList.hospital.Osong){
             setting_image.setImageResource(R.drawable.bestianlogo)
+            layout_local_agree.visibility = View.GONE
+            layout_server_agree.visibility = View.GONE
+            listViewButton2.setBackgroundResource(R.drawable.border_top_bottom)
         }
 
     }

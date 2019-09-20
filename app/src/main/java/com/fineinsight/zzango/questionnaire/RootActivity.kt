@@ -1579,6 +1579,7 @@ open class RootActivity : AppCompatActivity() {
             customDialog.create()
 
             customDialog.notice.text = "문진 내용이 초기화됩니다. \n메인페이지로 가시겠습니까?"
+            customDialog.notice.textSize = customDialog.notice.textSize * 0.45F
             customDialog.finish.text = "네"
             customDialog.cancel.text = "아니요"
 
