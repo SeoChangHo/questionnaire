@@ -31,6 +31,7 @@ import com.fineinsight.zzango.questionnaire.DataClass.*
 import com.fineinsight.zzango.questionnaire.LocalList.*
 import com.fineinsight.zzango.questionnaire.MainActivity.Companion.chart
 import com.fineinsight.zzango.questionnaire.MainActivity.Companion.manager_name
+import com.fineinsight.zzango.questionnaire.Signature.BitmapFun
 import com.fineinsight.zzango.questionnaire.Signature.CanvasView
 import com.fineinsight.zzango.questionnaire.UserList.UserList
 import kotlinx.android.synthetic.main.activity_login.view.*
@@ -51,6 +52,7 @@ import kotlinx.android.synthetic.main.activity_login_exam.textView261
 import kotlinx.android.synthetic.main.activity_login_exam.textView72
 import kotlinx.android.synthetic.main.activity_login_exam.user_login_button
 import kotlinx.android.synthetic.main.activity_login_exam.user_name
+import kotlinx.android.synthetic.main.activity_user_login.view.*
 import kotlinx.android.synthetic.main.fragment_second.*
 import kotlinx.android.synthetic.main.quit_alert.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
@@ -85,9 +87,17 @@ class LoginExamActivity : AppCompatActivity() {
             popuplogin()
         }
 
-        if(Examinee.USER.info.NAME.isNotEmpty()){ user_name.setText((Examinee.USER.info.NAME)) }
-        if(Examinee.USER.info.JUMIN1.isNotEmpty()){ first_serial.setText(Examinee.USER.info.JUMIN1) }
-        if(Examinee.USER.info.JUMIN2.isNotEmpty()){ last_serial.setText(Examinee.USER.info.JUMIN2) }
+        if(Examinee.USER.info.IS_LOGIN){
+
+            user_name.setText(Examinee.USER.info.NAME)
+            first_serial.setText(Examinee.USER.info.JUMIN1)
+            last_serial.setText(Examinee.USER.info.JUMIN2)
+            canvas.visibility = View.GONE
+            copySign.visibility = View.VISIBLE
+            copySign.setImageBitmap(BitmapFun.Fuc.getImage(Examinee.USER.info.SIGN))
+            ShowPaperDIALOG(this, ArrayList<String>(), Examinee.USER.info.JUMIN1)
+
+        }
 
     }
 
@@ -264,14 +274,8 @@ class LoginExamActivity : AppCompatActivity() {
 
                     UserHandler(true)
 
-
-
-
-
                     Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
 //                    user_login.text = login_user_name+"님"
-
-
 
                     Examinee.USER.info= ExamineeInfo(
                             user_name.text.toString(),
@@ -283,20 +287,6 @@ class LoginExamActivity : AppCompatActivity() {
                             true
                     )
 
-
-                    //입력창 초기화
-                    user_name.text.clear()
-                    first_serial.text.clear()
-                    last_serial.text.clear()
-                    canvasView.ClearCanvas()
-                    user_login_button.isEnabled = false
-                    user_login_button.setBackgroundResource(R.drawable.start_login_back)
-
-                    MainActivity.chart.clear()
-
-
-
-
                     SavePaper.Total.Init()
                     MainActivity.exam_no = System.currentTimeMillis().toString()
                     SavePaper.Total.Array[0] = PublicDataInfo(MainActivity.hospital, Examinee.USER.info.NAME, Examinee.USER.info.JUMIN1, Examinee.USER.info.JUMIN2, Examinee.USER.info.SIGN, MainActivity.exam_no)
@@ -306,11 +296,14 @@ class LoginExamActivity : AppCompatActivity() {
                     //login_appbar_loading_progress.visibility = View.VISIBLE
                     //login_appbar_loading_progress_bg.visibility = View.VISIBLE
 
-
-                    println("user_last_serial.toInt(): ${Examinee.USER.info.JUMIN2.toInt()}")
-                    println("user_last_serial.toInt()%2: ${Examinee.USER.info.JUMIN2.toInt() % 2}")
-                    println("user_last_serial.toInt()%2 == 0 : ->${Examinee.USER.info.JUMIN2.toInt() % 2 == 0}")
-                    AdditionalArr.Gender.isFemale = Examinee.USER.info.JUMIN2.toInt() % 2 == 0
+                    if(Examinee.USER.info.JUMIN2.isNotEmpty()) {
+                        println("user_last_serial.toInt(): ${Examinee.USER.info.JUMIN2.toInt()}")
+                        println("user_last_serial.toInt()%2: ${Examinee.USER.info.JUMIN2.toInt() % 2}")
+                        println("user_last_serial.toInt()%2 == 0 : ->${Examinee.USER.info.JUMIN2.toInt() % 2 == 0}")
+                        AdditionalArr.Gender.isFemale = Examinee.USER.info.JUMIN2.toInt() % 2 == 0
+                    }else{
+                        AdditionalArr.Gender.isFemale = last_serial.text.toString().toInt() % 2 == 0
+                    }
 
                     //현재 접속병원이 목포한국병원이면서 네트워크가 켜져 있을 때
                     if (MainActivity.hospital == HospitalList.hospital.Mokpo && isNetworkAvailable()) {
@@ -319,9 +312,24 @@ class LoginExamActivity : AppCompatActivity() {
                         var now = LocalDate.now()
 
                         var Strnow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
-                        var NAME = Examinee.USER.info.NAME
-                        var JUMIN = Examinee.USER.info.JUMIN1
-                        var JUMIN2 = Examinee.USER.info.JUMIN2
+                        var NAME = ""
+                        if(Examinee.USER.info.NAME.isNotEmpty()) {
+                            NAME = Examinee.USER.info.NAME
+                        }else{
+                            NAME = user_name.text.toString()
+                        }
+                        var JUMIN = ""
+                        if(Examinee.USER.info.JUMIN1.isNotEmpty()) {
+                            JUMIN = Examinee.USER.info.JUMIN1
+                        }else{
+                            JUMIN = first_serial.text.toString()
+                        }
+                        var JUMIN2 = ""
+                        if(Examinee.USER.info.JUMIN2.isNotEmpty()) {
+                            JUMIN2 = Examinee.USER.info.JUMIN2
+                        }else{
+                            JUMIN2 = last_serial.text.toString()
+                        }
 
                         MokpoCheckPaper(context, Strnow, NAME, JUMIN, JUMIN2)
 
@@ -336,6 +344,16 @@ class LoginExamActivity : AppCompatActivity() {
                 }
 
                 userlogin_buttonClick = true
+
+                //입력창 초기화
+                user_name.text.clear()
+                first_serial.text.clear()
+                last_serial.text.clear()
+                canvasView.ClearCanvas()
+                user_login_button.isEnabled = false
+                user_login_button.setBackgroundResource(R.drawable.start_login_back)
+
+                MainActivity.chart.clear()
 
             }
 
@@ -515,26 +533,26 @@ class LoginExamActivity : AppCompatActivity() {
 //        Handler().postDelayed({
 //            starticon.setImageDrawable(getDrawable(R.drawable.usericon))
 
-            starticon.animate().alpha(1f).duration = 1000
+        starticon.animate().alpha(1f).duration = 1000
 
-            ObjectAnimator.ofFloat(starticon, View.Y, 500f, 2000f).apply {
+        ObjectAnimator.ofFloat(starticon, View.Y, 450f, 2000f).apply {
+            duration = 1000
+            start()
+        }
+
+        Handler().postDelayed({
+            ObjectAnimator.ofFloat(starticon, View.Y, 2000f, 450f).apply {
                 duration = 1000
                 start()
             }
 
-            Handler().postDelayed({
-                ObjectAnimator.ofFloat(starticon, View.Y, 2000f, 500f).apply {
-                    duration = 1000
-                    start()
-                }
+            second_view.visibility = View.VISIBLE
+            ObjectAnimator.ofFloat(second_view, View.Y, 2200f, 700f).apply {
+                duration = 1000
+                start()
+            }
 
-                second_view.visibility = View.VISIBLE
-                ObjectAnimator.ofFloat(second_view, View.Y, 2200f, 700f).apply {
-                    duration = 1000
-                    start()
-                }
-
-            }, 1000)
+        }, 1000)
 
 //        }, 1000)
 

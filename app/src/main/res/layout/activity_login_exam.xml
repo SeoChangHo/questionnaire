@@ -34,17 +34,18 @@
             android:id="@+id/first_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:visibility="visible"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/starticon">
+            app:layout_constraintTop_toBottomOf="@+id/starticon"
+            tools:visibility="visible">
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayout11"
                 android:layout_width="500dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/login_radius1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -197,6 +198,12 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true" />
 
+                    <ImageView
+                        android:id="@+id/copySign"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone" />
+
                 </android.support.constraint.ConstraintLayout>
 
                 <android.support.constraint.ConstraintLayout
@@ -260,7 +267,7 @@
             android:id="@+id/second_view"
             android:layout_width="500dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -285,7 +292,7 @@
                     android:maxLines="1"
                     android:text="홍길동"
                     android:textColor="@color/gra_end"
-                    android:textSize="26dp"
+                    android:textSize="24dp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@+id/textView57"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -299,7 +306,7 @@
                     android:layout_height="wrap_content"
                     android:text="님께 해당하는 문진표 목록입니다."
                     android:textColor="@color/lightGray"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="@+id/notice_Title"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -315,9 +322,9 @@
                 android:id="@+id/constraintLayout21"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/user_list_back"
                 android:paddingTop="60dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -344,7 +351,7 @@
                     android:layout_marginEnd="8dp"
                     android:text="공통문진"
                     android:textColor="@color/gra_end"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -356,7 +363,7 @@
                     android:layout_marginTop="16dp"
                     android:text="인지기능"
                     android:textColor="@color/gra_end"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     android:visibility="gone"
                     app:layout_constraintStart_toStartOf="@+id/notice_textView"
                     app:layout_constraintTop_toBottomOf="@+id/notice_textView" />
@@ -368,7 +375,7 @@
                     android:layout_marginTop="16dp"
                     android:text="정신건강"
                     android:textColor="@color/gra_end"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     android:visibility="gone"
                     app:layout_constraintStart_toStartOf="@+id/notice_textView2"
                     app:layout_constraintTop_toBottomOf="@+id/notice_textView2" />
@@ -380,7 +387,7 @@
                     android:layout_marginTop="16dp"
                     android:text="생활습관"
                     android:textColor="@color/gra_end"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     android:visibility="gone"
                     app:layout_constraintStart_toStartOf="@+id/notice_textView3"
                     app:layout_constraintTop_toBottomOf="@+id/notice_textView3" />
@@ -392,7 +399,7 @@
                     android:layout_marginTop="16dp"
                     android:text="노인기능"
                     android:textColor="@color/gra_end"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     android:visibility="gone"
                     app:layout_constraintStart_toStartOf="@+id/notice_textView4"
                     app:layout_constraintTop_toBottomOf="@+id/notice_textView4" />
@@ -410,7 +417,7 @@
                         android:id="@+id/imageView6"
                         android:layout_width="45dp"
                         android:layout_height="5dp"
-                        android:background="@drawable/text_top_bar2"
+                        android:background="@drawable/text_top_bar"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -419,11 +426,11 @@
                         android:id="@+id/textView22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="16dp"
                         android:text="추가로 선택하여 진행할 수 있는 문진 항목입니다."
 
-                        android:textColor="@color/mainBlue"
-                        android:textSize="18dp"
+                        android:textColor="@color/gra_end"
+                        android:textSize="16dp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -446,16 +453,14 @@
                     android:id="@+id/chkOral"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="75dp"
                     android:layout_marginTop="16dp"
                     android:buttonTint="@color/gra_end"
                     android:text=" 구강검진"
                     android:textColor="@color/gra_end"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/chkCancer"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintHorizontal_chainStyle="spread_inside"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -464,11 +469,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="75dp"
                     android:buttonTint="@color/gra_end"
                     android:text=" 암검진"
                     android:textColor="@color/gra_end"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -491,14 +495,14 @@
                 <Button
                     android:id="@+id/user_ok"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="315dp"
+                    android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="50dp"
                     android:background="@drawable/start_login_button"
                     android:clickable="false"
                     android:text="문진 시작하기"
                     android:textColor="@color/backGround"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/user_logout"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -509,14 +513,14 @@
                 <Button
                     android:id="@+id/user_logout"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="315dp"
+                    android:layout_width="300dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/user_logout_border"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/start_login_back2"
                     android:clickable="false"
                     android:text="로그아웃"
                     android:textColor="@color/gra_end"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -536,12 +540,13 @@
                     app:srcCompat="@drawable/arrow_white" />
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="32dp"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
                     app:layout_constraintBottom_toBottomOf="@+id/user_logout"
                     app:layout_constraintEnd_toEndOf="@+id/user_logout"
                     app:layout_constraintTop_toTopOf="@+id/user_logout"
+                    app:layout_constraintVertical_bias="0.375"
                     app:srcCompat="@drawable/logout_blue" />
 
 

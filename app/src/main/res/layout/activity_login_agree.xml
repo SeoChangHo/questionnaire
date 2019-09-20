@@ -129,7 +129,6 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="60dp"
                     android:background="@drawable/start_login_back"
-                    android:hint=""
                     android:inputType="numberPassword"
                     android:maxLength="7"
                     android:textAlignment="center"

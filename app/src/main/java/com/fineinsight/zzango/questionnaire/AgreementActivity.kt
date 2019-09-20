@@ -307,6 +307,8 @@ class AgreementActivity : RootActivity() {
 
         customDialog.cancel.setOnClickListener {
 
+            submitCondition()
+            startActivity(Intent(this, Main2Activity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
             customDialog.dismiss()
 
         }
