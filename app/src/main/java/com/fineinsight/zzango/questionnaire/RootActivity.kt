@@ -1,5 +1,6 @@
 package com.fineinsight.zzango.questionnaire
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
@@ -19,6 +20,7 @@ import android.widget.*
 import com.fineinsight.zzango.questionnaire.DataClass.Examinee
 import com.fineinsight.zzango.questionnaire.DataClass.SavePaper
 import com.fineinsight.zzango.questionnaire.DataClass.SavedListObject
+import kotlinx.android.synthetic.main.activity_elderly_exam.*
 import kotlinx.android.synthetic.main.progressbar2.*
 import kotlinx.android.synthetic.main.quit_alert.*
 import kotlinx.android.synthetic.main.quit_alert.view.*
@@ -1663,6 +1665,21 @@ open class RootActivity : AppCompatActivity() {
         customDialog.return_alert.setOnClickListener {
 
             customDialog.dismiss()
+
+        }
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun registrationNumber(lastSerial : TextView){
+
+        if(Examinee.USER.info.IS_WRITE_AGREE) {
+
+            lastSerial.text = lastSerial.text.replaceRange(1, 7, "******")
+
+        }else{
+
+            lastSerial.text = lastSerial.text.toString() + "******"
 
         }
 

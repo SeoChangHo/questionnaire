@@ -138,6 +138,8 @@ class ElderlyExaminationActivity : RootActivity(){
 
         controlProgress(this)
 
+        registrationNumber(last_serial)
+
     }
 
     override fun onResume() {
