@@ -7,7 +7,10 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.activity_exam_list.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.login_appbar_loading_progress
+import kotlinx.android.synthetic.main.activity_main.login_appbar_loading_progress_bg
 import kotlinx.android.synthetic.main.fragment_third.view.*
 
 class ThirdFragment : Fragment(){
@@ -28,7 +31,7 @@ class ThirdFragment : Fragment(){
 //
 //            }else{
 
-                (activity as MainActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context, "ExerciseExaminationActivity")
+                (activity as ExamListActivity).userlogin(activity!!.user_login, activity!!.user_image, activity as Context, "ExerciseExaminationActivity")
 
 //            }
 
