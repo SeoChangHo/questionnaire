@@ -3,16 +3,14 @@ package com.fineinsight.zzango.questionnaire.ServerList
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import com.fineinsight.zzango.questionnaire.AgreementActivity
-import com.fineinsight.zzango.questionnaire.DataClass.SelectDetailInfo
 import com.fineinsight.zzango.questionnaire.DataClass.SelectInfo
-import com.fineinsight.zzango.questionnaire.LocalList.Paper_AGREE
 import com.fineinsight.zzango.questionnaire.LocalList.READ_AGREE
 import com.fineinsight.zzango.questionnaire.MainActivity
 import com.fineinsight.zzango.questionnaire.OracleUtill
@@ -39,7 +37,10 @@ class ServerListAgreeActivity : AppCompatActivity() {
 
     fun DateSetting()
     {
-        txtDate.text = LocalDate.now().toString()
+        var now = LocalDate.now().toString()
+        SelectDate = now
+        println("SelectDate: ${SelectDate}")
+        txtDate.text = "${now.split("-")[0]} 년   ${(now.split("-")[1]).toString().padStart(2, '0')} 월   ${now.split("-")[2].toString().padStart(2, '0')} 일"
 
 
         txtDate.setOnClickListener {
@@ -66,7 +67,7 @@ class ServerListAgreeActivity : AppCompatActivity() {
                 MYday = splitdate[2].toInt()
 
                 val dp = DatePickerDialog(this, AlertDialog.THEME_HOLO_DARK, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                    txtDate.text = "${year}-${(month+1).toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}"
+                    txtDate.text = "${year} 년   ${(month+1).toString().padStart(2, '0')} 월   ${dayOfMonth.toString().padStart(2, '0')} 일"
                     SelectDate = "${year}-${(month+1).toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}"
                     loadList()
                 }, MYyear, MYmonth, MYday)
@@ -101,10 +102,17 @@ class ServerListAgreeActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ArrayList<SelectInfo>>, response: Response<ArrayList<SelectInfo>>) {
                 if(response.isSuccessful){
                     if(response.body()!!.size == 0){
+
                         Toast.makeText(this@ServerListAgreeActivity, "저장된 정보가 없습니다.", Toast.LENGTH_SHORT).show()
                         ProgressAction(false)
 
+                        constraintLayout6.visibility = View.GONE
+                        constraint_null.visibility = View.VISIBLE
+
                     }else{
+
+                        constraintLayout6.visibility = View.VISIBLE
+                        constraint_null.visibility = View.GONE
                         var userList = ArrayList<SelectInfo>()
                         for(i in 0 until response.body()!!.size){
                             userList.add(

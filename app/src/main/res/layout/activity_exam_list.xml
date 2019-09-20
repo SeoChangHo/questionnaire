@@ -39,7 +39,7 @@
                 <Button
                     android:id="@+id/user_login"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="220dp"
+                    android:layout_width="200dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="40dp"
@@ -50,7 +50,7 @@
                     android:maxLines="1"
                     android:paddingLeft="15dp"
                     android:paddingTop="10dp"
-                    android:text="사용자 등록하기"
+                    android:text="홍길동님"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textSize="20dp"
@@ -61,12 +61,13 @@
 
                 <ImageView
                     android:id="@+id/user_image"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintBottom_toBottomOf="@+id/user_login"
                     app:layout_constraintEnd_toEndOf="@+id/user_login"
                     app:layout_constraintTop_toTopOf="@+id/user_login"
-                    app:srcCompat="@drawable/exit" />
+                    app:srcCompat="@drawable/logout_white" />
 
 
             </android.support.constraint.ConstraintLayout>

@@ -110,7 +110,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/manager_logout"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logout_blue" />
+                app:srcCompat="@drawable/logout_gray" />
         </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 
