@@ -264,6 +264,26 @@ class LoginExamActivity : AppCompatActivity() {
 
                     UserHandler(true)
 
+
+
+
+
+                    Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
+//                    user_login.text = login_user_name+"님"
+
+
+
+                    Examinee.USER.info= ExamineeInfo(
+                            user_name.text.toString(),
+                            first_serial.text.toString(),
+                            last_serial.text.toString(),
+                            "",
+                            stream.toByteArray(),
+                            false,
+                            true
+                    )
+
+
                     //입력창 초기화
                     user_name.text.clear()
                     first_serial.text.clear()
@@ -276,18 +296,6 @@ class LoginExamActivity : AppCompatActivity() {
 
 
 
-                    Toast.makeText(context, "사용자가 등록되었습니다.", Toast.LENGTH_SHORT).show()
-//                    user_login.text = login_user_name+"님"
-
-                    Examinee.USER.info= ExamineeInfo(
-                            user_name.text.toString(),
-                            first_serial.text.toString(),
-                            last_serial.text.toString(),
-                            "",
-                            stream.toByteArray(),
-                            false,
-                            true
-                    )
 
                     SavePaper.Total.Init()
                     MainActivity.exam_no = System.currentTimeMillis().toString()
