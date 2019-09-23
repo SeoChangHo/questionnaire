@@ -41,8 +41,16 @@ class AgreementActivity : RootActivity() {
         patientName.text = Examinee.USER.info.NAME
         ResidentRegistrationNumber.text = Examinee.USER.info.JUMIN1
 //        ResidentRegistrationNumber2.text = MainActivity.user_last_serial
+        if(Examinee.USER.info.JUMIN2[0] == '1' || Examinee.USER.info.JUMIN2[0] == '3' || Examinee.USER.info.JUMIN2[0] == '5' || Examinee.USER.info.JUMIN2[0] == '7'|| Examinee.USER.info.JUMIN2[0] == '9'){
+
+            ageGender.text = "남" + "/${getAge(Examinee.USER.info.JUMIN1+Examinee.USER.info.JUMIN2)}"
+
+        }else{
+
+            ageGender.text = "여" + "/${getAge(Examinee.USER.info.JUMIN1+Examinee.USER.info.JUMIN2)}"
+
+        }
         pid
-        ageGender
 
     }
 
