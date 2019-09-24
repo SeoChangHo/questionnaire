@@ -1634,8 +1634,8 @@ open class RootActivity : AppCompatActivity() {
 
             Examinee.USER.init()
 
-            MainActivity.userLogin!!.text = "사용자 등록하기"
-            MainActivity.userImage!!.setImageResource(R.drawable.regi)
+//            MainActivity.userLogin!!.text = "사용자 등록하기"
+//            MainActivity.userImage!!.setImageResource(R.drawable.regi)
 
             super.onBackPressed()
 
