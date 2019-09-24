@@ -96,6 +96,7 @@ class LoginExamActivity : AppCompatActivity() {
             copySign.visibility = View.VISIBLE
             copySign.setImageBitmap(BitmapFun.Fuc.getImage(Examinee.USER.info.SIGN))
             ShowPaperDIALOG(this, ArrayList<String>(), Examinee.USER.info.JUMIN1)
+            btnList.visibility = View.VISIBLE
 
         }
 
