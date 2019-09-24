@@ -325,6 +325,47 @@ class AgreementActivity : RootActivity() {
 
     }
 
+    fun agreeCancelAlert(){
+
+        var customDialog = Dialog(this)
+        customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        customDialog.setContentView(R.layout.quit_alert)
+        customDialog.window!!.decorView.setBackgroundResource(R.drawable.alert_shape)
+        customDialog.create()
+
+        customDialog.notice.text = "동의서 작성을\n취소하시겠습니까?"
+        customDialog.finish.text = "네"
+        customDialog.cancel.text = "아니요"
+
+        if(!popup) {
+
+            customDialog.show().let { popup = true }
+
+        }
+
+        customDialog.setOnDismissListener {
+
+            popup = false
+            customDialog = Dialog(this)
+
+        }
+
+        customDialog.finish.setOnClickListener {
+
+            Examinee.USER.init()
+            startActivity(Intent(this, Main2Activity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            customDialog.dismiss()
+
+        }
+
+        customDialog.cancel.setOnClickListener {
+
+            customDialog.dismiss()
+
+        }
+
+    }
+
     fun getAge(registrationNumber : String) : Int{
 
         var current = Calendar.getInstance()
@@ -349,6 +390,12 @@ class AgreementActivity : RootActivity() {
             age--
 
         return age
+    }
+
+    override fun onBackPressed() {
+
+        agreeCancelAlert()
+
     }
 
 }
