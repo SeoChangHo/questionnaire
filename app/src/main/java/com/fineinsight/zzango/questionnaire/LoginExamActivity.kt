@@ -99,6 +99,9 @@ class LoginExamActivity : AppCompatActivity() {
 
         }
 
+        user_logout.setOnClickListener {
+            userLogout()
+        }
     }
 
     fun userlogin2(context: Context) {
@@ -896,6 +899,54 @@ class LoginExamActivity : AppCompatActivity() {
 
     }
 
+    fun userLogout(){
+
+        if(isUserLogin){
+
+            var customDialog = Dialog(this)
+            customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            customDialog.setContentView(R.layout.quit_alert)
+            customDialog.window!!.decorView.setBackgroundResource(R.drawable.alert_shape)
+            customDialog.create()
+
+            customDialog.notice.text = "문진표 작성을 취소하시겠습니까?"
+            customDialog.finish.text = "네"
+            customDialog.cancel.text = "아니요"
+
+            if(!popup) {
+
+                customDialog.show().let { popup = true }
+
+            }
+
+            customDialog.setOnDismissListener {
+
+                popup = false
+                customDialog = Dialog(this)
+
+            }
+
+            customDialog.finish.setOnClickListener {
+
+                UserHandler(false)
+                if(manager_name != "bestian"){
+                    startActivity(Intent(this, Main2Activity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }
+                customDialog.dismiss()
+
+            }
+
+            customDialog.cancel.setOnClickListener {
+
+                customDialog.dismiss()
+
+            }
+
+        }
+
+    }
+
+
     fun popuplogin() {
 
         var dialog = AlertDialog.Builder(this).create()
@@ -957,8 +1008,8 @@ class LoginExamActivity : AppCompatActivity() {
         })
 
         //개발용
-        dialog_view.login_id.setText("hanshin")
-        dialog_view.login_password.setText("hanshin1678")
+//        dialog_view.login_id.setText("hanshin")
+//        dialog_view.login_password.setText("hanshin1678")
 
         val login = dialog_view.findViewById(R.id.Login) as Button
         login.setOnClickListener {
@@ -1038,7 +1089,7 @@ class LoginExamActivity : AppCompatActivity() {
             customDialog.window!!.decorView.setBackgroundResource(R.drawable.alert_shape)
             customDialog.create()
 
-            customDialog.notice.text = "사용자 등록을 취소하시겠습니까?"
+            customDialog.notice.text = "문진표 작성을 취소하시겠습니까?"
             customDialog.finish.text = "네"
             customDialog.cancel.text = "아니요"
 
@@ -1058,6 +1109,11 @@ class LoginExamActivity : AppCompatActivity() {
             customDialog.finish.setOnClickListener {
 
                 UserHandler(false)
+
+                if(manager_name != "bestian"){
+                    startActivity(Intent(this, Main2Activity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }
+
                 customDialog.dismiss()
 
             }
@@ -1112,6 +1168,7 @@ class LoginExamActivity : AppCompatActivity() {
 
         } else {
             startActivity(Intent(this, Main2Activity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
         }
 
     }

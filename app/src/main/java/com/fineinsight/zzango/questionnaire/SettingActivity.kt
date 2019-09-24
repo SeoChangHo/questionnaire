@@ -44,13 +44,13 @@ class SettingActivity : AppCompatActivity() {
 
             server_button.setBackgroundResource(R.drawable.setting_save_unselect_right)
             server_imageView.setImageResource(R.drawable.server_blue)
-            server_textView.setTextColor(Color.parseColor("#2B53A2"))
+            server_textView.setTextColor(getColor(R.color.gra_end))
 
         }else{
 
             local_button.setBackgroundResource(R.drawable.setting_save_unselect_left)
             local_imageView.setImageResource(R.drawable.local_blue)
-            local_textView.setTextColor(Color.parseColor("#2B53A2"))
+            local_textView.setTextColor(getColor(R.color.gra_end))
 
             server_button.setBackgroundResource(R.drawable.setting_save_select_right)
             server_imageView.setImageResource(R.drawable.server)
@@ -106,7 +106,7 @@ class SettingActivity : AppCompatActivity() {
 
             server_button.setBackgroundResource(R.drawable.setting_save_unselect_right)
             server_imageView.setImageResource(R.drawable.server_blue)
-            server_textView.setTextColor(Color.parseColor("#2B53A2"))
+            server_textView.setTextColor(getColor(R.color.gra_end))
 
 
         }
@@ -117,7 +117,7 @@ class SettingActivity : AppCompatActivity() {
 
             local_button.setBackgroundResource(R.drawable.setting_save_unselect_left)
             local_imageView.setImageResource(R.drawable.local_blue)
-            local_textView.setTextColor(Color.parseColor("#2B53A2"))
+            local_textView.setTextColor(getColor(R.color.gra_end))
 
             server_button.setBackgroundResource(R.drawable.setting_save_select_right)
             server_imageView.setImageResource(R.drawable.server)

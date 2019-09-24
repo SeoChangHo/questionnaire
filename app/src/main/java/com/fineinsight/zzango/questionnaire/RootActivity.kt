@@ -1612,7 +1612,14 @@ open class RootActivity : AppCompatActivity() {
                 SavedListObject.SavedList.savedDataClass.oralSaved = false
                 SavedListObject.SavedList.savedDataClass.cancerSaved = false
                 Examinee.USER.init()
-                startActivity(Intent(this, Main2Activity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+                if(MainActivity.manager_name == "bestian") {
+                    startActivity(Intent(this, LoginExamActivity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+                } else {
+                    startActivity(Intent(this, Main2Activity::class.java).putExtra("from", "exam").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }
+
                 customDialog.dismiss()
 
             }

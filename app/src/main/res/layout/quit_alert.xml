@@ -14,7 +14,6 @@
         android:layout_marginEnd="24dp"
         android:gravity="center"
         android:lineSpacingExtra="10dp"
-        android:text="사용자 등록을\n취소하시겠습니까?"
         android:textColor="@color/gra_end"
         android:textSize="35dp"
         android:textStyle="bold"

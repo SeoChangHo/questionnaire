@@ -2,6 +2,7 @@ package com.fineinsight.zzango.questionnaire.DataClass
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
@@ -11,10 +12,7 @@ import android.net.NetworkCapabilities
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat.startActivity
 import android.util.DisplayMetrics
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -22,6 +20,8 @@ import com.fineinsight.zzango.questionnaire.*
 import com.fineinsight.zzango.questionnaire.AdditionalPage.AdditionalArr
 import com.fineinsight.zzango.questionnaire.LocalList.*
 import com.fineinsight.zzango.questionnaire.MainActivity.Companion.chart
+import com.fineinsight.zzango.questionnaire.MainActivity.Companion.manager_name
+import kotlinx.android.synthetic.main.save_complete_alert.*
 import kotlinx.android.synthetic.main.save_complete_alert.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -405,77 +405,81 @@ class ChartDivision{
 
         }
 
+
         fun saveCompleteAlert(activity: Activity) {
 
             activity.window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
 
             popup = false
 
-            var dialog = AlertDialog.Builder(activity).create()
+
+
+            var dialog = Dialog(activity)
             var dialog_view = LayoutInflater.from(activity).inflate(R.layout.save_complete_alert, null)
 
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setContentView(R.layout.save_complete_alert)
             dialog.setCancelable(false)
-            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.window!!.decorView.setBackgroundResource(R.drawable.alert_shape)
+            dialog.create()
 
-            dialog.setView(dialog_view)
-            dialog_view.save_complete_alert_text.text = "저장이 완료 되었습니다"
+
+//            dialog.setView(dialog_view)
+            dialog.save_complete_alert_text.text = "저장이 완료 되었습니다"
 
             if (!popup) {
-
                 dialog.show().let {
-
                     popup = true
 
                 }
-
             }
 
-            var displayMetrics = DisplayMetrics()
-            dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
-            // The absolute width of the available display size in pixels.
-            var displayWidth = displayMetrics.widthPixels
-            // The absolute height of the available display size in pixels.
-            var displayHeight = displayMetrics.heightPixels
-
-            // Initialize a new window manager layout parameters
-            var layoutParams = WindowManager.LayoutParams()
-
-            // Copy the alert dialog window attributes to new layout parameter instance
-            layoutParams.copyFrom(dialog.window.attributes)
-
-            // Set the alert dialog window width and height
-            // Set alert dialog width equal to screen width 90%
-            // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-            // Set alert dialog height equal to screen height 90%
-            // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-
-            // Set alert dialog width equal to screen width 70%
-            var dialogWindowWidth = (displayWidth * 0.7f).toInt()
-            // Set alert dialog height equal to screen height 70%
-            var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
-
-            // Set the width and height for the layout parameters
-            // This will bet the width and height of alert dialog
-            layoutParams.width = dialogWindowWidth
-            layoutParams.height = dialogWindowHeight
-
-            // Apply the newly created layout parameters to the alert dialog window
-            dialog.window.attributes = layoutParams
+//            var displayMetrics = DisplayMetrics()
+//            dialog.window.windowManager.defaultDisplay.getMetrics(displayMetrics)
+//            // The absolute width of the available display size in pixels.
+//            var displayWidth = displayMetrics.widthPixels
+//            // The absolute height of the available display size in pixels.
+//            var displayHeight = displayMetrics.heightPixels
+//
+//            // Initialize a new window manager layout parameters
+//            var layoutParams = WindowManager.LayoutParams()
+//
+//            // Copy the alert dialog window attributes to new layout parameter instance
+//            layoutParams.copyFrom(dialog.window.attributes)
+//
+//            // Set the alert dialog window width and height
+//            // Set alert dialog width equal to screen width 90%
+//            // int dialogWindowWidth = (int) (displayWidth * 0.9f);
+//            // Set alert dialog height equal to screen height 90%
+//            // int dialogWindowHeight = (int) (displayHeight * 0.9f);
+//
+//            // Set alert dialog width equal to screen width 70%
+//            var dialogWindowWidth = (displayWidth * 0.7f).toInt()
+//            // Set alert dialog height equal to screen height 70%
+//            var dialogWindowHeight = ViewGroup.LayoutParams.WRAP_CONTENT
+//
+//            // Set the width and height for the layout parameters
+//            // This will bet the width and height of alert dialog
+//            layoutParams.width = dialogWindowWidth
+//            layoutParams.height = dialogWindowHeight
+//
+//            // Apply the newly created layout parameters to the alert dialog window
+//            dialog.window.attributes = layoutParams
 
 
             dialog.setOnDismissListener {
 
                 popup = false
-                dialog = null
+                dialog = Dialog(activity)
 
             }
 
-            dialog_view.return_alert.setOnClickListener {
+            dialog.return_alert.setOnClickListener {
 
                 Examinee.USER.init()
 
-                MainActivity.userLogin!!.text = "사용자 등록하기"
-                MainActivity.userImage!!.setImageResource(R.drawable.regi)
+//                MainActivity.userLogin!!.text = "사용자 등록하기"
+//                MainActivity.userImage!!.setImageResource(R.drawable.regi)
 
                 SavePaper.Total.Init()
 
@@ -490,7 +494,12 @@ class ChartDivision{
                 SavedListObject.SavedList.savedDataClass.oralSaved = false
                 SavedListObject.SavedList.savedDataClass.cancerSaved = false
 
-                activity.startActivity(Intent(activity, MainActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                if(manager_name == "bestian"){
+                    activity.startActivity(Intent(activity, LoginExamActivity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                } else {
+                    activity.startActivity(Intent(activity, Main2Activity::class.java).putExtra("from", "common").setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }
+
                 ProgressAction(true, activity)
 
                 dialog.dismiss()
