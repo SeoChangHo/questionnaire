@@ -211,6 +211,8 @@ class AgreementActivity : RootActivity() {
 
     fun getPaper(paperAgree: READ_AGREE){
 
+        state ="getPaper"
+
         agreeAll.visibility = View.GONE
         disAgreeAll.visibility = View.GONE
 
@@ -394,7 +396,11 @@ class AgreementActivity : RootActivity() {
 
     override fun onBackPressed() {
 
-        agreeCancelAlert()
+        if(state == "getPaper"){
+            agreeCancelAlert()
+        }else{
+            super.onBackPressed()
+        }
 
     }
 
