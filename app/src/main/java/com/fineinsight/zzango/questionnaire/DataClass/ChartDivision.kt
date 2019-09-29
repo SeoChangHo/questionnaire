@@ -422,6 +422,7 @@ class ChartDivision{
             dialog.setCancelable(false)
             dialog.window!!.decorView.setBackgroundResource(R.drawable.alert_shape)
             dialog.create()
+            
 
 
 //            dialog.setView(dialog_view)
