@@ -715,7 +715,7 @@
                 android:layout_width="700dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="5. 배뇨장애에 관한 질문입니다. 소변을 보는데 장애가 있거나 소변을 지릴 경우가 있습니까?"
+                android:text="5. 배뇨장애에 관한 질문입니다. 소변을 보는데 장애가 있거나 소변을\n지릴 경우가 있습니까?"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/elderly_question_3"
