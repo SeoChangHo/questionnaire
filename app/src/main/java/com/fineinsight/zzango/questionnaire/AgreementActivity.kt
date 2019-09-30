@@ -397,9 +397,9 @@ class AgreementActivity : RootActivity() {
     override fun onBackPressed() {
 
         if(state == "getPaper"){
-            agreeCancelAlert()
-        }else{
             super.onBackPressed()
+        }else{
+            agreeCancelAlert()
         }
 
     }
