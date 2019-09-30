@@ -71,7 +71,7 @@
             android:background="@drawable/save_button_back"
             android:text="확인"
             android:textColor="@color/white"
-            android:textSize="16dp"
+            android:textSize="24dp"
             android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
