@@ -21,8 +21,8 @@
             android:id="@+id/imageView4"
             android:layout_width="45dp"
             android:layout_height="5dp"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/exam_text_top_bar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +35,7 @@
             android:layout_marginTop="16dp"
             android:text="노인기능평가"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:textSize="45dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
@@ -48,7 +48,7 @@
             android:layout_marginTop="8dp"
             android:text="(만 66세, 70세, 80세 해당)"
             android:textColor="@color/white"
-            android:textSize="15dp"
+            android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -62,7 +62,7 @@
             android:text="저장"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="16dp"
+            android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/elderly_examination_cancel" />
 
@@ -75,7 +75,7 @@
             android:background="@drawable/save_button_back"
             android:text="확인"
             android:textColor="@color/white"
-            android:textSize="16dp"
+            android:textSize="24dp"
             android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -91,7 +91,7 @@
             android:text="취소"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="16dp"
+            android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -138,7 +138,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="60dp"
                 android:text="성명 : "
-                android:textSize="20dp"
+                android:textSize="24dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -151,7 +151,7 @@
                 android:maxWidth="100dp"
                 android:minWidth="100dp"
                 android:textAlignment="center"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 app:layout_constraintBottom_toBottomOf="@+id/name_text"
                 app:layout_constraintStart_toEndOf="@+id/name_text"
                 app:layout_constraintTop_toTopOf="@+id/name_text" />
@@ -173,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="주민등록번호 : "
-                android:textSize="20dp"
+                android:textSize="24dp"
                 app:layout_constraintStart_toStartOf="@+id/name_text"
                 app:layout_constraintTop_toBottomOf="@+id/name_text" />
 
@@ -187,7 +187,7 @@
                 android:maxWidth="90dp"
                 android:minWidth="90dp"
                 android:textAlignment="center"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 app:layout_constraintBottom_toBottomOf="@+id/number_text"
                 app:layout_constraintEnd_toStartOf="@+id/number_hyphen"
                 app:layout_constraintStart_toEndOf="@+id/number_text"
@@ -213,7 +213,7 @@
                 android:maxWidth="90dp"
                 android:minWidth="90dp"
                 android:textAlignment="center"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 app:layout_constraintBottom_toBottomOf="@+id/number_hyphen"
                 app:layout_constraintStart_toEndOf="@+id/number_hyphen"
                 app:layout_constraintTop_toTopOf="@+id/number_hyphen" />
@@ -228,7 +228,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="1. 인플루엔자(독감) 예방접종을 매년 하십니까?"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -254,7 +254,7 @@
                     android:layout_marginBottom="15dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:text="예"
                     android:onClick="focusControl" />
 
@@ -265,7 +265,7 @@
                     android:buttonTint="@color/examBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:layout_marginLeft="40dp"
                     android:text="아니오"
                     android:onClick="focusControl" />
@@ -284,7 +284,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="2. 폐렴예방접종을 받으셨습니까?"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -309,7 +309,7 @@
                     android:layout_marginBottom="15dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:text="예"
                     android:onClick="focusControl" />
 
@@ -320,7 +320,7 @@
                     android:buttonTint="@color/examBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:layout_marginLeft="40dp"
                     android:text="아니오"
                     android:onClick="focusControl" />
@@ -338,7 +338,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="3. 다음은 일상생활 수행능력에 대한 질문입니다. 아래 문항을 읽고 현재 상태에 해당하는 응답에 표기를 해 주십시오."
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -352,7 +352,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="1) 음식을 차려주면 남의 도움 없이 혼자서 식사하십니까?"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/elderly_question_3"
                 app:layout_constraintTop_toBottomOf="@+id/elderly_question_3" />
@@ -377,7 +377,7 @@
                     android:layout_marginBottom="15dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:text="예"
                     android:onClick="focusControl" />
 
@@ -388,7 +388,7 @@
                     android:buttonTint="@color/examBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:layout_marginLeft="40dp"
                     android:text="아니오"
                     android:onClick="focusControl" />
@@ -404,7 +404,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="2) 옷을 챙겨 입을 때 남의 도움 없이 혼자서 하십니까?"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/elderly_question_3"
                 app:layout_constraintTop_toBottomOf="@+id/elderly_3_1_radio" />
@@ -429,7 +429,7 @@
                     android:layout_marginBottom="15dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:text="예"
                     android:onClick="focusControl" />
 
@@ -440,7 +440,7 @@
                     android:buttonTint="@color/examBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:layout_marginLeft="40dp"
                     android:text="아니오"
                     android:onClick="focusControl" />
@@ -457,7 +457,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="3) 대소변을 보기위해 화장실 출입할 때 남의 도움 없이 혼자서 하십니까?"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/elderly_question_3"
                 app:layout_constraintTop_toBottomOf="@+id/elderly_3_2_radio" />
@@ -482,7 +482,7 @@
                     android:layout_marginBottom="15dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:text="예"
                     android:onClick="focusControl" />
 
@@ -493,7 +493,7 @@
                     android:buttonTint="@color/examBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:layout_marginLeft="40dp"
                     android:text="아니오"
                     android:onClick="focusControl" />
@@ -509,7 +509,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="4) 목욕하실 때 남의 도움 없이 혼자서 하십니까?"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/elderly_question_3"
                 app:layout_constraintTop_toBottomOf="@+id/elderly_3_3_radio" />
@@ -534,7 +534,7 @@
                     android:layout_marginBottom="15dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:text="예"
                     android:onClick="focusControl" />
 
@@ -545,7 +545,7 @@
                     android:buttonTint="@color/examBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:layout_marginLeft="40dp"
                     android:text="아니오"
                     android:onClick="focusControl" />
@@ -561,7 +561,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="5) 식사 준비를 다른 사람의 도움 없이 혼자서 하십니까?"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/elderly_question_3"
                 app:layout_constraintTop_toBottomOf="@+id/elderly_3_4_radio" />
@@ -586,7 +586,7 @@
                     android:layout_marginBottom="15dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:text="예"
                     android:onClick="focusControl" />
 
@@ -597,7 +597,7 @@
                     android:buttonTint="@color/examBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:layout_marginLeft="40dp"
                     android:text="아니오"
                     android:onClick="focusControl" />
@@ -614,7 +614,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="6) 상점, 이웃, 병원, 관공서 등 걸어서 갔다 올 수 있는 곳의 외출을 다른 사람의 도움 없이 혼자서 하십니까?"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/elderly_question_3"
                 app:layout_constraintTop_toBottomOf="@+id/elderly_3_5_radio" />
@@ -639,7 +639,7 @@
                     android:layout_marginBottom="15dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:text="예"
                     android:onClick="focusControl" />
 
@@ -650,7 +650,7 @@
                     android:buttonTint="@color/examBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:layout_marginLeft="40dp"
                     android:text="아니오"
                     android:onClick="focusControl" />
@@ -665,7 +665,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
                 android:text="4. 낙상에 관한 질문입니다. 지난 6개월 간 넘어진 적이 있습니까?"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/elderly_question_3"
                 app:layout_constraintTop_toBottomOf="@+id/elderly_3_6_radio" />
@@ -690,7 +690,7 @@
                     android:layout_marginBottom="15dp"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:text="예"
                     android:onClick="focusControl" />
 
@@ -701,7 +701,7 @@
                     android:buttonTint="@color/examBlue"
                     android:scaleX="1.3"
                     android:scaleY="1.3"
-                    android:textSize="15dp"
+                    android:textSize="17dp"
                     android:layout_marginLeft="40dp"
                     android:text="아니오"
                     android:onClick="focusControl" />
@@ -715,8 +715,8 @@
                 android:layout_width="700dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/common_text_top_margin"
-                android:text="5. 배뇨장애에 관한 질문입니다. 소변을 보는데 장애가 있거나 소변을 지릴 경우가 있습니까?"
-                android:textSize="20dp"
+                android:text="5. 배뇨장애에 관한 질문입니다. 소변을 보는데 장애가 있거나 소변을\n지릴 경우가 있습니까?"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/elderly_question_3"
                 app:layout_constraintTop_toBottomOf="@+id/elderly_4_radio" />
@@ -745,7 +745,7 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="예"
-                    android:textSize="15dp" />
+                    android:textSize="17dp" />
 
                 <RadioButton
                     android:id="@+id/elderly_5_false"
@@ -757,7 +757,7 @@
                     android:scaleX="1.3"
                     android:scaleY="1.3"
                     android:text="아니오"
-                    android:textSize="15dp" />
+                    android:textSize="17dp" />
 
 
             </RadioGroup>

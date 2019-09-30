@@ -149,7 +149,7 @@ class CognitiveExaminationActivity : RootActivity(){
 
         if(Progress_circle.visibility != View.VISIBLE){
 
-            super.onBackPressed()
+            cancelAlert()
 
         }
 
