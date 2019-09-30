@@ -305,6 +305,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textView89" />
 
             <View
+                android:id="@+id/view8"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:background="#000000"
@@ -328,8 +329,8 @@
                 android:text="차거나 심장이 매우 빠르게 뛰는 "
                 android:textSize="24dp"
                 app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toEndOf="@+id/textView85"
-                app:layout_constraintTop_toTopOf="@+id/exercise_question1_1" />
+                app:layout_constraintStart_toStartOf="@+id/textView89"
+                app:layout_constraintTop_toBottomOf="@+id/textView89" />
 
             <TextView
                 android:id="@+id/textView87"
@@ -339,8 +340,8 @@
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/textView88"
-                app:layout_constraintStart_toStartOf="@+id/textView89"
-                app:layout_constraintTop_toBottomOf="@+id/textView86" />
+                app:layout_constraintStart_toEndOf="@+id/textView86"
+                app:layout_constraintTop_toTopOf="@+id/textView86" />
 
             <View
                 android:id="@+id/view4"
@@ -371,14 +372,13 @@
 
             <TextView
                 android:id="@+id/exercise_question2_ex"
-                android:layout_width="wrap_content"
+                android:layout_width="660dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginLeft="8dp"
-                android:text="※ 고강도 신체활동 : 무거운 것을 들어 올리거나 나르는 일(약 20kg 이상), 땅파기, 건설 현장에서의 노동,\n계단으로 물건 나르기 등"
+                android:text="※ 고강도 신체활동 : 무거운 것을 들어 올리거나 나르는 일(약 20kg 이상), 땅파기, 건설 현장에서의 노동, 계단으로 물건 나르기 등"
                 android:textColor="@color/examBlue"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView87"
+                app:layout_constraintStart_toStartOf="@+id/textView86"
                 app:layout_constraintTop_toBottomOf="@+id/textView90" />
 
             <RadioGroup
@@ -667,8 +667,8 @@
                 android:layout_height="wrap_content"
                 android:text="차거나 심장이 약간 빠르게 뛰는 "
                 android:textSize="24dp"
-                app:layout_constraintStart_toEndOf="@+id/textView108"
-                app:layout_constraintTop_toTopOf="@+id/textView106" />
+                app:layout_constraintStart_toStartOf="@+id/textView106"
+                app:layout_constraintTop_toBottomOf="@+id/textView106" />
 
             <TextView
                 android:id="@+id/textView110"
@@ -677,8 +677,8 @@
                 android:text="중강도 신체활동"
                 android:textSize="24dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/textView106"
-                app:layout_constraintTop_toBottomOf="@+id/textView106" />
+                app:layout_constraintStart_toEndOf="@+id/textView109"
+                app:layout_constraintTop_toTopOf="@+id/textView109" />
 
             <View
                 android:layout_width="0dp"
@@ -710,13 +710,11 @@
                 android:id="@+id/textView113"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="※ 중강도 신체활동 : 빠르게 걷기(일하는 중에), 가벼운 물건 나르기, 청소, 육아(목욕시키기, 아이 안아주기 등)"
+                android:text="※ 중강도 신체활동 : 빠르게 걷기(일하는 중에), 가벼운 물건 나르기, 청소,\n육아(목욕시키기, 아이 안아주기 등)"
                 android:textColor="@color/examBlue"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView110"
+                app:layout_constraintStart_toStartOf="@+id/textView109"
                 app:layout_constraintTop_toBottomOf="@+id/textView110" />
 
             <RadioGroup
@@ -984,6 +982,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textView129" />
 
             <View
+                android:id="@+id/view9"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:background="#000000"
@@ -997,8 +996,8 @@
                 android:layout_height="wrap_content"
                 android:text="본인이 장소를 이동할 때, 어떻게"
                 android:textSize="24dp"
-                app:layout_constraintStart_toEndOf="@+id/textView130"
-                app:layout_constraintTop_toTopOf="@+id/textView129" />
+                app:layout_constraintStart_toStartOf="@+id/textView129"
+                app:layout_constraintTop_toBottomOf="@+id/textView129" />
 
             <TextView
                 android:id="@+id/textView132"
@@ -1006,19 +1005,18 @@
                 android:layout_height="wrap_content"
                 android:text="하시는지에 대해 묻겠습니다."
                 android:textSize="24dp"
-                app:layout_constraintStart_toStartOf="@+id/textView129"
-                app:layout_constraintTop_toBottomOf="@+id/textView131" />
+                app:layout_constraintStart_toEndOf="@+id/textView131"
+                app:layout_constraintTop_toTopOf="@+id/textView131" />
 
             <TextView
                 android:id="@+id/textView133"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="※ 장소 이동 시 신체활동 : 일하러 갈 때, 쇼핑 갈 때, 장보러 갈 때, 예배 보러 갈 때, 학교 등·하교시, 학원 갈 때 등"
+                android:text="※ 장소 이동 시 신체활동 : 일하러 갈 때, 쇼핑 갈 때, 장보러 갈 때, 예배 보러 갈 때,\n학교 등·하교시, 학원 갈 때 등"
                 android:textColor="@color/examBlue"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/textView132"
+                app:layout_constraintStart_toStartOf="@+id/textView131"
                 app:layout_constraintTop_toBottomOf="@+id/textView132" />
 
             <TextView
@@ -1044,6 +1042,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textView134" />
 
             <View
+                android:id="@+id/view10"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:background="#000000"
@@ -1067,8 +1066,8 @@
                 android:layout_height="wrap_content"
                 android:text="걷거나 자전거 이용을 하십니까?"
                 android:textSize="24dp"
-                app:layout_constraintStart_toEndOf="@+id/textView136"
-                app:layout_constraintTop_toTopOf="@+id/textView134" />
+                app:layout_constraintStart_toStartOf="@+id/textView134"
+                app:layout_constraintTop_toBottomOf="@+id/textView134" />
 
             <RadioGroup
                 android:id="@+id/exercise_radio3"
@@ -1736,7 +1735,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="※ 예 : 빠르게 걷기, 가볍게 뛰기(조깅), 웨이트 트레이닝(근력 운동), 골프, 댄스스포츠, 필라테스 등"
+                android:text="※ 예 : 빠르게 걷기, 가볍게 뛰기(조깅), 웨이트 트레이닝(근력 운동), 골프, 댄스스포츠,\n필라테스 등"
                 android:textColor="@color/examBlue"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="@+id/textView176"
@@ -2010,19 +2009,19 @@
                 android:id="@+id/textView202"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="있을때, 장소를 이동할 때, 친구와"
+                android:text="있을때, 장소를 이동할 때,"
                 android:textSize="24dp"
                 app:layout_constraintStart_toEndOf="@+id/textView201"
-                app:layout_constraintTop_toTopOf="@+id/textView200" />
+                app:layout_constraintTop_toTopOf="@+id/textView201" />
 
             <TextView
                 android:id="@+id/textView203"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="함께 할 때에 앉아있거나 누워있는 것에 대한 질문입니다."
+                android:text="친구와 함께 할 때에 앉아있거나 누워있는 것에 대한 질문입니다."
                 android:textSize="24dp"
                 app:layout_constraintStart_toStartOf="@+id/textView200"
-                app:layout_constraintTop_toBottomOf="@+id/textView200" />
+                app:layout_constraintTop_toBottomOf="@+id/textView202" />
 
             <TextView
                 android:id="@+id/textView204"
@@ -2030,7 +2029,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="※ 예 : 책상에 앉아 있기, 친구와 앉아 있기, 자동차·버스·기차를 이용해 이동하기, 책 읽기, 글쓰기, 카드놀이"
+                android:text="※ 예 : 책상에 앉아 있기, 친구와 앉아 있기, 자동차·버스·기차를 이용해 이동하기,\n책 읽기, 글쓰기, 카드놀이하기, 텔레비전 보기,\n게임 하기(닌텐도, 컴퓨터, 플레이스테이션), 인터넷 사용, 음악감상 등"
                 android:textColor="@color/examBlue"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="@+id/textView203"
@@ -2040,7 +2039,7 @@
                 android:id="@+id/textView205"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="하기, 텔레비전 보기, 게임 하기(닌텐도, 컴퓨터, 플레이스테이션), 인터넷 사용, 음악감상 등"
+                android:text=""
                 android:textColor="@color/examBlue"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="@+id/textView204"
@@ -2169,8 +2168,8 @@
                 android:layout_height="wrap_content"
                 android:text=" 역기, 철봉 등의 근력운동을"
                 android:textSize="24dp"
-                app:layout_constraintStart_toEndOf="@id/textView214"
-                app:layout_constraintTop_toTopOf="@id/textView214"/>
+                app:layout_constraintStart_toStartOf="@+id/textView214"
+                app:layout_constraintTop_toBottomOf="@+id/textView214" />
 
             <TextView
                 android:id="@+id/textView331"
@@ -2178,8 +2177,8 @@
                 android:layout_height="wrap_content"
                 android:text="한 날은 며칠입니까?"
                 android:textSize="24dp"
-                app:layout_constraintStart_toStartOf="@id/textView214"
-                app:layout_constraintTop_toBottomOf="@id/textView214" />
+                app:layout_constraintStart_toEndOf="@+id/textView215"
+                app:layout_constraintTop_toTopOf="@+id/textView215" />
 
             <RadioGroup
                 android:id="@+id/exercise_radio6"
