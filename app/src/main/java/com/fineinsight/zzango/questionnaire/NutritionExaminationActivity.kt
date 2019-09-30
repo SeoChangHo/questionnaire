@@ -175,6 +175,8 @@ class NutritionExaminationActivity :RootActivity() {
 
         controlProgress(this)
 
+        registrationNumber(last_serial)
+
     }
 
     override fun onResume() {

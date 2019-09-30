@@ -137,6 +137,8 @@ class OralExaminationActivity : RootActivity() {
 
         controlProgress(this)
 
+        registrationNumber(last_serial)
+
     }
 
     //뷰에 포커스를 총괄하는 메서드
