@@ -30,25 +30,23 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="54dp"
             android:layout_marginTop="16dp"
             android:text="생활습관 평가도구(흡연)"
             android:textColor="@color/white"
             android:textSize="45dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginStart="56dp"
             android:layout_marginTop="8dp"
             android:text="(만 40세,50세,60세,70세 해당)"
             android:textColor="@color/white"
             android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Button
@@ -228,7 +226,7 @@
                 android:layout_marginTop="@dimen/blue_text_top_margin"
                 android:text="평생 비흡연자, 과거 흡연자, 전자담배 단독 사용자는 작성하지 않습니다."
                 android:textColor="@color/examBlue"
-                android:textSize="24dp"
+                android:textSize="28dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

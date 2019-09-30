@@ -771,7 +771,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_stroke"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -785,7 +785,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_stroke_examination_check"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -799,7 +799,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_myocardial_infarction"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -813,7 +813,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_myocardial_examination_check"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -827,7 +827,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_high_blood_pressure"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -841,7 +841,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_high_blood_pressure_examination_check"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -855,7 +855,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_diabetes"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -869,7 +869,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_diabetes_examination_check"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -883,7 +883,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_dyslipidemia"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -897,7 +897,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_dyslipidemia_examination_check"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -911,7 +911,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_tuberculosis"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -925,7 +925,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_tuberculosis_examination_check"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
@@ -939,7 +939,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/diagnosis_medication_etc"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline"
@@ -953,7 +953,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintEnd_toStartOf="@+id/diagnosis_medication_guideline4"
                             app:layout_constraintStart_toStartOf="@+id/diagnosis_medication_guideline3"
                             app:layout_constraintTop_toTopOf="@+id/diagnosis_medication_etc_examination_check" />
@@ -1182,7 +1182,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_stroke"
                             app:layout_constraintEnd_toStartOf="@+id/family_history_disease_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/family_history_disease_guideline"
@@ -1196,7 +1196,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_myocardial_infarction"
                             app:layout_constraintEnd_toStartOf="@+id/family_history_disease_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/family_history_disease_guideline"
@@ -1210,7 +1210,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_high_blood_pressure"
                             app:layout_constraintEnd_toStartOf="@+id/family_history_disease_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/family_history_disease_guideline"
@@ -1224,7 +1224,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/family_history_disease_diabetes"
                             app:layout_constraintEnd_toStartOf="@+id/family_history_disease_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/family_history_disease_guideline"
@@ -1238,7 +1238,7 @@
                             android:onClick="focusControl"
                             android:scaleX="1.3"
                             android:scaleY="1.3"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="@+id/family_history_etc"
                             app:layout_constraintEnd_toStartOf="@+id/family_history_disease_guideline2"
                             app:layout_constraintStart_toStartOf="@+id/family_history_disease_guideline"
@@ -1455,7 +1455,7 @@
                                 android:maxLength="3"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/textView44"
                                 app:layout_constraintStart_toEndOf="@+id/textView44"
                                 app:layout_constraintTop_toTopOf="@+id/textView44" />
@@ -1471,7 +1471,7 @@
                                 android:maxLength="3"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/textView42"
                                 app:layout_constraintStart_toEndOf="@+id/textView42"
                                 app:layout_constraintTop_toTopOf="@+id/textView42" />
@@ -1529,7 +1529,8 @@
                                 android:maxLength="3"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/textView45"
                                 app:layout_constraintStart_toEndOf="@+id/textView45"
                                 app:layout_constraintTop_toTopOf="@+id/textView45" />
 
@@ -1544,7 +1545,8 @@
                                 android:maxLength="3"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/textView46"
                                 app:layout_constraintStart_toEndOf="@+id/textView46"
                                 app:layout_constraintTop_toTopOf="@+id/textView46" />
 
@@ -1559,7 +1561,8 @@
                                 android:maxLength="3"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/textView4888888"
                                 app:layout_constraintStart_toEndOf="@+id/textView4888888"
                                 app:layout_constraintTop_toTopOf="@+id/textView4888888" />
 
@@ -1570,8 +1573,8 @@
                                 android:lineSpacingExtra="10dp"
                                 android:text="총"
                                 android:textSize="20dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"/>
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/textView46"
@@ -1579,6 +1582,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="년    흡연했을 때 하루평균"
                                 android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_3"
                                 app:layout_constraintStart_toEndOf="@+id/editText_4_1_3"
                                 app:layout_constraintTop_toTopOf="@+id/editText_4_1_3" />
 
@@ -1588,6 +1592,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="개비"
                                 android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/editText_4_1_4"
                                 app:layout_constraintStart_toEndOf="@+id/editText_4_1_4"
                                 app:layout_constraintTop_toTopOf="@+id/editText_4_1_4" />
 
@@ -1607,6 +1612,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="년"
                                 android:textSize="20dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/textView4888888"
                                 app:layout_constraintStart_toEndOf="@+id/editText_4_1_5"
                                 app:layout_constraintTop_toTopOf="@+id/textView4888888" />
 
@@ -1634,7 +1640,7 @@
 
                             <RadioButton
                                 android:id="@+id/common_5_1_true"
-                                android:layout_width="200dp"
+                                android:layout_width="225dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="40dp"
                                 android:layout_marginBottom="15dp"
@@ -1643,11 +1649,11 @@
                                 android:scaleX="1.3"
                                 android:scaleY="1.3"
                                 android:text="현재피움"
-                                android:textSize="15dp" />
+                                android:textSize="17dp" />
 
                             <RadioButton
                                 android:id="@+id/common_5_1_false"
-                                android:layout_width="200dp"
+                                android:layout_width="225dp"
                                 android:layout_height="50dp"
                                 android:layout_marginLeft="40dp"
                                 android:buttonTint="@color/examBlue"
@@ -1655,7 +1661,7 @@
                                 android:scaleX="1.3"
                                 android:scaleY="1.3"
                                 android:text="과거에는 피웠으나 현재 피우지 않음"
-                                android:textSize="15dp" />
+                                android:textSize="17dp" />
 
                         </RadioGroup>
 
@@ -1672,6 +1678,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:visibility="gone"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginLeft="16dp"
                             app:layout_constraintStart_toEndOf="@+id/common_5_1_radio"
                             app:layout_constraintTop_toTopOf="@+id/common_5_1_radio">
 
@@ -1744,6 +1752,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:visibility="gone"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginLeft="16dp"
                             app:layout_constraintBottom_toBottomOf="@+id/common_5_1_radio"
                             app:layout_constraintStart_toEndOf="@+id/common_5_1_radio">
 
@@ -1791,18 +1801,17 @@
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
                                 android:textSize="20dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/textView54"
-                                app:layout_constraintStart_toEndOf="@+id/textView54"
-                                app:layout_constraintTop_toTopOf="@+id/textView54" />
+                                app:layout_constraintBottom_toBottomOf="@+id/textView351"
+                                app:layout_constraintStart_toEndOf="@+id/textView351"
+                                app:layout_constraintTop_toTopOf="@+id/textView351" />
 
                             <TextView
                                 android:id="@+id/textView52"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="32dp"
+                                android:layout_marginBottom="11dp"
                                 android:text="총"
                                 android:textSize="20dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -1810,7 +1819,7 @@
                                 android:id="@+id/textView54"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="개비    끊은지"
+                                android:text="개비"
                                 android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/editText_5_1_4"
                                 app:layout_constraintStart_toEndOf="@+id/editText_5_1_4"
@@ -1827,10 +1836,21 @@
                                 app:layout_constraintTop_toTopOf="@+id/editText_5_1_3" />
 
                             <TextView
+                                android:id="@+id/textView351"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="끊은지"
+                                android:textSize="20dp"
+                                app:layout_constraintStart_toStartOf="@+id/textView52"
+                                app:layout_constraintTop_toBottomOf="@+id/textView52" />
+
+                            <TextView
                                 android:id="@+id/textView55"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="년"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/editText_5_1_5"
                                 app:layout_constraintStart_toEndOf="@+id/editText_5_1_5"
                                 app:layout_constraintTop_toTopOf="@+id/editText_5_1_5" />
@@ -2151,7 +2171,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="잔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_1_2"
@@ -2163,7 +2183,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="병"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_1_3"
@@ -2176,7 +2196,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="캔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_1_4"
@@ -2188,7 +2208,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="cc"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                             </RadioGroup>
 
@@ -2199,7 +2219,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="40dp"
                                 android:text="음주량"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/common_7_1_1_radio"
                                 app:layout_constraintStart_toEndOf="@+id/common_7_1_1_radio"
                                 app:layout_constraintTop_toTopOf="@+id/common_7_1_1_radio" />
@@ -2228,7 +2248,7 @@
                                 android:maxLength="4"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/table_text_2"
                                 app:layout_constraintStart_toEndOf="@+id/table_text_2"
                                 app:layout_constraintTop_toTopOf="@+id/table_text_2" />
@@ -2248,7 +2268,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="잔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_2_2"
@@ -2260,7 +2280,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="병"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_2_3"
@@ -2272,7 +2292,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="캔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_2_4"
@@ -2284,7 +2304,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="cc"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                             </RadioGroup>
 
@@ -2295,7 +2315,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="40dp"
                                 android:text="음주량"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/common_7_1_2_radio"
                                 app:layout_constraintStart_toEndOf="@+id/common_7_1_2_radio"
                                 app:layout_constraintTop_toTopOf="@+id/common_7_1_2_radio" />
@@ -2324,7 +2344,7 @@
                                 android:maxLength="4"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/table_text_3"
                                 app:layout_constraintStart_toEndOf="@+id/table_text_3"
                                 app:layout_constraintTop_toTopOf="@+id/table_text_3" />
@@ -2344,7 +2364,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="잔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_3_2"
@@ -2356,7 +2376,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="병"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_3_3"
@@ -2369,7 +2389,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="캔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_3_4"
@@ -2381,7 +2401,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="cc"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                             </RadioGroup>
 
@@ -2392,7 +2412,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="40dp"
                                 android:text="음주량"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/common_7_1_3_radio"
                                 app:layout_constraintStart_toEndOf="@+id/common_7_1_3_radio"
                                 app:layout_constraintTop_toTopOf="@+id/common_7_1_3_radio" />
@@ -2421,7 +2441,7 @@
                                 android:maxLength="4"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/table_text_4"
                                 app:layout_constraintStart_toEndOf="@+id/table_text_4"
                                 app:layout_constraintTop_toTopOf="@+id/table_text_4" />
@@ -2441,7 +2461,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="잔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_4_2"
@@ -2453,7 +2473,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="병"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_4_3"
@@ -2466,7 +2486,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="캔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_4_4"
@@ -2478,7 +2498,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="cc"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                             </RadioGroup>
 
@@ -2489,7 +2509,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="40dp"
                                 android:text="음주량"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/common_7_1_4_radio"
                                 app:layout_constraintStart_toEndOf="@+id/common_7_1_4_radio"
                                 app:layout_constraintTop_toTopOf="@+id/common_7_1_4_radio" />
@@ -2518,7 +2538,7 @@
                                 android:maxLength="4"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/table_text_5"
                                 app:layout_constraintStart_toEndOf="@+id/table_text_5"
                                 app:layout_constraintTop_toTopOf="@+id/table_text_5" />
@@ -2538,7 +2558,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="잔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_5_2"
@@ -2550,7 +2570,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="병"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_5_3"
@@ -2563,7 +2583,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="캔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_1_5_4"
@@ -2575,7 +2595,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="cc"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                             </RadioGroup>
 
@@ -2586,7 +2606,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="40dp"
                                 android:text="음주량"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/common_7_1_5_radio"
                                 app:layout_constraintStart_toEndOf="@+id/common_7_1_5_radio"
                                 app:layout_constraintTop_toTopOf="@+id/common_7_1_5_radio" />
@@ -2620,7 +2640,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="소주"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toTopOf="@+id/checkBox7"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -2637,7 +2657,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="맥주"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toTopOf="@+id/checkBox8"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
@@ -2653,7 +2673,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="양주"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toTopOf="@+id/checkBox9"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/checkBox7" />
@@ -2669,7 +2689,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="막걸리"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toTopOf="@+id/checkBox10"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
@@ -2685,7 +2705,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="와인"
-                            android:textSize="15dp"
+                            android:textSize="17dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/checkBox9" />
@@ -2712,7 +2732,7 @@
                                 android:maxLength="4"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/table_text_6"
                                 app:layout_constraintStart_toEndOf="@+id/table_text_6"
                                 app:layout_constraintTop_toTopOf="@+id/table_text_6" />
@@ -2732,7 +2752,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="잔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_1_2"
@@ -2744,7 +2764,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="병"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_1_3"
@@ -2757,7 +2777,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="캔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_1_4"
@@ -2769,7 +2789,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="cc"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                             </RadioGroup>
 
@@ -2780,7 +2800,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="8dp"
                                 android:text="음주량"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/common_7_2_1_radio"
                                 app:layout_constraintStart_toEndOf="@+id/common_7_2_1_radio"
                                 app:layout_constraintTop_toTopOf="@+id/common_7_2_1_radio" />
@@ -2809,7 +2829,7 @@
                                 android:maxLength="4"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/table_text_7"
                                 app:layout_constraintStart_toEndOf="@+id/table_text_7"
                                 app:layout_constraintTop_toTopOf="@+id/table_text_7" />
@@ -2829,7 +2849,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="잔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_2_2"
@@ -2841,7 +2861,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="병"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_2_3"
@@ -2853,7 +2873,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="캔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_2_4"
@@ -2865,7 +2885,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="cc"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                             </RadioGroup>
 
@@ -2876,7 +2896,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="8dp"
                                 android:text="음주량"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/common_7_2_2_radio"
                                 app:layout_constraintStart_toEndOf="@+id/common_7_2_2_radio"
                                 app:layout_constraintTop_toTopOf="@+id/common_7_2_2_radio" />
@@ -2905,7 +2925,7 @@
                                 android:maxLength="4"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/table_text_8"
                                 app:layout_constraintStart_toEndOf="@+id/table_text_8"
                                 app:layout_constraintTop_toTopOf="@+id/table_text_8" />
@@ -2925,7 +2945,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="잔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_3_2"
@@ -2937,7 +2957,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="병"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_3_3"
@@ -2950,7 +2970,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="캔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_3_4"
@@ -2962,7 +2982,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="cc"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                             </RadioGroup>
 
@@ -2973,7 +2993,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="8dp"
                                 android:text="음주량"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/common_7_2_3_radio"
                                 app:layout_constraintStart_toEndOf="@+id/common_7_2_3_radio"
                                 app:layout_constraintTop_toTopOf="@+id/common_7_2_3_radio" />
@@ -3002,7 +3022,7 @@
                                 android:maxLength="4"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/table_text_9"
                                 app:layout_constraintStart_toEndOf="@+id/table_text_9"
                                 app:layout_constraintTop_toTopOf="@+id/table_text_9" />
@@ -3022,7 +3042,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="잔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_4_2"
@@ -3034,7 +3054,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="병"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_4_3"
@@ -3047,7 +3067,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="캔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_4_4"
@@ -3059,7 +3079,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="cc"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                             </RadioGroup>
 
@@ -3070,7 +3090,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="8dp"
                                 android:text="음주량"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/common_7_2_4_radio"
                                 app:layout_constraintStart_toEndOf="@+id/common_7_2_4_radio"
                                 app:layout_constraintTop_toTopOf="@+id/common_7_2_4_radio" />
@@ -3099,7 +3119,7 @@
                                 android:maxLength="4"
                                 android:onClick="focusControl"
                                 android:textCursorDrawable="@color/gray"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/table_text_10"
                                 app:layout_constraintStart_toEndOf="@+id/table_text_10"
                                 app:layout_constraintTop_toTopOf="@+id/table_text_10" />
@@ -3119,7 +3139,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="잔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_5_2"
@@ -3131,7 +3151,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="병"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_5_3"
@@ -3144,7 +3164,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="캔"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                                 <RadioButton
                                     android:id="@+id/common_7_2_5_4"
@@ -3156,7 +3176,7 @@
                                     android:scaleX="1.3"
                                     android:scaleY="1.3"
                                     android:text="cc"
-                                    android:textSize="15dp" />
+                                    android:textSize="17dp" />
 
                             </RadioGroup>
 
@@ -3167,7 +3187,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginLeft="8dp"
                                 android:text="음주량"
-                                android:textSize="16dp"
+                                android:textSize="20dp"
                                 app:layout_constraintBottom_toBottomOf="@+id/common_7_2_5_radio"
                                 app:layout_constraintStart_toEndOf="@+id/common_7_2_5_radio"
                                 app:layout_constraintTop_toTopOf="@+id/common_7_2_5_radio" />
@@ -3181,8 +3201,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/common_text_top_margin"
-                        android:text="8-2. 평소 하루에, 숨이 많이 차게 만드는 고강도 신체활동을 몇 시간 하십니까?"
-                        android:textSize="20dp"
+                        android:text="8-2. 평소 하루에, 숨이 많이 차게 만드는\n고강도 신체활동을 몇 시간 하십니까?"
+                        android:textSize="24dp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@+id/textView29"
                         app:layout_constraintTop_toBottomOf="@+id/common_8_1_radio" />
@@ -3200,7 +3220,7 @@
                         android:maxLength="2"
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
-                        android:textSize="16dp"
+                        android:textSize="20dp"
                         android:text="0"
                         android:imeOptions="actionDone"
                         app:layout_constraintStart_toStartOf="@+id/textView31"
@@ -3213,7 +3233,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginLeft="8dp"
                         android:text="시간"
-                        android:textSize="16dp"
+                        android:textSize="20dp"
                         app:layout_constraintBottom_toBottomOf="@+id/editText_time_1"
                         app:layout_constraintStart_toEndOf="@+id/editText_time_1"
                         app:layout_constraintTop_toTopOf="@+id/editText_time_1" />
@@ -3230,7 +3250,7 @@
                         android:maxLength="2"
                         android:onClick="focusControl"
                         android:textCursorDrawable="@color/gray"
-                        android:textSize="16dp"
+                        android:textSize="20dp"
                         android:text="0"
                         android:imeOptions="actionDone"
                         app:layout_constraintBottom_toBottomOf="@+id/editText_time_1"
@@ -3244,7 +3264,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginLeft="8dp"
                         android:text="분"
-                        android:textSize="16dp"
+                        android:textSize="20dp"
                         app:layout_constraintBottom_toBottomOf="@+id/editText_minute_1"
                         app:layout_constraintStart_toEndOf="@+id/editText_minute_1"
                         app:layout_constraintTop_toTopOf="@+id/editText_minute_1" />
@@ -3254,8 +3274,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/common_text_top_margin"
-                        android:text="9-1. 평소 1주일간, 숨이 약간 차게 만드는 중강도 신체활동을 며칠 하십니까?"
-                        android:textSize="20dp"
+                        android:text="9-1. 평소 1주일간, 숨이 약간 차게 만드는\n중강도 신체활동을 며칠 하십니까?"
+                        android:textSize="24dp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@+id/textView31"
                         app:layout_constraintTop_toBottomOf="@+id/editText_time_1" />
@@ -3266,7 +3286,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:text="※8번 응답에 관련된 신체활등은 제외하고 답해주십시오."
-                        android:textSize="15dp"
+                        android:textSize="20dp"
                         app:layout_constraintStart_toStartOf="@+id/textView34"
                         app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
@@ -3275,8 +3295,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
-                        android:text="※중강도 신체활동의 예(빠르게 걷기, 복식 테니스, 보통 속도로 자전거 타기, 가벼운 물건 나르기, 청소 등)"
-                        android:textSize="15dp"
+                        android:text="※중강도 신체활동의 예(빠르게 걷기, 복식 테니스, 보통 속도로 자전거 타기,\n가벼운 물건 나르기, 청소 등)"
+                        android:textSize="20dp"
                         app:layout_constraintStart_toStartOf="@+id/textView34"
                         app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
@@ -3300,7 +3320,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="0일"
-                            android:textSize="15dp" />
+                            android:textSize="17dp" />
 
                         <RadioButton
                             android:id="@+id/common_9_1_1"
@@ -3313,7 +3333,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="1일"
-                            android:textSize="15dp" />
+                            android:textSize="17dp" />
 
                         <RadioButton
                             android:id="@+id/common_9_1_2"
@@ -3326,7 +3346,7 @@
                             android:scaleX="1.3"
                             android:scaleY="1.3"
                             android:text="2일"
-                            android:textSize="15dp" />
+                            android:textSize="17dp" />
 
                         <RadioButton
                             android:id="@+id/common_9_1_3"
@@ -3339,7 +3359,7 @@
                             android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="3일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_9_1_4"
@@ -3352,7 +3372,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="4일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_9_1_5"
@@ -3365,7 +3385,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="5일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_9_1_6"
@@ -3378,7 +3398,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="6일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_9_1_7"
@@ -3390,7 +3410,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="7일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                 </RadioGroup>
 
@@ -3399,8 +3419,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/common_text_top_margin"
-                    android:text="9-2. 평소 하루에, 숨이 약간 차게 만드는 중강도 신체활동을 몇 시간 하십니까?"
-                    android:textSize="20dp"
+                    android:text="9-2. 평소 하루에, 숨이 약간 차게 만드는 중강도 신체활동을\n몇 시간 하십니까?"
+                    android:textSize="24dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/textView34"
                     app:layout_constraintTop_toBottomOf="@+id/common_9_1_radio" />
@@ -3418,7 +3438,7 @@
                     android:maxLength="2"
                     android:onClick="focusControl"
                     android:textCursorDrawable="@color/gray"
-                    android:textSize="16dp"
+                    android:textSize="20dp"
                     android:text="0"
                     android:imeOptions="actionDone"
                     app:layout_constraintStart_toStartOf="@+id/textView37"
@@ -3431,7 +3451,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:text="시간"
-                    android:textSize="16dp"
+                    android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="@+id/editText_time_2"
                     app:layout_constraintStart_toEndOf="@+id/editText_time_2"
                     app:layout_constraintTop_toTopOf="@+id/editText_time_2" />
@@ -3448,7 +3468,7 @@
                     android:maxLength="2"
                     android:onClick="focusControl"
                     android:textCursorDrawable="@color/gray"
-                    android:textSize="16dp"
+                    android:textSize="20dp"
                     android:text="0"
                     android:imeOptions="actionDone"
                     app:layout_constraintBottom_toBottomOf="@+id/editText_time_2"
@@ -3462,7 +3482,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:text="분"
-                    android:textSize="16dp"
+                    android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="@+id/editText_minute_2"
                     app:layout_constraintStart_toEndOf="@+id/editText_minute_2"
                     app:layout_constraintTop_toTopOf="@+id/editText_minute_2" />
@@ -3473,7 +3493,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/common_text_top_margin"
                     android:text="10. 최근 1주일 동안 팔굽혀펴기, 윗몸일으키기, 아령, 역기, 철봉 등 근력 운동을 한 날은 며칠입니까?"
-                    android:textSize="20dp"
+                    android:textSize="24dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/textView37"
                     app:layout_constraintTop_toBottomOf="@+id/editText_time_2" />
@@ -3501,7 +3521,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="0일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_10_1"
@@ -3514,7 +3534,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="1일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_10_2"
@@ -3527,7 +3547,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="2일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_10_3"
@@ -3540,7 +3560,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="3일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_10_4"
@@ -3553,7 +3573,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="4일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_10_5"
@@ -3566,7 +3586,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="5일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_10_6"
@@ -3579,7 +3599,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="6일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                     <RadioButton
                         android:id="@+id/common_10_7"
@@ -3591,7 +3611,7 @@
                         android:scaleX="1.3"
                         android:scaleY="1.3"
                         android:text="7일"
-                        android:textSize="15dp" />
+                        android:textSize="17dp" />
 
                 </RadioGroup>
 

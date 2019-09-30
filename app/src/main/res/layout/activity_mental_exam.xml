@@ -30,25 +30,23 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="54dp"
             android:layout_marginTop="16dp"
             android:text="정신건강검사(우울증) 평가도구"
             android:textColor="@color/white"
             android:textSize="45dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginStart="56dp"
             android:layout_marginTop="8dp"
             android:text="(만 20세,30세,40세,50세,60세,70세 해당)"
             android:textColor="@color/white"
             android:textSize="24dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Button
@@ -226,9 +224,9 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="@dimen/blue_text_top_margin"
-                android:text="지난 2주 동안 아래 나열되는 증상들에 얼마나 자주 시달렸습니까?"
+                android:text="지난 2주 동안 아래 나열되는 증상들에 얼마나 자주\n시달렸습니까?"
                 android:textColor="@color/examBlue"
-                android:textSize="24dp"
+                android:textSize="28dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
