@@ -42,6 +42,8 @@ open class RootActivity : AppCompatActivity() {
         wfm = this.getSystemService(Context.WIFI_SERVICE) as WifiManager
         connectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
+        state = ""
+
     }
 
     //radio button check change listener와 연동 bool은 라디오 버튼 체크 값, view는 라디오 버튼과 연계된 wrapper view
