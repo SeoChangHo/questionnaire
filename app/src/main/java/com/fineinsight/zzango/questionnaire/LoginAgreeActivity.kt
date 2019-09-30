@@ -258,6 +258,19 @@ class LoginAgreeActivity : AppCompatActivity() {
                             true
                     )
 
+                    userlogin_buttonClick = true
+
+                    startActivity(Intent(this, AgreementActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+                    //입력창 초기화
+                    user_name.text.clear()
+                    first_serial.text.clear()
+                    last_serial.text.clear()
+                    canvasView.ClearCanvas()
+                    user_login_button.isEnabled = false
+                    user_login_button.setBackgroundResource(R.drawable.start_login_back)
+
+                    MainActivity.chart.clear()
 
                     SavePaper.Total.Init()
                     MainActivity.exam_no = System.currentTimeMillis().toString()
@@ -277,20 +290,6 @@ class LoginAgreeActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(this, "주민번호 형식을 확인해주세요.", Toast.LENGTH_LONG).show()
                 }
-
-                userlogin_buttonClick = true
-
-                startActivity(Intent(this, AgreementActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
-
-                //입력창 초기화
-                user_name.text.clear()
-                first_serial.text.clear()
-                last_serial.text.clear()
-                canvasView.ClearCanvas()
-                user_login_button.isEnabled = false
-                user_login_button.setBackgroundResource(R.drawable.start_login_back)
-
-                MainActivity.chart.clear()
 
             }
 

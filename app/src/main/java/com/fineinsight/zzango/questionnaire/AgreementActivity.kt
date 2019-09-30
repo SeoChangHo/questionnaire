@@ -28,6 +28,8 @@ class AgreementActivity : RootActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agreement)
 
+        state = ""
+
         BtnSetting()
 
         if(intent.hasExtra("AgreeListArr")){
