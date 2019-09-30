@@ -544,19 +544,19 @@ class LoginExamActivity : AppCompatActivity() {
 
         starticon.animate().alpha(1f).duration = 1000
 
-        ObjectAnimator.ofFloat(starticon, View.Y, 450f, 2000f).apply {
+        ObjectAnimator.ofFloat(starticon, View.Y, 300f, 1750f).apply {
             duration = 1000
             start()
         }
 
         Handler().postDelayed({
-            ObjectAnimator.ofFloat(starticon, View.Y, 2000f, 450f).apply {
+            ObjectAnimator.ofFloat(starticon, View.Y, 1750f, 300f).apply {
                 duration = 1000
                 start()
             }
 
             second_view.visibility = View.VISIBLE
-            ObjectAnimator.ofFloat(second_view, View.Y, 2200f, 700f).apply {
+            ObjectAnimator.ofFloat(second_view, View.Y, 1950f, 550f).apply {
                 duration = 1000
                 start()
             }
