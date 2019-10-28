@@ -261,8 +261,8 @@ class ExamListActivity : AppCompatActivity(), View.OnClickListener {
         })
 
         //개발용
-        dialog_view.login_id.setText("hanshin")
-        dialog_view.login_password.setText("hanshin1678")
+//        dialog_view.login_id.setText("hanshin")
+//        dialog_view.login_password.setText("hanshin1678")
 
         val login = dialog_view.findViewById(R.id.Login) as Button
         login.setOnClickListener {

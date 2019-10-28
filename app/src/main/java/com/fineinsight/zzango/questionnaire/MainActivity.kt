@@ -205,8 +205,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         })
 
         //개발용
-        login_id.setText("hanshin")
-        login_password.setText("hanshin1678")
+//        login_id.setText("hanshin")
+//        login_password.setText("hanshin1678")
 
         Login.setOnClickListener{
 

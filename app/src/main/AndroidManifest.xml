@@ -34,7 +34,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/noAnim"
             />
-        <activity android:name=".ServerList.ServerListDetailActivity" />
+        <activity android:name=".ServerList.ServerListDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnim" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
